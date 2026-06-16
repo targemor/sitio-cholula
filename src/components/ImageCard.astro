@@ -1,0 +1,49 @@
+---
+export interface Props {
+  href: string;
+  img: string;
+  label: string;
+  color: string;
+  target?: string;
+}
+
+const { href, img, label, color, target = "_self" } = Astro.props;
+---
+
+<a href={href} target={target} class="image-card" style={`--bar-color: ${color}`}>
+  <img src={img} alt={label} class="image-card-img" loading="lazy" />
+  <div class="image-card-bar">
+    <span>{label}</span>
+  </div>
+</a>
+
+<style>
+  .image-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    overflow: hidden;
+    transition: transform 0.3s;
+    background: transparent;
+    height: 460px;
+  }
+  .image-card:hover {
+    transform: translateY(-5px);
+  }
+  .image-card-img {
+    width: 100%;
+    flex-grow: 1;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .image-card-bar {
+    background-color: var(--bar-color);
+    color: #fff;
+    padding: 1.2rem 1rem;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    font-family: inherit;
+  }
+</style>

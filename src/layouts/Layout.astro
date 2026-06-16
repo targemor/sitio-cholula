@@ -1,0 +1,135 @@
+---
+import "../styles/global-opt.css";
+import Header from "../components/Header";
+import BottomNav from "../components/BottomNav";
+
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const {
+	title,
+	description = "Descubre la magia de Cholula, el corazón de México.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title} | Visit Cholula</title>
+
+		<!-- Google Fonts: Roboto -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<Header client:load />
+
+		<main>
+			<slot />
+		</main>
+
+		<footer class="main-footer">
+			<div class="footer-container">
+				<div class="footer-col">
+					<strong>Dirección de Turismo</strong>
+					<p>Calle 4 Oriente 1 Centro, San Pedro Cholula.</p>
+				</div>
+				<div class="footer-col">
+					<strong>Teléfonos:</strong>
+					<p>(222) 2 47 33 93, (222) 7 77 29 00<br>Ext. 2912</p>
+				</div>
+			</div>
+			<button id="scrollToTopBtn" aria-label="Volver arriba" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+				<svg viewBox="0 0 320 512" width="16" height="16"><path fill="currentColor" d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"></path></svg>
+			</button>
+		</footer>
+
+		<BottomNav client:load />
+	</body>
+</html>
+
+<style is:global>
+	body,
+	h1, h2, h3, h4, h5, h6,
+	p, a, span, div, li, button, input, textarea {
+		font-family: "Roboto", sans-serif !important;
+	}
+</style>
+
+<style>
+	main {
+		min-height: 100vh;
+		/* No padding-top: header is transparent and floats over the video */
+	}
+
+	.main-footer {
+		background-color: #c15c54;
+		color: #ffffff;
+		padding: 3rem 1rem;
+		position: relative;
+		margin-top: 0;
+	}
+	.footer-container {
+		max-width: 1200px;
+		margin: 0 auto;
+		display: flex;
+		justify-content: flex-start;
+		gap: 6rem;
+		padding-left: 2rem;
+	}
+	.footer-col {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		font-size: 0.95rem;
+	}
+	.footer-col strong {
+		font-weight: 700;
+	}
+	.footer-col p {
+		margin: 0;
+		font-weight: 400;
+		line-height: 1.5;
+	}
+	#scrollToTopBtn {
+		position: absolute;
+		right: 20px;
+		bottom: 20px;
+		background-color: #007bff;
+		color: #fff;
+		border: none;
+		width: 40px;
+		height: 40px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		border-radius: 4px;
+	}
+	#scrollToTopBtn:hover {
+		background-color: #0056b3;
+	}
+
+	@media (max-width: 768px) {
+		.main-nav {
+			display: none; /* Mobile menu needed */
+		}
+
+		.footer-container {
+			flex-direction: column;
+			gap: 2rem;
+			padding-left: 1rem;
+		}
+	}
+</style>

@@ -1,0 +1,80 @@
+[0] data-widget_type="text-editor.default"> RESTAURANTES
+
+[1] data-widget_type="text-editor.default"> Restaurante Bar Mesón de la Quinta
+
+[2] data-widget_type="text-editor.default"> @mesondelaquinta Mesón de la Quinta quintagalindo.hb Av. Miguel Hidalgo 106, Centro, 72760 Cholula de Rivadavia, Pue. WhatsApp: 222 106 0452 Email: pabellonqag@gmail.com Página web
+
+[3] data-widget_type="text-editor.default"> Churreria Las Duyas
+
+[4] data-widget_type="text-editor.default"> @churrerialasduyas Churreria Las Duyas churrerialasduyasoficial Portal Guerrero 15, Centro, 72760 Cholula de Rivadavia, Pue. Página web Teléfono: 222 247 1689
+
+[5] data-widget_type="text-editor.default"> Atracadero Jardín
+
+[6] data-widget_type="text-editor.default"> @atracadero.cholula Atracadero atracadero.cholula C. 13 Sur 1108, La Santísima, Barrio de Sta Maria Xixitla, 72762 Cholula de Rivadavia, Pue. Teléfono: 222 247 1689
+
+[7] data-widget_type="text-editor.default"> Caravana
+
+[8] data-widget_type="text-editor.default"> @elcaravana El Caravana Av 2 Ote 415, San Miguel, Barrio de San Miguel Tianguisnahuitl, 72760 Cholula de Rivadavia, Pue. Teléfono: 984 879 5652
+
+[9] data-widget_type="text-editor.default"> Payeca Chocolatería
+
+[10] data-widget_type="text-editor.default"> @payecac Payeca Chocolatería 4 pte 104 san pedro, Centro, 72760 Cholula de Rivadavia, Pue. Teléfono: 55 7322 7983
+
+[11] data-widget_type="text-editor.default"> Sagrata
+
+[12] data-widget_type="text-editor.default"> @sagrata.mx Sagrata Mx Portal Guerrero 3, Los portales de Cholula, 72760 Cholula de Rivadavia, Pue. Página web Teléfono: 221 584 4514
+
+[13] data-widget_type="text-editor.default"> Urucú
+
+[14] data-widget_type="text-editor.default"> @urucupuebla URUCÚ Calle 6 Nte. 1, San Miguel, Barrio de San Miguel Tianguisnahuitl, 72760 Cholula de Rivadavia, Pue. Teléfono: 222 944 7625
+
+[15] data-widget_type="text-editor.default"> Fonda Santa Clara
+
+[16] data-widget_type="text-editor.default"> @fondasantaclara Fonda Santa Clara Portal Guerrero 5, Centro, 72760 Cholula de Rivadavia, Pue. Teléfono: 222 247 6966
+
+[17] data-widget_type="text-editor.default"> Divará Campestre
+
+[18] data-widget_type="text-editor.default"> @divara_campestre Divará Campestre 15 Sur 902, San Cristobal Tepontla, 72764 Cholula, Pue. Teléfono: 221 702 0522
+
+[19] data-widget_type="text-editor.default"> Corazón de San Pedro
+
+[20] data-widget_type="text-editor.default"> @corazon_de_sanpedro Corazón de San Pedro Av. 8 Ote. 407, Barrio de San Miguel Tianguisnahuitl, 72760 San Andrés Cholula Teléfono: 221 525 9952
+
+[21] data-widget_type="text-editor.default"> Tacos Vehkem
+
+[22] data-widget_type="text-editor.default"> @tacosvehkem Vehkem @tacosvehkem Calle 3 Sur 908, Barrio de Sta Maria Xixitla, 72760 San Andrés Cholula, Pue. Teléfono: 222 667 1304
+
+[23] data-widget_type="text-editor.default"> Casa Relámpago
+
+[24] data-widget_type="text-editor.default"> @ casarelampago_oficial Ferrocarril 707, San Pablo Tecamac, 72760 Cholula de Rivadavia, Pue. Teléfono: 222 461 3812
+
+[25] data-widget_type="text-editor.default"> Divará Centro
+
+[26] data-widget_type="text-editor.default"> @ divara_restaurante Divará Av. 8 Ote. 414, Barrio de San Miguel Tianguisnahuitl, 72760 Cholula, Pue. Teléfono: 222 960 6603
+
+[27] data-widget_type="text-editor.default"> La Lunita Restaurante
+
+[28] data-widget_type="text-editor.default"> @restaurantlalunita La Lunita Restaurante Av. Morelos 419, San Miguel, Barrio de San Miguel Tianguisnahuitl Teléfono: 222 247 0011
+
+[29] data-widget_type="text-editor.default"> Chula Cholula Helados Pirámide
+
+[30] data-widget_type="text-editor.default"> @chula.cholula Chula Cholula Calle 6 Nte. 1, San Miguel, Barrio de San Miguel Tianguisnahuitl, 72778 Cholula de Rivadavia, Pue. Teléfono: 222 564 0635
+
+[31] data-widget_type="text-editor.default"> Atracadero
+
+[32] data-widget_type="text-editor.default"> @ atracadero.cholula Atracadero atracadero.cholula Calle 6 Nte. 211, San Miguel, Barrio de San Miguel Tianguisnahuitl, 72778 Teléfono: 222 261 9624
+
+[33] data-widget_type="text-editor.default"> Café Tal
+
+[34] data-widget_type="text-editor.default"> @ cafetal_cholula Portal Guerrero 7, Centro, 72760 Cholula de Rivadavia, Pue. Teléfono: 222 404 9947
+
+[35] data-widget_type="text-editor.default"> Casona del Olvido
+
+[36] data-widget_type="text-editor.default"> @casonadelolvido Casona del Olvido casonadelolvido Av 2 Ote 406 A, San Miguel, Barrio de San Miguel Tianguisnahuitl, 72760 Cholula de Rivadavia, Pue. Teléfono: 222 404 9947
+
+[37] data-widget_type="text-editor.default"> Ciudad Sagrada
+
+[38] data-widget_type="text-editor.default"> @ciudadsagradamx CiudadSagrada Av 2 Ote 615, San Miguel, Barrio de San Miguel Tianguisnahuitl, 72760 San Andrés Cholula, Pue. Teléfono: 222 247 9425
+
+[39] data-widget_type="text-editor.default"> Finca Ensamble
+

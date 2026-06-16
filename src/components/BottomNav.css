@@ -1,0 +1,54 @@
+/* ── Bottom Nav (Mobile Only) ── */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-top: 1px solid #e2e8f0;
+  padding: 0.75rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.bottom-nav-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  transition: color 0.2s ease;
+  color: #94a3b8; /* slate-400 */
+  text-decoration: none;
+}
+
+.bottom-nav-link.active {
+  color: #ea580c; /* orange-600 */
+}
+
+.bottom-nav-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.bottom-nav-label {
+  font-size: 9px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+/* Hide Bottom Nav on Desktop */
+@media (min-width: 768px) {
+  .bottom-nav {
+    display: none;
+  }
+  
+  .fab-btn {
+    bottom: 2.5rem;
+    right: 2.5rem;
+  }
+}

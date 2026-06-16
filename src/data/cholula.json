@@ -1,0 +1,1000 @@
+{
+  "hoteles": [
+    {
+      "nombre": "Mansión Azul Cholula",
+      "direccion": "Av. 5 de Mayo 407, Col. Centro",
+      "telefono": null,
+      "sitioWeb": null,
+      "social": {
+        "instagram": "https://www.instagram.com/lamansionazul_",
+        "facebook": "https://www.facebook.com/profile.php?id=100051290419093"
+      },
+      "googleMaps": "https://goo.gl/maps/MB8F7cE8NKstF5Zx7",
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_manmsion_azul_cholula_2-1024x1024-1.jpg",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/mansion-azul-1024x1024-1.jpg",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_mansion_azul_cholula-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_manmsion_azul_cholula_1-1024x1024-1.jpg",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_manmsion_azul_cholula_3-1024x1024-1.jpg",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_manmsion_azul_cholula_4-1024x1024-1.jpg"
+      ]
+    },
+    {
+      "nombre": "Hotel Tila",
+      "direccion": "Av 2 Ote 411, San Miguel, Barrio de San Miguel Tianguisnahuitl, 72778 Cholula de Rivadavia, Pue.",
+      "telefono": "221 395 1023",
+      "sitioWeb": "http://www.tilahotel.com/",
+      "social": {
+        "instagram": "https://www.instagram.com/tila_hotel/"
+      },
+      "googleMaps": "https://maps.app.goo.gl/1LcwRWRbJH63WUQ47",
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_tila_cholula_1-1024x1024-1.jpg",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_tila_cholula_2-1024x1024-1.jpg",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_tila_cholula_3-1024x1024-1.jpg"
+      ]
+    },
+    {
+      "nombre": "Cálido Cosmos Hotel",
+      "direccion": "13 Oriente 402",
+      "telefono": null,
+      "sitioWeb": null,
+      "social": {
+        "instagram": "https://www.instagram.com/calidocosmoshotel/",
+        "facebook": "https://www.facebook.com/jocarihospedaje/"
+      },
+      "googleMaps": "https://goo.gl/maps/T5hT1p164ao1f4jT8",
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_cosmos_hotel_cholula-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_cosmos_hotel_cholula_1-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_cosmos_hotel_cholula_4-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_cosmos_hotel_cholula_2-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_cosmos_hotel_cholula_3-1024x1024-1.webp"
+      ]
+    },
+    {
+      "nombre": "Santa Josefita Bed & Breakfast",
+      "direccion": "5 Poniente 123, Col. Centro",
+      "telefono": null,
+      "sitioWeb": null,
+      "social": {
+        "instagram": "https://www.instagram.com/santajosefita",
+        "facebook": "https://www.facebook.com/SantaJosefita",
+        "tiktok": "https://www.tiktok.com/@santa.josefita"
+      },
+      "googleMaps": "https://goo.gl/maps/2dpFX2ibYY5CiJ2G9",
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/santa_josefita_cholula-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/santa_josefita_cholula_1-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/santa_josefita_cholula_2-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/santa_josefita_cholula_3-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/santa_josefita_cholula_4-1024x1024-1.webp"
+      ]
+    },
+    {
+      "nombre": "Hotel MS Portales",
+      "direccion": "Portal Guerrero no. 17, Col. Centro",
+      "telefono": null,
+      "sitioWeb": null,
+      "social": {
+        "instagram": "https://www.instagram.com/hotelmscholula",
+        "facebook": "https://www.facebook.com/HotelMSPortales",
+        "tiktok": "Hotel MS Portales"
+      },
+      "googleMaps": null,
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/WhatsApp-Image-2025-06-27-at-3.15.45-PM-1024x1024-1.jpg",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/83d9b18f_z-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/73321131-1-1024x1024-1.jpg",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/habitaciones-1024x1024-1.jpg",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel-1024x1024-1.jpg",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/WhatsApp-Image-2025-06-27-at-3.15.45-PM-1-1024x1024-1.jpg",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/WhatsApp-Image-2025-06-27-at-3.15.45-PM-2-1024x1024-1.jpg",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/WhatsApp-Image-2025-06-27-at-3.20.36-PM-1024x1024-1.jpg",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/WhatsApp-Image-2025-06-27-at-3.22.55-PM-1024x1024-1.jpg"
+      ]
+    },
+    {
+      "nombre": "Quinta Alhóndiga Galindo",
+      "direccion": "Avenida Miguel Hidalgo 106, Colonia Centro",
+      "telefono": "222 261 7546",
+      "telefonoAlt": "222 970 2115",
+      "whatsapp": "222 125 1618",
+      "email": "galindo.hotelboutique@gmail.com",
+      "sitioWeb": "https://www.quintagalindo.com",
+      "social": {
+        "instagram": "https://www.instagram.com/quintagalindo.hb",
+        "facebook": "https://www.facebook.com/QuintaAlhondigaGalindo"
+      },
+      "googleMaps": null,
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/quinta_alhondiga_galindo_cholula-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/quinta_alhondiga_galindo_cholula_1-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/quinta_alhondiga_galindo_cholula_2-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/quinta_alhondiga_galindo_cholula_3-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/quinta_alhondiga_galindo_cholula_4-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/quinta_alhondiga_galindo_cholula_5-1024x1024-1.webp"
+      ]
+    },
+    {
+      "nombre": "Hotel los Remedios",
+      "direccion": null,
+      "telefono": "220 195 7673",
+      "whatsapp": "222 505 1108",
+      "email": "hotelosremedios@gmail.com",
+      "sitioWeb": "https://www.hotellosremedios.com",
+      "social": {
+        "facebook": "https://www.facebook.com/HotelLosRemedios"
+      },
+      "googleMaps": null,
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/santa_josefita_cholula_1-1024x1024-1-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/santa_josefita_cholula_2-1024x1024-1-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/santa_josefita_cholula_3-1024x1024-1-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/santa_josefita_cholula_4-1024x1024-1-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/santa_josefita_cholula-1024x1024-1-1.webp"
+      ]
+    },
+    {
+      "nombre": "Hotel Entre Volcanes",
+      "direccion": "7 oriente #414 San Pedro Cholula",
+      "telefono": "222 973 0042",
+      "whatsapp": "221 428 2993",
+      "email": "entrevolcanesch@gmail.com",
+      "sitioWeb": "https://www.entrevolcaneshotel.com.mx",
+      "social": {
+        "instagram": "https://www.instagram.com/hotelentrevolcanes",
+        "facebook": "https://www.facebook.com/HotelEntreVolcanes"
+      },
+      "googleMaps": null,
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_entre_volcanes_cholula_1-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_entre_volcanes_cholula_2-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_entre_volcanes_cholula_3-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_entre_volcanes_cholula_4-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_entre_volcanes_cholula-1024x1024-1.webp"
+      ]
+    },
+    {
+      "nombre": "Hotel Santa Irene",
+      "direccion": "Av 2 Ote 610, San Miguel, Barrio de San Miguel Tianguisnahuitl, 72750 Cholula de Rivadavia, Pue.",
+      "telefono": null,
+      "whatsapp": "221 425 9093",
+      "email": "hotelsantairenecholula@gmail.com",
+      "sitioWeb": null,
+      "social": {
+        "facebook": "https://www.facebook.com/HotelStaIrene"
+      },
+      "googleMaps": null,
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hote_santa_irene_3-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hote_santa_irene_4-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hote_santa_irene_5-1024x1024-1.webp"
+      ]
+    },
+    {
+      "nombre": "La Huerta Golf & Hotel",
+      "direccion": "Priv. Juan Blanca 2501-A, Santa Ma. Xixitla 72760. San Pedro Cholula, Puebla",
+      "telefono": "222 247 3392",
+      "email": "lahuertagolfhotel@gmail.com",
+      "sitioWeb": null,
+      "social": {},
+      "googleMaps": null,
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_la_huerta_cholula_1-scaled-e1762831787386.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_la_huerta_cholula_2-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_la_huerta_cholula_3-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_la_huerta_cholula-scaled-e1762831758938.webp"
+      ]
+    },
+    {
+      "nombre": "Hotel Los Sauces",
+      "direccion": "Avenida Forjadores de Puebla, Carr. Federal México-Puebla km.122, 72760 Heroica Puebla de Zaragoza, Pue.",
+      "telefono": "222 247 1011",
+      "telefonoAlt": "222 247 1012",
+      "sitioWeb": "https://www.hotellossauces.com",
+      "social": {
+        "instagram": "https://www.instagram.com/lossauceshotel",
+        "facebook": "https://www.facebook.com/HotelLosSauces"
+      },
+      "googleMaps": null,
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_los_sauces_cholula_4-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_los_sauces_cholula_1-scaled.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_los_sauces_cholula_2-scaled.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_los_sauces_cholula_3-scaled.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_los_sauces_cholula-scaled.webp"
+      ]
+    },
+    {
+      "nombre": "Casa Chanehque",
+      "direccion": "Av. Morelos 402, San Miguel, Pueblo Mágico, 72760 Cholula de Rivadavia, Pue.",
+      "telefono": "221 569 5997",
+      "email": "casachanehque@gmail.com",
+      "sitioWeb": "https://www.hotelcasachanehque.com",
+      "social": {
+        "instagram": "https://www.instagram.com/hotelcasachanehque",
+        "facebook": "https://www.facebook.com/CasaChanehque"
+      },
+      "googleMaps": null,
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_casa_chanehque_cholula_1-1024x1024-1.png",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_casa_chanehque_cholula_2-1024x1024-1.png",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_casa_chanehque_cholula_3-1024x1024-1.jpg",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_casa_chanehque_cholula_3-1024x1024-1.png",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_casa_chanehque_cholula_4-1024x1024-1.jpg",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_casa_chanehque_cholula_5-1024x1024-1.png"
+      ]
+    },
+    {
+      "nombre": "Hotel Choloa",
+      "direccion": "Av 7 Ote 206, Centro, 72760 Cholula de Rivadavia, Pue.",
+      "telefono": null,
+      "whatsapp": "221 403 4903",
+      "email": "choloacholula@gmail.com",
+      "sitioWeb": null,
+      "social": {
+        "instagram": "https://www.instagram.com/choloacholula",
+        "facebook": "https://www.facebook.com/HotelCholoa"
+      },
+      "googleMaps": null,
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_cheloa_cholula_1-1-scaled-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_cheloa_cholula_2-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_cheloa_cholula_3-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_cheloa_cholula_4-1-scaled-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_cheloa_cholula-1024x1024-1.webp"
+      ]
+    },
+    {
+      "nombre": "Hotel Ramadá Encore",
+      "direccion": "Lateral del Anillo Perif. Ecológico 1230, 72680 Heroica Puebla de Zaragoza, Pue.",
+      "telefono": "222 131 7121",
+      "email": "ejecutivo2@encorepuebla.com",
+      "sitioWeb": "https://www.encorepuebla.com",
+      "social": {
+        "facebook": "https://www.facebook.com/HotelRamadaEncore"
+      },
+      "googleMaps": null,
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_ramada_cholula_1-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_ramada_cholula_2-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_ramada_cholula_3-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_ramada_cholula_4-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_ramada_cholula-1024x1024-1.webp"
+      ]
+    },
+    {
+      "nombre": "Hotel Reforma",
+      "direccion": "Diagonal de La 2 Sur 101 Centro 72760 Cholula de Rivadavia, Pue. México",
+      "telefono": "222 247 0149",
+      "whatsapp": "222 205 6054",
+      "sitioWeb": null,
+      "social": {
+        "facebook": "https://www.facebook.com/HotelReforma"
+      },
+      "googleMaps": null,
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_reforma_cholula_2-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_reforma_cholula_3-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_reforma_cholula_4-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_reforma_cholula_5-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_reforma_cholula_6-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_reforma_cholula-1024x1024-1.webp"
+      ]
+    },
+    {
+      "nombre": "Hotel Marmoy",
+      "direccion": "Av Morelos 214 San Miguel, Col. Centro, Cholula de Rivadavia, Puebla",
+      "telefono": "222 991 1952",
+      "email": "hotelmarmoycholula@gmail.com",
+      "sitioWeb": null,
+      "social": {
+        "instagram": "https://www.instagram.com/hotelmarmoycholula",
+        "facebook": "https://www.facebook.com/HotelMarmoyCholula"
+      },
+      "googleMaps": null,
+      "imagenes": []
+    }
+  ],
+  "restaurantes": [
+    {
+      "nombre": "Restaurante Bar Mesón de la Quinta",
+      "categoria": "restaurante",
+      "direccion": "Av. Miguel Hidalgo 106, Centro, 72760 Cholula de Rivadavia, Pue.",
+      "telefono": "222 106 0452",
+      "email": "pabellonqag@gmail.com",
+      "sitioWeb": "https://www.pabellonqag.com",
+      "social": {
+        "instagram": "https://www.instagram.com/mesondelaquinta"
+      },
+      "imagenes": []
+    },
+    {
+      "nombre": "Churrería Las Duyas",
+      "categoria": "restaurante",
+      "direccion": "Portal Guerrero 15, Centro, 72760 Cholula de Rivadavia, Pue.",
+      "telefono": "222 247 1689",
+      "sitioWeb": "https://www.churrerialasduyas.com",
+      "social": {
+        "instagram": "https://www.instagram.com/churrerialasduyas"
+      },
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Churreria-Las-Duyas_cholula_1-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Churreria-Las-Duyas_cholula_2-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Churreria-Las-Duyas_cholula_3-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Churreria-Las-Duyas_cholula_4-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Churreria-Las-Duyas_cholula_5-1024x1024-1.webp"
+      ]
+    },
+    {
+      "nombre": "Atracadero Jardín",
+      "categoria": "restaurante",
+      "direccion": "C. 13 Sur 1108, La Santísima, Barrio de Sta Maria Xixitla, 72762 Cholula de Rivadavia, Pue.",
+      "telefono": "222 247 1689",
+      "social": {
+        "instagram": "https://www.instagram.com/atracadero.cholula"
+      },
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/ATRACADERO-JARDIN_cholula_2-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/ATRACADERO-JARDIN_cholula_1-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/ATRACADERO-JARDIN_cholula_3-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/ATRACADERO-JARDIN_cholula_4-1024x1024-1.webp"
+      ]
+    },
+    {
+      "nombre": "Caravana",
+      "categoria": "restaurante",
+      "direccion": "Av 2 Ote 415, San Miguel, Barrio de San Miguel Tianguisnahuitl, 72760 Cholula de Rivadavia, Pue.",
+      "telefono": "984 879 5652",
+      "social": {
+        "instagram": "https://www.instagram.com/elcaravana"
+      },
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/CARAVANA_cholula_3-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/CARAVANA_cholula_1-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/CARAVANA_cholula_2-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/CARAVANA_cholula_4-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/CARAVANA_cholula_5-1024x1024-1.webp"
+      ]
+    },
+    {
+      "nombre": "Payeca Chocolatería",
+      "categoria": "restaurante",
+      "direccion": "4 pte 104 san pedro, Centro, 72760 Cholula de Rivadavia, Pue.",
+      "telefono": "55 7322 7983",
+      "social": {
+        "instagram": "https://www.instagram.com/payecac"
+      },
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Captura-de-pantalla-2025-10-09-a-las-4.23.07-p.m-1024x1024-1.png",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Captura-de-pantalla-2025-10-09-a-las-4.23.15-p.m-1024x1024-1.png",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Captura-de-pantalla-2025-10-09-a-las-4.23.23-p.m-1024x1024-1.png",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Captura-de-pantalla-2025-10-09-a-las-4.23.34-p.m-1024x1024-1.png"
+      ]
+    },
+    {
+      "nombre": "Sagrata",
+      "categoria": "restaurante",
+      "direccion": "Portal Guerrero 3, Los portales de Cholula, 72760 Cholula de Rivadavia, Pue.",
+      "telefono": "221 584 4514",
+      "social": {
+        "instagram": "https://www.instagram.com/sagrata.mx"
+      },
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/SAGRATA_cholula_1-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/SAGRATA_cholula_2-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/SAGRATA_cholula_3-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/SAGRATA_cholula_4-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/SAGRATA_cholula_5-1024x1024-1.webp"
+      ]
+    },
+    {
+      "nombre": "Urucú",
+      "categoria": "restaurante",
+      "direccion": "Calle 6 Nte. 1, San Miguel, Barrio de San Miguel Tianguisnahuitl, 72760 Cholula de Rivadavia, Pue.",
+      "telefono": "222 944 7625",
+      "social": {
+        "instagram": "https://www.instagram.com/urucupuebla"
+      },
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/URUCU_cholula_1-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/URUCU_cholula_2-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/URUCU_cholula_3-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/URUCU_cholula_4-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/URUCU_cholula_5-1024x1024-1.webp"
+      ]
+    },
+    {
+      "nombre": "Fonda Santa Clara",
+      "categoria": "restaurante",
+      "direccion": "Portal Guerrero 5, Centro, 72760 Cholula de Rivadavia, Pue.",
+      "telefono": "222 247 6966",
+      "social": {
+        "instagram": "https://www.instagram.com/fondasantaclara"
+      },
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Fonda-de-Santa-Clara_cholula_1-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Fonda-de-Santa-Clara_cholula_2-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Fonda-de-Santa-Clara_cholula_3-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Fonda-de-Santa-Clara_cholula_4-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Fonda-de-Santa-Clara_cholula_6-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Fonda-de-Santa-Clara_cholula_7-1024x1024-1.webp"
+      ]
+    },
+    {
+      "nombre": "Divará Campestre",
+      "categoria": "restaurante",
+      "direccion": "15 Sur 902, San Cristobal Tepontla, 72764 Cholula, Pue.",
+      "telefono": "221 702 0522",
+      "social": {
+        "instagram": "https://www.instagram.com/divara_campestre"
+      },
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/divara_campestre_cholula_2-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/divara_campestre_cholula_1-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/divara_campestre_cholula_3-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/divara_campestre_cholula_4-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/divara_campestre_cholula-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/divara_cholula-1024x1024-1.webp"
+      ]
+    },
+    {
+      "nombre": "Corazón de San Pedro",
+      "categoria": "restaurante",
+      "direccion": "Av. 8 Ote. 407, Barrio de San Miguel Tianguisnahuitl, 72760 San Andrés Cholula",
+      "telefono": "221 525 9952",
+      "social": {
+        "instagram": "https://www.instagram.com/corazon_de_sanpedro"
+      },
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/CORAZON-DE-SP-12-scaled-1024x1024-1.jpg",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/CORAZON-DE-SP-23-scaled-1024x1024-1.jpg",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/CORAZON-DE-SP-46-scaled-1024x1024-1.jpg",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/CORAZON-DE-SP-70-scaled-1024x1024-1.jpg",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/corazon-de-sp-9-scaled-1024x683-1-e1762835622857.jpg"
+      ]
+    },
+    {
+      "nombre": "Tacos Vehkem",
+      "categoria": "restaurante",
+      "direccion": "Calle 3 Sur 908, Barrio de Sta Maria Xixitla, 72760 San Andrés Cholula, Pue.",
+      "telefono": "222 667 1304",
+      "social": {
+        "instagram": "https://www.instagram.com/tacosvehkem"
+      },
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/fachada-768x1024-1-e1762835580775.jpg",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/tacos_vehkem_1-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/tacos_vehkem_2-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/tacos_vehkem_3-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/tacos_vehkem-1024x1024-1.webp"
+      ]
+    },
+    {
+      "nombre": "Casa Relámpago",
+      "categoria": "restaurante",
+      "direccion": "Ferrocarril 707, San Pablo Tecamac, 72760 Cholula de Rivadavia, Pue.",
+      "telefono": "222 461 3812",
+      "social": {
+        "instagram": "https://www.instagram.com/casarelampago_oficial"
+      },
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Casa-Relampago_cholula-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/img_20240322_201034-scaled-1024x460-1-e1762835752544.jpg"
+      ]
+    },
+    {
+      "nombre": "Divará Centro",
+      "categoria": "restaurante",
+      "direccion": "Av. 8 Ote. 414, Barrio de San Miguel Tianguisnahuitl, 72760 Cholula, Pue.",
+      "telefono": "222 960 6603",
+      "social": {
+        "instagram": "https://www.instagram.com/divara_restaurante"
+      },
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Divara-Centro_cholula_3-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/divara-1024x772-1.jpg",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Divara-Centro_cholula_1-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Divara-Centro_cholula_2-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Divara-Centro_cholula_4-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Divara-Centro_cholula_5-1024x1024-1.webp"
+      ]
+    },
+    {
+      "nombre": "La Lunita Restaurante",
+      "categoria": "restaurante",
+      "direccion": "Av. Morelos 419, San Miguel, Barrio de San Miguel Tianguisnahuitl",
+      "telefono": "222 247 0011",
+      "social": {
+        "instagram": "https://www.instagram.com/restaurantlalunita"
+      },
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/la_lunita_restaurante-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/La-Lunita_cholula_1-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/La-Lunita_cholula_2-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/La-Lunita_cholula_3-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/La-Lunita_cholula_4-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/La-Lunita_cholula_5-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/la-lunita-1024x682-1.jpg"
+      ]
+    },
+    {
+      "nombre": "Chula Cholula Helados Pirámide",
+      "categoria": "restaurante",
+      "direccion": "Calle 6 Nte. 1, San Miguel, Barrio de San Miguel Tianguisnahuitl, 72778 Cholula de Rivadavia, Pue.",
+      "telefono": "222 564 0635",
+      "social": {
+        "instagram": "https://www.instagram.com/chula.cholula"
+      },
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Chula-Cholula-Helados_2-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Chula-Cholula-Helados_1-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Chula-Cholula-Helados_3-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Chula-Cholula-Helados_4-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Chula-Cholula-Helados_5-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Chula-Cholula-Helados_6-1024x1024-1.webp"
+      ]
+    },
+    {
+      "nombre": "Atracadero",
+      "categoria": "restaurante",
+      "direccion": "Calle 6 Nte. 211, San Miguel, Barrio de San Miguel Tianguisnahuitl, 72778",
+      "telefono": "222 261 9624",
+      "social": {
+        "instagram": "https://www.instagram.com/atracadero.cholula"
+      },
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Atracadero_cholula_5-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/1000078339-1024x863-1.jpg",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Atracadero_cholula_1-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Atracadero_cholula_2-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Atracadero_cholula_4-1024x1024-1.webp"
+      ]
+    },
+    {
+      "nombre": "Café Tal",
+      "categoria": "restaurante",
+      "direccion": "Portal Guerrero 7, Centro, 72760 Cholula de Rivadavia, Pue.",
+      "telefono": "222 404 9947",
+      "social": {
+        "instagram": "https://www.instagram.com/cafetal_cholula"
+      },
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/1d58dd1f-3d24-40d5-99a5-fbab29562c0f-1024x1024-1.jpg",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/cafe_tal_cholula_1-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/cafe_tal_cholula_2-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/cafe_tal_cholula_3-1024x1024-1.webp"
+      ]
+    },
+    {
+      "nombre": "Casona del Olvido",
+      "categoria": "restaurante",
+      "direccion": "Av 2 Ote 406 A, San Miguel, Barrio de San Miguel Tianguisnahuitl, 72760 Cholula de Rivadavia, Pue.",
+      "telefono": "222 404 9947",
+      "social": {
+        "instagram": "https://www.instagram.com/casonadelolvido"
+      },
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/unnamed-4-1024x1024-1.jpg",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Casona-del-Olvido_cholula_1-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Casona-del-Olvido_cholula_2-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Casona-del-Olvido_cholula_3-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Casona-del-Olvido_cholula_4-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Casona-del-Olvido_cholula_5-1024x1024-1.webp"
+      ]
+    },
+    {
+      "nombre": "Ciudad Sagrada",
+      "categoria": "restaurante",
+      "direccion": "Av 2 Ote 615, San Miguel, Barrio de San Miguel Tianguisnahuitl, 72760 San Andrés Cholula, Pue.",
+      "telefono": "222 247 9425",
+      "social": {
+        "instagram": "https://www.instagram.com/ciudadsagradamx"
+      },
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Ciudad-Sagrada_cholula_1-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/0l0a3661-como-objeto-inteligente-1-scaled-1024x1024-1.jpg",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Ciudad-Sagrada_cholula_2-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Ciudad-Sagrada_cholula_3-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Ciudad-Sagrada_cholula_4-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Ciudad-Sagrada_cholula_5-1024x1024-1.webp"
+      ]
+    },
+    {
+      "nombre": "Finca Ensamble",
+      "categoria": "restaurante",
+      "direccion": "Av 7 Ote 418, San Pablo Tecamac, 72760 San Andrés Cholula, Pue.",
+      "telefono": "222 971 9298",
+      "social": {
+        "instagram": "https://www.instagram.com/fincaensamble"
+      },
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Finca-Ensamble_cholula_1-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Finca-Ensamble_cholula_2-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Finca-Ensamble_cholula_3-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Finca-Ensamble_cholula_4-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Finca-Ensamble_cholula_5-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/imagen-de-whatsapp-2025-07-04-a-las-14.51.27_39c432e9-1024x682-1.jpg"
+      ]
+    },
+    {
+      "nombre": "Topolino Gelateria e Caffé",
+      "categoria": "restaurante",
+      "direccion": "Comercial Hidalgo, Supermanzana Callejon, Centro, 72760 Cholula de Rivadavia, Pue.",
+      "telefono": "221 179 5726",
+      "social": {
+        "instagram": "https://www.instagram.com/topolino_sanpedrocholula"
+      },
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/20250621_190210-scaled-768x1024-1-e1762836928116.jpg",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Helados-Topolino_cholula_1-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Helados-Topolino_cholula_2-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Helados-Topolino_cholula_3-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Helados-Topolino_cholula_4-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Helados-Topolino_cholula_5-1024x1024-1.webp"
+      ]
+    },
+    {
+      "nombre": "Los Jarrones",
+      "categoria": "restaurante",
+      "direccion": "Av. Miguel Hidalgo 102, Centro, 72760 Cholula de Rivadavia, Pue.",
+      "telefono": "222 238 3877",
+      "social": {
+        "instagram": "https://www.instagram.com/los.jarrones"
+      },
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Los-Jarrones_cholula_2-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/7580f2b6-1e4e-4a70-8cab-42ab00c89eee-1024x768-1.jpg",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Los-Jarrones_cholula_3-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Los-Jarrones_cholula_4-1024x1024-1.webp"
+      ]
+    },
+    {
+      "nombre": "Mercado Cosme del Razo",
+      "categoria": "mercado",
+      "direccion": "Calle 3 Nte 3, Barrio de San Juan Calvario, 72760 Cholula de Rivadavia, Pue.",
+      "telefono": null,
+      "social": {},
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Mercado-Cosme-del-Razo_cholula_1-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Mercado-Cosme-del-Razo_cholula_3-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/whatsapp-image-2025-07-04-at-20.57.31-2-1024x1024-1.jpg"
+      ]
+    },
+    {
+      "nombre": "Por la Mañana by M&M",
+      "categoria": "restaurante",
+      "direccion": "Av. Morelos 201, Centro, 72760 Cholula de Rivadavia, 72760 puebla, Pue.",
+      "telefono": "221 571 1404",
+      "social": {
+        "instagram": "https://www.instagram.com/_porlamanana_"
+      },
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/dsc07898-rotated-684x1024-1-e1762837210829.jpg",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Por-La-Manana-by-mm_cholula_1-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Por-La-Manana-by-mm_cholula_2-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Por-La-Manana-by-mm_cholula_3-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Por-La-Manana-by-mm_cholula_4-1024x1024-1.webp"
+      ]
+    },
+    {
+      "nombre": "Restaurante y Terraza Roldán",
+      "categoria": "restaurante",
+      "direccion": "C. 8 Nte. # 1005, Centro, 72760 Cholula de Rivadavia, Pue.",
+      "telefono": "221 200 8179",
+      "social": {
+        "instagram": "https://www.instagram.com/restaurante.roldan"
+      },
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Captura-de-pantalla-2025-11-11-a-las-10.06.42-a.m.png"
+      ]
+    },
+    {
+      "nombre": "Sangre Azteca",
+      "categoria": "restaurante",
+      "direccion": "Calle 6 Nte. #2, San Miguel, Barrio de Jesús Tlatempa, 72778 Cholula de Rivadavia, Pue.",
+      "telefono": "222 759 7842",
+      "social": {
+        "instagram": "https://www.instagram.com/sangreazteca.dmf"
+      },
+      "imagenes": []
+    },
+    {
+      "nombre": "Santōua Cholula",
+      "categoria": "restaurante",
+      "direccion": "Avenida 6 Poniente & Av. 5 de Mayo, Centro, 72810 San Andrés Cholula, Pue.",
+      "telefono": "221 371 1813",
+      "social": {
+        "instagram": "https://www.instagram.com/santouapuebla"
+      },
+      "imagenes": []
+    },
+    {
+      "nombre": "La Casa Rosa",
+      "categoria": "restaurante",
+      "direccion": "C. 4 Sur 105, San Miguel, Centro, 72760 Cholula de Rivadavia, Pue.",
+      "telefono": "222 618 7237",
+      "social": {
+        "instagram": "https://www.instagram.com/lacasarosacholula"
+      },
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Captura-de-pantalla-2025-11-11-a-las-10.12.56-a.m.png",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/La-Casa-Rosa_cholula_1-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/La-Casa-Rosa_cholula_2-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/La-Casa-Rosa_cholula_3-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/La-Casa-Rosa_cholula_4-1024x1024-1.webp"
+      ]
+    },
+    {
+      "nombre": "El Supremo Café & Tocino",
+      "categoria": "restaurante",
+      "direccion": "Av 2 Ote 406, San Miguel, Barrio de San Miguel Tianguisnahuitl, 72750 Cholula de Rivadavia, Pue.",
+      "telefono": null,
+      "social": {
+        "instagram": "https://www.instagram.com/cafetocino"
+      },
+      "imagenes": []
+    },
+    {
+      "nombre": "Dang",
+      "categoria": "restaurante",
+      "direccion": "Calle 6 Nte. 408, San Miguel, Barrio de Jesús Tlatempa, 72814 Cholula de Rivadavia, Pue.",
+      "telefono": null,
+      "social": {
+        "instagram": "https://www.instagram.com/dang.noodlebar"
+      },
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Dang-4.jpg",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Dang-1.jpg",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Dang-2.jpg",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Dang-3.jpg",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Dang-5.jpg"
+      ]
+    },
+    {
+      "nombre": "Chula Cholula Helados",
+      "categoria": "restaurante",
+      "direccion": "Av. 8 Ote. 807, Barrio de San Miguel Tianguisnahuitl, 72770 De San Miguel Tianguisnahuitl, Pue.",
+      "telefono": "222 564 0635",
+      "social": {
+        "instagram": "https://www.instagram.com/chula.cholula"
+      },
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Chula-Cholula-Helados_2-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Chula-Cholula-Helados_1-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Chula-Cholula-Helados_3-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Chula-Cholula-Helados_4-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Chula-Cholula-Helados_5-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Chula-Cholula-Helados_6-1024x1024-1.webp"
+      ]
+    },
+    {
+      "nombre": "Restaurante El Establo",
+      "categoria": "restaurante",
+      "direccion": "Av 7 Pte 112, Centro, 72760 Cholula de Rivadavia, Pue.",
+      "telefono": "222 839 0049",
+      "social": {},
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/1000640078-scaled.jpg",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/1000640079-scaled.jpg",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/1000640047.jpg",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/1000732840.jpg",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/1000737093.jpg"
+      ]
+    },
+    {
+      "nombre": "La Pirámide",
+      "categoria": "restaurante",
+      "direccion": "Av. Morelos #416, 72760 Cholula, Puebla México",
+      "telefono": "222 247 0254",
+      "email": "lapiramide48@gmail.com",
+      "social": {},
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Captura-de-pantalla-2025-10-20-a-las-1.28.07-p.m.png",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Captura-de-pantalla-2025-10-20-a-las-1.27.24-p.m.png",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Captura-de-pantalla-2025-10-20-a-las-1.27.34-p.m.png",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Captura-de-pantalla-2025-10-20-a-las-1.28.00-p.m.png"
+      ]
+    },
+    {
+      "nombre": "Allora",
+      "categoria": "restaurante",
+      "direccion": "Av Morelos 212, Centro, 72760 Cholula de Rivadavia, Pue.",
+      "telefono": "2221782682",
+      "social": {
+        "instagram": "https://www.instagram.com/allora_mx"
+      },
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2026/03/image5.jpeg",
+        "https://visitcholula.mx/wp-content/uploads/2026/03/image0.jpeg",
+        "https://visitcholula.mx/wp-content/uploads/2026/03/image1.jpeg",
+        "https://visitcholula.mx/wp-content/uploads/2026/03/image4.jpeg",
+        "https://visitcholula.mx/wp-content/uploads/2026/03/image2.jpeg"
+      ]
+    },
+    {
+      "nombre": "Jazzatlán Cholula",
+      "categoria": "bar",
+      "direccion": "Av 2 Ote 406, San Miguel, Barrio de San Miguel Tianguisnahuitl, 72760 Cholula de Rivadavia, Pue.",
+      "telefono": "222 838 7569",
+      "social": {
+        "instagram": "https://www.instagram.com/jazzatlan"
+      },
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Jazzatlan_cholula_3-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Captura-de-pantalla-2025-11-11-a-las-10.19.52-a.m.png",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Jazzatlan_cholula_1-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Jazzatlan_cholula_2-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Jazzatlan_cholula_4-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Jazzatlan_cholula_5-1024x1024-1.webp"
+      ]
+    },
+    {
+      "nombre": "Cervecería Crazy Moon",
+      "categoria": "bar",
+      "direccion": "Av. Miguel Hidalgo 214, Centro, 72760 Cholula de Rivadavia, Pue.",
+      "telefono": "222 261 9290",
+      "social": {
+        "instagram": "https://www.instagram.com/cerveceriacrazymoon"
+      },
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/unnamed-2-1024x1024-1.png",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Cerveceria-Crazy-Moon_cholula_1-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Cerveceria-Crazy-Moon_cholula_2-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Cerveceria-Crazy-Moon_cholula_3-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Cerveceria-Crazy-Moon_cholula_4-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Cerveceria-Crazy-Moon_cholula_5-1024x1024-1.webp"
+      ]
+    },
+    {
+      "nombre": "La Enamorada",
+      "categoria": "bar",
+      "direccion": "Av. Miguel Hidalgo 102, Centro, 72760 San Andrés Cholula, Pue.",
+      "telefono": "222 188 7131",
+      "social": {
+        "instagram": "https://www.instagram.com/laenamoradachol"
+      },
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/La-Enamorada_cholula_2-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/La-Enamorada_cholula_3-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/La-Enamorada_cholula_6-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/fb_img_1750960162730-1-1024x766-1.jpg",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/La-Enamorada_cholula_1-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/La-Enamorada_cholula_4-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/La-Enamorada_cholula_5-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/La-Enamorada_cholula_7-1024x1024-1.webp"
+      ]
+    },
+    {
+      "nombre": "Licorería San Pedrito",
+      "categoria": "bar",
+      "direccion": "San Miguel Tianguisnahuitl, Av. Morelos 405B, Barrio de San Miguel Tianguisnahuitl",
+      "telefono": "221 194 3795",
+      "social": {
+        "instagram": "https://www.instagram.com/licoreriasanpedritocholula"
+      },
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Captura-de-pantalla-2025-11-11-a-las-10.27.12-a.m.png",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Licoreria-San-Pedrito_cholula_1-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Licoreria-San-Pedrito_cholula_2-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Licoreria-San-Pedrito_cholula_3-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Licoreria-San-Pedrito_cholula_4-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/licoreria-san-pedrito-1024x1024-1.webp"
+      ]
+    },
+    {
+      "nombre": "Cholulice",
+      "categoria": "cafeteria",
+      "direccion": "4 oriente #3 local A, San Pedro Cholula, Cholula de Rivadavia, Pue.",
+      "telefono": "2201918614",
+      "social": {
+        "instagram": "https://www.instagram.com/Cholulice"
+      },
+      "imagenes": []
+    }
+  ],
+  "queHacer": [
+    {
+      "nombre": "Turibike Cholula",
+      "tipo": "tours en bicicleta",
+      "direccion": "Av. Morelos y calle 6 norte, San Miguel, Tianguisnahuatl, 72760 Pue.",
+      "telefono": null,
+      "social": {
+        "instagram": "https://www.instagram.com/turibike_cholula",
+        "facebook": "https://www.facebook.com/share/15WuU88E42/",
+        "tiktok": "https://www.tiktok.com/@turibike_cholula"
+      },
+      "googleMaps": "https://goo.gl/maps/Vdt5WRbaekK91d6R9",
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Turibike_cholula_2-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Turibike_cholula_1-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Turibike_cholula_3-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Turibike_cholula_4-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Turibike_cholula_5-1024x1024-1.webp"
+      ]
+    },
+    {
+      "nombre": "Turiwheel",
+      "tipo": "tours en rueda",
+      "direccion": "Calle Morelos esquina 6 Norte San Pedro Cholula, Puebla.",
+      "telefono": null,
+      "social": {
+        "instagram": "https://www.instagram.com/turiwheelcholula",
+        "facebook": "https://www.facebook.com/profile.php?id=100039867165961",
+        "tiktok": "https://www.tiktok.com/@turiwheelcholula"
+      },
+      "googleMaps": "https://goo.gl/maps/viYnfdJLxAbHT4zz8",
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Turiwheel_cholula_2-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Turiwheel_cholula_3-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Turiwheel_cholula_4-1-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Turiwheel_cholula_5-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Turiwheel_cholula_6-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Turiwheel_cholula_7-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Turiwheel_cholula_8-1024x1024-1.webp",
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Turiwheel_cholula_9-1024x1024-1.webp"
+      ]
+    },
+    {
+      "nombre": "2RB (2 Ruedas Bueno)",
+      "tipo": "renta de bicicletas y tours",
+      "direccion": null,
+      "telefono": "222 4346184",
+      "whatsapp": "https://wa.me/c/5212224346184",
+      "certificacionSECTUR": true,
+      "social": {
+        "instagram": "https://www.instagram.com/2ruedasbueno/",
+        "facebook": "https://www.facebook.com/dos.ruedas.bueno"
+      },
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2026/03/1.jpeg",
+        "https://visitcholula.mx/wp-content/uploads/2026/03/4.jpg",
+        "https://visitcholula.mx/wp-content/uploads/2026/03/2.jpg",
+        "https://visitcholula.mx/wp-content/uploads/2026/03/3.jpg",
+        "https://visitcholula.mx/wp-content/uploads/2026/03/5.jpeg"
+      ]
+    },
+    {
+      "nombre": "Tour Cholula Free Walk Tour",
+      "tipo": "tour a pie",
+      "direccion": "Av. Morelos 603, San Miguel, Plaza la Estación, 72760 San Pedro Cholula, Pue.",
+      "telefono": "782 362 87 14",
+      "social": {
+        "instagram": "https://www.instagram.com/freewalktourcholula"
+      },
+      "imagenes": []
+    }
+  ],
+  "guiasTuristicos": [
+    {
+      "nombre": "Alejandra Toxqui",
+      "telefono": "2228267436",
+      "certificacionSECTUR": true,
+      "social": {
+        "facebook": "https://www.facebook.com/share/1CRb7ETuT1/"
+      },
+      "paginaFacebook": "Guías Turísticos de Cholula",
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2025/11/Guias_turisticos_Alejandra-Toxqui-1024x1024-1.jpg"
+      ]
+    },
+    {
+      "nombre": "2RB (2 Ruedas Bueno)",
+      "telefono": "222 4346184",
+      "whatsapp": "https://wa.me/c/5212224346184",
+      "certificacionSECTUR": true,
+      "social": {
+        "instagram": "https://www.instagram.com/2ruedasbueno/",
+        "facebook": "https://www.facebook.com/dos.ruedas.bueno"
+      },
+      "imagenes": [
+        "https://visitcholula.mx/wp-content/uploads/2026/03/5.jpeg",
+        "https://visitcholula.mx/wp-content/uploads/2026/03/3.jpg",
+        "https://visitcholula.mx/wp-content/uploads/2026/03/2.jpg",
+        "https://visitcholula.mx/wp-content/uploads/2026/03/4.jpg",
+        "https://visitcholula.mx/wp-content/uploads/2026/03/1.jpeg"
+      ]
+    }
+  ]
+}

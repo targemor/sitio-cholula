@@ -1,0 +1,165 @@
+---
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+export interface Props {
+  id: string;
+  items: { img: string; label?: string }[];
+  isEvento?: boolean;
+  isImperdible?: boolean;
+}
+
+const { id, items, isEvento = false, isImperdible = false } = Astro.props;
+---
+
+<div class={`swiper ${isImperdible ? 'swiper--imperdible' : ''}`} id={`swiper-${id}`}>
+  <div class="swiper-wrapper">
+    {items.map((item, i) => (
+      <div class="swiper-slide">
+        <img
+          src={item.img}
+          alt={item.label || `Slide ${i + 1}`}
+          class={`swiper-slide-img ${isEvento ? 'swiper-slide-img--evento' : ''} ${isImperdible ? 'swiper-slide-img--imperdible' : ''}`}
+          loading={i === 0 ? "eager" : "lazy"}
+        />
+        {item.label && <p class="swiper-slide-label">{item.label}</p>}
+      </div>
+    ))}
+  </div>
+  <!-- Add Pagination -->
+  <div class="swiper-pagination"></div>
+  <!-- Add Navigation -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+</div>
+
+<style>
+  .swiper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* remove bottom padding, the pagination will overlap the slide's black bar */
+  }
+  .swiper--imperdible {
+    width: 80%; /* Takes up 80% of the screen width */
+    max-width: 1600px; 
+  }
+  .swiper-slide {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+  }
+  .swiper-slide-img {
+    width: 100%;
+    height: 520px;
+    object-fit: cover;
+    display: block;
+    border-radius: 0;
+    background-color: #fff;
+  }
+  .swiper-slide-img--imperdible {
+    height: auto;
+    aspect-ratio: 16 / 9; /* Perfect scaling without cropping text */
+    object-fit: contain;
+    background: #000;
+  }
+  .swiper-slide-img--evento {
+    height: 480px;
+    object-fit: contain;
+    background-color: #f9f9f9;
+  }
+  .swiper-slide-label {
+    position: relative;
+    width: 100%;
+    height: 36px;
+    padding: 0 1.5rem;
+    background-color: #111; /* Dark solid bar */
+    color: #fff !important;
+    font-size: 0.75rem;
+    font-weight: 400;
+    text-align: left;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+  }
+  
+  /* Custom Navigation Buttons */
+  :global(.swiper-button-next),
+  :global(.swiper-button-prev) {
+    color: #fff !important;
+    background: rgba(0, 0, 0, 0.4);
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 50%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: background 0.3s;
+  }
+  :global(.swiper-button-next:hover),
+  :global(.swiper-button-prev:hover) {
+    background: rgba(0, 0, 0, 0.7);
+  }
+  :global(.swiper-button-next:after),
+  :global(.swiper-button-prev:after),
+  :global(.swiper-button-next:before),
+  :global(.swiper-button-prev:before) {
+    content: none !important;
+    display: none !important;
+  }
+  
+  /* Swiper 12 injects SVG inside the buttons, let's style the SVG directly */
+  :global(.swiper-button-next svg),
+  :global(.swiper-button-prev svg) {
+    width: 24px;
+    height: 24px;
+  }
+  
+  /* Pagination inside the black bar */
+  :global(.swiper-pagination) {
+    bottom: 8px !important;
+    z-index: 20 !important;
+  }
+  :global(.swiper-pagination-bullet) {
+    background: #888 !important;
+    opacity: 1 !important;
+    width: 6px !important;
+    height: 6px !important;
+  }
+  :global(.swiper-pagination-bullet-active) {
+    background: #fff !important;
+  }
+</style>
+
+<script>
+  import Swiper from 'swiper';
+  import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+
+  document.addEventListener('DOMContentLoaded', () => {
+    const swipers = document.querySelectorAll('.swiper');
+    swipers.forEach((el) => {
+      const htmlEl = el as HTMLElement;
+      new Swiper(htmlEl, {
+        modules: [Navigation, Pagination, Autoplay],
+        slidesPerView: 1,
+        spaceBetween: 20,
+        navigation: {
+          nextEl: htmlEl.querySelector('.swiper-button-next') as HTMLElement,
+          prevEl: htmlEl.querySelector('.swiper-button-prev') as HTMLElement,
+        },
+        pagination: {
+          el: htmlEl.querySelector('.swiper-pagination') as HTMLElement,
+          clickable: true,
+        },
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false,
+        },
+        loop: true,
+      });
+    });
+  });
+</script>
