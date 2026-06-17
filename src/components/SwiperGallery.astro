@@ -8,12 +8,13 @@ export interface Props {
   items: { img: string; label?: string }[];
   isEvento?: boolean;
   isImperdible?: boolean;
+  className?: string;
 }
 
-const { id, items, isEvento = false, isImperdible = false } = Astro.props;
+const { id, items, isEvento = false, isImperdible = false, className = '' } = Astro.props;
 ---
 
-<div class={`swiper ${isImperdible ? 'swiper--imperdible' : ''}`} id={`swiper-${id}`}>
+<div class={`swiper ${isImperdible ? 'swiper--imperdible' : ''} ${className}`} id={`swiper-${id}`}>
   <div class="swiper-wrapper">
     {items.map((item, i) => (
       <div class="swiper-slide">
@@ -131,6 +132,16 @@ const { id, items, isEvento = false, isImperdible = false } = Astro.props;
   }
   :global(.swiper-pagination-bullet-active) {
     background: #fff !important;
+  }
+
+  /* Ajuste para 80% en móvil según requerimiento */
+  @media (max-width: 768px) {
+    #swiper-imperdibles,
+    #swiper-galeria,
+    #swiper-eventos {
+      width: 80% !important;
+      margin: 0 auto;
+    }
   }
 </style>
 

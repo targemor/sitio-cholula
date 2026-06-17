@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Divider from '../components/Divider.astro';
-import BusinessCard from '../components/BusinessCard';
+import BusinessCard from '../components/BusinessCard.astro';
 import cholulaData from '../data/cholula.json';
 
 export async function getStaticPaths() {
@@ -73,7 +73,6 @@ const FALLBACK_IMG = "https://images.unsplash.com/photo-1605335191599-4458d98e16
       <div class="business-grid">
         {data.map((item: any, index: number) => (
           <BusinessCard
-            client:load
             id={`item-${index}`}
             title={item.nombre}
             images={(item.imagenes && item.imagenes.length > 0) ? item.imagenes : [FALLBACK_IMG]}
