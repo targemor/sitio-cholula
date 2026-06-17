@@ -139,13 +139,40 @@ export default function SearchBar({
                     return;
                 }
 
-                const found = items.filter(
-                    (item) =>
-                        normalize(item.label).includes(norm) ||
-                        normalize(item.category).includes(norm) ||
-                        (item.sublabel && normalize(item.sublabel).includes(norm)) ||
-                        (item.searchKeywords && normalize(item.searchKeywords).includes(norm))
-                );
+                const queryWords = norm.split(/\s+/).filter(Boolean);
+
+                const scoredItems = items.map((item) => {
+                    const normLabel = normalize(item.label);
+                    const normCat = normalize(item.category);
+                    const normSub = item.sublabel ? normalize(item.sublabel) : "";
+                    const normKeywords = item.searchKeywords ? normalize(item.searchKeywords) : "";
+                    
+                    let score = 0;
+                    
+                    queryWords.forEach(word => {
+                        let wordScore = 0;
+                        if (normLabel.includes(word)) wordScore += 3; // mayor peso al título
+                        if (normCat.includes(word)) wordScore += 1;
+                        if (normSub.includes(word)) wordScore += 1;
+                        if (normKeywords.includes(word)) wordScore += 1;
+                        
+                        if (wordScore > 0) {
+                            score += wordScore;
+                        }
+                    });
+
+                    // Bonus si coincide la frase exacta
+                    if (normLabel.includes(norm)) score += 5;
+                    else if (normSub.includes(norm) || normKeywords.includes(norm)) score += 2;
+                    else if (normCat.includes(norm)) score += 1;
+
+                    return { item, score };
+                });
+
+                const found = scoredItems
+                    .filter(x => x.score > 0)
+                    .sort((a, b) => b.score - a.score)
+                    .map(x => x.item);
 
                 setResults(found);
                 setIsOpen(true);
