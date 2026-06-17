@@ -144,29 +144,43 @@ import cholulaData from "../data/cholula.json";
 
 // Items para la barra de búsqueda (Hoteles, Restaurantes, Qué hacer, Guías)
 const searchItems = [
-  ...(cholulaData.hoteles || []).map((item, i) => ({
-    id: i,
-    label: item.nombre,
-    category: "Hotel",
-    href: "/donde-hospedarse",
-  })),
-  ...(cholulaData.restaurantes || []).map((item, i) => ({
+  ...(cholulaData.hoteles || []).map((item: any, i) => {
+    const estrellasText = item.estrellas ? `${item.estrellas} estrellas` : "";
+    return {
+      id: i,
+      label: item.nombre,
+      category: "Hotel",
+      href: "/donde-hospedarse",
+      sublabel: item.direccion || "",
+      searchKeywords: estrellasText,
+      rating: item.estrellas || 0,
+      horario: item.horario,
+    };
+  }),
+  ...(cholulaData.restaurantes || []).map((item: any, i) => ({
     id: i,
     label: item.nombre,
     category: "Restaurante",
     href: "/donde-comer",
+    sublabel: [item.tipoComida, item.ambiente, item.caracteristicasEspeciales].filter(Boolean).join(" • "),
+    searchKeywords: [item.clasificacion, item.dondeEsta, item.tipoComida, item.ambiente, item.caracteristicasEspeciales].filter(Boolean).join(" "),
+    horario: item.horario,
   })),
-  ...(cholulaData.queHacer || []).map((item, i) => ({
+  ...(cholulaData.queHacer || []).map((item: any, i) => ({
     id: i,
     label: item.nombre,
     category: "Destino",
     href: "/que-hacer",
+    sublabel: item.tipo || "",
+    horario: item.horario,
   })),
-  ...(cholulaData.guiasTuristicos || []).map((item, i) => ({
+  ...(cholulaData.guiasTuristicos || []).map((item: any, i) => ({
     id: i,
     label: item.nombre,
     category: "Guia",
     href: "/guias-turisticos",
+    sublabel: item.paginaFacebook || "",
+    horario: item.horario,
   })),
 ];
 ---
@@ -524,7 +538,7 @@ const searchItems = [
     width: 100%;
     height: 60vh;
     min-height: 400px;
-    overflow: hidden;
+    z-index: 10; /* Added to ensure dropdown overlaps next section */
   }
   .hero-video {
     position: absolute;

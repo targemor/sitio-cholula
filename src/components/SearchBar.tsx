@@ -8,6 +8,9 @@ interface SearchableItem {
     category: string;        // "Hotel" | "Restaurante" | "Destino" | "Imperdible"
     sublabel?: string;       // descripción o dirección (opcional)
     href: string;            // sección a la que pertenece (#hoteles, #destinos, etc.)
+    searchKeywords?: string; // atributos extra para búsqueda (clasificacion, tipo comida, etc.)
+    rating?: number;         // estrellas (opcional)
+    horario?: string;        // horario formato HH:MM-HH:MM
 }
 
 /* ─── Utilidad: normalizar texto para comparación ────────── */
@@ -63,6 +66,41 @@ function highlightLabel(label: string, query: string): React.ReactNode {
     return nodes.length > 0 ? <>{nodes}</> : label;
 }
 
+/**
+ * Determina si un horario en formato HH:MM-HH:MM está abierto actualmente.
+ */
+function isCurrentlyOpen(horario?: string): boolean | null {
+    if (!horario || typeof horario !== 'string') return null;
+    const parts = horario.split('-');
+    if (parts.length !== 2) return null;
+    
+    const [start, end] = parts;
+    const now = new Date();
+    const currentMinutes = now.getHours() * 60 + now.getMinutes();
+
+    const parseTime = (timeStr: string) => {
+        const [h, m] = timeStr.trim().split(':').map(Number);
+        if (isNaN(h)) return null;
+        return h * 60 + (m || 0);
+    };
+    
+    const startMin = parseTime(start);
+    let endMin = parseTime(end);
+    
+    if (startMin === null || endMin === null) return null;
+
+    if (endMin <= startMin) {
+        endMin += 24 * 60;
+    }
+
+    let checkMin = currentMinutes;
+    if (endMin > 24 * 60 && currentMinutes < startMin) {
+        checkMin += 24 * 60;
+    }
+    
+    return checkMin >= startMin && checkMin <= endMin;
+}
+
 /* ─── Props ──────────────────────────────────────────────── */
 interface SearchBarProps {
     placeholder?: string;
@@ -105,7 +143,8 @@ export default function SearchBar({
                     (item) =>
                         normalize(item.label).includes(norm) ||
                         normalize(item.category).includes(norm) ||
-                        (item.sublabel && normalize(item.sublabel).includes(norm))
+                        (item.sublabel && normalize(item.sublabel).includes(norm)) ||
+                        (item.searchKeywords && normalize(item.searchKeywords).includes(norm))
                 );
 
                 setResults(found);
@@ -284,12 +323,24 @@ export default function SearchBar({
                                                 className="search-result-item"
                                             >
                                                 <div className="search-item-content">
-                                                    <p className="search-item-title">
-                                                        {labelNode}
-                                                    </p>
-                                                    {sublabelNode && (
+                                                    <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+                                                        <p className="search-item-title">
+                                                            {labelNode}
+                                                        </p>
+                                                        {item.horario && isCurrentlyOpen(item.horario) !== null && (
+                                                            <span className={`search-badge ${isCurrentlyOpen(item.horario) ? "search-badge-open" : "search-badge-closed"}`}>
+                                                                {isCurrentlyOpen(item.horario) ? "Abierto" : "Cerrado"}
+                                                            </span>
+                                                        )}
+                                                    </div>
+                                                    {(sublabelNode || item.rating) && (
                                                         <p className="search-item-subtitle">
                                                             {sublabelNode}
+                                                            {item.rating ? (
+                                                                <span style={{ color: "#fbbf24", marginLeft: sublabelNode ? "6px" : "0", letterSpacing: "1px" }}>
+                                                                    {"★".repeat(item.rating)}
+                                                                </span>
+                                                            ) : null}
                                                         </p>
                                                     )}
                                                 </div>

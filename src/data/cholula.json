@@ -17,7 +17,9 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_manmsion_azul_cholula_1-1024x1024-1.jpg",
         "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_manmsion_azul_cholula_3-1024x1024-1.jpg",
         "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_manmsion_azul_cholula_4-1024x1024-1.jpg"
-      ]
+      ],
+      "estrellas": 5,
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Hotel Tila",
@@ -32,7 +34,9 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_tila_cholula_1-1024x1024-1.jpg",
         "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_tila_cholula_2-1024x1024-1.jpg",
         "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_tila_cholula_3-1024x1024-1.jpg"
-      ]
+      ],
+      "estrellas": 5,
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Cálido Cosmos Hotel",
@@ -50,7 +54,9 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_cosmos_hotel_cholula_4-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_cosmos_hotel_cholula_2-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_cosmos_hotel_cholula_3-1024x1024-1.webp"
-      ]
+      ],
+      "estrellas": 4,
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Santa Josefita Bed & Breakfast",
@@ -69,7 +75,9 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/santa_josefita_cholula_2-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/santa_josefita_cholula_3-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/santa_josefita_cholula_4-1024x1024-1.webp"
-      ]
+      ],
+      "estrellas": 4,
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Hotel MS Portales",
@@ -92,7 +100,9 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/WhatsApp-Image-2025-06-27-at-3.15.45-PM-2-1024x1024-1.jpg",
         "https://visitcholula.mx/wp-content/uploads/2025/11/WhatsApp-Image-2025-06-27-at-3.20.36-PM-1024x1024-1.jpg",
         "https://visitcholula.mx/wp-content/uploads/2025/11/WhatsApp-Image-2025-06-27-at-3.22.55-PM-1024x1024-1.jpg"
-      ]
+      ],
+      "estrellas": 3,
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Quinta Alhóndiga Galindo",
@@ -114,7 +124,9 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/quinta_alhondiga_galindo_cholula_3-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/quinta_alhondiga_galindo_cholula_4-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/quinta_alhondiga_galindo_cholula_5-1024x1024-1.webp"
-      ]
+      ],
+      "estrellas": 3,
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Hotel los Remedios",
@@ -133,7 +145,9 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/santa_josefita_cholula_3-1024x1024-1-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/santa_josefita_cholula_4-1024x1024-1-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/santa_josefita_cholula-1024x1024-1-1.webp"
-      ]
+      ],
+      "estrellas": 4,
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Hotel Entre Volcanes",
@@ -153,7 +167,9 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_entre_volcanes_cholula_3-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_entre_volcanes_cholula_4-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_entre_volcanes_cholula-1024x1024-1.webp"
-      ]
+      ],
+      "estrellas": 0,
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Hotel Santa Irene",
@@ -170,7 +186,9 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/hote_santa_irene_3-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/hote_santa_irene_4-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/hote_santa_irene_5-1024x1024-1.webp"
-      ]
+      ],
+      "estrellas": 0,
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "La Huerta Golf & Hotel",
@@ -185,7 +203,9 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_la_huerta_cholula_2-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_la_huerta_cholula_3-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_la_huerta_cholula-scaled-e1762831758938.webp"
-      ]
+      ],
+      "estrellas": 0,
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Hotel Los Sauces",
@@ -204,7 +224,9 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_los_sauces_cholula_2-scaled.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_los_sauces_cholula_3-scaled.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_los_sauces_cholula-scaled.webp"
-      ]
+      ],
+      "estrellas": 0,
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Casa Chanehque",
@@ -224,7 +246,9 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_casa_chanehque_cholula_3-1024x1024-1.png",
         "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_casa_chanehque_cholula_4-1024x1024-1.jpg",
         "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_casa_chanehque_cholula_5-1024x1024-1.png"
-      ]
+      ],
+      "estrellas": 0,
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Hotel Choloa",
@@ -244,7 +268,9 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_cheloa_cholula_3-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_cheloa_cholula_4-1-scaled-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_cheloa_cholula-1024x1024-1.webp"
-      ]
+      ],
+      "estrellas": 0,
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Hotel Ramadá Encore",
@@ -262,7 +288,9 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_ramada_cholula_3-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_ramada_cholula_4-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_ramada_cholula-1024x1024-1.webp"
-      ]
+      ],
+      "estrellas": 0,
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Hotel Reforma",
@@ -281,7 +309,9 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_reforma_cholula_5-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_reforma_cholula_6-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_reforma_cholula-1024x1024-1.webp"
-      ]
+      ],
+      "estrellas": 0,
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Hotel Marmoy",
@@ -294,7 +324,9 @@
         "facebook": "https://www.facebook.com/HotelMarmoyCholula"
       },
       "googleMaps": null,
-      "imagenes": []
+      "imagenes": [],
+      "estrellas": 0,
+      "horario": "08:00-22:00"
     }
   ],
   "restaurantes": [
@@ -308,7 +340,13 @@
       "social": {
         "instagram": "https://www.instagram.com/mesondelaquinta"
       },
-      "imagenes": []
+      "imagenes": [],
+      "clasificacion": "Restaurante-Bar-Cafetería",
+      "dondeEsta": "Zona Centro",
+      "tipoComida": "Mexicana, pizzas, pastas, cafés",
+      "ambiente": "Familiar · Pareja · Amigos · Informal",
+      "caracteristicasEspeciales": "Con Patio",
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Churrería Las Duyas",
@@ -325,7 +363,13 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/Churreria-Las-Duyas_cholula_3-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/Churreria-Las-Duyas_cholula_4-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/Churreria-Las-Duyas_cholula_5-1024x1024-1.webp"
-      ]
+      ],
+      "clasificacion": "Churrería / Restaurante",
+      "dondeEsta": "Los Portales",
+      "tipoComida": "Churros y chocolate",
+      "ambiente": "Familiar · Casual",
+      "caracteristicasEspeciales": "Desayunos",
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Atracadero Jardín",
@@ -340,7 +384,13 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/ATRACADERO-JARDIN_cholula_1-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/ATRACADERO-JARDIN_cholula_3-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/ATRACADERO-JARDIN_cholula_4-1024x1024-1.webp"
-      ]
+      ],
+      "clasificacion": "Restaurante",
+      "dondeEsta": "A pocos minutos del Centro",
+      "tipoComida": "Mariscos",
+      "ambiente": "Familiar, espacio para niños",
+      "caracteristicasEspeciales": "Restaurante con jardín, · Pet friendly",
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Caravana",
@@ -356,7 +406,13 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/CARAVANA_cholula_2-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/CARAVANA_cholula_4-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/CARAVANA_cholula_5-1024x1024-1.webp"
-      ]
+      ],
+      "clasificacion": "Restaurante",
+      "dondeEsta": "Zona Centro",
+      "tipoComida": "Tacos",
+      "ambiente": "Familiar, informal",
+      "caracteristicasEspeciales": "Tecos de barra y banqueta",
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Payeca Chocolatería",
@@ -371,7 +427,13 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/Captura-de-pantalla-2025-10-09-a-las-4.23.15-p.m-1024x1024-1.png",
         "https://visitcholula.mx/wp-content/uploads/2025/11/Captura-de-pantalla-2025-10-09-a-las-4.23.23-p.m-1024x1024-1.png",
         "https://visitcholula.mx/wp-content/uploads/2025/11/Captura-de-pantalla-2025-10-09-a-las-4.23.34-p.m-1024x1024-1.png"
-      ]
+      ],
+      "clasificacion": "Cafetería / Chocolatería",
+      "dondeEsta": "Zona Centro",
+      "tipoComida": "Cacao, café, postres y alimentos",
+      "ambiente": "Familiar · Romántico · Informal · ",
+      "caracteristicasEspeciales": " Pet friendly",
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Sagrata",
@@ -387,7 +449,13 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/SAGRATA_cholula_3-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/SAGRATA_cholula_4-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/SAGRATA_cholula_5-1024x1024-1.webp"
-      ]
+      ],
+      "clasificacion": "Restaurante-Bar",
+      "dondeEsta": "Los Portales",
+      "tipoComida": "Cocina tradicional poblana/mexicana",
+      "ambiente": "Familiar",
+      "caracteristicasEspeciales": "Comida mexicana ",
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Urucú",
@@ -403,7 +471,13 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/URUCU_cholula_3-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/URUCU_cholula_4-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/URUCU_cholula_5-1024x1024-1.webp"
-      ]
+      ],
+      "clasificacion": "Restaurante",
+      "dondeEsta": "Zona Centro",
+      "tipoComida": "Cochinita pibil y achiote",
+      "ambiente": "Familiar · Informal · ",
+      "caracteristicasEspeciales": "Pet friendly",
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Fonda Santa Clara",
@@ -420,7 +494,13 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/Fonda-de-Santa-Clara_cholula_4-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/Fonda-de-Santa-Clara_cholula_6-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/Fonda-de-Santa-Clara_cholula_7-1024x1024-1.webp"
-      ]
+      ],
+      "clasificacion": "Restaurante",
+      "dondeEsta": "Los Portales",
+      "tipoComida": "Mexicana tradicional",
+      "ambiente": "Familiar",
+      "caracteristicasEspeciales": "Comida mexicana",
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Divará Campestre",
@@ -437,7 +517,13 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/divara_campestre_cholula_4-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/divara_campestre_cholula-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/divara_cholula-1024x1024-1.webp"
-      ]
+      ],
+      "clasificacion": "Restaurante",
+      "dondeEsta": "A pocos minutos del Centro",
+      "tipoComida": "Italiana / pizzas",
+      "ambiente": "Familiar, espacio para niños",
+      "caracteristicasEspeciales": "Jardín",
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Corazón de San Pedro",
@@ -453,7 +539,13 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/CORAZON-DE-SP-46-scaled-1024x1024-1.jpg",
         "https://visitcholula.mx/wp-content/uploads/2025/11/CORAZON-DE-SP-70-scaled-1024x1024-1.jpg",
         "https://visitcholula.mx/wp-content/uploads/2025/11/corazon-de-sp-9-scaled-1024x683-1-e1762835622857.jpg"
-      ]
+      ],
+      "clasificacion": "Restaurante",
+      "dondeEsta": "Zona Centro",
+      "tipoComida": "Revisar",
+      "ambiente": "Romántico · Familiar",
+      "caracteristicasEspeciales": "Ideal para cenas",
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Tacos Vehkem",
@@ -469,7 +561,13 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/tacos_vehkem_2-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/tacos_vehkem_3-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/tacos_vehkem-1024x1024-1.webp"
-      ]
+      ],
+      "clasificacion": "Taquería",
+      "dondeEsta": "Los Portales",
+      "tipoComida": "Tacos",
+      "ambiente": "Familiar, informal",
+      "caracteristicasEspeciales": "",
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Casa Relámpago",
@@ -482,7 +580,13 @@
       "imagenes": [
         "https://visitcholula.mx/wp-content/uploads/2025/11/Casa-Relampago_cholula-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/img_20240322_201034-scaled-1024x460-1-e1762835752544.jpg"
-      ]
+      ],
+      "clasificacion": "Bar",
+      "dondeEsta": "Fuera del Centro",
+      "tipoComida": "Destilados y cervezas",
+      "ambiente": "Social / Nocturno",
+      "caracteristicasEspeciales": "música de los 80's los miércoles, idezl para ir con amigos ",
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Divará Centro",
@@ -499,7 +603,13 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/Divara-Centro_cholula_2-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/Divara-Centro_cholula_4-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/Divara-Centro_cholula_5-1024x1024-1.webp"
-      ]
+      ],
+      "clasificacion": "Restaurante",
+      "dondeEsta": "Zona Centro",
+      "tipoComida": "Italiana / pizzas",
+      "ambiente": "Romántico, casual ",
+      "caracteristicasEspeciales": "",
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "La Lunita Restaurante",
@@ -517,7 +627,13 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/La-Lunita_cholula_4-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/La-Lunita_cholula_5-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/la-lunita-1024x682-1.jpg"
-      ]
+      ],
+      "clasificacion": "Restaurante-Bar",
+      "dondeEsta": "Zona Centro",
+      "tipoComida": "Comida tradicional poblana",
+      "ambiente": "Familiar · Informal",
+      "caracteristicasEspeciales": "Restaurante tradicional, típicas sangrías",
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Chula Cholula Helados Pirámide",
@@ -534,7 +650,13 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/Chula-Cholula-Helados_4-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/Chula-Cholula-Helados_5-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/Chula-Cholula-Helados_6-1024x1024-1.webp"
-      ]
+      ],
+      "clasificacion": "Heladería",
+      "dondeEsta": "A pocos minutos del Centro",
+      "tipoComida": "Helados artesanales",
+      "ambiente": "Familiar · Casual",
+      "caracteristicasEspeciales": "",
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Atracadero",
@@ -550,7 +672,13 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/Atracadero_cholula_1-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/Atracadero_cholula_2-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/Atracadero_cholula_4-1024x1024-1.webp"
-      ]
+      ],
+      "clasificacion": "Restaurante",
+      "dondeEsta": "Zona Centro",
+      "tipoComida": "Mariscos",
+      "ambiente": "Familiar, casual",
+      "caracteristicasEspeciales": "· Pet friendly",
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Café Tal",
@@ -565,7 +693,13 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/cafe_tal_cholula_1-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/cafe_tal_cholula_2-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/cafe_tal_cholula_3-1024x1024-1.webp"
-      ]
+      ],
+      "clasificacion": "Cafetería / Restaurante",
+      "dondeEsta": "Los Portales",
+      "tipoComida": "Cafetería y desayunos",
+      "ambiente": "Fmiliar, casual",
+      "caracteristicasEspeciales": "",
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Casona del Olvido",
@@ -582,7 +716,13 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/Casona-del-Olvido_cholula_3-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/Casona-del-Olvido_cholula_4-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/Casona-del-Olvido_cholula_5-1024x1024-1.webp"
-      ]
+      ],
+      "clasificacion": "Bar",
+      "dondeEsta": "Zona Centro",
+      "tipoComida": "Bebidas",
+      "ambiente": "Casual · Social · Nocturno",
+      "caracteristicasEspeciales": "idesl para ir con amigos",
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Ciudad Sagrada",
@@ -599,7 +739,13 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/Ciudad-Sagrada_cholula_3-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/Ciudad-Sagrada_cholula_4-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/Ciudad-Sagrada_cholula_5-1024x1024-1.webp"
-      ]
+      ],
+      "clasificacion": "Restaurante",
+      "dondeEsta": "Zona Centro",
+      "tipoComida": "Alta cocina mexicana",
+      "ambiente": "Romántico · Familiar",
+      "caracteristicasEspeciales": "Ideal para ocasiones especiales",
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Finca Ensamble",
@@ -616,7 +762,13 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/Finca-Ensamble_cholula_4-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/Finca-Ensamble_cholula_5-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/imagen-de-whatsapp-2025-07-04-a-las-14.51.27_39c432e9-1024x682-1.jpg"
-      ]
+      ],
+      "clasificacion": "Restaurante-Bar",
+      "dondeEsta": "Zona pirámide ",
+      "tipoComida": "Cocina urbana gourmet",
+      "ambiente": "Familiar · Informal",
+      "caracteristicasEspeciales": "Vinos, mezcales y cervezas, jardín, pet friendly",
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Topolino Gelateria e Caffé",
@@ -633,7 +785,13 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/Helados-Topolino_cholula_3-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/Helados-Topolino_cholula_4-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/Helados-Topolino_cholula_5-1024x1024-1.webp"
-      ]
+      ],
+      "clasificacion": "Heladería y Cafetería",
+      "dondeEsta": "Los portales",
+      "tipoComida": "Gelatos, café y postres",
+      "ambiente": "Familiar · Casual",
+      "caracteristicasEspeciales": "",
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Los Jarrones",
@@ -648,7 +806,13 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/7580f2b6-1e4e-4a70-8cab-42ab00c89eee-1024x768-1.jpg",
         "https://visitcholula.mx/wp-content/uploads/2025/11/Los-Jarrones_cholula_3-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/Los-Jarrones_cholula_4-1024x1024-1.webp"
-      ]
+      ],
+      "clasificacion": "Restaurante",
+      "dondeEsta": "Los Portales",
+      "tipoComida": "Mexicana",
+      "ambiente": "Familiar, casual",
+      "caracteristicasEspeciales": "Buffet",
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Mercado Cosme del Razo",
@@ -660,7 +824,13 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/Mercado-Cosme-del-Razo_cholula_1-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/Mercado-Cosme-del-Razo_cholula_3-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/whatsapp-image-2025-07-04-at-20.57.31-2-1024x1024-1.jpg"
-      ]
+      ],
+      "clasificacion": "Mercado",
+      "dondeEsta": "Zona Centro",
+      "tipoComida": "Comida tradicional poblana",
+      "ambiente": "Familiar",
+      "caracteristicasEspeciales": "Mercado tradicional",
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Por la Mañana by M&M",
@@ -676,7 +846,13 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/Por-La-Manana-by-mm_cholula_2-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/Por-La-Manana-by-mm_cholula_3-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/Por-La-Manana-by-mm_cholula_4-1024x1024-1.webp"
-      ]
+      ],
+      "clasificacion": "Cafetería / Restaurante",
+      "dondeEsta": "Zona Centro",
+      "tipoComida": "Desayunos y brunch",
+      "ambiente": "Tranquilo · Familiar",
+      "caracteristicasEspeciales": "",
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Restaurante y Terraza Roldán",
@@ -688,7 +864,13 @@
       },
       "imagenes": [
         "https://visitcholula.mx/wp-content/uploads/2025/11/Captura-de-pantalla-2025-11-11-a-las-10.06.42-a.m.png"
-      ]
+      ],
+      "clasificacion": "Restaurante",
+      "dondeEsta": "Zona Centro",
+      "tipoComida": "Mexicana, panadería y brunch",
+      "ambiente": "Familiar , casual",
+      "caracteristicasEspeciales": "Panadería · Brunch",
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Sangre Azteca",
@@ -698,7 +880,13 @@
       "social": {
         "instagram": "https://www.instagram.com/sangreazteca.dmf"
       },
-      "imagenes": []
+      "imagenes": [],
+      "clasificacion": "Restaurante",
+      "dondeEsta": "Zona Centro",
+      "tipoComida": "Mexicana",
+      "ambiente": "Familiar · Casual",
+      "caracteristicasEspeciales": "Cocina tradicional",
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Santōua Cholula",
@@ -708,7 +896,13 @@
       "social": {
         "instagram": "https://www.instagram.com/santouapuebla"
       },
-      "imagenes": []
+      "imagenes": [],
+      "clasificacion": "Restaurante-Bar",
+      "dondeEsta": "Zona Centro",
+      "tipoComida": "Contemporánea e internacional",
+      "ambiente": "Familiar · Romántico · Casual ·",
+      "caracteristicasEspeciales": "Italiana, Mexicana, Bar, Internacional  Pet friendly",
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "La Casa Rosa",
@@ -724,7 +918,13 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/La-Casa-Rosa_cholula_2-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/La-Casa-Rosa_cholula_3-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/La-Casa-Rosa_cholula_4-1024x1024-1.webp"
-      ]
+      ],
+      "clasificacion": "Restaurante",
+      "dondeEsta": "Zona Centro",
+      "tipoComida": "Comida tradicional",
+      "ambiente": "Informal, ",
+      "caracteristicasEspeciales": "",
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "El Supremo Café & Tocino",
@@ -734,7 +934,13 @@
       "social": {
         "instagram": "https://www.instagram.com/cafetocino"
       },
-      "imagenes": []
+      "imagenes": [],
+      "clasificacion": "Cafetería / Restaurante",
+      "dondeEsta": "Zona Centro",
+      "tipoComida": "Desayunos y brunch",
+      "ambiente": "Familiar · Casual · Tranquilo",
+      "caracteristicasEspeciales": "Porciones abundantes",
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Dang",
@@ -750,7 +956,13 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/Dang-2.jpg",
         "https://visitcholula.mx/wp-content/uploads/2025/11/Dang-3.jpg",
         "https://visitcholula.mx/wp-content/uploads/2025/11/Dang-5.jpg"
-      ]
+      ],
+      "clasificacion": "Restaurante",
+      "dondeEsta": "Zona Centro",
+      "tipoComida": "Ramen y asiática",
+      "ambiente": "Casual · Social",
+      "caracteristicasEspeciales": "Street food asiática",
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Chula Cholula Helados",
@@ -767,7 +979,13 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/Chula-Cholula-Helados_4-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/Chula-Cholula-Helados_5-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/Chula-Cholula-Helados_6-1024x1024-1.webp"
-      ]
+      ],
+      "clasificacion": "Heladería",
+      "dondeEsta": "A pocos minutos del Centro",
+      "tipoComida": "Helados artesanales",
+      "ambiente": "Familiar · Casual",
+      "caracteristicasEspeciales": "",
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Restaurante El Establo",
@@ -781,7 +999,13 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/1000640047.jpg",
         "https://visitcholula.mx/wp-content/uploads/2025/11/1000732840.jpg",
         "https://visitcholula.mx/wp-content/uploads/2025/11/1000737093.jpg"
-      ]
+      ],
+      "clasificacion": "Restaurante",
+      "dondeEsta": "Zona Centro",
+      "tipoComida": "Comida mexicana",
+      "ambiente": "Familiar",
+      "caracteristicasEspeciales": "Buffet viernes, sábado y domingo",
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "La Pirámide",
@@ -795,7 +1019,13 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/Captura-de-pantalla-2025-10-20-a-las-1.27.24-p.m.png",
         "https://visitcholula.mx/wp-content/uploads/2025/11/Captura-de-pantalla-2025-10-20-a-las-1.27.34-p.m.png",
         "https://visitcholula.mx/wp-content/uploads/2025/11/Captura-de-pantalla-2025-10-20-a-las-1.28.00-p.m.png"
-      ]
+      ],
+      "clasificacion": "Restaurante",
+      "dondeEsta": "Zona Pirámide",
+      "tipoComida": "Comida típica",
+      "ambiente": "Informal · Casual",
+      "caracteristicasEspeciales": "Vista cercana a la Pirámide",
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Allora",
@@ -811,7 +1041,13 @@
         "https://visitcholula.mx/wp-content/uploads/2026/03/image1.jpeg",
         "https://visitcholula.mx/wp-content/uploads/2026/03/image4.jpeg",
         "https://visitcholula.mx/wp-content/uploads/2026/03/image2.jpeg"
-      ]
+      ],
+      "clasificacion": "Restaurante",
+      "dondeEsta": "Zona Centro",
+      "tipoComida": "Italiana",
+      "ambiente": "Romántico · Elegante",
+      "caracteristicasEspeciales": "Vistas espectaculares",
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Jazzatlán Cholula",
@@ -828,7 +1064,13 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/Jazzatlan_cholula_2-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/Jazzatlan_cholula_4-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/Jazzatlan_cholula_5-1024x1024-1.webp"
-      ]
+      ],
+      "clasificacion": "Restaurante-Bar",
+      "dondeEsta": "Zona Centro",
+      "tipoComida": "comida internacional, cerveza artesanal",
+      "ambiente": "Social · Cultural · Casual",
+      "caracteristicasEspeciales": "Música en vivo todo los días, club de jazz",
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Cervecería Crazy Moon",
@@ -845,7 +1087,13 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/Cerveceria-Crazy-Moon_cholula_3-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/Cerveceria-Crazy-Moon_cholula_4-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/Cerveceria-Crazy-Moon_cholula_5-1024x1024-1.webp"
-      ]
+      ],
+      "clasificacion": "Bar",
+      "dondeEsta": "Zona Centro",
+      "tipoComida": "Cerveza artesanal",
+      "ambiente": "Informal · Social",
+      "caracteristicasEspeciales": "Brewpub",
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "La Enamorada",
@@ -864,7 +1112,13 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/La-Enamorada_cholula_4-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/La-Enamorada_cholula_5-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/La-Enamorada_cholula_7-1024x1024-1.webp"
-      ]
+      ],
+      "clasificacion": "Restaurante-Bar",
+      "dondeEsta": "Los Portales",
+      "tipoComida": "Comida tradicional",
+      "ambiente": "Romántico · Social · Informal",
+      "caracteristicasEspeciales": "Música en vivo ",
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Licorería San Pedrito",
@@ -881,7 +1135,13 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/Licoreria-San-Pedrito_cholula_3-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/Licoreria-San-Pedrito_cholula_4-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/licoreria-san-pedrito-1024x1024-1.webp"
-      ]
+      ],
+      "clasificacion": "Bar",
+      "dondeEsta": "Zona Centro",
+      "tipoComida": "Botanas y bebidas",
+      "ambiente": "Casual · Social · Nocturno",
+      "caracteristicasEspeciales": "No acepta reservaciones",
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Cholulice",
@@ -891,7 +1151,13 @@
       "social": {
         "instagram": "https://www.instagram.com/Cholulice"
       },
-      "imagenes": []
+      "imagenes": [],
+      "clasificacion": "Heladería / Cafetería",
+      "dondeEsta": "Zona Centro",
+      "tipoComida": "Helados en rollo, waffles y café",
+      "ambiente": "Familiar · Casual",
+      "caracteristicasEspeciales": "",
+      "horario": "08:00-22:00"
     }
   ],
   "queHacer": [
@@ -912,7 +1178,8 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/Turibike_cholula_3-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/Turibike_cholula_4-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/Turibike_cholula_5-1024x1024-1.webp"
-      ]
+      ],
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Turiwheel",
@@ -934,7 +1201,8 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/Turiwheel_cholula_7-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/Turiwheel_cholula_8-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/Turiwheel_cholula_9-1024x1024-1.webp"
-      ]
+      ],
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "2RB (2 Ruedas Bueno)",
@@ -953,7 +1221,8 @@
         "https://visitcholula.mx/wp-content/uploads/2026/03/2.jpg",
         "https://visitcholula.mx/wp-content/uploads/2026/03/3.jpg",
         "https://visitcholula.mx/wp-content/uploads/2026/03/5.jpeg"
-      ]
+      ],
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "Tour Cholula Free Walk Tour",
@@ -963,7 +1232,8 @@
       "social": {
         "instagram": "https://www.instagram.com/freewalktourcholula"
       },
-      "imagenes": []
+      "imagenes": [],
+      "horario": "08:00-22:00"
     }
   ],
   "guiasTuristicos": [
@@ -977,7 +1247,8 @@
       "paginaFacebook": "Guías Turísticos de Cholula",
       "imagenes": [
         "https://visitcholula.mx/wp-content/uploads/2025/11/Guias_turisticos_Alejandra-Toxqui-1024x1024-1.jpg"
-      ]
+      ],
+      "horario": "08:00-22:00"
     },
     {
       "nombre": "2RB (2 Ruedas Bueno)",
@@ -994,7 +1265,8 @@
         "https://visitcholula.mx/wp-content/uploads/2026/03/2.jpg",
         "https://visitcholula.mx/wp-content/uploads/2026/03/4.jpg",
         "https://visitcholula.mx/wp-content/uploads/2026/03/1.jpeg"
-      ]
+      ],
+      "horario": "08:00-22:00"
     }
   ]
 }
