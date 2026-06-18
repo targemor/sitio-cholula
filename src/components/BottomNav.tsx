@@ -39,10 +39,10 @@ const UserIcon = ({ className }: { className?: string }) => (
 );
 
 const navItems = [
-    { id: 'destinos', label: 'Explora', href: '/#destinos', icon: PaperPlaneIcon },
-    { id: 'hoteles', label: 'Hoteles', href: '/#hoteles', icon: HomeIcon },
-    { id: 'restaurantes', label: 'Cocina', href: '/#restaurantes', icon: UtensilsIcon },
-    { id: 'guias', label: 'Guías', href: '/#guias', icon: UserIcon },
+    { id: 'destinos', label: 'Explora', href: '/que-hacer', icon: PaperPlaneIcon },
+    { id: 'hoteles', label: 'Hoteles', href: '/donde-hospedarse', icon: HomeIcon },
+    { id: 'restaurantes', label: 'Cocina', href: '/donde-comer', icon: UtensilsIcon },
+    { id: 'guias', label: 'Guías', href: '/guias-turisticos', icon: UserIcon },
 ];
 
 export default function BottomNav() {
@@ -54,11 +54,7 @@ export default function BottomNav() {
 
         let matched = false;
         for (const item of navItems) {
-            if (hash && item.href.includes(hash)) {
-                setActiveItem(item.id);
-                matched = true;
-                break;
-            } else if (pathname.includes(item.href.replace('/#', ''))) {
+            if (pathname.startsWith(item.href)) {
                 setActiveItem(item.id);
                 matched = true;
                 break;
