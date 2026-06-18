@@ -39,7 +39,7 @@ const UserIcon = ({ className }: { className?: string }) => (
 );
 
 const navItems = [
-    { id: 'destinos', label: 'Explora', href: '/que-hacer', icon: PaperPlaneIcon },
+    { id: 'destinos', label: 'Explora', href: '/#hero', icon: PaperPlaneIcon },
     { id: 'hoteles', label: 'Hoteles', href: '/donde-hospedarse', icon: HomeIcon },
     { id: 'restaurantes', label: 'Cocina', href: '/donde-comer', icon: UtensilsIcon },
     { id: 'guias', label: 'Guías', href: '/guias-turisticos', icon: UserIcon },
