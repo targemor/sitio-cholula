@@ -19,7 +19,17 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_manmsion_azul_cholula_4-1024x1024-1.jpg"
       ],
       "estrellas": 5,
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "08:00-22:00",
+        "detalle": "Lun-Dom: 08:00–22:00",
+        "lunes": "08:00-22:00",
+        "martes": "08:00-22:00",
+        "miercoles": "08:00-22:00",
+        "jueves": "08:00-22:00",
+        "viernes": "08:00-22:00",
+        "sabado": "08:00-22:00",
+        "domingo": "08:00-22:00"
+      }
     },
     {
       "nombre": "Hotel Tila",
@@ -36,7 +46,17 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_tila_cholula_3-1024x1024-1.jpg"
       ],
       "estrellas": 5,
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "08:00-22:00",
+        "detalle": "Lun-Dom: 08:00–22:00",
+        "lunes": "08:00-22:00",
+        "martes": "08:00-22:00",
+        "miercoles": "08:00-22:00",
+        "jueves": "08:00-22:00",
+        "viernes": "08:00-22:00",
+        "sabado": "08:00-22:00",
+        "domingo": "08:00-22:00"
+      }
     },
     {
       "nombre": "Cálido Cosmos Hotel",
@@ -56,7 +76,17 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_cosmos_hotel_cholula_3-1024x1024-1.webp"
       ],
       "estrellas": 4,
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "08:00-22:00",
+        "detalle": "Lun-Dom: 08:00–22:00",
+        "lunes": "08:00-22:00",
+        "martes": "08:00-22:00",
+        "miercoles": "08:00-22:00",
+        "jueves": "08:00-22:00",
+        "viernes": "08:00-22:00",
+        "sabado": "08:00-22:00",
+        "domingo": "08:00-22:00"
+      }
     },
     {
       "nombre": "Santa Josefita Bed & Breakfast",
@@ -77,7 +107,17 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/santa_josefita_cholula_4-1024x1024-1.webp"
       ],
       "estrellas": 4,
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "08:00-22:00",
+        "detalle": "Lun-Dom: 08:00–22:00",
+        "lunes": "08:00-22:00",
+        "martes": "08:00-22:00",
+        "miercoles": "08:00-22:00",
+        "jueves": "08:00-22:00",
+        "viernes": "08:00-22:00",
+        "sabado": "08:00-22:00",
+        "domingo": "08:00-22:00"
+      }
     },
     {
       "nombre": "Hotel MS Portales",
@@ -102,7 +142,17 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/WhatsApp-Image-2025-06-27-at-3.22.55-PM-1024x1024-1.jpg"
       ],
       "estrellas": 3,
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "08:00-22:00",
+        "detalle": "Lun-Dom: 08:00–22:00",
+        "lunes": "08:00-22:00",
+        "martes": "08:00-22:00",
+        "miercoles": "08:00-22:00",
+        "jueves": "08:00-22:00",
+        "viernes": "08:00-22:00",
+        "sabado": "08:00-22:00",
+        "domingo": "08:00-22:00"
+      }
     },
     {
       "nombre": "Quinta Alhóndiga Galindo",
@@ -126,7 +176,17 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/quinta_alhondiga_galindo_cholula_5-1024x1024-1.webp"
       ],
       "estrellas": 3,
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "08:00-22:00",
+        "detalle": "Lun-Dom: 08:00–22:00",
+        "lunes": "08:00-22:00",
+        "martes": "08:00-22:00",
+        "miercoles": "08:00-22:00",
+        "jueves": "08:00-22:00",
+        "viernes": "08:00-22:00",
+        "sabado": "08:00-22:00",
+        "domingo": "08:00-22:00"
+      }
     },
     {
       "nombre": "Hotel los Remedios",
@@ -147,7 +207,17 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/santa_josefita_cholula-1024x1024-1-1.webp"
       ],
       "estrellas": 4,
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "08:00-22:00",
+        "detalle": "Lun-Dom: 08:00–22:00",
+        "lunes": "08:00-22:00",
+        "martes": "08:00-22:00",
+        "miercoles": "08:00-22:00",
+        "jueves": "08:00-22:00",
+        "viernes": "08:00-22:00",
+        "sabado": "08:00-22:00",
+        "domingo": "08:00-22:00"
+      }
     },
     {
       "nombre": "Hotel Entre Volcanes",
@@ -169,7 +239,17 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_entre_volcanes_cholula-1024x1024-1.webp"
       ],
       "estrellas": 0,
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "08:00-22:00",
+        "detalle": "Lun-Dom: 08:00–22:00",
+        "lunes": "08:00-22:00",
+        "martes": "08:00-22:00",
+        "miercoles": "08:00-22:00",
+        "jueves": "08:00-22:00",
+        "viernes": "08:00-22:00",
+        "sabado": "08:00-22:00",
+        "domingo": "08:00-22:00"
+      }
     },
     {
       "nombre": "Hotel Santa Irene",
@@ -188,7 +268,17 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/hote_santa_irene_5-1024x1024-1.webp"
       ],
       "estrellas": 0,
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "08:00-22:00",
+        "detalle": "Lun-Dom: 08:00–22:00",
+        "lunes": "08:00-22:00",
+        "martes": "08:00-22:00",
+        "miercoles": "08:00-22:00",
+        "jueves": "08:00-22:00",
+        "viernes": "08:00-22:00",
+        "sabado": "08:00-22:00",
+        "domingo": "08:00-22:00"
+      }
     },
     {
       "nombre": "La Huerta Golf & Hotel",
@@ -205,7 +295,17 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_la_huerta_cholula-scaled-e1762831758938.webp"
       ],
       "estrellas": 0,
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "08:00-22:00",
+        "detalle": "Lun-Dom: 08:00–22:00",
+        "lunes": "08:00-22:00",
+        "martes": "08:00-22:00",
+        "miercoles": "08:00-22:00",
+        "jueves": "08:00-22:00",
+        "viernes": "08:00-22:00",
+        "sabado": "08:00-22:00",
+        "domingo": "08:00-22:00"
+      }
     },
     {
       "nombre": "Hotel Los Sauces",
@@ -226,7 +326,17 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_los_sauces_cholula-scaled.webp"
       ],
       "estrellas": 0,
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "08:00-22:00",
+        "detalle": "Lun-Dom: 08:00–22:00",
+        "lunes": "08:00-22:00",
+        "martes": "08:00-22:00",
+        "miercoles": "08:00-22:00",
+        "jueves": "08:00-22:00",
+        "viernes": "08:00-22:00",
+        "sabado": "08:00-22:00",
+        "domingo": "08:00-22:00"
+      }
     },
     {
       "nombre": "Casa Chanehque",
@@ -248,7 +358,17 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_casa_chanehque_cholula_5-1024x1024-1.png"
       ],
       "estrellas": 0,
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "08:00-22:00",
+        "detalle": "Lun-Dom: 08:00–22:00",
+        "lunes": "08:00-22:00",
+        "martes": "08:00-22:00",
+        "miercoles": "08:00-22:00",
+        "jueves": "08:00-22:00",
+        "viernes": "08:00-22:00",
+        "sabado": "08:00-22:00",
+        "domingo": "08:00-22:00"
+      }
     },
     {
       "nombre": "Hotel Choloa",
@@ -270,7 +390,17 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_cheloa_cholula-1024x1024-1.webp"
       ],
       "estrellas": 0,
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "08:00-22:00",
+        "detalle": "Lun-Dom: 08:00–22:00",
+        "lunes": "08:00-22:00",
+        "martes": "08:00-22:00",
+        "miercoles": "08:00-22:00",
+        "jueves": "08:00-22:00",
+        "viernes": "08:00-22:00",
+        "sabado": "08:00-22:00",
+        "domingo": "08:00-22:00"
+      }
     },
     {
       "nombre": "Hotel Ramadá Encore",
@@ -290,7 +420,17 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_ramada_cholula-1024x1024-1.webp"
       ],
       "estrellas": 0,
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "08:00-22:00",
+        "detalle": "Lun-Dom: 08:00–22:00",
+        "lunes": "08:00-22:00",
+        "martes": "08:00-22:00",
+        "miercoles": "08:00-22:00",
+        "jueves": "08:00-22:00",
+        "viernes": "08:00-22:00",
+        "sabado": "08:00-22:00",
+        "domingo": "08:00-22:00"
+      }
     },
     {
       "nombre": "Hotel Reforma",
@@ -311,7 +451,17 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_reforma_cholula-1024x1024-1.webp"
       ],
       "estrellas": 0,
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "08:00-22:00",
+        "detalle": "Lun-Dom: 08:00–22:00",
+        "lunes": "08:00-22:00",
+        "martes": "08:00-22:00",
+        "miercoles": "08:00-22:00",
+        "jueves": "08:00-22:00",
+        "viernes": "08:00-22:00",
+        "sabado": "08:00-22:00",
+        "domingo": "08:00-22:00"
+      }
     },
     {
       "nombre": "Hotel Marmoy",
@@ -332,7 +482,17 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_cheloa_cholula-1024x1024-1.webp"
       ],
       "estrellas": 0,
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "08:00-22:00",
+        "detalle": "Lun-Dom: 08:00–22:00",
+        "lunes": "08:00-22:00",
+        "martes": "08:00-22:00",
+        "miercoles": "08:00-22:00",
+        "jueves": "08:00-22:00",
+        "viernes": "08:00-22:00",
+        "sabado": "08:00-22:00",
+        "domingo": "08:00-22:00"
+      }
     }
   ],
   "restaurantes": [
@@ -359,7 +519,17 @@
       "tipoComida": "Mexicana, pizzas, pastas, cafés",
       "ambiente": "Familiar · Pareja · Amigos · Informal",
       "caracteristicasEspeciales": "Con Patio",
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "09:00-21:00",
+        "detalle": "Mar-Mié: 09:00–16:30 • Jue-Vie: 10:00–21:00 • Sáb: 09:00–21:00 • Dom: 09:00–17:30",
+        "lunes": "cerrado",
+        "martes": "09:00-16:30",
+        "miercoles": "09:00-16:30",
+        "jueves": "10:00-21:00",
+        "viernes": "10:00-21:00",
+        "sabado": "09:00-21:00",
+        "domingo": "09:00-17:30"
+      }
     },
     {
       "nombre": "Churrería Las Duyas",
@@ -382,7 +552,17 @@
       "tipoComida": "Churros y chocolate",
       "ambiente": "Familiar · Casual",
       "caracteristicasEspeciales": "Desayunos",
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "08:30-23:30",
+        "detalle": "Lun-Dom: 08:30–23:30",
+        "lunes": "08:30-23:30",
+        "martes": "08:30-23:30",
+        "miercoles": "08:30-23:30",
+        "jueves": "08:30-23:30",
+        "viernes": "08:30-23:30",
+        "sabado": "08:30-23:30",
+        "domingo": "08:30-23:30"
+      }
     },
     {
       "nombre": "Atracadero Jardín",
@@ -403,7 +583,17 @@
       "tipoComida": "Mariscos",
       "ambiente": "Familiar, espacio para niños",
       "caracteristicasEspeciales": "Restaurante con jardín, · Pet friendly",
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "12:00-20:00",
+        "detalle": "Lun: 12:00–20:00 • Mar-Mié: cerrado • Jue-Dom: 12:00–20:00",
+        "lunes": "12:00-20:00",
+        "martes": "cerrado",
+        "miercoles": "cerrado",
+        "jueves": "12:00-20:00",
+        "viernes": "12:00-20:00",
+        "sabado": "12:00-20:00",
+        "domingo": "12:00-20:00"
+      }
     },
     {
       "nombre": "Caravana",
@@ -424,8 +614,18 @@
       "dondeEsta": "Zona Centro",
       "tipoComida": "Tacos",
       "ambiente": "Familiar, informal",
-      "caracteristicasEspeciales": "Tecos de barra y banqueta",
-      "horario": "08:00-22:00"
+      "caracteristicasEspeciales": "Tacos de barra y banqueta",
+      "horario": {
+        "resumen": "10:00-22:30",
+        "detalle": "Jue: 10:00–16:00 • Vie-Sáb: 10:00–22:30 • Dom: 10:00–17:30",
+        "lunes": "cerrado",
+        "martes": "cerrado",
+        "miercoles": "cerrado",
+        "jueves": "10:00-16:00",
+        "viernes": "10:00-22:30",
+        "sabado": "10:00-22:30",
+        "domingo": "10:00-17:30"
+      }
     },
     {
       "nombre": "Payeca Chocolatería",
@@ -446,7 +646,17 @@
       "tipoComida": "Cacao, café, postres y alimentos",
       "ambiente": "Familiar · Romántico · Informal · ",
       "caracteristicasEspeciales": " Pet friendly",
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "10:00-22:00",
+        "detalle": "Lun: 10:00–22:00 • Mié: 10:00–21:30 • Jue-Dom: 10:00–22:00",
+        "lunes": "10:00-22:00",
+        "martes": "cerrado",
+        "miercoles": "10:00-21:30",
+        "jueves": "10:00-22:00",
+        "viernes": "10:00-22:00",
+        "sabado": "10:00-22:00",
+        "domingo": "10:00-22:00"
+      }
     },
     {
       "nombre": "Sagrata",
@@ -468,7 +678,17 @@
       "tipoComida": "Cocina tradicional poblana/mexicana",
       "ambiente": "Familiar",
       "caracteristicasEspeciales": "Comida mexicana ",
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "08:00-19:00",
+        "detalle": "Lun-Dom: 08:00–19:00",
+        "lunes": "08:00-19:00",
+        "martes": "08:00-19:00",
+        "miercoles": "08:00-19:00",
+        "jueves": "08:00-19:00",
+        "viernes": "08:00-19:00",
+        "sabado": "08:00-19:00",
+        "domingo": "08:00-19:00"
+      }
     },
     {
       "nombre": "Urucú",
@@ -490,7 +710,17 @@
       "tipoComida": "Cochinita pibil y achiote",
       "ambiente": "Familiar · Informal · ",
       "caracteristicasEspeciales": "Pet friendly",
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "12:00-18:30",
+        "detalle": "Mar-Dom: 12:00–18:30",
+        "lunes": "cerrado",
+        "martes": "12:00-18:30",
+        "miercoles": "12:00-18:30",
+        "jueves": "12:00-18:30",
+        "viernes": "12:00-18:30",
+        "sabado": "12:00-18:30",
+        "domingo": "12:00-18:30"
+      }
     },
     {
       "nombre": "Fonda Santa Clara",
@@ -513,7 +743,17 @@
       "tipoComida": "Mexicana tradicional",
       "ambiente": "Familiar",
       "caracteristicasEspeciales": "Comida mexicana",
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "09:00-21:00",
+        "detalle": "Lun-Dom: 09:00–21:00",
+        "lunes": "09:00-21:00",
+        "martes": "09:00-21:00",
+        "miercoles": "09:00-21:00",
+        "jueves": "09:00-21:00",
+        "viernes": "09:00-21:00",
+        "sabado": "09:00-21:00",
+        "domingo": "09:00-21:00"
+      }
     },
     {
       "nombre": "Divará Campestre",
@@ -536,7 +776,17 @@
       "tipoComida": "Italiana / pizzas",
       "ambiente": "Familiar, espacio para niños",
       "caracteristicasEspeciales": "Jardín",
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "08:30-00:00",
+        "detalle": "Lun-Jue: 08:30–23:00 • Vie-Sáb: 08:30–00:00 • Dom: 08:30–19:00",
+        "lunes": "08:30-23:00",
+        "martes": "08:30-23:00",
+        "miercoles": "08:30-23:00",
+        "jueves": "08:30-23:00",
+        "viernes": "08:30-00:00",
+        "sabado": "08:30-00:00",
+        "domingo": "08:30-19:00"
+      }
     },
     {
       "nombre": "Corazón de San Pedro",
@@ -558,7 +808,17 @@
       "tipoComida": "Revisar",
       "ambiente": "Romántico · Familiar",
       "caracteristicasEspeciales": "Ideal para cenas",
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "13:30-23:30",
+        "detalle": "Lun-Sáb: 14:30–23:30 • Dom: 13:30–18:30",
+        "lunes": "14:30-23:30",
+        "martes": "14:30-23:30",
+        "miercoles": "14:30-23:30",
+        "jueves": "14:30-23:30",
+        "viernes": "14:30-23:30",
+        "sabado": "14:30-23:30",
+        "domingo": "13:30-18:30"
+      }
     },
     {
       "nombre": "Tacos Vehkem",
@@ -580,7 +840,17 @@
       "tipoComida": "Tacos",
       "ambiente": "Familiar, informal",
       "caracteristicasEspeciales": "",
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "11:00-23:00",
+        "detalle": "Lun-Jue: 11:00–22:00 • Vie-Sáb: 11:00–23:00 • Dom: 11:00–22:00",
+        "lunes": "11:00-22:00",
+        "martes": "11:00-22:00",
+        "miercoles": "11:00-22:00",
+        "jueves": "11:00-22:00",
+        "viernes": "11:00-23:00",
+        "sabado": "11:00-23:00",
+        "domingo": "11:00-22:00"
+      }
     },
     {
       "nombre": "Casa Relámpago",
@@ -599,7 +869,17 @@
       "tipoComida": "Destilados y cervezas",
       "ambiente": "Social / Nocturno",
       "caracteristicasEspeciales": "música de los 80's los miércoles, idezl para ir con amigos ",
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "13:00-02:00",
+        "detalle": "Mar-Mié: 17:00–00:00 • Jue: 17:00–02:00 • Vie-Sáb: 16:00–02:00 • Dom: 13:00–20:00",
+        "lunes": "cerrado",
+        "martes": "17:00-00:00",
+        "miercoles": "17:00-00:00",
+        "jueves": "17:00-02:00",
+        "viernes": "16:00-02:00",
+        "sabado": "16:00-02:00",
+        "domingo": "13:00-20:00"
+      }
     },
     {
       "nombre": "Divará Centro",
@@ -622,7 +902,17 @@
       "tipoComida": "Italiana / pizzas",
       "ambiente": "Romántico, casual ",
       "caracteristicasEspeciales": "",
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "08:30-23:30",
+        "detalle": "Lun-Sáb: 08:30–23:30 • Dom: 08:30–19:00",
+        "lunes": "08:30-23:30",
+        "martes": "08:30-23:30",
+        "miercoles": "08:30-23:30",
+        "jueves": "08:30-23:30",
+        "viernes": "08:30-23:30",
+        "sabado": "08:30-23:30",
+        "domingo": "08:30-19:00"
+      }
     },
     {
       "nombre": "La Lunita Restaurante",
@@ -646,7 +936,17 @@
       "tipoComida": "Comida tradicional poblana",
       "ambiente": "Familiar · Informal",
       "caracteristicasEspeciales": "Restaurante tradicional, típicas sangrías",
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "09:00-21:00",
+        "detalle": "Lun-Sáb: 09:00–21:00 • Dom: 09:00–18:00",
+        "lunes": "09:00-21:00",
+        "martes": "09:00-21:00",
+        "miercoles": "09:00-21:00",
+        "jueves": "09:00-21:00",
+        "viernes": "09:00-21:00",
+        "sabado": "09:00-21:00",
+        "domingo": "09:00-18:00"
+      }
     },
     {
       "nombre": "Chula Cholula Helados Pirámide",
@@ -669,7 +969,17 @@
       "tipoComida": "Helados artesanales",
       "ambiente": "Familiar · Casual",
       "caracteristicasEspeciales": "",
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "11:00-19:00",
+        "detalle": "Lun-Dom: 11:00–19:00",
+        "lunes": "11:00-19:00",
+        "martes": "11:00-19:00",
+        "miercoles": "11:00-19:00",
+        "jueves": "11:00-19:00",
+        "viernes": "11:00-19:00",
+        "sabado": "11:00-19:00",
+        "domingo": "11:00-19:00"
+      }
     },
     {
       "nombre": "Atracadero",
@@ -691,7 +1001,17 @@
       "tipoComida": "Mariscos",
       "ambiente": "Familiar, casual",
       "caracteristicasEspeciales": "· Pet friendly",
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "11:00-19:00",
+        "detalle": "Lun-Vie: 11:30–18:30 • Sáb-Dom: 11:00–19:00",
+        "lunes": "11:30-18:30",
+        "martes": "11:30-18:30",
+        "miercoles": "11:30-18:30",
+        "jueves": "11:30-18:30",
+        "viernes": "11:30-18:30",
+        "sabado": "11:00-19:00",
+        "domingo": "11:00-19:00"
+      }
     },
     {
       "nombre": "Café Tal",
@@ -712,7 +1032,17 @@
       "tipoComida": "Cafetería y desayunos",
       "ambiente": "Fmiliar, casual",
       "caracteristicasEspeciales": "",
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "08:00-23:30",
+        "detalle": "Lun-Mar: 08:00–23:30 • Jue-Sáb: 08:00–23:30 • Dom: 08:00–23:00",
+        "lunes": "08:00-23:30",
+        "martes": "08:00-23:30",
+        "miercoles": "cerrado",
+        "jueves": "08:00-23:30",
+        "viernes": "08:00-23:30",
+        "sabado": "08:00-23:30",
+        "domingo": "08:00-23:00"
+      }
     },
     {
       "nombre": "Casona del Olvido",
@@ -735,7 +1065,17 @@
       "tipoComida": "Bebidas",
       "ambiente": "Casual · Social · Nocturno",
       "caracteristicasEspeciales": "idesl para ir con amigos",
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "19:00-02:30",
+        "detalle": "Mié-Dom: 19:00–02:30",
+        "lunes": "cerrado",
+        "martes": "cerrado",
+        "miercoles": "19:00-02:30",
+        "jueves": "19:00-02:30",
+        "viernes": "19:00-02:30",
+        "sabado": "19:00-02:30",
+        "domingo": "19:00-02:30"
+      }
     },
     {
       "nombre": "Ciudad Sagrada",
@@ -758,7 +1098,17 @@
       "tipoComida": "Alta cocina mexicana",
       "ambiente": "Romántico · Familiar",
       "caracteristicasEspeciales": "Ideal para ocasiones especiales",
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "08:00-00:00",
+        "detalle": "Lun-Mié: 08:00–23:00 • Jue-Sáb: 08:00–00:00 • Dom: 08:00–18:00",
+        "lunes": "08:00-23:00",
+        "martes": "08:00-23:00",
+        "miercoles": "08:00-23:00",
+        "jueves": "08:00-00:00",
+        "viernes": "08:00-00:00",
+        "sabado": "08:00-00:00",
+        "domingo": "08:00-18:00"
+      }
     },
     {
       "nombre": "Finca Ensamble",
@@ -781,7 +1131,17 @@
       "tipoComida": "Cocina urbana gourmet",
       "ambiente": "Familiar · Informal",
       "caracteristicasEspeciales": "Vinos, mezcales y cervezas, jardín, pet friendly",
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "12:00-00:00",
+        "detalle": "Mar-Jue: 13:00–23:00 • Vie-Sáb: 13:00–00:00 • Dom: 12:00–20:00",
+        "lunes": "cerrado",
+        "martes": "13:00-23:00",
+        "miercoles": "13:00-23:00",
+        "jueves": "13:00-23:00",
+        "viernes": "13:00-00:00",
+        "sabado": "13:00-00:00",
+        "domingo": "12:00-20:00"
+      }
     },
     {
       "nombre": "Topolino Gelateria e Caffé",
@@ -804,7 +1164,17 @@
       "tipoComida": "Gelatos, café y postres",
       "ambiente": "Familiar · Casual",
       "caracteristicasEspeciales": "",
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "11:00-21:30",
+        "detalle": "Lun-Dom: 11:00–21:30",
+        "lunes": "11:00-21:30",
+        "martes": "11:00-21:30",
+        "miercoles": "11:00-21:30",
+        "jueves": "11:00-21:30",
+        "viernes": "11:00-21:30",
+        "sabado": "11:00-21:30",
+        "domingo": "11:00-21:30"
+      }
     },
     {
       "nombre": "Los Jarrones",
@@ -825,7 +1195,17 @@
       "tipoComida": "Mexicana",
       "ambiente": "Familiar, casual",
       "caracteristicasEspeciales": "Buffet",
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "08:00-23:00",
+        "detalle": "Lun: 08:00–23:00 • Mar: cerrado • Mié-Dom: 08:00–23:00",
+        "lunes": "08:00-23:00",
+        "martes": "cerrado",
+        "miercoles": "08:00-23:00",
+        "jueves": "08:00-23:00",
+        "viernes": "08:00-23:00",
+        "sabado": "08:00-23:00",
+        "domingo": "08:00-23:00"
+      }
     },
     {
       "nombre": "Mercado Cosme del Razo",
@@ -843,7 +1223,17 @@
       "tipoComida": "Comida tradicional poblana",
       "ambiente": "Familiar",
       "caracteristicasEspeciales": "Mercado tradicional",
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "08:00-20:00",
+        "detalle": "Lun-Sáb: 08:00–20:00 • Dom: 09:00–18:00",
+        "lunes": "08:00-20:00",
+        "martes": "08:00-20:00",
+        "miercoles": "08:00-20:00",
+        "jueves": "08:00-20:00",
+        "viernes": "08:00-20:00",
+        "sabado": "08:00-20:00",
+        "domingo": "09:00-18:00"
+      }
     },
     {
       "nombre": "Por la Mañana by M&M",
@@ -865,7 +1255,17 @@
       "tipoComida": "Desayunos y brunch",
       "ambiente": "Tranquilo · Familiar",
       "caracteristicasEspeciales": "",
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "08:30-14:30",
+        "detalle": "Lun-Dom: 08:30–14:30",
+        "lunes": "08:30-14:30",
+        "martes": "08:30-14:30",
+        "miercoles": "08:30-14:30",
+        "jueves": "08:30-14:30",
+        "viernes": "08:30-14:30",
+        "sabado": "08:30-14:30",
+        "domingo": "08:30-14:30"
+      }
     },
     {
       "nombre": "Restaurante y Terraza Roldán",
@@ -883,7 +1283,17 @@
       "tipoComida": "Mexicana, panadería y brunch",
       "ambiente": "Familiar , casual",
       "caracteristicasEspeciales": "Panadería · Brunch",
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "08:00-23:00",
+        "detalle": "Lun: 08:00–14:00 • Mar-Mié: 08:00–22:00 • Jue-Sáb: 08:00–23:00 • Dom: 08:00–21:00",
+        "lunes": "08:00-14:00",
+        "martes": "08:00-22:00",
+        "miercoles": "08:00-22:00",
+        "jueves": "08:00-23:00",
+        "viernes": "08:00-23:00",
+        "sabado": "08:00-23:00",
+        "domingo": "08:00-21:00"
+      }
     },
     {
       "nombre": "Sangre Azteca",
@@ -906,7 +1316,17 @@
       "tipoComida": "Mexicana",
       "ambiente": "Familiar · Casual",
       "caracteristicasEspeciales": "Cocina tradicional",
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "09:00-01:00",
+        "detalle": "Mar-Mié: 12:00–22:00 • Jue-Vie: 12:00–00:00 • Sáb: 09:00–01:00 • Dom: 09:00–00:00",
+        "lunes": "cerrado",
+        "martes": "12:00-22:00",
+        "miercoles": "12:00-22:00",
+        "jueves": "12:00-00:00",
+        "viernes": "12:00-00:00",
+        "sabado": "09:00-01:00",
+        "domingo": "09:00-00:00"
+      }
     },
     {
       "nombre": "Santōua Cholula",
@@ -928,7 +1348,17 @@
       "tipoComida": "Contemporánea e internacional",
       "ambiente": "Familiar · Romántico · Casual ·",
       "caracteristicasEspeciales": "Italiana, Mexicana, Bar, Internacional  Pet friendly",
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "09:00-00:00",
+        "detalle": "Lun-Jue: 09:00–23:00 • Vie-Sáb: 09:00–00:00 • Dom: 09:00–22:00",
+        "lunes": "09:00-23:00",
+        "martes": "09:00-23:00",
+        "miercoles": "09:00-23:00",
+        "jueves": "09:00-23:00",
+        "viernes": "09:00-00:00",
+        "sabado": "09:00-00:00",
+        "domingo": "09:00-22:00"
+      }
     },
     {
       "nombre": "La Casa Rosa",
@@ -950,7 +1380,17 @@
       "tipoComida": "Comida tradicional",
       "ambiente": "Informal, ",
       "caracteristicasEspeciales": "",
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "11:00-21:00",
+        "detalle": "Mar-Dom: 11:00–21:00",
+        "lunes": "cerrado",
+        "martes": "11:00-21:00",
+        "miercoles": "11:00-21:00",
+        "jueves": "11:00-21:00",
+        "viernes": "11:00-21:00",
+        "sabado": "11:00-21:00",
+        "domingo": "11:00-21:00"
+      }
     },
     {
       "nombre": "El Supremo Café & Tocino",
@@ -973,7 +1413,17 @@
       "tipoComida": "Desayunos y brunch",
       "ambiente": "Familiar · Casual · Tranquilo",
       "caracteristicasEspeciales": "Porciones abundantes",
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "09:00-15:30",
+        "detalle": "Lun-Dom: 09:00–15:30",
+        "lunes": "09:00-15:30",
+        "martes": "09:00-15:30",
+        "miercoles": "09:00-15:30",
+        "jueves": "09:00-15:30",
+        "viernes": "09:00-15:30",
+        "sabado": "09:00-15:30",
+        "domingo": "09:00-15:30"
+      }
     },
     {
       "nombre": "Dang",
@@ -995,7 +1445,17 @@
       "tipoComida": "Ramen y asiática",
       "ambiente": "Casual · Social",
       "caracteristicasEspeciales": "Street food asiática",
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "14:00-23:00",
+        "detalle": "Lun: 14:00–20:00 • Mar-Jue: 14:00–21:00 • Vie-Sáb: 15:00–23:00 • Dom: 14:00–20:00",
+        "lunes": "14:00-20:00",
+        "martes": "14:00-21:00",
+        "miercoles": "14:00-21:00",
+        "jueves": "14:00-21:00",
+        "viernes": "15:00-23:00",
+        "sabado": "15:00-23:00",
+        "domingo": "14:00-20:00"
+      }
     },
     {
       "nombre": "Chula Cholula Helados",
@@ -1018,7 +1478,17 @@
       "tipoComida": "Helados artesanales",
       "ambiente": "Familiar · Casual",
       "caracteristicasEspeciales": "",
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "11:00-19:00",
+        "detalle": "Lun-Dom: 11:00–19:00",
+        "lunes": "11:00-19:00",
+        "martes": "11:00-19:00",
+        "miercoles": "11:00-19:00",
+        "jueves": "11:00-19:00",
+        "viernes": "11:00-19:00",
+        "sabado": "11:00-19:00",
+        "domingo": "11:00-19:00"
+      }
     },
     {
       "nombre": "Restaurante El Establo",
@@ -1038,7 +1508,17 @@
       "tipoComida": "Comida mexicana",
       "ambiente": "Familiar",
       "caracteristicasEspeciales": "Buffet viernes, sábado y domingo",
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "09:00-15:00",
+        "detalle": "Lun: cerrado • Mar-Dom: 09:00–15:00",
+        "lunes": "cerrado",
+        "martes": "09:00-15:00",
+        "miercoles": "09:00-15:00",
+        "jueves": "09:00-15:00",
+        "viernes": "09:00-15:00",
+        "sabado": "09:00-15:00",
+        "domingo": "09:00-15:00"
+      }
     },
     {
       "nombre": "La Pirámide",
@@ -1058,7 +1538,17 @@
       "tipoComida": "Comida típica",
       "ambiente": "Informal · Casual",
       "caracteristicasEspeciales": "Vista cercana a la Pirámide",
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "09:00-20:30",
+        "detalle": "Lun-Mar: 09:00–18:00 • Mié: 09:00–19:00 • Jue-Sáb: 09:00–20:30 • Dom: 09:00–18:00",
+        "lunes": "09:00-18:00",
+        "martes": "09:00-18:00",
+        "miercoles": "09:00-19:00",
+        "jueves": "09:00-20:30",
+        "viernes": "09:00-20:30",
+        "sabado": "09:00-20:30",
+        "domingo": "09:00-18:00"
+      }
     },
     {
       "nombre": "Allora",
@@ -1080,7 +1570,17 @@
       "tipoComida": "Italiana",
       "ambiente": "Romántico · Elegante",
       "caracteristicasEspeciales": "Vistas espectaculares",
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "13:00-21:00",
+        "detalle": "Lun: 13:00–20:00 • Mar: cerrado • Mié: 13:00–20:00 • Jue-Sáb: 13:00–21:00 • Dom: 13:00–20:00",
+        "lunes": "13:00-20:00",
+        "martes": "cerrado",
+        "miercoles": "13:00-20:00",
+        "jueves": "13:00-21:00",
+        "viernes": "13:00-21:00",
+        "sabado": "13:00-21:00",
+        "domingo": "13:00-20:00"
+      }
     },
     {
       "nombre": "Jazzatlán Cholula",
@@ -1103,7 +1603,17 @@
       "tipoComida": "comida internacional, cerveza artesanal",
       "ambiente": "Social · Cultural · Casual",
       "caracteristicasEspeciales": "Música en vivo todo los días, club de jazz",
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "16:00-02:00",
+        "detalle": "Lun: cerrado • Mar-Jue: 18:00–00:30 • Vie: 18:00–02:00 • Sáb: 16:00–02:00 • Dom: 16:00–21:00",
+        "lunes": "cerrado",
+        "martes": "18:00-00:30",
+        "miercoles": "18:00-00:30",
+        "jueves": "18:00-00:30",
+        "viernes": "18:00-02:00",
+        "sabado": "16:00-02:00",
+        "domingo": "16:00-21:00"
+      }
     },
     {
       "nombre": "Cervecería Crazy Moon",
@@ -1126,7 +1636,17 @@
       "tipoComida": "Cerveza artesanal",
       "ambiente": "Informal · Social",
       "caracteristicasEspeciales": "Brewpub",
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "12:00-23:00",
+        "detalle": "Lun-Mié: 12:00–22:00 • Jue-Sáb: 12:00–23:00 • Dom: 12:00–21:00",
+        "lunes": "12:00-22:00",
+        "martes": "12:00-22:00",
+        "miercoles": "12:00-22:00",
+        "jueves": "12:00-23:00",
+        "viernes": "12:00-23:00",
+        "sabado": "12:00-23:00",
+        "domingo": "12:00-21:00"
+      }
     },
     {
       "nombre": "La Enamorada",
@@ -1151,7 +1671,17 @@
       "tipoComida": "Comida tradicional",
       "ambiente": "Romántico · Social · Informal",
       "caracteristicasEspeciales": "Música en vivo ",
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "12:00-02:00",
+        "detalle": "Lun: cerrado • Mar: 12:00–22:00 • Mié-Sáb: 12:00–02:00 • Dom: 12:00–01:00",
+        "lunes": "cerrado",
+        "martes": "12:00-22:00",
+        "miercoles": "12:00-02:00",
+        "jueves": "12:00-02:00",
+        "viernes": "12:00-02:00",
+        "sabado": "12:00-02:00",
+        "domingo": "12:00-01:00"
+      }
     },
     {
       "nombre": "Licorería San Pedrito",
@@ -1174,7 +1704,17 @@
       "tipoComida": "Botanas y bebidas",
       "ambiente": "Casual · Social · Nocturno",
       "caracteristicasEspeciales": "No acepta reservaciones",
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "12:00-02:00",
+        "detalle": "Lun: 14:00–22:00 • Mar-Mié: 14:00–00:00 • Jue-Vie: 14:00–02:00 • Sáb: 12:00–02:00 • Dom: 12:00–20:00",
+        "lunes": "14:00-22:00",
+        "martes": "14:00-00:00",
+        "miercoles": "14:00-00:00",
+        "jueves": "14:00-02:00",
+        "viernes": "14:00-02:00",
+        "sabado": "12:00-02:00",
+        "domingo": "12:00-20:00"
+      }
     },
     {
       "nombre": "Cholulice",
@@ -1196,7 +1736,17 @@
       "tipoComida": "Helados en rollo, waffles y café",
       "ambiente": "Familiar · Casual",
       "caracteristicasEspeciales": "",
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "11:00-23:00",
+        "detalle": "Lun: 11:00–16:00 • Mar-Dom: 11:00–23:00",
+        "lunes": "11:00-16:00",
+        "martes": "11:00-23:00",
+        "miercoles": "11:00-23:00",
+        "jueves": "11:00-23:00",
+        "viernes": "11:00-23:00",
+        "sabado": "11:00-23:00",
+        "domingo": "11:00-23:00"
+      }
     }
   ],
   "queHacer": [
@@ -1218,7 +1768,17 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/Turibike_cholula_4-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/Turibike_cholula_5-1024x1024-1.webp"
       ],
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "08:00-22:00",
+        "detalle": "08:00-22:00",
+        "lunes": "08:00-22:00",
+        "martes": "08:00-22:00",
+        "miercoles": "08:00-22:00",
+        "jueves": "08:00-22:00",
+        "viernes": "08:00-22:00",
+        "sabado": "08:00-22:00",
+        "domingo": "08:00-22:00"
+      }
     },
     {
       "nombre": "Turiwheel",
@@ -1241,7 +1801,17 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/Turiwheel_cholula_8-1024x1024-1.webp",
         "https://visitcholula.mx/wp-content/uploads/2025/11/Turiwheel_cholula_9-1024x1024-1.webp"
       ],
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "08:00-22:00",
+        "detalle": "08:00-22:00",
+        "lunes": "08:00-22:00",
+        "martes": "08:00-22:00",
+        "miercoles": "08:00-22:00",
+        "jueves": "08:00-22:00",
+        "viernes": "08:00-22:00",
+        "sabado": "08:00-22:00",
+        "domingo": "08:00-22:00"
+      }
     },
     {
       "nombre": "2RB (2 Ruedas Bueno)",
@@ -1261,7 +1831,17 @@
         "https://visitcholula.mx/wp-content/uploads/2026/03/3.jpg",
         "https://visitcholula.mx/wp-content/uploads/2026/03/5.jpeg"
       ],
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "08:00-22:00",
+        "detalle": "08:00-22:00",
+        "lunes": "08:00-22:00",
+        "martes": "08:00-22:00",
+        "miercoles": "08:00-22:00",
+        "jueves": "08:00-22:00",
+        "viernes": "08:00-22:00",
+        "sabado": "08:00-22:00",
+        "domingo": "08:00-22:00"
+      }
     },
     {
       "nombre": "Tour Cholula Free Walk Tour",
@@ -1278,7 +1858,17 @@
         "https://visitcholula.mx/wp-content/uploads/2026/04/IMG-20250814-WA0000-Recorrido-Turistico.jpg",
         "https://visitcholula.mx/wp-content/uploads/2026/04/IMG-20250630-WA0035-Recorrido-Turistico-scaled.jpg"
       ],
-      "horario": "08:00-22:00"
+      "horario": {
+        "resumen": "08:00-22:00",
+        "detalle": "08:00-22:00",
+        "lunes": "08:00-22:00",
+        "martes": "08:00-22:00",
+        "miercoles": "08:00-22:00",
+        "jueves": "08:00-22:00",
+        "viernes": "08:00-22:00",
+        "sabado": "08:00-22:00",
+        "domingo": "08:00-22:00"
+      }
     }
   ],
   "guiasTuristicos": [

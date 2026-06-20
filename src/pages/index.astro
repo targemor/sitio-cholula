@@ -162,8 +162,19 @@ const searchItems = [
     label: item.nombre,
     category: "Restaurante",
     href: "/donde-comer",
-    sublabel: [item.tipoComida, item.ambiente, item.caracteristicasEspeciales].filter(Boolean).join(" • "),
-    searchKeywords: [item.clasificacion, item.dondeEsta, item.tipoComida, item.ambiente, item.caracteristicasEspeciales].filter(Boolean).join(" "),
+    sublabel: [item.tipoComida, item.ambiente, item.caracteristicasEspeciales]
+      .filter(Boolean)
+      .join(" • "),
+    searchKeywords: [
+      item.clasificacion,
+      item.dondeEsta,
+      item.tipoComida,
+      item.ambiente,
+      item.caracteristicasEspeciales,
+      item.horario?.detalle,
+    ]
+      .filter(Boolean)
+      .join(" "),
     horario: item.horario,
   })),
   ...(cholulaData.queHacer || []).map((item: any, i) => ({
@@ -354,7 +365,9 @@ const searchItems = [
        ══════════════════════════════ -->
   <section class="section-galeria" id="galeria">
     <div class="container">
-      <h2 class="section-label section-label--turquesa">CHOLULA, EL CORAZÓN MÁGICO DE MÉXICO</h2>
+      <h2 class="section-label section-label--turquesa">
+        CHOLULA, EL CORAZÓN MÁGICO DE MÉXICO
+      </h2>
       <Divider />
     </div>
     <SwiperGallery id="galeria" items={galeria} />
@@ -569,8 +582,8 @@ const searchItems = [
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-end; /* Changed to place it lower */
-    padding: 0 1rem 8rem 1rem; /* Added bottom padding to space it from the edge */
+    justify-content: flex-end; /* Align to the bottom */
+    padding: 0 1rem; /* Removed bottom padding */
     width: 100%;
   }
 
@@ -591,6 +604,9 @@ const searchItems = [
     width: 100%;
     max-width: 850px; /* Increased max width */
     margin: 0 auto;
+    transform: translateY(
+      50%
+    ); /* Posiciona la mitad sobre el hero y la mitad sobre la sección inferior */
   }
 
   .hero-subtitle {
@@ -659,7 +675,7 @@ const searchItems = [
     color: #00e5ff;
   }
   .section-label.section-label--amarillo {
-    color: #FDBC00;
+    color: #fdbc00;
   }
 
   /* Decorative divider is now managed by the <Divider /> component */
@@ -677,7 +693,7 @@ const searchItems = [
     margin: 0 auto;
   }
   .bienvenido-text {
-    width: 100%;
+    width: 85%;
   }
   .bienvenido-text p {
     color: #808285;

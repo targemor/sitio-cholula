@@ -2,6 +2,18 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import "./SearchBar.css";
 
 /* ─── Tipos de ítem buscable ─────────────────────────────── */
+interface HorarioData {
+    resumen?: string;
+    detalle?: string;
+    lunes?: string;
+    martes?: string;
+    miercoles?: string;
+    jueves?: string;
+    viernes?: string;
+    sabado?: string;
+    domingo?: string;
+}
+
 interface SearchableItem {
     id: string | number;
     label: string;           // nombre/titulo del ítem
@@ -10,7 +22,7 @@ interface SearchableItem {
     href: string;            // sección a la que pertenece (#hoteles, #destinos, etc.)
     searchKeywords?: string; // atributos extra para búsqueda (clasificacion, tipo comida, etc.)
     rating?: number;         // estrellas (opcional)
-    horario?: string;        // horario formato HH:MM-HH:MM
+    horario?: HorarioData | string;
 }
 
 /* ─── Utilidad: normalizar texto para comparación ────────── */
@@ -67,13 +79,15 @@ function highlightLabel(label: string, query: string): React.ReactNode {
 }
 
 /**
- * Determina si un horario en formato HH:MM-HH:MM está abierto actualmente.
+ * Determina si un horario está abierto actualmente.
+ * Acepta string "HH:MM-HH:MM" u objeto HorarioData (usa resumen).
  */
-function isCurrentlyOpen(horario?: string): boolean | null {
-    if (!horario || typeof horario !== 'string') return null;
-    const parts = horario.split('-');
+function isCurrentlyOpen(horario?: HorarioData | string): boolean | null {
+    const resumen = typeof horario === 'string' ? horario : horario?.resumen;
+    if (!resumen) return null;
+    const parts = resumen.split('-');
     if (parts.length !== 2) return null;
-    
+
     const [start, end] = parts;
     const now = new Date();
     const currentMinutes = now.getHours() * 60 + now.getMinutes();
@@ -146,16 +160,21 @@ export default function SearchBar({
                     const normCat = normalize(item.category);
                     const normSub = item.sublabel ? normalize(item.sublabel) : "";
                     const normKeywords = item.searchKeywords ? normalize(item.searchKeywords) : "";
-                    
+                    const horarioDetalle = typeof item.horario === 'object'
+                        ? item.horario?.detalle ?? ""
+                        : (item.horario ?? "");
+                    const normHorario = horarioDetalle ? normalize(horarioDetalle) : "";
+
                     let score = 0;
-                    
+
                     queryWords.forEach(word => {
                         let wordScore = 0;
-                        if (normLabel.includes(word)) wordScore += 3; // mayor peso al título
+                        if (normLabel.includes(word)) wordScore += 3;
                         if (normCat.includes(word)) wordScore += 1;
                         if (normSub.includes(word)) wordScore += 1;
                         if (normKeywords.includes(word)) wordScore += 1;
-                        
+                        if (normHorario.includes(word)) wordScore += 1;
+
                         if (wordScore > 0) {
                             score += wordScore;
                         }
@@ -163,7 +182,7 @@ export default function SearchBar({
 
                     // Bonus si coincide la frase exacta
                     if (normLabel.includes(norm)) score += 5;
-                    else if (normSub.includes(norm) || normKeywords.includes(norm)) score += 2;
+                    else if (normSub.includes(norm) || normKeywords.includes(norm) || normHorario.includes(norm)) score += 2;
                     else if (normCat.includes(norm)) score += 1;
 
                     return { item, score };
@@ -342,6 +361,10 @@ export default function SearchBar({
                                             ? highlightLabel(item.sublabel, query)
                                             : null;
 
+                                        const horarioDetalle = typeof item.horario === 'object'
+                                            ? item.horario?.detalle ?? ""
+                                            : "";
+
                                         return (
                                             <button
                                                 key={`${cat}-${item.id}`}
@@ -368,6 +391,11 @@ export default function SearchBar({
                                                                     {"★".repeat(item.rating)}
                                                                 </span>
                                                             ) : null}
+                                                        </p>
+                                                    )}
+                                                    {horarioDetalle && (
+                                                        <p className="search-item-horario">
+                                                            🕐 {horarioDetalle}
                                                         </p>
                                                     )}
                                                 </div>
