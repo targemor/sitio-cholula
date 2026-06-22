@@ -529,7 +529,8 @@
         "viernes": "10:00-21:00",
         "sabado": "09:00-21:00",
         "domingo": "09:00-17:30"
-      }
+      },
+      "idealPara": "probar platillo típicos"
     },
     {
       "nombre": "Churrería Las Duyas",
@@ -562,7 +563,8 @@
         "viernes": "08:30-23:30",
         "sabado": "08:30-23:30",
         "domingo": "08:30-23:30"
-      }
+      },
+      "idealPara": "Probar los tradicionales churros"
     },
     {
       "nombre": "Atracadero Jardín",
@@ -581,7 +583,7 @@
       "clasificacion": "Restaurante",
       "dondeEsta": "A pocos minutos del Centro",
       "tipoComida": "Mariscos",
-      "ambiente": "Familiar, espacio para niños",
+      "ambiente": "Familiar, pet friendly",
       "caracteristicasEspeciales": "Restaurante con jardín, · Pet friendly",
       "horario": {
         "resumen": "12:00-20:00",
@@ -593,7 +595,8 @@
         "viernes": "12:00-20:00",
         "sabado": "12:00-20:00",
         "domingo": "12:00-20:00"
-      }
+      },
+      "idealPara": "Ir con niños, comer al aire libre con jardín, ir con mscttoas"
     },
     {
       "nombre": "Caravana",
@@ -625,7 +628,8 @@
         "viernes": "10:00-22:30",
         "sabado": "10:00-22:30",
         "domingo": "10:00-17:30"
-      }
+      },
+      "idealPara": "Una experiencia distinta del taco"
     },
     {
       "nombre": "Payeca Chocolatería",
@@ -644,7 +648,7 @@
       "clasificacion": "Cafetería / Chocolatería",
       "dondeEsta": "Zona Centro",
       "tipoComida": "Cacao, café, postres y alimentos",
-      "ambiente": "Familiar · Romántico · Informal · ",
+      "ambiente": "Familiar · Romántico · Informal · pet friendly",
       "caracteristicasEspeciales": " Pet friendly",
       "horario": {
         "resumen": "10:00-22:00",
@@ -656,7 +660,8 @@
         "viernes": "10:00-22:00",
         "sabado": "10:00-22:00",
         "domingo": "10:00-22:00"
-      }
+      },
+      "idealPara": "un chocolate caliente, una tarde tranquila, ir con mascotas"
     },
     {
       "nombre": "Sagrata",
@@ -688,7 +693,8 @@
         "viernes": "08:00-19:00",
         "sabado": "08:00-19:00",
         "domingo": "08:00-19:00"
-      }
+      },
+      "idealPara": "Probar alta cocina mexicana y poblana"
     },
     {
       "nombre": "Urucú",
@@ -708,7 +714,7 @@
       "clasificacion": "Restaurante",
       "dondeEsta": "Zona Centro",
       "tipoComida": "Cochinita pibil y achiote",
-      "ambiente": "Familiar · Informal · ",
+      "ambiente": "Familiar · Informal · pet friendly",
       "caracteristicasEspeciales": "Pet friendly",
       "horario": {
         "resumen": "12:00-18:30",
@@ -720,7 +726,8 @@
         "viernes": "12:00-18:30",
         "sabado": "12:00-18:30",
         "domingo": "12:00-18:30"
-      }
+      },
+      "idealPara": "Probar la cochinita pibil, conocer un lugar diferente, ir con mascotas"
     },
     {
       "nombre": "Fonda Santa Clara",
@@ -753,7 +760,8 @@
         "viernes": "09:00-21:00",
         "sabado": "09:00-21:00",
         "domingo": "09:00-21:00"
-      }
+      },
+      "idealPara": "Primera visita en san pedro cholula, comida tradicional"
     },
     {
       "nombre": "Divará Campestre",
@@ -774,7 +782,7 @@
       "clasificacion": "Restaurante",
       "dondeEsta": "A pocos minutos del Centro",
       "tipoComida": "Italiana / pizzas",
-      "ambiente": "Familiar, espacio para niños",
+      "ambiente": "Familiar, casual",
       "caracteristicasEspeciales": "Jardín",
       "horario": {
         "resumen": "08:30-00:00",
@@ -786,7 +794,8 @@
         "viernes": "08:30-00:00",
         "sabado": "08:30-00:00",
         "domingo": "08:30-19:00"
-      }
+      },
+      "idealPara": "Jardín, para ir con niños, hay una granja, asientos al aire libre"
     },
     {
       "nombre": "Corazón de San Pedro",
@@ -805,7 +814,7 @@
       ],
       "clasificacion": "Restaurante",
       "dondeEsta": "Zona Centro",
-      "tipoComida": "Revisar",
+      "tipoComida": "Comida francesa",
       "ambiente": "Romántico · Familiar",
       "caracteristicasEspeciales": "Ideal para cenas",
       "horario": {
@@ -818,7 +827,8 @@
         "viernes": "14:30-23:30",
         "sabado": "14:30-23:30",
         "domingo": "13:30-18:30"
-      }
+      },
+      "idealPara": "Planes románticos, celebraciones, asientos al aire libre, tiene jardín"
     },
     {
       "nombre": "Tacos Vehkem",
@@ -850,7 +860,8 @@
         "viernes": "11:00-23:00",
         "sabado": "11:00-23:00",
         "domingo": "11:00-22:00"
-      }
+      },
+      "idealPara": "probar tacos árabes tradicionales, experiencia local"
     },
     {
       "nombre": "Casa Relámpago",
@@ -879,7 +890,8 @@
         "viernes": "16:00-02:00",
         "sabado": "16:00-02:00",
         "domingo": "13:00-20:00"
-      }
+      },
+      "idealPara": "disfrutar música de los 80's los miércoles, para ir con amigos, salir en la noche"
     },
     {
       "nombre": "Divará Centro",
@@ -900,7 +912,7 @@
       "clasificacion": "Restaurante",
       "dondeEsta": "Zona Centro",
       "tipoComida": "Italiana / pizzas",
-      "ambiente": "Romántico, casual ",
+      "ambiente": "Romántico, casual",
       "caracteristicasEspeciales": "",
       "horario": {
         "resumen": "08:30-23:30",
@@ -912,7 +924,8 @@
         "viernes": "08:30-23:30",
         "sabado": "08:30-23:30",
         "domingo": "08:30-19:00"
-      }
+      },
+      "idealPara": "Planes con pareja, planes con amigas"
     },
     {
       "nombre": "La Lunita Restaurante",
@@ -946,7 +959,8 @@
         "viernes": "09:00-21:00",
         "sabado": "09:00-21:00",
         "domingo": "09:00-18:00"
-      }
+      },
+      "idealPara": "Restaurante tradicional, típicas sangrías"
     },
     {
       "nombre": "Chula Cholula Helados Pirámide",
@@ -979,7 +993,8 @@
         "viernes": "11:00-19:00",
         "sabado": "11:00-19:00",
         "domingo": "11:00-19:00"
-      }
+      },
+      "idealPara": "Una tarde calurosa"
     },
     {
       "nombre": "Atracadero",
@@ -999,7 +1014,7 @@
       "clasificacion": "Restaurante",
       "dondeEsta": "Zona Centro",
       "tipoComida": "Mariscos",
-      "ambiente": "Familiar, casual",
+      "ambiente": "Familiar, casual, pet friendly",
       "caracteristicasEspeciales": "· Pet friendly",
       "horario": {
         "resumen": "11:00-19:00",
@@ -1011,7 +1026,8 @@
         "viernes": "11:30-18:30",
         "sabado": "11:00-19:00",
         "domingo": "11:00-19:00"
-      }
+      },
+      "idealPara": "Ir con mascotas"
     },
     {
       "nombre": "Café Tal",
@@ -1030,7 +1046,7 @@
       "clasificacion": "Cafetería / Restaurante",
       "dondeEsta": "Los Portales",
       "tipoComida": "Cafetería y desayunos",
-      "ambiente": "Fmiliar, casual",
+      "ambiente": "Fmiliar, casual , ir con amigos",
       "caracteristicasEspeciales": "",
       "horario": {
         "resumen": "08:00-23:30",
@@ -1042,7 +1058,8 @@
         "viernes": "08:00-23:30",
         "sabado": "08:00-23:30",
         "domingo": "08:00-23:00"
-      }
+      },
+      "idealPara": "Ir a trabajar, una tarde tranquila, ir con mascotas"
     },
     {
       "nombre": "Casona del Olvido",
@@ -1075,7 +1092,8 @@
         "viernes": "19:00-02:30",
         "sabado": "19:00-02:30",
         "domingo": "19:00-02:30"
-      }
+      },
+      "idealPara": "una noche de fiesta mexicana, salir con amigos, salir en la noche"
     },
     {
       "nombre": "Ciudad Sagrada",
@@ -1108,7 +1126,8 @@
         "viernes": "08:00-00:00",
         "sabado": "08:00-00:00",
         "domingo": "08:00-18:00"
-      }
+      },
+      "idealPara": "para ocasiones especiales"
     },
     {
       "nombre": "Finca Ensamble",
@@ -1127,9 +1146,9 @@
         "https://visitcholula.mx/wp-content/uploads/2025/11/imagen-de-whatsapp-2025-07-04-a-las-14.51.27_39c432e9-1024x682-1.jpg"
       ],
       "clasificacion": "Restaurante-Bar",
-      "dondeEsta": "Zona pirámide ",
+      "dondeEsta": "Zona pirámide",
       "tipoComida": "Cocina urbana gourmet",
-      "ambiente": "Familiar · Informal",
+      "ambiente": "Familiar · Informal, pet friendly",
       "caracteristicasEspeciales": "Vinos, mezcales y cervezas, jardín, pet friendly",
       "horario": {
         "resumen": "12:00-00:00",
@@ -1141,7 +1160,8 @@
         "viernes": "13:00-00:00",
         "sabado": "13:00-00:00",
         "domingo": "12:00-20:00"
-      }
+      },
+      "idealPara": "probar destilados, jardín, salir con amigos"
     },
     {
       "nombre": "Topolino Gelateria e Caffé",
@@ -1174,7 +1194,8 @@
         "viernes": "11:00-21:30",
         "sabado": "11:00-21:30",
         "domingo": "11:00-21:30"
-      }
+      },
+      "idealPara": "una tarde calurosa, tomar un helado para pasear"
     },
     {
       "nombre": "Los Jarrones",
@@ -1205,7 +1226,8 @@
         "viernes": "08:00-23:00",
         "sabado": "08:00-23:00",
         "domingo": "08:00-23:00"
-      }
+      },
+      "idealPara": "Buffet sábados y domingos"
     },
     {
       "nombre": "Mercado Cosme del Razo",
@@ -1233,7 +1255,8 @@
         "viernes": "08:00-20:00",
         "sabado": "08:00-20:00",
         "domingo": "09:00-18:00"
-      }
+      },
+      "idealPara": "probar comida tradicional, experiencia local"
     },
     {
       "nombre": "Por la Mañana by M&M",
@@ -1265,7 +1288,8 @@
         "viernes": "08:30-14:30",
         "sabado": "08:30-14:30",
         "domingo": "08:30-14:30"
-      }
+      },
+      "idealPara": "plan con amigas"
     },
     {
       "nombre": "Restaurante y Terraza Roldán",
@@ -1293,7 +1317,8 @@
         "viernes": "08:00-23:00",
         "sabado": "08:00-23:00",
         "domingo": "08:00-21:00"
-      }
+      },
+      "idealPara": "probar pan tradicional, Brunch, plan con amigas"
     },
     {
       "nombre": "Sangre Azteca",
@@ -1313,7 +1338,7 @@
       ],
       "clasificacion": "Restaurante",
       "dondeEsta": "Zona Centro",
-      "tipoComida": "Mexicana",
+      "tipoComida": "Mexicana - Casera",
       "ambiente": "Familiar · Casual",
       "caracteristicasEspeciales": "Cocina tradicional",
       "horario": {
@@ -1326,7 +1351,8 @@
         "viernes": "12:00-00:00",
         "sabado": "09:00-01:00",
         "domingo": "09:00-00:00"
-      }
+      },
+      "idealPara": "probar Cocina tradicional"
     },
     {
       "nombre": "Santōua Cholula",
@@ -1345,8 +1371,8 @@
       ],
       "clasificacion": "Restaurante-Bar",
       "dondeEsta": "Zona Centro",
-      "tipoComida": "Contemporánea e internacional",
-      "ambiente": "Familiar · Romántico · Casual ·",
+      "tipoComida": "Italiana, Mexicana, internacional",
+      "ambiente": "Familiar · Romántico · Casual ·pet friendly",
       "caracteristicasEspeciales": "Italiana, Mexicana, Bar, Internacional  Pet friendly",
       "horario": {
         "resumen": "09:00-00:00",
@@ -1358,7 +1384,8 @@
         "viernes": "09:00-00:00",
         "sabado": "09:00-00:00",
         "domingo": "09:00-22:00"
-      }
+      },
+      "idealPara": "Ir con mascotas, un plan romántico"
     },
     {
       "nombre": "La Casa Rosa",
@@ -1378,7 +1405,7 @@
       "clasificacion": "Restaurante",
       "dondeEsta": "Zona Centro",
       "tipoComida": "Comida tradicional",
-      "ambiente": "Informal, ",
+      "ambiente": "Informal,",
       "caracteristicasEspeciales": "",
       "horario": {
         "resumen": "11:00-21:00",
@@ -1390,7 +1417,8 @@
         "viernes": "11:00-21:00",
         "sabado": "11:00-21:00",
         "domingo": "11:00-21:00"
-      }
+      },
+      "idealPara": "vivir una experiencia local"
     },
     {
       "nombre": "El Supremo Café & Tocino",
@@ -1411,7 +1439,7 @@
       "clasificacion": "Cafetería / Restaurante",
       "dondeEsta": "Zona Centro",
       "tipoComida": "Desayunos y brunch",
-      "ambiente": "Familiar · Casual · Tranquilo",
+      "ambiente": "Familiar · Casual · Tranquilo , pet friendly",
       "caracteristicasEspeciales": "Porciones abundantes",
       "horario": {
         "resumen": "09:00-15:30",
@@ -1423,7 +1451,8 @@
         "viernes": "09:00-15:30",
         "sabado": "09:00-15:30",
         "domingo": "09:00-15:30"
-      }
+      },
+      "idealPara": "Porciones abundantes, ir con mascotas"
     },
     {
       "nombre": "Dang",
@@ -1455,7 +1484,8 @@
         "viernes": "15:00-23:00",
         "sabado": "15:00-23:00",
         "domingo": "14:00-20:00"
-      }
+      },
+      "idealPara": "probar street food asiática"
     },
     {
       "nombre": "Chula Cholula Helados",
@@ -1488,7 +1518,8 @@
         "viernes": "11:00-19:00",
         "sabado": "11:00-19:00",
         "domingo": "11:00-19:00"
-      }
+      },
+      "idealPara": "Una tarde calurosa"
     },
     {
       "nombre": "Restaurante El Establo",
@@ -1505,7 +1536,7 @@
       ],
       "clasificacion": "Restaurante",
       "dondeEsta": "Zona Centro",
-      "tipoComida": "Comida mexicana",
+      "tipoComida": "Comida mexicana, casera",
       "ambiente": "Familiar",
       "caracteristicasEspeciales": "Buffet viernes, sábado y domingo",
       "horario": {
@@ -1518,7 +1549,8 @@
         "viernes": "09:00-15:00",
         "sabado": "09:00-15:00",
         "domingo": "09:00-15:00"
-      }
+      },
+      "idealPara": "Buffet viernes, sábado y domingo"
     },
     {
       "nombre": "La Pirámide",
@@ -1535,7 +1567,7 @@
       ],
       "clasificacion": "Restaurante",
       "dondeEsta": "Zona Pirámide",
-      "tipoComida": "Comida típica",
+      "tipoComida": "Comida típica mexicana",
       "ambiente": "Informal · Casual",
       "caracteristicasEspeciales": "Vista cercana a la Pirámide",
       "horario": {
@@ -1548,7 +1580,8 @@
         "viernes": "09:00-20:30",
         "sabado": "09:00-20:30",
         "domingo": "09:00-18:00"
-      }
+      },
+      "idealPara": "Al pie de la Pirámide"
     },
     {
       "nombre": "Allora",
@@ -1580,7 +1613,8 @@
         "viernes": "13:00-21:00",
         "sabado": "13:00-21:00",
         "domingo": "13:00-20:00"
-      }
+      },
+      "idealPara": "Pizza napolitana, Vistas espectaculares"
     },
     {
       "nombre": "Jazzatlán Cholula",
@@ -1613,7 +1647,8 @@
         "viernes": "18:00-02:00",
         "sabado": "16:00-02:00",
         "domingo": "16:00-21:00"
-      }
+      },
+      "idealPara": "escuchar música en vivo todo los días, club de jazz"
     },
     {
       "nombre": "Cervecería Crazy Moon",
@@ -1646,7 +1681,8 @@
         "viernes": "12:00-23:00",
         "sabado": "12:00-23:00",
         "domingo": "12:00-21:00"
-      }
+      },
+      "idealPara": "Brewpub, una experiencia distinta en cerveza, salida con amigos"
     },
     {
       "nombre": "La Enamorada",
@@ -1681,7 +1717,8 @@
         "viernes": "12:00-02:00",
         "sabado": "12:00-02:00",
         "domingo": "12:00-01:00"
-      }
+      },
+      "idealPara": "Música en vivo"
     },
     {
       "nombre": "Licorería San Pedrito",
@@ -1714,7 +1751,8 @@
         "viernes": "14:00-02:00",
         "sabado": "12:00-02:00",
         "domingo": "12:00-20:00"
-      }
+      },
+      "idealPara": "experiencia diferente, salir con amigos,"
     },
     {
       "nombre": "Cholulice",
@@ -1746,7 +1784,8 @@
         "viernes": "11:00-23:00",
         "sabado": "11:00-23:00",
         "domingo": "11:00-23:00"
-      }
+      },
+      "idealPara": "probar helado en rollo"
     }
   ],
   "queHacer": [

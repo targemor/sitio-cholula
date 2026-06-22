@@ -78,41 +78,58 @@ function highlightLabel(label: string, query: string): React.ReactNode {
     return nodes.length > 0 ? <>{nodes}</> : label;
 }
 
-/**
- * Determina si un horario está abierto actualmente.
- * Acepta string "HH:MM-HH:MM" u objeto HorarioData (usa resumen).
- */
-function isCurrentlyOpen(horario?: HorarioData | string): boolean | null {
-    const resumen = typeof horario === 'string' ? horario : horario?.resumen;
-    if (!resumen) return null;
-    const parts = resumen.split('-');
-    if (parts.length !== 2) return null;
+const DAY_KEYS: (keyof HorarioData)[] = [
+    'domingo', 'lunes', 'martes', 'miercoles', 'jueves', 'viernes', 'sabado'
+];
 
-    const [start, end] = parts;
+function parseMinutes(timeStr: string): number | null {
+    const [h, m] = timeStr.trim().split(':').map(Number);
+    if (isNaN(h)) return null;
+    return h * 60 + (m || 0);
+}
+
+function checkSlot(slot: string): boolean {
+    if (!slot || slot === 'cerrado') return false;
+    const parts = slot.split('-');
+    if (parts.length !== 2) return false;
+
     const now = new Date();
     const currentMinutes = now.getHours() * 60 + now.getMinutes();
 
-    const parseTime = (timeStr: string) => {
-        const [h, m] = timeStr.trim().split(':').map(Number);
-        if (isNaN(h)) return null;
-        return h * 60 + (m || 0);
-    };
-    
-    const startMin = parseTime(start);
-    let endMin = parseTime(end);
-    
-    if (startMin === null || endMin === null) return null;
+    const startMin = parseMinutes(parts[0]);
+    let endMin = parseMinutes(parts[1]);
+    if (startMin === null || endMin === null) return false;
 
-    if (endMin <= startMin) {
-        endMin += 24 * 60;
-    }
+    if (endMin <= startMin) endMin += 24 * 60;
+    const checkMin = endMin > 24 * 60 && currentMinutes < startMin
+        ? currentMinutes + 24 * 60
+        : currentMinutes;
 
-    let checkMin = currentMinutes;
-    if (endMin > 24 * 60 && currentMinutes < startMin) {
-        checkMin += 24 * 60;
-    }
-    
     return checkMin >= startMin && checkMin <= endMin;
+}
+
+/**
+ * Determina si un establecimiento está abierto ahora.
+ * Con HorarioData revisa el slot del día actual antes de caer al resumen.
+ */
+function isCurrentlyOpen(horario?: HorarioData | string): boolean | null {
+    if (!horario) return null;
+
+    if (typeof horario === 'string') {
+        return horario ? checkSlot(horario) : null;
+    }
+
+    // Intenta usar el slot del día actual
+    const todayKey = DAY_KEYS[new Date().getDay()];
+    const todaySlot = horario[todayKey];
+
+    if (todaySlot !== undefined) {
+        if (todaySlot === 'cerrado') return false;
+        if (todaySlot) return checkSlot(todaySlot);
+    }
+
+    // Fallback al resumen general
+    return horario.resumen ? checkSlot(horario.resumen) : null;
 }
 
 /* ─── Props ──────────────────────────────────────────────── */
@@ -133,9 +150,14 @@ export default function SearchBar({
     const [results, setResults] = useState<SearchableItem[]>([]);
     const [isOpen, setIsOpen] = useState(false);
     const [focused, setFocused] = useState(false);
+    const [openNow, setOpenNow] = useState(false);
     const inputRef = useRef<HTMLInputElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+    const openNowItems = openNow
+        ? items.filter(item => isCurrentlyOpen(item.horario) === true)
+        : [];
 
     /* ── Búsqueda con debounce ── */
     const search = useCallback(
@@ -263,7 +285,18 @@ export default function SearchBar({
         Imperdible: "⭐",
     };
 
-    const showDropdown = isOpen && query.trim().length > 0;
+    // Items a mostrar: si hay query usa resultados de búsqueda; si no, todos los ítems
+    const baseItems = query.trim() ? results : openNow ? items : [];
+    const displayItems = openNow
+        ? baseItems.filter(item => isCurrentlyOpen(item.horario) === true)
+        : baseItems;
+
+    const displayGrouped = displayItems.reduce<Record<string, SearchableItem[]>>((acc, item) => {
+        (acc[item.category] ??= []).push(item);
+        return acc;
+    }, {});
+
+    const showDropdown = (isOpen && query.trim().length > 0) || openNow;
 
     return (
         <div ref={containerRef} className="search-container">
@@ -297,6 +330,7 @@ export default function SearchBar({
                         if (e.key === "Escape") {
                             setQuery("");
                             setIsOpen(false);
+                            setOpenNow(false);
                             inputRef.current?.blur();
                         }
                     }}
@@ -309,11 +343,12 @@ export default function SearchBar({
                 />
 
                 {/* Botón limpiar */}
-                {query && (
+                {(query || openNow) && (
                     <button
                         onClick={() => {
                             setQuery("");
                             setIsOpen(false);
+                            setOpenNow(false);
                             inputRef.current?.focus();
                         }}
                         className="search-clear-btn"
@@ -326,39 +361,49 @@ export default function SearchBar({
                 )}
             </div>
 
-            {/* ── Dropdown de resultados ── */}
+            {/* ── Dropdown unificado ── */}
             {showDropdown && (
                 <div
                     className="search-dropdown"
                     role="listbox"
                     aria-label="Resultados de búsqueda"
                 >
-                    {results.length === 0 ? (
-                        /* Empty state */
+                    {/* Chip "Abiertos ahora" dentro del dropdown */}
+                    <div className="search-filter-row">
+                        <button
+                            className={`search-filter-chip ${openNow ? "search-filter-chip--active" : ""}`}
+                            onMouseDown={(e) => { e.preventDefault(); setOpenNow(v => !v); }}
+                        >
+                            <span className={`search-filter-dot ${openNow ? "search-filter-dot--on" : ""}`} />
+                            Abiertos ahora
+                        </button>
+                    </div>
+
+                    {displayItems.length === 0 ? (
                         <div className="search-empty-state">
-                            <div className="search-empty-icon">🔍</div>
+                            <div className="search-empty-icon">{openNow ? "🔒" : "🔍"}</div>
                             <p className="search-empty-text">
-                                Sin resultados para <span>"{query}"</span>
+                                {openNow && !query
+                                    ? "Ningún establecimiento abierto en este momento"
+                                    : openNow
+                                    ? <>Sin resultados abiertos para <span>"{query}"</span></>
+                                    : <>Sin resultados para <span>"{query}"</span></>}
                             </p>
-                            <p className="search-empty-hint">Intenta con otro término</p>
+                            {!openNow && <p className="search-empty-hint">Intenta con otro término</p>}
                         </div>
                     ) : (
                         <div className="search-results-list">
-                            {Object.entries(grouped).map(([cat, catItems]) => (
+                            {Object.entries(displayGrouped).map(([cat, catItems]) => (
                                 <div key={cat}>
-                                    {/* Encabezado de categoría */}
                                     <div className="search-category-header">
                                         <span className="search-category-icon">{categoryIcons[cat] ?? "📌"}</span>
-                                        <span className="search-category-title">
-                                            {cat}s
-                                        </span>
+                                        <span className="search-category-title">{cat}s</span>
                                     </div>
 
-                                    {/* Ítems */}
                                     {catItems.map((item) => {
-                                        const labelNode = highlightLabel(item.label, query);
+                                        const labelNode = query ? highlightLabel(item.label, query) : item.label;
                                         const sublabelNode = item.sublabel
-                                            ? highlightLabel(item.sublabel, query)
+                                            ? (query ? highlightLabel(item.sublabel, query) : item.sublabel)
                                             : null;
 
                                         const horarioDetalle = typeof item.horario === 'object'
@@ -417,11 +462,11 @@ export default function SearchBar({
                             {/* Footer */}
                             <div className="search-footer">
                                 <span className="search-footer-count">
-                                    {results.length} resultado{results.length !== 1 ? "s" : ""}
+                                    {openNow && !query
+                                        ? `${displayItems.length} abierto${displayItems.length !== 1 ? "s" : ""} ahora`
+                                        : `${displayItems.length} resultado${displayItems.length !== 1 ? "s" : ""}${openNow ? " abiertos" : ""}`}
                                 </span>
-                                <span className="search-footer-hint">
-                                    ↵ para ir
-                                </span>
+                                <span className="search-footer-hint">↵ para ir</span>
                             </div>
                         </div>
                     )}
