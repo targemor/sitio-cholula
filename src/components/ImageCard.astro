@@ -10,7 +10,12 @@ export interface Props {
 const { href, img, label, color, target = "_self" } = Astro.props;
 ---
 
-<a href={href} target={target} class="image-card" style={`--bar-color: ${color}`}>
+<a
+  href={href}
+  target={target}
+  class="image-card"
+  style={`--bar-color: ${color}`}
+>
   <img src={img} alt={label} class="image-card-img" loading="lazy" />
   <div class="image-card-bar">
     <span>{label}</span>
@@ -26,6 +31,7 @@ const { href, img, label, color, target = "_self" } = Astro.props;
     transition: transform 0.3s;
     background: transparent;
     height: 460px;
+    border-radius: 8px;
   }
   .image-card:hover {
     transform: translateY(-5px);

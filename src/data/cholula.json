@@ -1817,7 +1817,8 @@
         "viernes": "08:00-22:00",
         "sabado": "08:00-22:00",
         "domingo": "08:00-22:00"
-      }
+      },
+      "descripcion": "🚴 Descubre Cholula en bicicleta recorriendo sus calles, barrios tradicionales y principales atractivos de una forma activa y divertida."
     },
     {
       "nombre": "Turiwheel",
@@ -1850,7 +1851,8 @@
         "viernes": "08:00-22:00",
         "sabado": "08:00-22:00",
         "domingo": "08:00-22:00"
-      }
+      },
+      "descripcion": "🚘 Recorre Cholula a bordo de elegantes carritos de estilo clásico mientras conoces sus monumentos, historia y rincones más representativos."
     },
     {
       "nombre": "2RB (2 Ruedas Bueno)",
@@ -1880,7 +1882,8 @@
         "viernes": "08:00-22:00",
         "sabado": "08:00-22:00",
         "domingo": "08:00-22:00"
-      }
+      },
+      "descripcion": "🚵 Explora Cholula y sus alrededores mediante rutas ciclistas diseñadas para quienes disfrutan la aventura y el contacto con la naturaleza."
     },
     {
       "nombre": "Tour Cholula Free Walk Tour",
@@ -1907,7 +1910,43 @@
         "viernes": "08:00-22:00",
         "sabado": "08:00-22:00",
         "domingo": "08:00-22:00"
-      }
+      },
+      "descripcion": "🚶 Conoce la historia, leyendas y secretos de Cholula mediante recorridos guiados a pie por sus calles, templos y espacios históricos."
+    },
+    {
+      "nombre": "TIP TOURS",
+      "tipo": "tours y experiencias turísticas",
+      "descripcion": "🚌 Vive Cholula a través de recorridos guiados, callejoneadas y experiencias turísticas que combinan historia, cultura y tradición, visitando algunos de los lugares más emblemáticos de la ciudad.",
+      "direccion": null,
+      "telefono": null,
+      "whatsapp": "https://wa.me/522224451919",
+      "website": "https://tiptours.mx",
+      "social": {
+        "instagram": "https://www.instagram.com/tiptoursdmc",
+        "facebook": "https://www.facebook.com/TipToursDMC"
+      },
+      "imagenes": [
+        "/guias/Tip%20Tours/487972716_1103706768460941_52376374989681672_n.jpg",
+        "/guias/Tip%20Tours/FOTO%20ENAMORADA%20GRACE.jpeg.avif"
+      ],
+      "horario": {}
+    },
+    {
+      "nombre": "Experiencias ConSentido",
+      "tipo": "experiencias culturales y gastronómicas",
+      "descripcion": "🌮🏛️ Descubre Cholula desde una perspectiva auténtica mediante experiencias culturales, gastronómicas y de turismo comunitario que te conectan con su historia, sus sabores y su gente.",
+      "direccion": null,
+      "telefono": "5655617880",
+      "whatsapp": null,
+      "social": {
+        "instagram": "https://www.instagram.com/experiencia_consentido",
+        "facebook": "https://www.facebook.com/ExperienciasConSentido"
+      },
+      "imagenes": [
+        "/guias/Experiencias_Consentido/1.png",
+        "/guias/Experiencias_Consentido/2.png"
+      ],
+      "horario": {}
     }
   ],
   "guiasTuristicos": [
@@ -1941,6 +1980,22 @@
         "https://visitcholula.mx/wp-content/uploads/2026/03/1.jpeg"
       ],
       "horario": "08:00-22:00"
+    },
+    {
+      "nombre": "Arturo Enciso Viveros",
+      "categoria": "Guía turístico acreditado SECTUR",
+      "certificacion": "Guía de Turistas General Acreditado NOM08",
+      "certificacionSECTUR": true,
+      "telefono": "2221193307",
+      "whatsapp": "https://wa.me/522221193307",
+      "social": {
+        "facebook": "https://www.facebook.com/ArturinGuia"
+      },
+      "imagenes": [
+        "/guias/Arturo%20Gu%C3%ADa%20Certificado/Unknown-2.jpg",
+        "/guias/Arturo%20Gu%C3%ADa%20Certificado/Unknown-3.jpg"
+      ],
+      "horario": {}
     }
   ]
 }

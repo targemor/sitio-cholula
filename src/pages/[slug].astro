@@ -37,12 +37,13 @@ export async function getStaticPaths() {
         title: 'GUÍAS TURÍSTICOS',
         color: '#22c55e',
         data: cholulaData.guiasTuristicos,
+        description: 'GUÍAS CERTIFICADOS POR SECTUR — Descubre Cholula de una manera más personalizada junto a guías certificados que adaptan la experiencia a tus intereses y te ayudan a comprender la historia, tradiciones y patrimonio de la ciudad más allá de una visita convencional.',
       },
     },
   ];
 }
 
-const { title, color, data } = Astro.props;
+const { title, color, data, description } = Astro.props;
 
 // Imagen de reserva si el item no tiene galería propia
 const FALLBACK_IMG = "https://images.unsplash.com/photo-1605335191599-4458d98e1690?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80";
@@ -70,6 +71,9 @@ const FALLBACK_IMG = "https://images.unsplash.com/photo-1605335191599-4458d98e16
     <div class="container">
       <h2 class="section-label" style={`--section-color: ${color};`}>{title}</h2>
       <Divider />
+      {description && (
+        <p class="section-description">{description}</p>
+      )}
       <div class="business-grid">
         {data.map((item: any, index: number) => (
           <BusinessCard
@@ -80,6 +84,7 @@ const FALLBACK_IMG = "https://images.unsplash.com/photo-1605335191599-4458d98e16
             phone={item.telefono || undefined}
             instagram={item.social?.instagram || undefined}
             facebook={item.social?.facebook || undefined}
+            description={item.descripcion || undefined}
           />
         ))}
       </div>
@@ -162,6 +167,14 @@ const FALLBACK_IMG = "https://images.unsplash.com/photo-1605335191599-4458d98e16
     font-weight: 700;
     text-transform: uppercase;
     margin: 0 0 0.5rem 0;
+  }
+  .section-description {
+    text-align: center;
+    color: #64748b;
+    font-size: clamp(0.85rem, 1.2vw, 1rem);
+    max-width: 720px;
+    margin: 1rem auto 0;
+    line-height: 1.65;
   }
   .business-grid {
     display: grid;

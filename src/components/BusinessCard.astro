@@ -10,6 +10,7 @@ export interface Props {
   facebook?: string;
   address?: string;
   phone?: string;
+  description?: string;
 }
 
 const {
@@ -20,6 +21,7 @@ const {
   facebook,
   address,
   phone,
+  description,
 } = Astro.props;
 
 const swiperId = `business-swiper-${id || Math.random().toString(36).substr(2, 9)}`;
@@ -33,6 +35,9 @@ const igGradId = `ig-grad-card-${swiperId}`;
 
   <div class="business-card-content">
     <h3 class="business-card-title">{title}</h3>
+    {description && (
+      <p class="business-card-description">{description}</p>
+    )}
     <ul class="business-card-info">
       {instagram && (
         <li>
