@@ -432,7 +432,7 @@ export default function SearchBar({
                                                         <p className="search-item-subtitle">
                                                             {sublabelNode}
                                                             {item.rating ? (
-                                                                <span style={{ color: "#fbbf24", marginLeft: sublabelNode ? "6px" : "0", letterSpacing: "1px" }}>
+                                                                <span style={{ color: "var(--color-accent)", marginLeft: sublabelNode ? "6px" : "0", letterSpacing: "1px" }}>
                                                                     {"★".repeat(item.rating)}
                                                                 </span>
                                                             ) : null}

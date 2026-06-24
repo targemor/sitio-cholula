@@ -11,7 +11,7 @@ export async function getStaticPaths() {
       params: { slug: 'donde-hospedarse' },
       props: {
         title: 'DÓNDE HOSPEDARSE',
-        color: '#c15c54',
+        color: 'var(--color-primary)',
         data: cholulaData.hoteles,
       },
     },
@@ -19,7 +19,7 @@ export async function getStaticPaths() {
       params: { slug: 'donde-comer' },
       props: {
         title: 'DÓNDE COMER',
-        color: '#fcbe03',
+        color: 'var(--color-accent)',
         data: cholulaData.restaurantes,
       },
     },
@@ -27,7 +27,7 @@ export async function getStaticPaths() {
       params: { slug: 'que-hacer' },
       props: {
         title: 'QUÉ HACER',
-        color: '#00e5ff',
+        color: 'var(--color-secondary)',
         data: cholulaData.queHacer,
       },
     },
@@ -166,19 +166,23 @@ const FALLBACK_IMG = "https://images.unsplash.com/photo-1605335191599-4458d98e16
   .business-grid {
     display: grid;
     grid-template-columns: repeat(3, 500px);
-    gap: 1.5rem;
+    gap: 2rem;
     justify-content: center;
     margin: 2rem auto 0;
-    padding: 0 1rem;
+    padding: 0 4rem;
+    max-width: 1600px;
   }
 
   @media (max-width: 768px) {
     .section-label {
       font-size: 1.4rem;
     }
+    .section-categoria {
+      overflow-x: hidden;
+    }
     .business-grid {
       grid-template-columns: 1fr;
-      padding: 0 1rem;
+      padding: 0 4rem;
     }
   }
     }

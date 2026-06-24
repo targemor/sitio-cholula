@@ -142,6 +142,16 @@ const { id, items, isEvento = false, isImperdible = false, className = '' } = As
       width: 80% !important;
       margin: 0 auto;
     }
+
+    .swiper-slide-img:not(.swiper-slide-img--imperdible):not(.swiper-slide-img--evento) {
+      height: 200px;
+    }
+
+    :global(.swiper-button-next),
+    :global(.swiper-button-prev) {
+      width: 32px !important;
+      height: 32px !important;
+    }
   }
 </style>
 

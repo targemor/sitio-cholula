@@ -128,8 +128,32 @@ const igGradId = `ig-grad-card-${swiperId}`;
 </div>
 
 <style>
+  /* Desktop: fix image to 560px */
   :global(.business-swiper .swiper-slide-img) {
     height: 560px !important;
     object-fit: cover !important;
+  }
+
+  /* Mobile: reduce image and remove card fixed height */
+  @media (max-width: 768px) {
+    :global(.business-card) {
+      height: auto !important;
+      overflow: hidden !important;
+      max-width: 100% !important;
+    }
+    :global(.business-card-slider) {
+      height: 200px !important;
+      padding-bottom: 0 !important;
+      overflow: hidden !important;
+    }
+    :global(.business-swiper) {
+      max-width: 100% !important;
+    }
+    :global(.business-swiper .swiper-slide img),
+    :global(.business-swiper .swiper-slide-img) {
+      width: 100% !important;
+      height: 200px !important;
+      object-fit: cover !important;
+    }
   }
 </style>

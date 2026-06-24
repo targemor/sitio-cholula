@@ -64,7 +64,7 @@
 }
 
 .business-card-title {
-  color: #c15c54;
+  color: var(--color-primary);
   font-size: 1.1rem;
   font-weight: 700;
   margin: 0 0 0.75rem 0;
@@ -116,7 +116,7 @@
 }
 
 .business-card-phone strong {
-  color: #c15c54;
+  color: var(--color-primary);
   font-weight: 700;
 }
 
@@ -126,4 +126,45 @@
 
 .icon--location {
   color: #000;
+}
+
+@media (max-width: 768px) {
+  /* Quitar altura fija para que el contenido fluya libremente */
+  .business-card {
+    height: auto;
+  }
+
+  /* Reducir imagen (de 560px a 220px) */
+  .business-card-slider {
+    height: 220px;
+    padding-bottom: 0;
+  }
+  .business-card .swiper-slide img {
+    width: 100%;
+    height: 220px;
+  }
+  :global(.business-swiper .swiper-slide-img) {
+    height: 220px !important;
+  }
+
+  /* Ajustar padding y espaciados del contenido */
+  .business-card-content {
+    padding: 0.5rem 0.75rem 0.75rem;
+  }
+  .business-card-title {
+    font-size: 0.95rem;
+    margin: 0 0 0.4rem 0;
+  }
+  .business-card-info {
+    gap: 0.35rem;
+    margin-bottom: 0.5rem;
+  }
+  .business-card-info li,
+  .business-card-phone {
+    font-size: 0.82rem;
+  }
+  .business-card-info .icon svg {
+    width: 14px;
+    height: 14px;
+  }
 }

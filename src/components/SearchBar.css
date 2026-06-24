@@ -26,7 +26,7 @@
 }
 
 .search-input-wrapper.focused {
-    border-color: #c15c54;
+    border-color: var(--color-primary);
 }
 
 .search-icon {
@@ -41,7 +41,7 @@
 }
 
 .search-icon.focused {
-    color: #c15c54;
+    color: var(--color-primary);
 }
 
 .search-input {
@@ -307,7 +307,7 @@
 }
 
 .search-highlight {
-    background: #c15c54;
+    background: var(--color-primary);
     color: #fff;
 }
 

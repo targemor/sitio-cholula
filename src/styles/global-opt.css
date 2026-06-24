@@ -6982,7 +6982,7 @@ button.swiper-pagination-bullet {
   font-family: Roboto,Sans-serif;
   font-size: 2vw;
   font-weight: 400;
-  color: #fdbc00
+  color: var(--color-accent)
 }
 .elementor-14 .elementor-element.elementor-element-012695a,
 .elementor-14 .elementor-element.elementor-element-15b23a7,
@@ -7337,7 +7337,7 @@ button.swiper-pagination-bullet {
 .elementor-14 .elementor-element.elementor-element-272857c>.elementor-motion-effects-container>.elementor-motion-effects-layer,
 .elementor-14 .elementor-element.elementor-element-6bbe4fc:not(.elementor-motion-effects-element-type-background),
 .elementor-14 .elementor-element.elementor-element-6bbe4fc>.elementor-motion-effects-container>.elementor-motion-effects-layer {
-  background-color: #fdbc00
+  background-color: var(--color-accent)
 }
 .elementor-14 .elementor-element.elementor-element-fb9d7c6 > .elementor-motion-effects-container > .elementor-motion-effects-layer,
 .elementor-14 .elementor-element.elementor-element-fb9d7c6:not(.elementor-motion-effects-element-type-background) {

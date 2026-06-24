@@ -82,19 +82,19 @@ const visitanos = [
     href: "/donde-hospedarse",
     label: "Hoteles",
     img: "https://visitcholula.mx/wp-content/uploads/2025/11/hotel_tila_cholula_1-1024x1024-1.jpg",
-    color: "#c15c54",
+    color: "var(--color-primary)",
   },
   {
     href: "/donde-comer",
     label: "Restaurantes – Bares",
     img: "https://visitcholula.mx/wp-content/uploads/2025/11/Churreria-Las-Duyas_cholula_1-1024x1024-1.webp",
-    color: "#fcbe03",
+    color: "var(--color-accent)",
   },
   {
     href: "/que-hacer",
     label: "Qué Hacer",
     img: "https://visitcholula.mx/wp-content/uploads/2025/11/Turiwheel_cholula_2-1024x1024-1.webp",
-    color: "#00e5ff",
+    color: "var(--color-secondary)",
   },
 ];
 
@@ -104,14 +104,14 @@ const artesanias = [
     href: "https://www.google.com/maps/place/Parque+Soria",
     label: "Parque Soria",
     img: "https://visitcholula.mx/wp-content/uploads/2025/11/PARQUE-SORIA.png",
-    color: "#c15c54",
+    color: "var(--color-primary)",
     target: "_blank",
   },
   {
     href: "https://www.google.com/maps/place/Centro+San+Pedro+Cholula",
     label: "Zona Centro",
     img: "https://visitcholula.mx/wp-content/uploads/2025/11/PORTAL-GUERRERO.png",
-    color: "#fcbe03",
+    color: "var(--color-accent)",
     target: "_blank",
   },
 ];
@@ -519,8 +519,6 @@ const searchItems = [
       </div>
     </div>
   </section>
-
-
 </Layout>
 
 <style>
@@ -650,13 +648,13 @@ const searchItems = [
   }
 
   .section-label.section-label--coral {
-    color: #c15c54;
+    color: var(--color-primary);
   }
   .section-label.section-label--turquesa {
-    color: #00e5ff;
+    color: var(--color-secondary);
   }
   .section-label.section-label--amarillo {
-    color: #fdbc00;
+    color: var(--color-accent);
   }
 
   /* Decorative divider is now managed by the <Divider /> component */
@@ -687,7 +685,7 @@ const searchItems = [
     flex-direction: column;
     align-items: center;
     gap: 2rem;
-    width: 100%;
+    width: 80%;
   }
   .logo-partner {
     max-width: 500px;
@@ -697,6 +695,11 @@ const searchItems = [
   }
   .logo-partner--small {
     max-width: 352px;
+  }
+  @media (max-width: 768px) {
+    .logo-partner {
+      width: 50%;
+    }
   }
   .logo-separator {
     height: 122px;
@@ -807,8 +810,7 @@ const searchItems = [
     filter: drop-shadow(2px 2px 0px #ff0050) drop-shadow(-2px -2px 0px #00f2fe);
   }
   .share-section {
-    padding-left: 2rem;
-    margin-bottom: 2rem;
+    padding: 2rem;
   }
   .share-title {
     margin-bottom: 0.5rem;
@@ -869,6 +871,4 @@ const searchItems = [
     color: #555;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   }
-
-
 </style>
