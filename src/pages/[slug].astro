@@ -93,29 +93,35 @@ const FALLBACK_IMG = "https://images.unsplash.com/photo-1605335191599-4458d98e16
 </Layout>
 
 <script>
-  // Al cargar la página, verificamos si hay un id en los query parameters
+  // Al cargar la página, verificamos si hay un id en los query parameters o un hash
   document.addEventListener("DOMContentLoaded", () => {
     const params = new URLSearchParams(window.location.search);
-    const id = params.get("id");
+    const searchId = params.get("id");
+    const hash = window.location.hash; // Ej: "#item-0"
     
-    if (id !== null) {
-      // Retrasamos un poco la búsqueda para asegurar que el grid y los componentes React estén renderizados
+    let targetCard = null;
+
+    if (searchId !== null) {
+      targetCard = document.getElementById(`item-${searchId}`);
+    } else if (hash && hash.startsWith("#item-")) {
+      targetCard = document.getElementById(hash.substring(1));
+    }
+    
+    if (targetCard) {
+      // Retrasamos un poco para asegurar que el grid y los componentes React estén renderizados
       setTimeout(() => {
-        const targetCard = document.getElementById(`item-${id}`);
-        if (targetCard) {
-          // Scroll suave hasta la tarjeta, centrándola en la pantalla
-          targetCard.scrollIntoView({ behavior: "smooth", block: "center" });
-          
-          // Opcional: Destacamos la tarjeta temporalmente
-          targetCard.style.transition = "box-shadow 0.5s ease-in-out, transform 0.5s ease";
-          targetCard.style.boxShadow = "0 0 0 6px var(--color-mex-rosa, #e10098)";
-          targetCard.style.transform = "scale(1.02)";
-          
-          setTimeout(() => {
-            targetCard.style.boxShadow = "";
-            targetCard.style.transform = "";
-          }, 2500);
-        }
+        // Scroll suave hasta la tarjeta, centrándola en la pantalla
+        targetCard.scrollIntoView({ behavior: "smooth", block: "center" });
+        
+        // Destacamos la tarjeta temporalmente
+        targetCard.style.transition = "box-shadow 0.5s ease-in-out, transform 0.5s ease";
+        targetCard.style.boxShadow = "0 0 0 6px var(--color-mex-rosa, #e10098)";
+        targetCard.style.transform = "scale(1.02)";
+        
+        setTimeout(() => {
+          targetCard.style.boxShadow = "";
+          targetCard.style.transform = "";
+        }, 2500);
       }, 300);
     }
   });

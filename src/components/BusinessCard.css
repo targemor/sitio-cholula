@@ -67,6 +67,9 @@
 .business-card-content {
   padding: 0.75rem 1rem 1rem;
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .business-card-title {
@@ -121,16 +124,55 @@
   align-items: center;
 }
 
-.business-card-phone {
-  font-size: 0.95rem;
-  color: #4a4a4a;
+.business-card-cta-wrapper {
+  margin-top: auto;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 1rem;
   display: flex;
-  gap: 0.25rem;
+  flex-direction: row;
+  gap: 0.5rem;
 }
 
-.business-card-phone strong {
-  color: var(--color-primary);
-  font-weight: 700;
+.whatsapp-cta, .share-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+  flex: 1;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: center;
+}
+
+.whatsapp-cta {
+  background-color: #25d366;
+  color: #ffffff !important;
+}
+
+.whatsapp-cta:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+  box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+  color: #ffffff !important;
+}
+
+.share-cta {
+  background-color: #4a5568;
+  color: #ffffff !important;
+}
+
+.share-cta:hover {
+  transform: translateY(-2px);
+  opacity: 0.95;
+  box-shadow: 0 4px 10px rgba(74, 85, 104, 0.3);
+  color: #ffffff !important;
 }
 
 .icon--facebook {
@@ -139,6 +181,30 @@
 
 .icon--location {
   color: #000;
+}
+
+/* Custom Toast Notification */
+.custom-toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(50px);
+  background-color: #333;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 9999;
+  opacity: 0;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.custom-toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
 }
 
 @media (max-width: 768px) {
