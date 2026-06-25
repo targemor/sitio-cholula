@@ -208,6 +208,9 @@
 }
 
 @media (max-width: 768px) {
+  .hide-on-mobile {
+    display: none;
+  }
 
   /* Reducir imagen (de 560px a 220px) */
   .business-card-slider {
