@@ -34,6 +34,23 @@ function normalize(str: string) {
 }
 
 /**
+ * Verifica si una palabra de b\u00fasqueda coincide con un texto.
+ * Cubre tres casos:
+ *  1. Subcadena exacta: "bar" encuentra "kitchen bar"
+ *  2. Prefijo del query sobre token: "bares" \u2192 token "bar" en el texto \u2713
+ *  3. Prefijo del token sobre query: "restauran" \u2192 token "restaurante" \u2713
+ * El m\u00ednimo de 2 caracteres evita falsos positivos con palabras muy cortas.
+ */
+function matchesWord(queryWord: string, text: string): boolean {
+    if (text.includes(queryWord)) return true;
+    if (queryWord.length < 2) return false;
+    const tokens = text.split(/[\s,\u00b7\/\-\u2013\u2022()]+/).filter(w => w.length > 1);
+    return tokens.some(
+        token => queryWord.startsWith(token) || token.startsWith(queryWord)
+    );
+}
+
+/**
  * Resalta TODAS las ocurrencias de `query` en `label`,
  * comparando texto normalizado (sin acentos, minúsculas).
  * Devuelve un array de React nodes con <mark> en las coincidencias.
@@ -191,11 +208,11 @@ export default function SearchBar({
 
                     queryWords.forEach(word => {
                         let wordScore = 0;
-                        if (normLabel.includes(word)) wordScore += 3;
-                        if (normCat.includes(word)) wordScore += 1;
-                        if (normSub.includes(word)) wordScore += 1;
-                        if (normKeywords.includes(word)) wordScore += 1;
-                        if (normHorario.includes(word)) wordScore += 1;
+                        if (matchesWord(word, normLabel)) wordScore += 3;
+                        if (matchesWord(word, normCat)) wordScore += 2;
+                        if (matchesWord(word, normSub)) wordScore += 1;
+                        if (matchesWord(word, normKeywords)) wordScore += 1;
+                        if (matchesWord(word, normHorario)) wordScore += 1;
 
                         if (wordScore > 0) {
                             score += wordScore;
