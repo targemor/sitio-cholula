@@ -1831,6 +1831,38 @@
             },
             "idealPara": "probar helado en rollo",
             "googleMaps": "https://maps.app.goo.gl/PZiwsoJiRhiNDw1H6"
+        },
+        {
+            "nombre": "Valiente Kitchen Bar",
+            "categoria": "restaurante",
+            "direccion": "Av. 8 Ote. 230, Centro, 72760 San Pedro Cholula, Pue.",
+            "telefono": null,
+            "social": {
+                "instagram": "https://www.instagram.com/valientekitchenbar"
+            },
+            "imagenes": [
+                "/restaurantes/valiente/1.jpeg",
+                "/restaurantes/valiente/2.jpeg",
+                "/restaurantes/valiente/3.jpeg"
+            ],
+            "clasificacion": "Restaurante-Bar",
+            "dondeEsta": "Zona Centro",
+            "tipoComida": "Cocina de autor",
+            "ambiente": "Romántico · Elegante",
+            "caracteristicasEspeciales": "Menú de degustación, maridaje, cocina de autor",
+            "horario": {
+                "resumen": "14:30-23:00",
+                "detalle": "Mié-Sáb: 14:30–23:00 • Dom: 13:00–18:00",
+                "lunes": "cerrado",
+                "martes": "cerrado",
+                "miercoles": "14:30-23:00",
+                "jueves": "14:30-23:00",
+                "viernes": "14:30-23:00",
+                "sabado": "14:30-23:00",
+                "domingo": "13:00-18:00"
+            },
+            "idealPara": "menú de degustación, maridaje, cocina de autor",
+            "googleMaps": "https://maps.app.goo.gl/F4fsVuRRDNZgcs1r7"
         }
     ],
     "queHacer": [
