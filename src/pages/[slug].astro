@@ -81,9 +81,11 @@ const FALLBACK_IMG = "https://images.unsplash.com/photo-1605335191599-4458d98e16
             title={item.nombre}
             images={(item.imagenes && item.imagenes.length > 0) ? item.imagenes : [FALLBACK_IMG]}
             address={item.direccion || undefined}
+            mapsUrl={item.googleMaps || undefined}
             phone={item.telefono || undefined}
             instagram={item.social?.instagram || undefined}
             facebook={item.social?.facebook || undefined}
+            tiktok={item.social?.tiktok || undefined}
             description={item.descripcion || undefined}
           />
         ))}

@@ -183,6 +183,17 @@
   color: #000;
 }
 
+.address-link {
+  color: #4a4a4a;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.address-link:hover {
+  opacity: 0.7;
+  text-decoration: underline;
+}
+
 /* Custom Toast Notification */
 .custom-toast {
   position: fixed;
