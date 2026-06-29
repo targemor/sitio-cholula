@@ -1,0 +1,31 @@
+/* Variables globales del sitio y reset base */
+html,
+body,
+main {
+  overflow-x: visible !important;
+  overflow-y: visible !important;
+}
+
+:root {
+  --color-primary: #c15c54;
+  --color-secondary: #4a8fa1;
+  --color-accent: #e5a93c;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+span,
+div,
+li,
+button,
+input,
+textarea {
+  font-family: "Roboto", sans-serif !important;
+}

@@ -1,27 +1,15 @@
 ---
-
+import { Image } from "astro:assets";
+import "./Divider.css";
 ---
 
 <div class="divider-wrapper" aria-hidden="true">
-  <img
+  <Image
     src="/greca.png"
     alt="Separador ornamental"
     class="section-divider-img"
+    width={300}
+    height={30}
     loading="lazy"
   />
 </div>
-
-<style>
-  .divider-wrapper {
-    display: flex;
-    justify-content: center;
-    margin: 0 auto 2.5rem;
-    width: 100%;
-  }
-  .section-divider-img {
-    height: auto;
-    max-width: 100%;
-    width: 200px; /* Tamaño ideal para que se vea bien como divisor */
-    object-fit: contain;
-  }
-</style>

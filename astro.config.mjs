@@ -8,6 +8,8 @@ export default defineConfig({
   server: {
       port: 4600
   },
-
+  image: {
+    domains: ["visitcholula.mx"]
+  },
   integrations: [react()],
 });

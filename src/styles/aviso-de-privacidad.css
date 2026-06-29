@@ -1,0 +1,96 @@
+/* ── Aviso de privacidad ── */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 60vh;
+  min-height: 400px;
+  overflow: hidden;
+}
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  pointer-events: none;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(0, 0, 0, 0.15) 40%,
+    rgba(0, 0, 0, 0.15) 60%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  pointer-events: none;
+}
+
+.privacy-section {
+  padding: 3rem 0 6rem;
+  background-color: #f9f9f9;
+  min-height: 60vh;
+}
+
+.privacy-section .container {
+  max-width: 60%;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.privacy-title {
+  color: #555;
+  font-family: "Roboto", sans-serif;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  margin: 0 0 0.25rem 0;
+}
+
+.privacy-updated {
+  color: #94a3b8;
+  font-size: 0.85rem;
+  margin: 0 0 2.5rem 0;
+}
+
+.privacy-body h2 {
+  color: #555;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 2rem 0 0.5rem 0;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid #555;
+  display: inline-block;
+}
+
+.privacy-body p,
+.privacy-body li {
+  color: #334155;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0.4rem 0;
+}
+
+.privacy-body ul {
+  padding-left: 1.4rem;
+  margin: 0.5rem 0;
+}
+
+.privacy-body a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.privacy-note {
+  background: #fef9c3;
+  border-left: 4px solid #eab308;
+  padding: 0.6rem 1rem;
+  border-radius: 4px;
+  font-size: 0.88rem !important;
+  color: #78350f !important;
+  margin: 0.75rem 0 !important;
+}

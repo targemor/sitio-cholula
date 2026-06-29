@@ -1,0 +1,13 @@
+.divider-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto .5rem;
+  width: 100%;
+}
+
+.section-divider-img {
+  height: auto;
+  max-width: 100%;
+  width: 200px;
+  object-fit: contain;
+}
