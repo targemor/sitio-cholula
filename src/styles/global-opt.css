@@ -18541,7 +18541,6 @@ img.wp-smiley {
   margin: 0
 }
 body {
-  overflow-x: hidden;
   padding: 0
 }
 a:where(:not(.wp-element-button)) {

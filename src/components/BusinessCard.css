@@ -95,6 +95,12 @@
   gap: 0.8rem;
 }
 
+.business-card-info.business-card-socials {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 0.5rem;
+}
+
 .business-card-info li {
   display: flex;
   align-items: center;

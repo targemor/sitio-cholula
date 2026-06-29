@@ -1,4 +1,4 @@
-﻿{
+{
     "hoteles": [
         {
             "nombre": "Mansión Azul Cholula",
@@ -29,12 +29,13 @@
                 "viernes": "08:00-22:00",
                 "sabado": "08:00-22:00",
                 "domingo": "08:00-22:00"
-            }
+            },
+            "tipoTelefono": null
         },
         {
             "nombre": "Hotel Tila",
             "direccion": "Av 2 Ote 411, San Miguel, Barrio de San Miguel Tianguisnahuitl, 72778 Cholula de Rivadavia, Pue.",
-            "telefono": "221 395 1023",
+            "telefono": "2213951023",
             "sitioWeb": "http://www.tilahotel.com/",
             "social": {
                 "instagram": "https://www.instagram.com/tila_hotel/"
@@ -56,7 +57,8 @@
                 "viernes": "08:00-22:00",
                 "sabado": "08:00-22:00",
                 "domingo": "08:00-22:00"
-            }
+            },
+            "tipoTelefono": "fijo"
         },
         {
             "nombre": "Cálido Cosmos Hotel",
@@ -86,10 +88,11 @@
                 "viernes": "08:00-22:00",
                 "sabado": "08:00-22:00",
                 "domingo": "08:00-22:00"
-            }
+            },
+            "tipoTelefono": null
         },
         {
-            "nombre": "Santa Josefita Bed \u0026 Breakfast",
+            "nombre": "Santa Josefita Bed & Breakfast",
             "direccion": "5 Poniente 123, Col. Centro",
             "telefono": null,
             "sitioWeb": null,
@@ -117,7 +120,8 @@
                 "viernes": "08:00-22:00",
                 "sabado": "08:00-22:00",
                 "domingo": "08:00-22:00"
-            }
+            },
+            "tipoTelefono": null
         },
         {
             "nombre": "Hotel MS Portales",
@@ -152,16 +156,17 @@
                 "viernes": "08:00-22:00",
                 "sabado": "08:00-22:00",
                 "domingo": "08:00-22:00"
-            }
+            },
+            "tipoTelefono": null
         },
         {
             "nombre": "Quinta Alhóndiga Galindo",
             "direccion": "Avenida Miguel Hidalgo 106, Colonia Centro",
-            "telefono": "222 261 7546",
-            "telefonoAlt": "222 970 2115",
-            "whatsapp": "222 125 1618",
+            "telefono": "2222617546",
+            "telefonoAlt": "2229702115",
+            "whatsapp": "2221251618",
             "email": "galindo.hotelboutique@gmail.com",
-            "sitioWeb": "https://www.quintagalindo.com",
+            "sitioWeb": "https://quintagalindo.com/",
             "social": {
                 "instagram": "https://www.instagram.com/quintagalindo.hb",
                 "facebook": "https://www.facebook.com/QuintaAlhondigaGalindo"
@@ -186,15 +191,16 @@
                 "viernes": "08:00-22:00",
                 "sabado": "08:00-22:00",
                 "domingo": "08:00-22:00"
-            }
+            },
+            "tipoTelefono": "ambos"
         },
         {
             "nombre": "Hotel los Remedios",
             "direccion": null,
-            "telefono": "220 195 7673",
-            "whatsapp": "222 505 1108",
+            "telefono": "2201957673",
+            "whatsapp": "2225051108",
             "email": "hotelosremedios@gmail.com",
-            "sitioWeb": "https://www.hotellosremedios.com",
+            "sitioWeb": "http://www.hotellosremedios.com/",
             "social": {
                 "facebook": "https://www.facebook.com/HotelLosRemedios"
             },
@@ -217,15 +223,16 @@
                 "viernes": "08:00-22:00",
                 "sabado": "08:00-22:00",
                 "domingo": "08:00-22:00"
-            }
+            },
+            "tipoTelefono": "ambos"
         },
         {
             "nombre": "Hotel Entre Volcanes",
             "direccion": "7 oriente #414 San Pedro Cholula",
-            "telefono": "222 973 0042",
-            "whatsapp": "221 428 2993",
+            "telefono": "2229730042",
+            "whatsapp": "2214282993",
             "email": "entrevolcanesch@gmail.com",
-            "sitioWeb": "https://www.entrevolcaneshotel.com.mx",
+            "sitioWeb": "https://entrevolcaneshotel.com.mx/",
             "social": {
                 "instagram": "https://www.instagram.com/hotelentrevolcanes",
                 "facebook": "https://www.facebook.com/HotelEntreVolcanes"
@@ -249,13 +256,14 @@
                 "viernes": "08:00-22:00",
                 "sabado": "08:00-22:00",
                 "domingo": "08:00-22:00"
-            }
+            },
+            "tipoTelefono": "ambos"
         },
         {
             "nombre": "Hotel Santa Irene",
             "direccion": "Av 2 Ote 610, San Miguel, Barrio de San Miguel Tianguisnahuitl, 72750 Cholula de Rivadavia, Pue.",
             "telefono": null,
-            "whatsapp": "221 425 9093",
+            "whatsapp": "2214259093",
             "email": "hotelsantairenecholula@gmail.com",
             "sitioWeb": null,
             "social": {
@@ -278,12 +286,13 @@
                 "viernes": "08:00-22:00",
                 "sabado": "08:00-22:00",
                 "domingo": "08:00-22:00"
-            }
+            },
+            "tipoTelefono": "whatsapp"
         },
         {
-            "nombre": "La Huerta Golf \u0026 Hotel",
+            "nombre": "La Huerta Golf & Hotel",
             "direccion": "Priv. Juan Blanca 2501-A, Santa Ma. Xixitla 72760. San Pedro Cholula, Puebla",
-            "telefono": "222 247 3392",
+            "telefono": "2222473392",
             "email": "lahuertagolfhotel@gmail.com",
             "sitioWeb": null,
             "social": {},
@@ -305,14 +314,15 @@
                 "viernes": "08:00-22:00",
                 "sabado": "08:00-22:00",
                 "domingo": "08:00-22:00"
-            }
+            },
+            "tipoTelefono": "fijo"
         },
         {
             "nombre": "Hotel Los Sauces",
             "direccion": "Avenida Forjadores de Puebla, Carr. Federal México-Puebla km.122, 72760 Heroica Puebla de Zaragoza, Pue.",
-            "telefono": "222 247 1011",
-            "telefonoAlt": "222 247 1012",
-            "sitioWeb": "https://www.hotellossauces.com",
+            "telefono": "2222471011",
+            "telefonoAlt": "2222471012",
+            "sitioWeb": "https://hotellossauces.com/",
             "social": {
                 "instagram": "https://www.instagram.com/lossauceshotel",
                 "facebook": "https://www.facebook.com/HotelLosSauces"
@@ -336,14 +346,15 @@
                 "viernes": "08:00-22:00",
                 "sabado": "08:00-22:00",
                 "domingo": "08:00-22:00"
-            }
+            },
+            "tipoTelefono": "fijo"
         },
         {
             "nombre": "Casa Chanehque",
             "direccion": "Av. Morelos 402, San Miguel, Pueblo Mágico, 72760 Cholula de Rivadavia, Pue.",
-            "telefono": "221 569 5997",
+            "telefono": "2215695997",
             "email": "casachanehque@gmail.com",
-            "sitioWeb": "https://www.hotelcasachanehque.com",
+            "sitioWeb": "https://www.hotelcasachanehque.com/",
             "social": {
                 "instagram": "https://www.instagram.com/hotelcasachanehque",
                 "facebook": "https://www.facebook.com/CasaChanehque"
@@ -368,13 +379,14 @@
                 "viernes": "08:00-22:00",
                 "sabado": "08:00-22:00",
                 "domingo": "08:00-22:00"
-            }
+            },
+            "tipoTelefono": "fijo"
         },
         {
             "nombre": "Hotel Choloa",
             "direccion": "Av 7 Ote 206, Centro, 72760 Cholula de Rivadavia, Pue.",
             "telefono": null,
-            "whatsapp": "221 403 4903",
+            "whatsapp": "2214034903",
             "email": "choloacholula@gmail.com",
             "sitioWeb": null,
             "social": {
@@ -400,14 +412,15 @@
                 "viernes": "08:00-22:00",
                 "sabado": "08:00-22:00",
                 "domingo": "08:00-22:00"
-            }
+            },
+            "tipoTelefono": "whatsapp"
         },
         {
             "nombre": "Hotel Ramadá Encore",
             "direccion": "Lateral del Anillo Perif. Ecológico 1230, 72680 Heroica Puebla de Zaragoza, Pue.",
-            "telefono": "222 131 7121",
+            "telefono": "2221317121",
             "email": "ejecutivo2@encorepuebla.com",
-            "sitioWeb": "https://www.encorepuebla.com",
+            "sitioWeb": "https://www.encorepuebla.com/",
             "social": {
                 "facebook": "https://www.facebook.com/HotelRamadaEncore"
             },
@@ -430,13 +443,14 @@
                 "viernes": "08:00-22:00",
                 "sabado": "08:00-22:00",
                 "domingo": "08:00-22:00"
-            }
+            },
+            "tipoTelefono": "fijo"
         },
         {
             "nombre": "Hotel Reforma",
             "direccion": "Diagonal de La 2 Sur 101 Centro 72760 Cholula de Rivadavia, Pue. México",
-            "telefono": "222 247 0149",
-            "whatsapp": "222 205 6054",
+            "telefono": "2222470149",
+            "whatsapp": "2222056054",
             "sitioWeb": null,
             "social": {
                 "facebook": "https://www.facebook.com/HotelReforma"
@@ -461,12 +475,13 @@
                 "viernes": "08:00-22:00",
                 "sabado": "08:00-22:00",
                 "domingo": "08:00-22:00"
-            }
+            },
+            "tipoTelefono": "ambos"
         },
         {
             "nombre": "Hotel Marmoy",
             "direccion": "Av Morelos 214 San Miguel, Col. Centro, Cholula de Rivadavia, Puebla",
-            "telefono": "222 991 1952",
+            "telefono": "2229911952",
             "email": "hotelmarmoycholula@gmail.com",
             "sitioWeb": null,
             "social": {
@@ -492,7 +507,8 @@
                 "viernes": "08:00-22:00",
                 "sabado": "08:00-22:00",
                 "domingo": "08:00-22:00"
-            }
+            },
+            "tipoTelefono": "fijo"
         }
     ],
     "restaurantes": [
@@ -500,7 +516,7 @@
             "nombre": "Restaurante Bar Mesón de la Quinta",
             "categoria": "restaurante",
             "direccion": "Av. Miguel Hidalgo 106, Centro, 72760 Cholula de Rivadavia, Pue.",
-            "telefono": "222 106 0452",
+            "telefono": "2221060452",
             "email": "pabellonqag@gmail.com",
             "sitioWeb": "https://www.pabellonqag.com",
             "social": {
@@ -533,13 +549,14 @@
                 "domingo": "09:00-17:30"
             },
             "idealPara": "probar platillo típicos",
-            "googleMaps": "https://maps.app.goo.gl/3ubQ5MKsVhsorLd79"
+            "googleMaps": "https://maps.app.goo.gl/3ubQ5MKsVhsorLd79",
+            "tipoTelefono": "whatsapp"
         },
         {
             "nombre": "Churrería Las Duyas",
             "categoria": "restaurante",
             "direccion": "Portal Guerrero 15, Centro, 72760 Cholula de Rivadavia, Pue.",
-            "telefono": "222 247 1689",
+            "telefono": "2222471689",
             "sitioWeb": "https://www.churrerialasduyas.com",
             "social": {
                 "instagram": "https://www.instagram.com/churrerialasduyas",
@@ -570,13 +587,14 @@
                 "domingo": "08:30-23:30"
             },
             "idealPara": "Probar los tradicionales churros",
-            "googleMaps": "https://maps.app.goo.gl/NeoPB6WZcyXnrZvs8"
+            "googleMaps": "https://maps.app.goo.gl/NeoPB6WZcyXnrZvs8",
+            "tipoTelefono": "whatsapp"
         },
         {
             "nombre": "Atracadero Jardín",
             "categoria": "restaurante",
             "direccion": "C. 13 Sur 1108, La Santísima, Barrio de Sta Maria Xixitla, 72762 Cholula de Rivadavia, Pue.",
-            "telefono": "221 203 6934",
+            "telefono": "2212036934",
             "social": {
                 "instagram": "https://www.instagram.com/atracadero.cholula",
                 "facebook": "https://www.facebook.com/share/1E6THSDno7/",
@@ -605,13 +623,14 @@
                 "domingo": "12:00-20:00"
             },
             "idealPara": "Ir con niños, comer al aire libre con jardín, ir con mscttoas",
-            "googleMaps": "https://maps.app.goo.gl/jjjVxAjH4CfVH1KQ6"
+            "googleMaps": "https://maps.app.goo.gl/jjjVxAjH4CfVH1KQ6",
+            "tipoTelefono": "whatsapp"
         },
         {
             "nombre": "Caravana",
             "categoria": "restaurante",
             "direccion": "Av 2 Ote 415, San Miguel, Barrio de San Miguel Tianguisnahuitl, 72760 Cholula de Rivadavia, Pue.",
-            "telefono": "984 879 5652",
+            "telefono": "9848795652",
             "social": {
                 "instagram": "https://www.instagram.com/elcaravana"
             },
@@ -639,13 +658,14 @@
                 "domingo": "10:00-17:30"
             },
             "idealPara": "Una experiencia distinta del taco",
-            "googleMaps": "https://maps.app.goo.gl/c7EH9PMMSoqXcCTFA"
+            "googleMaps": "https://maps.app.goo.gl/c7EH9PMMSoqXcCTFA",
+            "tipoTelefono": "whatsapp"
         },
         {
             "nombre": "Payeca Chocolatería",
             "categoria": "restaurante",
             "direccion": "4 pte 104 san pedro, Centro, 72760 Cholula de Rivadavia, Pue.",
-            "telefono": "55 7322 7983",
+            "telefono": "5573227983",
             "social": {
                 "instagram": "https://www.instagram.com/chocolate_payeca",
                 "facebook": "https://www.facebook.com/share/16LEXjfbXY/"
@@ -673,13 +693,14 @@
                 "domingo": "10:00-22:00"
             },
             "idealPara": "un chocolate caliente, una tarde tranquila, ir con mascotas",
-            "googleMaps": "https://maps.app.goo.gl/AHmKrBqrgJBBnRLF6"
+            "googleMaps": "https://maps.app.goo.gl/AHmKrBqrgJBBnRLF6",
+            "tipoTelefono": "whatsapp"
         },
         {
             "nombre": "Sagrata",
             "categoria": "restaurante",
             "direccion": "Portal Guerrero 3, Los portales de Cholula, 72760 Cholula de Rivadavia, Pue.",
-            "telefono": "221 584 4514",
+            "telefono": "2215844514",
             "social": {
                 "instagram": "https://www.instagram.com/sagratacholula.mx",
                 "facebook": "https://www.facebook.com/profile.php?id=61567674129231"
@@ -708,13 +729,15 @@
                 "domingo": "08:00-19:00"
             },
             "idealPara": "Probar alta cocina mexicana y poblana",
-            "googleMaps": "https://maps.app.goo.gl/JHBZ4hcMQGPGgf3G9"
+            "googleMaps": "https://maps.app.goo.gl/JHBZ4hcMQGPGgf3G9",
+            "sitioWeb": "https://sagrata.mx",
+            "tipoTelefono": "whatsapp"
         },
         {
             "nombre": "Urucú",
             "categoria": "restaurante",
             "direccion": "Calle 6 Nte. 1, San Miguel, Barrio de San Miguel Tianguisnahuitl, 72760 Cholula de Rivadavia, Pue.",
-            "telefono": "221 438 4720",
+            "telefono": "2214384720",
             "social": {
                 "instagram": "https://www.instagram.com/urucupuebla",
                 "facebook": "https://www.facebook.com/urucupuebla"
@@ -743,13 +766,14 @@
                 "domingo": "12:00-18:30"
             },
             "idealPara": "Probar la cochinita pibil, conocer un lugar diferente, ir con mascotas",
-            "googleMaps": "https://maps.app.goo.gl/6bn7zYoyRWJaxY5s9"
+            "googleMaps": "https://maps.app.goo.gl/6bn7zYoyRWJaxY5s9",
+            "tipoTelefono": "whatsapp"
         },
         {
             "nombre": "Fonda Santa Clara",
             "categoria": "restaurante",
             "direccion": "Portal Guerrero 5, Centro, 72760 Cholula de Rivadavia, Pue.",
-            "telefono": "222 247 6966",
+            "telefono": "2222476966",
             "social": {
                 "instagram": "https://www.instagram.com/fondadesantaclaracholula",
                 "facebook": "https://www.facebook.com/fondastaclara"
@@ -779,13 +803,14 @@
                 "domingo": "09:00-21:00"
             },
             "idealPara": "Primera visita en san pedro cholula, comida tradicional",
-            "googleMaps": "https://maps.app.goo.gl/gVQdx1tehGmtZ9U48"
+            "googleMaps": "https://maps.app.goo.gl/gVQdx1tehGmtZ9U48",
+            "tipoTelefono": "whatsapp"
         },
         {
             "nombre": "Divará Campestre",
             "categoria": "restaurante",
             "direccion": "15 Sur 902, San Cristobal Tepontla, 72764 Cholula, Pue.",
-            "telefono": "221 702 0522",
+            "telefono": "2217020522",
             "social": {
                 "instagram": "https://www.instagram.com/divara_campestre",
                 "facebook": "https://www.facebook.com/divaracampestre"
@@ -815,13 +840,14 @@
                 "domingo": "08:30-19:00"
             },
             "idealPara": "Jardín, para ir con niños, hay una granja, asientos al aire libre",
-            "googleMaps": "https://maps.app.goo.gl/V8pqzL28i1xZXPbq5"
+            "googleMaps": "https://maps.app.goo.gl/V8pqzL28i1xZXPbq5",
+            "tipoTelefono": "whatsapp"
         },
         {
             "nombre": "Corazón de San Pedro",
             "categoria": "restaurante",
             "direccion": "Av. 8 Ote. 407, Barrio de San Miguel Tianguisnahuitl, 72760 San Andrés Cholula",
-            "telefono": "221 525 9952",
+            "telefono": "2215259952",
             "social": {
                 "instagram": "https://www.instagram.com/corazon_de_sanpedro",
                 "facebook": "https://www.facebook.com/pages/Restaurante-Coraz%C3%B3n-De-San-Pedro/315817058955469"
@@ -850,13 +876,14 @@
                 "domingo": "13:30-18:30"
             },
             "idealPara": "Planes románticos, celebraciones, asientos al aire libre, tiene jardín",
-            "googleMaps": "https://maps.app.goo.gl/HDz6W7pqwJj336fW8"
+            "googleMaps": "https://maps.app.goo.gl/HDz6W7pqwJj336fW8",
+            "tipoTelefono": "whatsapp"
         },
         {
             "nombre": "Tacos Vehkem",
             "categoria": "restaurante",
             "direccion": "Calle 3 Sur 908, Barrio de Sta Maria Xixitla, 72760 San Andrés Cholula, Pue.",
-            "telefono": "222 667 1304",
+            "telefono": "2226671304",
             "social": {
                 "instagram": "https://www.instagram.com/tacosvehkem",
                 "facebook": "https://www.facebook.com/share/1BvzWJ5wAJ/",
@@ -886,13 +913,14 @@
                 "domingo": "11:00-22:00"
             },
             "idealPara": "probar tacos árabes tradicionales, experiencia local",
-            "googleMaps": "https://maps.app.goo.gl/YQfxYjCn7J9p6pkf7"
+            "googleMaps": "https://maps.app.goo.gl/YQfxYjCn7J9p6pkf7",
+            "tipoTelefono": "whatsapp"
         },
         {
             "nombre": "Casa Relámpago",
             "categoria": "restaurante",
             "direccion": "Ferrocarril 707, San Pablo Tecamac, 72760 Cholula de Rivadavia, Pue.",
-            "telefono": "222 461 3812",
+            "telefono": "2224613812",
             "social": {
                 "instagram": "https://www.instagram.com/casarelampago_oficial"
             },
@@ -904,7 +932,7 @@
             "dondeEsta": "Fuera del Centro",
             "tipoComida": "Destilados y cervezas",
             "ambiente": "Social / Nocturno",
-            "caracteristicasEspeciales": "música de los 80\u0027s los miércoles, idezl para ir con amigos ",
+            "caracteristicasEspeciales": "música de los 80's los miércoles, idezl para ir con amigos ",
             "horario": {
                 "resumen": "13:00-02:00",
                 "detalle": "Mar-Mié: 17:00–00:00 • Jue: 17:00–02:00 • Vie-Sáb: 16:00–02:00 • Dom: 13:00–20:00",
@@ -916,14 +944,15 @@
                 "sabado": "16:00-02:00",
                 "domingo": "13:00-20:00"
             },
-            "idealPara": "disfrutar música de los 80\u0027s los miércoles, para ir con amigos, salir en la noche",
-            "googleMaps": "https://maps.app.goo.gl/2eCT9ygE6jaBAw7f9"
+            "idealPara": "disfrutar música de los 80's los miércoles, para ir con amigos, salir en la noche",
+            "googleMaps": "https://maps.app.goo.gl/2eCT9ygE6jaBAw7f9",
+            "tipoTelefono": "whatsapp"
         },
         {
             "nombre": "Divará Centro",
             "categoria": "restaurante",
             "direccion": "Av. 8 Ote. 414, Barrio de San Miguel Tianguisnahuitl, 72760 Cholula, Pue.",
-            "telefono": "222 960 6603",
+            "telefono": "2229606603",
             "social": {
                 "instagram": "https://www.instagram.com/divara_restaurante",
                 "facebook": "https://www.facebook.com/DivaraMx"
@@ -953,13 +982,14 @@
                 "domingo": "08:30-19:00"
             },
             "idealPara": "Planes con pareja, planes con amigas",
-            "googleMaps": "https://maps.app.goo.gl/FHYvZi8PnZPm8MUu9"
+            "googleMaps": "https://maps.app.goo.gl/FHYvZi8PnZPm8MUu9",
+            "tipoTelefono": "whatsapp"
         },
         {
             "nombre": "La Lunita Restaurante",
             "categoria": "restaurante",
             "direccion": "Av. Morelos 419, San Miguel, Barrio de San Miguel Tianguisnahuitl",
-            "telefono": "222 247 0011",
+            "telefono": "2222470011",
             "social": {
                 "instagram": "https://www.instagram.com/restaurantlalunita",
                 "facebook": "https://www.facebook.com/LaLunitaCholula"
@@ -990,13 +1020,14 @@
                 "domingo": "09:00-18:00"
             },
             "idealPara": "Restaurante tradicional, típicas sangrías",
-            "googleMaps": "https://maps.app.goo.gl/7uqCpmUyesPYio299"
+            "googleMaps": "https://maps.app.goo.gl/7uqCpmUyesPYio299",
+            "tipoTelefono": "whatsapp"
         },
         {
             "nombre": "Chula Cholula Helados Pirámide",
             "categoria": "restaurante",
             "direccion": "Calle 6 Nte. 1, San Miguel, Barrio de San Miguel Tianguisnahuitl, 72778 Cholula de Rivadavia, Pue.",
-            "telefono": "222 564 0635",
+            "telefono": "2225640635",
             "social": {
                 "instagram": "https://www.instagram.com/chola.cholula",
                 "facebook": "https://www.facebook.com/chulacholulahelados"
@@ -1026,13 +1057,14 @@
                 "domingo": "11:00-19:00"
             },
             "idealPara": "Una tarde calurosa",
-            "googleMaps": "https://maps.app.goo.gl/eswddoPJysJPwN2x9"
+            "googleMaps": "https://maps.app.goo.gl/eswddoPJysJPwN2x9",
+            "tipoTelefono": "whatsapp"
         },
         {
             "nombre": "Atracadero",
             "categoria": "restaurante",
             "direccion": "Calle 6 Nte. 211, San Miguel, Barrio de San Miguel Tianguisnahuitl, 72778",
-            "telefono": "222 261 9624",
+            "telefono": "2222619624",
             "social": {
                 "instagram": "https://www.instagram.com/atracadero.cholula",
                 "facebook": "https://www.facebook.com/share/1E6THSDno7/",
@@ -1062,13 +1094,14 @@
                 "domingo": "11:00-19:00"
             },
             "idealPara": "Ir con mascotas",
-            "googleMaps": "https://maps.app.goo.gl/WxJsgs3VmeUhRh7PA"
+            "googleMaps": "https://maps.app.goo.gl/WxJsgs3VmeUhRh7PA",
+            "tipoTelefono": "whatsapp"
         },
         {
             "nombre": "Café Tal",
             "categoria": "restaurante",
             "direccion": "Portal Guerrero 7, Centro, 72760 Cholula de Rivadavia, Pue.",
-            "telefono": "222 404 9947",
+            "telefono": "2224049947",
             "social": {
                 "instagram": "https://www.instagram.com/cafetal_cholula"
             },
@@ -1095,13 +1128,14 @@
                 "domingo": "08:00-23:00"
             },
             "idealPara": "Ir a trabajar, una tarde tranquila, ir con mascotas",
-            "googleMaps": "https://maps.app.goo.gl/kLSiSPf66AJe3FLs6"
+            "googleMaps": "https://maps.app.goo.gl/kLSiSPf66AJe3FLs6",
+            "tipoTelefono": "whatsapp"
         },
         {
             "nombre": "Ciudad Sagrada",
             "categoria": "restaurante",
             "direccion": "Av 2 Ote 615, San Miguel, Barrio de San Miguel Tianguisnahuitl, 72760 San Andrés Cholula, Pue.",
-            "telefono": "222 247 9425",
+            "telefono": "2222479425",
             "social": {
                 "instagram": "https://www.instagram.com/ciudadsagrada",
                 "facebook": "https://www.facebook.com/ciudadsagradamx"
@@ -1131,13 +1165,14 @@
                 "domingo": "08:00-18:00"
             },
             "idealPara": "para ocasiones especiales",
-            "googleMaps": "https://maps.app.goo.gl/eaivVGxYiBnSk2dx5"
+            "googleMaps": "https://maps.app.goo.gl/eaivVGxYiBnSk2dx5",
+            "tipoTelefono": "whatsapp"
         },
         {
             "nombre": "Finca Ensamble",
             "categoria": "restaurante",
             "direccion": "Av 7 Ote 418, San Pablo Tecamac, 72760 San Andrés Cholula, Pue.",
-            "telefono": "222 971 9298",
+            "telefono": "2229719298",
             "social": {
                 "instagram": "https://www.instagram.com/fincaensamble",
                 "facebook": "https://www.facebook.com/FincaEnsamble",
@@ -1168,13 +1203,14 @@
                 "domingo": "12:00-20:00"
             },
             "idealPara": "probar destilados, jardín, salir con amigos",
-            "googleMaps": "https://maps.app.goo.gl/ZrsEZcAV7HVyqboD7"
+            "googleMaps": "https://maps.app.goo.gl/ZrsEZcAV7HVyqboD7",
+            "tipoTelefono": "whatsapp"
         },
         {
             "nombre": "Topolino Gelateria e Caffé",
             "categoria": "restaurante",
             "direccion": "Comercial Hidalgo, Supermanzana Callejon, Centro, 72760 Cholula de Rivadavia, Pue.",
-            "telefono": "221 179 5726",
+            "telefono": "2211795726",
             "social": {
                 "instagram": "https://www.instagram.com/topolino_sanpedrocholula",
                 "facebook": "https://www.facebook.com/TopolinoPortalesCholula"
@@ -1204,13 +1240,14 @@
                 "domingo": "11:00-21:30"
             },
             "idealPara": "una tarde calurosa, tomar un helado para pasear",
-            "googleMaps": "https://maps.app.goo.gl/fPmfvX4LQ5AWqLGR7"
+            "googleMaps": "https://maps.app.goo.gl/fPmfvX4LQ5AWqLGR7",
+            "tipoTelefono": "whatsapp"
         },
         {
             "nombre": "Los Jarrones",
             "categoria": "restaurante",
             "direccion": "Av. Miguel Hidalgo 102, Centro, 72760 Cholula de Rivadavia, Pue.",
-            "telefono": "222 247 1098",
+            "telefono": "2222471098",
             "social": {
                 "instagram": "https://www.instagram.com/los.jarrones"
             },
@@ -1237,7 +1274,8 @@
                 "domingo": "08:00-23:00"
             },
             "idealPara": "Buffet sábados y domingos",
-            "googleMaps": "https://maps.app.goo.gl/X5agiqD9ucJ7sTQq7"
+            "googleMaps": "https://maps.app.goo.gl/X5agiqD9ucJ7sTQq7",
+            "tipoTelefono": "whatsapp"
         },
         {
             "nombre": "Mercado Cosme del Razo",
@@ -1267,13 +1305,14 @@
                 "domingo": "09:00-18:00"
             },
             "idealPara": "probar comida tradicional, experiencia local",
-            "googleMaps": "https://maps.app.goo.gl/uJHRHkCYTHzosRGa8"
+            "googleMaps": "https://maps.app.goo.gl/uJHRHkCYTHzosRGa8",
+            "tipoTelefono": "whatsapp"
         },
         {
-            "nombre": "Por la Mañana by M\u0026M",
+            "nombre": "Por la Mañana by M&M",
             "categoria": "restaurante",
             "direccion": "Av. Morelos 201, Centro, 72760 Cholula de Rivadavia, 72760 puebla, Pue.",
-            "telefono": "221 571 1404",
+            "telefono": "2215711404",
             "social": {
                 "instagram": "https://www.instagram.com/_porlamanana_",
                 "tiktok": "https://www.tiktok.com/@porlamanana_"
@@ -1302,13 +1341,14 @@
                 "domingo": "08:30-14:30"
             },
             "idealPara": "plan con amigas",
-            "googleMaps": "https://maps.app.goo.gl/gjSWrHXWsL1m3XBC9"
+            "googleMaps": "https://maps.app.goo.gl/gjSWrHXWsL1m3XBC9",
+            "tipoTelefono": "whatsapp"
         },
         {
             "nombre": "Restaurante y Terraza Roldán",
             "categoria": "restaurante",
             "direccion": "C. 8 Nte. # 1005, Centro, 72760 Cholula de Rivadavia, Pue.",
-            "telefono": "221 200 8179",
+            "telefono": "2212008179",
             "social": {
                 "instagram": "https://www.instagram.com/restaurante.roldan"
             },
@@ -1332,13 +1372,14 @@
                 "domingo": "08:00-21:00"
             },
             "idealPara": "probar pan tradicional, Brunch, plan con amigas",
-            "googleMaps": "https://maps.app.goo.gl/5UWppoYv9d32eVZx8"
+            "googleMaps": "https://maps.app.goo.gl/5UWppoYv9d32eVZx8",
+            "tipoTelefono": "whatsapp"
         },
         {
             "nombre": "Sangre Azteca",
             "categoria": "restaurante",
             "direccion": "Calle 6 Nte. #2, San Miguel, Barrio de Jesús Tlatempa, 72778 Cholula de Rivadavia, Pue.",
-            "telefono": "222 759 7842",
+            "telefono": "2227597842",
             "social": {
                 "instagram": "https://www.instagram.com/sangreazteca.dmf",
                 "facebook": "https://www.facebook.com/SangreAzteca.dmf"
@@ -1368,13 +1409,14 @@
                 "domingo": "09:00-00:00"
             },
             "idealPara": "probar Cocina tradicional",
-            "googleMaps": "https://maps.app.goo.gl/H913TM877ULxz5HL6"
+            "googleMaps": "https://maps.app.goo.gl/H913TM877ULxz5HL6",
+            "tipoTelefono": "whatsapp"
         },
         {
             "nombre": "Santōua Cholula",
             "categoria": "restaurante",
-            "direccion": "Avenida 6 Poniente \u0026 Av. 5 de Mayo, Centro, 72810 San Andrés Cholula, Pue.",
-            "telefono": "221 371 1813",
+            "direccion": "Avenida 6 Poniente & Av. 5 de Mayo, Centro, 72810 San Andrés Cholula, Pue.",
+            "telefono": "2213711813",
             "social": {
                 "instagram": "https://www.instagram.com/santouapuebla",
                 "facebook": "https://www.facebook.com/santouagastrobar",
@@ -1404,13 +1446,14 @@
                 "domingo": "09:00-22:00"
             },
             "idealPara": "Ir con mascotas, un plan romántico",
-            "googleMaps": "https://maps.app.goo.gl/ikSQR3ksArGmNXSY8"
+            "googleMaps": "https://maps.app.goo.gl/ikSQR3ksArGmNXSY8",
+            "tipoTelefono": "whatsapp"
         },
         {
             "nombre": "La Casa Rosa",
             "categoria": "restaurante",
             "direccion": "C. 4 Sur 105, San Miguel, Centro, 72760 Cholula de Rivadavia, Pue.",
-            "telefono": "222 618 7237",
+            "telefono": "2226187237",
             "social": {
                 "instagram": "https://www.instagram.com/lacasarosacholula",
                 "facebook": "https://www.facebook.com/lacasarosacholula"
@@ -1439,13 +1482,14 @@
                 "domingo": "11:00-21:00"
             },
             "idealPara": "vivir una experiencia local",
-            "googleMaps": "https://maps.app.goo.gl/BCgYpM8YirkREb7j8"
+            "googleMaps": "https://maps.app.goo.gl/BCgYpM8YirkREb7j8",
+            "tipoTelefono": "whatsapp"
         },
         {
-            "nombre": "El Supremo Café \u0026 Tocino",
+            "nombre": "El Supremo Café & Tocino",
             "categoria": "restaurante",
             "direccion": "Av 2 Ote 406, San Miguel, Barrio de San Miguel Tianguisnahuitl, 72750 Cholula de Rivadavia, Pue.",
-            "telefono": "221 655 5666",
+            "telefono": "2216555666",
             "social": {
                 "instagram": "https://www.instagram.com/cafetocino",
                 "facebook": "https://www.facebook.com/share/1BXyVghJnZ/"
@@ -1475,13 +1519,14 @@
                 "domingo": "09:00-15:30"
             },
             "idealPara": "Porciones abundantes, ir con mascotas",
-            "googleMaps": "https://maps.app.goo.gl/qke8BWUQDBBoCt6j7"
+            "googleMaps": "https://maps.app.goo.gl/qke8BWUQDBBoCt6j7",
+            "tipoTelefono": "whatsapp"
         },
         {
             "nombre": "Dang",
             "categoria": "restaurante",
             "direccion": "Calle 6 Nte. 408, San Miguel, Barrio de Jesús Tlatempa, 72814 Cholula de Rivadavia, Pue.",
-            "telefono": "221 419 2200",
+            "telefono": "2214192200",
             "social": {
                 "instagram": "https://www.instagram.com/dang.noodlebar",
                 "facebook": "https://www.facebook.com/DangNoodleBar"
@@ -1510,13 +1555,14 @@
                 "domingo": "14:00-20:00"
             },
             "idealPara": "probar street food asiática",
-            "googleMaps": "https://maps.app.goo.gl/Jr3CZmwHiWn6hAJX6"
+            "googleMaps": "https://maps.app.goo.gl/Jr3CZmwHiWn6hAJX6",
+            "tipoTelefono": "whatsapp"
         },
         {
             "nombre": "Chula Cholula Helados",
             "categoria": "restaurante",
             "direccion": "Av. 8 Ote. 807, Barrio de San Miguel Tianguisnahuitl, 72770 De San Miguel Tianguisnahuitl, Pue.",
-            "telefono": "222 564 0635",
+            "telefono": "2225640635",
             "social": {
                 "instagram": "https://www.instagram.com/chola.cholula",
                 "facebook": "https://www.facebook.com/chulacholulahelados"
@@ -1546,13 +1592,14 @@
                 "domingo": "11:00-19:00"
             },
             "idealPara": "Una tarde calurosa",
-            "googleMaps": "https://maps.app.goo.gl/eswddoPJysJPwN2x9"
+            "googleMaps": "https://maps.app.goo.gl/eswddoPJysJPwN2x9",
+            "tipoTelefono": "whatsapp"
         },
         {
             "nombre": "Restaurante El Establo",
             "categoria": "restaurante",
             "direccion": "Av 7 Pte 112, Centro, 72760 Cholula de Rivadavia, Pue.",
-            "telefono": "220 554 8513",
+            "telefono": "2205548513",
             "social": {
                 "instagram": "https://www.instagram.com/establocholula",
                 "facebook": "https://www.facebook.com/p/Restaurante-El-Establo-100092544788607/"
@@ -1581,13 +1628,14 @@
                 "domingo": "09:00-15:00"
             },
             "idealPara": "Buffet viernes, sábado y domingo",
-            "googleMaps": "https://maps.app.goo.gl/wTUcT24gJLuAqvCr9"
+            "googleMaps": "https://maps.app.goo.gl/wTUcT24gJLuAqvCr9",
+            "tipoTelefono": "whatsapp"
         },
         {
             "nombre": "La Pirámide",
             "categoria": "restaurante",
             "direccion": "Av. Morelos #416, 72760 Cholula, Puebla México",
-            "telefono": "222 247 0254",
+            "telefono": "2222470254",
             "email": "lapiramide48@gmail.com",
             "social": {},
             "imagenes": [
@@ -1613,7 +1661,8 @@
                 "domingo": "09:00-18:00"
             },
             "idealPara": "Al pie de la Pirámide",
-            "googleMaps": "https://maps.app.goo.gl/T6hHFHe7GPk5qT43A"
+            "googleMaps": "https://maps.app.goo.gl/T6hHFHe7GPk5qT43A",
+            "tipoTelefono": "whatsapp"
         },
         {
             "nombre": "Allora",
@@ -1648,13 +1697,14 @@
                 "domingo": "13:00-20:00"
             },
             "idealPara": "Pizza napolitana, Vistas espectaculares",
-            "googleMaps": "https://maps.app.goo.gl/esK2bWehpPMTnogb9"
+            "googleMaps": "https://maps.app.goo.gl/esK2bWehpPMTnogb9",
+            "tipoTelefono": "whatsapp"
         },
         {
             "nombre": "Jazzatlán Cholula",
             "categoria": "bar",
             "direccion": "Av 2 Ote 406, San Miguel, Barrio de San Miguel Tianguisnahuitl, 72760 Cholula de Rivadavia, Pue.",
-            "telefono": "222 838 7569",
+            "telefono": "2228387569",
             "social": {
                 "instagram": "https://www.instagram.com/jazzatlan",
                 "facebook": "https://www.facebook.com/jazzatlanclubdejazz"
@@ -1684,13 +1734,14 @@
                 "domingo": "16:00-21:00"
             },
             "idealPara": "escuchar música en vivo todo los días, club de jazz",
-            "googleMaps": "https://maps.app.goo.gl/yjJsMvEVzaLeGfTJ6"
+            "googleMaps": "https://maps.app.goo.gl/yjJsMvEVzaLeGfTJ6",
+            "tipoTelefono": "whatsapp"
         },
         {
             "nombre": "Cervecería Crazy Moon",
             "categoria": "bar",
             "direccion": "Av. Miguel Hidalgo 214, Centro, 72760 Cholula de Rivadavia, Pue.",
-            "telefono": "222 261 9290",
+            "telefono": "2222619290",
             "social": {
                 "instagram": "https://www.instagram.com/cerveceriacrazymoon",
                 "facebook": "https://www.facebook.com/cerveceriacrazymoon"
@@ -1720,13 +1771,14 @@
                 "domingo": "12:00-21:00"
             },
             "idealPara": "Brewpub, una experiencia distinta en cerveza, salida con amigos",
-            "googleMaps": "https://maps.app.goo.gl/1J4FtK5FmcA7Rnyr5"
+            "googleMaps": "https://maps.app.goo.gl/1J4FtK5FmcA7Rnyr5",
+            "tipoTelefono": "whatsapp"
         },
         {
             "nombre": "La Enamorada",
             "categoria": "bar",
             "direccion": "Av. Miguel Hidalgo 102, Centro, 72760 San Andrés Cholula, Pue.",
-            "telefono": "222 188 7131",
+            "telefono": "2221887131",
             "social": {
                 "instagram": "https://www.instagram.com/laenamorada_cholula",
                 "facebook": "https://www.facebook.com/profile.php?id=100063485292506"
@@ -1758,13 +1810,14 @@
                 "domingo": "12:00-01:00"
             },
             "idealPara": "Música en vivo",
-            "googleMaps": "https://maps.app.goo.gl/TK3SY2TWFQwurQ6R6"
+            "googleMaps": "https://maps.app.goo.gl/TK3SY2TWFQwurQ6R6",
+            "tipoTelefono": "whatsapp"
         },
         {
             "nombre": "Licorería San Pedrito",
             "categoria": "bar",
             "direccion": "San Miguel Tianguisnahuitl, Av. Morelos 405B, Barrio de San Miguel Tianguisnahuitl",
-            "telefono": "221 194 3795",
+            "telefono": "2211943795",
             "social": {
                 "instagram": "https://www.instagram.com/licoreriasanpedrito",
                 "facebook": "https://www.facebook.com/licoreriasnpedrito"
@@ -1794,7 +1847,8 @@
                 "domingo": "12:00-20:00"
             },
             "idealPara": "experiencia diferente, salir con amigos,",
-            "googleMaps": "https://maps.app.goo.gl/XA3PT8PY6suHqpXWA"
+            "googleMaps": "https://maps.app.goo.gl/XA3PT8PY6suHqpXWA",
+            "tipoTelefono": "whatsapp"
         },
         {
             "nombre": "Cholulice",
@@ -1830,7 +1884,8 @@
                 "domingo": "11:00-23:00"
             },
             "idealPara": "probar helado en rollo",
-            "googleMaps": "https://maps.app.goo.gl/PZiwsoJiRhiNDw1H6"
+            "googleMaps": "https://maps.app.goo.gl/PZiwsoJiRhiNDw1H6",
+            "tipoTelefono": "whatsapp"
         },
         {
             "nombre": "Valiente Kitchen Bar",
@@ -1862,7 +1917,8 @@
                 "domingo": "13:00-18:00"
             },
             "idealPara": "menú de degustación, maridaje, cocina de autor",
-            "googleMaps": "https://maps.app.goo.gl/F4fsVuRRDNZgcs1r7"
+            "googleMaps": "https://maps.app.goo.gl/F4fsVuRRDNZgcs1r7",
+            "tipoTelefono": "whatsapp"
         }
     ],
     "queHacer": [
@@ -1935,7 +1991,7 @@
             "nombre": "2RB (2 Ruedas Bueno)",
             "tipo": "renta de bicicletas y tours",
             "direccion": null,
-            "telefono": "222 4346184",
+            "telefono": "2224346184",
             "whatsapp": "https://wa.me/c/5212224346184",
             "certificacionSECTUR": true,
             "social": {
@@ -1966,7 +2022,7 @@
             "nombre": "Tour Cholula Free Walk Tour",
             "tipo": "tour a pie",
             "direccion": "Av. Morelos 603, San Miguel, Plaza la Estación, 72760 San Pedro Cholula, Pue.",
-            "telefono": "782 362 87 14",
+            "telefono": "7823628714",
             "social": {
                 "instagram": "https://www.instagram.com/freewalktourcholula"
             },
@@ -2037,24 +2093,6 @@
             "paginaFacebook": "Guías Turísticos de Cholula",
             "imagenes": [
                 "https://visitcholula.mx/wp-content/uploads/2025/11/Guias_turisticos_Alejandra-Toxqui-1024x1024-1.jpg"
-            ],
-            "horario": "08:00-22:00"
-        },
-        {
-            "nombre": "2RB (2 Ruedas Bueno)",
-            "telefono": "222 4346184",
-            "whatsapp": "https://wa.me/c/5212224346184",
-            "certificacionSECTUR": true,
-            "social": {
-                "instagram": "https://www.instagram.com/2ruedasbueno/",
-                "facebook": "https://www.facebook.com/dos.ruedas.bueno"
-            },
-            "imagenes": [
-                "https://visitcholula.mx/wp-content/uploads/2026/03/5.jpeg",
-                "https://visitcholula.mx/wp-content/uploads/2026/03/3.jpg",
-                "https://visitcholula.mx/wp-content/uploads/2026/03/2.jpg",
-                "https://visitcholula.mx/wp-content/uploads/2026/03/4.jpg",
-                "https://visitcholula.mx/wp-content/uploads/2026/03/1.jpeg"
             ],
             "horario": "08:00-22:00"
         },

@@ -12,17 +12,37 @@ export interface Props {
   address?: string;
   mapsUrl?: string;
   phone?: string;
+  whatsapp?: string;
+  telefonoAlt?: string;
+  sitioWeb?: string;
   description?: string;
+  tipoTelefono?: string;
+  clasificacion?: string;
 }
 
-const { id, title, images, instagram, facebook, tiktok, address, mapsUrl, phone, description } =
-  Astro.props;
+const {
+  id,
+  title,
+  images,
+  instagram,
+  facebook,
+  tiktok,
+  address,
+  mapsUrl,
+  phone,
+  whatsapp,
+  telefonoAlt,
+  sitioWeb,
+  description,
+  tipoTelefono,
+  clasificacion,
+} = Astro.props;
 
 const swiperId = `business-swiper-${id || Math.random().toString(36).substr(2, 9)}`;
 const igGradId = `ig-grad-card-${swiperId}`;
 ---
 
-<div class="business-card" id={id}>
+<div class="business-card" id={id} data-clasificacion={clasificacion || undefined}>
   <div class="business-card-slider">
     <SwiperGallery
       id={swiperId}
@@ -34,127 +54,133 @@ const igGradId = `ig-grad-card-${swiperId}`;
   <div class="business-card-content">
     <h3 class="business-card-title">{title}</h3>
     {description && <p class="business-card-description">{description}</p>}
+    {
+      (instagram || facebook || tiktok) && (
+        <ul class="business-card-info business-card-socials">
+          {instagram && (
+            <li>
+              <a href={instagram} target="_blank" rel="noopener noreferrer" class="social-link">
+                <div class="icon">
+                  <svg viewBox="0 0 448 512" width="20" height="20" aria-hidden="true">
+                    <defs>
+                      <linearGradient id={igGradId} x1="0%" y1="100%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#fdf497" />
+                        <stop offset="5%" stop-color="#fdf497" />
+                        <stop offset="45%" stop-color="#fd5949" />
+                        <stop offset="60%" stop-color="#d6249f" />
+                        <stop offset="90%" stop-color="#285AEB" />
+                      </linearGradient>
+                    </defs>
+                    <path fill={`url(#${igGradId})`} d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                  </svg>
+                </div>
+                <span>Instagram</span>
+              </a>
+            </li>
+          )}
+          {facebook && (
+            <li>
+              <a href={facebook} target="_blank" rel="noopener noreferrer" class="social-link">
+                <div class="icon">
+                  <svg viewBox="0 0 448 512" width="20" height="20" aria-hidden="true" class="icon--facebook">
+                    <path fill="currentColor" d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z" />
+                  </svg>
+                </div>
+                <span>Facebook</span>
+              </a>
+            </li>
+          )}
+          {tiktok && (
+            <li>
+              <a href={tiktok} target="_blank" rel="noopener noreferrer" class="social-link">
+                <div class="icon">
+                  <svg viewBox="0 0 448 512" width="20" height="20" aria-hidden="true">
+                    <path fill="currentColor" d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25V349.38A162.55 162.55 0 1 1 185 188.31v89.89a74.62 74.62 0 1 0 52.23 71.18V0l88 0a121.18 121.18 0 0 0 1.86 22.17h0A122.18 122.18 0 0 0 381 102.39a121.43 121.43 0 0 0 67 20.14Z" />
+                  </svg>
+                </div>
+                <span>TikTok</span>
+              </a>
+            </li>
+          )}
+        </ul>
+      )
+    }
     <ul class="business-card-info">
-      {
-        instagram && (
-          <li>
-            <a
-              href={instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="social-link"
-            >
-              <div class="icon">
-                <svg
-                  viewBox="0 0 448 512"
-                  width="20"
-                  height="20"
-                  aria-hidden="true"
-                >
-                  <defs>
-                    <linearGradient
-                      id={igGradId}
-                      x1="0%"
-                      y1="100%"
-                      x2="100%"
-                      y2="0%"
-                    >
-                      <stop offset="0%" stop-color="#fdf497" />
-                      <stop offset="5%" stop-color="#fdf497" />
-                      <stop offset="45%" stop-color="#fd5949" />
-                      <stop offset="60%" stop-color="#d6249f" />
-                      <stop offset="90%" stop-color="#285AEB" />
-                    </linearGradient>
-                  </defs>
-                  <path
-                    fill={`url(#${igGradId})`}
-                    d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
-                  />
-                </svg>
-              </div>
-              <span>{title}</span>
-            </a>
-          </li>
-        )
-      }
-      {
-        facebook && (
-          <li>
-            <a
-              href={facebook}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="social-link"
-            >
-              <div class="icon">
-                <svg
-                  viewBox="0 0 448 512"
-                  width="20"
-                  height="20"
-                  aria-hidden="true"
-                  class="icon--facebook"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z"
-                  />
-                </svg>
-              </div>
-              <span>{title}</span>
-            </a>
-          </li>
-        )
-      }
-      {
-        tiktok && (
-          <li>
-            <a
-              href={tiktok}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="social-link"
-            >
-              <div class="icon">
-                <svg
-                  viewBox="0 0 448 512"
-                  width="20"
-                  height="20"
-                  aria-hidden="true"
-                  class="icon--tiktok"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M448 209.9a210.1 210.1 0 0 1 -122.8-39.3V349.4A162.6 162.6 0 1 1 185 188.3V278.2a74.6 74.6 0 1 0 52.2 71.2V0l88 0a121.2 121.2 0 0 0 1.9 22.2h0A122.2 122.2 0 0 0 381 102.4a121.4 121.4 0 0 0 67 20.1z"
-                  />
-                </svg>
-              </div>
-              <span>{title}</span>
-            </a>
-          </li>
-        )
-      }
       {
         address && (
           <li>
             <div class="icon">
-              <svg
-                viewBox="0 0 384 512"
+              <img
+                src="/google_maps.webp"
+                alt="Google Maps"
                 width="18"
                 height="18"
-                aria-hidden="true"
                 class="icon--location"
-              >
-                <path
-                  fill="currentColor"
-                  d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"
-                />
-              </svg>
+                style="object-fit: contain;"
+              />
             </div>
             {mapsUrl ? (
-              <a href={mapsUrl} target="_blank" rel="noopener noreferrer" class="address-link">{address}</a>
+              <a
+                href={mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="address-link"
+              >
+                {address}
+              </a>
             ) : (
               <span>{address}</span>
             )}
+          </li>
+        )
+      }
+      {
+        (tipoTelefono === "fijo" || tipoTelefono === "ambos") && phone && (
+          <li>
+            <div class="icon">
+              <svg
+                viewBox="0 0 512 512"
+                width="18"
+                height="18"
+                aria-hidden="true"
+                class="icon--phone"
+              >
+                <path
+                  fill="currentColor"
+                  d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"
+                />
+              </svg>
+            </div>
+            <span>
+              <a href={`tel:${phone.replace(/\\D/g, "")}`} class="address-link">
+                {phone}
+              </a>
+              {telefonoAlt && (
+                <>
+                  ,{" "}
+                  <a
+                    href={`tel:${telefonoAlt.replace(/\\D/g, "")}`}
+                    class="address-link"
+                  >
+                    {telefonoAlt}
+                  </a>
+                </>
+              )}
+            </span>
+          </li>
+        )
+      }
+      {
+        sitioWeb && (
+          <li>
+            <div class="icon">
+              <svg viewBox="0 0 512 512" width="18" height="18" aria-hidden="true" class="icon--website">
+                 <path fill="currentColor" d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.1-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64h185.4c2.1 20.4 3.3 41.8 3.3 64zm28.8-64H503.9c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.6 142 77.5 171.9 151.6zm-149.1 0H166.8c10-63.9 29.8-117.4 55.3-151.6c11.7-15.6 24.3-27.1 33.9-32.4 9.6 5.3 22.2 16.8 33.9 32.4 25.5 34.2 45.3 87.7 55.3 151.6zM8.1 192h123.1c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zm18.6-32c29.9-74.1 93.6-131 171.9-151.6c-25.5 34.2-45.3 87.7-55.3 151.6H26.7zM191.4 464c-25.5-34.2-45.3-87.7-55.3-151.6h149.1c-10 63.9-29.8 117.4-55.3 151.6-11.7 15.6-24.3 27.1-33.9 32.4-9.6-5.3-22.2-16.8-33.9-32.4zm185.3-151.6c10 63.9-29.8 117.4-55.3 151.6 78.3-20.6 142-77.5 171.9-151.6H376.7zM26.7 352h108.6c10 63.9 29.8 117.4 55.3 151.6C112.3 483 48.6 426.1 18.6 352z"/>
+              </svg>
+            </div>
+            <a href={sitioWeb} target="_blank" rel="noopener noreferrer" class="address-link">
+              {new URL(sitioWeb).hostname.replace('www.', '')}
+            </a>
           </li>
         )
       }
@@ -162,14 +188,35 @@ const igGradId = `ig-grad-card-${swiperId}`;
 
     <div class="business-card-cta-wrapper">
       {
-        phone && (
+        phone && (tipoTelefono === "fijo" || tipoTelefono === "ambos") && (
           <a
-            href={`https://api.whatsapp.com/send?phone=52${phone.replace(/\D/g, "")}`}
+            href={`tel:${phone.replace(/\\D/g, "")}`}
+            class="whatsapp-cta"
+            style="background-color: var(--color-primary); color: white;"
+          >
+            <span>LLAMAR</span>
+            <svg viewBox="0 0 512 512" width="16" height="16">
+              <path
+                fill="currentColor"
+                d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"
+              />
+            </svg>
+          </a>
+        )
+      }
+      {
+        (whatsapp || (phone && tipoTelefono === "whatsapp")) && (
+          <a
+            href={
+              whatsapp && whatsapp.startsWith("http")
+                ? whatsapp
+                : `https://api.whatsapp.com/send?phone=52${(whatsapp || phone).replace(/\\D/g, "")}`
+            }
             target="_blank"
             rel="noopener noreferrer"
             class="whatsapp-cta"
           >
-            <span>RESERVAR <span class="hide-on-mobile">POR WHATSAPP</span></span>
+            <span>RESERVAR</span>
             <svg viewBox="0 0 448 512" width="16" height="16">
               <path
                 fill="currentColor"
@@ -180,9 +227,12 @@ const igGradId = `ig-grad-card-${swiperId}`;
         )
       }
       <button class="share-cta" data-share-id={id} data-share-title={title}>
-        <span>COMPARTIR <span class="hide-on-mobile">ENLACE</span></span>
+        <span>COMPARTIR</span>
         <svg viewBox="0 0 512 512" width="16" height="16">
-          <path fill="currentColor" d="M307 34.8c-11.5 5.1-19 16.6-19 29.2v64H176C78.8 128 0 206.8 0 304C0 417.3 81.5 467.9 100.2 478.1c2.5 1.4 5.3 1.9 8.1 1.9c10.9 0 19.7-8.9 19.7-19.7c0-7.5-4.3-14.4-9.8-19.5C108.8 431.9 96 414.4 96 384c0-53 43-96 96-96h96v64c0 12.6 7.4 24.1 19 29.2s25 3 34.4-5.4l160-144c6.7-6.1 10.6-14.7 10.6-23.8s-3.8-17.7-10.6-23.8l-160-144c-9.4-8.5-22.9-10.6-34.4-5.4z"/>
+          <path
+            fill="currentColor"
+            d="M307 34.8c-11.5 5.1-19 16.6-19 29.2v64H176C78.8 128 0 206.8 0 304C0 417.3 81.5 467.9 100.2 478.1c2.5 1.4 5.3 1.9 8.1 1.9c10.9 0 19.7-8.9 19.7-19.7c0-7.5-4.3-14.4-9.8-19.5C108.8 431.9 96 414.4 96 384c0-53 43-96 96-96h96v64c0 12.6 7.4 24.1 19 29.2s25 3 34.4-5.4l160-144c6.7-6.1 10.6-14.7 10.6-23.8s-3.8-17.7-10.6-23.8l-160-144c-9.4-8.5-22.9-10.6-34.4-5.4z"
+          ></path>
         </svg>
       </button>
     </div>
@@ -232,7 +282,7 @@ const igGradId = `ig-grad-card-${swiperId}`;
       }
       toast.textContent = message;
       toast.classList.add("show");
-      
+
       if (toast.timeoutId) clearTimeout(toast.timeoutId);
       toast.timeoutId = setTimeout(() => {
         toast.classList.remove("show");
@@ -245,7 +295,10 @@ const igGradId = `ig-grad-card-${swiperId}`;
         const id = btn.getAttribute("data-share-id");
         const title = btn.getAttribute("data-share-title");
         // Construimos el link que apunte directamente a la tarjeta (si tiene id)
-        const url = window.location.origin + window.location.pathname + (id ? "#" + id : "");
+        const url =
+          window.location.origin +
+          window.location.pathname +
+          (id ? "#" + id : "");
 
         if (navigator.share) {
           try {

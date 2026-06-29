@@ -1,43 +1,44 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Divider from '../components/Divider.astro';
-import BusinessCard from '../components/BusinessCard.astro';
-import cholulaData from '../data/cholula.json';
+import Layout from "../layouts/Layout.astro";
+import Divider from "../components/Divider.astro";
+import BusinessCard from "../components/BusinessCard.astro";
+import CategoryFilter from "../components/CategoryFilter.astro";
+import cholulaData from "../data/cholula.json";
 
 export async function getStaticPaths() {
-  // Mapeamos los slugs de la URL a las categorías del JSON
   return [
     {
-      params: { slug: 'donde-hospedarse' },
+      params: { slug: "donde-hospedarse" },
       props: {
-        title: 'DÓNDE HOSPEDARSE',
-        color: 'var(--color-primary)',
+        title: "DÓNDE HOSPEDARSE",
+        color: "var(--color-primary)",
         data: cholulaData.hoteles,
       },
     },
     {
-      params: { slug: 'donde-comer' },
+      params: { slug: "donde-comer" },
       props: {
-        title: 'DÓNDE COMER',
-        color: 'var(--color-accent)',
+        title: "DÓNDE COMER",
+        color: "var(--color-accent)",
         data: cholulaData.restaurantes,
       },
     },
     {
-      params: { slug: 'que-hacer' },
+      params: { slug: "que-hacer" },
       props: {
-        title: 'QUÉ HACER',
-        color: 'var(--color-secondary)',
+        title: "QUÉ HACER",
+        color: "var(--color-secondary)",
         data: cholulaData.queHacer,
       },
     },
     {
-      params: { slug: 'guias-turisticos' },
+      params: { slug: "guias-turisticos" },
       props: {
-        title: 'GUÍAS TURÍSTICOS',
-        color: '#22c55e',
+        title: "GUÍAS TURÍSTICOS",
+        color: "#22c55e",
         data: cholulaData.guiasTuristicos,
-        description: 'GUÍAS CERTIFICADOS POR SECTUR — Descubre Cholula de una manera más personalizada junto a guías certificados que adaptan la experiencia a tus intereses y te ayudan a comprender la historia, tradiciones y patrimonio de la ciudad más allá de una visita convencional.',
+        description:
+          "GUÍAS CERTIFICADOS POR SECTUR — Descubre Cholula de una manera más personalizada junto a guías certificados que adaptan la experiencia a tus intereses y te ayudan a comprender la historia, tradiciones y patrimonio de la ciudad más allá de una visita convencional.",
       },
     },
   ];
@@ -45,13 +46,19 @@ export async function getStaticPaths() {
 
 const { title, color, data, description } = Astro.props;
 
-// Imagen de reserva si el item no tiene galería propia
-const FALLBACK_IMG = "https://images.unsplash.com/photo-1605335191599-4458d98e1690?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80";
+const isRestaurantes = title === "DÓNDE COMER";
+const clasificaciones = isRestaurantes
+  ? (Array.from(
+      new Set(data.map((item: any) => item.clasificacion).filter(Boolean)),
+    ) as string[])
+  : [];
+
+const FALLBACK_IMG =
+  "https://images.unsplash.com/photo-1605335191599-4458d98e1690?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80";
 ---
 
-
 <Layout title={title}>
-  <!-- Hero — Video cover (mismo que index) -->
+  <!-- Hero -->
   <section class="hero" id="hero">
     <video
       class="hero-video"
@@ -67,62 +74,97 @@ const FALLBACK_IMG = "https://images.unsplash.com/photo-1605335191599-4458d98e16
     <div class="hero-overlay" aria-hidden="true"></div>
   </section>
 
+  <!-- Sección con header fijo + grid scrolleable -->
   <section class="section-categoria">
-    <div class="container">
-      <h2 class="section-label" style={`--section-color: ${color};`}>{title}</h2>
-      <Divider />
-      {description && (
-        <p class="section-description">{description}</p>
-      )}
-      <div class="business-grid">
-        {data.map((item: any, index: number) => (
-          <BusinessCard
-            id={`item-${index}`}
-            title={item.nombre}
-            images={(item.imagenes && item.imagenes.length > 0) ? item.imagenes : [FALLBACK_IMG]}
-            address={item.direccion || undefined}
-            mapsUrl={item.googleMaps || undefined}
-            phone={item.telefono || undefined}
-            instagram={item.social?.instagram || undefined}
-            facebook={item.social?.facebook || undefined}
-            tiktok={item.social?.tiktok || undefined}
-            description={item.descripcion || undefined}
-          />
-        ))}
+    <div class="section-inner">
+      <!-- Header fijo: título + divider + filtro -->
+      <div class="section-header">
+        <h2 class="section-label" style={`--section-color: ${color};`}>
+          {title}
+        </h2>
+        <Divider />
+        {description && <p class="section-description">{description}</p>}
+        {
+          isRestaurantes && clasificaciones.length > 0 && (
+            <div class="filter-container">
+              <CategoryFilter options={clasificaciones} />
+            </div>
+          )
+        }
+      </div>
+
+      <!-- Área scrolleable con las tarjetas -->
+      <div class="grid-scroll-area">
+        <div class="business-grid">
+          {
+            data.map((item: any, index: number) => (
+              <BusinessCard
+                id={`item-${index}`}
+                title={item.nombre}
+                images={
+                  item.imagenes && item.imagenes.length > 0
+                    ? item.imagenes
+                    : [FALLBACK_IMG]
+                }
+                address={item.direccion || undefined}
+                mapsUrl={item.googleMaps || undefined}
+                phone={item.telefono || undefined}
+                whatsapp={item.whatsapp || undefined}
+                sitioWeb={item.sitioWeb || undefined}
+                telefonoAlt={item.telefonoAlt || undefined}
+                tipoTelefono={item.tipoTelefono || undefined}
+                instagram={item.social?.instagram || undefined}
+                facebook={item.social?.facebook || undefined}
+                tiktok={item.social?.tiktok || undefined}
+                description={item.descripcion || undefined}
+                clasificacion={item.clasificacion || undefined}
+              />
+            ))
+          }
+        </div>
       </div>
     </div>
   </section>
 </Layout>
 
 <script>
-  // Al cargar la página, verificamos si hay un id en los query parameters o un hash
   document.addEventListener("DOMContentLoaded", () => {
     const params = new URLSearchParams(window.location.search);
     const searchId = params.get("id");
-    const hash = window.location.hash; // Ej: "#item-0"
-    
-    let targetCard = null;
+    const hash = window.location.hash;
+
+    let targetCard: HTMLElement | null = null;
 
     if (searchId !== null) {
       targetCard = document.getElementById(`item-${searchId}`);
     } else if (hash && hash.startsWith("#item-")) {
       targetCard = document.getElementById(hash.substring(1));
     }
-    
+
     if (targetCard) {
-      // Retrasamos un poco para asegurar que el grid y los componentes React estén renderizados
       setTimeout(() => {
-        // Scroll suave hasta la tarjeta, centrándola en la pantalla
-        targetCard.scrollIntoView({ behavior: "smooth", block: "center" });
-        
-        // Destacamos la tarjeta temporalmente
-        targetCard.style.transition = "box-shadow 0.5s ease-in-out, transform 0.5s ease";
-        targetCard.style.boxShadow = "0 0 0 6px var(--color-mex-rosa, #e10098)";
-        targetCard.style.transform = "scale(1.02)";
-        
+        // Scroll dentro del contenedor scrolleable, no en el body
+        const scrollArea = document.querySelector(".grid-scroll-area");
+        if (scrollArea) {
+          const cardTop =
+            targetCard!.offsetTop -
+            scrollArea.getBoundingClientRect().top +
+            scrollArea.scrollTop -
+            24;
+          scrollArea.scrollTo({ top: cardTop, behavior: "smooth" });
+        } else {
+          targetCard!.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+
+        targetCard!.style.transition =
+          "box-shadow 0.5s ease-in-out, transform 0.5s ease";
+        targetCard!.style.boxShadow =
+          "0 0 0 6px var(--color-mex-rosa, #e10098)";
+        targetCard!.style.transform = "scale(1.02)";
+
         setTimeout(() => {
-          targetCard.style.boxShadow = "";
-          targetCard.style.transform = "";
+          targetCard!.style.boxShadow = "";
+          targetCard!.style.transform = "";
         }, 2500);
       }, 300);
     }
@@ -130,13 +172,14 @@ const FALLBACK_IMG = "https://images.unsplash.com/photo-1605335191599-4458d98e16
 </script>
 
 <style>
-  /* ── Hero (idéntico al de index.astro) ── */
+  /* ── Hero ── */
   .hero {
     position: relative;
     width: 100%;
     height: 60vh;
     min-height: 400px;
     overflow: hidden;
+    flex-shrink: 0;
   }
   .hero-video {
     position: absolute;
@@ -161,12 +204,25 @@ const FALLBACK_IMG = "https://images.unsplash.com/photo-1605335191599-4458d98e16
     pointer-events: none;
   }
 
-  /* ── Sección de tarjetas ── */
+  /* ── Sección principal ── */
   .section-categoria {
-    padding: 3rem 0 6rem;
     background-color: #f9f9f9;
-    min-height: 50vh;
   }
+
+  .section-inner {
+    width: 100%;
+  }
+
+  /* ── Header sticky (título + filtro) ── */
+  .section-header {
+    position: sticky;
+    top: 130px; /* altura del navbar */
+    background-color: #f9f9f9;
+    z-index: 10;
+    padding: 1.5rem 0 1rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+  }
+
   .section-label {
     color: var(--section-color, #555);
     text-align: center;
@@ -176,6 +232,7 @@ const FALLBACK_IMG = "https://images.unsplash.com/photo-1605335191599-4458d98e16
     text-transform: uppercase;
     margin: 0 0 0.5rem 0;
   }
+
   .section-description {
     text-align: center;
     color: #64748b;
@@ -184,29 +241,49 @@ const FALLBACK_IMG = "https://images.unsplash.com/photo-1605335191599-4458d98e16
     margin: 1rem auto 0;
     line-height: 1.65;
   }
+
+  .filter-container {
+    margin-top: 1rem;
+    padding: 0 4rem;
+  }
+
+  /* ── Área del grid ── */
+  .grid-scroll-area {
+    padding: 1.5rem 0 3rem;
+  }
+
+  /* ── Grid de tarjetas ── */
   .business-grid {
     display: grid;
-    grid-template-columns: repeat(3, 500px);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 2rem;
-    justify-content: center;
-    margin: 2rem auto 0;
     padding: 0 4rem;
     max-width: 1600px;
+    margin: 0 auto;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 1200px) {
+    .business-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      padding: 0 3rem;
+    }
   }
 
   @media (max-width: 768px) {
+    .section-header {
+      top: 56px;
+      padding: 1.5rem 0 0.75rem;
+    }
+    .filter-container {
+      padding: 0 1.5rem;
+    }
     .section-label {
       font-size: 1.4rem;
     }
-    .section-categoria {
-      overflow-x: hidden;
-    }
     .business-grid {
       grid-template-columns: 1fr;
-      padding: 0 4rem;
-    }
-  }
+      padding: 0 1.5rem;
     }
   }
 </style>
-
