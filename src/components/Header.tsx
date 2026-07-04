@@ -36,15 +36,35 @@ export default function Header() {
     <header className={`site-header ${isScrolled ? "scrolled" : ""}`}>
       <div className="header-inner">
 
-        {/* ── Left: Logo ── */}
-        <a href="/" className="header-logo-link" aria-label="Guía Cholula 2025">
-          <img
-            src="/logo_guia_cholula_2025.webp"
-            alt="Guía Cholula 2025"
-            className="header-logo-img"
-            loading="eager"
-          />
-        </a>
+        {/* ── Left: Logos ── */}
+        <div className="header-logos">
+          <a href="/" className="header-logo-link" aria-label="Logo Cholula">
+            <img
+              src="/home/logo_cholula.png"
+              alt="Logo Cholula"
+              className="header-logo-img"
+              loading="eager"
+            />
+          </a>
+          <div className="header-divider"></div>
+          <a href="/" className="header-logo-link" aria-label="Cholula lo tiene todo">
+            <img
+              src="/home/cholula%20lo%20tiene%20todo_logo.png"
+              alt="Cholula lo tiene todo"
+              className="header-logo-img"
+              loading="eager"
+            />
+          </a>
+          <div className="header-divider"></div>
+          <a href="/" className="header-logo-link" aria-label="Cholula Pueblo Mágico">
+            <img
+              src="/home/cholula_pueblo_magico.png"
+              alt="Cholula Pueblo Mágico"
+              className="header-logo-img"
+              loading="eager"
+            />
+          </a>
+        </div>
 
         {/* ── Right: Desktop Navigation ── */}
         <nav className="header-nav" aria-label="Navegación principal">

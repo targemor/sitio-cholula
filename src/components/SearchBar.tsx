@@ -42,7 +42,6 @@ function normalize(str: string) {
  * El m\u00ednimo de 2 caracteres evita falsos positivos con palabras muy cortas.
  */
 function matchesWord(queryWord: string, text: string): boolean {
-    if (text.includes(queryWord)) return true;
     if (queryWord.length < 2) return false;
     const tokens = text.split(/[\s,\u00b7\/\-\u2013\u2022()]+/).filter(w => w.length > 1);
     return tokens.some(
@@ -193,6 +192,8 @@ export default function SearchBar({
                 }
 
                 const queryWords = norm.split(/\s+/).filter(Boolean);
+                const escapeRegExp = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                const exactRegex = new RegExp("\\b" + escapeRegExp(norm), "i");
 
                 const scoredItems = items.map((item) => {
                     const normLabel = normalize(item.label);
@@ -220,9 +221,9 @@ export default function SearchBar({
                     });
 
                     // Bonus si coincide la frase exacta
-                    if (normLabel.includes(norm)) score += 5;
-                    else if (normSub.includes(norm) || normKeywords.includes(norm) || normHorario.includes(norm)) score += 2;
-                    else if (normCat.includes(norm)) score += 1;
+                    if (exactRegex.test(normLabel)) score += 5;
+                    else if (exactRegex.test(normSub) || exactRegex.test(normKeywords) || exactRegex.test(normHorario)) score += 2;
+                    else if (exactRegex.test(normCat)) score += 1;
 
                     return { item, score };
                 });
