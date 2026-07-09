@@ -112,6 +112,65 @@
 .section-label--turquesa { color: var(--color-secondary); }
 .section-label--amarillo { color: var(--color-accent); }
 
+/* Pirámide Mamona */
+.section-piramide {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 21 / 9; /* Ultra wide aspect ratio para mostrar más de la foto horizontal */
+  min-height: 400px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  margin-top: 5rem;
+}
+
+@media (max-width: 768px) {
+  .section-piramide {
+    aspect-ratio: 4 / 3; /* En móvil, darle un poco más de altura proporcional */
+    min-height: auto;
+  }
+}
+.piramide-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0) 100%);
+  z-index: 1;
+}
+.piramide-content {
+  position: relative;
+  z-index: 2;
+  padding: 3rem 4rem; /* Margen respecto a las orillas */
+  max-width: 600px; /* Limita el ancho del texto en la esquina */
+  text-align: left; /* Texto alineado a la izquierda */
+}
+.piramide-title {
+  color: #ffffff;
+  font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+  font-family: "Outfit", "Roboto", sans-serif;
+  text-transform: uppercase;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+}
+.piramide-subtitle {
+  color: #ffffff;
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  font-weight: 400;
+  line-height: 1.5;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 768px) {
+  .piramide-content {
+    padding: 2rem 1.5rem;
+    max-width: 100%;
+  }
+}
+
 /* Bienvenido */
 .bienvenido-body {
   display: flex;
