@@ -1,0 +1,103 @@
+{
+  "itinerarios": [
+    {
+      "id": "unas-horas",
+      "titulo": "¿Solo tienes unas horas?",
+      "subtitulo": "No te puedes ir de San Pedro Cholula sin…",
+      "elementos": [
+        "Explora la Zona Arqueológica de Cholula, donde se encuentra la pirámide con la base más grande del mundo.",
+        "Sube al Santuario de Nuestra Señora de los Remedios y disfruta de una de las mejores vistas panorámicas del valle poblano y los volcanes.",
+        "Camina por la Plaza de la Concordia y los tradicionales Portales, el corazón de San Pedro Cholula.",
+        "Visita el Ex Convento de San Gabriel y la Capilla Real de Naturales, dos de los conjuntos religiosos más importantes de México.",
+        "Haz una parada en la Casa del Caballero Águila, el edificio civil más antiguo de San Pedro Cholula. Dentro encontrarás exposiciones temporales de arte y cultura con entrada gratuita",
+        "Recorre el Mercado Cosme del Razo, ideal para conocer la gastronomía tradicional y adquirir productos elaborados por productores locales.",
+        "Prueba un chocolate artesanal preparado al momento en el zócalo, con la receta tradicional cholulteca."
+      ],
+      "consejos": [
+        {
+          "titulo": "Tip para tu visita",
+          "contenido": "Estos atractivos pueden recorrerse caminando. Utiliza calzado cómodo, protector solar y lleva agua, especialmente durante los días calurosos."
+        },
+        {
+          "titulo": "Antes de tu visita",
+          "elementos": [
+            "👟 Usa calzado cómodo; gran parte del recorrido se realiza caminando.",
+            "☀️ Lleva protector solar y agua.",
+            "🪜 Para llegar al Santuario deberás subir 149 escalones.",
+            "📷 No olvides tu cámara o celular; desde la cima se obtienen algunas de las mejores vistas de Cholula y, en días despejados, de los volcanes Popocatépetl e Iztaccíhuatl."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fin-de-semana",
+      "titulo": "🌞 ¿Te quedas el fin de semana?",
+      "subtitulo": "Vive el ambiente único de San Pedro Cholula",
+      "dias": [
+        {
+          "titulo": "Primer día",
+          "elementos": [
+            "Descubre la Zona Arqueológica, el Santuario de los Remedios, el Ex Convento de San Gabriel, la Capilla Real, la Plaza de la Concordia y los Portales.",
+            "Visita la Casa del Caballero Águila.",
+            "Recorre el Mercado Cosme del Razo para conocer la gastronomía típica, los dulces tradicionales y las artesanías locales.",
+            "Disfruta el ambiente del centro histórico al atardecer.",
+            "Por la noche, vive una de las tradiciones más representativas de Cholula probando una sangría en el histórico Bar Reforma."
+          ]
+        },
+        {
+          "titulo": "Segundo día",
+          "elementos": [
+            "Recorre con calma los barrios tradicionales del centro histórico.",
+            "Visita la Iglesia de Santa María Xixitla.",
+            "Si tu visita coincide con un fin de semana, disfruta la ceremonia de los Voladores de Papantla, quienes habitualmente realizan presentaciones en la Zona Arqueológica de Cholula de 11:00 am a 6:00pm.",
+            "Dedica un tiempo a recorrer las tiendas de artesanías y adquirir un recuerdo elaborado por manos cholultecas.",
+            "Antes de regresar, disfruta un café o un chocolate tradicional en el centro histórico."
+          ]
+        }
+      ],
+      "consejos": [
+        {
+          "titulo": "Tip para tu visita",
+          "contenido": "Los fines de semana suelen concentrar una mayor actividad cultural y un ambiente más animado en el centro histórico. Te recomendamos iniciar tu recorrido temprano para disfrutar los principales atractivos con mayor tranquilidad."
+        }
+      ]
+    },
+    {
+      "id": "tres-dias",
+      "titulo": "🌿 ¿Tienes tres días?",
+      "subtitulo": "Descubre San Pedro Cholula como un local",
+      "descripcion": "Además de conocer los principales atractivos turísticos, aprovecha tu estancia para vivir experiencias más auténticas.",
+      "elementos": [
+        "Recorre San Pedro Cholula acompañado por un guía de turistas certificado, quien podrá compartir la historia, tradiciones y leyendas que hacen único a este Pueblo Mágico.",
+        "Elige alguna experiencia con touroperadores locales, como recorridos culturales o gastronómicos.",
+        "Visita museos y espacios culturales con mayor calma.",
+        "Explora los barrios tradicionales y descubre rincones que normalmente pasan desapercibidos para la mayoría de los visitantes.",
+        "Regresa al Mercado Cosme del Razo para descubrir nuevos sabores, bebidas tradicionales y productos elaborados por productores locales.",
+        "Disfruta la gastronomía cholulteca sin prisas y prueba el tradicional chocolate artesanal.",
+        "Aprovecha el último día para recorrer nuevamente el centro histórico y llevar contigo alguna artesanía elaborada por artesanos locales."
+      ],
+      "consejos": [
+        {
+          "titulo": "Tip para tu visita",
+          "contenido": "Si cuentas con tres días, alterna los recorridos históricos con experiencias gastronómicas y culturales. Así conocerás una visión mucho más completa de San Pedro Cholula."
+        }
+      ]
+    },
+    {
+      "id": "imprescindibles",
+      "titulo": "⭐ No te puedes ir de San Pedro Cholula sin…",
+      "elementos": [
+        "Conocer la Zona Arqueológica de Cholula.",
+        "Subir al Santuario de Nuestra Señora de los Remedios.",
+        "Recorrer la Plaza de la Concordia y los Portales.",
+        "Visitar el Ex Convento de San Gabriel y la Capilla Real de Naturales.",
+        "Descubrir la Casa del Caballero Águila.",
+        "Recorrer el Mercado Cosme del Razo.",
+        "Probar un chocolate artesanal preparado al momento.",
+        "Disfrutar una tradicional sangría en el Bar Reforma.",
+        "Admirar la ceremonia de los Voladores de Papantla si tu visita coincide con una presentación de fin de semana.",
+        "Llevar contigo una artesanía elaborada por manos cholultecas."
+      ]
+    }
+  ]
+}

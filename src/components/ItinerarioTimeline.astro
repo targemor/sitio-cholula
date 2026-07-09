@@ -1,0 +1,262 @@
+---
+export interface DayItinerary {
+  titulo: string;
+  elementos: string[];
+}
+
+export interface Tip {
+  titulo: string;
+  contenido?: string;
+  elementos?: string[];
+}
+
+export interface ItineraryProps {
+  id: string;
+  titulo: string;
+  subtitulo?: string;
+  descripcion?: string;
+  elementos?: string[];
+  dias?: DayItinerary[];
+  consejos?: Tip[];
+}
+
+interface Props {
+  itinerario: ItineraryProps;
+}
+
+const { itinerario } = Astro.props;
+---
+
+<div class="itinerario-container">
+  <div class="itinerario-header">
+    <h2>{itinerario.titulo}</h2>
+    {itinerario.subtitulo && <h3>{itinerario.subtitulo}</h3>}
+    {itinerario.descripcion && <p class="desc">{itinerario.descripcion}</p>}
+  </div>
+
+  <div class="timeline-container">
+    {
+      itinerario.elementos &&
+        itinerario.elementos.map((item) => (
+          <div class="timeline-item">
+            <div class="timeline-marker" />
+            <div class="timeline-content">
+              <p>{item}</p>
+            </div>
+          </div>
+        ))
+    }
+
+    {
+      itinerario.dias &&
+        itinerario.dias.map((dia) => (
+          <div class="timeline-day">
+            <h4 class="day-title">{dia.titulo}</h4>
+            {dia.elementos.map((item) => (
+              <div class="timeline-item">
+                <div class="timeline-marker" />
+                <div class="timeline-content">
+                  <p>{item}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        ))
+    }
+  </div>
+
+  {
+    itinerario.consejos && itinerario.consejos.length > 0 && (
+      <div class="tips-container">
+        {itinerario.consejos.map((consejo) => (
+          <div class="tip-card">
+            <h4>{consejo.titulo}</h4>
+            {consejo.contenido && <p>{consejo.contenido}</p>}
+            {consejo.elementos && (
+              <ul>
+                {consejo.elementos.map((el) => (
+                  <li>{el}</li>
+                ))}
+              </ul>
+            )}
+          </div>
+        ))}
+      </div>
+    )
+  }
+</div>
+
+<style>
+  .itinerario-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem 4.5rem;
+    font-family: "Roboto", sans-serif;
+  }
+
+  .itinerario-header {
+    margin-bottom: 3rem;
+    text-align: center;
+  }
+
+  .itinerario-header h2 {
+    font-size: 2rem;
+    color: var(--color-primary, #d94943);
+    margin-bottom: 0.5rem;
+  }
+
+  .itinerario-header h3 {
+    font-size: 1.25rem;
+    color: #666;
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  .itinerario-header .desc {
+    color: #555;
+    line-height: 1.6;
+  }
+
+  .timeline-container {
+    position: relative;
+    padding: 1rem 0;
+    margin-bottom: 3rem;
+  }
+
+  /* The vertical line */
+  .timeline-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 9px;
+    width: 2px;
+    background-color: #e0e0e0;
+  }
+
+  .timeline-day {
+    margin-bottom: 2rem;
+  }
+
+  .day-title {
+    margin-left: 3rem;
+    font-size: 1.4rem;
+    color: var(--color-accent, #333);
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-top: 1rem;
+  }
+
+  .timeline-item {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+  }
+
+  .timeline-item:last-child {
+    margin-bottom: 1.5rem;
+  }
+
+  .timeline-marker {
+    position: relative;
+    z-index: 1;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 3px solid #007bff; /* Color azul de los anillos en la imagen */
+    background-color: #ffffff;
+    margin-right: 1.5rem;
+    flex-shrink: 0;
+    margin-top: 3px;
+    box-sizing: border-box;
+  }
+
+  .timeline-content {
+    flex: 1;
+  }
+
+  .timeline-content p {
+    margin: 0;
+    color: #333;
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+
+  /* Sección de tips */
+  .tips-container {
+    background-color: #f7f9fc;
+    border-radius: 12px;
+    padding: 2rem;
+    border: 1px solid #e2e8f0;
+  }
+
+  .tip-card {
+    margin-bottom: 1.5rem;
+  }
+
+  .tip-card:last-child {
+    margin-bottom: 0;
+  }
+
+  .tip-card h4 {
+    color: #007bff;
+    margin-bottom: 0.75rem;
+    font-size: 1.2rem;
+  }
+
+  .tip-card p {
+    color: #555;
+    line-height: 1.6;
+    margin: 0 0 1rem 0;
+  }
+
+  .tip-card ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  .tip-card ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #555;
+    line-height: 1.5;
+  }
+
+  .tip-card ul li::before {
+    content: "•";
+    color: #007bff;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+  }
+
+  @media (max-width: 768px) {
+    .itinerario-header h2 {
+      font-size: 1.5rem;
+    }
+
+    .itinerario-header h3 {
+      font-size: 1.1rem;
+    }
+
+    .day-title {
+      margin-left: 2rem;
+      font-size: 1.25rem;
+    }
+
+    .timeline-marker {
+      margin-right: 1rem;
+    }
+
+    .timeline-content p {
+      font-size: 1rem;
+    }
+
+    .tips-container {
+      padding: 1.5rem 1rem;
+    }
+  }
+</style>

@@ -1,0 +1,143 @@
+---
+import ItinerarioTimeline from "./ItinerarioTimeline.astro";
+import type { ItineraryProps } from "./ItinerarioTimeline.astro";
+
+interface Props {
+  itinerarios: ItineraryProps[];
+}
+
+const { itinerarios } = Astro.props;
+---
+
+<div class="itinerario-tabs-container">
+  <div class="tabs-header">
+    {itinerarios.map((itinerario, index) => (
+      <button 
+        class={`tab-btn ${index === 0 ? 'active' : ''}`} 
+        data-tab-target={`tab-${itinerario.id}`}
+      >
+        {itinerario.titulo}
+      </button>
+    ))}
+  </div>
+
+  <div class="tabs-content-wrapper">
+    {itinerarios.map((itinerario, index) => (
+      <div 
+        id={`tab-${itinerario.id}`} 
+        class={`tab-content ${index === 0 ? 'active' : ''}`}
+      >
+        <ItinerarioTimeline itinerario={itinerario} />
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  .itinerario-tabs-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .tabs-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .tab-btn {
+    background: #f7f9fc;
+    border: 1px solid #e2e8f0;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #555;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .tab-btn:hover {
+    background-color: #e2e8f0;
+    color: #333;
+  }
+
+  .tab-btn.active {
+    background-color: var(--color-primary, #d94943);
+    color: white;
+    border-color: var(--color-primary, #d94943);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+
+  .tab-content {
+    display: none;
+    animation: fadeIn 0.4s ease;
+  }
+
+  .tab-content.active {
+    display: block;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 768px) {
+    .tabs-header {
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0 1rem;
+    }
+    .tab-btn {
+      text-align: center;
+      width: fit-content;
+      border-radius: 30px;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+    }
+  }
+</style>
+
+<script>
+  function initTabs() {
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    if (tabBtns.length === 0) return;
+
+    tabBtns.forEach(btn => {
+      // Eliminar listeners previos clonando el nodo si es necesario, pero en Astro Vanilla JS esto está bien
+      btn.addEventListener('click', () => {
+        // Remove active class from all
+        tabBtns.forEach(b => b.classList.remove('active'));
+        tabContents.forEach(c => c.classList.remove('active'));
+
+        // Add active class to clicked tab
+        btn.classList.add('active');
+        const targetId = btn.getAttribute('data-tab-target');
+        if (targetId) {
+          const targetContent = document.getElementById(targetId);
+          if (targetContent) {
+            targetContent.classList.add('active');
+          }
+        }
+      });
+    });
+  }
+
+  // Ejecutar en el evento del DOM y si hay transiciones en Astro
+  document.addEventListener('DOMContentLoaded', initTabs);
+  document.addEventListener('astro:page-load', initTabs);
+  // Como esto puede correr antes de DOMContentLoaded si se inyecta tarde,
+  // verificamos si ya podemos ejecutarlo.
+  if (document.readyState === 'interactive' || document.readyState === 'complete') {
+    initTabs();
+  }
+</script>

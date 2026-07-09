@@ -156,11 +156,7 @@
    RESPONSIVE BREAKPOINTS
    ============================================ */
 @media (max-width: 1100px) {
-
-  /* Hide 3rd and 4th logos on medium screens */
-  .header-logo-link:nth-child(n+3) {
-    display: none;
-  }
+  /* No ocultamos logos, dejamos que fluyan */
 }
 
 @media (max-width: 820px) {
@@ -176,12 +172,16 @@
     padding: 10px 16px;
   }
 
-  /* Show only 1 logo on small phones */
-  .header-logo-link:nth-child(n+2) {
-    display: none;
+  .header-logos {
+    gap: 8px;
+    justify-content: flex-start;
+  }
+
+  .header-divider {
+    height: 24px;
   }
 
   .header-logo-img {
-    height: 44px;
+    height: 32px;
   }
 }

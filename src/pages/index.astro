@@ -4,6 +4,8 @@ import Divider from "../components/Divider.astro";
 import SearchBar from "../components/SearchBar";
 import SwiperGallery from "../components/SwiperGallery.astro";
 import ImageCard from "../components/ImageCard.astro";
+import ItinerarioTabs from "../components/ItinerarioTabs.astro";
+import itinerarioData from "../data/itinerario.json";
 import "../styles/index.css";
 
 // Lugares imperdibles
@@ -52,9 +54,9 @@ const imperdibles = [
 
 // Eventos
 const eventos = [
-  "https://visitcholula.mx/wp-content/uploads/2026/06/WhatsApp-Image-2026-06-16-at-7.14.18-PM-736x1024.jpeg",
+  "https://visitcholula.mx/wp-content/uploads/2026/07/WhatsApp-Image-2026-07-03-at-6.57.58-PM-662x1024.jpeg",
   "https://visitcholula.mx/wp-content/uploads/2026/01/payasos-1024x1024.jpg",
-  "https://visitcholula.mx/wp-content/uploads/2026/06/WhatsApp-Image-2026-06-19-at-7.36.55-PM-791x1024.jpeg",
+  "https://visitcholula.mx/wp-content/uploads/2026/06/WhatsApp-Image-2026-06-26-at-10.35.06-AM-774x1024.jpeg",
 ];
 
 // Galería Cholula corazón de México
@@ -312,6 +314,23 @@ const searchItems = [
           />
         ))
       }
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════
+       ITINERARIOS
+       ══════════════════════════════ -->
+  <section
+    class="section-itinerarios"
+    id="itinerarios"
+    style="padding: 4.5rem 0; background-color: #f9f9f9;"
+  >
+    <div class="container">
+      <h2 class="section-label section-label--coral">ITINERARIOS</h2>
+      <Divider />
+      <div style="margin-top: 3rem;">
+        <ItinerarioTabs itinerarios={itinerarioData.itinerarios} />
+      </div>
     </div>
   </section>
 
