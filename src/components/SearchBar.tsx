@@ -159,7 +159,7 @@ interface SearchBarProps {
    Componente principal
 ═══════════════════════════════════════════════════════════ */
 export default function SearchBar({
-    placeholder = "Busca lugares, restaurantes, hoteles…",
+    placeholder = "¿Qué te gustaría hacer hoy en San Pedro Cholula?",
     items = [],
 }: SearchBarProps) {
     const [query, setQuery] = useState("");
@@ -183,7 +183,6 @@ export default function SearchBar({
                 const norm = normalize(q.trim());
                 if (!norm) {
                     setResults([]);
-                    setIsOpen(false);
                     // Emitir evento con query vacío → mostrar todo
                     document.dispatchEvent(
                         new CustomEvent("portal:search", { detail: { query: "" } })
@@ -314,18 +313,18 @@ export default function SearchBar({
         return acc;
     }, {});
 
-    const showDropdown = (isOpen && query.trim().length > 0) || openNow;
+    const showDropdown = isOpen;
 
     return (
-        <div ref={containerRef} className="search-container">
+        <div ref={containerRef} className={`search-container${showDropdown ? ' search-dropdown-open' : ''}`}>
             {/* ── Barra de búsqueda ── */}
             <div className={`search-input-wrapper ${focused ? "focused" : ""}`}>
-                {/* Icono lupa */}
+                {/* Icono lupa – siempre gris neutro */}
                 <svg
-                    className={`search-icon ${focused ? "focused" : ""}`}
+                    className="search-icon"
                     viewBox="0 0 24 24"
                     fill="none"
-                    stroke="currentColor"
+                    stroke="#4B5563"
                     strokeWidth={2}
                     aria-hidden="true"
                 >
@@ -341,7 +340,7 @@ export default function SearchBar({
                     onChange={(e) => setQuery(e.target.value)}
                     onFocus={() => {
                         setFocused(true);
-                        if (results.length > 0) setIsOpen(true);
+                        setIsOpen(true);
                     }}
                     onBlur={() => setFocused(false)}
                     onKeyDown={(e) => {
@@ -359,6 +358,66 @@ export default function SearchBar({
                     aria-expanded={showDropdown}
                     autoComplete="off"
                 />
+
+                {/* Iconos de categoría rápida (visibles cuando no hay query) */}
+                {!query && !openNow && (
+                    <div className="search-category-shortcuts">
+                        {/* Comida */}
+                        <button
+                            className="search-shortcut-icon"
+                            aria-label="Buscar restaurantes"
+                            onMouseDown={(e) => {
+                                e.preventDefault();
+                                setQuery("restaurantes");
+                                setIsOpen(true);
+                                inputRef.current?.focus();
+                            }}
+                            title="Restaurantes"
+                        >
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} width="22" height="22">
+                                <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2" />
+                                <path d="M7 2v20" />
+                                <path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7" />
+                            </svg>
+                        </button>
+                        {/* Hotel */}
+                        <button
+                            className="search-shortcut-icon"
+                            aria-label="Buscar hoteles"
+                            onMouseDown={(e) => {
+                                e.preventDefault();
+                                setQuery("hoteles");
+                                setIsOpen(true);
+                                inputRef.current?.focus();
+                            }}
+                            title="Hoteles"
+                        >
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} width="22" height="22">
+                                <path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8" />
+                                <path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4" />
+                                <path d="M12 4v6" />
+                                <path d="M2 18h20" />
+                            </svg>
+                        </button>
+                        {/* Destinos */}
+                        <button
+                            className="search-shortcut-icon"
+                            aria-label="Buscar destinos"
+                            onMouseDown={(e) => {
+                                e.preventDefault();
+                                setQuery("destinos");
+                                setIsOpen(true);
+                                inputRef.current?.focus();
+                            }}
+                            title="Destinos"
+                        >
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} width="22" height="22">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                                <polyline points="9 22 9 12 15 12 15 22" />
+                            </svg>
+                        </button>
+                    </div>
+                )}
 
                 {/* Botón limpiar */}
                 {(query || openNow) && (
@@ -397,15 +456,71 @@ export default function SearchBar({
                         </button>
                     </div>
 
-                    {displayItems.length === 0 ? (
+                    {(!query.trim() && !openNow) ? (
+                        <div className="search-suggestions">
+                            <p className="search-suggestions-title">Sugerencias de búsqueda</p>
+                            <div className="search-suggestions-list">
+                                {([
+                                    {
+                                        label: "quiero lugares con pizza",
+                                        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} width="15" height="15"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                                    },
+                                    {
+                                        label: "dónde comer comida mexicana",
+                                        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} width="15" height="15"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>
+                                    },
+                                    {
+                                        label: "hoteles cerca del centro",
+                                        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} width="15" height="15"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></svg>
+                                    },
+                                    {
+                                        label: "cafeterías con terraza",
+                                        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} width="15" height="15"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg>
+                                    },
+                                    {
+                                        label: "dónde comer comida italiana",
+                                        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} width="15" height="15"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>
+                                    },
+                                    {
+                                        label: "hoteles con jardín",
+                                        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} width="15" height="15"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></svg>
+                                    },
+                                    {
+                                        label: "dónde comer comida poblana",
+                                        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} width="15" height="15"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                                    },
+                                    {
+                                        label: "sitios históricos cholula",
+                                        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} width="15" height="15"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                                    },
+                                    {
+                                        label: "bares y vida nocturna",
+                                        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} width="15" height="15"><path d="M8 22h8"/><path d="M7 10h10"/><path d="m12 10 2-8H10l2 8"/><path d="M12 10v12"/></svg>
+                                    },
+                                ] as { label: string; icon: React.ReactNode }[]).map(({ label, icon }) => (
+                                    <button
+                                        key={label}
+                                        className="search-suggestion-btn"
+                                        onMouseDown={(e) => {
+                                            e.preventDefault();
+                                            setQuery(label);
+                                        }}
+                                    >
+                                        <span className="search-suggestion-icon">{icon}</span>
+                                        {label}
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
+                    ) : displayItems.length === 0 ? (
                         <div className="search-empty-state">
                             <div className="search-empty-icon">{openNow ? "🔒" : "🔍"}</div>
                             <p className="search-empty-text">
                                 {openNow && !query
                                     ? "Ningún establecimiento abierto en este momento"
                                     : openNow
-                                    ? <>Sin resultados abiertos para <span>"{query}"</span></>
-                                    : <>Sin resultados para <span>"{query}"</span></>}
+                                        ? <>Sin resultados abiertos para <span>"{query}"</span></>
+                                        : <>Sin resultados para <span>"{query}"</span></>}
                             </p>
                             {!openNow && <p className="search-empty-hint">Intenta con otro término</p>}
                         </div>

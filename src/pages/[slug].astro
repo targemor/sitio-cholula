@@ -103,8 +103,8 @@ const FALLBACK_IMG =
                 id={`item-${index}`}
                 title={item.nombre}
                 images={
-                  item.imagenes && item.imagenes.length > 0
-                    ? item.imagenes
+                  item.galeria && item.galeria.length > 0
+                    ? item.galeria
                     : [FALLBACK_IMG]
                 }
                 address={item.direccion || undefined}
@@ -143,32 +143,31 @@ const FALLBACK_IMG =
     }
 
     if (targetCard) {
+      // Esperamos a que el Swiper/imágenes terminen de renderizar
       setTimeout(() => {
-        // Scroll dentro del contenedor scrolleable, no en el body
-        const scrollArea = document.querySelector(".grid-scroll-area");
-        if (scrollArea) {
-          const cardTop =
-            targetCard!.offsetTop -
-            scrollArea.getBoundingClientRect().top +
-            scrollArea.scrollTop -
-            24;
-          scrollArea.scrollTo({ top: cardTop, behavior: "smooth" });
-        } else {
-          targetCard!.scrollIntoView({ behavior: "smooth", block: "center" });
-        }
+        // .grid-scroll-area NO es un contenedor scrolleable (sin overflow).
+        // El scroll real ocurre en el window.
+        const stickyHeader = document.querySelector(".section-header");
+        const stickyTop    = 120; // valor CSS: top: 120px en desktop
+        const headerHeight = stickyHeader ? stickyHeader.getBoundingClientRect().height : 0;
+        const clearance    = stickyTop + headerHeight + 24; // margen de seguridad
 
-        targetCard!.style.transition =
+        // Posición absoluta del card en el documento
+        const cardDocTop = targetCard.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({ top: cardDocTop - clearance, behavior: "smooth" });
+
+        // Highlight visual de la tarjeta seleccionada
+        targetCard.style.transition =
           "box-shadow 0.5s ease-in-out, transform 0.5s ease";
-        targetCard!.style.boxShadow =
+        targetCard.style.boxShadow =
           "0 0 0 6px var(--color-mex-rosa, #e10098)";
-        targetCard!.style.transform = "scale(1.02)";
+        targetCard.style.transform = "scale(1.02)";
 
         setTimeout(() => {
-          targetCard!.style.boxShadow = "";
-          targetCard!.style.transform = "";
+          targetCard.style.boxShadow = "";
+          targetCard.style.transform = "";
         }, 2500);
-      }, 300);
+      }, 500);
     }
   });
 </script>
-
