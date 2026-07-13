@@ -64,6 +64,15 @@ export default function Header() {
               loading="eager"
             />
           </a>
+          <div className="header-divider"></div>
+          <a href="/" className="header-logo-link" aria-label="Cholula Pueblo Mágico">
+            <img
+              src="https://visitcholula.mx/wp-content/uploads/2025/11/Main-Tagline_Color_RGB_ES_PUE_250623-1024x290.png"
+              alt="Cholula Pueblo Mágico"
+              className="header-logo-img logo-puebla"
+              loading="eager"
+            />
+          </a>
         </div>
 
         {/* ── Right: Desktop Navigation ── */}
