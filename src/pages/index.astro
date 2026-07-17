@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Divider from "../components/Divider.astro";
 import SearchBar from "../components/SearchBar";
 import SwiperGallery from "../components/SwiperGallery.astro";
 import ImageCard from "../components/ImageCard.astro";
@@ -214,8 +213,6 @@ const searchItems = [
   <section class="section-bienvenido" id="bienvenido">
     <div class="container">
       <h2 class="section-label">BIENVENIDO A CHOLULA</h2>
-      <Divider />
-
       <div class="bienvenido-body">
         <div class="bienvenido-text">
           <p>
@@ -241,21 +238,25 @@ const searchItems = [
         >
           <div class="piramide-overlay"></div>
           <span class="piramide-badge">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M12 2L2 19h20L12 2zm0 3.5L19.5 17h-15L12 5.5z"/>
-            </svg>
             La ciudad viva más antigua de América
           </span>
           <div class="piramide-content container">
             <h2 class="piramide-title">
-              Tenemos la pirámide con la base <span class="piramide-title-highlight">más grande del mundo</span>
+              Tenemos la pirámide con la base <span
+                class="piramide-title-highlight">más grande del mundo</span
+              >
             </h2>
             <p class="piramide-subtitle">
-              Una iglesia en la cima, una pirámide bajo tus pies y el Popocatépetl de testigo.
+              Una iglesia en la cima, una pirámide bajo tus pies y el
+              Popocatépetl de testigo.
             </p>
             <div class="piramide-actions">
-              <a href="/visita" class="piramide-btn-primary">Planea tu visita</a>
-              <a href="#imperdibles" class="piramide-btn-secondary">Ver los imperdibles →</a>
+              <a href="#itinerarios" class="piramide-btn-primary"
+                >Planea tu visita</a
+              >
+              <a href="#imperdibles" class="piramide-btn-secondary"
+                >Ver los imperdibles →</a
+              >
             </div>
           </div>
         </section>
@@ -301,7 +302,6 @@ const searchItems = [
   <section class="section-imperdibles" id="imperdibles">
     <div class="container">
       <h2 class="section-label section-label--amarillo">LOS IMPERDIBLES</h2>
-      <Divider />
     </div>
     <SwiperGallery id="imperdibles" items={imperdibles} isImperdible={true} />
   </section>
@@ -315,11 +315,13 @@ const searchItems = [
     style="padding: 4.5rem 0; background-color: #f9f9f9;"
   >
     <div class="container">
-      <h2 class="section-label section-label--coral">ITINERARIOS</h2>
-      <Divider />
-      <div style="margin-top: 3rem;">
-        <ItinerarioTabs itinerarios={itinerarioData.itinerarios} />
-      </div>
+      <h2 class="section-label section-label--coral">
+        INSPÍRATE Y PLANEA TU VISITA
+      </h2>
+    </div>
+
+    <div style="margin-top: 3rem;">
+      <ItinerarioTabs itinerarios={itinerarioData.itinerarios} />
     </div>
   </section>
 
@@ -352,7 +354,6 @@ const searchItems = [
   <section class="section-eventos" id="eventos">
     <div class="container">
       <h2 class="section-label section-label--turquesa">EVENTOS</h2>
-      <Divider />
     </div>
     <SwiperGallery
       id="eventos"
@@ -367,7 +368,6 @@ const searchItems = [
   <section class="section-visitanos" id="visitanos">
     <div class="container">
       <h2 class="section-label section-label--coral">VISÍTANOS</h2>
-      <Divider />
     </div>
     <div class="visitanos-grid">
       {
@@ -391,7 +391,6 @@ const searchItems = [
       <h2 class="section-label section-label--turquesa">
         CHOLULA, EL CORAZÓN MÁGICO DE MÉXICO
       </h2>
-      <Divider />
     </div>
     <SwiperGallery id="galeria" items={galeria} />
   </section>
@@ -402,7 +401,6 @@ const searchItems = [
   <section class="section-artesanias" id="artesanias">
     <div class="container">
       <h2 class="section-label section-label--coral">ARTESANÍAS</h2>
-      <Divider />
     </div>
     <div class="artesanias-grid">
       {

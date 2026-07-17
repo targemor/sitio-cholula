@@ -153,7 +153,8 @@
 }
 
 .logo-puebla {
-  width: 120px;
+  height: 24px;
+  width: auto;
 }
 
 /* ============================================
@@ -188,4 +189,9 @@
   .header-logo-img {
     height: 32px;
   }
+
+  .logo-puebla {
+    height: 18px;
+  }
+
 }

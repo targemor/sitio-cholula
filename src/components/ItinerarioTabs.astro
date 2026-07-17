@@ -16,7 +16,8 @@ const { itinerarios } = Astro.props;
         class={`tab-btn ${index === 0 ? 'active' : ''}`} 
         data-tab-target={`tab-${itinerario.id}`}
       >
-        {itinerario.titulo}
+        <span class="tab-label-desktop">{itinerario.tabLabel || itinerario.titulo}</span>
+        <span class="tab-label-mobile">{itinerario.mobileTabLabel || itinerario.tabLabel || itinerario.titulo}</span>
       </button>
     ))}
   </div>
@@ -35,8 +36,8 @@ const { itinerarios } = Astro.props;
 
 <style>
   .itinerario-tabs-container {
-    width: 100%;
-    max-width: 1000px;
+    width: 80%;
+    max-width: 1600px;
     margin: 0 auto;
   }
 
@@ -88,19 +89,42 @@ const { itinerarios } = Astro.props;
     to { opacity: 1; transform: translateY(0); }
   }
 
+  .tab-label-mobile {
+    display: none;
+  }
+
   @media (max-width: 768px) {
+    .itinerario-tabs-container {
+      width: 100%;
+    }
+    .tab-label-desktop {
+      display: none;
+    }
+    .tab-label-mobile {
+      display: inline;
+    }
     .tabs-header {
-      flex-direction: column;
-      align-items: center;
-      gap: 0.75rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
       padding: 0 1rem;
     }
     .tab-btn {
-      text-align: center;
-      width: fit-content;
-      border-radius: 30px;
-      padding: 0.8rem 1.5rem;
-      font-size: 1rem;
+      width: 100%;
+      padding: 0.8rem 0.5rem;
+      font-size: 0.9rem;
+    }
+    .tab-btn:nth-child(1) {
+      grid-column: 1 / -1;
+    }
+    .tab-btn:nth-child(2) {
+      grid-column: 1 / 2;
+    }
+    .tab-btn:nth-child(3) {
+      grid-column: 2 / 3;
+    }
+    .tab-btn:nth-child(4) {
+      grid-column: 1 / -1;
     }
   }
 </style>

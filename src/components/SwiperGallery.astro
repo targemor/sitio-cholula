@@ -1,6 +1,5 @@
 ---
 import 'swiper/css';
-import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import './SwiperGallery.css';
 
@@ -15,23 +14,33 @@ export interface Props {
 const { id, items, isEvento = false, isImperdible = false, className = '' } = Astro.props;
 ---
 
-<div class={`swiper ${isImperdible ? 'swiper--imperdible' : ''} ${className}`} id={`swiper-${id}`}>
+<div 
+  class={`swiper ${isImperdible ? 'swiper--imperdible swiper--focus-carousel' : ''} ${isEvento ? 'swiper--evento' : ''} ${className}`} 
+  id={`swiper-${id}`}
+>
+  {isImperdible && (
+    <div 
+      class="swiper-bg-blur" 
+      id={`blur-bg-${id}`}
+      style={items[0]?.img ? `background-image: url('${items[0].img}')` : ''}
+    ></div>
+  )}
   <div class="swiper-wrapper">
     {items.map((item, i) => (
-      <div class="swiper-slide">
+      <div class={`swiper-slide ${isImperdible ? 'swiper-slide--card' : ''}`} data-img={item.img}>
         <img
           src={item.img}
           alt={item.label || `Slide ${i + 1}`}
           class={`swiper-slide-img ${isEvento ? 'swiper-slide-img--evento' : ''} ${isImperdible ? 'swiper-slide-img--imperdible' : ''}`}
           loading={i === 0 ? "eager" : "lazy"}
         />
-        {item.label && <p class="swiper-slide-label">{item.label}</p>}
+        {item.label && !isImperdible && <p class="swiper-slide-label">{item.label}</p>}
       </div>
     ))}
   </div>
-  <!-- Add Pagination -->
+  <!-- Pagination -->
   <div class="swiper-pagination"></div>
-  <!-- Add Navigation -->
+  <!-- Navigation -->
   <div class="swiper-button-prev"></div>
   <div class="swiper-button-next"></div>
 </div>
@@ -42,8 +51,51 @@ const { id, items, isEvento = false, isImperdible = false, className = '' } = As
   import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
   document.addEventListener('DOMContentLoaded', () => {
-    const swipers = document.querySelectorAll('.swiper');
-    swipers.forEach((el) => {
+    // Focus carousel para imperdibles
+    const focusSwipers = document.querySelectorAll('.swiper--focus-carousel');
+    focusSwipers.forEach((el) => {
+      const htmlEl = el as HTMLElement;
+      const blurEl = htmlEl.querySelector('.swiper-bg-blur') as HTMLElement | null;
+
+      function setBlur(img: string) {
+        if (!blurEl || !img) return;
+        blurEl.style.backgroundImage = `url('${img}')`;
+      }
+
+      const swiper = new Swiper(htmlEl, {
+        modules: [Pagination, Autoplay],
+        slidesPerView: 1,
+        centeredSlides: true,
+        spaceBetween: 20,
+        loop: true,
+        pagination: {
+          el: htmlEl.querySelector('.swiper-pagination') as HTMLElement,
+          clickable: true,
+        },
+        autoplay: {
+          delay: 3500,
+          disableOnInteraction: false,
+        },
+        breakpoints: {
+          640: { slidesPerView: 1.15, spaceBetween: 24 },
+          1024: { slidesPerView: 1.25, spaceBetween: 28 },
+          1400: { slidesPerView: 1.4, spaceBetween: 32 },
+        },
+      });
+
+      swiper.on('slideChange', () => {
+        const origSlides = Array.from(
+          htmlEl.querySelectorAll('.swiper-slide:not(.swiper-slide-duplicate)')
+        ) as HTMLElement[];
+        const images = origSlides.map(s => s.getAttribute('data-img') || '').filter(Boolean);
+        const img = images[swiper.realIndex] || images[0] || '';
+        setBlur(img);
+      });
+    });
+
+    // Carruseles normales (eventos, etc.)
+    const regularSwipers = document.querySelectorAll('.swiper:not(.swiper--focus-carousel)');
+    regularSwipers.forEach((el) => {
       const htmlEl = el as HTMLElement;
       new Swiper(htmlEl, {
         modules: [Navigation, Pagination, Autoplay],

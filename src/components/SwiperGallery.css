@@ -3,10 +3,113 @@
   max-width: 1200px;
   margin: 0 auto;
 }
-.swiper--imperdible {
-  width: 80%;
-  max-width: 1600px;
+
+/* ══════════════════════════════════════
+   FOCUS CAROUSEL — "Los Imperdibles"
+   ══════════════════════════════════════ */
+.swiper--focus-carousel {
+  width: 100%;
+  max-width: 100%;
+  padding: 2rem 0 3.5rem;
+  overflow: hidden;
+  position: relative;
 }
+
+/* Slides base: reduced scale + opacity for non-active */
+.swiper--focus-carousel .swiper-slide--card {
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    opacity 0.4s ease,
+    box-shadow 0.4s ease;
+  transform: scale(0.88);
+  opacity: 0.5;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: grab;
+}
+
+.swiper--focus-carousel .swiper-slide--card:active {
+  cursor: grabbing;
+}
+
+/* Active central slide */
+.swiper--focus-carousel .swiper-slide-active.swiper-slide--card {
+  transform: scale(1);
+  opacity: 1;
+  box-shadow: 0 24px 60px -12px rgba(0, 0, 0, 0.35),
+    0 8px 24px -6px rgba(0, 0, 0, 0.2);
+}
+
+/* Prev/next slides */
+.swiper--focus-carousel .swiper-slide-prev.swiper-slide--card,
+.swiper--focus-carousel .swiper-slide-next.swiper-slide--card {
+  transform: scale(0.93);
+  opacity: 0.65;
+}
+
+/* Section-level blurred background */
+.swiper-bg-blur {
+  position: absolute;
+  inset: -30px;
+  background-size: cover;
+  background-position: center;
+  filter: blur(28px) brightness(0.55) saturate(1.4);
+  transform: scale(1.1);
+  z-index: 0;
+}
+
+/* Make sure wrapper and slides are above blur bg */
+.swiper--focus-carousel .swiper-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.swiper--focus-carousel .swiper-pagination {
+  z-index: 2 !important;
+}
+
+/* Card image — full image, no cropping */
+.swiper--focus-carousel .swiper-slide-img--imperdible {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.45);
+}
+
+/* Disable nav buttons for focus carousel */
+.swiper--focus-carousel .swiper-button-prev,
+.swiper--focus-carousel .swiper-button-next {
+  display: none;
+}
+
+/* Pagination dots */
+.swiper--focus-carousel .swiper-pagination {
+  bottom: 8px !important;
+}
+
+.swiper--focus-carousel .swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.5) !important;
+  opacity: 1 !important;
+  width: 6px !important;
+  height: 6px !important;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.swiper--focus-carousel .swiper-pagination-bullet-active {
+  background: #fff !important;
+  transform: scale(1.4);
+}
+
+/* ══════════════════════════════════════
+   REGULAR CAROUSEL (eventos, galería)
+   ══════════════════════════════════════ */
+.swiper--evento {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .swiper-slide {
   position: relative;
   overflow: hidden;
@@ -15,6 +118,7 @@
   display: flex;
   flex-direction: column;
 }
+
 .swiper-slide-img {
   width: 100%;
   height: 520px;
@@ -23,17 +127,13 @@
   border-radius: 0;
   background-color: #fff;
 }
-.swiper-slide-img--imperdible {
-  height: auto;
-  aspect-ratio: 16 / 9;
-  object-fit: contain;
-  background: #000;
-}
+
 .swiper-slide-img--evento {
   height: 480px;
   object-fit: contain;
   background-color: #f9f9f9;
 }
+
 .swiper-slide-label {
   position: relative;
   width: 100%;
@@ -61,10 +161,12 @@
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   transition: background 0.3s;
 }
+
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
   background: rgba(0, 0, 0, 0.7);
 }
+
 .swiper-button-next:after,
 .swiper-button-prev:after,
 .swiper-button-next:before,
@@ -72,37 +174,35 @@
   content: none !important;
   display: none !important;
 }
+
 .swiper-button-next svg,
 .swiper-button-prev svg {
   width: 24px;
   height: 24px;
 }
 
-/* Pagination */
+/* Pagination (regular) */
 .swiper-pagination {
   bottom: 8px !important;
   z-index: 20 !important;
 }
+
 .swiper-pagination-bullet {
   background: #888 !important;
   opacity: 1 !important;
   width: 6px !important;
   height: 6px !important;
 }
+
 .swiper-pagination-bullet-active {
   background: #fff !important;
 }
 
 @media (max-width: 768px) {
-  #swiper-imperdibles,
-  #swiper-galeria,
-  #swiper-eventos {
-    width: 80% !important;
-    margin: 0 auto;
-  }
   .swiper-slide-img:not(.swiper-slide-img--imperdible):not(.swiper-slide-img--evento) {
     height: 200px;
   }
+
   .swiper-button-next,
   .swiper-button-prev {
     width: 32px !important;
