@@ -1,6 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Divider from "../components/Divider.astro";
 import BusinessCard from "../components/BusinessCard.astro";
 import CategoryFilter from "../components/CategoryFilter.astro";
 import cholulaData from "../data/cholula.json";
@@ -83,7 +82,6 @@ const FALLBACK_IMG =
         <h2 class="section-label" style={`--section-color: ${color};`}>
           {title}
         </h2>
-        <Divider />
         {description && <p class="section-description">{description}</p>}
         {
           isRestaurantes && clasificaciones.length > 0 && (
@@ -148,19 +146,21 @@ const FALLBACK_IMG =
         // .grid-scroll-area NO es un contenedor scrolleable (sin overflow).
         // El scroll real ocurre en el window.
         const stickyHeader = document.querySelector(".section-header");
-        const stickyTop    = 120; // valor CSS: top: 120px en desktop
-        const headerHeight = stickyHeader ? stickyHeader.getBoundingClientRect().height : 0;
-        const clearance    = stickyTop + headerHeight + 24; // margen de seguridad
+        const stickyTop = 120; // valor CSS: top: 120px en desktop
+        const headerHeight = stickyHeader
+          ? stickyHeader.getBoundingClientRect().height
+          : 0;
+        const clearance = stickyTop + headerHeight + 24; // margen de seguridad
 
         // Posición absoluta del card en el documento
-        const cardDocTop = targetCard.getBoundingClientRect().top + window.scrollY;
+        const cardDocTop =
+          targetCard.getBoundingClientRect().top + window.scrollY;
         window.scrollTo({ top: cardDocTop - clearance, behavior: "smooth" });
 
         // Highlight visual de la tarjeta seleccionada
         targetCard.style.transition =
           "box-shadow 0.5s ease-in-out, transform 0.5s ease";
-        targetCard.style.boxShadow =
-          "0 0 0 6px var(--color-mex-rosa, #e10098)";
+        targetCard.style.boxShadow = "0 0 0 6px var(--color-mex-rosa, #e10098)";
         targetCard.style.transform = "scale(1.02)";
 
         setTimeout(() => {
