@@ -137,7 +137,7 @@ const igGradId = `ig-grad-card-${swiperId}`;
         )
       }
       {
-        (tipoTelefono === "fijo" || tipoTelefono === "ambos") && phone && (
+        phone && (
           <li>
             <div class="icon">
               <svg
@@ -190,7 +190,7 @@ const igGradId = `ig-grad-card-${swiperId}`;
 
     <div class="business-card-cta-wrapper">
       {
-        phone && (tipoTelefono === "fijo" || tipoTelefono === "ambos") && (
+        phone && (
           <a
             href={`tel:${phone.replace(/\\D/g, "")}`}
             class="whatsapp-cta"
@@ -207,12 +207,12 @@ const igGradId = `ig-grad-card-${swiperId}`;
         )
       }
       {
-        (whatsapp || (phone && tipoTelefono === "whatsapp")) && (
+        whatsapp && (
           <a
             href={
-              whatsapp && whatsapp.startsWith("http")
+              whatsapp.startsWith("http")
                 ? whatsapp
-                : `https://api.whatsapp.com/send?phone=52${(whatsapp || phone).replace(/\\D/g, "")}`
+                : `https://api.whatsapp.com/send?phone=52${whatsapp.replace(/\\D/g, "")}`
             }
             target="_blank"
             rel="noopener noreferrer"

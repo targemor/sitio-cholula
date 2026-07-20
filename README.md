@@ -44,3 +44,8 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+
+aws s3 sync ./dist s3://visit-cholula/ --delete
+
+aws cloudfront create-invalidation --distribution-id EXCHH9HZ359RZ --paths "/*"
