@@ -394,10 +394,13 @@
   .bienvenido-stat {
     flex: none;
     display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    padding: 0 0 20px 0;
-    margin: 0 0 20px 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 4px;
+    padding: 24px 0;
+    margin: 0;
     border-right: none;
     border-bottom: 1px solid #F0EBDC;
   }
@@ -409,13 +412,16 @@
   }
 
   .bienvenido-stat-num {
-    font-size: 30px;
+    font-size: 36px;
     flex-shrink: 0;
-    min-width: 80px;
   }
 
   .bienvenido-stat-unit {
-    font-size: 13px;
+    font-size: 14px;
+  }
+
+  .bienvenido-stat-desc {
+    display: none;
   }
 }
 
@@ -448,20 +454,24 @@
 }
 
 .logo-separator {
-  height: 122px;
-  width: auto;
-  display: none;
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #E0DAD0 20%, #E0DAD0 80%, transparent);
+  flex-shrink: 0;
 }
 
 @media (min-width: 900px) {
   .bienvenido-logos {
     flex-direction: row;
     justify-content: space-evenly;
+    align-items: center;
     gap: 1.5rem;
   }
 
   .logo-separator {
-    display: block;
+    width: 1px;
+    height: 80px;
+    background: linear-gradient(to bottom, transparent, #E0DAD0 20%, #E0DAD0 80%, transparent);
   }
 }
 
@@ -500,15 +510,21 @@
   grid-template-columns: 1.8fr 1fr;
   gap: 2rem;
   align-items: stretch;
-  width: 80%;
+  width: 95%;
   max-width: 1600px;
   margin: 0 auto;
   max-height: 915px;
 }
 
 @media (max-width: 768px) {
+  .section-mapa {
+    padding-top: 0;
+  }
+
   .mapa-grid {
     grid-template-columns: 1fr;
+    width: 95%;
+    padding: 0;
   }
 
   .mapa-croquis {

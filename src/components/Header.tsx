@@ -40,37 +40,49 @@ export default function Header() {
         <div className="header-logos">
           <a href="/" className="header-logo-link" aria-label="Logo Cholula">
             <img
-              src="/home/logo_cholula.png"
+              src="/home/logo_cholula.webp"
               alt="Logo Cholula"
               className="header-logo-img"
+              width={65}
+              height={56}
               loading="eager"
+              decoding="async"
             />
           </a>
           <div className="header-divider"></div>
           <a href="/" className="header-logo-link" aria-label="Cholula lo tiene todo">
             <img
-              src="/home/cholula%20lo%20tiene%20todo_logo.png"
+              src="/home/cholula%20lo%20tiene%20todo_logo.webp"
               alt="Cholula lo tiene todo"
               className="header-logo-img"
+              width={56}
+              height={56}
               loading="eager"
+              decoding="async"
             />
           </a>
           <div className="header-divider"></div>
           <a href="/" className="header-logo-link" aria-label="Cholula Pueblo Mágico">
             <img
-              src="/home/cholula_pueblo_magico.png"
+              src="/home/cholula_pueblo_magico.webp"
               alt="Cholula Pueblo Mágico"
               className="header-logo-img"
+              width={65}
+              height={56}
               loading="eager"
+              decoding="async"
             />
           </a>
           <div className="header-divider"></div>
-          <a href="/" className="header-logo-link" aria-label="Cholula Pueblo Mágico">
+          <a href="/" className="header-logo-link" aria-label="Puebla">
             <img
-              src="https://visitcholula.mx/wp-content/uploads/2025/11/Main-Tagline_Color_RGB_ES_PUE_250623-1024x290.png"
-              alt="Cholula Pueblo Mágico"
+              src="/home/logo_puebla.webp"
+              alt="Puebla"
               className="header-logo-img logo-puebla"
+              width={85}
+              height={24}
               loading="eager"
+              decoding="async"
             />
           </a>
         </div>

@@ -7,6 +7,7 @@
   },
   "scripts": {
     "extract": "node scripts/extract-wp-data.cjs",
+    "convert-images": "node scripts/convert-to-webp.js",
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",

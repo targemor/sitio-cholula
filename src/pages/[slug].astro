@@ -116,7 +116,23 @@ const FALLBACK_IMG =
                 facebook={item.social?.facebook || undefined}
                 tiktok={item.social?.tiktok || undefined}
                 description={item.descripcion || undefined}
-                clasificacion={item.clasificacion || undefined}
+                clasificacion={item.clasificacion || item.categoria || undefined}
+                zona={item.zona || item.dondeEsta || undefined}
+                distanciaGranPiramide={item.distanciaGranPiramide || undefined}
+                categoriaPrecio={item.categoriaPrecio || undefined}
+                aceptaMascotas={item.aceptaMascotas || undefined}
+                tieneAlberca={item.tieneAlberca || undefined}
+                tieneSpa={item.tieneSpa || undefined}
+                terraza={item.terraza || undefined}
+                recepcion24h={item.recepcion24h || undefined}
+                amenidades={item.amenidades || undefined}
+                precioNocheMxn={item.precioNocheMxn || undefined}
+                tipoComida={item.tipoComida || undefined}
+                petFriendly={item.petFriendly || undefined}
+                musicaEnVivo={item.musicaEnVivo || undefined}
+                precioPpMxn={item.precioPpMxn || undefined}
+                reservacionRecomendada={item.reservacionRecomendada || undefined}
+                espacioFisico={item.espacioFisico || undefined}
               />
             ))
           }

@@ -26,17 +26,30 @@
                 "detalle": "Lunes: 08:00-22:00 • Martes: 08:00-22:00 • Miércoles: 08:00-22:00 • Jueves: 08:00-22:00 • Viernes: 08:00-22:00 • Sábado: 08:00-22:00 • Domingo: 08:00-22:00"
             },
             "direccion": "13 Oriente 402",
-            "googleMaps": "https://goo.gl/maps/T5hT1p164ao1f4jT8"
+            "googleMaps": "https://goo.gl/maps/T5hT1p164ao1f4jT8",
+            "zona": "A pocos minutos del Centro",
+            "distanciaGranPiramide": "9 min a pie de la Gran Pirámide",
+            "categoriaPrecio": "Estándar",
+            "aceptaMascotas": "Sí, con previo aviso",
+            "tieneAlberca": "No",
+            "tieneSpa": "No",
+            "terraza": "Sí, sin vista especial",
+            "recepcion24h": "Sí",
+            "amenidades": "Restaurante, Jardín, Terraza, Recepción 24 horas",
+            "precioNocheMxn": "$770-$1200 MXN",
+            "tamanioCategoria": "Íntimo",
+            "perfilIdeal": "Tranquilo y familiar; ideal para quienes buscan un ambiente relajado con jardín",
+            "telefono": "2229577475"
         },
         {
             "nombre": "Casa Chanehque",
             "galeria": [
-                "/images/hoteles/casa-chanehque/hotel_casa_chanehque_cholula_1-1024x1024-1.png",
-                "/images/hoteles/casa-chanehque/hotel_casa_chanehque_cholula_2-1024x1024-1.png",
-                "/images/hoteles/casa-chanehque/hotel_casa_chanehque_cholula_3-1024x1024-1.jpg",
-                "/images/hoteles/casa-chanehque/hotel_casa_chanehque_cholula_3-1024x1024-1.png",
-                "/images/hoteles/casa-chanehque/hotel_casa_chanehque_cholula_4-1024x1024-1.jpg",
-                "/images/hoteles/casa-chanehque/hotel_casa_chanehque_cholula_5-1024x1024-1.png"
+                "/images/hoteles/casa-chanehque/hotel_casa_chanehque_cholula_1-1024x1024-1.webp",
+                "/images/hoteles/casa-chanehque/hotel_casa_chanehque_cholula_2-1024x1024-1.webp",
+                "/images/hoteles/casa-chanehque/hotel_casa_chanehque_cholula_3-1024x1024-1.webp",
+                "/images/hoteles/casa-chanehque/hotel_casa_chanehque_cholula_3-1024x1024-1.webp",
+                "/images/hoteles/casa-chanehque/hotel_casa_chanehque_cholula_4-1024x1024-1.webp",
+                "/images/hoteles/casa-chanehque/hotel_casa_chanehque_cholula_5-1024x1024-1.webp"
             ],
             "estrellas": 0,
             "social": {
@@ -58,7 +71,19 @@
             "telefono": "2215695997",
             "email": "casachanehque@gmail.com",
             "sitioWeb": "https://www.hotelcasachanehque.com/",
-            "googleMaps": "https://maps.app.goo.gl/fS6HDFePPSr97mRN9"
+            "googleMaps": "https://maps.app.goo.gl/fS6HDFePPSr97mRN9",
+            "zona": "Centro",
+            "distanciaGranPiramide": "8 min a pie (0.5 km) de la Gran Pirámide",
+            "categoriaPrecio": "Superior",
+            "aceptaMascotas": "No",
+            "tieneAlberca": "Sí",
+            "tieneSpa": "Sí",
+            "terraza": "Sí, vista a zona arqueológica/pirámide",
+            "recepcion24h": "Sí",
+            "amenidades": "Restaurante, Bar, Servicio de masajes, Elevador, Alberca, Spa, Terraza con vista a zona arqueológica/pirámide, Salón de eventos, Recepción 24 horas",
+            "precioNocheMxn": "~ $1969 MXN",
+            "tamanioCategoria": "Íntimo",
+            "perfilIdeal": "Exclusivo y romántico; ideal para parejas en ocasiones muy especiales. No acepta niños menores de 5 años. Check-out más tardío que el estándar (confirmar hora exacta con el hotel)."
         },
         {
             "nombre": "Hotel Choloa",
@@ -86,9 +111,21 @@
                 "detalle": "Lunes: 08:00-22:00 • Martes: 08:00-22:00 • Miércoles: 08:00-22:00 • Jueves: 08:00-22:00 • Viernes: 08:00-22:00 • Sábado: 08:00-22:00 • Domingo: 08:00-22:00"
             },
             "direccion": "Av 7 Ote 206, Centro, 72760 Cholula de Rivadavia, Pue.",
-            "whatsapp": "522214034903",
+            "whatsapp": "2214034903",
             "email": "choloacholula@gmail.com",
-            "googleMaps": "https://maps.app.goo.gl/FTd3TeAtVGpXJuFm9"
+            "googleMaps": "https://maps.app.goo.gl/FTd3TeAtVGpXJuFm9",
+            "zona": "Fuera del centro (Santa María Tonantzintla)",
+            "distanciaGranPiramide": "No caminable; aprox. 10 min en coche del centro de Cholula",
+            "categoriaPrecio": "Estándar",
+            "aceptaMascotas": "No",
+            "tieneAlberca": "No",
+            "tieneSpa": "No",
+            "terraza": "Sí, sin vista especial",
+            "recepcion24h": "Sí",
+            "amenidades": "Restaurante, Bar, Bicicletas gratuitas, Tour desk, Terraza, Salón de eventos, Recepción 24 horas",
+            "precioNocheMxn": "~$1300 MXN (sin techo publicado)",
+            "tamanioCategoria": "Mediano",
+            "perfilIdeal": "Completo y céntrico; ideal para turistas que buscan comodidad"
         },
         {
             "nombre": "Hotel Entre Volcanes",
@@ -117,10 +154,22 @@
             },
             "direccion": "7 oriente #414 San Pedro Cholula",
             "telefono": "2229730042",
-            "whatsapp": "2229730042",
+            "whatsapp": "2214282993",
             "email": "entrevolcanesch@gmail.com",
             "sitioWeb": "https://entrevolcaneshotel.com.mx/",
-            "googleMaps": "https://maps.app.goo.gl/2DSooU8rH1HoQdx67"
+            "googleMaps": "https://maps.app.goo.gl/2DSooU8rH1HoQdx67",
+            "zona": "Centro",
+            "distanciaGranPiramide": "6-7 min a pie de la Gran Pirámide, frente a la zona arqueológica",
+            "categoriaPrecio": "Estándar",
+            "aceptaMascotas": "No",
+            "tieneAlberca": "No",
+            "tieneSpa": "No",
+            "terraza": "Sí, vista a volcanes y pirámide",
+            "recepcion24h": "Sí",
+            "amenidades": "Servicio a la habitación, Restaurante, Cocina en las habitaciones, Terraza con vista a volcanes y pirámide, Recepción 24 horas",
+            "precioNocheMxn": "$850-$1190 MXN",
+            "tamanioCategoria": "Mediano",
+            "perfilIdeal": "Ideal para parejas y familias que buscan vistas a los volcanes y la pirámide"
         },
         {
             "nombre": "Hotel los Remedios",
@@ -147,9 +196,22 @@
                 "detalle": "Lunes: 08:00-22:00 • Martes: 08:00-22:00 • Miércoles: 08:00-22:00 • Jueves: 08:00-22:00 • Viernes: 08:00-22:00 • Sábado: 08:00-22:00 • Domingo: 08:00-22:00"
             },
             "telefono": "2201957673",
-            "whatsapp": "2201957673",
+            "whatsapp": "2225051108",
             "email": "hotelosremedios@gmail.com",
-            "sitioWeb": "http://www.hotellosremedios.com/"
+            "sitioWeb": "http://www.hotellosremedios.com/",
+            "zona": "Centro",
+            "distanciaGranPiramide": "Menos de 1 km de la Gran Pirámide y Plaza de la Concordia",
+            "categoriaPrecio": "Económico",
+            "aceptaMascotas": "Sí, Gratis",
+            "tieneAlberca": "No",
+            "tieneSpa": "No",
+            "terraza": "No",
+            "recepcion24h": "Sí",
+            "amenidades": "Recepción 24 horas",
+            "precioNocheMxn": "$550-$600 MXN",
+            "tamanioCategoria": "Íntimo",
+            "perfilIdeal": "Económico y práctico; ideal para viajeros con presupuesto ajustado",
+            "googleMaps": "https://goo.gl/maps/xWxT5dT4r5yDK8eH8"
         },
         {
             "nombre": "Hotel Los Sauces",
@@ -180,7 +242,19 @@
             "telefono": "2222471011",
             "telefonoAlt": "2222471012",
             "sitioWeb": "https://hotellossauces.com/",
-            "googleMaps": "https://maps.app.goo.gl/89eHK6ej3QH9bWru6"
+            "googleMaps": "https://maps.app.goo.gl/89eHK6ej3QH9bWru6",
+            "zona": "Fuera del centro",
+            "distanciaGranPiramide": "~20 min en auto al centro histórico (no caminable)",
+            "categoriaPrecio": "Estándar",
+            "aceptaMascotas": "Sí (costo no especificado por el hotel)",
+            "tieneAlberca": "Sí",
+            "tieneSpa": "No",
+            "terraza": "No",
+            "recepcion24h": "No",
+            "amenidades": "Restaurante, Jardín, Alberca, Salón de eventos",
+            "precioNocheMxn": "~ $1,000 MXN",
+            "tamanioCategoria": "Grande",
+            "perfilIdeal": "Familiar y campestre; ideal para familias con niños y dueños de mascotas"
         },
         {
             "nombre": "Hotel Marmoy",
@@ -210,17 +284,29 @@
             "direccion": "Av Morelos 214 San Miguel, Col. Centro, Cholula de Rivadavia, Puebla",
             "telefono": "2229911952",
             "email": "hotelmarmoycholula@gmail.com",
-            "googleMaps": "https://maps.app.goo.gl/acseoqu7j6xpshQZ9"
+            "googleMaps": "https://maps.app.goo.gl/acseoqu7j6xpshQZ9",
+            "zona": "Zona Pirámide",
+            "distanciaGranPiramide": "5 min a pie de la Gran Pirámide",
+            "categoriaPrecio": "Económico",
+            "aceptaMascotas": "No",
+            "tieneAlberca": "No",
+            "tieneSpa": "No",
+            "terraza": "No",
+            "recepcion24h": "Sí",
+            "amenidades": "Restaurante, Bar, Jardín, Recepción 24 horas",
+            "precioNocheMxn": "~$550 MXN",
+            "tamanioCategoria": "Mediano",
+            "perfilIdeal": "Económico; ideal para turistas con presupuesto bajo cerca de la zona arqueológica"
         },
         {
             "nombre": "Hotel MS Portales",
             "galeria": [
-                "/images/hoteles/hotel-ms-portales/WhatsApp-Image-2025-06-27-at-3.15.45-PM-1024x1024-1.jpg",
+                "/images/hoteles/hotel-ms-portales/WhatsApp-Image-2025-06-27-at-3.15.45-PM-1024x1024-1.webp",
                 "/images/hoteles/hotel-ms-portales/83d9b18f_z-1024x1024-1.webp",
-                "/images/hoteles/hotel-ms-portales/73321131-1-1024x1024-1.jpg",
-                "/images/hoteles/hotel-ms-portales/habitaciones-1024x1024-1.jpg",
-                "/images/hoteles/hotel-ms-portales/hotel-1024x1024-1.jpg",
-                "/images/hoteles/hotel-ms-portales/WhatsApp-Image-2025-06-27-at-3.15.45-PM-1-1024x1024-1.jpg"
+                "/images/hoteles/hotel-ms-portales/73321131-1-1024x1024-1.webp",
+                "/images/hoteles/hotel-ms-portales/habitaciones-1024x1024-1.webp",
+                "/images/hoteles/hotel-ms-portales/hotel-1024x1024-1.webp",
+                "/images/hoteles/hotel-ms-portales/WhatsApp-Image-2025-06-27-at-3.15.45-PM-1-1024x1024-1.webp"
             ],
             "estrellas": 3,
             "social": {
@@ -240,37 +326,22 @@
                 "detalle": "Lunes: 08:00-22:00 • Martes: 08:00-22:00 • Miércoles: 08:00-22:00 • Jueves: 08:00-22:00 • Viernes: 08:00-22:00 • Sábado: 08:00-22:00 • Domingo: 08:00-22:00"
             },
             "direccion": "Portal Guerrero no. 17, Col. Centro",
-            "googleMaps": "https://maps.app.goo.gl/hCA8gLPYe4AgMGJv5"
-        },
-        {
-            "nombre": "Hotel Ramadá Encore",
-            "galeria": [
-                "/images/hoteles/hotel-ramad-encore/hotel_ramada_cholula_1-1024x1024-1.webp",
-                "/images/hoteles/hotel-ramad-encore/hotel_ramada_cholula_2-1024x1024-1.webp",
-                "/images/hoteles/hotel-ramad-encore/hotel_ramada_cholula_3-1024x1024-1.webp",
-                "/images/hoteles/hotel-ramad-encore/hotel_ramada_cholula_4-1024x1024-1.webp",
-                "/images/hoteles/hotel-ramad-encore/hotel_ramada_cholula-1024x1024-1.webp"
-            ],
-            "estrellas": 0,
-            "social": {
-                "facebook": "https://www.facebook.com/HotelRamadaEncore"
-            },
-            "horario": {
-                "lunes": "08:00-22:00",
-                "martes": "08:00-22:00",
-                "miercoles": "08:00-22:00",
-                "jueves": "08:00-22:00",
-                "viernes": "08:00-22:00",
-                "sabado": "08:00-22:00",
-                "domingo": "08:00-22:00",
-                "resumen": "Lun-Dom 08:00-22:00",
-                "detalle": "Lunes: 08:00-22:00 • Martes: 08:00-22:00 • Miércoles: 08:00-22:00 • Jueves: 08:00-22:00 • Viernes: 08:00-22:00 • Sábado: 08:00-22:00 • Domingo: 08:00-22:00"
-            },
-            "direccion": "Lateral del Anillo Perif. Ecológico 1230, 72680 Heroica Puebla de Zaragoza, Pue.",
-            "telefono": "2221317121",
-            "email": "ejecutivo2@encorepuebla.com",
-            "sitioWeb": "https://www.encorepuebla.com/",
-            "googleMaps": "https://www.google.com.mx/maps/place/Ramada+Encore+by+Wyndham+Puebla/"
+            "googleMaps": "https://maps.app.goo.gl/hCA8gLPYe4AgMGJv5",
+            "zona": "Los Portales (Centro)",
+            "distanciaGranPiramide": "11 min a pie de la Gran Pirámide, en el zócalo",
+            "categoriaPrecio": "Estándar",
+            "aceptaMascotas": "Sí, Con costo extra",
+            "tieneAlberca": "No",
+            "tieneSpa": "No",
+            "terraza": "No",
+            "recepcion24h": "Sí",
+            "amenidades": "Restaurante, Recepción 24 horas",
+            "precioNocheMxn": "$700-$920 MXN",
+            "tamanioCategoria": "Mediano",
+            "perfilIdeal": "Céntrico y práctico; ideal para quienes quieren estar justo en Los Portales",
+            "telefono": "2224084028",
+            "email": "contacto@hotelmsmexico.com",
+            "sitioWeb": "www.hotelmsmexico.com"
         },
         {
             "nombre": "Hotel Reforma",
@@ -299,8 +370,20 @@
             },
             "direccion": "Diagonal de La 2 Sur 101 Centro 72760 Cholula de Rivadavia, Pue. México",
             "telefono": "2222470149",
-            "whatsapp": "2222470149",
-            "googleMaps": "https://maps.apple.com/place?q=Hotel+Reforma+Cholula"
+            "whatsapp": "2222056054",
+            "googleMaps": "https://maps.apple.com/place?q=Hotel+Reforma+Cholula",
+            "zona": "Centro",
+            "distanciaGranPiramide": "En el mero centro de Cholula, caminable",
+            "categoriaPrecio": "Económico",
+            "aceptaMascotas": "Sí (costo no especificado por el hotel)",
+            "tieneAlberca": "No",
+            "tieneSpa": "No",
+            "terraza": "No",
+            "recepcion24h": "No",
+            "amenidades": "Restaurante (sin desayuno incluido), Bar conocido por sus sangrías",
+            "precioNocheMxn": "~ $500 MXN",
+            "tamanioCategoria": "Pequeño",
+            "perfilIdeal": "Económico y céntrico; ideal para viajeros con presupuesto ajustado"
         },
         {
             "nombre": "Hotel Santa Irene",
@@ -311,7 +394,8 @@
             ],
             "estrellas": 3,
             "social": {
-                "facebook": "https://www.facebook.com/HotelStaIrene"
+                "facebook": "https://www.facebook.com/HotelStaIrene",
+                "instagram": "https://www.instagram.com/hotelsantairenecholula"
             },
             "horario": {
                 "lunes": "08:00-22:00",
@@ -325,16 +409,29 @@
                 "detalle": "Lunes: 08:00-22:00 • Martes: 08:00-22:00 • Miércoles: 08:00-22:00 • Jueves: 08:00-22:00 • Viernes: 08:00-22:00 • Sábado: 08:00-22:00 • Domingo: 08:00-22:00"
             },
             "direccion": "Av 2 Ote 610, San Miguel, Barrio de San Miguel Tianguisnahuitl, 72750 Cholula de Rivadavia, Pue.",
-            "whatsapp": "522214259093",
+            "whatsapp": "2214259093",
             "email": "hotelsantairenecholula@gmail.com",
-            "googleMaps": "https://maps.app.goo.gl/vZp2iPqYYS7q6mgK8"
+            "googleMaps": "https://maps.app.goo.gl/vZp2iPqYYS7q6mgK8",
+            "zona": "Zona Pirámide",
+            "distanciaGranPiramide": "A una calle de la Gran Pirámide",
+            "categoriaPrecio": "Estándar",
+            "aceptaMascotas": "Sí, Avisar con anticipación",
+            "tieneAlberca": "No",
+            "tieneSpa": "No",
+            "terraza": "Sí, sin vista especial",
+            "recepcion24h": "No",
+            "amenidades": "Terraza",
+            "precioNocheMxn": "$899-$1187 MXN",
+            "tamanioCategoria": "Íntimo",
+            "perfilIdeal": "Tranquilo y sereno; ideal para parejas, viajeros culturales y familias",
+            "sitioWeb": "www.hotelsantairene.com.mx"
         },
         {
             "nombre": "Hotel Tila",
             "galeria": [
-                "/images/hoteles/hotel-tila/hotel_tila_cholula_1-1024x1024-1.jpg",
-                "/images/hoteles/hotel-tila/hotel_tila_cholula_2-1024x1024-1.jpg",
-                "/images/hoteles/hotel-tila/hotel_tila_cholula_3-1024x1024-1.jpg"
+                "/images/hoteles/hotel-tila/hotel_tila_cholula_1-1024x1024-1.webp",
+                "/images/hoteles/hotel-tila/hotel_tila_cholula_2-1024x1024-1.webp",
+                "/images/hoteles/hotel-tila/hotel_tila_cholula_3-1024x1024-1.webp"
             ],
             "estrellas": 5,
             "social": {
@@ -354,7 +451,21 @@
             "direccion": "Av 2 Ote 411, San Miguel, Barrio de San Miguel Tianguisnahuitl, 72778 Cholula de Rivadavia, Pue.",
             "telefono": "2213951023",
             "sitioWeb": "http://www.tilahotel.com/",
-            "googleMaps": "https://maps.app.goo.gl/1LcwRWRbJH63WUQ47"
+            "googleMaps": "https://maps.app.goo.gl/1LcwRWRbJH63WUQ47",
+            "zona": "Centro",
+            "distanciaGranPiramide": "4 min a pie de la Gran Pirámide",
+            "categoriaPrecio": "Superior",
+            "aceptaMascotas": "Sí, Con cargo: $500 MXN/noche, solo perros",
+            "tieneAlberca": "Sí",
+            "tieneSpa": "Sí",
+            "terraza": "Sí, sin vista especial",
+            "recepcion24h": "Sí",
+            "amenidades": "Elevador, Bar/lounge (se extiende al rooftop ciertos días), Alberca, Spa, Terraza, Salón de eventos, Recepción 24 horas",
+            "precioNocheMxn": "$1400-$1950 MXN",
+            "tamanioCategoria": "Mediano",
+            "perfilIdeal": "Diseño moderno y experiencia premium; ideal para parejas y familias",
+            "whatsapp": "2213951093",
+            "email": "admon@tilahotel.com"
         },
         {
             "nombre": "La Huerta Golf & Hotel",
@@ -380,21 +491,35 @@
             "direccion": "Priv. Juan Blanca 2501-A, Santa Ma. Xixitla 72760. San Pedro Cholula, Puebla",
             "telefono": "2222473392",
             "email": "lahuertagolfhotel@gmail.com",
-            "googleMaps": "https://www.google.com.mx/maps/place/La+Huerta+Golf+%26+Hotel/"
+            "googleMaps": "https://www.google.com.mx/maps/place/La+Huerta+Golf+%26+Hotel/",
+            "zona": "Fuera del centro",
+            "distanciaGranPiramide": "~3 km del centro, ~10 min en auto a la Gran Pirámide (no caminable)",
+            "categoriaPrecio": "Estándar",
+            "aceptaMascotas": "Sí, pueden aplicar cargos adicionales",
+            "tieneAlberca": "Sí",
+            "tieneSpa": "Sí",
+            "terraza": "No",
+            "recepcion24h": "Sí",
+            "amenidades": "Restaurante, Jardín, Campo de golf, Cancha de tenis, Alberca, Spa, Recepción 24 horas",
+            "precioNocheMxn": "$900-$2,000 MXN",
+            "tamanioCategoria": "Íntimo",
+            "perfilIdeal": "Campestre y deportivo; ideal para familias y grupos que buscan espacio y naturaleza",
+            "sitioWeb": "www.lahuertagolfhotel.com"
         },
         {
             "nombre": "Mansión Azul Cholula",
             "galeria": [
-                "/images/hoteles/mansin-azul-cholula/hotel_manmsion_azul_cholula_2-1024x1024-1.jpg",
-                "/images/hoteles/mansin-azul-cholula/mansion-azul-1024x1024-1.jpg",
+                "/images/hoteles/mansin-azul-cholula/hotel_manmsion_azul_cholula_2-1024x1024-1.webp",
+                "/images/hoteles/mansin-azul-cholula/mansion-azul-1024x1024-1.webp",
                 "/images/hoteles/mansin-azul-cholula/hotel_mansion_azul_cholula-1024x1024-1.webp",
-                "/images/hoteles/mansin-azul-cholula/hotel_manmsion_azul_cholula_1-1024x1024-1.jpg",
-                "/images/hoteles/mansin-azul-cholula/hotel_manmsion_azul_cholula_3-1024x1024-1.jpg",
-                "/images/hoteles/mansin-azul-cholula/hotel_manmsion_azul_cholula_4-1024x1024-1.jpg"
+                "/images/hoteles/mansin-azul-cholula/hotel_manmsion_azul_cholula_1-1024x1024-1.webp",
+                "/images/hoteles/mansin-azul-cholula/hotel_manmsion_azul_cholula_3-1024x1024-1.webp",
+                "/images/hoteles/mansin-azul-cholula/hotel_manmsion_azul_cholula_4-1024x1024-1.webp"
             ],
             "estrellas": 5,
             "social": {
-                "facebook": "https://www.facebook.com/profile.php?id=100051290419093"
+                "facebook": "https://www.facebook.com/profile.php?id=100051290419093",
+                "instagram": "https://www.instagram.com/mansionazulchoula"
             },
             "horario": {
                 "lunes": "08:00-22:00",
@@ -408,7 +533,20 @@
                 "detalle": "Lunes: 08:00-22:00 • Martes: 08:00-22:00 • Miércoles: 08:00-22:00 • Jueves: 08:00-22:00 • Viernes: 08:00-22:00 • Sábado: 08:00-22:00 • Domingo: 08:00-22:00"
             },
             "direccion": "Av. 5 de Mayo 407, Col. Centro",
-            "googleMaps": "https://goo.gl/maps/MB8F7cE8NKstF5Zx7"
+            "googleMaps": "https://goo.gl/maps/MB8F7cE8NKstF5Zx7",
+            "zona": "Centro",
+            "distanciaGranPiramide": "15 min a pie de la Gran Pirámide",
+            "categoriaPrecio": "Estándar",
+            "aceptaMascotas": "No",
+            "tieneAlberca": "No",
+            "tieneSpa": "No",
+            "terraza": "Sí, vista a centro histórico",
+            "recepcion24h": "Sí",
+            "amenidades": "Restaurante, Bar, Servicio a la habitación, Terraza con vista a centro histórico, Salón de eventos, Recepción 24 horas",
+            "precioNocheMxn": "$800-$1050 MXN",
+            "tamanioCategoria": "Mediano",
+            "perfilIdeal": "Moderno y céntrico; ideal para parejas y turistas que buscan estar en el corazón de Cholula",
+            "telefono": "2222610561"
         },
         {
             "nombre": "Quinta Alhóndiga Galindo",
@@ -439,10 +577,22 @@
             "direccion": "Avenida Miguel Hidalgo 106, Colonia Centro",
             "telefono": "2222617546",
             "telefonoAlt": "2229702115",
-            "whatsapp": "2222617546",
+            "whatsapp": "2221251618",
             "email": "galindo.hotelboutique@gmail.com",
             "sitioWeb": "https://quintagalindo.com/",
-            "googleMaps": "https://www.google.com.mx/maps/place/Quinta+Alh%C3%B3ndiga+Galindo+Hotel+Boutique/"
+            "googleMaps": "https://www.google.com.mx/maps/place/Quinta+Alh%C3%B3ndiga+Galindo+Hotel+Boutique/",
+            "zona": "Centro",
+            "distanciaGranPiramide": "8 min a pie de la Gran Pirámide, 5 min del centro",
+            "categoriaPrecio": "Superior",
+            "aceptaMascotas": "No",
+            "tieneAlberca": "No",
+            "tieneSpa": "Sí",
+            "terraza": "Sí, vista a volcanes y pirámide",
+            "recepcion24h": "No",
+            "amenidades": "Restaurante, Bar, Servicio de masajes, Spa, Terraza con vista a volcanes y pirámide, Salón de eventos",
+            "precioNocheMxn": "$1400-$1700 MXN",
+            "tamanioCategoria": "Íntimo",
+            "perfilIdeal": "Histórico y cultural; ideal para parejas que buscan hospedarse en una casona del siglo XVIII"
         },
         {
             "nombre": "Santa Josefita Bed & Breakfast",
@@ -471,18 +621,33 @@
                 "detalle": "Lunes: 08:00-22:00 • Martes: 08:00-22:00 • Miércoles: 08:00-22:00 • Jueves: 08:00-22:00 • Viernes: 08:00-22:00 • Sábado: 08:00-22:00 • Domingo: 08:00-22:00"
             },
             "direccion": "5 Poniente 123, Col. Centro",
-            "googleMaps": "https://goo.gl/maps/2dpFX2ibYY5CiJ2G9"
+            "googleMaps": "https://goo.gl/maps/2dpFX2ibYY5CiJ2G9",
+            "zona": "Centro",
+            "distanciaGranPiramide": "12 min a pie de la Gran Pirámide, 3 calles del zócalo",
+            "categoriaPrecio": "Estándar",
+            "aceptaMascotas": "Sí, Con cargo: $250 MXN/noche hasta 5kg, $350 MXN/noche hasta 12kg",
+            "tieneAlberca": "No",
+            "tieneSpa": "Sí",
+            "terraza": "No",
+            "recepcion24h": "Sí",
+            "amenidades": "Spa, Recepción 24 horas",
+            "precioNocheMxn": "$790-$1300 MXN",
+            "tamanioCategoria": "Íntimo",
+            "perfilIdeal": "Íntimo y acogedor; ideal para parejas que buscan un ambiente tranquilo y estilo mexicano tipo boutique",
+            "telefono": "2221681192",
+            "email": "ventas@hotelsantajosefita.com",
+            "sitioWeb": "www.hotelsantajosefita.com"
         }
     ],
     "restaurantes": [
         {
             "nombre": "Allora",
             "galeria": [
-                "/images/restaurantes/allora/image5.jpeg",
-                "/images/restaurantes/allora/image0.jpeg",
-                "/images/restaurantes/allora/image1.jpeg",
-                "/images/restaurantes/allora/image4.jpeg",
-                "/images/restaurantes/allora/image2.jpeg"
+                "/images/restaurantes/allora/image5.webp",
+                "/images/restaurantes/allora/image0.webp",
+                "/images/restaurantes/allora/image1.webp",
+                "/images/restaurantes/allora/image4.webp",
+                "/images/restaurantes/allora/image2.webp"
             ],
             "categoria": "restaurante",
             "tipoComida": "Italiana",
@@ -507,13 +672,23 @@
             },
             "direccion": "Av Morelos 212, Centro, 72760 Cholula de Rivadavia, Pue.",
             "whatsapp": "2221782682",
-            "googleMaps": "https://maps.app.goo.gl/esK2bWehpPMTnogb9"
+            "googleMaps": "https://maps.app.goo.gl/esK2bWehpPMTnogb9",
+            "categoriaPrecio": "Precio alto",
+            "petFriendly": "No",
+            "musicaEnVivo": "No",
+            "precioPpMxn": "$350–700",
+            "reservacionRecomendada": "Sí, se recomienda",
+            "ocasionIdeal": "Cena romántica italiana, comida especial, jardín tranquilo con vista a la pirámide",
+            "perfilIdeal": "Romántico y elegante · Ideal para parejas y grupos pequeños que quieren cocina italiana especial",
+            "etiquetasChatbot": "romántico, elegante, jardín, vista-pirámide, italiana, íntimo, cena-especial",
+            "espacioFisico": "Jardín con vistas a la pirámide en Zona Centro",
+            "telefono": "2221782682"
         },
         {
             "nombre": "Atracadero",
             "galeria": [
                 "/images/restaurantes/atracadero/Atracadero_cholula_5-1024x1024-1.webp",
-                "/images/restaurantes/atracadero/1000078339-1024x863-1.jpg",
+                "/images/restaurantes/atracadero/1000078339-1024x863-1.webp",
                 "/images/restaurantes/atracadero/Atracadero_cholula_1-1024x1024-1.webp",
                 "/images/restaurantes/atracadero/Atracadero_cholula_2-1024x1024-1.webp",
                 "/images/restaurantes/atracadero/Atracadero_cholula_4-1024x1024-1.webp"
@@ -542,7 +717,17 @@
             },
             "direccion": "Calle 6 Nte. 211, San Miguel, Barrio de San Miguel Tianguisnahuitl, 72778",
             "whatsapp": "2222619624",
-            "googleMaps": "https://maps.app.goo.gl/WxJsgs3VmeUhRh7PA"
+            "googleMaps": "https://maps.app.goo.gl/WxJsgs3VmeUhRh7PA",
+            "categoriaPrecio": "Precio moderado",
+            "petFriendly": "Sí",
+            "musicaEnVivo": "No",
+            "precioPpMxn": "$200–400",
+            "reservacionRecomendada": "No es necesario",
+            "ocasionIdeal": "Comida familiar al aire libre, tarde con mascotas, mariscos en jardín",
+            "perfilIdeal": "Familiar y campestre · Ideal para familias con niños y dueños de mascotas",
+            "etiquetasChatbot": "pet-friendly, jardín, área-infantil, familias-con-niños, mariscos, al-aire-libre",
+            "espacioFisico": "Jardín amplio al aire libre · Área infantil",
+            "telefono": "2212036934"
         },
         {
             "nombre": "Atracadero Jardín",
@@ -576,12 +761,22 @@
             },
             "direccion": "C. 13 Sur 1108, La Santísima, Barrio de Sta Maria Xixitla, 72762 Cholula de Rivadavia, Pue.",
             "whatsapp": "2212036934",
-            "googleMaps": "https://maps.app.goo.gl/jjjVxAjH4CfVH1KQ6"
+            "googleMaps": "https://maps.app.goo.gl/jjjVxAjH4CfVH1KQ6",
+            "categoriaPrecio": "Precio moderado",
+            "petFriendly": "Sí",
+            "musicaEnVivo": "No",
+            "precioPpMxn": "$200–400",
+            "reservacionRecomendada": "No es necesario",
+            "ocasionIdeal": "Comida familiar al aire libre, tarde con mascotas, mariscos en jardín",
+            "perfilIdeal": "Familiar y campestre · Ideal para familias con niños y dueños de mascotas",
+            "etiquetasChatbot": "pet-friendly, jardín, área-infantil, familias-con-niños, mariscos, al-aire-libre",
+            "espacioFisico": "Jardín amplio al aire libre · Área infantil",
+            "telefono": "2212036934"
         },
         {
             "nombre": "Café Tal",
             "galeria": [
-                "/images/restaurantes/caf-tal/1d58dd1f-3d24-40d5-99a5-fbab29562c0f-1024x1024-1.jpg",
+                "/images/restaurantes/caf-tal/1d58dd1f-3d24-40d5-99a5-fbab29562c0f-1024x1024-1.webp",
                 "/images/restaurantes/caf-tal/cafe_tal_cholula_1-1024x1024-1.webp",
                 "/images/restaurantes/caf-tal/cafe_tal_cholula_2-1024x1024-1.webp",
                 "/images/restaurantes/caf-tal/cafe_tal_cholula_3-1024x1024-1.webp"
@@ -608,7 +803,17 @@
             },
             "direccion": "Portal Guerrero 7, Centro, 72760 Cholula de Rivadavia, Pue.",
             "whatsapp": "2224049947",
-            "googleMaps": "https://maps.app.goo.gl/kLSiSPf66AJe3FLs6"
+            "googleMaps": "https://maps.app.goo.gl/kLSiSPf66AJe3FLs6",
+            "categoriaPrecio": "Económico",
+            "petFriendly": "Sí",
+            "musicaEnVivo": "No",
+            "precioPpMxn": "$100–250",
+            "reservacionRecomendada": "Sí, se recomienda",
+            "ocasionIdeal": "Desayuno, brunch, café de tarde-noche, reunión casual en los portales",
+            "perfilIdeal": "Casual y relajado · Ideal para amigos, parejas, trabajo y estudiantes · Abre casi hasta medianoche",
+            "etiquetasChatbot": "pet-friendly, portales, desayuno, brunch, café, open-late, casual, familiar",
+            "espacioFisico": "Los Portales históricos de Cholula",
+            "telefono": "2224049947"
         },
         {
             "nombre": "Caravana",
@@ -641,13 +846,22 @@
             },
             "direccion": "Av 2 Ote 415, San Miguel, Barrio de San Miguel Tianguisnahuitl, 72760 Cholula de Rivadavia, Pue.",
             "whatsapp": "9848795652",
-            "googleMaps": "https://maps.app.goo.gl/c7EH9PMMSoqXcCTFA"
+            "googleMaps": "https://maps.app.goo.gl/c7EH9PMMSoqXcCTFA",
+            "categoriaPrecio": "Económico",
+            "petFriendly": "No",
+            "musicaEnVivo": "No",
+            "precioPpMxn": "$80–150",
+            "reservacionRecomendada": "No es necesario",
+            "ocasionIdeal": "Experiencia local auténtica, tacos tradicionales, abierto de jueves a domingo",
+            "perfilIdeal": "Local y auténtico · Ideal para foodies y aventureros gastronómicos que buscan experiencia real",
+            "etiquetasChatbot": "experiencia-local, tacos, birria, auténtico, económico, jueves-a-domingo",
+            "espacioFisico": "Local en Zona Centro"
         },
         {
             "nombre": "Casa Relámpago",
             "galeria": [
                 "/images/restaurantes/casa-relmpago/Casa-Relampago_cholula-1024x1024-1.webp",
-                "/images/restaurantes/casa-relmpago/img_20240322_201034-scaled-1024x460-1-e1762835752544.jpg"
+                "/images/restaurantes/casa-relmpago/img_20240322_201034-scaled-1024x460-1-e1762835752544.webp"
             ],
             "categoria": "restaurante",
             "tipoComida": "Destilados y cervezas",
@@ -671,12 +885,22 @@
             },
             "direccion": "Ferrocarril 707, San Pablo Tecamac, 72760 Cholula de Rivadavia, Pue.",
             "whatsapp": "2224613812",
-            "googleMaps": "https://maps.app.goo.gl/2eCT9ygE6jaBAw7f9"
+            "googleMaps": "https://maps.app.goo.gl/2eCT9ygE6jaBAw7f9",
+            "categoriaPrecio": "Económico",
+            "petFriendly": "No",
+            "musicaEnVivo": "No",
+            "precioPpMxn": "$150–350",
+            "reservacionRecomendada": "No es necesario",
+            "ocasionIdeal": "Noche de copas, after work, salida nocturna animada",
+            "perfilIdeal": "Nocturno y social · Ideal para grupos de amigos adultos y noctámbulos",
+            "etiquetasChatbot": "nocturno, DJ, destilados, cerveza-artesanal, after, adultos, noche, bar",
+            "espacioFisico": "Espacio nocturno fuera del Centro",
+            "telefono": "2224613812"
         },
         {
             "nombre": "Cervecería Crazy Moon",
             "galeria": [
-                "/images/restaurantes/cervecera-crazy-moon/unnamed-2-1024x1024-1.png",
+                "/images/restaurantes/cervecera-crazy-moon/unnamed-2-1024x1024-1.webp",
                 "/images/restaurantes/cervecera-crazy-moon/Cerveceria-Crazy-Moon_cholula_1-1024x1024-1.webp",
                 "/images/restaurantes/cervecera-crazy-moon/Cerveceria-Crazy-Moon_cholula_2-1024x1024-1.webp",
                 "/images/restaurantes/cervecera-crazy-moon/Cerveceria-Crazy-Moon_cholula_3-1024x1024-1.webp",
@@ -706,12 +930,22 @@
             },
             "direccion": "Av. Miguel Hidalgo 214, Centro, 72760 Cholula de Rivadavia, Pue.",
             "whatsapp": "2222619290",
-            "googleMaps": "https://maps.app.goo.gl/1J4FtK5FmcA7Rnyr5"
+            "googleMaps": "https://maps.app.goo.gl/1J4FtK5FmcA7Rnyr5",
+            "categoriaPrecio": "Económico",
+            "petFriendly": "No",
+            "musicaEnVivo": "No",
+            "precioPpMxn": "$100–250",
+            "reservacionRecomendada": "No es necesario",
+            "ocasionIdeal": "Tarde-noche de cervezas artesanales, reunión informal entre amigos",
+            "perfilIdeal": "Social e informal · Ideal para amigos adultos y amantes de la cerveza artesanal",
+            "etiquetasChatbot": "cerveza-artesanal, craft-beer, brewpub-propio, social, informal, zona-centro",
+            "espacioFisico": "Brewpub propio en Zona Centro",
+            "telefono": "2222619290"
         },
         {
             "nombre": "Cholulice",
             "galeria": [
-                "/images/restaurantes/cholulice/27c8fe2f-586c-4355-9e49-daaab44a5821-Angie-Ramirez-1.jpeg"
+                "/images/restaurantes/cholulice/27c8fe2f-586c-4355-9e49-daaab44a5821-Angie-Ramirez-1.webp"
             ],
             "categoria": "cafeteria",
             "tipoComida": "Helados en rollo, waffles y café",
@@ -737,7 +971,17 @@
             },
             "direccion": "4 oriente #3 local A, San Pedro Cholula, Cholula de Rivadavia, Pue.",
             "whatsapp": "2201918614",
-            "googleMaps": "https://maps.app.goo.gl/PZiwsoJiRhiNDw1H6"
+            "googleMaps": "https://maps.app.goo.gl/PZiwsoJiRhiNDw1H6",
+            "categoriaPrecio": "Económico",
+            "petFriendly": "No",
+            "musicaEnVivo": "No",
+            "precioPpMxn": "$80–200",
+            "reservacionRecomendada": "No es necesario",
+            "ocasionIdeal": "Postre instagrameable, helados en rollo, merienda moderna",
+            "perfilIdeal": "Moderno y casual · Ideal para jóvenes, parejas y todos que quieren un postre instagrameable",
+            "etiquetasChatbot": "helado-en-rollo, instagrameable, waffles, café, jóvenes, moderno, casual",
+            "espacioFisico": "Local moderno en Zona Centro",
+            "telefono": "2201918614"
         },
         {
             "nombre": "Chula Cholula Helados",
@@ -772,7 +1016,17 @@
             },
             "direccion": "Av. 8 Ote. 807, Barrio de San Miguel Tianguisnahuitl, 72770 De San Miguel Tianguisnahuitl, Pue.",
             "whatsapp": "2225640635",
-            "googleMaps": "https://maps.app.goo.gl/eswddoPJysJPwN2x9"
+            "googleMaps": "https://maps.app.goo.gl/eswddoPJysJPwN2x9",
+            "categoriaPrecio": "Económico",
+            "petFriendly": "No",
+            "musicaEnVivo": "No",
+            "precioPpMxn": "$50–120",
+            "reservacionRecomendada": "No es necesario",
+            "ocasionIdeal": "Postre, merienda, paseo casual con niños",
+            "perfilIdeal": "Casual y alegre · Ideal para familias con niños, parejas y cualquier visitante",
+            "etiquetasChatbot": "helados-artesanales, familias, niños, postre, casual, económico, tradicional-cholula",
+            "espacioFisico": "Local a pocos minutos del Centro",
+            "telefono": "2225640635"
         },
         {
             "nombre": "Chula Cholula Helados Pirámide",
@@ -807,7 +1061,17 @@
             },
             "direccion": "Calle 6 Nte. 1, San Miguel, Barrio de San Miguel Tianguisnahuitl, 72778 Cholula de Rivadavia, Pue.",
             "whatsapp": "2225640635",
-            "googleMaps": "https://maps.app.goo.gl/eswddoPJysJPwN2x9"
+            "googleMaps": "https://maps.app.goo.gl/eswddoPJysJPwN2x9",
+            "categoriaPrecio": "Económico",
+            "petFriendly": "No",
+            "musicaEnVivo": "No",
+            "precioPpMxn": "$50–120",
+            "reservacionRecomendada": "No es necesario",
+            "ocasionIdeal": "Postre, merienda, paseo casual con niños",
+            "perfilIdeal": "Casual y alegre · Ideal para familias con niños, parejas y cualquier visitante",
+            "etiquetasChatbot": "helados-artesanales, familias, niños, postre, casual, económico, tradicional-cholula",
+            "espacioFisico": "Local a pocos minutos del Centro",
+            "telefono": "2225640635"
         },
         {
             "nombre": "Churrería Las Duyas",
@@ -843,13 +1107,23 @@
             "direccion": "Portal Guerrero 15, Centro, 72760 Cholula de Rivadavia, Pue.",
             "whatsapp": "2222471689",
             "sitioWeb": "https://www.churrerialasduyas.com",
-            "googleMaps": "https://maps.app.goo.gl/NeoPB6WZcyXnrZvs8"
+            "googleMaps": "https://maps.app.goo.gl/NeoPB6WZcyXnrZvs8",
+            "categoriaPrecio": "Económico",
+            "petFriendly": "Sí",
+            "musicaEnVivo": "No",
+            "precioPpMxn": "$80–200",
+            "reservacionRecomendada": "No es necesario",
+            "ocasionIdeal": "Churros con chocolate, desayuno clásico, merienda, tarde en los portales",
+            "perfilIdeal": "Tradicional y familiar · Ideal para familias, turistas y todos los visitantes de los portales",
+            "etiquetasChatbot": "churros, chocolate-caliente, portales, tradicional, familiar, pet-friendly-exterior, turístico, open-late",
+            "espacioFisico": "Los Portales históricos de Cholula · Interior amplio y exterior",
+            "telefono": "2222471689"
         },
         {
             "nombre": "Ciudad Sagrada",
             "galeria": [
                 "/images/restaurantes/ciudad-sagrada/Ciudad-Sagrada_cholula_1-1024x1024-1.webp",
-                "/images/restaurantes/ciudad-sagrada/0l0a3661-como-objeto-inteligente-1-scaled-1024x1024-1.jpg",
+                "/images/restaurantes/ciudad-sagrada/0l0a3661-como-objeto-inteligente-1-scaled-1024x1024-1.webp",
                 "/images/restaurantes/ciudad-sagrada/Ciudad-Sagrada_cholula_2-1024x1024-1.webp",
                 "/images/restaurantes/ciudad-sagrada/Ciudad-Sagrada_cholula_3-1024x1024-1.webp",
                 "/images/restaurantes/ciudad-sagrada/Ciudad-Sagrada_cholula_4-1024x1024-1.webp",
@@ -878,16 +1152,26 @@
             },
             "direccion": "Av 2 Ote 615, San Miguel, Barrio de San Miguel Tianguisnahuitl, 72760 San Andrés Cholula, Pue.",
             "whatsapp": "2222479425",
-            "googleMaps": "https://maps.app.goo.gl/eaivVGxYiBnSk2dx5"
+            "googleMaps": "https://maps.app.goo.gl/eaivVGxYiBnSk2dx5",
+            "categoriaPrecio": "Precio alto",
+            "petFriendly": "Sí",
+            "musicaEnVivo": "Sí",
+            "precioPpMxn": "$400–800",
+            "reservacionRecomendada": "Sí, se recomienda",
+            "ocasionIdeal": "Cena romántica, aniversario, cumpleaños, evento especial, ver la pirámide al atardecer",
+            "perfilIdeal": "Elegante y romántico con toque prehispánico · Ideal para parejas, familias y grupos en celebraciones especiales",
+            "etiquetasChatbot": "vista-pirámide, terraza-jardín, romántico, celebraciones, alta-cocina-mexicana, instagrameable, música-en-vivo, show-prehispánico, pet-friendly, aniversario, atardecer",
+            "espacioFisico": "Terraza-jardín con vista directa a la Pirámide de Cholula e Iglesia de los Remedios",
+            "telefono": "2222479425"
         },
         {
             "nombre": "Corazón de San Pedro",
             "galeria": [
-                "/images/restaurantes/corazn-de-san-pedro/CORAZON-DE-SP-12-scaled-1024x1024-1.jpg",
-                "/images/restaurantes/corazn-de-san-pedro/CORAZON-DE-SP-23-scaled-1024x1024-1.jpg",
-                "/images/restaurantes/corazn-de-san-pedro/CORAZON-DE-SP-46-scaled-1024x1024-1.jpg",
-                "/images/restaurantes/corazn-de-san-pedro/CORAZON-DE-SP-70-scaled-1024x1024-1.jpg",
-                "/images/restaurantes/corazn-de-san-pedro/corazon-de-sp-9-scaled-1024x683-1-e1762835622857.jpg"
+                "/images/restaurantes/corazn-de-san-pedro/CORAZON-DE-SP-12-scaled-1024x1024-1.webp",
+                "/images/restaurantes/corazn-de-san-pedro/CORAZON-DE-SP-23-scaled-1024x1024-1.webp",
+                "/images/restaurantes/corazn-de-san-pedro/CORAZON-DE-SP-46-scaled-1024x1024-1.webp",
+                "/images/restaurantes/corazn-de-san-pedro/CORAZON-DE-SP-70-scaled-1024x1024-1.webp",
+                "/images/restaurantes/corazn-de-san-pedro/corazon-de-sp-9-scaled-1024x683-1-e1762835622857.webp"
             ],
             "categoria": "restaurante",
             "tipoComida": "Comida francesa",
@@ -912,16 +1196,26 @@
             },
             "direccion": "Av. 8 Ote. 407, Barrio de San Miguel Tianguisnahuitl, 72760 San Andrés Cholula",
             "whatsapp": "2215259952",
-            "googleMaps": "https://maps.app.goo.gl/HDz6W7pqwJj336fW8"
+            "googleMaps": "https://maps.app.goo.gl/HDz6W7pqwJj336fW8",
+            "categoriaPrecio": "Precio alto",
+            "petFriendly": "No",
+            "musicaEnVivo": "Sí",
+            "precioPpMxn": "$350–700",
+            "reservacionRecomendada": "Sí, se recomienda",
+            "ocasionIdeal": "Cena romántica, cumpleaños especial, celebración íntima, cita de pareja",
+            "perfilIdeal": "Muy romántico e íntimo · Ideal para parejas, cumpleaños especiales y grupos de amigas",
+            "etiquetasChatbot": "romántico, jardín, saxofón-en-vivo, celebraciones, cumpleaños, cocina-francesa, íntimo, cita-de-pareja, casona",
+            "espacioFisico": "Jardín de casona cholulteca transformada · Iluminación cálida · Vegetación mediterránea",
+            "telefono": "2215259952"
         },
         {
             "nombre": "Dang",
             "galeria": [
-                "/images/restaurantes/dang/Dang-4.jpg",
-                "/images/restaurantes/dang/Dang-1.jpg",
-                "/images/restaurantes/dang/Dang-2.jpg",
-                "/images/restaurantes/dang/Dang-3.jpg",
-                "/images/restaurantes/dang/Dang-5.jpg"
+                "/images/restaurantes/dang/Dang-4.webp",
+                "/images/restaurantes/dang/Dang-1.webp",
+                "/images/restaurantes/dang/Dang-2.webp",
+                "/images/restaurantes/dang/Dang-3.webp",
+                "/images/restaurantes/dang/Dang-5.webp"
             ],
             "categoria": "restaurante",
             "tipoComida": "Ramen y asiática",
@@ -981,13 +1275,23 @@
             },
             "direccion": "15 Sur 902, San Cristobal Tepontla, 72764 Cholula, Pue.",
             "whatsapp": "2217020522",
-            "googleMaps": "https://maps.app.goo.gl/V8pqzL28i1xZXPbq5"
+            "googleMaps": "https://maps.app.goo.gl/V8pqzL28i1xZXPbq5",
+            "categoriaPrecio": "Precio moderado",
+            "petFriendly": "Sí",
+            "musicaEnVivo": "No",
+            "precioPpMxn": "$200–450",
+            "reservacionRecomendada": "Sí, se recomienda",
+            "ocasionIdeal": "Comida familiar campestre, tarde con niños, experiencia de granja",
+            "perfilIdeal": "Campestre y familiar · Ideal para familias con niños y grupos grandes",
+            "etiquetasChatbot": "familias-con-niños, granja, jardín, área-infantil, campestre, pizzas-italianas, amplio, al-aire-libre",
+            "espacioFisico": "Área campestre con granja · Jardín amplio · Área infantil",
+            "telefono": "2217020522"
         },
         {
-            "nombre": "Divará Centro",
+            "nombre": "Divará Restaurante Centro",
             "galeria": [
                 "/images/restaurantes/divar-centro/Divara-Centro_cholula_3-1024x1024-1.webp",
-                "/images/restaurantes/divar-centro/divara-1024x772-1.jpg",
+                "/images/restaurantes/divar-centro/divara-1024x772-1.webp",
                 "/images/restaurantes/divar-centro/Divara-Centro_cholula_1-1024x1024-1.webp",
                 "/images/restaurantes/divar-centro/Divara-Centro_cholula_2-1024x1024-1.webp",
                 "/images/restaurantes/divar-centro/Divara-Centro_cholula_4-1024x1024-1.webp",
@@ -1016,17 +1320,27 @@
             },
             "direccion": "Av. 8 Ote. 414, Barrio de San Miguel Tianguisnahuitl, 72760 Cholula, Pue.",
             "whatsapp": "2229606603",
-            "googleMaps": "https://maps.app.goo.gl/FHYvZi8PnZPm8MUu9"
+            "googleMaps": "https://maps.app.goo.gl/FHYvZi8PnZPm8MUu9",
+            "categoriaPrecio": "Precio moderado",
+            "petFriendly": "Sí",
+            "musicaEnVivo": "No",
+            "precioPpMxn": "$250–500",
+            "reservacionRecomendada": "Sí, se recomienda",
+            "ocasionIdeal": "Comida o cena con vista panorámica, pizzas italianas especiales",
+            "perfilIdeal": "Casual-elegante · Ideal para parejas, amigos y grupos que quieren vista y buena pizza",
+            "etiquetasChatbot": "vista-panorámica, terraza, pizzas-italianas, romántico, instagrameable, casual-elegante",
+            "espacioFisico": "Terraza con vista panorámica en Zona Centro",
+            "telefono": "2229606603"
         },
         {
             "nombre": "El Supremo Café & Tocino",
             "galeria": [
-                "/images/restaurantes/el-supremo-caf-tocino/Café-Tocino-1.jpg",
-                "/images/restaurantes/el-supremo-caf-tocino/Café-Tocino-2.jpg",
-                "/images/restaurantes/el-supremo-caf-tocino/Café-Tocino-3.jpg",
-                "/images/restaurantes/el-supremo-caf-tocino/Café-Tocino-4.jpg",
-                "/images/restaurantes/el-supremo-caf-tocino/Café-Tocino-5.jpg",
-                "/images/restaurantes/el-supremo-caf-tocino/Café-Tocino-6.jpg"
+                "/images/restaurantes/el-supremo-caf-tocino/Café-Tocino-1.webp",
+                "/images/restaurantes/el-supremo-caf-tocino/Café-Tocino-2.webp",
+                "/images/restaurantes/el-supremo-caf-tocino/Café-Tocino-3.webp",
+                "/images/restaurantes/el-supremo-caf-tocino/Café-Tocino-4.webp",
+                "/images/restaurantes/el-supremo-caf-tocino/Café-Tocino-5.webp",
+                "/images/restaurantes/el-supremo-caf-tocino/Café-Tocino-6.webp"
             ],
             "categoria": "restaurante",
             "tipoComida": "Desayunos y brunch",
@@ -1051,7 +1365,17 @@
             },
             "direccion": "Av 2 Ote 406, San Miguel, Barrio de San Miguel Tianguisnahuitl, 72750 Cholula de Rivadavia, Pue.",
             "whatsapp": "2216555666",
-            "googleMaps": "https://maps.app.goo.gl/qke8BWUQDBBoCt6j7"
+            "googleMaps": "https://maps.app.goo.gl/qke8BWUQDBBoCt6j7",
+            "categoriaPrecio": "Económico",
+            "petFriendly": "Sí",
+            "musicaEnVivo": "No",
+            "precioPpMxn": "$100–250",
+            "reservacionRecomendada": "No es necesario",
+            "ocasionIdeal": "Desayuno abundante, brunch con mucha comida",
+            "perfilIdeal": "Casual y familiar · Ideal para hambrientos y quienes buscan desayuno abundante",
+            "etiquetasChatbot": "pet-friendly, desayuno, brunch, porciones-abundantes, casual, familiar, solo-mañanas",
+            "espacioFisico": "Local en Zona Centro",
+            "telefono": "2216555666"
         },
         {
             "nombre": "Finca Ensamble",
@@ -1061,7 +1385,7 @@
                 "/images/restaurantes/finca-ensamble/Finca-Ensamble_cholula_3-1024x1024-1.webp",
                 "/images/restaurantes/finca-ensamble/Finca-Ensamble_cholula_4-1024x1024-1.webp",
                 "/images/restaurantes/finca-ensamble/Finca-Ensamble_cholula_5-1024x1024-1.webp",
-                "/images/restaurantes/finca-ensamble/imagen-de-whatsapp-2025-07-04-a-las-14.51.27_39c432e9-1024x682-1.jpg"
+                "/images/restaurantes/finca-ensamble/imagen-de-whatsapp-2025-07-04-a-las-14.51.27_39c432e9-1024x682-1.webp"
             ],
             "categoria": "restaurante",
             "tipoComida": "Cocina urbana gourmet",
@@ -1087,10 +1411,20 @@
             },
             "direccion": "Av 7 Ote 418, San Pablo Tecamac, 72760 San Andrés Cholula, Pue.",
             "whatsapp": "2229719298",
-            "googleMaps": "https://maps.app.goo.gl/ZrsEZcAV7HVyqboD7"
+            "googleMaps": "https://maps.app.goo.gl/ZrsEZcAV7HVyqboD7",
+            "categoriaPrecio": "Precio moderado",
+            "petFriendly": "Sí",
+            "musicaEnVivo": "Sí",
+            "precioPpMxn": "$200–400",
+            "reservacionRecomendada": "No es necesario",
+            "ocasionIdeal": "Tarde de cervezas artesanales, reunión casual al aire libre, ver la pirámide tranquilo",
+            "perfilIdeal": "Relajado y al aire libre · Ideal para amigos, parejas, familias con niños y dueños de mascotas",
+            "etiquetasChatbot": "beer-garden, pet-friendly, kids-zone, vista-pirámide, jardín, al-aire-libre, cerveza-artesanal, música-en-vivo, deportes-en-vivo",
+            "espacioFisico": "Beer garden al aire libre · Jardín con vista a la Pirámide · Kids Zone",
+            "telefono": "2229719298"
         },
         {
-            "nombre": "Fonda Santa Clara",
+            "nombre": "Fonda de Santa Clara",
             "galeria": [
                 "/images/restaurantes/fonda-santa-clara/Fonda-de-Santa-Clara_cholula_1-1024x1024-1.webp",
                 "/images/restaurantes/fonda-santa-clara/Fonda-de-Santa-Clara_cholula_2-1024x1024-1.webp",
@@ -1122,13 +1456,23 @@
             },
             "direccion": "Portal Guerrero 5, Centro, 72760 Cholula de Rivadavia, Pue.",
             "whatsapp": "2222476966",
-            "googleMaps": "https://maps.app.goo.gl/gVQdx1tehGmtZ9U48"
+            "googleMaps": "https://maps.app.goo.gl/gVQdx1tehGmtZ9U48",
+            "categoriaPrecio": "Económico",
+            "petFriendly": "No",
+            "musicaEnVivo": "No",
+            "precioPpMxn": "$200–400",
+            "reservacionRecomendada": "No es necesario",
+            "ocasionIdeal": "Comida tradicional poblana, turismo gastronómico, temporada de chile en nogada",
+            "perfilIdeal": "Tradicional y familiar · Ideal para familias y turistas que quieren cocina poblana auténtica",
+            "etiquetasChatbot": "cocina-poblana, tradicional, turístico, portales, chile-en-nogada-temporada, familiar",
+            "espacioFisico": "Los Portales históricos de Cholula",
+            "telefono": "2222476966"
         },
         {
             "nombre": "Jazzatlán Cholula",
             "galeria": [
                 "/images/restaurantes/jazzatln-cholula/Jazzatlan_cholula_3-1024x1024-1.webp",
-                "/images/restaurantes/jazzatln-cholula/Captura-de-pantalla-2025-11-11-a-las-10.19.52-a.m.png",
+                "/images/restaurantes/jazzatln-cholula/Captura-de-pantalla-2025-11-11-a-las-10.19.52-a.m.webp",
                 "/images/restaurantes/jazzatln-cholula/Jazzatlan_cholula_1-1024x1024-1.webp",
                 "/images/restaurantes/jazzatln-cholula/Jazzatlan_cholula_2-1024x1024-1.webp",
                 "/images/restaurantes/jazzatln-cholula/Jazzatlan_cholula_4-1024x1024-1.webp",
@@ -1157,12 +1501,22 @@
             },
             "direccion": "Av 2 Ote 406, San Miguel, Barrio de San Miguel Tianguisnahuitl, 72760 Cholula de Rivadavia, Pue.",
             "whatsapp": "2228387569",
-            "googleMaps": "https://maps.app.goo.gl/yjJsMvEVzaLeGfTJ6"
+            "googleMaps": "https://maps.app.goo.gl/yjJsMvEVzaLeGfTJ6",
+            "categoriaPrecio": "Precio moderado",
+            "petFriendly": "Sí",
+            "musicaEnVivo": "Sí",
+            "precioPpMxn": "$200–450",
+            "reservacionRecomendada": "Sí, se recomienda",
+            "ocasionIdeal": "Noche cultural con jazz en vivo, cita especial única, experiencia bohemia",
+            "perfilIdeal": "Bohemio y cultural · Ideal para parejas, amigos adultos y amantes de la música en vivo",
+            "etiquetasChatbot": "jazz-en-vivo, música-en-vivo, bohemio, cultural, pet-friendly, cerveza-artesanal, cita-especial, nocturno, instagrameable, parejas",
+            "espacioFisico": "Club con terraza · Diseño moderno y cálido · Cervecería propia",
+            "telefono": "2228387569"
         },
         {
             "nombre": "La Casa Rosa",
             "galeria": [
-                "/images/restaurantes/la-casa-rosa/Captura-de-pantalla-2025-11-11-a-las-10.12.56-a.m.png",
+                "/images/restaurantes/la-casa-rosa/Captura-de-pantalla-2025-11-11-a-las-10.12.56-a.m.webp",
                 "/images/restaurantes/la-casa-rosa/La-Casa-Rosa_cholula_1-1024x1024-1.webp",
                 "/images/restaurantes/la-casa-rosa/La-Casa-Rosa_cholula_2-1024x1024-1.webp",
                 "/images/restaurantes/la-casa-rosa/La-Casa-Rosa_cholula_3-1024x1024-1.webp",
@@ -1191,7 +1545,16 @@
             },
             "direccion": "C. 4 Sur 105, San Miguel, Centro, 72760 Cholula de Rivadavia, Pue.",
             "whatsapp": "2226187237",
-            "googleMaps": "https://maps.app.goo.gl/BCgYpM8YirkREb7j8"
+            "googleMaps": "https://maps.app.goo.gl/BCgYpM8YirkREb7j8",
+            "categoriaPrecio": "Económico",
+            "petFriendly": "No",
+            "musicaEnVivo": "Sí",
+            "precioPpMxn": "$150–350",
+            "reservacionRecomendada": "No es necesario",
+            "ocasionIdeal": "Comida con música en vivo, reunión animada, parrilladas entre amigos",
+            "perfilIdeal": "Informal y animado · Ideal para grupos de amigos",
+            "etiquetasChatbot": "música-en-vivo, parrilladas, mexicana, informal, animado, grupos",
+            "espacioFisico": "Local en Zona Centro"
         },
         {
             "nombre": "La Enamorada",
@@ -1199,7 +1562,7 @@
                 "/images/restaurantes/la-enamorada/La-Enamorada_cholula_2-1024x1024-1.webp",
                 "/images/restaurantes/la-enamorada/La-Enamorada_cholula_3-1024x1024-1.webp",
                 "/images/restaurantes/la-enamorada/La-Enamorada_cholula_6-1024x1024-1.webp",
-                "/images/restaurantes/la-enamorada/fb_img_1750960162730-1-1024x766-1.jpg",
+                "/images/restaurantes/la-enamorada/fb_img_1750960162730-1-1024x766-1.webp",
                 "/images/restaurantes/la-enamorada/La-Enamorada_cholula_1-1024x1024-1.webp",
                 "/images/restaurantes/la-enamorada/La-Enamorada_cholula_4-1024x1024-1.webp"
             ],
@@ -1226,7 +1589,17 @@
             },
             "direccion": "Av. Miguel Hidalgo 102, Centro, 72760 San Andrés Cholula, Pue.",
             "whatsapp": "2221887131",
-            "googleMaps": "https://maps.app.goo.gl/TK3SY2TWFQwurQ6R6"
+            "googleMaps": "https://maps.app.goo.gl/TK3SY2TWFQwurQ6R6",
+            "categoriaPrecio": "Económico",
+            "petFriendly": "No",
+            "musicaEnVivo": "Sí",
+            "precioPpMxn": "$150–350",
+            "reservacionRecomendada": "No es necesario",
+            "ocasionIdeal": "Tarde-noche de cantina, experiencia local auténtica, trasnoche en los portales",
+            "perfilIdeal": "Social y animado · Ideal para grupos de amigos, adultos y locales · Trasnoche en los portales",
+            "etiquetasChatbot": "cantina-tradicional, experiencia-local, música-en-vivo, portales, noche, social, animado, trasnoche",
+            "espacioFisico": "Los Portales históricos · Cantina tradicional",
+            "telefono": "2221887131"
         },
         {
             "nombre": "La Lunita Restaurante",
@@ -1261,15 +1634,25 @@
             },
             "direccion": "Av. Morelos 419, San Miguel, Barrio de San Miguel Tianguisnahuitl",
             "whatsapp": "2222470011",
-            "googleMaps": "https://maps.app.goo.gl/7uqCpmUyesPYio299"
+            "googleMaps": "https://maps.app.goo.gl/7uqCpmUyesPYio299",
+            "categoriaPrecio": "Económico",
+            "petFriendly": "No",
+            "musicaEnVivo": "No",
+            "precioPpMxn": "$120–280",
+            "reservacionRecomendada": "No es necesario",
+            "ocasionIdeal": "Comida tradicional poblana, sangrías tradicionales, experiencia local",
+            "perfilIdeal": "Familiar y tradicional · Ideal para familias, turistas y locales que buscan sabor auténtico",
+            "etiquetasChatbot": "experiencia-local, sangrías-tradicionales, cocina-poblana, familiar, tradicional",
+            "espacioFisico": "Local en Zona Centro",
+            "telefono": "2222470011"
         },
         {
             "nombre": "La Pirámide",
             "galeria": [
-                "/images/restaurantes/la-pirmide/Captura-de-pantalla-2025-10-20-a-las-1.28.07-p.m.png",
-                "/images/restaurantes/la-pirmide/Captura-de-pantalla-2025-10-20-a-las-1.27.24-p.m.png",
-                "/images/restaurantes/la-pirmide/Captura-de-pantalla-2025-10-20-a-las-1.27.34-p.m.png",
-                "/images/restaurantes/la-pirmide/Captura-de-pantalla-2025-10-20-a-las-1.28.00-p.m.png"
+                "/images/restaurantes/la-pirmide/Captura-de-pantalla-2025-10-20-a-las-1.28.07-p.m.webp",
+                "/images/restaurantes/la-pirmide/Captura-de-pantalla-2025-10-20-a-las-1.27.24-p.m.webp",
+                "/images/restaurantes/la-pirmide/Captura-de-pantalla-2025-10-20-a-las-1.27.34-p.m.webp",
+                "/images/restaurantes/la-pirmide/Captura-de-pantalla-2025-10-20-a-las-1.28.00-p.m.webp"
             ],
             "categoria": "restaurante",
             "tipoComida": "Comida típica mexicana",
@@ -1297,7 +1680,7 @@
         {
             "nombre": "Licorería San Pedrito",
             "galeria": [
-                "/images/restaurantes/licorera-san-pedrito/Captura-de-pantalla-2025-11-11-a-las-10.27.12-a.m.png",
+                "/images/restaurantes/licorera-san-pedrito/Captura-de-pantalla-2025-11-11-a-las-10.27.12-a.m.webp",
                 "/images/restaurantes/licorera-san-pedrito/Licoreria-San-Pedrito_cholula_1-1024x1024-1.webp",
                 "/images/restaurantes/licorera-san-pedrito/Licoreria-San-Pedrito_cholula_2-1024x1024-1.webp",
                 "/images/restaurantes/licorera-san-pedrito/Licoreria-San-Pedrito_cholula_3-1024x1024-1.webp",
@@ -1327,13 +1710,23 @@
             },
             "direccion": "San Miguel Tianguisnahuitl, Av. Morelos 405B, Barrio de San Miguel Tianguisnahuitl",
             "whatsapp": "2211943795",
-            "googleMaps": "https://maps.app.goo.gl/XA3PT8PY6suHqpXWA"
+            "googleMaps": "https://maps.app.goo.gl/XA3PT8PY6suHqpXWA",
+            "categoriaPrecio": "Precio moderado",
+            "petFriendly": "No",
+            "musicaEnVivo": "No",
+            "precioPpMxn": "$150–400",
+            "reservacionRecomendada": "No es necesario",
+            "ocasionIdeal": "Cócteles con vista panorámica, noche animada con DJ, after work",
+            "perfilIdeal": "Social y nocturno · Ideal para amigos adultos, parejas y grupos que quieren vista y cócteles",
+            "etiquetasChatbot": "terraza, vista-panorámica, DJ, mixología, coctelería, nocturno, instagrameable, social",
+            "espacioFisico": "Terraza con vista panorámica en Zona Centro",
+            "telefono": "2211943795"
         },
         {
             "nombre": "Los Jarrones",
             "galeria": [
                 "/images/restaurantes/los-jarrones/Los-Jarrones_cholula_2-1024x1024-1.webp",
-                "/images/restaurantes/los-jarrones/7580f2b6-1e4e-4a70-8cab-42ab00c89eee-1024x768-1.jpg",
+                "/images/restaurantes/los-jarrones/7580f2b6-1e4e-4a70-8cab-42ab00c89eee-1024x768-1.webp",
                 "/images/restaurantes/los-jarrones/Los-Jarrones_cholula_3-1024x1024-1.webp",
                 "/images/restaurantes/los-jarrones/Los-Jarrones_cholula_4-1024x1024-1.webp"
             ],
@@ -1359,14 +1752,24 @@
             },
             "direccion": "Av. Miguel Hidalgo 102, Centro, 72760 Cholula de Rivadavia, Pue.",
             "whatsapp": "2222471098",
-            "googleMaps": "https://maps.app.goo.gl/X5agiqD9ucJ7sTQq7"
+            "googleMaps": "https://maps.app.goo.gl/X5agiqD9ucJ7sTQq7",
+            "categoriaPrecio": "Económico",
+            "petFriendly": "No",
+            "musicaEnVivo": "No",
+            "precioPpMxn": "$150–350",
+            "reservacionRecomendada": "Sí, se recomienda",
+            "ocasionIdeal": "Comida tradicional en Los Portales, buffet dominical",
+            "perfilIdeal": "Familiar y casual · Ideal para familias, grupos y turistas en los portales",
+            "etiquetasChatbot": "portales, familiar, buffet-domingos, mexicana, casual, turístico",
+            "espacioFisico": "Los Portales históricos de Cholula",
+            "telefono": "2222471098"
         },
         {
             "nombre": "Mercado Cosme del Razo",
             "galeria": [
                 "/images/restaurantes/mercado-cosme-del-razo/Mercado-Cosme-del-Razo_cholula_1-1024x1024-1.webp",
                 "/images/restaurantes/mercado-cosme-del-razo/Mercado-Cosme-del-Razo_cholula_3-1024x1024-1.webp",
-                "/images/restaurantes/mercado-cosme-del-razo/whatsapp-image-2025-07-04-at-20.57.31-2-1024x1024-1.jpg"
+                "/images/restaurantes/mercado-cosme-del-razo/whatsapp-image-2025-07-04-at-20.57.31-2-1024x1024-1.webp"
             ],
             "categoria": "mercado",
             "tipoComida": "Comida tradicional poblana",
@@ -1387,15 +1790,24 @@
                 "detalle": "Lunes: 08:00-20:00 • Martes: 08:00-20:00 • Miércoles: 08:00-20:00 • Jueves: 08:00-20:00 • Viernes: 08:00-20:00 • Sábado: 08:00-20:00 • Domingo: 09:00-18:00"
             },
             "direccion": "Calle 3 Nte 3, Barrio de San Juan Calvario, 72760 Cholula de Rivadavia, Pue.",
-            "googleMaps": "https://maps.app.goo.gl/uJHRHkCYTHzosRGa8"
+            "googleMaps": "https://maps.app.goo.gl/uJHRHkCYTHzosRGa8",
+            "categoriaPrecio": "Económico",
+            "petFriendly": "No",
+            "musicaEnVivo": "No",
+            "precioPpMxn": "$50–150",
+            "reservacionRecomendada": "No es necesario",
+            "ocasionIdeal": "Experiencia de mercado local auténtica, desayuno económico tradicional",
+            "perfilIdeal": "Auténtico y local · Ideal para turistas y locales que quieren experiencia de mercado real",
+            "etiquetasChatbot": "experiencia-local, auténtico, mercado-tradicional, económico, cultural",
+            "espacioFisico": "Mercado tradicional en Zona Centro"
         },
         {
             "nombre": "Payeca Chocolatería",
             "galeria": [
-                "/images/restaurantes/payeca-chocolatera/Captura-de-pantalla-2025-10-09-a-las-4.23.07-p.m-1024x1024-1.png",
-                "/images/restaurantes/payeca-chocolatera/Captura-de-pantalla-2025-10-09-a-las-4.23.15-p.m-1024x1024-1.png",
-                "/images/restaurantes/payeca-chocolatera/Captura-de-pantalla-2025-10-09-a-las-4.23.23-p.m-1024x1024-1.png",
-                "/images/restaurantes/payeca-chocolatera/Captura-de-pantalla-2025-10-09-a-las-4.23.34-p.m-1024x1024-1.png"
+                "/images/restaurantes/payeca-chocolatera/Captura-de-pantalla-2025-10-09-a-las-4.23.07-p.m-1024x1024-1.webp",
+                "/images/restaurantes/payeca-chocolatera/Captura-de-pantalla-2025-10-09-a-las-4.23.15-p.m-1024x1024-1.webp",
+                "/images/restaurantes/payeca-chocolatera/Captura-de-pantalla-2025-10-09-a-las-4.23.23-p.m-1024x1024-1.webp",
+                "/images/restaurantes/payeca-chocolatera/Captura-de-pantalla-2025-10-09-a-las-4.23.34-p.m-1024x1024-1.webp"
             ],
             "categoria": "restaurante",
             "tipoComida": "Cacao, café, postres y alimentos",
@@ -1420,12 +1832,22 @@
             },
             "direccion": "4 pte 104 san pedro, Centro, 72760 Cholula de Rivadavia, Pue.",
             "whatsapp": "5573227983",
-            "googleMaps": "https://maps.app.goo.gl/AHmKrBqrgJBBnRLF6"
+            "googleMaps": "https://maps.app.goo.gl/AHmKrBqrgJBBnRLF6",
+            "categoriaPrecio": "Económico",
+            "petFriendly": "Sí",
+            "musicaEnVivo": "No",
+            "precioPpMxn": "$100–250",
+            "reservacionRecomendada": "No es necesario",
+            "ocasionIdeal": "Merienda, tarde de chocolate artesanal, postre, experiencia local única",
+            "perfilIdeal": "Informal y acogedor · Ideal para familias, parejas y amigos que buscan algo dulce y diferente",
+            "etiquetasChatbot": "chocolate-artesanal, pet-friendly, postres, café, experiencia-local, merienda, familiar",
+            "espacioFisico": "Local acogedor en Zona Centro",
+            "telefono": "5573227983"
         },
         {
             "nombre": "Por la Mañana by M&M",
             "galeria": [
-                "/images/restaurantes/por-la-maana-by-mm/dsc07898-rotated-684x1024-1-e1762837210829.jpg",
+                "/images/restaurantes/por-la-maana-by-mm/dsc07898-rotated-684x1024-1-e1762837210829.webp",
                 "/images/restaurantes/por-la-maana-by-mm/Por-La-Manana-by-mm_cholula_1-1024x1024-1.webp",
                 "/images/restaurantes/por-la-maana-by-mm/Por-La-Manana-by-mm_cholula_2-1024x1024-1.webp",
                 "/images/restaurantes/por-la-maana-by-mm/Por-La-Manana-by-mm_cholula_3-1024x1024-1.webp",
@@ -1454,10 +1876,20 @@
             },
             "direccion": "Av. Morelos 201, Centro, 72760 Cholula de Rivadavia, 72760 puebla, Pue.",
             "whatsapp": "2215711404",
-            "googleMaps": "https://maps.app.goo.gl/gjSWrHXWsL1m3XBC9"
+            "googleMaps": "https://maps.app.goo.gl/gjSWrHXWsL1m3XBC9",
+            "categoriaPrecio": "Económico",
+            "petFriendly": "Sí",
+            "musicaEnVivo": "No",
+            "precioPpMxn": "$100–250",
+            "reservacionRecomendada": "Sí, se recomienda",
+            "ocasionIdeal": "Desayuno tranquilo, brunch relajado, mañana especial",
+            "perfilIdeal": "Tranquilo y familiar · Ideal para parejas, amigos, trabajo y quienes prefieren mañanas sin prisa",
+            "etiquetasChatbot": "pet-friendly, desayuno, brunch, tranquilo, familiar, mañana, solo-mañanas",
+            "espacioFisico": "Local acogedor en Zona Centro",
+            "telefono": "2215711404"
         },
         {
-            "nombre": "Restaurante Bar Mesón de la Quinta",
+            "nombre": "Mesón de la Quinta / Café de Regina",
             "galeria": [
                 "/images/2025/11/Restaurante-Bar-Meson-de-la-Quinta_cholula_1-1024x1024-1.webp",
                 "/images/2025/11/Restaurante-Bar-Meson-de-la-Quinta_cholula_3-1024x1024-1.webp",
@@ -1491,16 +1923,26 @@
             "whatsapp": "2221060452",
             "email": "pabellonqag@gmail.com",
             "sitioWeb": "https://www.pabellonqag.com",
-            "googleMaps": "https://maps.app.goo.gl/3ubQ5MKsVhsorLd79"
+            "googleMaps": "https://maps.app.goo.gl/3ubQ5MKsVhsorLd79",
+            "categoriaPrecio": "Económico",
+            "petFriendly": "No",
+            "musicaEnVivo": "No",
+            "precioPpMxn": "$150–350",
+            "reservacionRecomendada": "No es necesario",
+            "ocasionIdeal": "Desayuno, comida casual, reunión de trabajo, variado para todos",
+            "perfilIdeal": "Informal y familiar · Ideal para familias, amigos y reuniones de trabajo",
+            "etiquetasChatbot": "variado, casual, desayuno, pizzas, mexicana, café, tradicional, familiar",
+            "espacioFisico": "Casa tradicional en Zona Centro",
+            "telefono": "2221060452"
         },
         {
             "nombre": "Restaurante El Establo",
             "galeria": [
-                "/images/restaurantes/restaurante-el-establo/1000640078-scaled.jpg",
-                "/images/restaurantes/restaurante-el-establo/1000640079-scaled.jpg",
-                "/images/restaurantes/restaurante-el-establo/1000640047.jpg",
-                "/images/restaurantes/restaurante-el-establo/1000732840.jpg",
-                "/images/restaurantes/restaurante-el-establo/1000737093.jpg"
+                "/images/restaurantes/restaurante-el-establo/1000640078-scaled.webp",
+                "/images/restaurantes/restaurante-el-establo/1000640079-scaled.webp",
+                "/images/restaurantes/restaurante-el-establo/1000640047.webp",
+                "/images/restaurantes/restaurante-el-establo/1000732840.webp",
+                "/images/restaurantes/restaurante-el-establo/1000737093.webp"
             ],
             "categoria": "restaurante",
             "tipoComida": "Comida mexicana, casera",
@@ -1525,12 +1967,22 @@
             },
             "direccion": "Av 7 Pte 112, Centro, 72760 Cholula de Rivadavia, Pue.",
             "whatsapp": "2205548513",
-            "googleMaps": "https://maps.app.goo.gl/wTUcT24gJLuAqvCr9"
+            "googleMaps": "https://maps.app.goo.gl/wTUcT24gJLuAqvCr9",
+            "categoriaPrecio": "Económico",
+            "petFriendly": "No",
+            "musicaEnVivo": "No",
+            "precioPpMxn": "$150–280",
+            "reservacionRecomendada": "No es necesario",
+            "ocasionIdeal": "Desayuno o comida casera, buffet de fin de semana",
+            "perfilIdeal": "Familiar y tradicional · Ideal para familias y grupos que buscan comida casera abundante",
+            "etiquetasChatbot": "mexicana-casera, buffet-fines-de-semana, familiar, tradicional, económico",
+            "espacioFisico": "Local en Zona Centro",
+            "telefono": "2205548513"
         },
         {
             "nombre": "Restaurante y Terraza Roldán",
             "galeria": [
-                "/images/restaurantes/restaurante-y-terraza-roldn/Captura-de-pantalla-2025-11-11-a-las-10.06.42-a.m.png"
+                "/images/restaurantes/restaurante-y-terraza-roldn/Captura-de-pantalla-2025-11-11-a-las-10.06.42-a.m.webp"
             ],
             "categoria": "restaurante",
             "tipoComida": "Mexicana, panadería y brunch",
@@ -1554,7 +2006,17 @@
             },
             "direccion": "C. 8 Nte. # 1005, Centro, 72760 Cholula de Rivadavia, Pue.",
             "whatsapp": "2212008179",
-            "googleMaps": "https://maps.app.goo.gl/5UWppoYv9d32eVZx8"
+            "googleMaps": "https://maps.app.goo.gl/5UWppoYv9d32eVZx8",
+            "categoriaPrecio": "Económico",
+            "petFriendly": "No",
+            "musicaEnVivo": "No",
+            "precioPpMxn": "$150–350",
+            "reservacionRecomendada": "No es necesario",
+            "ocasionIdeal": "Desayuno con terraza, brunch, pan tradicional cholulteca",
+            "perfilIdeal": "Casual y familiar · Ideal para familias, amigos y turistas que quieren terraza y pan tradicional",
+            "etiquetasChatbot": "terraza, pan-tradicional-cholulteca, brunch, desayuno, familiar, casual, mexicana",
+            "espacioFisico": "Terraza propia en Zona Centro",
+            "telefono": "2212008179"
         },
         {
             "nombre": "Sagrata",
@@ -1589,17 +2051,27 @@
             "direccion": "Portal Guerrero 3, Los portales de Cholula, 72760 Cholula de Rivadavia, Pue.",
             "whatsapp": "2215844514",
             "sitioWeb": "https://sagrata.mx",
-            "googleMaps": "https://maps.app.goo.gl/JHBZ4hcMQGPGgf3G9"
+            "googleMaps": "https://maps.app.goo.gl/JHBZ4hcMQGPGgf3G9",
+            "categoriaPrecio": "Económico",
+            "petFriendly": "Sí",
+            "musicaEnVivo": "No",
+            "precioPpMxn": "$150–300",
+            "reservacionRecomendada": "No es necesario",
+            "ocasionIdeal": "Desayuno o comida casual en los portales, salida con mascotas",
+            "perfilIdeal": "Casual y familiar · Ideal para familias, amigos y turistas en los portales",
+            "etiquetasChatbot": "portales, pet-friendly, cocina-poblana, casual, tradicional, familiar, desayuno, comida",
+            "espacioFisico": "Los Portales históricos de Cholula",
+            "telefono": "2215844514"
         },
         {
             "nombre": "Sangre Azteca",
             "galeria": [
-                "/images/2025/11/sangre_azteca_cholula-1024x1024-1.jpg",
-                "/images/2025/11/sangre_azteca_cholula_2-1024x1024-1.jpg",
-                "/images/2025/11/sangre_azteca_cholula_3-1024x1024-1.jpg",
-                "/images/2025/11/sangre_azteca_cholula_4-1024x1024-1.jpg",
-                "/images/2025/11/sangre_azteca_cholula_5-1024x1024-1.jpg",
-                "/images/restaurantes/sangre-azteca/sangre_azteca_cholula_6-1024x1024-1.png"
+                "/images/2025/11/sangre_azteca_cholula-1024x1024-1.webp",
+                "/images/2025/11/sangre_azteca_cholula_2-1024x1024-1.webp",
+                "/images/2025/11/sangre_azteca_cholula_3-1024x1024-1.webp",
+                "/images/2025/11/sangre_azteca_cholula_4-1024x1024-1.webp",
+                "/images/2025/11/sangre_azteca_cholula_5-1024x1024-1.webp",
+                "/images/restaurantes/sangre-azteca/sangre_azteca_cholula_6-1024x1024-1.webp"
             ],
             "categoria": "restaurante",
             "tipoComida": "Mexicana - Casera",
@@ -1624,7 +2096,17 @@
             },
             "direccion": "Calle 6 Nte. #2, San Miguel, Barrio de Jesús Tlatempa, 72778 Cholula de Rivadavia, Pue.",
             "whatsapp": "2227597842",
-            "googleMaps": "https://maps.app.goo.gl/H913TM877ULxz5HL6"
+            "googleMaps": "https://maps.app.goo.gl/H913TM877ULxz5HL6",
+            "categoriaPrecio": "Precio moderado",
+            "petFriendly": "No",
+            "musicaEnVivo": "No",
+            "precioPpMxn": "$150–300",
+            "reservacionRecomendada": "No es necesario",
+            "ocasionIdeal": "Comida o cena con vista a la pirámide, parrilla norteña, noche los viernes y sábados",
+            "perfilIdeal": "Casual y familiar · Ideal para turistas, foodies y parejas que quieren vista a la pirámide",
+            "etiquetasChatbot": "al-pie-de-la-pirámide, vista-panorámica, parrilla-norteña, mexicana, turístico, nocturno-fines-de-semana",
+            "espacioFisico": "Al pie de la pirámide · Vista panorámica",
+            "telefono": "2227597842"
         },
         {
             "nombre": "Santōua Cholula",
@@ -1659,12 +2141,22 @@
             },
             "direccion": "Avenida 6 Poniente & Av. 5 de Mayo, Centro, 72810 San Andrés Cholula, Pue.",
             "whatsapp": "2213711813",
-            "googleMaps": "https://maps.app.goo.gl/ikSQR3ksArGmNXSY8"
+            "googleMaps": "https://maps.app.goo.gl/ikSQR3ksArGmNXSY8",
+            "categoriaPrecio": "Precio alto",
+            "petFriendly": "Sí",
+            "musicaEnVivo": "No",
+            "precioPpMxn": "$500–1,000+",
+            "reservacionRecomendada": "Sí, se recomienda",
+            "ocasionIdeal": "Cena romántica, propuesta de matrimonio, cumpleaños especial, celebraciones, brunch especial",
+            "perfilIdeal": "Romántico e íntimo · Ideal para parejas, celebraciones y grupos pequeños · Muy instagrameable",
+            "etiquetasChatbot": "romántico, cita-de-pareja, instagrameable, celebraciones, casona-histórica, propuesta-matrimonio, brunch, jardín, pet-friendly",
+            "espacioFisico": "Casona del siglo XVIII · Patio colonial con arcos de piedra · Jardín con vegetación · Iluminación cálida",
+            "telefono": "2213711813"
         },
         {
             "nombre": "Tacos Vehkem",
             "galeria": [
-                "/images/restaurantes/tacos-vehkem/fachada-768x1024-1-e1762835580775.jpg",
+                "/images/restaurantes/tacos-vehkem/fachada-768x1024-1-e1762835580775.webp",
                 "/images/restaurantes/tacos-vehkem/tacos_vehkem_1-1024x1024-1.webp",
                 "/images/restaurantes/tacos-vehkem/tacos_vehkem_2-1024x1024-1.webp",
                 "/images/restaurantes/tacos-vehkem/tacos_vehkem_3-1024x1024-1.webp",
@@ -1694,12 +2186,22 @@
             },
             "direccion": "Calle 3 Sur 908, Barrio de Sta Maria Xixitla, 72760 San Andrés Cholula, Pue.",
             "whatsapp": "2226671304",
-            "googleMaps": "https://maps.app.goo.gl/YQfxYjCn7J9p6pkf7"
+            "googleMaps": "https://maps.app.goo.gl/YQfxYjCn7J9p6pkf7",
+            "categoriaPrecio": "Económico",
+            "petFriendly": "No",
+            "musicaEnVivo": "No",
+            "precioPpMxn": "$80–150",
+            "reservacionRecomendada": "No es necesario",
+            "ocasionIdeal": "Tacos árabes típicos de Cholula, snack rápido en los portales, antojo",
+            "perfilIdeal": "Casual e informal · Ideal para todos — turistas y locales que quieren probar los tacos árabes",
+            "etiquetasChatbot": "tacos-árabes, portales, económico, casual, experiencia-local, turístico, especialidad-cholula",
+            "espacioFisico": "Los Portales históricos (Portal Guerrero 11-B)",
+            "telefono": "2213545423"
         },
         {
             "nombre": "Topolino Gelateria e Caffé",
             "galeria": [
-                "/images/restaurantes/topolino-gelateria-e-caff/20250621_190210-scaled-768x1024-1-e1762836928116.jpg",
+                "/images/restaurantes/topolino-gelateria-e-caff/20250621_190210-scaled-768x1024-1-e1762836928116.webp",
                 "/images/restaurantes/topolino-gelateria-e-caff/Helados-Topolino_cholula_1-1024x1024-1.webp",
                 "/images/restaurantes/topolino-gelateria-e-caff/Helados-Topolino_cholula_2-1024x1024-1.webp",
                 "/images/restaurantes/topolino-gelateria-e-caff/Helados-Topolino_cholula_3-1024x1024-1.webp",
@@ -1729,7 +2231,17 @@
             },
             "direccion": "Comercial Hidalgo, Supermanzana Callejon, Centro, 72760 Cholula de Rivadavia, Pue.",
             "whatsapp": "2211795726",
-            "googleMaps": "https://maps.app.goo.gl/fPmfvX4LQ5AWqLGR7"
+            "googleMaps": "https://maps.app.goo.gl/fPmfvX4LQ5AWqLGR7",
+            "categoriaPrecio": "Económico",
+            "petFriendly": "No",
+            "musicaEnVivo": "No",
+            "precioPpMxn": "$80–200",
+            "reservacionRecomendada": "Sí, se recomienda",
+            "ocasionIdeal": "Postre, merienda, paseo por los portales",
+            "perfilIdeal": "Casual y familiar · Ideal para todos los visitantes que pasean por los portales",
+            "etiquetasChatbot": "helados, café, postres, portales, familiar, casual, abierto-todos-los-días",
+            "espacioFisico": "Los Portales históricos de Cholula",
+            "telefono": "2211795726"
         },
         {
             "nombre": "Urucú",
@@ -1763,14 +2275,24 @@
             },
             "direccion": "Calle 6 Nte. 1, San Miguel, Barrio de San Miguel Tianguisnahuitl, 72760 Cholula de Rivadavia, Pue.",
             "whatsapp": "2214384720",
-            "googleMaps": "https://maps.app.goo.gl/6bn7zYoyRWJaxY5s9"
+            "googleMaps": "https://maps.app.goo.gl/6bn7zYoyRWJaxY5s9",
+            "categoriaPrecio": "Económico",
+            "petFriendly": "Sí",
+            "musicaEnVivo": "No",
+            "precioPpMxn": "$150–300",
+            "reservacionRecomendada": "No es necesario",
+            "ocasionIdeal": "Comida yucateca diferente, experiencia gastronómica auténtica",
+            "perfilIdeal": "Informal y auténtico · Ideal para familias, amigos y foodies que quieren algo diferente",
+            "etiquetasChatbot": "pet-friendly, cochinita-pibil, cocina-yucateca, auténtico, diferente, familiar, foodies",
+            "espacioFisico": "Local en Zona Centro",
+            "telefono": "2214384720"
         },
         {
             "nombre": "Valiente Kitchen Bar",
             "galeria": [
-                "/images/que-hacer/2rb-2-ruedas-bueno/1.jpeg",
-                "/images/restaurantes/valiente-kitchen-bar/2.jpeg",
-                "/images/restaurantes/valiente-kitchen-bar/3.jpeg"
+                "/images/que-hacer/2rb-2-ruedas-bueno/1.webp",
+                "/images/restaurantes/valiente-kitchen-bar/2.webp",
+                "/images/restaurantes/valiente-kitchen-bar/3.webp"
             ],
             "categoria": "restaurante",
             "tipoComida": "Cocina de autor",
@@ -1779,7 +2301,7 @@
             "idealPara": "menú de degustación, maridaje, cocina de autor",
             "caracteristicasEspeciales": "Menú de degustación, maridaje, cocina de autor",
             "social": {
-                "instagram": "https://www.instagram.com/valientekitchenbar"
+                "instagram": "https://www.instagram.com/valientekitchenbar/?hl=es"
             },
             "horario": {
                 "lunes": "cerrado",
@@ -1794,18 +2316,28 @@
             },
             "direccion": "Av. 8 Ote. 230, Centro, 72760 San Pedro Cholula, Pue.",
             "whatsapp": "2224651420",
-            "googleMaps": "https://maps.app.goo.gl/F4fsVuRRDNZgcs1r7"
+            "googleMaps": "https://maps.app.goo.gl/F4fsVuRRDNZgcs1r7",
+            "categoriaPrecio": "Premium",
+            "petFriendly": "No",
+            "musicaEnVivo": "No",
+            "precioPpMxn": "$800–1,500+",
+            "reservacionRecomendada": "Sí, se recomienda",
+            "ocasionIdeal": "Experiencia gastronómica única, aniversario, ocasión muy especial, fine dining",
+            "perfilIdeal": "Exclusivo y sofisticado · Ideal para parejas y foodies en ocasiones muy especiales",
+            "etiquetasChatbot": "guía-michelin, fine-dining, cocina-de-autor, chef-reconocido, aniversario, ocasión-muy-especial, mixología, speakeasy, íntimo, exclusivo, maridaje",
+            "espacioFisico": "Almacén elegante con techo de metal y vidrio · Jardín interior · Terraza · Speakeasy bar",
+            "telefono": "2224651420"
         }
     ],
     "queHacer": [
         {
             "nombre": "2RB (2 Ruedas Bueno)",
             "galeria": [
-                "/images/que-hacer/2rb-2-ruedas-bueno/1.jpeg",
-                "/images/que-hacer/2rb-2-ruedas-bueno/4.jpg",
-                "/images/que-hacer/2rb-2-ruedas-bueno/2.jpg",
-                "/images/que-hacer/2rb-2-ruedas-bueno/3.jpg",
-                "/images/que-hacer/2rb-2-ruedas-bueno/5.jpeg"
+                "/images/que-hacer/2rb-2-ruedas-bueno/1.webp",
+                "/images/que-hacer/2rb-2-ruedas-bueno/4.webp",
+                "/images/que-hacer/2rb-2-ruedas-bueno/2.webp",
+                "/images/que-hacer/2rb-2-ruedas-bueno/3.webp",
+                "/images/que-hacer/2rb-2-ruedas-bueno/5.webp"
             ],
             "tipo": "renta de bicicletas y tours",
             "descripcion": "🚵 Explora Cholula y sus alrededores mediante rutas ciclistas diseñadas para quienes disfrutan la aventura y el contacto con la naturaleza.",
@@ -1830,8 +2362,8 @@
         {
             "nombre": "Experiencias ConSentido",
             "galeria": [
-                "/images/que-hacer/experiencias-consentido/1.png",
-                "/images/que-hacer/experiencias-consentido/2.png"
+                "/images/que-hacer/experiencias-consentido/1.webp",
+                "/images/que-hacer/experiencias-consentido/2.webp"
             ],
             "tipo": "experiencias culturales y gastronómicas",
             "descripcion": "🌮🏛️ Descubre Cholula desde una perspectiva auténtica mediante experiencias culturales, gastronómicas y de turismo comunitario que te conectan con su historia, sus sabores y su gente.",
@@ -1846,7 +2378,7 @@
         {
             "nombre": "TIP TOURS",
             "galeria": [
-                "/images/que-hacer/tip-tours/487972716.jpg",
+                "/images/que-hacer/tip-tours/487972716.webp",
                 "/images/que-hacer/tip-tours/foto-enamorada-grace.avif"
             ],
             "tipo": "tours y experiencias turísticas",
@@ -1862,11 +2394,11 @@
         {
             "nombre": "Tour Cholula Free Walk Tour",
             "galeria": [
-                "/images/que-hacer/tour-cholula-free-walk-tour/IMG-20250630-WA0007-Recorrido-Turistico-scaled.jpg",
-                "/images/que-hacer/tour-cholula-free-walk-tour/IMG_20250417_200204-Recorrido-Turistico-scaled.jpg",
-                "/images/que-hacer/tour-cholula-free-walk-tour/IMG-20250814-WA0001-Recorrido-Turistico.jpg",
-                "/images/que-hacer/tour-cholula-free-walk-tour/IMG-20250814-WA0000-Recorrido-Turistico.jpg",
-                "/images/que-hacer/tour-cholula-free-walk-tour/IMG-20250630-WA0035-Recorrido-Turistico-scaled.jpg"
+                "/images/que-hacer/tour-cholula-free-walk-tour/IMG-20250630-WA0007-Recorrido-Turistico-scaled.webp",
+                "/images/que-hacer/tour-cholula-free-walk-tour/IMG_20250417_200204-Recorrido-Turistico-scaled.webp",
+                "/images/que-hacer/tour-cholula-free-walk-tour/IMG-20250814-WA0001-Recorrido-Turistico.webp",
+                "/images/que-hacer/tour-cholula-free-walk-tour/IMG-20250814-WA0000-Recorrido-Turistico.webp",
+                "/images/que-hacer/tour-cholula-free-walk-tour/IMG-20250630-WA0035-Recorrido-Turistico-scaled.webp"
             ],
             "tipo": "tour a pie",
             "descripcion": "🚶 Conoce la historia, leyendas y secretos de Cholula mediante recorridos guiados a pie por sus calles, templos y espacios históricos.",
@@ -1956,7 +2488,7 @@
         {
             "nombre": "Alejandra Toxqui",
             "galeria": [
-                "/images/guias-turisticos/alejandra-toxqui/Guias_turisticos_Alejandra-Toxqui-1024x1024-1.jpg"
+                "/images/guias-turisticos/alejandra-toxqui/Guias_turisticos_Alejandra-Toxqui-1024x1024-1.webp"
             ],
             "certificacionSectur": true,
             "social": {
@@ -1978,8 +2510,8 @@
         {
             "nombre": "Arturo Enciso Viveros",
             "galeria": [
-                "/images/2026/07/Unknown-2.jpg",
-                "/images/2026/07/Unknown-3.jpg"
+                "/images/2026/07/Unknown-2.webp",
+                "/images/2026/07/Unknown-3.webp"
             ],
             "certificacionSectur": true,
             "social": {

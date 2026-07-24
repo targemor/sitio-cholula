@@ -86,6 +86,97 @@
   margin: 0 0 0.75rem 0;
 }
 
+/* ── Sección VERDE al final ───────────────────────────────── */
+.bc-verde-section {
+  margin-top: 0.5rem;
+  padding-top: 1rem;
+  border-top: 1px dashed #e2e8f0;
+}
+
+/* ── Precio ─────────────────────────────────────────────── */
+.bc-price {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  margin-bottom: 0.6rem;
+}
+.bc-price-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #8A8578;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.bc-price-value {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+/* ── Chips ──────────────────────────────────────────────── */
+.bc-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 0.65rem;
+}
+.bc-chip {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: #F0EBDC;
+  color: #5a5040;
+  white-space: nowrap;
+}
+
+.bc-chip-more {
+  background: transparent;
+  border: 1px solid #c9c1b3;
+  color: #8c8273;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+.bc-chip-more:hover {
+  background: #F0EBDC;
+  color: #5a5040;
+}
+
+.bc-more-content {
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+  background: #faf9f7;
+  border-radius: 6px;
+  border: 1px solid #f0ebdc;
+}
+
+/* ── Meta (zona, tipo comida, distancia, precio) ─────────── */
+.bc-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 0.75rem;
+  margin-bottom: 0.55rem;
+}
+.bc-meta-item {
+  font-size: 0.78rem;
+  color: #64748b;
+}
+.bc-meta-precio {
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+/* ── Amenidades ──────────────────────────────────────────── */
+.bc-amenidades {
+  font-size: 0.78rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0 0 0.65rem 0;
+  border-left: 2px solid #E0DAD0;
+  padding-left: 0.6rem;
+}
+
 .business-card-info {
   list-style: none;
   padding: 0;
@@ -121,6 +212,34 @@
 .business-card-info .social-link:hover {
   opacity: 0.7;
   text-decoration: underline;
+}
+
+.bc-contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.bc-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: #4a4a4a;
+  min-width: 0;
+}
+
+.bc-contact-item:not(:first-child) {
+  border-left: 1px solid #e2e8f0;
+  padding-left: 0.5rem;
+}
+
+.text-truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
 }
 
 .business-card-info .icon {

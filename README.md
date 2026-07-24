@@ -46,6 +46,6 @@ All commands are run from the root of the project, from a terminal:
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
 
 
-aws s3 sync ./dist s3://visit-cholula/ --delete
+aws s3 sync ./dist s3://visit-cholula/ --delete --cache-control "public, max-age=31536000, immutable"
 
 aws cloudfront create-invalidation --distribution-id EXCHH9HZ359RZ --paths "/*"

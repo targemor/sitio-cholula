@@ -5,7 +5,7 @@
       "tabLabel": "⏳ ¿Solo tienes unas horas?",
       "titulo": "¿Solo tienes unas horas?",
       "heroBgClass": "bg1",
-      "heroImage": "/itinerarios/solo%20tienes%20unas%20horas.jpg",
+      "heroImage": "/itinerarios/solo%20tienes%20unas%20horas.webp",
       "heroKicker": "EXPRÉS",
       "heroTitle": "¿Solo tienes unas horas?",
       "heroSub": "Cholula en formato rápido: lo esencial.",
@@ -63,7 +63,7 @@
       "mobileTabLabel": "🌞 Fin de semana",
       "titulo": "¿Te quedas el fin de semana?",
       "heroBgClass": "bg2",
-      "heroImage": "/itinerarios/te%20quedas%20el%20fin%20de%20semana.jpg",
+      "heroImage": "/itinerarios/te%20quedas%20el%20fin%20de%20semana.webp",
       "heroKicker": "ESCAPADA",
       "heroTitle": "Vive el ambiente único",
       "heroSub": "El fin de semana en Cholula tiene otra energía.",
@@ -72,24 +72,68 @@
         {
           "titulo": "DÍA 1 — VIERNES",
           "elementos": [
-            { "icono": "🏛️", "titulo": "Zona Arqueológica de Cholula" },
-            { "icono": "⛪", "titulo": "Santuario de Nuestra Señora de los Remedios" },
-            { "icono": "🦅", "titulo": "Casa del Caballero Águila" },
-            { "icono": "⛪", "titulo": "Ex Convento de San Gabriel y Capilla Real" },
-            { "icono": "🍽️", "titulo": "Comida en el centro histórico" },
-            { "icono": "🍫", "titulo": "Chocolate artesanal" },
-            { "icono": "🍷", "titulo": "Noche: sangría tradicional en el Bar Reforma", "meta": "Miérc.–vier. 17:00–23:00 · Sáb. 15:00–23:00 · Dom. 13:00–16:30 · Lun. 15:30–21:30" }
+            {
+              "icono": "🏛️",
+              "titulo": "Zona Arqueológica de Cholula"
+            },
+            {
+              "icono": "⛪",
+              "titulo": "Santuario de Nuestra Señora de los Remedios"
+            },
+            {
+              "icono": "🦅",
+              "titulo": "Casa del Caballero Águila"
+            },
+            {
+              "icono": "⛪",
+              "titulo": "Ex Convento de San Gabriel y Capilla Real"
+            },
+            {
+              "icono": "🍽️",
+              "titulo": "Comida en el centro histórico"
+            },
+            {
+              "icono": "🍫",
+              "titulo": "Chocolate artesanal"
+            },
+            {
+              "icono": "🍷",
+              "titulo": "Noche: sangría tradicional en el Bar Reforma",
+              "meta": "Miérc.–vier. 17:00–23:00 · Sáb. 15:00–23:00 · Dom. 13:00–16:30 · Lun. 15:30–21:30"
+            }
           ]
         },
         {
           "titulo": "DÍA 2 — SÁBADO",
           "elementos": [
-            { "icono": "☕", "titulo": "Desayuno en el centro histórico" },
-            { "icono": "⛪", "titulo": "Parroquia de San Pedro Apóstol e Iglesia de Santa María Xixitla" },
-            { "icono": "🪶", "titulo": "Voladores de Papantla en el Parque Soria", "meta": "Fines de semana · 11:00–18:00 h" },
-            { "icono": "🍽️", "titulo": "Comida en el centro histórico", "chat": "¿No sabes cuál? Pregúntale a nuestro chat" },
-            { "icono": "🎁", "titulo": "Artesanías elaboradas por productores locales" },
-            { "icono": "🌙", "titulo": "Noche: descubre la vida nocturna de San Pedro Cholula", "descripcion": "Bares, terrazas, cervecerías artesanales y música en vivo", "chat": "Consulta la plataforma o pregunta al asistente inteligente" }
+            {
+              "icono": "☕",
+              "titulo": "Desayuno en el centro histórico"
+            },
+            {
+              "icono": "⛪",
+              "titulo": "Parroquia de San Pedro Apóstol e Iglesia de Santa María Xixitla"
+            },
+            {
+              "icono": "🪶",
+              "titulo": "Voladores de Papantla en el Parque Soria",
+              "meta": "Fines de semana · 11:00–18:00 h"
+            },
+            {
+              "icono": "🍽️",
+              "titulo": "Comida en el centro histórico",
+              "chat": "¿No sabes cuál? Pregúntale a nuestro chat"
+            },
+            {
+              "icono": "🎁",
+              "titulo": "Artesanías elaboradas por productores locales"
+            },
+            {
+              "icono": "🌙",
+              "titulo": "Noche: descubre la vida nocturna de San Pedro Cholula",
+              "descripcion": "Bares, terrazas, cervecerías artesanales y música en vivo",
+              "chat": "Consulta la plataforma o pregunta al asistente inteligente"
+            }
           ]
         }
       ],
@@ -106,18 +150,39 @@
       "mobileTabLabel": "🌿 3 días",
       "titulo": "¿Tienes tres días?",
       "heroBgClass": "bg3",
-      "heroImage": "/itinerarios/tienes%20tres%20dias.jpg",
+      "heroImage": "/itinerarios/tienes%20tres%20dias.webp",
       "heroKicker": "A FONDO",
       "heroTitle": "Descubre como un local",
       "heroSub": "Tiempo suficiente para ver más allá de lo turístico.",
       "heroCredit": "📸 @cholulapueblomagico",
       "elementos": [
-        { "icono": "🏛️", "titulo": "Sigue el itinerario del Día 1 del fin de semana" },
-        { "icono": "⛪", "titulo": "Sigue el itinerario del Día 2 del fin de semana" },
-        { "icono": "🧑‍🏫", "titulo": "Recorre la ciudad con un guía certificado", "descripcion": "Historia, leyendas y rincones que nadie más cuenta" },
-        { "icono": "🚲", "titulo": "Experiencias con touroperadores locales", "descripcion": "Tour gastronómico, cervecero, tranvía, bicicleta, callejoneadas y más", "chat": "Explora las opciones o pregúntale a nuestro chat" },
-        { "icono": "🍽️", "titulo": "Restaurantes recomendados por guías locales" },
-        { "icono": "🎁", "titulo": "Lleva contigo una artesanía elaborada en San Pedro Cholula" }
+        {
+          "icono": "🏛️",
+          "titulo": "Sigue el itinerario del Día 1 del fin de semana"
+        },
+        {
+          "icono": "⛪",
+          "titulo": "Sigue el itinerario del Día 2 del fin de semana"
+        },
+        {
+          "icono": "🧑‍🏫",
+          "titulo": "Recorre la ciudad con un guía certificado",
+          "descripcion": "Historia, leyendas y rincones que nadie más cuenta"
+        },
+        {
+          "icono": "🚲",
+          "titulo": "Experiencias con touroperadores locales",
+          "descripcion": "Tour gastronómico, cervecero, tranvía, bicicleta, callejoneadas y más",
+          "chat": "Explora las opciones o pregúntale a nuestro chat"
+        },
+        {
+          "icono": "🍽️",
+          "titulo": "Restaurantes recomendados por guías locales"
+        },
+        {
+          "icono": "🎁",
+          "titulo": "Lleva contigo una artesanía elaborada en San Pedro Cholula"
+        }
       ],
       "daytrip": {
         "titulo": "🚗 ¿Tienes un día extra? Haz de Cholula tu base",
@@ -147,21 +212,48 @@
       "tabLabel": "⭐ No te puedes ir sin…",
       "titulo": "No te puedes ir de San Pedro Cholula sin…",
       "heroBgClass": "bg4",
-      "heroImage": "/itinerarios/no%20te%20puedes%20ir%20sin_.jpg",
+      "heroImage": "/itinerarios/no%20te%20puedes%20ir%20sin_.webp",
       "heroKicker": "LO BÁSICO",
       "heroTitle": "Los imprescindibles",
       "heroSub": "Lo que sí o sí tienes que hacer.",
       "heroCredit": "📸 @cholulapueblomagico",
       "elementos": [
-        { "icono": "🏛️", "titulo": "Subir a la pirámide más grande del mundo" },
-        { "icono": "⛪", "titulo": "Perderte en la vista de los volcanes desde el Santuario de los Remedios" },
-        { "icono": "☕", "titulo": "Tomarte un café bajo los Portales viendo pasar la vida cholulteca" },
-        { "icono": "🕍", "titulo": "Descubrir el Ex Convento de San Gabriel, joya del siglo XVI" },
-        { "icono": "🍽️", "titulo": "Probar la gastronomía del Mercado Cosme del Razo" },
-        { "icono": "🍫", "titulo": "Saborear un chocolate tradicional o una oreja de elefante" },
-        { "icono": "🍷", "titulo": "Pedir la tradicional sangría en el Bar Reforma" },
-        { "icono": "🎁", "titulo": "Llevarte un recuerdo 100% hecho en Cholula" },
-        { "icono": "🪶", "titulo": "Asombrarte con los Voladores de Papantla en el Parque Soria" }
+        {
+          "icono": "🏛️",
+          "titulo": "Subir a la pirámide más grande del mundo"
+        },
+        {
+          "icono": "⛪",
+          "titulo": "Perderte en la vista de los volcanes desde el Santuario de los Remedios"
+        },
+        {
+          "icono": "☕",
+          "titulo": "Tomarte un café bajo los Portales viendo pasar la vida cholulteca"
+        },
+        {
+          "icono": "🕍",
+          "titulo": "Descubrir el Ex Convento de San Gabriel, joya del siglo XVI"
+        },
+        {
+          "icono": "🍽️",
+          "titulo": "Probar la gastronomía del Mercado Cosme del Razo"
+        },
+        {
+          "icono": "🍫",
+          "titulo": "Saborear un chocolate tradicional o una oreja de elefante"
+        },
+        {
+          "icono": "🍷",
+          "titulo": "Pedir la tradicional sangría en el Bar Reforma"
+        },
+        {
+          "icono": "🎁",
+          "titulo": "Llevarte un recuerdo 100% hecho en Cholula"
+        },
+        {
+          "icono": "🪶",
+          "titulo": "Asombrarte con los Voladores de Papantla en el Parque Soria"
+        }
       ]
     }
   ]

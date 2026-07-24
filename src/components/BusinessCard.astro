@@ -20,7 +20,25 @@ export interface Props {
   description?: string;
   tipoTelefono?: string;
   clasificacion?: string;
+  // Campos VERDE — hoteles
+  zona?: string;
+  distanciaGranPiramide?: string;
+  aceptaMascotas?: string;
+  tieneAlberca?: string;
+  tieneSpa?: string;
+  terraza?: string;
+  recepcion24h?: string;
+  amenidades?: string;
+  precioNocheMxn?: string;
+  // Campos VERDE — restaurantes
+  tipoComida?: string;
+  petFriendly?: string;
+  musicaEnVivo?: string;
+  precioPpMxn?: string;
+  reservacionRecomendada?: string;
+  espacioFisico?: string;
 }
+
 
 const {
   id,
@@ -38,7 +56,55 @@ const {
   description,
   tipoTelefono,
   clasificacion,
+  zona,
+  distanciaGranPiramide,
+  aceptaMascotas,
+  tieneAlberca,
+  tieneSpa,
+  terraza,
+  recepcion24h,
+  amenidades,
+  precioNocheMxn,
+  tipoComida,
+  petFriendly,
+  musicaEnVivo,
+  precioPpMxn,
+  reservacionRecomendada,
+  espacioFisico,
 } = Astro.props;
+
+// Funciones seguras para URLs para evitar 'Invalid URL' crashes
+function getValidHref(url?: string) {
+  if (!url) return '#';
+  return url.startsWith('http') ? url : `https://${url}`;
+}
+
+function formatUrl(url?: string) {
+  if (!url) return '';
+  try {
+    return new URL(getValidHref(url)).hostname.replace('www.', '');
+  } catch (e) {
+    return url.replace('www.', '');
+  }
+}
+
+// Chips de atributos booleanos (Sí/No)
+function isYes(val?: string) {
+  return val && val.toLowerCase().startsWith('sí');
+}
+
+const chips: { label: string; active: boolean; icon: string }[] = [
+  ...(zona ? [{ label: zona, active: true, icon: '📍' }] : []),
+  ...(tipoComida ? [{ label: tipoComida, active: true, icon: '🍽️' }] : []),
+  { label: 'Pet friendly',    active: isYes(aceptaMascotas) || isYes(petFriendly), icon: '🐾' },
+  { label: 'Alberca',         active: isYes(tieneAlberca),   icon: '🏊' },
+  { label: 'Spa',             active: isYes(tieneSpa),       icon: '💆' },
+  { label: 'Terraza',         active: terraza && !terraza.toLowerCase().startsWith('no'), icon: '🌿' },
+  { label: 'Recepción 24h',   active: isYes(recepcion24h),   icon: '🕐' },
+  { label: 'Música en vivo',  active: isYes(musicaEnVivo),   icon: '🎵' },
+  { label: 'Reservación',     active: isYes(reservacionRecomendada), icon: '📅' },
+].filter(c => c.active);
+
 
 const swiperId = `business-swiper-${id || Math.random().toString(36).substr(2, 9)}`;
 const igGradId = `ig-grad-card-${swiperId}`;
@@ -55,6 +121,7 @@ const igGradId = `ig-grad-card-${swiperId}`;
 
   <div class="business-card-content">
     <h3 class="business-card-title">{title}</h3>
+
     {description && <p class="business-card-description">{description}</p>}
     {
       (instagram || facebook || tiktok) && (
@@ -137,56 +204,81 @@ const igGradId = `ig-grad-card-${swiperId}`;
         )
       }
       {
-        phone && (
+        distanciaGranPiramide && (
           <li>
             <div class="icon">
-              <svg
-                viewBox="0 0 512 512"
-                width="18"
-                height="18"
-                aria-hidden="true"
-                class="icon--phone"
-              >
-                <path
-                  fill="currentColor"
-                  d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"
-                />
-              </svg>
+              <span style="font-size: 14px; line-height: 1;">🏛️</span>
             </div>
-            <span>
-              <a href={`tel:${phone.replace(/\\D/g, "")}`} class="address-link">
-                {phone}
-              </a>
-              {telefonoAlt && (
-                <>
-                  ,{" "}
-                  <a
-                    href={`tel:${telefonoAlt.replace(/\\D/g, "")}`}
-                    class="address-link"
-                  >
-                    {telefonoAlt}
-                  </a>
-                </>
-              )}
-            </span>
+            <span>{distanciaGranPiramide}</span>
           </li>
         )
       }
       {
-        sitioWeb && (
+        (phone || sitioWeb) && (
+          <li class="bc-contact-grid">
+            {phone && (
+              <div class="bc-contact-item">
+                <div class="icon">
+                  <svg viewBox="0 0 512 512" width="18" height="18" aria-hidden="true" class="icon--phone">
+                    <path fill="currentColor" d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/>
+                  </svg>
+                </div>
+                <span>
+                  <a href={`tel:${phone.replace(/\\D/g, "")}`} class="address-link">{phone}</a>
+                  {telefonoAlt && (
+                    <>, <a href={`tel:${telefonoAlt.replace(/\\D/g, "")}`} class="address-link">{telefonoAlt}</a></>
+                  )}
+                </span>
+              </div>
+            )}
+            
+            {sitioWeb && (
+              <div class="bc-contact-item">
+                <div class="icon">
+                  <svg viewBox="0 0 512 512" width="18" height="18" aria-hidden="true" class="icon--website">
+                     <path fill="currentColor" d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.1-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64h185.4c2.1 20.4 3.3 41.8 3.3 64zm28.8-64H503.9c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.6 142 77.5 171.9 151.6zm-149.1 0H166.8c10-63.9 29.8-117.4 55.3-151.6c11.7-15.6 24.3-27.1 33.9-32.4 9.6 5.3 22.2 16.8 33.9 32.4 25.5 34.2 45.3 87.7 55.3 151.6zM8.1 192h123.1c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zm18.6-32c29.9-74.1 93.6-131 171.9-151.6c-25.5 34.2-45.3 87.7-55.3 151.6H26.7zM191.4 464c-25.5-34.2-45.3-87.7-55.3-151.6h149.1c-10 63.9-29.8 117.4-55.3 151.6-11.7 15.6-24.3 27.1-33.9 32.4-9.6-5.3-22.2-16.8-33.9-32.4zm185.3-151.6c10 63.9-29.8 117.4-55.3 151.6 78.3-20.6 142-77.5 171.9-151.6H376.7zM26.7 352h108.6c10 63.9 29.8 117.4 55.3 151.6C112.3 483 48.6 426.1 18.6 352z"/>
+                  </svg>
+                </div>
+                <a href={getValidHref(sitioWeb)} target="_blank" rel="noopener noreferrer" class="address-link text-truncate">
+                  {formatUrl(sitioWeb)}
+                </a>
+              </div>
+            )}
+          </li>
+        )
+      }
+      {
+        (precioNocheMxn || precioPpMxn) && (
           <li>
             <div class="icon">
-              <svg viewBox="0 0 512 512" width="18" height="18" aria-hidden="true" class="icon--website">
-                 <path fill="currentColor" d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.1-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64h185.4c2.1 20.4 3.3 41.8 3.3 64zm28.8-64H503.9c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.6 142 77.5 171.9 151.6zm-149.1 0H166.8c10-63.9 29.8-117.4 55.3-151.6c11.7-15.6 24.3-27.1 33.9-32.4 9.6 5.3 22.2 16.8 33.9 32.4 25.5 34.2 45.3 87.7 55.3 151.6zM8.1 192h123.1c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zm18.6-32c29.9-74.1 93.6-131 171.9-151.6c-25.5 34.2-45.3 87.7-55.3 151.6H26.7zM191.4 464c-25.5-34.2-45.3-87.7-55.3-151.6h149.1c-10 63.9-29.8 117.4-55.3 151.6-11.7 15.6-24.3 27.1-33.9 32.4-9.6-5.3-22.2-16.8-33.9-32.4zm185.3-151.6c10 63.9-29.8 117.4-55.3 151.6 78.3-20.6 142-77.5 171.9-151.6H376.7zM26.7 352h108.6c10 63.9 29.8 117.4 55.3 151.6C112.3 483 48.6 426.1 18.6 352z"/>
-              </svg>
+              <span style="font-size: 14px; line-height: 1;">💵</span>
             </div>
-            <a href={sitioWeb} target="_blank" rel="noopener noreferrer" class="address-link">
-              {new URL(sitioWeb).hostname.replace('www.', '')}
-            </a>
+            <span>
+              <strong>{precioNocheMxn ? 'Por noche:' : 'Por persona:'}</strong> {precioNocheMxn || precioPpMxn}
+            </span>
           </li>
         )
       }
     </ul>
+
+    <div class="bc-verde-section">
+      {/* Chips de atributos */}
+      <div class="bc-chips">
+        {chips.map(c => (
+          <span class="bc-chip">{c.icon} {c.label}</span>
+        ))}
+        {(amenidades || espacioFisico) && (
+          <button type="button" class="bc-chip bc-chip-more js-toggle-more" data-target={`more-${id}`}>Ver más</button>
+        )}
+      </div>
+
+      {/* Contenido extra colapsable */}
+      {(amenidades || espacioFisico) && (
+        <div class="bc-more-content" id={`more-${id}`} style="display: none;">
+          <p class="bc-amenidades">{amenidades || espacioFisico}</p>
+        </div>
+      )}
+    </div>
 
     <div class="business-card-cta-wrapper">
       {
@@ -288,6 +380,25 @@ const igGradId = `ig-grad-card-${swiperId}`;
             showToast("Enlace copiado al portapapeles");
           } catch (err) {
             console.error("Error al copiar al portapapeles:", err);
+          }
+        }
+      });
+    });
+
+    // Lógica para togglear 'Ver más' en las tarjetas
+    const toggleBtns = document.querySelectorAll(".js-toggle-more");
+    toggleBtns.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const targetId = btn.getAttribute("data-target");
+        if (!targetId) return;
+        const targetEl = document.getElementById(targetId);
+        if (targetEl) {
+          if (targetEl.style.display === "none") {
+            targetEl.style.display = "block";
+            btn.textContent = "Ver menos";
+          } else {
+            targetEl.style.display = "none";
+            btn.textContent = "Ver más";
           }
         }
       });

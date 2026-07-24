@@ -130,7 +130,24 @@ const searchItems = [
       category: "Hotel",
       href: "/donde-hospedarse",
       sublabel: "",
-      searchKeywords: estrellasText,
+      searchKeywords: [
+        estrellasText,
+        item.zona,
+        item.distanciaGranPiramide,
+        item.categoriaPrecio,
+        item.aceptaMascotas,
+        item.tieneAlberca,
+        item.tieneSpa,
+        item.terraza,
+        item.recepcion24h,
+        item.categoria,
+        item.amenidades,
+        item.precioNocheMxn,
+        item.tamanioCategoria,
+        item.perfilIdeal,
+      ]
+        .filter(Boolean)
+        .join(" "),
       rating: item.estrellas || 0,
       horario: item.horario,
     };
@@ -151,6 +168,16 @@ const searchItems = [
       item.caracteristicasEspeciales,
       item.idealPara,
       item.horario?.detalle,
+      item.zona,
+      item.categoriaPrecio,
+      item.petFriendly,
+      item.musicaEnVivo,
+      item.precioPpMxn,
+      item.reservacionRecomendada,
+      item.ocasionIdeal,
+      item.perfilIdeal,
+      item.etiquetasChatbot,
+      item.espacioFisico,
     ]
       .filter(Boolean)
       .join(" "),
@@ -213,22 +240,42 @@ const searchItems = [
   <section class="section-bienvenido" id="bienvenido">
     <div class="container bienvenido-container">
       <div class="bienvenido-kicker">San Pedro Cholula, Puebla</div>
-      <div class="bienvenido-lead">Imagina una ciudad donde una iglesia del siglo XVI fue construida encima de la pirámide más grande del mundo.</div>
+      <div class="bienvenido-lead">
+        Imagina una ciudad donde una iglesia del siglo XVI fue construida encima
+        de la pirámide más grande del mundo.
+      </div>
       <div class="bienvenido-stats">
         <div class="bienvenido-stat">
-          <div class="bienvenido-stat-num">2,500<span class="bienvenido-stat-unit"> años</span></div>
-          <div class="bienvenido-stat-title">La ciudad viva más antigua del continente</div>
-          <div class="bienvenido-stat-desc">Habitada sin parar desde el 500 a.C. — <strong>nunca abandonada</strong></div>
+          <div class="bienvenido-stat-num">
+            2,500<span class="bienvenido-stat-unit"> años</span>
+          </div>
+          <div class="bienvenido-stat-title">
+            La ciudad viva más antigua del continente
+          </div>
+          <div class="bienvenido-stat-desc">
+            Habitada sin parar desde el 500 a.C. — <strong
+              >nunca abandonada</strong
+            >
+          </div>
         </div>
         <div class="bienvenido-stat">
           <div class="bienvenido-stat-num">+1M</div>
           <div class="bienvenido-stat-title">Visitantes al año</div>
-          <div class="bienvenido-stat-desc">El Pueblo Mágico más visitado de Puebla — según DATATUR 2025</div>
+          <div class="bienvenido-stat-desc">
+            El Pueblo Mágico más visitado de Puebla — según DATATUR 2025
+          </div>
         </div>
         <div class="bienvenido-stat">
-          <div class="bienvenido-stat-num">500<span class="bienvenido-stat-unit"> años</span></div>
-          <div class="bienvenido-stat-title">El trueque más antiguo de América</div>
-          <div class="bienvenido-stat-desc"><strong>Patrimonio Cultural Intangible de Puebla</strong> — cada septiembre, miles llegan a intercambiar artesanías y cosechas sin un peso de por medio</div>
+          <div class="bienvenido-stat-num">
+            500<span class="bienvenido-stat-unit"> años</span>
+          </div>
+          <div class="bienvenido-stat-title">
+            El trueque más antiguo de América
+          </div>
+          <div class="bienvenido-stat-desc">
+            <strong>Patrimonio Cultural Intangible de Puebla</strong> — cada septiembre,
+            miles llegan a intercambiar artesanías y cosechas sin un peso de por medio
+          </div>
         </div>
       </div>
     </div>
@@ -236,62 +283,54 @@ const searchItems = [
     <!-- Pirámide Mamona -->
     <section
       class="section-piramide"
-      style="background-image: url('/home/piramide_mamona.jpeg');"
+      style="background-image: url('/home/piramide_mamona.webp');"
     >
       <div class="piramide-overlay"></div>
-      <span class="piramide-badge">
-        La ciudad viva más antigua de América
-      </span>
       <div class="piramide-content container">
         <h2 class="piramide-title">
-          Tenemos la pirámide con la base <span
-            class="piramide-title-highlight">más grande del mundo</span
+          Tenemos la pirámide con la base <span class="piramide-title-highlight"
+            >más grande del mundo</span
           >
         </h2>
         <p class="piramide-subtitle">
-          Una iglesia en la cima, una pirámide bajo tus pies y el
-          Popocatépetl de testigo.
+          Una iglesia en la cima, una pirámide bajo tus pies y el Popocatépetl
+          de testigo.
         </p>
         <div class="piramide-actions">
-          <a href="#itinerarios" class="piramide-btn-primary">Planea tu visita</a>
-          <a href="#imperdibles" class="piramide-btn-secondary">Ver los imperdibles →</a>
+          <a href="#itinerarios" class="piramide-btn-primary"
+            >Planea tu visita</a
+          >
+          <a href="#imperdibles" class="piramide-btn-secondary"
+            >Ver los imperdibles →</a
+          >
         </div>
       </div>
     </section>
 
-    <!-- Logos institucionales -->
+    <!-- Logos institucionales 
     <div class="bienvenido-logos">
       <img
-        src="home/cholula lo tiene todo_logo.png"
+        src="home/cholula lo tiene todo_logo.webp"
         alt="Cholula – El latido de Puebla"
         class="logo-partner"
         loading="lazy"
       />
+      <div class="logo-separator" aria-hidden="true"></div>
       <img
-        src="https://visitcholula.mx/wp-content/uploads/2025/11/separador-02.png"
-        class="logo-separator"
-        alt=""
-        aria-hidden="true"
-      />
-      <img
-        src="https://visitcholula.mx/wp-content/uploads/2025/11/Main-Tagline_Color_RGB_ES_PUE_250623-1024x290.png"
-        alt="Puebla – El latido de México"
-        class="logo-partner"
-        loading="lazy"
-      />
-      <img
-        src="https://visitcholula.mx/wp-content/uploads/2025/11/separador-02.png"
-        class="logo-separator"
-        alt=""
-        aria-hidden="true"
-      />
-      <img
-        src="https://visitcholula.mx/wp-content/uploads/2026/04/Untitled-design-3-Photoroom-e1775961036414-1024x888.png"
+        src="home/cholula_pueblo_magico.webp"
         alt="Cholula Pueblo Mágico"
         class="logo-partner logo-partner--small"
         loading="lazy"
       />
+      <div class="logo-separator" aria-hidden="true"></div>
+      <img
+        src="home/logo_puebla.webp"
+        alt="Puebla – El latido de México"
+        class="logo-partner"
+        loading="lazy"
+      />
     </div>
+    -->
   </section>
 
   <!-- ══════════════════════════════
@@ -313,9 +352,7 @@ const searchItems = [
     style="padding: 4.5rem 0; background-color: #f9f9f9;"
   >
     <div class="container">
-      <h2 class="section-label section-label--coral">
-        INSPÍRATE Y PLANEA TU VISITA
-      </h2>
+      <h2 class="section-label section-label--coral">INSPÍRATE</h2>
     </div>
 
     <div style="margin-top: 3rem;">

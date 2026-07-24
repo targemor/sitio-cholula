@@ -1,0 +1,208 @@
+---
+// CountdownOverlay.astro
+---
+
+<div id="launch-countdown-overlay" class="countdown-overlay">
+  <div class="countdown-card">
+    <img
+      src="/home/cholula lo tiene todo_logo.webp"
+      alt="San Pedro Cholula Lo Tiene Todo"
+      class="countdown-logo"
+    />
+    
+    <h2 class="countdown-kicker">GRAN LANZAMIENTO EN ...</h2>
+
+    <div class="countdown-timer">
+      <div class="timer-unit">
+        <span id="cd-hours" class="timer-number">48</span>
+        <span class="timer-label">HORAS</span>
+      </div>
+
+      <span class="timer-colon">:</span>
+
+      <div class="timer-unit">
+        <span id="cd-minutes" class="timer-number">00</span>
+        <span class="timer-label">MIN</span>
+      </div>
+
+      <span class="timer-colon">:</span>
+
+      <div class="timer-unit">
+        <span id="cd-seconds" class="timer-number">00</span>
+        <span class="timer-label">SEG</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .countdown-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(245, 245, 242, 0.55);
+    backdrop-filter: blur(16px) brightness(0.96);
+    -webkit-backdrop-filter: blur(16px) brightness(0.96);
+    padding: 1.5rem;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .countdown-card {
+    background: transparent;
+    width: 100%;
+    max-width: 620px;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .countdown-logo {
+    max-width: 260px;
+    width: 80%;
+    height: auto;
+    margin: 0 auto 2.2rem auto;
+    display: block;
+    object-fit: contain;
+  }
+
+  .countdown-kicker {
+    color: #9e2a2b;
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin: 0 0 2rem 0;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .countdown-timer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0.8rem;
+  }
+
+  .timer-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 95px;
+  }
+
+  .timer-number {
+    font-size: 4.8rem;
+    font-weight: 900;
+    color: #222222;
+    line-height: 1;
+    font-family: 'Roboto', sans-serif;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .timer-colon {
+    font-size: 4.2rem;
+    font-weight: 900;
+    color: #d49e22;
+    line-height: 1;
+    margin-top: -0.1rem;
+    user-select: none;
+  }
+
+  .timer-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #666666;
+    letter-spacing: 0.18em;
+    margin-top: 0.8rem;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  @media (max-width: 600px) {
+    .countdown-card {
+      padding: 1rem 0.5rem;
+    }
+
+    .countdown-logo {
+      max-width: 200px;
+      margin-bottom: 1.8rem;
+    }
+
+    .countdown-kicker {
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
+      margin-bottom: 1.5rem;
+    }
+
+    .timer-unit {
+      min-width: 65px;
+    }
+
+    .timer-number {
+      font-size: 3.2rem;
+    }
+
+    .timer-colon {
+      font-size: 2.8rem;
+    }
+
+    .timer-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.12em;
+      margin-top: 0.5rem;
+    }
+  }
+</style>
+
+<script>
+  function initCountdown() {
+    const hoursEl = document.getElementById('cd-hours');
+    const minutesEl = document.getElementById('cd-minutes');
+    const secondsEl = document.getElementById('cd-seconds');
+
+    if (!hoursEl || !minutesEl || !secondsEl) return;
+
+    const DURATION_MS = 48 * 60 * 60 * 1000; // 48 hours
+    const STORAGE_KEY = 'cholula_launch_target_v1';
+
+    let targetTime = parseInt(localStorage.getItem(STORAGE_KEY) || '0', 10);
+    const now = Date.now();
+
+    // If target not set or expired in the past, initialize 48 hours from now
+    if (!targetTime || targetTime <= now) {
+      targetTime = now + DURATION_MS;
+      localStorage.setItem(STORAGE_KEY, targetTime.toString());
+    }
+
+    function update() {
+      const current = Date.now();
+      const diff = Math.max(0, targetTime - current);
+
+      const hours = Math.floor(diff / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      hoursEl.textContent = hours.toString().padStart(2, '0');
+      minutesEl.textContent = minutes.toString().padStart(2, '0');
+      secondsEl.textContent = seconds.toString().padStart(2, '0');
+    }
+
+    update();
+    const interval = setInterval(update, 1000);
+
+    // Cleanup on view transitions if any
+    document.addEventListener('astro:before-swap', () => clearInterval(interval), { once: true });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initCountdown);
+  } else {
+    initCountdown();
+  }
+  document.addEventListener('astro:page-load', initCountdown);
+</script>
