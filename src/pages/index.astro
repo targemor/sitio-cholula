@@ -217,9 +217,10 @@ const searchItems = [
       loop
       playsinline
       aria-hidden="true"
+      fetchpriority="high"
     >
-      <source src="/salida.avif" type="video/av1" />
-      <source src="/video.mp4" type="video/mp4" />
+      <source src="/salida.avif" type="video/av1" fetchpriority="high" />
+      <source src="/video.mp4" type="video/mp4" fetchpriority="high" />
     </video>
     <div class="hero-overlay" aria-hidden="true"></div>
 
