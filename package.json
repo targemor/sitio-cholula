@@ -9,7 +9,8 @@
     "extract": "node scripts/extract-wp-data.cjs",
     "convert-images": "node scripts/convert-to-webp.js",
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node scripts/purge-css.cjs",
+    "build:nopurge": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
@@ -23,6 +24,7 @@
     "swiper": "^12.2.0"
   },
   "devDependencies": {
+    "purgecss": "^8.0.0",
     "shap": "^1.1.3"
   }
 }
