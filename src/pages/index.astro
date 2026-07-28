@@ -52,11 +52,7 @@ const imperdibles = [
 ];
 
 // Eventos
-const eventos = [
-  "https://visitcholula.mx/wp-content/uploads/2026/07/WhatsApp-Image-2026-07-03-at-6.57.58-PM-662x1024.jpeg",
-  "https://visitcholula.mx/wp-content/uploads/2026/01/payasos-1024x1024.jpg",
-  "https://visitcholula.mx/wp-content/uploads/2026/06/WhatsApp-Image-2026-06-26-at-10.35.06-AM-774x1024.jpeg",
-];
+const eventos = ["/eventos/payasos-1024x1024-1.webp"];
 
 // Galería Cholula corazón de México
 const galeria = [
@@ -224,7 +220,21 @@ const searchItems = [
     <div class="hero-overlay" aria-hidden="true"></div>
 
     <div class="hero-content">
-      <div class="hero-search-wrapper">
+      <!-- El contenido del hero original si hubiera título, si no, se queda vacío o se puede omitir -->
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════
+       SEARCH SECTION (Nueva)
+       ══════════════════════════════ -->
+  <section class="section-search">
+    <div class="container search-section-container">
+      <h2 class="search-title">¿Qué te gustaría vivir hoy?</h2>
+      <p class="search-subtitle">
+        Cuéntanos qué buscas y te lo mostramos al instante
+      </p>
+
+      <div class="search-wrapper">
         <SearchBar
           client:idle
           items={searchItems}
@@ -281,31 +291,34 @@ const searchItems = [
     </div>
 
     <!-- Pirámide Mamona -->
-    <section
-      class="section-piramide"
-      style="background-image: url('/home/piramide_mamona.webp');"
-    >
-      <div class="piramide-overlay"></div>
-      <div class="piramide-content container">
-        <h2 class="piramide-title">
-          Tenemos la pirámide con la base <span class="piramide-title-highlight"
-            >más grande del mundo</span
-          >
-        </h2>
-        <p class="piramide-subtitle">
-          Una iglesia en la cima, una pirámide bajo tus pies y el Popocatépetl
-          de testigo.
-        </p>
-        <div class="piramide-actions">
-          <a href="#itinerarios" class="piramide-btn-primary"
-            >Planea tu visita</a
-          >
-          <a href="#imperdibles" class="piramide-btn-secondary"
-            >Ver los imperdibles →</a
-          >
+    <div class="piramide-wrapper container">
+      <section
+        class="section-piramide"
+        style="background-image: url('/home/piramide_mamona.webp');"
+      >
+        <div class="piramide-overlay"></div>
+        <div class="piramide-content">
+          <h2 class="piramide-title">
+            Tenemos la pirámide con la base <span
+              class="piramide-title-highlight">más grande del mundo</span
+            >
+          </h2>
+          <p class="piramide-subtitle">
+            Una iglesia en la cima, una pirámide bajo tus pies y el Popocatépetl
+            de testigo.
+          </p>
+          <div class="piramide-actions">
+            <a href="#itinerarios" class="piramide-btn-primary"
+              >Planea tu visita</a
+            >
+            <a href="#imperdibles" class="piramide-btn-secondary"
+              >Ver los imperdibles →</a
+            >
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+      <div class="piramide-foto-credito">Foto: Mike Santana</div>
+    </div>
 
     <!-- Logos institucionales 
     <div class="bienvenido-logos">
@@ -417,19 +430,6 @@ const searchItems = [
       }
     </div>
   </section>
-
-  <!-- ══════════════════════════════
-       CHOLULA EL CORAZÓN MÁGICO
-       ══════════════════════════════ -->
-  <section class="section-galeria" id="galeria">
-    <div class="container">
-      <h2 class="section-label section-label--turquesa">
-        CHOLULA, EL CORAZÓN MÁGICO DE MÉXICO
-      </h2>
-    </div>
-    <SwiperGallery id="galeria" items={galeria} isImperdible={true} />
-  </section>
-
   <!-- ══════════════════════════════
        ARTESANÍAS
        ══════════════════════════════ -->

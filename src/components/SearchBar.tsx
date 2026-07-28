@@ -155,6 +155,13 @@ interface SearchBarProps {
     items?: SearchableItem[];
 }
 
+const TYPEWRITER_PHRASES = [
+    "¿Qué te gustaría hacer hoy en San Pedro Cholula?",
+    "Busca restaurantes, hoteles, experiencias...",
+    "Encuentra a los mejores guías certificados...",
+    "Descubre la zona arqueológica y museos..."
+];
+
 /* ═══════════════════════════════════════════════════════════
    Componente principal
 ═══════════════════════════════════════════════════════════ */
@@ -167,9 +174,49 @@ export default function SearchBar({
     const [isOpen, setIsOpen] = useState(false);
     const [focused, setFocused] = useState(false);
     const [openNow, setOpenNow] = useState(false);
+    const [typedPlaceholder, setTypedPlaceholder] = useState("");
+    
     const inputRef = useRef<HTMLInputElement>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     const debounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+    // Efecto de máquina de escribir para el placeholder
+    useEffect(() => {
+        let currentPhraseIndex = 0;
+        let currentCharIndex = 0;
+        let isDeleting = false;
+        let timeoutId: ReturnType<typeof setTimeout>;
+
+        const type = () => {
+            const currentPhrase = TYPEWRITER_PHRASES[currentPhraseIndex];
+            
+            if (isDeleting) {
+                setTypedPlaceholder(currentPhrase.substring(0, currentCharIndex - 1));
+                currentCharIndex--;
+            } else {
+                setTypedPlaceholder(currentPhrase.substring(0, currentCharIndex + 1));
+                currentCharIndex++;
+            }
+
+            let typeSpeed = isDeleting ? 30 : 70;
+
+            if (!isDeleting && currentCharIndex === currentPhrase.length) {
+                // Pausa al terminar de escribir la frase
+                typeSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && currentCharIndex === 0) {
+                isDeleting = false;
+                currentPhraseIndex = (currentPhraseIndex + 1) % TYPEWRITER_PHRASES.length;
+                typeSpeed = 500;
+            }
+
+            timeoutId = setTimeout(type, typeSpeed);
+        };
+
+        timeoutId = setTimeout(type, 500);
+
+        return () => clearTimeout(timeoutId);
+    }, []);
 
     const openNowItems = openNow
         ? items.filter(item => isCurrentlyOpen(item.horario) === true)
@@ -319,124 +366,172 @@ export default function SearchBar({
         <div ref={containerRef} className={`search-container${showDropdown ? ' search-dropdown-open' : ''}`}>
             {/* ── Barra de búsqueda ── */}
             <div className={`search-input-wrapper ${focused ? "focused" : ""}`}>
-                {/* Icono lupa – siempre gris neutro */}
-                <svg
-                    className="search-icon"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="#4B5563"
-                    strokeWidth={2}
-                    aria-hidden="true"
-                >
-                    <circle cx="11" cy="11" r="8" />
-                    <path d="M21 21l-4.35-4.35" />
-                </svg>
 
-                <input
-                    ref={inputRef}
-                    id="hero-search"
-                    type="text"
-                    value={query}
-                    onChange={(e) => setQuery(e.target.value)}
-                    onFocus={() => {
-                        setFocused(true);
-                        setIsOpen(true);
-                    }}
-                    onBlur={() => setFocused(false)}
-                    onKeyDown={(e) => {
-                        if (e.key === "Escape") {
-                            setQuery("");
-                            setIsOpen(false);
-                            setOpenNow(false);
-                            inputRef.current?.blur();
-                        }
-                    }}
-                    placeholder={placeholder}
-                    className="search-input"
-                    aria-label="Buscar"
-                    aria-autocomplete="list"
-                    aria-expanded={showDropdown}
-                    autoComplete="off"
-                />
+                {/* Fila 1: input + botón buscar */}
+                <div className="search-input-row">
+                    {/* Icono lupa – siempre gris neutro */}
+                    <svg
+                        className="search-icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#4B5563"
+                        strokeWidth={2}
+                        aria-hidden="true"
+                    >
+                        <circle cx="11" cy="11" r="8" />
+                        <path d="M21 21l-4.35-4.35" />
+                    </svg>
 
-                {/* Iconos de categoría rápida (visibles cuando no hay query) */}
-                {!query && !openNow && (
-                    <div className="search-category-shortcuts">
-                        {/* Comida */}
+                    <input
+                        ref={inputRef}
+                        id="hero-search"
+                        type="text"
+                        value={query}
+                        onChange={(e) => setQuery(e.target.value)}
+                        onFocus={() => {
+                            setFocused(true);
+                            setIsOpen(true);
+                        }}
+                        onBlur={() => setFocused(false)}
+                        onKeyDown={(e) => {
+                            if (e.key === "Escape") {
+                                setQuery("");
+                                setIsOpen(false);
+                                setOpenNow(false);
+                                inputRef.current?.blur();
+                            }
+                        }}
+                        placeholder={typedPlaceholder || placeholder}
+                        className="search-input"
+                        aria-label="Buscar"
+                        aria-autocomplete="list"
+                        aria-expanded={showDropdown}
+                        autoComplete="off"
+                    />
+
+                    {/* Botón limpiar */}
+                    {(query || openNow) && (
                         <button
-                            className="search-shortcut-icon"
-                            aria-label="Buscar restaurantes"
-                            onMouseDown={(e) => {
-                                e.preventDefault();
-                                setQuery("restaurantes");
-                                setIsOpen(true);
+                            onClick={() => {
+                                setQuery("");
+                                setIsOpen(false);
+                                setOpenNow(false);
                                 inputRef.current?.focus();
                             }}
-                            title="Restaurantes"
+                            className="search-clear-btn"
+                            aria-label="Limpiar búsqueda"
                         >
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} width="22" height="22">
-                                <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2" />
-                                <path d="M7 2v20" />
-                                <path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7" />
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} width="16" height="16">
+                                <path d="M18 6 6 18M6 6l12 12" />
                             </svg>
                         </button>
-                        {/* Hotel */}
-                        <button
-                            className="search-shortcut-icon"
-                            aria-label="Buscar hoteles"
-                            onMouseDown={(e) => {
-                                e.preventDefault();
-                                setQuery("hoteles");
-                                setIsOpen(true);
-                                inputRef.current?.focus();
-                            }}
-                            title="Hoteles"
-                        >
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} width="22" height="22">
-                                <path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8" />
-                                <path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4" />
-                                <path d="M12 4v6" />
-                                <path d="M2 18h20" />
-                            </svg>
-                        </button>
-                        {/* Destinos */}
-                        <button
-                            className="search-shortcut-icon"
-                            aria-label="Buscar destinos"
-                            onMouseDown={(e) => {
-                                e.preventDefault();
-                                setQuery("destinos");
-                                setIsOpen(true);
-                                inputRef.current?.focus();
-                            }}
-                            title="Destinos"
-                        >
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} width="22" height="22">
-                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
-                                <polyline points="9 22 9 12 15 12 15 22" />
-                            </svg>
-                        </button>
-                    </div>
-                )}
+                    )}
 
-                {/* Botón limpiar */}
-                {(query || openNow) && (
+                    {/* Botón Buscar */}
                     <button
-                        onClick={() => {
-                            setQuery("");
-                            setIsOpen(false);
-                            setOpenNow(false);
+                        type="button"
+                        className="search-submit-btn"
+                        onMouseDown={(e) => {
+                            e.preventDefault();
+                            if (query.trim()) {
+                                search(query);
+                                setIsOpen(true);
+                            } else {
+                                setIsOpen(true);
+                                inputRef.current?.focus();
+                            }
+                        }}
+                    >
+                        Buscar &rarr;
+                    </button>
+                </div>
+
+                {/* Fila 2: 4 atajos de categoría */}
+                <div className="search-shortcuts-row">
+                    {/* Comer – cubiertos */}
+                    <button
+                        type="button"
+                        className="search-pill-btn search-pill-btn--comer"
+                        onMouseDown={(e) => {
+                            e.preventDefault();
+                            setQuery("restaurantes");
+                            setIsOpen(true);
                             inputRef.current?.focus();
                         }}
-                        className="search-clear-btn"
-                        aria-label="Limpiar búsqueda"
                     >
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} width="16" height="16">
-                            <path d="M18 6 6 18M6 6l12 12" />
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" width="18" height="18">
+                            <path d="M3 2v4c0 1.1.9 2 2 2h2a2 2 0 0 0 2-2V2" />
+                            <path d="M7 2v20" />
+                            <path d="M21 2v6.5c0 1.4-1.1 2.5-2.5 2.5S16 9.9 16 8.5V2" />
+                            <path d="M18.5 11V22" />
                         </svg>
+                        <span>Comer</span>
                     </button>
-                )}
+
+                    {/* Dormir – cama */}
+                    <button
+                        type="button"
+                        className="search-pill-btn search-pill-btn--dormir"
+                        onMouseDown={(e) => {
+                            e.preventDefault();
+                            setQuery("hoteles");
+                            setIsOpen(true);
+                            inputRef.current?.focus();
+                        }}
+                    >
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" width="18" height="18">
+                            <path d="M3 7v11" />
+                            <path d="M21 7v11" />
+                            <path d="M3 11h18" />
+                            <path d="M3 18h18" />
+                            <rect x="7" y="7" width="4" height="4" rx="1" />
+                        </svg>
+                        <span>Dormir</span>
+                    </button>
+
+                    {/* Qué hacer / Experiencias – volcán/montaña */}
+                    <button
+                        type="button"
+                        className="search-pill-btn search-pill-btn--quehacer"
+                        onMouseDown={(e) => {
+                            e.preventDefault();
+                            setQuery("experiencias");
+                            setIsOpen(true);
+                            inputRef.current?.focus();
+                        }}
+                    >
+                        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" width="18" height="18">
+                            <path d="M12 3 L22 20 H2 Z" />
+                        </svg>
+                        <span>Experiencias</span>
+                    </button>
+
+                    {/* Guías Certificados – credencial/badge */}
+                    <button
+                        type="button"
+                        className="search-pill-btn search-pill-btn--guias"
+                        onMouseDown={(e) => {
+                            e.preventDefault();
+                            setQuery("guias");
+                            setIsOpen(true);
+                            inputRef.current?.focus();
+                        }}
+                    >
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" width="18" height="18">
+                            <rect x="2" y="4" width="20" height="16" rx="3" />
+                            <circle cx="9" cy="10" r="2.5" />
+                            <path d="M5 18c0-2.2 1.8-4 4-4s4 1.8 4 4" />
+                            <path d="M15 8h4" />
+                            <path d="M15 12h4" />
+                        </svg>
+                        <span>Guías Certificados</span>
+                    </button>
+                </div>
+
+
             </div>
+
+
 
             {/* ── Dropdown unificado ── */}
             {showDropdown && (
@@ -463,39 +558,39 @@ export default function SearchBar({
                                 {([
                                     {
                                         label: "quiero lugares con pizza",
-                                        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} width="15" height="15"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                                        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} width="15" height="15"><path d="M12 2L2 7l10 5 10-5-10-5z" /><path d="M2 17l10 5 10-5" /><path d="M2 12l10 5 10-5" /></svg>
                                     },
                                     {
                                         label: "dónde comer comida mexicana",
-                                        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} width="15" height="15"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>
+                                        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} width="15" height="15"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2" /><path d="M7 2v20" /><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7" /></svg>
                                     },
                                     {
                                         label: "hoteles cerca del centro",
-                                        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} width="15" height="15"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></svg>
+                                        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} width="15" height="15"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8" /><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4" /><path d="M12 4v6" /><path d="M2 18h20" /></svg>
                                     },
                                     {
                                         label: "cafeterías con terraza",
-                                        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} width="15" height="15"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg>
+                                        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} width="15" height="15"><path d="M17 8h1a4 4 0 1 1 0 8h-1" /><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z" /><line x1="6" y1="2" x2="6" y2="4" /><line x1="10" y1="2" x2="10" y2="4" /><line x1="14" y1="2" x2="14" y2="4" /></svg>
                                     },
                                     {
                                         label: "dónde comer comida italiana",
-                                        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} width="15" height="15"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7"/></svg>
+                                        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} width="15" height="15"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2" /><path d="M7 2v20" /><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zm0 0v7" /></svg>
                                     },
                                     {
                                         label: "hoteles con jardín",
-                                        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} width="15" height="15"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8"/><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M12 4v6"/><path d="M2 18h20"/></svg>
+                                        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} width="15" height="15"><path d="M2 20v-8a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v8" /><path d="M4 10V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4" /><path d="M12 4v6" /><path d="M2 18h20" /></svg>
                                     },
                                     {
                                         label: "dónde comer comida poblana",
-                                        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} width="15" height="15"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                                        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} width="15" height="15"><path d="M12 2L2 7l10 5 10-5-10-5z" /><path d="M2 17l10 5 10-5" /><path d="M2 12l10 5 10-5" /></svg>
                                     },
                                     {
                                         label: "sitios históricos cholula",
-                                        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} width="15" height="15"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                                        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} width="15" height="15"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /><polyline points="9 22 9 12 15 12 15 22" /></svg>
                                     },
                                     {
                                         label: "bares y vida nocturna",
-                                        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} width="15" height="15"><path d="M8 22h8"/><path d="M7 10h10"/><path d="m12 10 2-8H10l2 8"/><path d="M12 10v12"/></svg>
+                                        icon: <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} width="15" height="15"><path d="M8 22h8" /><path d="M7 10h10" /><path d="m12 10 2-8H10l2 8" /><path d="M12 10v12" /></svg>
                                     },
                                 ] as { label: string; icon: React.ReactNode }[]).map(({ label, icon }) => (
                                     <button

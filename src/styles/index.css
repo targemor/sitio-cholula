@@ -4,8 +4,8 @@
 .hero {
   position: relative;
   width: 100%;
-  height: 60vh;
-  min-height: 400px;
+  height: 66vh;
+  min-height: 440px;
   z-index: 10;
 }
 
@@ -56,11 +56,34 @@
   text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-.hero-search-wrapper {
+/* Nueva sección de búsqueda debajo del hero */
+.section-search {
+  padding: 4rem 1rem;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.search-title {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-weight: 800;
+  color: #1e293b;
+  margin: 0 0 0.5rem 0;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.search-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.15rem);
+  color: #64748b;
+  margin: 0 0 2.5rem 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+}
+
+.search-wrapper {
   width: 100%;
   max-width: 850px;
   margin: 0 auto;
-  transform: translateY(50%);
 }
 
 .hero-subtitle {
@@ -89,7 +112,8 @@
 }
 
 .section-bienvenido {
-  margin-top: 2rem;
+  margin-top: 0;
+  padding-top: 3rem;
 }
 
 .section-imperdibles,
@@ -133,6 +157,11 @@
 }
 
 /* Pirámide Mamona */
+.piramide-wrapper {
+  margin-top: 5rem;
+  text-align: left;
+}
+
 .section-piramide {
   position: relative;
   width: 100%;
@@ -143,7 +172,17 @@
   background-size: cover;
   background-position: center;
   color: white;
-  margin-top: 5rem;
+  margin-top: 0;
+  overflow: hidden;
+}
+
+.piramide-foto-credito {
+  font-size: 0.85rem;
+  color: #808285;
+  margin-top: 0.5rem;
+  padding-left: 0.5rem;
+  text-align: left;
+  font-family: "Roboto", sans-serif;
 }
 
 @media (max-width: 768px) {
