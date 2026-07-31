@@ -138,7 +138,6 @@ const searchItems = [
         item.recepcion24h,
         item.categoria,
         item.amenidades,
-        item.precioNocheMxn,
         item.tamanioCategoria,
         item.perfilIdeal,
       ]
@@ -169,7 +168,6 @@ const searchItems = [
       item.petFriendly,
       item.musicaEnVivo,
       item.precioPpMxn,
-      item.reservacionRecomendada,
       item.ocasionIdeal,
       item.perfilIdeal,
       item.etiquetasChatbot,
@@ -196,11 +194,74 @@ const searchItems = [
     horario: item.horario,
   })),
 ];
+
+// ── JSON-LD Schemas ─────────────────────────────────────────────────────────
+const touristDestinationSchema = {
+  "@context": "https://schema.org",
+  "@type": "TouristDestination",
+  "name": "San Pedro Cholula",
+  "alternateName": ["Cholula", "Visit Cholula", "Cholula Pueblo Mágico"],
+  "description": "Cholula es la ciudad viva más antigua de América, habitada sin pausa desde el año 500 a.C. Posee la base de pirámide más grande del mundo, más de 365 iglesias y una vibrante escena gastronómica y hotelera.",
+  "url": "https://visitcholula.mx",
+  "image": "https://visitcholula.mx/hero-poster.webp",
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 19.0547,
+    "longitude": -98.3018
+  },
+  "containedInPlace": {
+    "@type": "State",
+    "name": "Puebla",
+    "containedInPlace": {
+      "@type": "Country",
+      "name": "México"
+    }
+  },
+  "touristType": ["Turistas culturales", "Turistas gastronómicos", "Familias", "Mochileros"],
+  "hasMap": "https://www.google.com/maps/place/San+Pedro+Cholula,+Pue."
+};
+
+const webSiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Visit Cholula",
+  "url": "https://visitcholula.mx",
+  "description": "Guía turística oficial de San Pedro Cholula, Pueblo Mágico de Puebla, México.",
+  "inLanguage": "es-MX",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://visitcholula.mx/?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Visit Cholula",
+  "url": "https://visitcholula.mx",
+  "logo": "https://visitcholula.mx/logo_guia_cholula_2025.webp",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+52-222-102-9059",
+    "contactType": "tourist information",
+    "availableLanguage": "Spanish"
+  },
+  "areaServed": {
+    "@type": "City",
+    "name": "San Pedro Cholula"
+  }
+};
 ---
 
 <Layout
-  title="Inicio"
-  description="Descubre la magia de Cholula, el corazón de México"
+  title="Inicio — San Pedro Cholula, Pueblo Mágico"
+  description="Descubre Cholula, la ciudad más antigua de América. Hoteles, restaurantes, guías turísticos certificados y todo lo que necesitas para visitar San Pedro Cholula, Pueblo Mágico de Puebla."
+  canonical="/"
+  jsonLd={[touristDestinationSchema, webSiteSchema, organizationSchema]}
 >
   <!-- ══════════════════════════════
        HERO — Video cover full screen
@@ -319,31 +380,6 @@ const searchItems = [
       </section>
       <div class="piramide-foto-credito">Foto: Mike Santana</div>
     </div>
-
-    <!-- Logos institucionales 
-    <div class="bienvenido-logos">
-      <img
-        src="home/cholula lo tiene todo_logo.webp"
-        alt="Cholula – El latido de Puebla"
-        class="logo-partner"
-        loading="lazy"
-      />
-      <div class="logo-separator" aria-hidden="true"></div>
-      <img
-        src="home/cholula_pueblo_magico.webp"
-        alt="Cholula Pueblo Mágico"
-        class="logo-partner logo-partner--small"
-        loading="lazy"
-      />
-      <div class="logo-separator" aria-hidden="true"></div>
-      <img
-        src="home/logo_puebla.webp"
-        alt="Puebla – El latido de México"
-        class="logo-partner"
-        loading="lazy"
-      />
-    </div>
-    -->
   </section>
 
   <!-- ══════════════════════════════

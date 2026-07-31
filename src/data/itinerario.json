@@ -41,7 +41,7 @@
         },
         {
           "icono": "🍫",
-          "titulo": "Chocolate artesanal",
+          "titulo": "Cacao artesanal",
           "descripcion": "Batido al momento en el Parque Soria o en la zona de artesanos del zócalo"
         }
       ],
@@ -70,7 +70,7 @@
       "heroCredit": "📸 @cholulapueblomagico",
       "dias": [
         {
-          "titulo": "DÍA 1 — VIERNES",
+          "titulo": "DÍA 1 — SÁBADO",
           "elementos": [
             {
               "icono": "🏛️",
@@ -94,17 +94,17 @@
             },
             {
               "icono": "🍫",
-              "titulo": "Chocolate artesanal"
+              "titulo": "Cacao artesanal"
             },
             {
               "icono": "🍷",
-              "titulo": "Noche: sangría tradicional en el Bar Reforma",
+              "titulo": "Noche: disfruta una sangría en La Lunita o en el Bar Reforma",
               "meta": "Miérc.–vier. 17:00–23:00 · Sáb. 15:00–23:00 · Dom. 13:00–16:30 · Lun. 15:30–21:30"
             }
           ]
         },
         {
-          "titulo": "DÍA 2 — SÁBADO",
+          "titulo": "DÍA 2 — DOMINGO",
           "elementos": [
             {
               "icono": "☕",
@@ -121,7 +121,7 @@
             },
             {
               "icono": "🍽️",
-              "titulo": "Comida en el centro histórico",
+              "titulo": "Comida en los portales",
               "chat": "¿No sabes cuál? Pregúntale a nuestro chat"
             },
             {
@@ -171,17 +171,9 @@
         },
         {
           "icono": "🚲",
-          "titulo": "Experiencias con touroperadores locales",
-          "descripcion": "Tour gastronómico, cervecero, tranvía, bicicleta, callejoneadas y más",
-          "chat": "Explora las opciones o pregúntale a nuestro chat"
-        },
-        {
-          "icono": "🍽️",
-          "titulo": "Restaurantes recomendados por guías locales"
-        },
-        {
-          "icono": "🎁",
-          "titulo": "Lleva contigo una artesanía elaborada en San Pedro Cholula"
+          "titulo": "Vive una experiencia con touroperadores locales:",
+          "descripcion": "🐴 Cabalgatas guiadas por el Cerro Zapotecas\n🚲 Recorridos en bicicleta por el pueblo y sus alrededores\n🍺 Tour cervecero con degustación artesanal\n🚋 Recorrido panorámico en tranvía por el Pueblo Mágico\n🌙 Callejoneadas nocturnas, historia y leyendas por las calles de Cholula\n🌮 Tour gastronómico de antojitos tradicionales\n🏛️ Recorrido guiado por la Zona Arqueológica\n🌟 Avistamiento de luciérnagas (solo temporada de julio)",
+          "chat": "Pregúntale a nuestro chat cuál se adapta mejor a ti — te va a conectar con las opciones disponibles."
         }
       ],
       "daytrip": {
@@ -239,12 +231,8 @@
           "titulo": "Probar la gastronomía del Mercado Cosme del Razo"
         },
         {
-          "icono": "🍫",
-          "titulo": "Saborear un chocolate tradicional o una oreja de elefante"
-        },
-        {
           "icono": "🍷",
-          "titulo": "Pedir la tradicional sangría en el Bar Reforma"
+          "titulo": "Pedir una sangría tradicional en La Lunita o en el Bar Reforma"
         },
         {
           "icono": "🎁",

@@ -3,7 +3,6 @@ import { Image } from "astro:assets";
 import SwiperGallery from "./SwiperGallery.astro";
 import "./BusinessCard.css";
 
-
 export interface Props {
   id?: string;
   title: string;
@@ -20,6 +19,11 @@ export interface Props {
   description?: string;
   tipoTelefono?: string;
   clasificacion?: string;
+  acreditacion?: string;
+  especializacion?: string;
+  idiomas?: string;
+  toursQueOfrece?: string;
+  categoriaPrecio?: string;
   // Campos VERDE — hoteles
   zona?: string;
   distanciaGranPiramide?: string;
@@ -29,16 +33,13 @@ export interface Props {
   terraza?: string;
   recepcion24h?: string;
   amenidades?: string;
-  precioNocheMxn?: string;
   // Campos VERDE — restaurantes
   tipoComida?: string;
   petFriendly?: string;
   musicaEnVivo?: string;
   precioPpMxn?: string;
-  reservacionRecomendada?: string;
   espacioFisico?: string;
 }
-
 
 const {
   id,
@@ -54,8 +55,12 @@ const {
   telefonoAlt,
   sitioWeb,
   description,
-  tipoTelefono,
   clasificacion,
+  acreditacion,
+  especializacion,
+  idiomas,
+  toursQueOfrece,
+  categoriaPrecio,
   zona,
   distanciaGranPiramide,
   aceptaMascotas,
@@ -64,58 +69,66 @@ const {
   terraza,
   recepcion24h,
   amenidades,
-  precioNocheMxn,
   tipoComida,
   petFriendly,
   musicaEnVivo,
-  precioPpMxn,
-  reservacionRecomendada,
   espacioFisico,
 } = Astro.props;
 
 // Funciones seguras para URLs para evitar 'Invalid URL' crashes
 function getValidHref(url?: string) {
-  if (!url) return '#';
-  return url.startsWith('http') ? url : `https://${url}`;
+  if (!url) return "#";
+  return url.startsWith("http") ? url : `https://${url}`;
 }
 
 function formatUrl(url?: string) {
-  if (!url) return '';
+  if (!url) return "";
   try {
-    return new URL(getValidHref(url)).hostname.replace('www.', '');
+    return new URL(getValidHref(url)).hostname.replace("www.", "");
   } catch (e) {
-    return url.replace('www.', '');
+    return url.replace("www.", "");
   }
 }
 
 // Chips de atributos booleanos (Sí/No)
 function isYes(val?: string) {
-  return val && val.toLowerCase().startsWith('sí');
+  return val && val.toLowerCase().startsWith("sí");
 }
 
 const chips: { label: string; active: boolean; icon: string }[] = [
-  ...(zona ? [{ label: zona, active: true, icon: '📍' }] : []),
-  ...(tipoComida ? [{ label: tipoComida, active: true, icon: '🍽️' }] : []),
-  { label: 'Pet friendly',    active: isYes(aceptaMascotas) || isYes(petFriendly), icon: '🐾' },
-  { label: 'Alberca',         active: isYes(tieneAlberca),   icon: '🏊' },
-  { label: 'Spa',             active: isYes(tieneSpa),       icon: '💆' },
-  { label: 'Terraza',         active: terraza && !terraza.toLowerCase().startsWith('no'), icon: '🌿' },
-  { label: 'Recepción 24h',   active: isYes(recepcion24h),   icon: '🕐' },
-  { label: 'Música en vivo',  active: isYes(musicaEnVivo),   icon: '🎵' },
-  { label: 'Reservación',     active: isYes(reservacionRecomendada), icon: '📅' },
-].filter(c => c.active);
-
+  ...(zona ? [{ label: zona, active: true, icon: "📍" }] : []),
+  ...(tipoComida ? [{ label: tipoComida, active: true, icon: "🍽️" }] : []),
+  {
+    label: "Pet friendly",
+    active: isYes(aceptaMascotas) || isYes(petFriendly),
+    icon: "🐾",
+  },
+  { label: "Alberca", active: isYes(tieneAlberca), icon: "🏊" },
+  { label: "Spa", active: isYes(tieneSpa), icon: "💆" },
+  {
+    label: "Terraza",
+    active: terraza && !terraza.toLowerCase().startsWith("no"),
+    icon: "🌿",
+  },
+  { label: "Recepción 24h", active: isYes(recepcion24h), icon: "🕐" },
+  { label: "Música en vivo", active: isYes(musicaEnVivo), icon: "🎵" },
+].filter((c) => c.active);
 
 const swiperId = `business-swiper-${id || Math.random().toString(36).substr(2, 9)}`;
 const igGradId = `ig-grad-card-${swiperId}`;
 ---
 
-<div class="business-card" id={id} data-clasificacion={clasificacion || undefined}>
+<div
+  class="business-card"
+  id={id}
+  data-clasificacion={clasificacion || undefined}
+>
   <div class="business-card-slider">
     <SwiperGallery
       id={swiperId}
       items={images.map((img) => ({ img }))}
       className="business-swiper"
+      altPrefix={title}
     />
   </div>
 
@@ -128,11 +141,27 @@ const igGradId = `ig-grad-card-${swiperId}`;
         <ul class="business-card-info business-card-socials">
           {instagram && (
             <li>
-              <a href={instagram} target="_blank" rel="noopener noreferrer" class="social-link">
+              <a
+                href={instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-link"
+              >
                 <div class="icon">
-                  <svg viewBox="0 0 448 512" width="20" height="20" aria-hidden="true">
+                  <svg
+                    viewBox="0 0 448 512"
+                    width="20"
+                    height="20"
+                    aria-hidden="true"
+                  >
                     <defs>
-                      <linearGradient id={igGradId} x1="0%" y1="100%" x2="100%" y2="0%">
+                      <linearGradient
+                        id={igGradId}
+                        x1="0%"
+                        y1="100%"
+                        x2="100%"
+                        y2="0%"
+                      >
                         <stop offset="0%" stop-color="#fdf497" />
                         <stop offset="5%" stop-color="#fdf497" />
                         <stop offset="45%" stop-color="#fd5949" />
@@ -140,7 +169,10 @@ const igGradId = `ig-grad-card-${swiperId}`;
                         <stop offset="90%" stop-color="#285AEB" />
                       </linearGradient>
                     </defs>
-                    <path fill={`url(#${igGradId})`} d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z" />
+                    <path
+                      fill={`url(#${igGradId})`}
+                      d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+                    />
                   </svg>
                 </div>
                 <span>Instagram</span>
@@ -149,10 +181,24 @@ const igGradId = `ig-grad-card-${swiperId}`;
           )}
           {facebook && (
             <li>
-              <a href={facebook} target="_blank" rel="noopener noreferrer" class="social-link">
+              <a
+                href={facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-link"
+              >
                 <div class="icon">
-                  <svg viewBox="0 0 448 512" width="20" height="20" aria-hidden="true" class="icon--facebook">
-                    <path fill="currentColor" d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z" />
+                  <svg
+                    viewBox="0 0 448 512"
+                    width="20"
+                    height="20"
+                    aria-hidden="true"
+                    class="icon--facebook"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z"
+                    />
                   </svg>
                 </div>
                 <span>Facebook</span>
@@ -161,10 +207,23 @@ const igGradId = `ig-grad-card-${swiperId}`;
           )}
           {tiktok && (
             <li>
-              <a href={tiktok} target="_blank" rel="noopener noreferrer" class="social-link">
+              <a
+                href={tiktok}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="social-link"
+              >
                 <div class="icon">
-                  <svg viewBox="0 0 448 512" width="20" height="20" aria-hidden="true">
-                    <path fill="currentColor" d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25V349.38A162.55 162.55 0 1 1 185 188.31v89.89a74.62 74.62 0 1 0 52.23 71.18V0l88 0a121.18 121.18 0 0 0 1.86 22.17h0A122.18 122.18 0 0 0 381 102.39a121.43 121.43 0 0 0 67 20.14Z" />
+                  <svg
+                    viewBox="0 0 448 512"
+                    width="20"
+                    height="20"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M448 209.91a210.06 210.06 0 0 1-122.77-39.25V349.38A162.55 162.55 0 1 1 185 188.31v89.89a74.62 74.62 0 1 0 52.23 71.18V0l88 0a121.18 121.18 0 0 0 1.86 22.17h0A122.18 122.18 0 0 0 381 102.39a121.43 121.43 0 0 0 67 20.14Z"
+                    />
                   </svg>
                 </div>
                 <span>TikTok</span>
@@ -175,6 +234,46 @@ const igGradId = `ig-grad-card-${swiperId}`;
       )
     }
     <ul class="business-card-info">
+      {
+        acreditacion && (
+          <li>
+            <div class="icon">
+              <span style="font-size: 14px; line-height: 1;">📜</span>
+            </div>
+            <span><strong>Acreditación:</strong> {acreditacion}</span>
+          </li>
+        )
+      }
+      {
+        especializacion && (
+          <li>
+            <div class="icon">
+              <span style="font-size: 14px; line-height: 1;">🎯</span>
+            </div>
+            <span><strong>Especialización:</strong> {especializacion}</span>
+          </li>
+        )
+      }
+      {
+        idiomas && (
+          <li>
+            <div class="icon">
+              <span style="font-size: 14px; line-height: 1;">🗣️</span>
+            </div>
+            <span><strong>Idiomas:</strong> {idiomas}</span>
+          </li>
+        )
+      }
+      {
+        toursQueOfrece && (
+          <li>
+            <div class="icon">
+              <span style="font-size: 14px; line-height: 1;">🗺️</span>
+            </div>
+            <span><strong>Tours que ofrece:</strong> {toursQueOfrece}</span>
+          </li>
+        )
+      }
       {
         address && (
           <li>
@@ -219,27 +318,63 @@ const igGradId = `ig-grad-card-${swiperId}`;
             {phone && (
               <div class="bc-contact-item">
                 <div class="icon">
-                  <svg viewBox="0 0 512 512" width="18" height="18" aria-hidden="true" class="icon--phone">
-                    <path fill="currentColor" d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/>
+                  <svg
+                    viewBox="0 0 512 512"
+                    width="18"
+                    height="18"
+                    aria-hidden="true"
+                    class="icon--phone"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"
+                    />
                   </svg>
                 </div>
                 <span>
-                  <a href={`tel:${phone.replace(/\\D/g, "")}`} class="address-link">{phone}</a>
+                  <a
+                    href={`tel:${phone.replace(/\\D/g, "")}`}
+                    class="address-link"
+                  >
+                    {phone}
+                  </a>
                   {telefonoAlt && (
-                    <>, <a href={`tel:${telefonoAlt.replace(/\\D/g, "")}`} class="address-link">{telefonoAlt}</a></>
+                    <>
+                      ,{" "}
+                      <a
+                        href={`tel:${telefonoAlt.replace(/\\D/g, "")}`}
+                        class="address-link"
+                      >
+                        {telefonoAlt}
+                      </a>
+                    </>
                   )}
                 </span>
               </div>
             )}
-            
+
             {sitioWeb && (
               <div class="bc-contact-item">
                 <div class="icon">
-                  <svg viewBox="0 0 512 512" width="18" height="18" aria-hidden="true" class="icon--website">
-                     <path fill="currentColor" d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.1-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64h185.4c2.1 20.4 3.3 41.8 3.3 64zm28.8-64H503.9c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.6 142 77.5 171.9 151.6zm-149.1 0H166.8c10-63.9 29.8-117.4 55.3-151.6c11.7-15.6 24.3-27.1 33.9-32.4 9.6 5.3 22.2 16.8 33.9 32.4 25.5 34.2 45.3 87.7 55.3 151.6zM8.1 192h123.1c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zm18.6-32c29.9-74.1 93.6-131 171.9-151.6c-25.5 34.2-45.3 87.7-55.3 151.6H26.7zM191.4 464c-25.5-34.2-45.3-87.7-55.3-151.6h149.1c-10 63.9-29.8 117.4-55.3 151.6-11.7 15.6-24.3 27.1-33.9 32.4-9.6-5.3-22.2-16.8-33.9-32.4zm185.3-151.6c10 63.9-29.8 117.4-55.3 151.6 78.3-20.6 142-77.5 171.9-151.6H376.7zM26.7 352h108.6c10 63.9 29.8 117.4 55.3 151.6C112.3 483 48.6 426.1 18.6 352z"/>
+                  <svg
+                    viewBox="0 0 512 512"
+                    width="18"
+                    height="18"
+                    aria-hidden="true"
+                    class="icon--website"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M352 256c0 22.2-1.2 43.6-3.3 64H163.3c-2.1-20.4-3.3-41.8-3.3-64s1.2-43.6 3.3-64h185.4c2.1 20.4 3.3 41.8 3.3 64zm28.8-64H503.9c5.3 20.5 8.1 41.9 8.1 64s-2.8 43.5-8.1 64H380.8c2.1-20.6 3.2-42 3.2-64s-1.1-43.4-3.2-64zm112.6-32H376.7c-10-63.9-29.8-117.4-55.3-151.6c78.3 20.6 142 77.5 171.9 151.6zm-149.1 0H166.8c10-63.9 29.8-117.4 55.3-151.6c11.7-15.6 24.3-27.1 33.9-32.4 9.6 5.3 22.2 16.8 33.9 32.4 25.5 34.2 45.3 87.7 55.3 151.6zM8.1 192h123.1c-2.1 20.6-3.2 42-3.2 64s1.1 43.4 3.2 64H8.1C2.8 299.5 0 278.1 0 256s2.8-43.5 8.1-64zm18.6-32c29.9-74.1 93.6-131 171.9-151.6c-25.5 34.2-45.3 87.7-55.3 151.6H26.7zM191.4 464c-25.5-34.2-45.3-87.7-55.3-151.6h149.1c-10 63.9-29.8 117.4-55.3 151.6-11.7 15.6-24.3 27.1-33.9 32.4-9.6-5.3-22.2-16.8-33.9-32.4zm185.3-151.6c10 63.9-29.8 117.4-55.3 151.6 78.3-20.6 142-77.5 171.9-151.6H376.7zM26.7 352h108.6c10 63.9 29.8 117.4 55.3 151.6C112.3 483 48.6 426.1 18.6 352z"
+                    />
                   </svg>
                 </div>
-                <a href={getValidHref(sitioWeb)} target="_blank" rel="noopener noreferrer" class="address-link text-truncate">
+                <a
+                  href={getValidHref(sitioWeb)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="address-link text-truncate"
+                >
                   {formatUrl(sitioWeb)}
                 </a>
               </div>
@@ -248,14 +383,12 @@ const igGradId = `ig-grad-card-${swiperId}`;
         )
       }
       {
-        (precioNocheMxn || precioPpMxn) && (
+        categoriaPrecio && (
           <li>
             <div class="icon">
               <span style="font-size: 14px; line-height: 1;">💵</span>
             </div>
-            <span>
-              <strong>{precioNocheMxn ? 'Por noche:' : 'Por persona:'}</strong> {precioNocheMxn || precioPpMxn}
-            </span>
+            <span>{categoriaPrecio}</span>
           </li>
         )
       }
@@ -264,20 +397,34 @@ const igGradId = `ig-grad-card-${swiperId}`;
     <div class="bc-verde-section">
       {/* Chips de atributos */}
       <div class="bc-chips">
-        {chips.map(c => (
-          <span class="bc-chip">{c.icon} {c.label}</span>
-        ))}
-        {(amenidades || espacioFisico) && (
-          <button type="button" class="bc-chip bc-chip-more js-toggle-more" data-target={`more-${id}`}>Ver más</button>
-        )}
+        {
+          chips.map((c) => (
+            <span class="bc-chip">
+              {c.icon} {c.label}
+            </span>
+          ))
+        }
+        {
+          (amenidades || espacioFisico) && (
+            <button
+              type="button"
+              class="bc-chip bc-chip-more js-toggle-more"
+              data-target={`more-${id}`}
+            >
+              Ver más
+            </button>
+          )
+        }
       </div>
 
       {/* Contenido extra colapsable */}
-      {(amenidades || espacioFisico) && (
-        <div class="bc-more-content" id={`more-${id}`} style="display: none;">
-          <p class="bc-amenidades">{amenidades || espacioFisico}</p>
-        </div>
-      )}
+      {
+        (amenidades || espacioFisico) && (
+          <div class="bc-more-content" id={`more-${id}`} style="display: none;">
+            <p class="bc-amenidades">{amenidades || espacioFisico}</p>
+          </div>
+        )
+      }
     </div>
 
     <div class="business-card-cta-wrapper">
@@ -332,7 +479,6 @@ const igGradId = `ig-grad-card-${swiperId}`;
     </div>
   </div>
 </div>
-
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {

@@ -45,6 +45,7 @@ export async function getStaticPaths() {
 }
 
 const { title, color, data, description } = Astro.props;
+const slug = Astro.params.slug as string;
 
 const isRestaurantes = title === "DÓNDE COMER";
 const clasificaciones = isRestaurantes
@@ -55,9 +56,91 @@ const clasificaciones = isRestaurantes
 
 const FALLBACK_IMG =
   "https://images.unsplash.com/photo-1605335191599-4458d98e1690?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80";
+
+// ── SEO config por slug ──────────────────────────────────────────────────────
+const SEO_CONFIG: Record<string, { seoTitle: string; seoDesc: string; schema: string }> = {
+  "donde-hospedarse": {
+    seoTitle: "Hoteles en Cholula, Puebla — Dónde Hospedarse",
+    seoDesc: "Los mejores hoteles en San Pedro Cholula, Puebla. Encuentra alojamiento cerca de la Gran Pirámide, el centro histórico y la zona universitaria. Hoteles boutique, económicos y con todas las comodidades.",
+    schema: "LodgingBusiness",
+  },
+  "donde-comer": {
+    seoTitle: "Restaurantes en Cholula, Puebla — Dónde Comer",
+    seoDesc: "Descubre los mejores restaurantes, bares y cafés en San Pedro Cholula, Puebla. Gastronomía mexicana, cocina internacional, opciones vegetarianas y experiencias culinarias únicas en el corazón del Pueblo Mágico.",
+    schema: "FoodEstablishment",
+  },
+  "que-hacer": {
+    seoTitle: "Qué Hacer en Cholula, Puebla — Actividades y Atracciones",
+    seoDesc: "Descubre qué hacer en San Pedro Cholula: visita la Gran Pirámide, el Santuario de la Virgen de los Remedios, el Convento de San Gabriel y mucho más. Actividades culturales, turísticas y de aventura en Cholula, Puebla.",
+    schema: "TouristAttraction",
+  },
+  "guias-turisticos": {
+    seoTitle: "Guías Turísticos Certificados en Cholula, Puebla",
+    seoDesc: "Guías turísticos certificados por SECTUR en San Pedro Cholula. Tours personalizados por la Gran Pirámide, iglesias coloniales, mercados y el centro histórico. Conoce Cholula con expertos locales.",
+    schema: "LocalBusiness",
+  },
+};
+
+const seo = SEO_CONFIG[slug] ?? {
+  seoTitle: title,
+  seoDesc: description ?? "",
+  schema: "Thing",
+};
+
+// ── JSON-LD ItemList ──────────────────────────────────────────────────────────
+const SITE_URL = "https://visitcholula.mx";
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": seo.seoTitle,
+  "description": seo.seoDesc,
+  "url": `${SITE_URL}/${slug}`,
+  "numberOfItems": data.length,
+  "itemListElement": (data as any[]).map((item, index) => ({
+    "@type": "ListItem",
+    "position": index + 1,
+    "item": {
+      "@type": seo.schema,
+      "name": item.nombre,
+      "description": item.descripcion ?? undefined,
+      "address": item.direccion ? {
+        "@type": "PostalAddress",
+        "streetAddress": item.direccion,
+        "addressLocality": "San Pedro Cholula",
+        "addressRegion": "Puebla",
+        "addressCountry": "MX",
+      } : undefined,
+      "telephone": item.telefono ?? item.whatsapp ?? undefined,
+      "url": item.sitioWeb ?? undefined,
+      "image": item.galeria?.[0]
+        ? (item.galeria[0].startsWith('http') ? item.galeria[0] : `${SITE_URL}${item.galeria[0]}`)
+        : undefined,
+      "geo": item.googleMaps ? {
+        "@type": "GeoCoordinates",
+        "latitude": 19.0547,
+        "longitude": -98.3018,
+      } : undefined,
+    },
+  })),
+};
+
+// ── BreadcrumbList ────────────────────────────────────────────────────────────
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Inicio", "item": SITE_URL },
+    { "@type": "ListItem", "position": 2, "name": seo.seoTitle, "item": `${SITE_URL}/${slug}` },
+  ],
+};
 ---
 
-<Layout title={title}>
+<Layout
+  title={seo.seoTitle}
+  description={seo.seoDesc}
+  canonical={`/${slug}`}
+  jsonLd={[itemListSchema, breadcrumbSchema]}
+>
   <!-- Hero -->
   <section class="hero" id="hero">
     <video
@@ -116,7 +199,11 @@ const FALLBACK_IMG =
                 facebook={item.social?.facebook || undefined}
                 tiktok={item.social?.tiktok || undefined}
                 description={item.descripcion || undefined}
-                clasificacion={item.clasificacion || item.categoria || undefined}
+                clasificacion={item.clasificacion || item.categoria || item.tipo || undefined}
+                acreditacion={slug === "guias-turisticos" ? (item.clasificacion || undefined) : undefined}
+                especializacion={item.especializacion || undefined}
+                idiomas={item.idiomas || undefined}
+                toursQueOfrece={item.toursQueOfrece || undefined}
                 zona={item.zona || item.dondeEsta || undefined}
                 distanciaGranPiramide={item.distanciaGranPiramide || undefined}
                 categoriaPrecio={item.categoriaPrecio || undefined}
@@ -126,12 +213,10 @@ const FALLBACK_IMG =
                 terraza={item.terraza || undefined}
                 recepcion24h={item.recepcion24h || undefined}
                 amenidades={item.amenidades || undefined}
-                precioNocheMxn={item.precioNocheMxn || undefined}
                 tipoComida={item.tipoComida || undefined}
                 petFriendly={item.petFriendly || undefined}
                 musicaEnVivo={item.musicaEnVivo || undefined}
                 precioPpMxn={item.precioPpMxn || undefined}
-                reservacionRecomendada={item.reservacionRecomendada || undefined}
                 espacioFisico={item.espacioFisico || undefined}
               />
             ))

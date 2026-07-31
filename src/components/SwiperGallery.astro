@@ -9,9 +9,10 @@ export interface Props {
   isEvento?: boolean;
   isImperdible?: boolean;
   className?: string;
+  altPrefix?: string;
 }
 
-const { id, items, isEvento = false, isImperdible = false, className = '' } = Astro.props;
+const { id, items, isEvento = false, isImperdible = false, className = '', altPrefix = '' } = Astro.props;
 ---
 
 <div 
@@ -30,7 +31,13 @@ const { id, items, isEvento = false, isImperdible = false, className = '' } = As
       <div class={`swiper-slide ${isImperdible ? 'swiper-slide--card' : ''}`} data-img={item.img}>
         <img
           src={item.img}
-          alt={item.label || `Slide ${i + 1}`}
+          alt={
+            item.label
+              ? item.label
+              : altPrefix
+                ? `${altPrefix} — foto ${i + 1}, San Pedro Cholula, Puebla`
+                : `Foto ${i + 1} — San Pedro Cholula, Puebla`
+          }
           class={`swiper-slide-img ${isEvento ? 'swiper-slide-img--evento' : ''} ${isImperdible ? 'swiper-slide-img--imperdible' : ''}`}
           loading={i === 0 ? "eager" : "lazy"}
         />

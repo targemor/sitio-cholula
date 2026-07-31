@@ -122,7 +122,6 @@ function mergeHoteles(jsonHoteles, csvRows) {
       terraza:                csvRow.terraza                || undefined,
       recepcion24h:           csvRow.recepcion_24h          || undefined,
       amenidades:             csvRow.amenidades             || undefined,
-      precioNocheMxn:         csvRow.precio_noche_mxn       || undefined,
       tamanioCategoria:       csvRow['tamaño_categoria']    || undefined,
       perfilIdeal:            csvRow.perfil_ideal           || undefined,
     };
@@ -223,7 +222,6 @@ function mergeRestaurantes(jsonRests, csvRows) {
       petFriendly:           csvRow.pet_friendly            || undefined,
       musicaEnVivo:          csvRow.musica_en_vivo          || undefined,
       precioPpMxn:           csvRow.precio_pp_mxn           || undefined,
-      reservacionRecomendada: csvRow.reservacion_recomendada || undefined,
       ocasionIdeal:          csvRow.ocasion_ideal           || undefined,
       perfilIdeal:           csvRow.perfil_ideal            || undefined,
       etiquetasChatbot:      csvRow.etiquetas_chatbot       || undefined,
