@@ -1,0 +1,39 @@
+---
+import "./VisitanosCard.css";
+
+export interface Props {
+  href: string;
+  title: string;
+  img: string;
+  badgeText: string;
+  icons: string[];
+}
+
+const { href, title, img, badgeText, icons } = Astro.props;
+---
+
+<a href={href} class="visitanos-card">
+  <!-- Background Image -->
+  <img src={img} alt={title} class="visitanos-card-bg" loading="lazy" />
+  
+  <!-- Overlay Gradient -->
+  <div class="visitanos-card-overlay"></div>
+
+  <!-- Top bar: Dot & Badge -->
+  <div class="visitanos-card-top">
+    <div class="visitanos-card-dot" aria-hidden="true"></div>
+    <div class="visitanos-card-badge">
+      <span>{badgeText}</span>
+    </div>
+  </div>
+
+  <!-- Bottom bar: Title & Feature Icons -->
+  <div class="visitanos-card-bottom">
+    <h3 class="visitanos-card-title">{title}</h3>
+    <div class="visitanos-card-icons">
+      {icons.map((icon) => (
+        <span class="visitanos-icon-chip">{icon}</span>
+      ))}
+    </div>
+  </div>
+</a>

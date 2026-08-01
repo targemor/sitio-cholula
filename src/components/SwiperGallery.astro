@@ -19,7 +19,7 @@ const { id, items, isEvento = false, isImperdible = false, className = '', altPr
   class={`swiper ${isImperdible ? 'swiper--imperdible swiper--focus-carousel' : ''} ${isEvento ? 'swiper--evento' : ''} ${className}`} 
   id={`swiper-${id}`}
 >
-  {isImperdible && (
+  {(isImperdible || isEvento) && (
     <div 
       class="swiper-bg-blur" 
       id={`blur-bg-${id}`}
@@ -28,7 +28,13 @@ const { id, items, isEvento = false, isImperdible = false, className = '', altPr
   )}
   <div class="swiper-wrapper">
     {items.map((item, i) => (
-      <div class={`swiper-slide ${isImperdible ? 'swiper-slide--card' : ''}`} data-img={item.img}>
+      <div class={`swiper-slide ${isImperdible ? 'swiper-slide--card' : ''} ${isEvento ? 'swiper-slide--evento' : ''}`} data-img={item.img}>
+        {isEvento && (
+          <div
+            class="swiper-slide-blur-bg"
+            style={`background-image: url('${item.img}')`}
+          ></div>
+        )}
         <img
           src={item.img}
           alt={
@@ -104,7 +110,14 @@ const { id, items, isEvento = false, isImperdible = false, className = '', altPr
     const regularSwipers = document.querySelectorAll('.swiper:not(.swiper--focus-carousel)');
     regularSwipers.forEach((el) => {
       const htmlEl = el as HTMLElement;
-      new Swiper(htmlEl, {
+      const blurEl = htmlEl.querySelector('.swiper-bg-blur') as HTMLElement | null;
+
+      function setBlur(img: string) {
+        if (!blurEl || !img) return;
+        blurEl.style.backgroundImage = `url('${img}')`;
+      }
+
+      const swiper = new Swiper(htmlEl, {
         modules: [Navigation, Pagination, Autoplay],
         slidesPerView: 1,
         spaceBetween: 20,
@@ -121,6 +134,15 @@ const { id, items, isEvento = false, isImperdible = false, className = '', altPr
           disableOnInteraction: false,
         },
         loop: true,
+      });
+
+      swiper.on('slideChange', () => {
+        const origSlides = Array.from(
+          htmlEl.querySelectorAll('.swiper-slide:not(.swiper-slide-duplicate)')
+        ) as HTMLElement[];
+        const images = origSlides.map(s => s.getAttribute('data-img') || '').filter(Boolean);
+        const img = images[swiper.realIndex] || images[0] || '';
+        setBlur(img);
       });
     });
   });

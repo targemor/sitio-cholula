@@ -2,7 +2,9 @@
 import Layout from "../layouts/Layout.astro";
 import SearchBar from "../components/SearchBar";
 import SwiperGallery from "../components/SwiperGallery.astro";
+import ImperdiblesCarousel from "../components/ImperdiblesCarousel.astro";
 import ImageCard from "../components/ImageCard.astro";
+import VisitanosCard from "../components/VisitanosCard.astro";
 import ItinerarioTabs from "../components/ItinerarioTabs.astro";
 import itinerarioData from "../data/itinerario.json";
 import "../styles/index.css";
@@ -10,44 +12,103 @@ import "../styles/index.css";
 // Lugares imperdibles
 const imperdibles = [
   {
-    img: "/home/ZONA-ARQUELÓGICA.webp",
-    label: "Zona Arqueológica – Cholula",
+    img: "/home/imperdibles/CERRO-ZAPOTECAS.webp",
+    nombre: "Cerro Zapotecas",
+    descripcion: "¿Sabías que Cholula tiene su propio bosque? El Cerro Zapotecas es el único, y es el escondite favorito de ciclistas y corredores para perderse entre pinos con vistas que nadie espera encontrar a minutos del centro.",
+    categoria: "Naturaleza",
+    categoryEmoji: "🌲",
+    mapUrl: "https://maps.app.goo.gl/8Q1bA5KYb3WZyMi26",
+    highlights: ["bosque", "ciclistas y corredores", "vistas que nadie espera"],
   },
   {
-    img: "/home/SANTUARIO-DE-LA-VIRGEN-DE-LOS-REMEDIOS.webp",
-    label: "Santuario de la Virgen de los Remedios – Cholula",
+    img: "/home/imperdibles/CONVENTO-DE-SAN-GABRIEL.webp",
+    nombre: "Convento de San Gabriel y Capilla Real",
+    descripcion: "Estás pisando el mismo lugar donde alguna vez se rindió culto a Quetzalcóatl. Hoy, sobre esas ruinas, se alza una capilla con 9 naves y 48 cúpulas inspiradas en una mezquita — la que más cúpulas tiene en TODO México.",
+    categoria: "Templo",
+    categoryEmoji: "⛪",
+    mapUrl: "https://maps.app.goo.gl/8vPuJBFNiYY7BFQZ7",
+    highlights: ["Quetzalcóatl", "9 naves y 48 cúpulas", "más cúpulas tiene en TODO México"],
   },
   {
-    img: "/home/PORTAL-GUERRERO.webp",
-    label: "Portal Guerrero – Cholula",
+    img: "/home/imperdibles/COSME-DEL-RAZO.webp",
+    nombre: "Mercado Municipal Cosme del Razo",
+    descripcion: "El centro de abasto más grande de la región — orejas de elefante, cacao tradicional y sabores de temporada. Es el lugar donde los cholultecas de verdad hacen su compra diaria, lejos del circuito más turístico.",
+    categoria: "Mercado",
+    categoryEmoji: "🛒",
+    mapUrl: "https://maps.app.goo.gl/qbM2UjBPHYMt9cEm8",
+    highlights: ["orejas de elefante", "cacao tradicional", "cholultecas de verdad"],
   },
   {
-    img: "/home/PARROQUIA-DE-SAN-PEDRO.webp",
-    label: "Parroquia de San Pedro – Cholula",
+    img: "/home/imperdibles/IGLESIA-DE-SANTA-MARIA-XIXITLA.webp",
+    nombre: "Iglesia de Santa María Xixitla",
+    descripcion: "A un lado del circuito turístico, este templo del siglo XVI esconde altares completamente bañados en oro. La mayoría de los turistas nunca lo pisa — tú sí puedes.",
+    categoria: "Templo",
+    categoryEmoji: "⛪",
+    mapUrl: "https://maps.app.goo.gl/dZqVtAx69sH8Xzn27",
+    highlights: ["siglo XVI", "altares completamente bañados en oro", "mayoría de los turistas nunca lo pisa"],
   },
   {
-    img: "/home/PARQUE-SORIA.webp",
-    label: "Parque Soria – Cholula",
+    img: "/home/imperdibles/ZONA-ARQUEOLOGICA.webp",
+    nombre: "Zona Arqueológica",
+    descripcion: "Bajo tus pies hay una pirámide más grande que la de Giza — no en altura, sino en volumen: la más grande jamás construida en el mundo. Recorre sus túneles excavados y sube 149 escalones hasta la iglesia que corona la cima.",
+    categoria: "Arqueología",
+    categoryEmoji: "🏛️",
+    mapUrl: "https://maps.app.goo.gl/JxNqVGLRnmivHBUf7",
+    highlights: ["más grande que la de Giza", "más grande jamás construida en el mundo", "túneles excavados"],
   },
   {
-    img: "/home/IGLESIA-DE-SANTIAGO.webp",
-    label: "Iglesia de Santiago – Cholula",
+    img: "/home/imperdibles/SANTUARIO-DE-LA-VIRGEN-DE-LOS-REMEDIOS.webp",
+    nombre: "Santuario de la Virgen de los Remedios",
+    descripcion: "149 escalones te separan de la mejor vista de Cholula. Arriba te espera un templo construido literalmente encima de una pirámide, con el Popocatépetl humeando de fondo — la postal más icónica de la ciudad.",
+    categoria: "Templo",
+    categoryEmoji: "⛪",
+    mapUrl: "https://maps.app.goo.gl/8vPuJBFNiYY7BFQZ7",
+    highlights: ["149 escalones", "encima de una pirámide", "Popocatépetl humeando", "postal más icónica"],
   },
   {
-    img: "/home/IGLESIA-DE-SANTA-MARIA-XIXITLA.webp",
-    label: "Iglesia de Santa María Xixitla – Cholula",
+    img: "/home/imperdibles/PARROQUIA-DE-SAN-PEDRO.webp",
+    nombre: "Parroquia de San Pedro",
+    descripcion: "Búscala en el horizonte: su torre es la más alta de todos los templos de Cholula, e ilumina las noches como el verdadero corazón religioso del centro.",
+    categoria: "Templo",
+    categoryEmoji: "⛪",
+    mapUrl: "https://maps.app.goo.gl/oBXvUGmDDLBXJCuV9",
+    highlights: ["la más alta de todos los templos", "corazón religioso del centro"],
   },
   {
-    img: "/home/COSME-DEL-RAZO.webp",
-    label: "Mercado Municipal Cosme del Razo – Cholula",
+    img: "/home/imperdibles/PORTAL-GUERRERO.webp",
+    nombre: "Portal Guerrero",
+    descripcion: "46 arcos, 170 metros, el portal más largo de toda Latinoamérica — y debajo de cada arco, un restaurante o cafetería distinta esperando que te sientes.",
+    categoria: "Arquitectura",
+    categoryEmoji: "🏛️",
+    mapUrl: "https://maps.app.goo.gl/BLV4mVK37xfFuHkQ9",
+    highlights: ["46 arcos", "170 metros", "más largo de toda Latinoamérica"],
   },
   {
-    img: "/home/CONVENTO-DE-SAN-GABRIEL.webp",
-    label: "Convento de San Gabriel y Capilla Real – Cholula",
+    img: "/home/imperdibles/IGLESIA-DE-SANTIAGO.webp",
+    nombre: "Iglesia de Santiago Mixquitla",
+    descripcion: "Más de 400 años de historia gótica escondidos en un barrio que casi nadie visita. Su fachada esconde en piedra la figura de Santiago Peregrino y Guerrero — búscala tú mismo.",
+    categoria: "Templo",
+    categoryEmoji: "⛪",
+    mapUrl: "https://maps.app.goo.gl/XkGXhA74DJe7nJ3U8",
+    highlights: ["400 años", "historia gótica", "casi nadie visita"],
   },
   {
-    img: "/home/CERRO-ZAPOTECAS.webp",
-    label: "Cerro del Zapotecas – Cholula",
+    img: "/home/imperdibles/MUSEO CASA CABALLERO AGUILA - MIKE SANTANA.webp",
+    nombre: "Museo Casa del Caballero Águila",
+    descripcion: "Toma la misma foto que María Félix en el balcón donde se filmó \"Enamorada\" — y descubre por qué esta casa de 400 años lleva el nombre de un guerrero azteca.",
+    categoria: "Museo",
+    categoryEmoji: "🦅",
+    mapUrl: "https://maps.app.goo.gl/YNPpDpHxEfWDBZuQ8",
+    highlights: ["María Félix", "\"Enamorada\"", "400 años", "guerrero azteca"],
+  },
+  {
+    img: "/home/imperdibles/PARQUE-SORIA.webp",
+    nombre: "Parque Soria",
+    descripcion: "Voladores lanzándose desde lo alto, artesanías por todos lados, y la foto obligada en las letras de \"San Pedro Cholula\" — con la pirámide y su iglesia como telón de fondo.",
+    categoria: "Parque",
+    categoryEmoji: "🎪",
+    mapUrl: "https://maps.app.goo.gl/2Vn7eR4YKTmJPiWs5",
+    highlights: ["Voladores", "artesanías", "pirámide y su iglesia"],
   },
 ];
 
@@ -78,21 +139,31 @@ const galeria = [
 const visitanos = [
   {
     href: "/donde-hospedarse",
-    label: "Hoteles",
-    img: "/home/hotel_tila_cholula_1-1024x1024-1.webp",
-    color: "var(--color-primary)",
+    title: "Hoteles",
+    img: "/home/visitanos/Hoteles - Foto_ Hotel Tila.webp",
+    badgeText: "📷 Fachada / terraza, luz cálida",
+    icons: ["🐾", "🏊"],
   },
   {
     href: "/donde-comer",
-    label: "Restaurantes – Bares",
-    img: "/home/Churreria-Las-Duyas_cholula_1-1024x1024-1.webp",
-    color: "var(--color-accent)",
+    title: "Restaurantes · Bares",
+    img: "/home/visitanos/Restaurantes opción 1 Foto_ Ciudad Sagrada.webp",
+    badgeText: "📷 Platillo servido, plano cercano",
+    icons: ["🐾", "🎵"],
   },
   {
     href: "/que-hacer",
-    label: "Qué Hacer",
-    img: "/home/Turiwheel_cholula_2-1024x1024-1.webp",
-    color: "var(--color-secondary)",
+    title: "Experiencias",
+    img: "/home/visitanos/Experiencias Foto_ Mike Santana.webp",
+    badgeText: "📷 Gente en movimiento / experiencia",
+    icons: ["🚲", "🏛️"],
+  },
+  {
+    href: "/guias-turisticos",
+    title: "Guías certificados",
+    img: "/home/visitanos/Guías turísticos Foto_ Mike Santana.webp",
+    badgeText: "📷 Guía señalando en un sitio icónico",
+    icons: ["🪪", "🗣️"],
   },
 ];
 
@@ -315,6 +386,39 @@ const organizationSchema = {
         Imagina una ciudad donde una iglesia del siglo XVI fue construida encima
         de la pirámide más grande del mundo.
       </div>
+    </div>
+
+    <!-- Pirámide Mamona -->
+    <div class="piramide-wrapper container">
+      <section
+        class="section-piramide"
+        style="background-image: url('/home/piramide_mamona.webp');"
+      >
+        <div class="piramide-overlay"></div>
+        <div class="piramide-content">
+          <h2 class="piramide-title">
+            Tenemos la pirámide con la base <span
+              class="piramide-title-highlight">más grande del mundo</span
+            >
+          </h2>
+          <p class="piramide-subtitle">
+            Una iglesia en la cima, una pirámide bajo tus pies y el Popocatépetl
+            de testigo.
+          </p>
+          <div class="piramide-actions">
+            <a href="#itinerarios" class="piramide-btn-primary"
+              >Planea tu visita</a
+            >
+            <a href="#imperdibles" class="piramide-btn-secondary"
+              >Ver los imperdibles →</a
+            >
+          </div>
+        </div>
+      </section>
+      <div class="piramide-foto-credito">Foto: Mike Santana</div>
+    </div>
+
+    <div class="container bienvenido-stats-container">
       <div class="bienvenido-stats">
         <div class="bienvenido-stat">
           <div class="bienvenido-stat-num">
@@ -351,46 +455,13 @@ const organizationSchema = {
       </div>
     </div>
 
-    <!-- Pirámide Mamona -->
-    <div class="piramide-wrapper container">
-      <section
-        class="section-piramide"
-        style="background-image: url('/home/piramide_mamona.webp');"
-      >
-        <div class="piramide-overlay"></div>
-        <div class="piramide-content">
-          <h2 class="piramide-title">
-            Tenemos la pirámide con la base <span
-              class="piramide-title-highlight">más grande del mundo</span
-            >
-          </h2>
-          <p class="piramide-subtitle">
-            Una iglesia en la cima, una pirámide bajo tus pies y el Popocatépetl
-            de testigo.
-          </p>
-          <div class="piramide-actions">
-            <a href="#itinerarios" class="piramide-btn-primary"
-              >Planea tu visita</a
-            >
-            <a href="#imperdibles" class="piramide-btn-secondary"
-              >Ver los imperdibles →</a
-            >
-          </div>
-        </div>
-      </section>
-      <div class="piramide-foto-credito">Foto: Mike Santana</div>
     </div>
   </section>
 
   <!-- ══════════════════════════════
-       LOS IMPERDIBLES — Carrusel
+       LOS IMPERDIBLES — Carrusel editorial
        ══════════════════════════════ -->
-  <section class="section-imperdibles" id="imperdibles">
-    <div class="container">
-      <h2 class="section-label section-label--amarillo">LOS IMPERDIBLES</h2>
-    </div>
-    <SwiperGallery id="imperdibles" items={imperdibles} isImperdible={true} />
-  </section>
+  <ImperdiblesCarousel items={imperdibles} />
 
   <!-- ══════════════════════════════
        ITINERARIOS
@@ -456,11 +527,12 @@ const organizationSchema = {
     <div class="visitanos-grid">
       {
         visitanos.map((v) => (
-          <ImageCard
+          <VisitanosCard
             href={v.href}
+            title={v.title}
             img={v.img}
-            label={v.label}
-            color={v.color}
+            badgeText={v.badgeText}
+            icons={v.icons}
           />
         ))
       }

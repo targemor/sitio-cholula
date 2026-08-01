@@ -1,0 +1,188 @@
+---
+import './ImperdiblesCarousel.css';
+
+export interface ImperdibleItem {
+  img: string;
+  nombre: string;
+  descripcion: string;
+  categoria: string;
+  categoryEmoji: string;
+  mapUrl: string;
+  highlights: string[];
+}
+
+export interface Props {
+  items: ImperdibleItem[];
+}
+
+const { items } = Astro.props;
+const total = items.length;
+
+function resaltarTexto(texto: string, highlights: string[]): string {
+  if (!highlights || highlights.length === 0) return texto;
+  // Escape special regex chars in each phrase
+  const escaped = highlights.map(h =>
+    h.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+  );
+  const regex = new RegExp(`(${escaped.join('|')})`, 'gi');
+  return texto.replace(regex, '<mark class="imp-highlight">$1</mark>');
+}
+---
+
+<section class="section-imperdibles" id="imperdibles">
+  <div class="imp-container">
+    <!-- Header de sección -->
+    <div class="imp-header">
+      <span class="imp-kicker">LOS IMPERDIBLES</span>
+      <h2 class="imp-title">Como te lo recomendaría un local</h2>
+    </div>
+
+    <!-- Carrusel -->
+    <div class="imp-carousel-wrap" id="imp-carousel">
+      {items.map((item, i) => (
+        <article
+          class={`imp-card ${i === 0 ? 'imp-card--active' : ''}`}
+          data-index={i}
+          aria-hidden={i !== 0}
+        >
+          <!-- Panel izquierdo: imagen -->
+          <div class="imp-card-img-wrap">
+            <img
+              src={item.img}
+              alt={`${item.nombre} — San Pedro Cholula, Puebla`}
+              class="imp-card-img"
+              loading={i === 0 ? 'eager' : 'lazy'}
+            />
+            <!-- Badge de categoría -->
+            <span class="imp-badge">
+              <span class="imp-badge-emoji">{item.categoryEmoji}</span>
+              {item.categoria}
+            </span>
+            <!-- Contador X/N -->
+            <span class="imp-counter">{i + 1}/{total}</span>
+          </div>
+
+          <!-- Panel derecho: texto -->
+          <div class="imp-card-body">
+            <h3 class="imp-card-nombre">{item.nombre}</h3>
+            <p
+              class="imp-card-desc"
+              set:html={resaltarTexto(item.descripcion, item.highlights)}
+            />
+            <a
+              href={item.mapUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="imp-card-link"
+            >
+              Ver ubicación →
+            </a>
+
+            <!-- Dots de paginación -->
+            <div class="imp-dots" role="tablist" aria-label="Navegación de imperdibles">
+              {items.map((_, j) => (
+                <button
+                  class={`imp-dot ${j === i ? 'imp-dot--active' : ''}`}
+                  data-goto={j}
+                  aria-label={`Ir a ${items[j].nombre}`}
+                  role="tab"
+                  aria-selected={j === i}
+                />
+              ))}
+            </div>
+          </div>
+        </article>
+      ))}
+
+      <!-- Flechas de navegación: fuera del loop, overlay sobre el carrusel -->
+      <button class="imp-arrow imp-arrow--prev" data-dir="prev" aria-label="Anterior">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <button class="imp-arrow imp-arrow--next" data-dir="next" aria-label="Siguiente">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 6 15 12 9 18"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<script>
+  const carousel = document.getElementById('imp-carousel');
+  if (carousel) {
+    const cards = Array.from(carousel.querySelectorAll<HTMLElement>('.imp-card'));
+    const allDotSets = Array.from(carousel.querySelectorAll<HTMLElement>('.imp-dots'));
+    let current = 0;
+    let autoTimer: ReturnType<typeof setInterval> | null = null;
+
+    function goTo(index: number) {
+      const prev = current;
+      current = (index + cards.length) % cards.length;
+
+      cards[prev].classList.remove('imp-card--active');
+      cards[prev].setAttribute('aria-hidden', 'true');
+
+      cards[current].classList.add('imp-card--active');
+      cards[current].setAttribute('aria-hidden', 'false');
+
+      // Actualizar todos los conjuntos de dots
+      allDotSets.forEach(dotsEl => {
+        const dots = Array.from(dotsEl.querySelectorAll<HTMLElement>('.imp-dot'));
+        dots.forEach((dot, j) => {
+          dot.classList.toggle('imp-dot--active', j === current);
+          dot.setAttribute('aria-selected', String(j === current));
+        });
+      });
+    }
+
+    function startAuto() {
+      stopAuto();
+      autoTimer = setInterval(() => goTo(current + 1), 5000);
+    }
+
+    function stopAuto() {
+      if (autoTimer !== null) {
+        clearInterval(autoTimer);
+        autoTimer = null;
+      }
+    }
+
+    // Click en dots y flechas
+    carousel.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement).closest<HTMLElement>('[data-goto]');
+      if (btn) {
+        const idx = parseInt(btn.dataset.goto ?? '0', 10);
+        goTo(idx);
+        stopAuto();
+        startAuto();
+        return;
+      }
+      const arrow = (e.target as HTMLElement).closest<HTMLElement>('[data-dir]');
+      if (arrow) {
+        const dir = arrow.dataset.dir;
+        goTo(dir === 'prev' ? current - 1 : current + 1);
+        stopAuto();
+        startAuto();
+      }
+    });
+
+    // Swipe en móvil
+    let touchStartX = 0;
+    carousel.addEventListener('touchstart', (e) => {
+      touchStartX = e.touches[0].clientX;
+    }, { passive: true });
+
+    carousel.addEventListener('touchend', (e) => {
+      const delta = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(delta) > 40) {
+        goTo(delta > 0 ? current + 1 : current - 1);
+        stopAuto();
+        startAuto();
+      }
+    }, { passive: true });
+
+    // Pausa al hacer hover
+    carousel.addEventListener('mouseenter', stopAuto);
+    carousel.addEventListener('mouseleave', startAuto);
+
+    startAuto();
+  }
+</script>

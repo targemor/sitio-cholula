@@ -1,0 +1,167 @@
+/* ═══════════════════════════════════════════════════════════
+   VisitanosCard — Premium Editorial Cards
+   ═══════════════════════════════════════════════════════════ */
+
+.visitanos-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 230px;
+  border-radius: 24px;
+  overflow: hidden;
+  padding: 1.5rem 1.75rem;
+  text-decoration: none;
+  background-color: #1a1a1a;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 0.35s ease;
+  isolation: isolate;
+}
+
+.visitanos-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.25);
+}
+
+/* Background Photo */
+.visitanos-card-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.visitanos-card:hover .visitanos-card-bg {
+  transform: scale(1.06);
+}
+
+/* Overlay Gradient - Neutral dark vignette without color tinting */
+.visitanos-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.08) 45%, rgba(0, 0, 0, 0.65) 100%);
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 0.35s ease;
+}
+
+.visitanos-card:hover .visitanos-card-overlay {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.05) 45%, rgba(0, 0, 0, 0.55) 100%);
+}
+
+/* Top bar */
+.visitanos-card-top {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.visitanos-card-dot {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  flex-shrink: 0;
+}
+
+.visitanos-card-badge {
+  background: rgba(18, 18, 18, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #ffffff;
+  padding: 0.45rem 0.85rem;
+  border-radius: 12px;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.76rem;
+  font-weight: 600;
+  line-height: 1.25;
+  max-width: 210px;
+  text-align: right;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Bottom bar */
+.visitanos-card-bottom {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 100%;
+  gap: 1rem;
+}
+
+.visitanos-card-title {
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: clamp(1.5rem, 2.2vw, 2.1rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.1;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+  letter-spacing: -0.01em;
+}
+
+/* Icon Chips */
+.visitanos-card-icons {
+  display: flex;
+  gap: 0.45rem;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.visitanos-icon-chip {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .visitanos-card {
+    height: 190px;
+    padding: 1.25rem 1.4rem;
+    border-radius: 20px;
+  }
+
+  .visitanos-card-dot {
+    width: 20px;
+    height: 20px;
+  }
+
+  .visitanos-card-badge {
+    font-size: 0.7rem;
+    padding: 0.35rem 0.65rem;
+    max-width: 160px;
+  }
+
+  .visitanos-card-title {
+    font-size: 1.4rem;
+  }
+
+  .visitanos-icon-chip {
+    width: 32px;
+    height: 32px;
+    font-size: 0.85rem;
+  }
+}
