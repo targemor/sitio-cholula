@@ -5,11 +5,10 @@ export interface Props {
   href: string;
   title: string;
   img: string;
-  badgeText: string;
   icons: string[];
 }
 
-const { href, title, img, badgeText, icons } = Astro.props;
+const { href, title, img, icons } = Astro.props;
 ---
 
 <a href={href} class="visitanos-card">
@@ -18,14 +17,6 @@ const { href, title, img, badgeText, icons } = Astro.props;
   
   <!-- Overlay Gradient -->
   <div class="visitanos-card-overlay"></div>
-
-  <!-- Top bar: Dot & Badge -->
-  <div class="visitanos-card-top">
-    <div class="visitanos-card-dot" aria-hidden="true"></div>
-    <div class="visitanos-card-badge">
-      <span>{badgeText}</span>
-    </div>
-  </div>
 
   <!-- Bottom bar: Title & Feature Icons -->
   <div class="visitanos-card-bottom">

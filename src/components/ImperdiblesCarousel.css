@@ -81,7 +81,7 @@
   min-height: 520px;
   overflow: hidden;
   border-radius: 18px 0 0 18px;
-  background-color: #111111; /* fondo neutro para zonas sin imagen */
+  cursor: pointer;
 }
 
 .imp-card-img {
@@ -89,14 +89,148 @@
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;     /* imagen completa, sin recortar */
+  object-fit: cover;     /* llena 100% el contenedor sin marco negro */
   object-position: center;
   display: block;
   transition: transform 0.6s ease;
 }
 
-.imp-card--active .imp-card-img {
-  transform: scale(1);
+.imp-card:hover .imp-card-img {
+  transform: scale(1.04);
+}
+
+/* Botón expandir foto completa en esquina inferior */
+.imp-zoom-btn {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(18, 18, 18, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.imp-zoom-btn:hover {
+  background: rgba(18, 18, 18, 0.92);
+  transform: scale(1.05);
+}
+
+.imp-zoom-btn svg {
+  width: 14px;
+  height: 14px;
+  stroke: #ffffff;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   LIGHTBOX MODAL
+   ═══════════════════════════════════════════════════════════ */
+.imp-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  pointer-events: none;
+}
+
+.imp-modal--open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.imp-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 10, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.imp-modal-content {
+  position: relative;
+  z-index: 10000;
+  max-width: 90vw;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: imp-modal-zoom 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+@keyframes imp-modal-zoom {
+  from {
+    transform: scale(0.92);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.imp-modal-close {
+  position: absolute;
+  top: -48px;
+  right: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.imp-modal-close:hover {
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(1.1);
+}
+
+.imp-modal-close svg {
+  width: 22px;
+  height: 22px;
+  stroke: #ffffff;
+}
+
+.imp-modal-img {
+  max-width: 90vw;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+}
+
+.imp-modal-caption {
+  margin-top: 1rem;
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 /* Badge de categoría — esquina superior izquierda */

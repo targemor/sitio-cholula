@@ -6,7 +6,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
   height: 230px;
   border-radius: 24px;
   overflow: hidden;
@@ -54,41 +54,9 @@
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.05) 45%, rgba(0, 0, 0, 0.55) 100%);
 }
 
-/* Top bar */
-.visitanos-card-top {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  width: 100%;
-}
 
-.visitanos-card-dot {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: #ffffff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-  flex-shrink: 0;
-}
 
-.visitanos-card-badge {
-  background: rgba(18, 18, 18, 0.78);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  color: #ffffff;
-  padding: 0.45rem 0.85rem;
-  border-radius: 12px;
-  font-family: "Roboto", sans-serif;
-  font-size: 0.76rem;
-  font-weight: 600;
-  line-height: 1.25;
-  max-width: 210px;
-  text-align: right;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
+
 
 /* Bottom bar */
 .visitanos-card-bottom {
@@ -99,6 +67,7 @@
   align-items: flex-end;
   width: 100%;
   gap: 1rem;
+  margin-top: auto;
 }
 
 .visitanos-card-title {
@@ -144,16 +113,7 @@
     border-radius: 20px;
   }
 
-  .visitanos-card-dot {
-    width: 20px;
-    height: 20px;
-  }
 
-  .visitanos-card-badge {
-    font-size: 0.7rem;
-    padding: 0.35rem 0.65rem;
-    max-width: 160px;
-  }
 
   .visitanos-card-title {
     font-size: 1.4rem;

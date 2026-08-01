@@ -60,6 +60,16 @@ function resaltarTexto(texto: string, highlights: string[]): string {
             </span>
             <!-- Contador X/N -->
             <span class="imp-counter">{i + 1}/{total}</span>
+            <!-- Botón expandir foto completa -->
+            <button class="imp-zoom-btn" data-zoom-img={item.img} data-zoom-title={item.nombre} aria-label="Ver foto completa">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="15 3 21 3 21 9"></polyline>
+                <polyline points="9 21 3 21 3 15"></polyline>
+                <line x1="21" y1="3" x2="14" y2="10"></line>
+                <line x1="3" y1="21" x2="10" y2="14"></line>
+              </svg>
+              <span>Ver completa</span>
+            </button>
           </div>
 
           <!-- Panel derecho: texto -->
@@ -101,6 +111,21 @@ function resaltarTexto(texto: string, highlights: string[]): string {
       <button class="imp-arrow imp-arrow--next" data-dir="next" aria-label="Siguiente">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 6 15 12 9 18"/></svg>
       </button>
+    </div>
+  </div>
+
+  <!-- Modal Lightbox para expandir imagen -->
+  <div class="imp-modal" id="imp-modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="imp-modal-backdrop" id="imp-modal-backdrop"></div>
+    <div class="imp-modal-content">
+      <button class="imp-modal-close" id="imp-modal-close" aria-label="Cerrar foto">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <img src="" alt="" id="imp-modal-img" class="imp-modal-img" />
+      <div id="imp-modal-caption" class="imp-modal-caption"></div>
     </div>
   </div>
 </section>
@@ -145,9 +170,65 @@ function resaltarTexto(texto: string, highlights: string[]): string {
       }
     }
 
-    // Click en dots y flechas
+    // Modal Lightbox
+    const modal = document.getElementById('imp-modal');
+    const modalImg = document.getElementById('imp-modal-img') as HTMLImageElement | null;
+    const modalCaption = document.getElementById('imp-modal-caption');
+    const modalClose = document.getElementById('imp-modal-close');
+    const modalBackdrop = document.getElementById('imp-modal-backdrop');
+
+    function openModal(imgUrl: string, title: string) {
+      if (!modal || !modalImg) return;
+      modalImg.src = imgUrl;
+      modalImg.alt = title;
+      if (modalCaption) modalCaption.textContent = title;
+      modal.classList.add('imp-modal--open');
+      modal.setAttribute('aria-hidden', 'false');
+      stopAuto();
+    }
+
+    function closeModal() {
+      if (!modal) return;
+      modal.classList.remove('imp-modal--open');
+      modal.setAttribute('aria-hidden', 'true');
+      startAuto();
+    }
+
+    if (modalClose) modalClose.addEventListener('click', closeModal);
+    if (modalBackdrop) modalBackdrop.addEventListener('click', closeModal);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal?.classList.contains('imp-modal--open')) {
+        closeModal();
+      }
+    });
+
+    // Click en zoom button o imagen para abrir modal
     carousel.addEventListener('click', (e) => {
-      const btn = (e.target as HTMLElement).closest<HTMLElement>('[data-goto]');
+      const target = e.target as HTMLElement;
+      const zoomBtn = target.closest<HTMLElement>('.imp-zoom-btn');
+      if (zoomBtn) {
+        e.stopPropagation();
+        const img = zoomBtn.dataset.zoomImg ?? '';
+        const title = zoomBtn.dataset.zoomTitle ?? '';
+        openModal(img, title);
+        return;
+      }
+
+      const imgWrap = target.closest<HTMLElement>('.imp-card-img-wrap');
+      if (imgWrap && !target.closest('.imp-badge') && !target.closest('.imp-counter')) {
+        const activeCard = imgWrap.closest('.imp-card');
+        if (activeCard) {
+          const imgEl = imgWrap.querySelector<HTMLImageElement>('.imp-card-img');
+          const titleEl = activeCard.querySelector<HTMLElement>('.imp-card-nombre');
+          if (imgEl && titleEl) {
+            openModal(imgEl.src, titleEl.textContent ?? '');
+          }
+        }
+        return;
+      }
+
+      const btn = target.closest<HTMLElement>('[data-goto]');
       if (btn) {
         const idx = parseInt(btn.dataset.goto ?? '0', 10);
         goTo(idx);
@@ -155,7 +236,7 @@ function resaltarTexto(texto: string, highlights: string[]): string {
         startAuto();
         return;
       }
-      const arrow = (e.target as HTMLElement).closest<HTMLElement>('[data-dir]');
+      const arrow = target.closest<HTMLElement>('[data-dir]');
       if (arrow) {
         const dir = arrow.dataset.dir;
         goTo(dir === 'prev' ? current - 1 : current + 1);
