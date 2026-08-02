@@ -1181,40 +1181,6 @@
             "telefono": "2215259952"
         },
         {
-            "nombre": "Dang",
-            "galeria": [
-                "/images/restaurantes/dang/Dang-4.webp",
-                "/images/restaurantes/dang/Dang-1.webp",
-                "/images/restaurantes/dang/Dang-2.webp",
-                "/images/restaurantes/dang/Dang-3.webp",
-                "/images/restaurantes/dang/Dang-5.webp"
-            ],
-            "categoria": "restaurante",
-            "tipoComida": "Ramen y asiática",
-            "ambiente": "Casual · Social",
-            "dondeEsta": "Zona Centro",
-            "idealPara": "probar street food asiática",
-            "caracteristicasEspeciales": "Street food asiática",
-            "social": {
-                "facebook": "https://www.facebook.com/DangNoodleBar",
-                "instagram": "https://www.instagram.com/dang.noodlebar"
-            },
-            "horario": {
-                "lunes": "14:00-20:00",
-                "martes": "14:00-21:00",
-                "miercoles": "14:00-21:00",
-                "jueves": "14:00-21:00",
-                "viernes": "15:00-23:00",
-                "sabado": "15:00-23:00",
-                "domingo": "14:00-20:00",
-                "resumen": "Lun 14:00-20:00 · Mar-Jue 14:00-21:00 · Vie-Sáb 15:00-23:00 · Dom 14:00-20:00",
-                "detalle": "Lunes: 14:00-20:00 • Martes: 14:00-21:00 • Miércoles: 14:00-21:00 • Jueves: 14:00-21:00 • Viernes: 15:00-23:00 • Sábado: 15:00-23:00 • Domingo: 14:00-20:00"
-            },
-            "direccion": "Calle 6 Nte. 408, San Miguel, Barrio de Jesús Tlatempa, 72814 Cholula de Rivadavia, Pue.",
-            "whatsapp": "2214192200",
-            "googleMaps": "https://maps.app.goo.gl/Jr3CZmwHiWn6hAJX6"
-        },
-        {
             "nombre": "Divará Campestre",
             "galeria": [
                 "/images/restaurantes/divar-campestre/divara_campestre_cholula_2-1024x1024-1.webp",
@@ -2477,13 +2443,12 @@
             "idiomas": "Español"
         }
     ],
-
     "guiasTuristicos": [
         {
             "nombre": "Alejandra Toxqui",
             "galeria": [
-            "/images/guias-turisticos/alejandra-toxqui/af66894d-4a42-41a9-91f3-554ff9b3a930.webp",
-            "/images/guias-turisticos/alejandra-toxqui/Guias_turisticos_Alejandra-Toxqui-1024x1024-1.webp"
+                "/images/guias-turisticos/alejandra-toxqui/af66894d-4a42-41a9-91f3-554ff9b3a930.webp",
+                "/images/guias-turisticos/alejandra-toxqui/Guias_turisticos_Alejandra-Toxqui-1024x1024-1.webp"
             ],
             "certificacionSectur": true,
             "social": {
