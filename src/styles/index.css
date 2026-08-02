@@ -655,7 +655,7 @@
 }
 
 .artesanias-title {
-  font-family: "Georgia", "Times New Roman", serif !important;
+  font-family: "Roboto", sans-serif !important;
   font-size: clamp(1.8rem, 3.5vw, 2.6rem);
   font-weight: 700;
   color: #2B4A3A;
