@@ -67,7 +67,7 @@ const { itinerario } = Astro.props;
       <div class="itin-hero-title">{itinerario.heroTitle || itinerario.titulo}</div>
       {itinerario.heroSub && <div class="itin-hero-sub">{itinerario.heroSub}</div>}
     </div>
-    {itinerario.heroCredit && <div class="photo-credit">{itinerario.heroCredit}</div>}
+    {itinerario.heroCredit && <div class="photo-credit" style="display:none;">{itinerario.heroCredit}</div>}
   </div>
 
   <div class="itin-body">

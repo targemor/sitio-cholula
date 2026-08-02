@@ -189,9 +189,11 @@
 }
 
 .bienvenido-stat-unit {
+  display: block;
   font-size: 18px;
   color: #C9A227;
   font-weight: 700;
+  margin-bottom: 6px;
 }
 
 .bienvenido-stat-title {
@@ -209,6 +211,14 @@
   text-align: center;
 }
 
+/* Ícono decorativo sobre la cifra */
+.bienvenido-stat-icon {
+  font-size: 2rem;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.08));
+}
+
 @media (max-width: 900px) {
   .piramide-wrapper {
     order: 2;
@@ -218,6 +228,7 @@
 
   .bienvenido-stats-container {
     order: 3;
+    padding: 0 0.5rem;
   }
 
   .bienvenido-lead {
@@ -229,6 +240,7 @@
     flex-direction: row;
     gap: 0;
     padding-top: 24px;
+    padding-bottom: 16px;
     text-align: center;
     border-top: 2px solid #E0DAD0;
     justify-content: space-between;
@@ -241,12 +253,15 @@
     align-items: center;
     justify-content: flex-start;
     text-align: center;
-    gap: 4px;
-    padding: 0 0.5rem;
+    padding: 0 0.35rem;
     margin: 0;
     border-right: 1px solid #EDE8DC;
     border-bottom: none;
     background: transparent;
+  }
+
+  .bienvenido-stat:first-child {
+    padding-left: 0;
   }
 
   .bienvenido-stat:last-child {
@@ -255,15 +270,25 @@
     padding-right: 0;
   }
 
+  .bienvenido-stat-icon {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+  }
+
   .bienvenido-stat-num {
-    font-size: clamp(1.35rem, 5.5vw, 2rem);
+    font-size: clamp(1.25rem, 4.5vw, 1.75rem);
     flex-shrink: 0;
     margin-bottom: 2px;
-    line-height: 1.05;
+    line-height: 1.1;
   }
 
   .bienvenido-stat-unit {
-    font-size: 0.8rem;
+    display: block;
+    font-size: 0.72rem;
+    color: #C9A227;
+    font-weight: 700;
+    margin-bottom: 6px;
+    letter-spacing: 0.02em;
   }
 
   .bienvenido-stat-title {
@@ -271,12 +296,17 @@
     font-weight: 700;
     color: #2B2B29;
     line-height: 1.25;
-    margin-bottom: 0;
+    margin-bottom: 2px;
     text-align: center;
   }
 
   .bienvenido-stat-desc {
-    display: none;
+    display: block !important;
+    font-size: clamp(0.65rem, 2.5vw, 0.75rem);
+    color: #64748b;
+    line-height: 1.35;
+    text-align: center;
+    margin: 0;
   }
 }
 
@@ -351,7 +381,8 @@
 @media (max-width: 768px) {
   .section-piramide {
     aspect-ratio: unset;
-    min-height: 480px;
+    /* Formato vertical en móvil para mayor impacto visual */
+    min-height: 560px;
   }
 }
 
@@ -617,7 +648,55 @@
   }
 }
 
-/* Artesanías */
+/* ── Artesanías — nueva sección con BusinessCard ── */
+.artesanias-header {
+  text-align: center;
+  padding-bottom: 0.5rem;
+}
+
+.artesanias-title {
+  font-family: "Georgia", "Times New Roman", serif !important;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  color: #2B4A3A;
+  margin: 0 0 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.artesanias-subtitle {
+  font-size: clamp(0.9rem, 1.3vw, 1.05rem);
+  color: #6B6560;
+  margin: 0 auto;
+  max-width: 520px;
+  line-height: 1.55;
+}
+
+/* Grid: dos BusinessCards lado a lado */
+.artesanias-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin: 2.5rem auto 0;
+  width: 85%;
+  max-width: 1400px;
+}
+
+@media (max-width: 900px) {
+  .artesanias-cards-grid {
+    grid-template-columns: 1fr;
+    width: 92%;
+  }
+}
+
+@media (max-width: 480px) {
+  .artesanias-cards-grid {
+    width: 100%;
+    gap: 1.25rem;
+    margin-top: 1.5rem;
+  }
+}
+
+/* Mantener compatibilidad con el grid antiguo si se usa en otro lugar */
 .artesanias-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

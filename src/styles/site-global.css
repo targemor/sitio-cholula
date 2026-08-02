@@ -6,6 +6,17 @@ main {
   overflow-y: visible !important;
 }
 
+/* ── Escala tipográfica global — estilo visitpuebla.mx ── */
+html {
+  font-size: 17px;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
 :root {
   --color-primary: #c15c54;
   --color-secondary: #4a8fa1;
@@ -29,4 +40,20 @@ button,
 input,
 textarea {
   font-family: "Roboto", sans-serif !important;
+}
+
+/* ── Créditos fotográficos — mayor contraste y legibilidad ── */
+.piramide-foto-credito {
+  font-size: 0.78rem !important;
+  color: #555 !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.02em;
+}
+
+.photo-credit {
+  font-size: 0.72rem !important;
+  color: rgba(255, 255, 255, 0.82) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.03em;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.55);
 }

@@ -6,6 +6,7 @@ import ImperdiblesCarousel from "../components/ImperdiblesCarousel.astro";
 import ImageCard from "../components/ImageCard.astro";
 import VisitanosCard from "../components/VisitanosCard.astro";
 import ItinerarioTabs from "../components/ItinerarioTabs.astro";
+import BusinessCard from "../components/BusinessCard.astro";
 import itinerarioData from "../data/itinerario.json";
 import "../styles/index.css";
 
@@ -163,21 +164,36 @@ const visitanos = [
   },
 ];
 
-// Artesanías – mercados
+// Artesanías — dos locaciones, mitad de fotos cada una
 const artesanias = [
   {
-    href: "https://www.google.com/maps/place/Parque+Soria",
     label: "Parque Soria",
-    img: "/home/Artesanias-Parque-Soria_cholula.webp",
-    color: "var(--color-primary)",
-    target: "_blank",
+    address: "Parque Soria, San Pedro Cholula",
+    href: "https://www.google.com/maps/place/Parque+Soria",
+    descripcion: "El corazón artesanal de Cholula: barro negro, talavera, textiles en telar y piezas únicas hechas por manos cholultecas. Cada pieza cuenta una historia.",
+    images: [
+      "/home/artesanias/artesania-01.webp",
+      "/home/artesanias/artesania-02.webp",
+      "/home/artesanias/artesania-03.webp",
+      "/home/artesanias/artesania-04.webp",
+      "/home/artesanias/artesania-05.webp",
+      "/home/artesanias/artesania-06.webp",
+    ],
+    mapsUrl: "https://www.google.com/maps/place/Parque+Soria",
   },
   {
-    href: "https://www.google.com/maps/place/Centro+San+Pedro+Cholula",
     label: "Zona Centro",
-    img: "/home/Artesanias-Zona-Centro.jpg.webp",
-    color: "var(--color-accent)",
-    target: "_blank",
+    address: "Centro, San Pedro Cholula",
+    href: "https://www.google.com/maps/place/Centro+San+Pedro+Cholula",
+    descripcion: "A lo largo del Portal Guerrero y las calles del centro histórico encontrarás artesanos locales con sus talleres abiertos — papel amate, joyería de barro y bordados a mano.",
+    images: [
+      "/home/artesanias/artesania-07.webp",
+      "/home/artesanias/artesania-08.webp",
+      "/home/artesanias/artesania-09.webp",
+      "/home/artesanias/artesania-10.webp",
+      "/home/artesanias/artesania-11.webp",
+    ],
+    mapsUrl: "https://www.google.com/maps/place/Centro+San+Pedro+Cholula",
   },
 ];
 
@@ -379,7 +395,7 @@ const organizationSchema = {
     <div class="container bienvenido-container">
       <div class="bienvenido-kicker">San Pedro Cholula, Puebla</div>
       <div class="bienvenido-lead">
-        Imagina una ciudad donde una iglesia del siglo XVI fue construida encima
+        Imagina una ciudad donde una iglesia del siglo XVI fue construida encima
         de la pirámide más grande del mundo.
       </div>
     </div>
@@ -417,41 +433,32 @@ const organizationSchema = {
     <div class="container bienvenido-stats-container">
       <div class="bienvenido-stats">
         <div class="bienvenido-stat">
-          <div class="bienvenido-stat-num">
-            2,500<span class="bienvenido-stat-unit"> años</span>
-          </div>
-          <div class="bienvenido-stat-title">
-            La ciudad viva más antigua del continente
-          </div>
+          <div class="bienvenido-stat-icon">🏛️</div>
+          <div class="bienvenido-stat-num">2,500</div>
+          <div class="bienvenido-stat-unit">AÑOS</div>
           <div class="bienvenido-stat-desc">
-            Habitada sin parar desde el 500 a.C. — <strong
-              >nunca abandonada</strong
-            >
+            Ciudad viva más antigua del continente
           </div>
         </div>
         <div class="bienvenido-stat">
+          <div class="bienvenido-stat-icon">🌎</div>
           <div class="bienvenido-stat-num">+1M</div>
-          <div class="bienvenido-stat-title">Visitantes al año</div>
+          <div class="bienvenido-stat-unit">AL AÑO</div>
           <div class="bienvenido-stat-desc">
-            El Pueblo Mágico más visitado de Puebla — según DATATUR 2025
+            Visitantes cada año<br />(DATATUR, 2025)
           </div>
         </div>
         <div class="bienvenido-stat">
-          <div class="bienvenido-stat-num">
-            500<span class="bienvenido-stat-unit"> años</span>
-          </div>
-          <div class="bienvenido-stat-title">
-            El trueque más antiguo de América
-          </div>
+          <div class="bienvenido-stat-icon">🌽</div>
+          <div class="bienvenido-stat-num">500</div>
+          <div class="bienvenido-stat-unit">AÑOS</div>
           <div class="bienvenido-stat-desc">
-            <strong>Patrimonio Cultural Intangible de Puebla</strong> — cada septiembre,
-            miles llegan a intercambiar artesanías y cosechas sin un peso de por medio
+            El trueque más antiguo de América
           </div>
         </div>
       </div>
     </div>
 
-    </div>
   </section>
 
   <!-- ══════════════════════════════
@@ -537,21 +544,21 @@ const organizationSchema = {
        ARTESANÍAS
        ══════════════════════════════ -->
   <section class="section-artesanias" id="artesanias">
-    <div class="container">
-      <h2 class="section-label section-label--coral">ARTESANÍAS</h2>
+    <div class="container artesanias-header">
+      <h2 class="artesanias-title">Artesanías de Cholula</h2>
+      <p class="artesanias-subtitle">El recuerdo que más vale la pena, hecho por manos cholultecas.</p>
     </div>
-    <div class="artesanias-grid">
-      {
-        artesanias.map((a) => (
-          <ImageCard
-            href={a.href}
-            img={a.img!}
-            label={a.label}
-            color={a.color!}
-            target={a.target}
-          />
-        ))
-      }
+    <div class="artesanias-cards-grid">
+      {artesanias.map((a) => (
+        <BusinessCard
+          title={a.label}
+          images={a.images}
+          address={a.address}
+          description={a.descripcion}
+          mapsUrl={a.mapsUrl}
+          showLocationCta={true}
+        />
+      ))}
     </div>
   </section>
 </Layout>

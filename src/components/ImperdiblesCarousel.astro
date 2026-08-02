@@ -160,7 +160,8 @@ function resaltarTexto(texto: string, highlights: string[]): string {
 
     function startAuto() {
       stopAuto();
-      autoTimer = setInterval(() => goTo(current + 1), 5000);
+      // 8 000 ms para dar tiempo a leer el texto antes de avanzar
+      autoTimer = setInterval(() => goTo(current + 1), 8000);
     }
 
     function stopAuto() {

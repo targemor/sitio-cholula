@@ -2348,37 +2348,6 @@
             "idiomas": "Español (inglés/alemán con 24h de aviso)"
         },
         {
-            "nombre": "Tour Cholula Free Walk Tour",
-            "galeria": [
-                "/images/que-hacer/tour-cholula-free-walk-tour/IMG-20250630-WA0007-Recorrido-Turistico-scaled.webp",
-                "/images/que-hacer/tour-cholula-free-walk-tour/IMG_20250417_200204-Recorrido-Turistico-scaled.webp",
-                "/images/que-hacer/tour-cholula-free-walk-tour/IMG-20250814-WA0001-Recorrido-Turistico.webp",
-                "/images/que-hacer/tour-cholula-free-walk-tour/IMG-20250814-WA0000-Recorrido-Turistico.webp",
-                "/images/que-hacer/tour-cholula-free-walk-tour/IMG-20250630-WA0035-Recorrido-Turistico-scaled.webp"
-            ],
-            "tipo": "tour a pie",
-            "descripcion": "🚶 Conoce la historia, leyendas y secretos de Cholula mediante recorridos guiados a pie por sus calles, templos y espacios históricos.",
-            "certificacionSectur": false,
-            "social": {
-                "instagram": "https://www.instagram.com/freewalktourcholula"
-            },
-            "horario": {
-                "lunes": "08:00-22:00",
-                "martes": "08:00-22:00",
-                "miercoles": "08:00-22:00",
-                "jueves": "08:00-22:00",
-                "viernes": "08:00-22:00",
-                "sabado": "08:00-22:00",
-                "domingo": "08:00-22:00",
-                "resumen": "Lun-Dom 08:00-22:00",
-                "detalle": "Lunes: 08:00-22:00 • Martes: 08:00-22:00 • Miércoles: 08:00-22:00 • Jueves: 08:00-22:00 • Viernes: 08:00-22:00 • Sábado: 08:00-22:00 • Domingo: 08:00-22:00"
-            },
-            "direccion": "Av. Morelos 603, San Miguel, Plaza la Estación, 72760 San Pedro Cholula, Pue.",
-            "whatsapp": "7823628714",
-            "clasificacion": "Recorrido a pie",
-            "idiomas": "No especificado"
-        },
-        {
             "nombre": "Turibike Cholula",
             "galeria": [
                 "/images/que-hacer/turibike-cholula/Turibike_cholula_2-1024x1024-1.webp",
@@ -2410,7 +2379,7 @@
             "googleMaps": "https://goo.gl/maps/Vdt5WRbaekK91d6R9",
             "whatsapp": "2223348195",
             "clasificacion": "Tour en bicicleta",
-            "idiomas": "No especificado"
+            "idiomas": "Español"
         },
         {
             "nombre": "Turiwheel",
@@ -2445,7 +2414,7 @@
             "googleMaps": "https://goo.gl/maps/viYnfdJLxAbHT4zz8",
             "whatsapp": "5511200361",
             "clasificacion": "Tour en carrito clásico",
-            "idiomas": "No especificado"
+            "idiomas": "Español"
         },
         {
             "nombre": "Terra Equus",
@@ -2475,15 +2444,46 @@
             },
             "whatsapp": "2214381378",
             "clasificacion": "Centro Equino Integral"
+        },
+        {
+            "nombre": "Tour Cholula Free Walk Tour",
+            "galeria": [
+                "/images/que-hacer/tour-cholula-free-walk-tour/IMG-20250630-WA0007-Recorrido-Turistico-scaled.webp",
+                "/images/que-hacer/tour-cholula-free-walk-tour/IMG_20250417_200204-Recorrido-Turistico-scaled.webp",
+                "/images/que-hacer/tour-cholula-free-walk-tour/IMG-20250814-WA0001-Recorrido-Turistico.webp",
+                "/images/que-hacer/tour-cholula-free-walk-tour/IMG-20250814-WA0000-Recorrido-Turistico.webp",
+                "/images/que-hacer/tour-cholula-free-walk-tour/IMG-20250630-WA0035-Recorrido-Turistico-scaled.webp"
+            ],
+            "tipo": "tour a pie",
+            "descripcion": "🚶 Conoce la historia, leyendas y secretos de Cholula mediante recorridos guiados a pie por sus calles, templos y espacios históricos.",
+            "certificacionSectur": false,
+            "social": {
+                "instagram": "https://www.instagram.com/freewalktourcholula"
+            },
+            "horario": {
+                "lunes": "08:00-22:00",
+                "martes": "08:00-22:00",
+                "miercoles": "08:00-22:00",
+                "jueves": "08:00-22:00",
+                "viernes": "08:00-22:00",
+                "sabado": "08:00-22:00",
+                "domingo": "08:00-22:00",
+                "resumen": "Lun-Dom 08:00-22:00",
+                "detalle": "Lunes: 08:00-22:00 • Martes: 08:00-22:00 • Miércoles: 08:00-22:00 • Jueves: 08:00-22:00 • Viernes: 08:00-22:00 • Sábado: 08:00-22:00 • Domingo: 08:00-22:00"
+            },
+            "direccion": "Av. Morelos 603, San Miguel, Plaza la Estación, 72760 San Pedro Cholula, Pue.",
+            "whatsapp": "7823628714",
+            "clasificacion": "Recorrido a pie",
+            "idiomas": "Español"
         }
     ],
+
     "guiasTuristicos": [
         {
             "nombre": "Alejandra Toxqui",
             "galeria": [
-                "/images/guias-turisticos/alejandra-toxqui/af66894d-4a42-41a9-91f3-554ff9b3a930.webp",
-                "/images/guias-turisticos/alejandra-toxqui/f69be56e-4503-4851-9db9-078a049ac061.webp",
-                "/images/guias-turisticos/alejandra-toxqui/Guias_turisticos_Alejandra-Toxqui-1024x1024-1.webp"
+            "/images/guias-turisticos/alejandra-toxqui/af66894d-4a42-41a9-91f3-554ff9b3a930.webp",
+            "/images/guias-turisticos/alejandra-toxqui/Guias_turisticos_Alejandra-Toxqui-1024x1024-1.webp"
             ],
             "certificacionSectur": true,
             "social": {

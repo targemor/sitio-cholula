@@ -187,30 +187,43 @@
 }
 
 .imp-modal-close {
-  position: absolute;
-  top: -48px;
-  right: 0;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: none;
-  background: rgba(255, 255, 255, 0.2);
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10002;
+  width: 44px !important;
+  height: 44px !important;
+  min-width: 44px !important;
+  max-width: 44px !important;
+  min-height: 44px !important;
+  max-height: 44px !important;
+  aspect-ratio: 1 / 1 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border-radius: 50% !important;
+  border: none !important;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   color: #ffffff;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
+  box-sizing: border-box !important;
   transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .imp-modal-close:hover {
-  background: rgba(255, 255, 255, 0.4);
-  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.45);
+  transform: scale(1.08);
 }
 
 .imp-modal-close svg {
-  width: 22px;
-  height: 22px;
+  width: 22px !important;
+  height: 22px !important;
+  flex-shrink: 0 !important;
   stroke: #ffffff;
 }
 
@@ -427,10 +440,12 @@
   }
 
   .imp-card-img-wrap {
-    min-height: 280px;
-    height: 280px;
+    /* Formato vertical 3:4 en móvil */
+    aspect-ratio: 3 / 4;
+    min-height: unset;
+    height: auto;
     position: relative;
-    border-radius: 18px 18px 0 0;  /* esquinas redondeadas arriba en móvil */
+    border-radius: 18px 18px 0 0;
   }
 
   .imp-card-body {
@@ -472,8 +487,10 @@
 
 @media (max-width: 480px) {
   .imp-card-img-wrap {
-    min-height: 200px;
-    height: 200px;
+    /* Mantiene 3:4 vertical en pantallas muy pequeñas */
+    aspect-ratio: 3 / 4;
+    min-height: unset;
+    height: auto;
   }
 
   .imp-card-body {
