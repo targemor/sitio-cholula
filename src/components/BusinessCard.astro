@@ -40,6 +40,7 @@ export interface Props {
   precioPpMxn?: string;
   espacioFisico?: string;
   showLocationCta?: boolean;
+  showCredits?: boolean;
 }
 
 const {
@@ -75,6 +76,7 @@ const {
   musicaEnVivo,
   espacioFisico,
   showLocationCta = false,
+  showCredits = false,
 } = Astro.props;
 
 // Funciones seguras para URLs para evitar 'Invalid URL' crashes
@@ -131,6 +133,7 @@ const igGradId = `ig-grad-card-${swiperId}`;
       items={images.map((img) => ({ img }))}
       className="business-swiper"
       altPrefix={title}
+      showCredits={showCredits}
     />
   </div>
 

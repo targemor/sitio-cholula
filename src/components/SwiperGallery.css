@@ -144,6 +144,42 @@
   background-color: #fff;
 }
 
+/* Crédito fotográfico en Swiper */
+.swiper-photo-credit {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 0.75rem;
+  z-index: 10;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(18, 18, 18, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Roboto", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  pointer-events: auto;
+}
+
+.swiper-credit-link {
+  color: #ffffff !important;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.6);
+  transition: all 0.2s ease;
+}
+
+.swiper-credit-link:hover {
+  color: #F2C230 !important;
+  text-decoration-color: #F2C230;
+}
+
 .swiper-slide-img--evento {
   position: relative;
   z-index: 1;

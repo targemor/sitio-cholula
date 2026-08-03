@@ -545,6 +545,41 @@
   box-shadow: 0 6px 20px rgba(255, 255, 255, 0.1);
 }
 
+/* Crédito fotográfico en Pirámide Mamona */
+.piramide-photo-credit {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 2rem;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(18, 18, 18, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Roboto", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.piramide-credit-link {
+  color: #ffffff !important;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.6);
+  transition: all 0.2s ease;
+}
+
+.piramide-credit-link:hover {
+  color: #F2C230 !important;
+  text-decoration-color: #F2C230;
+}
+
 @media (max-width: 768px) {
   .piramide-badge {
     top: 1.25rem;

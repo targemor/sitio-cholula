@@ -8,11 +8,12 @@ export interface Props {
   items: { img: string; label?: string }[];
   isEvento?: boolean;
   isImperdible?: boolean;
+  showCredits?: boolean;
   className?: string;
   altPrefix?: string;
 }
 
-const { id, items, isEvento = false, isImperdible = false, className = '', altPrefix = '' } = Astro.props;
+const { id, items, isEvento = false, isImperdible = false, showCredits = false, className = '', altPrefix = '' } = Astro.props;
 ---
 
 <div 
@@ -48,6 +49,24 @@ const { id, items, isEvento = false, isImperdible = false, className = '', altPr
           loading={i === 0 ? "eager" : "lazy"}
         />
         {item.label && !isImperdible && <p class="swiper-slide-label">{item.label}</p>}
+        {showCredits && (
+          <div class="swiper-photo-credit">
+            Foto: {
+              item.img.toLowerCase().includes("anabeli") ? (
+                <span>Anabeli Arredondo</span>
+              ) : (
+                <a
+                  href="https://www.instagram.com/mickysantana_art_photography"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="swiper-credit-link"
+                >
+                  Mike Santana
+                </a>
+              )
+            }
+          </div>
+        )}
       </div>
     ))}
   </div>

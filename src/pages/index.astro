@@ -472,8 +472,17 @@ const organizationSchema = {
             >
           </div>
         </div>
+        <div class="piramide-photo-credit">
+          Foto: <a
+            href="https://www.instagram.com/mickysantana_art_photography"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="piramide-credit-link"
+          >
+            Mike Santana
+          </a>
+        </div>
       </section>
-      <div class="piramide-foto-credito">Foto: Mike Santana</div>
     </div>
 
     <div class="container bienvenido-stats-container">
@@ -610,6 +619,7 @@ const organizationSchema = {
             description={a.descripcion}
             mapsUrl={a.mapsUrl}
             showLocationCta={true}
+            showCredits={true}
           />
         ))
       }
