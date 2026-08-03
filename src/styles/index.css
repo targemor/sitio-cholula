@@ -349,6 +349,46 @@
   color: var(--color-accent);
 }
 
+/* ── Section Header (Kicker + Bold Sans-Serif Title) ── */
+.section-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  width: 95%;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 768px) {
+  .section-header {
+    text-align: left;
+    margin-bottom: 1.5rem;
+    padding: 0 0.25rem;
+  }
+}
+
+.section-kicker {
+  display: block;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #C45543;
+  margin-bottom: 0.35rem;
+}
+
+.section-title-serif,
+.section-title {
+  font-family: "Roboto", sans-serif !important;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 800;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
 /* Pirámide Mamona */
 .piramide-wrapper {
   margin-top: 5rem;

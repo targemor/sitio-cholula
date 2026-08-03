@@ -17,25 +17,26 @@
 
 /* ── Header de sección ── */
 .imp-header {
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
 }
 
 .imp-kicker {
   display: block;
   font-family: "Roboto", sans-serif;
-  font-size: 0.75rem;
+  font-size: 14px;
   font-weight: 700;
-  letter-spacing: 0.15em;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  color: #A0413A;
-  margin-bottom: 0.5rem;
+  color: #C45543;
+  margin-bottom: 0.35rem;
 }
 
 .imp-title {
   font-family: "Roboto", sans-serif;
-  font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
   font-weight: 800;
-  color: #1e1e1e;
+  color: #1a1a1a;
   margin: 0;
   line-height: 1.15;
   letter-spacing: -0.02em;
@@ -432,6 +433,23 @@
   .imp-container {
     width: 95%;
     padding: 0;
+  }
+
+  .imp-header {
+    margin-bottom: 1.5rem;
+    padding: 0 0.25rem;
+    text-align: left;
+  }
+
+  .imp-kicker {
+    font-size: 13px;
+    letter-spacing: 1.8px;
+    margin-bottom: 0.3rem;
+  }
+
+  .imp-title {
+    font-size: clamp(1.5rem, 5.5vw, 2.1rem);
+    line-height: 1.18;
   }
 
   .imp-card--active {
