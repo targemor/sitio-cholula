@@ -237,47 +237,59 @@ export default function SearchBar({
                     return;
                 }
 
-                const queryWords = norm.split(/\s+/).filter(Boolean);
-                const escapeRegExp = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-                const exactRegex = new RegExp("\\b" + escapeRegExp(norm), "i");
+                let found: SearchableItem[] = [];
 
-                const scoredItems = items.map((item) => {
-                    const normLabel = normalize(item.label);
-                    const normCat = normalize(item.category);
-                    const normSub = item.sublabel ? normalize(item.sublabel) : "";
-                    const normKeywords = item.searchKeywords ? normalize(item.searchKeywords) : "";
-                    const horarioDetalle = typeof item.horario === 'object'
-                        ? item.horario?.detalle ?? ""
-                        : (item.horario ?? "");
-                    const normHorario = horarioDetalle ? normalize(horarioDetalle) : "";
+                if (norm === "experiencias" || norm === "experiencia" || norm === "que hacer" || norm === "quehacer") {
+                    found = items.filter(item => item.category === "Experiencia" || item.category === "Destino");
+                } else if (norm === "restaurantes" || norm === "restaurante" || norm === "comer") {
+                    found = items.filter(item => item.category === "Restaurante");
+                } else if (norm === "hoteles" || norm === "hotel" || norm === "dormir") {
+                    found = items.filter(item => item.category === "Hotel");
+                } else if (norm === "guias" || norm === "guia" || norm === "guias turisticos") {
+                    found = items.filter(item => item.category === "Guia");
+                } else {
+                    const queryWords = norm.split(/\s+/).filter(Boolean);
+                    const escapeRegExp = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                    const exactRegex = new RegExp("\\b" + escapeRegExp(norm), "i");
 
-                    let score = 0;
+                    const scoredItems = items.map((item) => {
+                        const normLabel = normalize(item.label);
+                        const normCat = normalize(item.category);
+                        const normSub = item.sublabel ? normalize(item.sublabel) : "";
+                        const normKeywords = item.searchKeywords ? normalize(item.searchKeywords) : "";
+                        const horarioDetalle = typeof item.horario === 'object'
+                            ? item.horario?.detalle ?? ""
+                            : (item.horario ?? "");
+                        const normHorario = horarioDetalle ? normalize(horarioDetalle) : "";
 
-                    queryWords.forEach(word => {
-                        let wordScore = 0;
-                        if (matchesWord(word, normLabel)) wordScore += 3;
-                        if (matchesWord(word, normCat)) wordScore += 2;
-                        if (matchesWord(word, normSub)) wordScore += 1;
-                        if (matchesWord(word, normKeywords)) wordScore += 1;
-                        if (matchesWord(word, normHorario)) wordScore += 1;
+                        let score = 0;
 
-                        if (wordScore > 0) {
-                            score += wordScore;
-                        }
+                        queryWords.forEach(word => {
+                            let wordScore = 0;
+                            if (matchesWord(word, normLabel)) wordScore += 3;
+                            if (matchesWord(word, normCat)) wordScore += 2;
+                            if (matchesWord(word, normSub)) wordScore += 1;
+                            if (matchesWord(word, normKeywords)) wordScore += 1;
+                            if (matchesWord(word, normHorario)) wordScore += 1;
+
+                            if (wordScore > 0) {
+                                score += wordScore;
+                            }
+                        });
+
+                        // Bonus si coincide la frase exacta
+                        if (exactRegex.test(normLabel)) score += 5;
+                        else if (exactRegex.test(normSub) || exactRegex.test(normKeywords) || exactRegex.test(normHorario)) score += 2;
+                        else if (exactRegex.test(normCat)) score += 1;
+
+                        return { item, score };
                     });
 
-                    // Bonus si coincide la frase exacta
-                    if (exactRegex.test(normLabel)) score += 5;
-                    else if (exactRegex.test(normSub) || exactRegex.test(normKeywords) || exactRegex.test(normHorario)) score += 2;
-                    else if (exactRegex.test(normCat)) score += 1;
-
-                    return { item, score };
-                });
-
-                const found = scoredItems
-                    .filter(x => x.score > 0)
-                    .sort((a, b) => b.score - a.score)
-                    .map(x => x.item);
+                    found = scoredItems
+                        .filter(x => x.score > 0)
+                        .sort((a, b) => b.score - a.score)
+                        .map(x => x.item);
+                }
 
                 setResults(found);
                 setIsOpen(true);
@@ -362,6 +374,90 @@ export default function SearchBar({
 
     const showDropdown = isOpen;
 
+    // Renderizador de los 4 atajos de categoría
+    const renderShortcutsRow = (inDropdown = false) => (
+        <div className={`search-shortcuts-row ${inDropdown ? 'search-shortcuts-row--dropdown' : ''}`}>
+            {/* Comer – cubiertos */}
+            <button
+                type="button"
+                className="search-pill-btn search-pill-btn--comer"
+                onMouseDown={(e) => {
+                    e.preventDefault();
+                    setQuery("restaurantes");
+                    setIsOpen(true);
+                    inputRef.current?.focus();
+                }}
+            >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" width="18" height="18">
+                    <path d="M3 2v4c0 1.1.9 2 2 2h2a2 2 0 0 0 2-2V2" />
+                    <path d="M7 2v20" />
+                    <path d="M21 2v6.5c0 1.4-1.1 2.5-2.5 2.5S16 9.9 16 8.5V2" />
+                    <path d="M18.5 11V22" />
+                </svg>
+                <span>Comer</span>
+            </button>
+
+            {/* Dormir – cama */}
+            <button
+                type="button"
+                className="search-pill-btn search-pill-btn--dormir"
+                onMouseDown={(e) => {
+                    e.preventDefault();
+                    setQuery("hoteles");
+                    setIsOpen(true);
+                    inputRef.current?.focus();
+                }}
+            >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" width="18" height="18">
+                    <path d="M3 7v11" />
+                    <path d="M21 7v11" />
+                    <path d="M3 11h18" />
+                    <path d="M3 18h18" />
+                    <rect x="7" y="7" width="4" height="4" rx="1" />
+                </svg>
+                <span>Dormir</span>
+            </button>
+
+            {/* Qué hacer / Experiencias – volcán/montaña */}
+            <button
+                type="button"
+                className="search-pill-btn search-pill-btn--quehacer"
+                onMouseDown={(e) => {
+                    e.preventDefault();
+                    setQuery("experiencias");
+                    setIsOpen(true);
+                    inputRef.current?.focus();
+                }}
+            >
+                <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" width="18" height="18">
+                    <path d="M12 3 L22 20 H2 Z" />
+                </svg>
+                <span>Experiencias</span>
+            </button>
+
+            {/* Guías Certificados – credencial/badge */}
+            <button
+                type="button"
+                className="search-pill-btn search-pill-btn--guias"
+                onMouseDown={(e) => {
+                    e.preventDefault();
+                    setQuery("guias");
+                    setIsOpen(true);
+                    inputRef.current?.focus();
+                }}
+            >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" width="18" height="18">
+                    <rect x="2" y="4" width="20" height="16" rx="3" />
+                    <circle cx="9" cy="10" r="2.5" />
+                    <path d="M5 18c0-2.2 1.8-4 4-4s4 1.8 4 4" />
+                    <path d="M15 8h4" />
+                    <path d="M15 12h4" />
+                </svg>
+                <span>Guías Certificados</span>
+            </button>
+        </div>
+    );
+
     return (
         <div ref={containerRef} className={`search-container${showDropdown ? ' search-dropdown-open' : ''}`}>
             {/* ── Barra de búsqueda ── */}
@@ -442,96 +538,13 @@ export default function SearchBar({
                             }
                         }}
                     >
-                        Buscar &rarr;
+                        Buscar →
                     </button>
                 </div>
 
-                {/* Fila 2: 4 atajos de categoría */}
-                <div className="search-shortcuts-row">
-                    {/* Comer – cubiertos */}
-                    <button
-                        type="button"
-                        className="search-pill-btn search-pill-btn--comer"
-                        onMouseDown={(e) => {
-                            e.preventDefault();
-                            setQuery("restaurantes");
-                            setIsOpen(true);
-                            inputRef.current?.focus();
-                        }}
-                    >
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" width="18" height="18">
-                            <path d="M3 2v4c0 1.1.9 2 2 2h2a2 2 0 0 0 2-2V2" />
-                            <path d="M7 2v20" />
-                            <path d="M21 2v6.5c0 1.4-1.1 2.5-2.5 2.5S16 9.9 16 8.5V2" />
-                            <path d="M18.5 11V22" />
-                        </svg>
-                        <span>Comer</span>
-                    </button>
-
-                    {/* Dormir – cama */}
-                    <button
-                        type="button"
-                        className="search-pill-btn search-pill-btn--dormir"
-                        onMouseDown={(e) => {
-                            e.preventDefault();
-                            setQuery("hoteles");
-                            setIsOpen(true);
-                            inputRef.current?.focus();
-                        }}
-                    >
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" width="18" height="18">
-                            <path d="M3 7v11" />
-                            <path d="M21 7v11" />
-                            <path d="M3 11h18" />
-                            <path d="M3 18h18" />
-                            <rect x="7" y="7" width="4" height="4" rx="1" />
-                        </svg>
-                        <span>Dormir</span>
-                    </button>
-
-                    {/* Qué hacer / Experiencias – volcán/montaña */}
-                    <button
-                        type="button"
-                        className="search-pill-btn search-pill-btn--quehacer"
-                        onMouseDown={(e) => {
-                            e.preventDefault();
-                            setQuery("experiencias");
-                            setIsOpen(true);
-                            inputRef.current?.focus();
-                        }}
-                    >
-                        <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" width="18" height="18">
-                            <path d="M12 3 L22 20 H2 Z" />
-                        </svg>
-                        <span>Experiencias</span>
-                    </button>
-
-                    {/* Guías Certificados – credencial/badge */}
-                    <button
-                        type="button"
-                        className="search-pill-btn search-pill-btn--guias"
-                        onMouseDown={(e) => {
-                            e.preventDefault();
-                            setQuery("guias");
-                            setIsOpen(true);
-                            inputRef.current?.focus();
-                        }}
-                    >
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" width="18" height="18">
-                            <rect x="2" y="4" width="20" height="16" rx="3" />
-                            <circle cx="9" cy="10" r="2.5" />
-                            <path d="M5 18c0-2.2 1.8-4 4-4s4 1.8 4 4" />
-                            <path d="M15 8h4" />
-                            <path d="M15 12h4" />
-                        </svg>
-                        <span>Guías Certificados</span>
-                    </button>
-                </div>
-
-
+                {/* Fila 2: 4 atajos de categoría (solo visibles cuando el dropdown NO está desplegado) */}
+                {!showDropdown && renderShortcutsRow(false)}
             </div>
-
-
 
             {/* ── Dropdown unificado ── */}
             {showDropdown && (
@@ -540,6 +553,9 @@ export default function SearchBar({
                     role="listbox"
                     aria-label="Resultados de búsqueda"
                 >
+                    {/* Atajos de categoría integrados dentro del dropdown */}
+                    {renderShortcutsRow(true)}
+
                     {/* Chip "Abiertos ahora" dentro del dropdown */}
                     <div className="search-filter-row">
                         <button
@@ -625,7 +641,7 @@ export default function SearchBar({
                                 <div key={cat}>
                                     <div className="search-category-header">
                                         <span className="search-category-icon">{categoryIcons[cat] ?? "📌"}</span>
-                                        <span className="search-category-title">{cat}s</span>
+                                        <span className="search-category-title">{cat === "Experiencia" ? "Experiencias" : cat === "Guia" ? "Guías" : `${cat}s`}</span>
                                     </div>
 
                                     {catItems.map((item) => {

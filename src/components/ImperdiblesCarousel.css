@@ -4,7 +4,7 @@
 
 .section-imperdibles {
   padding: 4rem 0 5rem;
-  background-color: #f5f0e8;
+  background-color: #f7f7f7 !important;
 }
 
 /* ── Contenedor principal ── */
@@ -286,6 +286,42 @@
   padding: 0.3rem 0.7rem;
   border-radius: 999px;
   letter-spacing: 0.05em;
+}
+
+/* Crédito fotográfico — esquina inferior izquierda */
+.imp-photo-credit {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(18, 18, 18, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Roboto", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  pointer-events: auto;
+}
+
+.imp-credit-link {
+  color: #ffffff !important;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.6);
+  transition: all 0.2s ease;
+}
+
+.imp-credit-link:hover {
+  color: #F2C230 !important;
+  text-decoration-color: #F2C230;
 }
 
 /* ── Panel derecho: cuerpo de texto ── */

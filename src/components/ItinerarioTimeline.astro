@@ -164,6 +164,7 @@ const { itinerario } = Astro.props;
     overflow: hidden;
     box-shadow: 0 6px 20px rgba(30,25,15,0.07);
     font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
   }
 
   /* HERO */
@@ -174,6 +175,7 @@ const { itinerario } = Astro.props;
     overflow: hidden;
     display: flex;
     align-items: flex-end;
+    text-align: left;
   }
   .itin-hero-bg {
     position: absolute;
@@ -197,6 +199,7 @@ const { itinerario } = Astro.props;
     z-index: 2;
     padding: 22px 36px;
     width: 100%;
+    text-align: left;
   }
   .itin-hero-kicker {
     font-size: 11px;
@@ -205,6 +208,7 @@ const { itinerario } = Astro.props;
     color: #F2C230;
     text-transform: uppercase;
     margin-bottom: 5px;
+    text-align: left;
   }
   .itin-hero-title {
     font-size: 24px;
@@ -212,10 +216,12 @@ const { itinerario } = Astro.props;
     color: #fff;
     line-height: 1.2;
     margin-bottom: 4px;
+    text-align: left;
   }
   .itin-hero-sub {
     font-size: 13px;
     color: rgba(255,255,255,0.85);
+    text-align: left;
   }
   .photo-credit {
     position: absolute;
@@ -229,12 +235,14 @@ const { itinerario } = Astro.props;
   /* BODY */
   .itin-body {
     padding: 28px 44px 32px;
+    text-align: left;
   }
   .desc {
     font-size: 14px;
     color: #6B6560;
     line-height: 1.5;
     margin-bottom: 20px;
+    text-align: left;
   }
   .day-label {
     font-size: 11px;
@@ -243,6 +251,7 @@ const { itinerario } = Astro.props;
     text-transform: uppercase;
     color: #A0413A;
     margin: 22px 0 12px;
+    text-align: left;
   }
 
   /* STOP */
@@ -252,32 +261,37 @@ const { itinerario } = Astro.props;
     gap: 16px;
     padding: 10px 0;
     border-bottom: 1px solid #F5F1E8;
+    text-align: left;
   }
   .stop:last-child { border-bottom: none; }
   .stop-icon {
-    font-size: 18px;
+    font-size: 19px;
     flex-shrink: 0;
     width: 28px;
     text-align: center;
     padding-top: 2px;
   }
-  .stop-content { flex: 1; }
+  .stop-content {
+    flex: 1;
+    text-align: left;
+  }
   .stop-name {
-    font-size: 14px;
-    font-weight: bold;
+    font-size: clamp(0.95rem, 1.1vw, 1.08rem);
+    font-weight: 700;
     color: #2B2B29;
-    margin-bottom: 2px;
+    margin-bottom: 3px;
+    line-height: 1.3;
   }
   .stop-desc {
-    font-size: 12px;
-    color: #6B6560;
+    font-size: clamp(0.82rem, 0.95vw, 0.92rem);
+    color: #55504a;
     line-height: 1.5;
     margin-bottom: 3px;
     white-space: pre-line;
   }
   .stop-meta {
-    font-size: 11px;
-    color: #A8A39A;
+    font-size: clamp(0.75rem, 0.85vw, 0.82rem);
+    color: #8c867a;
   }
   .stop-chat {
     font-size: 11.5px;

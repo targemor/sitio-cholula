@@ -58,6 +58,25 @@ function resaltarTexto(texto: string, highlights: string[]): string {
               <span class="imp-badge-emoji">{item.categoryEmoji}</span>
               {item.categoria}
             </span>
+
+            <!-- Crédito fotográfico -->
+            <div class="imp-photo-credit">
+              Foto: {
+                item.img.toLowerCase().includes('mike santana') || item.img.toLowerCase().includes('mike-santana') ? (
+                  <a
+                    href="https://www.instagram.com/mickysantana_art_photography"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="imp-credit-link"
+                  >
+                    Mike Santana
+                  </a>
+                ) : (
+                  <span>Anabeli Arredondo</span>
+                )
+              }
+            </div>
+
             <!-- Contador X/N -->
             <span class="imp-counter">{i + 1}/{total}</span>
             <!-- Botón expandir foto completa -->
@@ -217,7 +236,7 @@ function resaltarTexto(texto: string, highlights: string[]): string {
       }
 
       const imgWrap = target.closest<HTMLElement>('.imp-card-img-wrap');
-      if (imgWrap && !target.closest('.imp-badge') && !target.closest('.imp-counter')) {
+      if (imgWrap && !target.closest('.imp-badge') && !target.closest('.imp-counter') && !target.closest('.imp-photo-credit')) {
         const activeCard = imgWrap.closest('.imp-card');
         if (activeCard) {
           const imgEl = imgWrap.querySelector<HTMLImageElement>('.imp-card-img');

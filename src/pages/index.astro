@@ -3,7 +3,6 @@ import Layout from "../layouts/Layout.astro";
 import SearchBar from "../components/SearchBar";
 import SwiperGallery from "../components/SwiperGallery.astro";
 import ImperdiblesCarousel from "../components/ImperdiblesCarousel.astro";
-import ImageCard from "../components/ImageCard.astro";
 import VisitanosCard from "../components/VisitanosCard.astro";
 import ItinerarioTabs from "../components/ItinerarioTabs.astro";
 import BusinessCard from "../components/BusinessCard.astro";
@@ -13,81 +12,114 @@ import "../styles/index.css";
 // Lugares imperdibles
 const imperdibles = [
   {
-    img: "/home/imperdibles/CERRO-ZAPOTECAS.webp",
+    img: "/home/imperdibles/Cerro zapotecas Anabeli Arredondo.webp",
     nombre: "Cerro Zapotecas",
-    descripcion: "¿Sabías que Cholula tiene su propio bosque? El Cerro Zapotecas es el único, y es el escondite favorito de ciclistas y corredores para perderse entre pinos con vistas que nadie espera encontrar a minutos del centro.",
+    descripcion:
+      "¿Sabías que Cholula tiene su propio bosque? El Cerro Zapotecas es el único, y es el escondite favorito de ciclistas y corredores para perderse entre pinos con vistas que nadie espera encontrar a minutos del centro.",
     categoria: "Naturaleza",
     categoryEmoji: "🌲",
     mapUrl: "https://maps.app.goo.gl/8Q1bA5KYb3WZyMi26",
     highlights: ["bosque", "ciclistas y corredores", "vistas que nadie espera"],
   },
   {
-    img: "/home/imperdibles/CONVENTO-DE-SAN-GABRIEL.webp",
+    img: "/home/imperdibles/convento de san gabriel y capilla real Anabeli arredondo.webp",
     nombre: "Convento de San Gabriel y Capilla Real",
-    descripcion: "Estás pisando el mismo lugar donde alguna vez se rindió culto a Quetzalcóatl. Hoy, sobre esas ruinas, se alza una capilla con 9 naves y 48 cúpulas inspiradas en una mezquita — la que más cúpulas tiene en TODO México.",
+    descripcion:
+      "Estás pisando el mismo lugar donde alguna vez se rindió culto a Quetzalcóatl. Hoy, sobre esas ruinas, se alza una capilla con 9 naves y 48 cúpulas inspiradas en una mezquita — la que más cúpulas tiene en TODO México.",
     categoria: "Templo",
     categoryEmoji: "⛪",
     mapUrl: "https://maps.app.goo.gl/8vPuJBFNiYY7BFQZ7",
-    highlights: ["Quetzalcóatl", "9 naves y 48 cúpulas", "más cúpulas tiene en TODO México"],
+    highlights: [
+      "Quetzalcóatl",
+      "9 naves y 48 cúpulas",
+      "más cúpulas tiene en TODO México",
+    ],
   },
   {
     img: "/home/imperdibles/COSME-DEL-RAZO.webp",
     nombre: "Mercado Municipal Cosme del Razo",
-    descripcion: "El centro de abasto más grande de la región — orejas de elefante, cacao tradicional y sabores de temporada. Es el lugar donde los cholultecas de verdad hacen su compra diaria, lejos del circuito más turístico.",
+    descripcion:
+      "El centro de abasto más grande de la región — orejas de elefante, cacao tradicional y sabores de temporada. Es el lugar donde los cholultecas de verdad hacen su compra diaria, lejos del circuito más turístico.",
     categoria: "Mercado",
     categoryEmoji: "🛒",
     mapUrl: "https://maps.app.goo.gl/qbM2UjBPHYMt9cEm8",
-    highlights: ["orejas de elefante", "cacao tradicional", "cholultecas de verdad"],
+    highlights: [
+      "orejas de elefante",
+      "cacao tradicional",
+      "cholultecas de verdad",
+    ],
   },
   {
-    img: "/home/imperdibles/IGLESIA-DE-SANTA-MARIA-XIXITLA.webp",
+    img: "/home/imperdibles/Santa María xixitla Mike Santana.webp",
     nombre: "Iglesia de Santa María Xixitla",
-    descripcion: "A un lado del circuito turístico, este templo del siglo XVI esconde altares completamente bañados en oro. La mayoría de los turistas nunca lo pisa — tú sí puedes.",
+    descripcion:
+      "A un lado del circuito turístico, este templo del siglo XVI esconde altares completamente bañados en oro. La mayoría de los turistas nunca lo pisa — tú sí puedes.",
     categoria: "Templo",
     categoryEmoji: "⛪",
     mapUrl: "https://maps.app.goo.gl/dZqVtAx69sH8Xzn27",
-    highlights: ["siglo XVI", "altares completamente bañados en oro", "mayoría de los turistas nunca lo pisa"],
+    highlights: [
+      "siglo XVI",
+      "altares completamente bañados en oro",
+      "mayoría de los turistas nunca lo pisa",
+    ],
   },
   {
-    img: "/home/imperdibles/ZONA-ARQUEOLOGICA.webp",
+    img: "/home/imperdibles/Zona arqueológica Mike Santana_.webp",
     nombre: "Zona Arqueológica",
-    descripcion: "Bajo tus pies hay una pirámide más grande que la de Giza — no en altura, sino en volumen: la más grande jamás construida en el mundo. Recorre sus túneles excavados y sube 149 escalones hasta la iglesia que corona la cima.",
+    descripcion:
+      "Bajo tus pies hay una pirámide más grande que la de Giza — no en altura, sino en volumen: la más grande jamás construida en el mundo. Recorre sus túneles excavados y sube 149 escalones hasta la iglesia que corona la cima.",
     categoria: "Arqueología",
     categoryEmoji: "🏛️",
     mapUrl: "https://maps.app.goo.gl/JxNqVGLRnmivHBUf7",
-    highlights: ["más grande que la de Giza", "más grande jamás construida en el mundo", "túneles excavados"],
+    highlights: [
+      "más grande que la de Giza",
+      "más grande jamás construida en el mundo",
+      "túneles excavados",
+    ],
   },
   {
-    img: "/home/imperdibles/SANTUARIO-DE-LA-VIRGEN-DE-LOS-REMEDIOS.webp",
+    img: "/home/imperdibles/Santuario de la virgen de los remedios - Mike Santana_.webp",
     nombre: "Santuario de la Virgen de los Remedios",
-    descripcion: "149 escalones te separan de la mejor vista de Cholula. Arriba te espera un templo construido literalmente encima de una pirámide, con el Popocatépetl humeando de fondo — la postal más icónica de la ciudad.",
+    descripcion:
+      "149 escalones te separan de la mejor vista de Cholula. Arriba te espera un templo construido literalmente encima de una pirámide, con el Popocatépetl humeando de fondo — la postal más icónica de la ciudad.",
     categoria: "Templo",
     categoryEmoji: "⛪",
     mapUrl: "https://maps.app.goo.gl/8vPuJBFNiYY7BFQZ7",
-    highlights: ["149 escalones", "encima de una pirámide", "Popocatépetl humeando", "postal más icónica"],
+    highlights: [
+      "149 escalones",
+      "encima de una pirámide",
+      "Popocatépetl humeando",
+      "postal más icónica",
+    ],
   },
   {
-    img: "/home/imperdibles/PARROQUIA-DE-SAN-PEDRO.webp",
+    img: "/home/imperdibles/parroquia de san pedro - Mike santana.webp",
     nombre: "Parroquia de San Pedro",
-    descripcion: "Búscala en el horizonte: su torre es la más alta de todos los templos de Cholula, e ilumina las noches como el verdadero corazón religioso del centro.",
+    descripcion:
+      "Búscala en el horizonte: su torre es la más alta de todos los templos de Cholula, e ilumina las noches como el verdadero corazón religioso del centro.",
     categoria: "Templo",
     categoryEmoji: "⛪",
     mapUrl: "https://maps.app.goo.gl/oBXvUGmDDLBXJCuV9",
-    highlights: ["la más alta de todos los templos", "corazón religioso del centro"],
+    highlights: [
+      "la más alta de todos los templos",
+      "corazón religioso del centro",
+    ],
   },
   {
-    img: "/home/imperdibles/PORTAL-GUERRERO.webp",
+    img: "/home/imperdibles/Portal Guerrero - Mike Santana.webp",
     nombre: "Portal Guerrero",
-    descripcion: "46 arcos, 170 metros, el portal más largo de toda Latinoamérica — y debajo de cada arco, un restaurante o cafetería distinta esperando que te sientes.",
+    descripcion:
+      "46 arcos, 170 metros, el portal más largo de toda Latinoamérica — y debajo de cada arco, un restaurante o cafetería distinta esperando que te sientes.",
     categoria: "Arquitectura",
     categoryEmoji: "🏛️",
     mapUrl: "https://maps.app.goo.gl/BLV4mVK37xfFuHkQ9",
     highlights: ["46 arcos", "170 metros", "más largo de toda Latinoamérica"],
   },
   {
-    img: "/home/imperdibles/IGLESIA-DE-SANTIAGO.webp",
+    img: "/home/imperdibles/iglesia De Santiago mixquitla - Mike Santana.webp",
     nombre: "Iglesia de Santiago Mixquitla",
-    descripcion: "Más de 400 años de historia gótica escondidos en un barrio que casi nadie visita. Su fachada esconde en piedra la figura de Santiago Peregrino y Guerrero — búscala tú mismo.",
+    descripcion:
+      "Más de 400 años de historia gótica escondidos en un barrio que casi nadie visita. Su fachada esconde en piedra la figura de Santiago Peregrino y Guerrero — búscala tú mismo.",
     categoria: "Templo",
     categoryEmoji: "⛪",
     mapUrl: "https://maps.app.goo.gl/XkGXhA74DJe7nJ3U8",
@@ -96,16 +128,18 @@ const imperdibles = [
   {
     img: "/home/imperdibles/MUSEO CASA CABALLERO AGUILA - MIKE SANTANA.webp",
     nombre: "Museo Casa del Caballero Águila",
-    descripcion: "Toma la misma foto que María Félix en el balcón donde se filmó \"Enamorada\" — y descubre por qué esta casa de 400 años lleva el nombre de un guerrero azteca.",
+    descripcion:
+      'Toma la misma foto que María Félix en el balcón donde se filmó "Enamorada" — y descubre por qué esta casa de 400 años lleva el nombre de un guerrero azteca.',
     categoria: "Museo",
     categoryEmoji: "🦅",
     mapUrl: "https://maps.app.goo.gl/YNPpDpHxEfWDBZuQ8",
-    highlights: ["María Félix", "\"Enamorada\"", "400 años", "guerrero azteca"],
+    highlights: ["María Félix", '"Enamorada"', "400 años", "guerrero azteca"],
   },
   {
     img: "/home/imperdibles/PARQUE-SORIA.webp",
     nombre: "Parque Soria",
-    descripcion: "Voladores lanzándose desde lo alto, artesanías por todos lados, y la foto obligada en las letras de \"San Pedro Cholula\" — con la pirámide y su iglesia como telón de fondo.",
+    descripcion:
+      'Voladores lanzándose desde lo alto, artesanías por todos lados, y la foto obligada en las letras de "San Pedro Cholula" — con la pirámide y su iglesia como telón de fondo.',
     categoria: "Parque",
     categoryEmoji: "🎪",
     mapUrl: "https://maps.app.goo.gl/2Vn7eR4YKTmJPiWs5",
@@ -170,7 +204,8 @@ const artesanias = [
     label: "Parque Soria",
     address: "Parque Soria, San Pedro Cholula",
     href: "https://www.google.com/maps/place/Parque+Soria",
-    descripcion: "El corazón artesanal de Cholula: barro negro, talavera, textiles en telar y piezas únicas hechas por manos cholultecas. Cada pieza cuenta una historia.",
+    descripcion:
+      "El corazón artesanal de Cholula: barro negro, talavera, textiles en telar y piezas únicas hechas por manos cholultecas. Cada pieza cuenta una historia.",
     images: [
       "/home/artesanias/artesania-01.webp",
       "/home/artesanias/artesania-02.webp",
@@ -185,7 +220,8 @@ const artesanias = [
     label: "Zona Centro",
     address: "Centro, San Pedro Cholula",
     href: "https://www.google.com/maps/place/Centro+San+Pedro+Cholula",
-    descripcion: "A lo largo del Portal Guerrero y las calles del centro histórico encontrarás artesanos locales con sus talleres abiertos — papel amate, joyería de barro y bordados a mano.",
+    descripcion:
+      "A lo largo del Portal Guerrero y las calles del centro histórico encontrarás artesanos locales con sus talleres abiertos — papel amate, joyería de barro y bordados a mano.",
     images: [
       "/home/artesanias/artesania-07.webp",
       "/home/artesanias/artesania-08.webp",
@@ -263,9 +299,20 @@ const searchItems = [
   ...(cholulaData.queHacer || []).map((item: any, i) => ({
     id: i,
     label: item.nombre,
-    category: "Destino",
+    category: "Experiencia",
     href: "/que-hacer",
     sublabel: item.tipo || "",
+    searchKeywords: [
+      item.tipo,
+      item.descripcion,
+      item.etiquetasChatbot,
+      "experiencia",
+      "experiencias",
+      "que hacer",
+      "qué hacer",
+    ]
+      .filter(Boolean)
+      .join(" "),
     horario: item.horario,
   })),
   ...(cholulaData.guiasTuristicos || []).map((item: any, i) => ({
@@ -282,61 +329,68 @@ const searchItems = [
 const touristDestinationSchema = {
   "@context": "https://schema.org",
   "@type": "TouristDestination",
-  "name": "San Pedro Cholula",
-  "alternateName": ["Cholula", "Visit Cholula", "Cholula Pueblo Mágico"],
-  "description": "Cholula es la ciudad viva más antigua de América, habitada sin pausa desde el año 500 a.C. Posee la base de pirámide más grande del mundo, más de 365 iglesias y una vibrante escena gastronómica y hotelera.",
-  "url": "https://visitcholula.mx",
-  "image": "https://visitcholula.mx/hero-poster.webp",
-  "geo": {
+  name: "San Pedro Cholula",
+  alternateName: ["Cholula", "Visit Cholula", "Cholula Pueblo Mágico"],
+  description:
+    "Cholula es la ciudad viva más antigua de América, habitada sin pausa desde el año 500 a.C. Posee la base de pirámide más grande del mundo, más de 365 iglesias y una vibrante escena gastronómica y hotelera.",
+  url: "https://visitcholula.mx",
+  image: "https://visitcholula.mx/hero-poster.webp",
+  geo: {
     "@type": "GeoCoordinates",
-    "latitude": 19.0547,
-    "longitude": -98.3018
+    latitude: 19.0547,
+    longitude: -98.3018,
   },
-  "containedInPlace": {
+  containedInPlace: {
     "@type": "State",
-    "name": "Puebla",
-    "containedInPlace": {
+    name: "Puebla",
+    containedInPlace: {
       "@type": "Country",
-      "name": "México"
-    }
+      name: "México",
+    },
   },
-  "touristType": ["Turistas culturales", "Turistas gastronómicos", "Familias", "Mochileros"],
-  "hasMap": "https://www.google.com/maps/place/San+Pedro+Cholula,+Pue."
+  touristType: [
+    "Turistas culturales",
+    "Turistas gastronómicos",
+    "Familias",
+    "Mochileros",
+  ],
+  hasMap: "https://www.google.com/maps/place/San+Pedro+Cholula,+Pue.",
 };
 
 const webSiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "name": "Visit Cholula",
-  "url": "https://visitcholula.mx",
-  "description": "Guía turística oficial de San Pedro Cholula, Pueblo Mágico de Puebla, México.",
-  "inLanguage": "es-MX",
-  "potentialAction": {
+  name: "Visit Cholula",
+  url: "https://visitcholula.mx",
+  description:
+    "Guía turística oficial de San Pedro Cholula, Pueblo Mágico de Puebla, México.",
+  inLanguage: "es-MX",
+  potentialAction: {
     "@type": "SearchAction",
-    "target": {
+    target: {
       "@type": "EntryPoint",
-      "urlTemplate": "https://visitcholula.mx/?q={search_term_string}"
+      urlTemplate: "https://visitcholula.mx/?q={search_term_string}",
     },
-    "query-input": "required name=search_term_string"
-  }
+    "query-input": "required name=search_term_string",
+  },
 };
 
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "Visit Cholula",
-  "url": "https://visitcholula.mx",
-  "logo": "https://visitcholula.mx/logo_guia_cholula_2025.webp",
-  "contactPoint": {
+  name: "Visit Cholula",
+  url: "https://visitcholula.mx",
+  logo: "https://visitcholula.mx/logo_guia_cholula_2025.webp",
+  contactPoint: {
     "@type": "ContactPoint",
-    "telephone": "+52-222-102-9059",
-    "contactType": "tourist information",
-    "availableLanguage": "Spanish"
+    telephone: "+52-222-102-9059",
+    contactType: "tourist information",
+    availableLanguage: "Spanish",
   },
-  "areaServed": {
+  areaServed: {
     "@type": "City",
-    "name": "San Pedro Cholula"
-  }
+    name: "San Pedro Cholula",
+  },
 };
 ---
 
@@ -392,14 +446,6 @@ const organizationSchema = {
        BIENVENIDO A CHOLULA
        ══════════════════════════════ -->
   <section class="section-bienvenido" id="bienvenido">
-    <div class="container bienvenido-container">
-      <div class="bienvenido-kicker">San Pedro Cholula, Puebla</div>
-      <div class="bienvenido-lead">
-        Imagina una ciudad donde una iglesia del siglo XVI fue construida encima
-        de la pirámide más grande del mundo.
-      </div>
-    </div>
-
     <!-- Pirámide Mamona -->
     <div class="piramide-wrapper container">
       <section
@@ -458,7 +504,28 @@ const organizationSchema = {
         </div>
       </div>
     </div>
+  </section>
 
+  <!-- ══════════════════════════════
+       VISÍTANOS — Categorías
+       ══════════════════════════════ -->
+  <section class="section-visitanos" id="visitanos">
+    <div class="container section-header">
+      <div class="section-kicker">EXPLORA CHOLULA</div>
+      <h2 class="section-title-serif">Visítanos</h2>
+    </div>
+    <div class="visitanos-grid">
+      {
+        visitanos.map((v) => (
+          <VisitanosCard
+            href={v.href}
+            title={v.title}
+            img={v.img}
+            icons={v.icons}
+          />
+        ))
+      }
+    </div>
   </section>
 
   <!-- ══════════════════════════════
@@ -472,7 +539,7 @@ const organizationSchema = {
   <section
     class="section-itinerarios"
     id="itinerarios"
-    style="padding: 4.5rem 0; background-color: #f9f9f9;"
+    style="padding: 4.5rem 0; background-color: #f7f7f7;"
   >
     <div class="container section-header">
       <div class="section-kicker">PLANEA TU VISITA</div>
@@ -523,46 +590,29 @@ const organizationSchema = {
   </section>
 
   <!-- ══════════════════════════════
-       VISÍTANOS — Categorías
-       ══════════════════════════════ -->
-  <section class="section-visitanos" id="visitanos">
-    <div class="container section-header">
-      <div class="section-kicker">EXPLORA CHOLULA</div>
-      <h2 class="section-title-serif">Visítanos</h2>
-    </div>
-    <div class="visitanos-grid">
-      {
-        visitanos.map((v) => (
-          <VisitanosCard
-            href={v.href}
-            title={v.title}
-            img={v.img}
-            icons={v.icons}
-          />
-        ))
-      }
-    </div>
-  </section>
-  <!-- ══════════════════════════════
        ARTESANÍAS
        ══════════════════════════════ -->
   <section class="section-artesanias" id="artesanias">
     <div class="container section-header">
       <div class="section-kicker">HECHO EN CHOLULA</div>
       <h2 class="section-title-serif">Artesanías de Cholula</h2>
-      <p class="artesanias-subtitle">El recuerdo que más vale la pena, hecho por manos cholultecas.</p>
+      <p class="artesanias-subtitle">
+        El recuerdo que más vale la pena, hecho por manos cholultecas.
+      </p>
     </div>
     <div class="artesanias-cards-grid">
-      {artesanias.map((a) => (
-        <BusinessCard
-          title={a.label}
-          images={a.images}
-          address={a.address}
-          description={a.descripcion}
-          mapsUrl={a.mapsUrl}
-          showLocationCta={true}
-        />
-      ))}
+      {
+        artesanias.map((a) => (
+          <BusinessCard
+            title={a.label}
+            images={a.images}
+            address={a.address}
+            description={a.descripcion}
+            mapsUrl={a.mapsUrl}
+            showLocationCta={true}
+          />
+        ))
+      }
     </div>
   </section>
 </Layout>
