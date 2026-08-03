@@ -548,7 +548,7 @@
 /* Crédito fotográfico en Pirámide Mamona */
 .piramide-photo-credit {
   position: absolute;
-  bottom: 1.5rem;
+  top: 1.5rem;
   right: 2rem;
   z-index: 3;
   display: inline-flex;
@@ -581,6 +581,14 @@
 }
 
 @media (max-width: 768px) {
+  .piramide-photo-credit {
+    top: 1rem;
+    right: 1rem;
+    bottom: auto;
+    font-size: 0.7rem;
+    padding: 0.3rem 0.65rem;
+  }
+
   .piramide-badge {
     top: 1.25rem;
     left: 1.25rem;
