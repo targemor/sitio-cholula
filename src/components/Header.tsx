@@ -1,19 +1,50 @@
 import { useState, useEffect } from "react";
 import "./Header.css";
+import { LOCALE_NAMES, type Locale } from "../i18n/config";
+import { localizePathSafe, type RouteKey } from "../i18n/routes";
 
-const navLinks = [
-  { label: "Cholula", href: "/", id: "nav-cholula" },
-  { label: "Dónde hospedarse", href: "/donde-hospedarse", id: "nav-hospedarse" },
-  { label: "Dónde comer", href: "/donde-comer", id: "nav-comer" },
-  { label: "Qué hacer", href: "/que-hacer", id: "nav-que-hacer" },
-  { label: "Guías Turísticos", href: "/guias-turisticos", id: "nav-guias" },
+type NavKey = Extract<RouteKey, "home" | "lodging" | "food" | "things" | "guides">;
+
+const NAV: { key: NavKey; id: string }[] = [
+  { key: "home", id: "nav-cholula" },
+  { key: "lodging", id: "nav-hospedarse" },
+  { key: "food", id: "nav-comer" },
+  { key: "things", id: "nav-que-hacer" },
+  { key: "guides", id: "nav-guias" },
 ];
 
+const FALLBACK_LABELS: Record<NavKey, string> = {
+  home: "Cholula",
+  lodging: "Dónde hospedarse",
+  food: "Dónde comer",
+  things: "Qué hacer",
+  guides: "Guías Turísticos",
+};
 
+interface HeaderProps {
+  lang?: Locale;
+  /** La página actual en los idiomas donde existe. Vacío = sin traducción aún. */
+  alternates?: { locale: Locale; path: string }[];
+  /** Etiquetas ya resueltas para `lang`: la isla no carga el diccionario completo. */
+  labels?: Record<NavKey, string>;
+  ariaLabel?: string;
+}
 
-export default function Header() {
+export default function Header({
+  lang = "es",
+  alternates = [],
+  labels = FALLBACK_LABELS,
+  ariaLabel = "Navegación principal",
+}: HeaderProps) {
   const [activeLink, setActiveLink] = useState("/");
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const navLinks = NAV.map((link) => ({
+    ...link,
+    label: labels[link.key],
+    href: localizePathSafe(link.key, lang),
+  }));
+  const otherLocale = alternates.find((alt) => alt.locale !== lang);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -87,20 +118,34 @@ export default function Header() {
           </a>
         </div>
 
-        {/* ── Right: Desktop Navigation ── */}
-        <nav className="header-nav" aria-label="Navegación principal">
-          {navLinks.map((link) => (
+        {/* ── Right: Desktop Navigation + selector de idioma ── */}
+        <div className="header-right">
+          <nav className="header-nav" aria-label={ariaLabel}>
+            {navLinks.map((link) => (
+              <a
+                key={link.id}
+                id={link.id}
+                href={link.href}
+                className={`header-nav-link${activeLink === link.href ? " header-nav-link--active" : ""}`}
+                onClick={() => setActiveLink(link.href)}
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+
+          {/* Solo se muestra si la página existe en el otro idioma */}
+          {otherLocale && (
             <a
-              key={link.id}
-              id={link.id}
-              href={link.href}
-              className={`header-nav-link${activeLink === link.href ? " header-nav-link--active" : ""}`}
-              onClick={() => setActiveLink(link.href)}
+              className="header-lang"
+              href={otherLocale.path}
+              hrefLang={otherLocale.locale}
+              lang={otherLocale.locale}
             >
-              {link.label}
+              {LOCALE_NAMES[otherLocale.locale]}
             </a>
-          ))}
-        </nav>
+          )}
+        </div>
 
       </div>
     </header>

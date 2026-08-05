@@ -1,4 +1,6 @@
 ---
+import { getLocaleFromPath } from "../i18n/routes";
+import { getStrings } from "../i18n/ui";
 import "./CategoryFilter.css";
 
 export interface Props {
@@ -6,13 +8,19 @@ export interface Props {
 }
 
 const { options } = Astro.props;
+
+const lang = getLocaleFromPath(Astro.url.pathname);
+const s = getStrings(lang);
 ---
 
 <div class="category-filter-wrapper">
   <div class="custom-dropdown" id="category-dropdown">
     <div class="dropdown-header" id="dropdown-header">
-      <span class="dropdown-title" id="dropdown-title"
-        >Todas las categorías</span
+      <!-- data-all-label: el <script> se empaqueta aparte y no ve el frontmatter -->
+      <span
+        class="dropdown-title"
+        id="dropdown-title"
+        data-all-label={s.filter.all}>{s.filter.all}</span
       >
       <svg
         class="dropdown-arrow"
@@ -88,7 +96,7 @@ const { options } = Astro.props;
 
         // Actualizar texto del header
         if (checkedValues.length === 0) {
-          title.textContent = "Todas las categorías";
+          title.textContent = (title as HTMLElement).dataset.allLabel ?? "";
         } else if (checkedValues.length === 1) {
           title.textContent = checkedValues[0];
         } else {

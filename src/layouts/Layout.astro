@@ -6,6 +6,9 @@ import Header from "../components/Header";
 import Footer from "../components/Footer.astro";
 import BottomNav from "../components/BottomNav";
 import CountdownOverlay from "../components/CountdownOverlay.astro";
+import { isDraftLocale, LOCALE_TAGS, OG_LOCALES } from "../i18n/config";
+import { getAlternates, getLocaleFromPath } from "../i18n/routes";
+import { getStrings } from "../i18n/ui";
 
 interface Props {
 	title: string;
@@ -16,9 +19,12 @@ interface Props {
 	jsonLd?: object | object[];
 }
 
+const lang = getLocaleFromPath(Astro.url.pathname);
+const s = getStrings(lang);
+
 const {
 	title,
-	description = "Descubre la magia de Cholula, el corazón de México. Hoteles, restaurantes, qué hacer y guías turísticos certificados en San Pedro Cholula, Pueblo Mágico de Puebla.",
+	description = s.site.description,
 	canonical,
 	ogImage = "/hero-poster.webp",
 	ogType = "website",
@@ -31,10 +37,14 @@ const canonicalUrl = canonical
 	: `${SITE_URL}${Astro.url.pathname}`;
 const ogImageUrl = ogImage.startsWith("http") ? ogImage : `${SITE_URL}${ogImage}`;
 const fullTitle = `${title} | Visit Cholula`;
+
+// Solo se anuncian los idiomas en los que la página existe de verdad.
+const alternates = getAlternates(Astro.url.pathname);
+const defaultAlternate = alternates.find((a) => a.locale === "es");
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -45,6 +55,29 @@ const fullTitle = `${title} | Visit Cholula`;
 		<meta name="description" content={description} />
 		<link rel="canonical" href={canonicalUrl} />
 
+		<!-- ── Idiomas alternativos ─────────────────────────────────────── -->
+		{
+			alternates.map((alt) => (
+				<link
+					rel="alternate"
+					hreflang={LOCALE_TAGS[alt.locale]}
+					href={`${SITE_URL}${alt.path}`}
+				/>
+			))
+		}
+		{
+			defaultAlternate && (
+				<link
+					rel="alternate"
+					hreflang="x-default"
+					href={`${SITE_URL}${defaultAlternate.path}`}
+				/>
+			)
+		}
+
+		<!-- Traducción en curso: no se indexa hasta que el contenido esté en su idioma -->
+		{isDraftLocale(lang) && <meta name="robots" content="noindex, follow" />}
+
 		<!-- ── Open Graph ───────────────────────────────────────────────── -->
 		<meta property="og:type" content={ogType} />
 		<meta property="og:title" content={fullTitle} />
@@ -54,7 +87,7 @@ const fullTitle = `${title} | Visit Cholula`;
 		<meta property="og:image:width" content="1200" />
 		<meta property="og:image:height" content="630" />
 		<meta property="og:image:alt" content={`Visit Cholula — ${title}`} />
-		<meta property="og:locale" content="es_MX" />
+		<meta property="og:locale" content={OG_LOCALES[lang]} />
 		<meta property="og:site_name" content="Visit Cholula" />
 
 		<!-- ── Twitter Card ─────────────────────────────────────────────── -->
@@ -126,7 +159,13 @@ const fullTitle = `${title} | Visit Cholula`;
 	</head>
 	<body>
 		<!-- <CountdownOverlay /> -->
-		<Header client:load />
+		<Header
+			client:load
+			lang={lang}
+			alternates={alternates}
+			labels={s.nav}
+			ariaLabel={s.a11y.mainNav}
+		/>
 
 		<main>
 			<slot />
@@ -141,7 +180,7 @@ const fullTitle = `${title} | Visit Cholula`;
 			id="whatsapp-fab"
 			target="_blank"
 			rel="noopener noreferrer"
-			aria-label="Contactar por WhatsApp"
+			aria-label={s.a11y.whatsapp}
 			data-ga-whatsapp="true"
 		>
 			<svg viewBox="0 0 448 512" width="32" height="32" aria-hidden="true">
@@ -152,7 +191,12 @@ const fullTitle = `${title} | Visit Cholula`;
 			</svg>
 		</a>
 
-		<BottomNav client:idle />
+		<BottomNav
+			client:idle
+			lang={lang}
+			labels={s.bottomNav}
+			ariaLabel={s.a11y.mobileNav}
+		/>
 
 		<!-- Carga diferida del video del hero: el poster es el LCP y el
 		     video se descarga tras el render inicial para no competir con

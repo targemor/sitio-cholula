@@ -1,6 +1,8 @@
 ---
 import { Image } from "astro:assets";
 import SwiperGallery from "./SwiperGallery.astro";
+import { getLocaleFromPath } from "../i18n/routes";
+import { getStrings } from "../i18n/ui";
 import "./BusinessCard.css";
 
 export interface Props {
@@ -27,16 +29,19 @@ export interface Props {
   // Campos VERDE — hoteles
   zona?: string;
   distanciaGranPiramide?: string;
-  aceptaMascotas?: string;
-  tieneAlberca?: string;
-  tieneSpa?: string;
-  terraza?: string;
-  recepcion24h?: string;
   amenidades?: string;
   // Campos VERDE — restaurantes
   tipoComida?: string;
-  petFriendly?: string;
-  musicaEnVivo?: string;
+  // Banderas Sí/No: llegan ya como booleanos desde cholula.json
+  // (normalizado por scripts/normalize-booleans.cjs), así que los chips
+  // no dependen del idioma en que se renderiza la tarjeta.
+  aceptaMascotas?: boolean;
+  tieneAlberca?: boolean;
+  tieneSpa?: boolean;
+  terraza?: boolean;
+  recepcion24h?: boolean;
+  petFriendly?: boolean;
+  musicaEnVivo?: boolean;
   precioPpMxn?: string;
   espacioFisico?: string;
   showLocationCta?: boolean;
@@ -65,15 +70,15 @@ const {
   categoriaPrecio,
   zona,
   distanciaGranPiramide,
-  aceptaMascotas,
-  tieneAlberca,
-  tieneSpa,
-  terraza,
-  recepcion24h,
+  aceptaMascotas = false,
+  tieneAlberca = false,
+  tieneSpa = false,
+  terraza = false,
+  recepcion24h = false,
   amenidades,
   tipoComida,
-  petFriendly,
-  musicaEnVivo,
+  petFriendly = false,
+  musicaEnVivo = false,
   espacioFisico,
   showLocationCta = false,
   showCredits = false,
@@ -94,28 +99,20 @@ function formatUrl(url?: string) {
   }
 }
 
-// Chips de atributos booleanos (Sí/No)
-function isYes(val?: string) {
-  return val && val.toLowerCase().startsWith("sí");
-}
+const lang = getLocaleFromPath(Astro.url.pathname);
+const s = getStrings(lang);
 
+// `zona` y `tipoComida` salen del catálogo: se traducen con los datos (Fase 4),
+// no aquí. El resto son etiquetas de interfaz.
 const chips: { label: string; active: boolean; icon: string }[] = [
   ...(zona ? [{ label: zona, active: true, icon: "📍" }] : []),
   ...(tipoComida ? [{ label: tipoComida, active: true, icon: "🍽️" }] : []),
-  {
-    label: "Pet friendly",
-    active: isYes(aceptaMascotas) || isYes(petFriendly),
-    icon: "🐾",
-  },
-  { label: "Alberca", active: isYes(tieneAlberca), icon: "🏊" },
-  { label: "Spa", active: isYes(tieneSpa), icon: "💆" },
-  {
-    label: "Terraza",
-    active: terraza && !terraza.toLowerCase().startsWith("no"),
-    icon: "🌿",
-  },
-  { label: "Recepción 24h", active: isYes(recepcion24h), icon: "🕐" },
-  { label: "Música en vivo", active: isYes(musicaEnVivo), icon: "🎵" },
+  { label: s.card.chips.petFriendly, active: aceptaMascotas || petFriendly, icon: "🐾" },
+  { label: s.card.chips.pool, active: tieneAlberca, icon: "🏊" },
+  { label: s.card.chips.spa, active: tieneSpa, icon: "💆" },
+  { label: s.card.chips.terrace, active: terraza, icon: "🌿" },
+  { label: s.card.chips.reception24h, active: recepcion24h, icon: "🕐" },
+  { label: s.card.chips.liveMusic, active: musicaEnVivo, icon: "🎵" },
 ].filter((c) => c.active);
 
 const swiperId = `business-swiper-${id || Math.random().toString(36).substr(2, 9)}`;
@@ -245,7 +242,7 @@ const igGradId = `ig-grad-card-${swiperId}`;
             <div class="icon">
               <span style="font-size: 14px; line-height: 1;">📜</span>
             </div>
-            <span><strong>Acreditación:</strong> {acreditacion}</span>
+            <span><strong>{s.card.accreditation}</strong> {acreditacion}</span>
           </li>
         )
       }
@@ -255,7 +252,7 @@ const igGradId = `ig-grad-card-${swiperId}`;
             <div class="icon">
               <span style="font-size: 14px; line-height: 1;">🎯</span>
             </div>
-            <span><strong>Especialización:</strong> {especializacion}</span>
+            <span><strong>{s.card.specialization}</strong> {especializacion}</span>
           </li>
         )
       }
@@ -265,7 +262,7 @@ const igGradId = `ig-grad-card-${swiperId}`;
             <div class="icon">
               <span style="font-size: 14px; line-height: 1;">🗣️</span>
             </div>
-            <span><strong>Idiomas:</strong> {idiomas}</span>
+            <span><strong>{s.card.languages}</strong> {idiomas}</span>
           </li>
         )
       }
@@ -415,8 +412,10 @@ const igGradId = `ig-grad-card-${swiperId}`;
               type="button"
               class="bc-chip bc-chip-more js-toggle-more"
               data-target={`more-${id}`}
+              data-more={s.card.seeMore}
+              data-less={s.card.seeLess}
             >
-              Ver más
+              {s.card.seeMore}
             </button>
           )
         }
@@ -442,7 +441,7 @@ const igGradId = `ig-grad-card-${swiperId}`;
             class="whatsapp-cta maps-cta"
             style="background-color: #4285F4; color: white;"
           >
-            <span>VER UBICACIÓN</span>
+            <span>{s.card.viewLocation}</span>
             <svg viewBox="0 0 384 512" width="16" height="16">
               <path
                 fill="currentColor"
@@ -559,16 +558,17 @@ const igGradId = `ig-grad-card-${swiperId}`;
     const toggleBtns = document.querySelectorAll(".js-toggle-more");
     toggleBtns.forEach((btn) => {
       btn.addEventListener("click", () => {
+        const el = btn as HTMLElement;
         const targetId = btn.getAttribute("data-target");
         if (!targetId) return;
         const targetEl = document.getElementById(targetId);
         if (targetEl) {
           if (targetEl.style.display === "none") {
             targetEl.style.display = "block";
-            btn.textContent = "Ver menos";
+            btn.textContent = el.dataset.less ?? "";
           } else {
             targetEl.style.display = "none";
-            btn.textContent = "Ver más";
+            btn.textContent = el.dataset.more ?? "";
           }
         }
       });

@@ -1,0 +1,160 @@
+{
+  "_comment": "Overlay en inglés de itinerario.json, indexado por id de itinerario. Refleja la estructura del archivo base pero solo con campos traducibles: id, heroBgClass, heroImage, heroCredit, icono y emoji viven solo en la base. Los arrays se fusionan por posición.",
+  "unas-horas": {
+    "tabLabel": "⏳ Only a few hours?",
+    "titulo": "Only a few hours?",
+    "heroKicker": "EXPRESS",
+    "heroTitle": "Only a few hours?",
+    "heroSub": "Cholula fast-track: the essentials.",
+    "elementos": [
+      {
+        "titulo": "Cholula Archaeological Site",
+        "descripcion": "See the pyramid with the largest base in the world",
+        "meta": "Wed–Sun · 9:00–18:00 · $100 MXN · Free for Mexican nationals on Sundays"
+      },
+      {
+        "titulo": "Sanctuary of Our Lady of Los Remedios",
+        "descripcion": "Climb 149 steps and enjoy one of the best viewpoints in San Pedro Cholula",
+        "meta": "Daily · 7:00–19:00 · Free"
+      },
+      {
+        "titulo": "Eagle Knight House",
+        "descripcion": "The oldest civil building in the municipality, with temporary exhibitions",
+        "meta": "Mon–Sun except Wed · 9:00–15:00 · Free"
+      },
+      {
+        "titulo": "San Gabriel Former Convent and Royal Chapel of the Naturales",
+        "meta": "Daily · Free"
+      },
+      {
+        "titulo": "Cholulteca food",
+        "descripcion": "Elephant ear pastries, sopa cholulteca and more at the Cosme del Razo Market"
+      },
+      {
+        "titulo": "Artisanal cacao",
+        "descripcion": "Whisked on the spot at Parque Soria or in the artisans' area of the main square"
+      }
+    ],
+    "consejos": [
+      {
+        "titulo": "Before your visit",
+        "elementos": [
+          "👟 Wear comfortable shoes; much of the route is on foot.",
+          "☀️ Bring sunscreen and water.",
+          "🪜 Reaching the Sanctuary means climbing 149 steps.",
+          "📷 Don't forget your camera or phone."
+        ]
+      }
+    ]
+  },
+  "fin-de-semana": {
+    "tabLabel": "🌞 A weekend?",
+    "mobileTabLabel": "🌞 Weekend",
+    "titulo": "Staying for the weekend?",
+    "heroKicker": "GETAWAY",
+    "heroTitle": "Feel the unique atmosphere",
+    "heroSub": "Weekends in Cholula have a different energy.",
+    "dias": [
+      {
+        "titulo": "DAY 1 — SATURDAY",
+        "elementos": [
+          { "titulo": "Cholula Archaeological Site" },
+          { "titulo": "Sanctuary of Our Lady of Los Remedios" },
+          { "titulo": "Eagle Knight House" },
+          { "titulo": "San Gabriel Former Convent and Royal Chapel" },
+          { "titulo": "Lunch in the historic center" },
+          { "titulo": "Artisanal cacao" },
+          {
+            "titulo": "Evening: enjoy a sangría at La Lunita or Bar Reforma",
+            "meta": "Wed–Fri 17:00–23:00 · Sat 15:00–23:00 · Sun 13:00–16:30 · Mon 15:30–21:30"
+          }
+        ]
+      },
+      {
+        "titulo": "DAY 2 — SUNDAY",
+        "elementos": [
+          { "titulo": "Breakfast in the historic center" },
+          { "titulo": "San Pedro Apóstol Parish Church and Santa María Xixitla Church" },
+          {
+            "titulo": "Voladores de Papantla at Parque Soria",
+            "meta": "Weekends · 11:00–18:00"
+          },
+          {
+            "titulo": "Lunch under the arcades",
+            "chat": "Not sure which one? Ask our chat"
+          },
+          { "titulo": "Handicrafts made by local producers" },
+          {
+            "titulo": "Evening: discover San Pedro Cholula's nightlife",
+            "descripcion": "Bars, terraces, craft breweries and live music",
+            "chat": "Check the platform or ask the smart assistant"
+          }
+        ]
+      }
+    ],
+    "consejos": [
+      {
+        "titulo": "Tip for your visit",
+        "contenido": "Weekends tend to bring more cultural activity and a livelier atmosphere to the historic center. We recommend starting your route early to enjoy the main attractions more calmly."
+      }
+    ]
+  },
+  "tres-dias": {
+    "tabLabel": "🌿 Three days?",
+    "mobileTabLabel": "🌿 3 days",
+    "titulo": "Three days?",
+    "heroKicker": "IN DEPTH",
+    "heroTitle": "Discover it like a local",
+    "heroSub": "Enough time to see beyond the tourist trail.",
+    "elementos": [
+      { "titulo": "Follow the weekend Day 1 itinerary" },
+      { "titulo": "Follow the weekend Day 2 itinerary" },
+      {
+        "titulo": "Tour the city with a certified guide",
+        "descripcion": "History, legends and corners nobody else tells you about"
+      },
+      {
+        "titulo": "Try an experience with local tour operators:",
+        "descripcion": "🐴 Guided horseback rides on Cerro Zapotecas\n🚲 Bike tours around town and its surroundings\n🍺 Brewery tour with craft tasting\n🚋 Panoramic tram ride through the Pueblo Mágico\n🌙 Nighttime callejoneadas: history and legends through Cholula's streets\n🌮 Food tour of traditional antojitos\n🏛️ Guided tour of the Archaeological Site\n🌟 Firefly watching (July season only)",
+        "chat": "Ask our chat which one suits you best — it will connect you with the available options."
+      }
+    ],
+    "daytrip": {
+      "titulo": "🚗 Got an extra day? Make Cholula your base",
+      "elementos": [
+        {
+          "nombre": "Africam Safari",
+          "meta": "One of the best safaris in Latin America · ~40 min by car"
+        },
+        {
+          "nombre": "Puebla Historic Center",
+          "meta": "UNESCO World Heritage Site · ~30 min by car"
+        }
+      ],
+      "footer": "And as evening falls, head back to Cholula: your hotel, your sangría and the pyramid are waiting. 🌙"
+    },
+    "consejos": [
+      {
+        "titulo": "Tip for your visit",
+        "contenido": "With three days, alternate historical routes with food and cultural experiences."
+      }
+    ]
+  },
+  "imprescindibles": {
+    "tabLabel": "⭐ Don't leave without…",
+    "titulo": "Don't leave San Pedro Cholula without…",
+    "heroKicker": "THE BASICS",
+    "heroTitle": "The must-dos",
+    "heroSub": "What you absolutely have to do.",
+    "elementos": [
+      { "titulo": "Climbing the largest pyramid in the world" },
+      { "titulo": "Losing yourself in the volcano views from the Sanctuary of Los Remedios" },
+      { "titulo": "Having a coffee under the Portales watching cholulteca life go by" },
+      { "titulo": "Discovering the San Gabriel Former Convent, a 16th-century gem" },
+      { "titulo": "Tasting the food at the Cosme del Razo Market" },
+      { "titulo": "Ordering a traditional sangría at La Lunita or Bar Reforma" },
+      { "titulo": "Taking home a souvenir 100% made in Cholula" },
+      { "titulo": "Being amazed by the Voladores de Papantla at Parque Soria" }
+    ]
+  }
+}

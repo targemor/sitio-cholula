@@ -1,5 +1,10 @@
 ---
+import { getLocaleFromPath } from '../i18n/routes';
+import { getStrings } from '../i18n/ui';
 import './ImperdiblesCarousel.css';
+
+const lang = getLocaleFromPath(Astro.url.pathname);
+const s = getStrings(lang);
 
 export interface ImperdibleItem {
   img: string;
@@ -34,7 +39,7 @@ function resaltarTexto(texto: string, highlights: string[]): string {
     <!-- Header de sección -->
     <div class="imp-header">
       <span class="imp-kicker">LOS IMPERDIBLES</span>
-      <h2 class="imp-title">Como te lo recomendaría un local</h2>
+      <h2 class="imp-title">{s.carousel.title}</h2>
     </div>
 
     <!-- Carrusel -->
@@ -89,14 +94,14 @@ function resaltarTexto(texto: string, highlights: string[]): string {
             <!-- Contador X/N -->
             <span class="imp-counter">{i + 1}/{total}</span>
             <!-- Botón expandir foto completa -->
-            <button class="imp-zoom-btn" data-zoom-img={item.img} data-zoom-title={item.nombre} aria-label="Ver foto completa">
+            <button class="imp-zoom-btn" data-zoom-img={item.img} data-zoom-title={item.nombre} aria-label={s.carousel.ariaViewFull}>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="15 3 21 3 21 9"></polyline>
                 <polyline points="9 21 3 21 3 15"></polyline>
                 <line x1="21" y1="3" x2="14" y2="10"></line>
                 <line x1="3" y1="21" x2="10" y2="14"></line>
               </svg>
-              <span>Ver completa</span>
+              <span>{s.carousel.viewFull}</span>
             </button>
           </div>
 
@@ -117,7 +122,7 @@ function resaltarTexto(texto: string, highlights: string[]): string {
             </a>
 
             <!-- Dots de paginación -->
-            <div class="imp-dots" role="tablist" aria-label="Navegación de imperdibles">
+            <div class="imp-dots" role="tablist" aria-label={s.carousel.ariaDots}>
               {items.map((_, j) => (
                 <button
                   class={`imp-dot ${j === i ? 'imp-dot--active' : ''}`}
@@ -133,10 +138,10 @@ function resaltarTexto(texto: string, highlights: string[]): string {
       ))}
 
       <!-- Flechas de navegación: fuera del loop, overlay sobre el carrusel -->
-      <button class="imp-arrow imp-arrow--prev" data-dir="prev" aria-label="Anterior">
+      <button class="imp-arrow imp-arrow--prev" data-dir="prev" aria-label={s.carousel.ariaPrev}>
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="15 18 9 12 15 6"/></svg>
       </button>
-      <button class="imp-arrow imp-arrow--next" data-dir="next" aria-label="Siguiente">
+      <button class="imp-arrow imp-arrow--next" data-dir="next" aria-label={s.carousel.ariaNext}>
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polyline points="9 6 15 12 9 18"/></svg>
       </button>
     </div>
@@ -146,7 +151,7 @@ function resaltarTexto(texto: string, highlights: string[]): string {
   <div class="imp-modal" id="imp-modal" aria-hidden="true" role="dialog" aria-modal="true">
     <div class="imp-modal-backdrop" id="imp-modal-backdrop"></div>
     <div class="imp-modal-content">
-      <button class="imp-modal-close" id="imp-modal-close" aria-label="Cerrar foto">
+      <button class="imp-modal-close" id="imp-modal-close" aria-label={s.carousel.ariaClose}>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
           <line x1="18" y1="6" x2="6" y2="18"></line>
           <line x1="6" y1="6" x2="18" y2="18"></line>

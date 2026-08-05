@@ -1,5 +1,10 @@
 ---
+import { getLocaleFromPath, localizePathSafe } from "../i18n/routes";
+import { getStrings } from "../i18n/ui";
 import "./Footer.css";
+
+const lang = getLocaleFromPath(Astro.url.pathname);
+const s = getStrings(lang);
 ---
 
 <footer class="main-footer">
@@ -7,9 +12,7 @@ import "./Footer.css";
     <div class="footer-container">
         <!-- Columna izquierda: info del municipio -->
         <div class="footer-col footer-info">
-            <strong class="footer-section-title"
-                >Dirección de Turismo y Contacto</strong
-            >
+            <strong class="footer-section-title">{s.footer.contactTitle}</strong>
             <p>Calle 4 Oriente 1 Centro, San Pedro Cholula.</p>
             <p>(222) 2 47 33 93, (222) 7 77 29 00, Ext. 2912</p>
         </div>
@@ -35,9 +38,7 @@ import "./Footer.css";
 
         <!-- Columna derecha: redes sociales -->
         <div class="footer-col footer-social">
-            <strong class="footer-section-title"
-                >Síguenos en nuestras redes sociales</strong
-            >
+            <strong class="footer-section-title">{s.footer.socialTitle}</strong>
             <div class="social-icons">
                 <!-- Facebook -->
                 <a
@@ -102,13 +103,13 @@ import "./Footer.css";
             </div>
             <!-- Compartir -->
             <div class="footer-share">
-                <p class="footer-share-title">Comparte nuestra página en:</p>
+                <p class="footer-share-title">{s.footer.shareTitle}</p>
                 <div class="footer-share-buttons">
                     <a
                         href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fvisitcholula.mx"
                         target="_blank"
                         rel="noopener noreferrer"
-                        aria-label="Compartir en Facebook"
+                        aria-label={`${s.footer.shareOn} Facebook`}
                         class="footer-share-btn footer-share-btn--facebook"
                     >
                         <svg viewBox="0 0 448 512" width="16" height="16"
@@ -120,7 +121,7 @@ import "./Footer.css";
                     </a>
                     <a
                         href="mailto:?subject=Visita%20Cholula%20Pueblo%20M%C3%A1gico&body=Te%20comparto%20la%20gu%C3%ADa%20tur%C3%ADstica%20de%20Cholula%3A%20https%3A%2F%2Fvisitcholula.mx"
-                        aria-label="Compartir por Email"
+                        aria-label={s.footer.shareByEmail}
                         class="footer-share-btn footer-share-btn--email"
                     >
                         <svg viewBox="0 0 512 512" width="16" height="16"
@@ -134,7 +135,7 @@ import "./Footer.css";
                         href="https://api.whatsapp.com/send?text=Te%20comparto%20la%20gu%C3%ADa%20tur%C3%ADstica%20de%20Cholula%20%F0%9F%8F%9B%EF%B8%8F%20https%3A%2F%2Fvisitcholula.mx"
                         target="_blank"
                         rel="noopener noreferrer"
-                        aria-label="Compartir en WhatsApp"
+                        aria-label={`${s.footer.shareOn} WhatsApp`}
                         class="footer-share-btn footer-share-btn--whatsapp"
                     >
                         <svg viewBox="0 0 448 512" width="16" height="16"
@@ -148,7 +149,7 @@ import "./Footer.css";
                         href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fvisitcholula.mx"
                         target="_blank"
                         rel="noopener noreferrer"
-                        aria-label="Compartir en LinkedIn"
+                        aria-label={`${s.footer.shareOn} LinkedIn`}
                         class="footer-share-btn footer-share-btn--linkedin"
                     >
                         <svg viewBox="0 0 448 512" width="16" height="16"
@@ -162,7 +163,7 @@ import "./Footer.css";
                         href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fvisitcholula.mx&text=Conoce%20Cholula%2C%20Pueblo%20M%C3%A1gico%20%F0%9F%8F%9B%EF%B8%8F"
                         target="_blank"
                         rel="noopener noreferrer"
-                        aria-label="Compartir en X"
+                        aria-label={`${s.footer.shareOn} X`}
                         class="footer-share-btn footer-share-btn--x"
                     >
                         <svg viewBox="0 0 512 512" width="16" height="16"
@@ -177,7 +178,7 @@ import "./Footer.css";
         </div>
     </div>
     <!-- Aviso de privacidad -->
-    <a href="/aviso-de-privacidad" class="footer-privacy-link"
-        >Aviso de privacidad</a
+    <a href={localizePathSafe("privacy", lang)} class="footer-privacy-link"
+        >{s.footer.privacy}</a
     >
 </footer>

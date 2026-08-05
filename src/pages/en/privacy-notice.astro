@@ -1,0 +1,138 @@
+---
+/**
+ * Traducción de referencia del aviso de privacidad.
+ *
+ * ⚠️ El original en español es el documento con validez legal: está redactado
+ * bajo la LFPDPPP mexicana. Esta versión es una traducción de cortesía para
+ * quien no lee español y NO ha sido revisada por nadie con criterio legal.
+ * Antes de quitar el `noindex` de `/en/` conviene que la revise quien
+ * corresponda, o añadir una nota que remita al original.
+ */
+import Layout from "../../layouts/Layout.astro";
+import { getPageCopy } from "../../i18n/pages";
+import "../../styles/aviso-de-privacidad.css";
+
+const copy = getPageCopy("en");
+---
+
+<Layout title={copy.privacy.seoTitle}>
+  <section class="hero" aria-hidden="true">
+    <video
+      class="hero-video"
+      poster="/hero-poster.webp"
+      muted
+      loop
+      playsinline
+      preload="none"
+      aria-hidden="true"
+    >
+      <source data-src="/video.mp4" type="video/mp4" />
+    </video>
+    <div class="hero-overlay"></div>
+  </section>
+
+  <section class="privacy-section">
+    <div class="container">
+      <h1 class="privacy-title">Privacy Statement</h1>
+      <p class="privacy-updated">Last updated: June 2026</p>
+
+      <div class="privacy-body">
+        <h2>1. Identity of the Data Controller</h2>
+        <p>
+          The visitcholula.mx team determines the processing of personal data
+          collected through the site's WhatsApp chatbot.
+        </p>
+
+        <h2>2. Personal Data Collected</h2>
+        <p>
+          To fulfil its assistance and information purposes, the WhatsApp
+          chatbot collects only the following personal data, directly:
+        </p>
+        <ul>
+          <li>
+            <strong>Basic identification:</strong> the username configured in your
+            WhatsApp profile and your mobile phone number.
+          </li>
+          <li>
+            <strong>Location:</strong> your real-time geographic location (only if
+            you choose to send it voluntarily and explicitly, in order to receive
+            recommendations for nearby places or attractions).
+          </li>
+          <li>
+            <strong>Interaction:</strong> the messages, questions, travel preferences
+            and options you select within the chatbot menu.
+          </li>
+        </ul>
+        <p class="privacy-note">
+          ⚠️ Important note: this service does not request or store sensitive
+          personal data (such as beliefs, ethnic origin, health status or
+          financial information). Please do not share that kind of information
+          in your messages.
+        </p>
+
+        <h2>3. Purposes of Processing</h2>
+        <p>
+          The data collected will be used strictly for the following essential
+          purposes:
+        </p>
+        <ul>
+          <li>
+            Answering, guiding and responding to your queries about tourist
+            information, events, food, lodging and activities in Cholula.
+          </li>
+          <li>
+            Sending the recommendations or digital guides that you yourself
+            request, automatically.
+          </li>
+          <li>Generating anonymized statistics to improve the service.</li>
+        </ul>
+        <p>Additionally, interaction data will be used to:</p>
+        <ul>
+          <li>
+            Generate internal statistics and usage reports in a completely
+            anonymized form (without linking questions to your phone number), in
+            order to identify visitors' main questions and improve the chatbot
+            service.
+          </li>
+        </ul>
+
+        <h2>4. Data Transfers</h2>
+        <p>
+          The Data Controller undertakes not to transfer, sell or share your
+          personal data with local businesses, third-party companies or external
+          agencies. Data is processed for the sole purpose of providing you with
+          the tourist information you requested.
+        </p>
+
+        <h2>5. User Rights (Access, Cancellation and Objection)</h2>
+        <p>
+          You have the right to know what data we hold about your interaction,
+          to ask that no further messages be sent to you, and to request the
+          deletion of your record from our database. To exercise these rights,
+          you may send a request by email to: <a
+            href="mailto:plataformaturisticacholula@gmail.com"
+          >
+            plataformaturisticacholula@gmail.com</a
+          > In your message you only need to state your WhatsApp username and the
+          phone number you want removed or consulted.
+        </p>
+
+        <h2>6. Use of the WhatsApp Platform</h2>
+        <p>
+          This service runs on WhatsApp, an external platform owned by Meta
+          Platforms, Inc. Use of that application is independently subject to
+          WhatsApp's Terms of Service and Privacy Policy. The Data Controller
+          neither owns nor is responsible for how Meta processes its users'
+          information outside this chatbot.
+        </p>
+
+        <h2>7. Changes to this Privacy Notice</h2>
+        <p>
+          This privacy notice may be modified or updated to reflect new chatbot
+          features or technical changes. Any update will be permanently
+          available for consultation on the official website: visitcholula.mx.
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>

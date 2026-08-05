@@ -1,0 +1,20 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import HomeSections from "../../components/HomeSections.astro";
+import { localizePath } from "../../i18n/routes";
+import { getPageCopy } from "../../i18n/pages";
+import { buildHomeSchemas } from "../../lib/home-schema";
+import "../../styles/index.css";
+
+const lang = "en";
+const copy = getPageCopy(lang).home;
+---
+
+<Layout
+  title={copy.seoTitle}
+  description={copy.seoDesc}
+  canonical={localizePath("home", lang)}
+  jsonLd={buildHomeSchemas(lang)}
+>
+  <HomeSections lang={lang} />
+</Layout>

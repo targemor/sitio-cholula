@@ -2,52 +2,92 @@
 import Layout from "../layouts/Layout.astro";
 import BusinessCard from "../components/BusinessCard.astro";
 import CategoryFilter from "../components/CategoryFilter.astro";
-import cholulaData from "../data/cholula.json";
+import { DEFAULT_LOCALE, LOCALES, type Locale } from "../i18n/config";
+import { isImplemented, localizePath, localizePathSafe } from "../i18n/routes";
+import {
+  DIRECTORIES,
+  DIRECTORY_KEYS,
+  type DirectoryKey,
+} from "../lib/directories";
+import { getBusinesses } from "../lib/business-data";
 import "../styles/slug.css";
 
-export async function getStaticPaths() {
-  return [
-    {
-      params: { slug: "donde-hospedarse" },
-      props: {
-        title: "DÓNDE HOSPEDARSE",
-        color: "var(--color-primary)",
-        data: cholulaData.hoteles,
-      },
-    },
-    {
-      params: { slug: "donde-comer" },
-      props: {
-        title: "DÓNDE COMER",
-        color: "var(--color-accent)",
-        data: cholulaData.restaurantes,
-      },
-    },
-    {
-      params: { slug: "que-hacer" },
-      props: {
-        title: "QUÉ HACER",
-        color: "var(--color-secondary)",
-        data: cholulaData.queHacer,
-      },
-    },
-    {
-      params: { slug: "guias-turisticos" },
-      props: {
-        title: "GUÍAS TURÍSTICOS",
-        color: "#22c55e",
-        data: cholulaData.guiasTuristicos,
-        description:
-          "GUÍAS CERTIFICADOS POR SECTUR — Descubre Cholula de una manera más personalizada junto a guías certificados que adaptan la experiencia a tus intereses y te ayudan a comprender la historia, tradiciones y patrimonio de la ciudad más allá de una visita convencional.",
-      },
-    },
-  ];
+/**
+ * Páginas de directorio (hoteles, restaurantes, qué hacer, guías).
+ *
+ * Es una ruta `[...slug]` y no `[slug]` porque los idiomas con prefijo ocupan dos
+ * segmentos: `/en/where-to-eat`. Así ambos idiomas se sirven desde un solo archivo,
+ * sin duplicar el markup.
+ */
+
+interface Copy {
+  title: string;
+  seoTitle: string;
+  seoDesc: string;
+  description?: string;
 }
 
-const { title, color, data, description } = Astro.props;
-const slug = Astro.params.slug as string;
+/**
+ * Textos por idioma. El inglés se llena en la Fase 5; hasta entonces cae al
+ * español, que es visible pero inofensivo porque `/en/` se sirve con `noindex`.
+ */
+const COPY: Record<Locale, Partial<Record<DirectoryKey, Copy>>> = {
+  es: {
+    lodging: {
+      title: "DÓNDE HOSPEDARSE",
+      seoTitle: "Hoteles en Cholula, Puebla — Dónde Hospedarse",
+      seoDesc:
+        "Los mejores hoteles en San Pedro Cholula, Puebla. Encuentra alojamiento cerca de la Gran Pirámide, el centro histórico y la zona universitaria. Hoteles boutique, económicos y con todas las comodidades.",
+    },
+    food: {
+      title: "DÓNDE COMER",
+      seoTitle: "Restaurantes en Cholula, Puebla — Dónde Comer",
+      seoDesc:
+        "Descubre los mejores restaurantes, bares y cafés en San Pedro Cholula, Puebla. Gastronomía mexicana, cocina internacional, opciones vegetarianas y experiencias culinarias únicas en el corazón del Pueblo Mágico.",
+    },
+    things: {
+      title: "QUÉ HACER",
+      seoTitle: "Qué Hacer en Cholula, Puebla — Actividades y Atracciones",
+      seoDesc:
+        "Descubre qué hacer en San Pedro Cholula: visita la Gran Pirámide, el Santuario de la Virgen de los Remedios, el Convento de San Gabriel y mucho más. Actividades culturales, turísticas y de aventura en Cholula, Puebla.",
+    },
+    guides: {
+      title: "GUÍAS TURÍSTICOS",
+      seoTitle: "Guías Turísticos Certificados en Cholula, Puebla",
+      seoDesc:
+        "Guías turísticos certificados por SECTUR en San Pedro Cholula. Tours personalizados por la Gran Pirámide, iglesias coloniales, mercados y el centro histórico. Conoce Cholula con expertos locales.",
+      description:
+        "GUÍAS CERTIFICADOS POR SECTUR — Descubre Cholula de una manera más personalizada junto a guías certificados que adaptan la experiencia a tus intereses y te ayudan a comprender la historia, tradiciones y patrimonio de la ciudad más allá de una visita convencional.",
+    },
+  },
+  en: {},
+};
 
-const isRestaurantes = title === "DÓNDE COMER";
+/** "Inicio" del breadcrumb. Se mueve a src/i18n/ui.ts en la Fase 2. */
+const HOME_LABEL: Record<Locale, string> = { es: "Inicio", en: "Home" };
+
+export async function getStaticPaths() {
+  return LOCALES.flatMap((locale) =>
+    DIRECTORY_KEYS.filter((key) => isImplemented(key, locale)).map((key) => ({
+      // localizePath devuelve "/donde-comer" o "/en/where-to-eat";
+      // el parámetro va sin la barra inicial.
+      params: { slug: localizePath(key, locale).slice(1) },
+      props: { key, locale },
+    })),
+  );
+}
+
+const { key, locale } = Astro.props as { key: DirectoryKey; locale: Locale };
+
+const { color, section, schema } = DIRECTORIES[key];
+const data = getBusinesses(section, locale);
+const copy = (COPY[locale][key] ?? COPY[DEFAULT_LOCALE][key]) as Copy;
+const { title, seoTitle, seoDesc, description } = copy;
+
+const path = localizePath(key, locale);
+
+// Por clave de ruta, no por título: el título es texto visible y se traduce.
+const isRestaurantes = key === "food";
 const clasificaciones = isRestaurantes
   ? (Array.from(
       new Set(data.map((item: any) => item.clasificacion).filter(Boolean)),
@@ -57,50 +97,20 @@ const clasificaciones = isRestaurantes
 const FALLBACK_IMG =
   "https://images.unsplash.com/photo-1605335191599-4458d98e1690?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80";
 
-// ── SEO config por slug ──────────────────────────────────────────────────────
-const SEO_CONFIG: Record<string, { seoTitle: string; seoDesc: string; schema: string }> = {
-  "donde-hospedarse": {
-    seoTitle: "Hoteles en Cholula, Puebla — Dónde Hospedarse",
-    seoDesc: "Los mejores hoteles en San Pedro Cholula, Puebla. Encuentra alojamiento cerca de la Gran Pirámide, el centro histórico y la zona universitaria. Hoteles boutique, económicos y con todas las comodidades.",
-    schema: "LodgingBusiness",
-  },
-  "donde-comer": {
-    seoTitle: "Restaurantes en Cholula, Puebla — Dónde Comer",
-    seoDesc: "Descubre los mejores restaurantes, bares y cafés en San Pedro Cholula, Puebla. Gastronomía mexicana, cocina internacional, opciones vegetarianas y experiencias culinarias únicas en el corazón del Pueblo Mágico.",
-    schema: "FoodEstablishment",
-  },
-  "que-hacer": {
-    seoTitle: "Qué Hacer en Cholula, Puebla — Actividades y Atracciones",
-    seoDesc: "Descubre qué hacer en San Pedro Cholula: visita la Gran Pirámide, el Santuario de la Virgen de los Remedios, el Convento de San Gabriel y mucho más. Actividades culturales, turísticas y de aventura en Cholula, Puebla.",
-    schema: "TouristAttraction",
-  },
-  "guias-turisticos": {
-    seoTitle: "Guías Turísticos Certificados en Cholula, Puebla",
-    seoDesc: "Guías turísticos certificados por SECTUR en San Pedro Cholula. Tours personalizados por la Gran Pirámide, iglesias coloniales, mercados y el centro histórico. Conoce Cholula con expertos locales.",
-    schema: "LocalBusiness",
-  },
-};
-
-const seo = SEO_CONFIG[slug] ?? {
-  seoTitle: title,
-  seoDesc: description ?? "",
-  schema: "Thing",
-};
-
 // ── JSON-LD ItemList ──────────────────────────────────────────────────────────
 const SITE_URL = "https://visitcholula.mx";
 const itemListSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  "name": seo.seoTitle,
-  "description": seo.seoDesc,
-  "url": `${SITE_URL}/${slug}`,
+  "name": seoTitle,
+  "description": seoDesc,
+  "url": `${SITE_URL}${path}`,
   "numberOfItems": data.length,
   "itemListElement": (data as any[]).map((item, index) => ({
     "@type": "ListItem",
     "position": index + 1,
     "item": {
-      "@type": seo.schema,
+      "@type": schema,
       "name": item.nombre,
       "description": item.descripcion ?? undefined,
       "address": item.direccion ? {
@@ -129,16 +139,16 @@ const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Inicio", "item": SITE_URL },
-    { "@type": "ListItem", "position": 2, "name": seo.seoTitle, "item": `${SITE_URL}/${slug}` },
+    { "@type": "ListItem", "position": 1, "name": HOME_LABEL[locale], "item": `${SITE_URL}${localizePathSafe("home", locale)}` },
+    { "@type": "ListItem", "position": 2, "name": seoTitle, "item": `${SITE_URL}${path}` },
   ],
 };
 ---
 
 <Layout
-  title={seo.seoTitle}
-  description={seo.seoDesc}
-  canonical={`/${slug}`}
+  title={seoTitle}
+  description={seoDesc}
+  canonical={path}
   jsonLd={[itemListSchema, breadcrumbSchema]}
 >
   <!-- Hero -->
@@ -200,22 +210,22 @@ const breadcrumbSchema = {
                 tiktok={item.social?.tiktok || undefined}
                 description={item.descripcion || undefined}
                 clasificacion={item.clasificacion || item.categoria || item.tipo || undefined}
-                acreditacion={slug === "guias-turisticos" ? (item.clasificacion || undefined) : undefined}
+                acreditacion={key === "guides" ? (item.clasificacion || undefined) : undefined}
                 especializacion={item.especializacion || undefined}
                 idiomas={item.idiomas || undefined}
                 toursQueOfrece={item.toursQueOfrece || undefined}
                 zona={item.zona || item.dondeEsta || undefined}
                 distanciaGranPiramide={item.distanciaGranPiramide || undefined}
                 categoriaPrecio={item.categoriaPrecio || undefined}
-                aceptaMascotas={item.aceptaMascotas || undefined}
-                tieneAlberca={item.tieneAlberca || undefined}
-                tieneSpa={item.tieneSpa || undefined}
-                terraza={item.terraza || undefined}
-                recepcion24h={item.recepcion24h || undefined}
+                aceptaMascotas={item.aceptaMascotas}
+                tieneAlberca={item.tieneAlberca}
+                tieneSpa={item.tieneSpa}
+                terraza={item.terraza}
+                recepcion24h={item.recepcion24h}
                 amenidades={item.amenidades || undefined}
                 tipoComida={item.tipoComida || undefined}
-                petFriendly={item.petFriendly || undefined}
-                musicaEnVivo={item.musicaEnVivo || undefined}
+                petFriendly={item.petFriendly}
+                musicaEnVivo={item.musicaEnVivo}
                 precioPpMxn={item.precioPpMxn || undefined}
                 espacioFisico={item.espacioFisico || undefined}
               />

@@ -1,0 +1,89 @@
+{
+  "_comment": "Overlay en inglés de home.json, indexado por id. Solo campos traducibles: imagenes, mapas e iconos viven en el archivo base. Los `highlights` DEBEN ser subcadenas exactas de su `descripcion`: el carrusel los resalta con una expresion regular y, si no coinciden, no se resalta nada.",
+  "imperdibles": {
+    "cerro-zapotecas": {
+      "nombre": "Cerro Zapotecas",
+      "categoria": "Nature",
+      "descripcion": "Did you know Cholula has its own forest? Cerro Zapotecas is the only one, and it's the favorite hideaway of cyclists and runners who lose themselves among pines with views nobody expects to find minutes from downtown.",
+      "highlights": ["forest", "cyclists and runners", "views nobody expects"]
+    },
+    "convento-de-san-gabriel-y-capilla-real": {
+      "nombre": "San Gabriel Convent and Royal Chapel",
+      "categoria": "Temple",
+      "descripcion": "You are standing on the very ground where Quetzalcóatl was once worshipped. Today, above those ruins, rises a chapel with 9 naves and 48 domes inspired by a mosque — the one with the most domes in ALL of Mexico.",
+      "highlights": ["Quetzalcóatl", "9 naves and 48 domes", "most domes in ALL of Mexico"]
+    },
+    "mercado-municipal-cosme-del-razo": {
+      "nombre": "Cosme del Razo Municipal Market",
+      "categoria": "Market",
+      "descripcion": "The largest food market in the region — elephant ear pastries, traditional cacao and seasonal flavors. This is where real cholultecas do their daily shopping, far from the tourist circuit.",
+      "highlights": ["elephant ear pastries", "traditional cacao", "real cholultecas"]
+    },
+    "iglesia-de-santa-maria-xixitla": {
+      "nombre": "Santa María Xixitla Church",
+      "categoria": "Temple",
+      "descripcion": "Just off the tourist circuit, this 16th-century church hides altars completely covered in gold. Most tourists never set foot inside — you can.",
+      "highlights": ["16th-century", "altars completely covered in gold", "Most tourists never set foot inside"]
+    },
+    "zona-arqueologica": {
+      "nombre": "Archaeological Site",
+      "categoria": "Archaeology",
+      "descripcion": "Beneath your feet lies a pyramid bigger than Giza — not in height, but in volume: the largest ever built in the world. Walk its excavated tunnels and climb 149 steps to the church crowning the summit.",
+      "highlights": ["bigger than Giza", "largest ever built in the world", "excavated tunnels"]
+    },
+    "santuario-de-la-virgen-de-los-remedios": {
+      "nombre": "Sanctuary of the Virgin of Los Remedios",
+      "categoria": "Temple",
+      "descripcion": "149 steps separate you from the best view in Cholula. At the top waits a church built literally on top of a pyramid, with Popocatépetl smoking in the background — the city's most iconic postcard.",
+      "highlights": ["149 steps", "on top of a pyramid", "Popocatépetl smoking", "most iconic postcard"]
+    },
+    "parroquia-de-san-pedro": {
+      "nombre": "San Pedro Parish Church",
+      "categoria": "Temple",
+      "descripcion": "Look for it on the skyline: its tower is the tallest of all Cholula's churches, and it lights up the nights as the true religious heart of downtown.",
+      "highlights": ["the tallest of all Cholula's churches", "religious heart of downtown"]
+    },
+    "portal-guerrero": {
+      "nombre": "Portal Guerrero",
+      "categoria": "Architecture",
+      "descripcion": "46 arches, 170 meters, the longest arcade in all of Latin America — and under each arch, a different restaurant or café waiting for you to sit down.",
+      "highlights": ["46 arches", "170 meters", "longest arcade in all of Latin America"]
+    },
+    "iglesia-de-santiago-mixquitla": {
+      "nombre": "Santiago Mixquitla Church",
+      "categoria": "Temple",
+      "descripcion": "More than 400 years of Gothic history hidden in a neighborhood almost nobody visits. Its facade conceals in stone the figure of Saint James as Pilgrim and Warrior — find it yourself.",
+      "highlights": ["400 years", "Gothic history", "almost nobody visits"]
+    },
+    "museo-casa-del-caballero-aguila": {
+      "nombre": "Eagle Knight House Museum",
+      "categoria": "Museum",
+      "descripcion": "Take the same photo as María Félix on the balcony where \"Enamorada\" was filmed — and find out why this 400-year-old house is named after an Aztec warrior.",
+      "highlights": ["María Félix", "\"Enamorada\"", "400-year-old", "Aztec warrior"]
+    },
+    "parque-soria": {
+      "nombre": "Parque Soria",
+      "categoria": "Park",
+      "descripcion": "Voladores launching themselves from up high, handicrafts everywhere, and the obligatory photo at the \"San Pedro Cholula\" letters — with the pyramid and its church as the backdrop.",
+      "highlights": ["Voladores", "handicrafts", "pyramid and its church"]
+    }
+  },
+  "visitanos": {
+    "lodging": { "title": "Hotels" },
+    "food": { "title": "Restaurants · Bars" },
+    "things": { "title": "Experiences" },
+    "guides": { "title": "Certified guides" }
+  },
+  "artesanias": {
+    "parque-soria": {
+      "label": "Parque Soria",
+      "address": "Parque Soria, San Pedro Cholula",
+      "descripcion": "The craft heart of Cholula: black clay, talavera, loom-woven textiles and one-of-a-kind pieces made by cholulteca hands. Every piece tells a story."
+    },
+    "zona-centro": {
+      "label": "Downtown",
+      "address": "Downtown, San Pedro Cholula",
+      "descripcion": "Along Portal Guerrero and the streets of the historic center you'll find local artisans with their workshops open — amate paper, clay jewelry and hand embroidery."
+    }
+  }
+}

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./BottomNav.css";
+import type { Locale } from "../i18n/config";
+import { localizePathSafe, type RouteKey } from "../i18n/routes";
 
 // Iconos SVG en línea
 const MessageCircleIcon = ({ className }: { className?: string }) => (
@@ -46,16 +48,43 @@ const MapIcon = ({ className }: { className?: string }) => (
     </svg>
 );
 
-const navItems = [
-    { id: 'destinos', label: 'Explora', href: '/#hero', icon: PaperPlaneIcon },
-    { id: 'hoteles', label: 'Hoteles', href: '/donde-hospedarse', icon: HomeIcon },
-    { id: 'restaurantes', label: 'Cocina', href: '/donde-comer', icon: UtensilsIcon },
-    { id: 'quehacer', label: 'Qué Hacer', href: '/que-hacer', icon: MapIcon },
-    { id: 'guias', label: 'Guías', href: '/guias-turisticos', icon: UserIcon },
+type NavKey = Extract<RouteKey, 'home' | 'lodging' | 'food' | 'things' | 'guides'>;
+
+const NAV: { id: string; key: NavKey; hash?: string; icon: any }[] = [
+    { id: 'destinos', key: 'home', hash: '#hero', icon: PaperPlaneIcon },
+    { id: 'hoteles', key: 'lodging', icon: HomeIcon },
+    { id: 'restaurantes', key: 'food', icon: UtensilsIcon },
+    { id: 'quehacer', key: 'things', icon: MapIcon },
+    { id: 'guias', key: 'guides', icon: UserIcon },
 ];
 
-export default function BottomNav() {
+const FALLBACK_LABELS: Record<NavKey, string> = {
+    home: 'Explora',
+    lodging: 'Hoteles',
+    food: 'Cocina',
+    things: 'Qué Hacer',
+    guides: 'Guías',
+};
+
+interface BottomNavProps {
+    lang?: Locale;
+    /** Etiquetas ya resueltas para `lang`: la isla no carga el diccionario completo. */
+    labels?: Record<NavKey, string>;
+    ariaLabel?: string;
+}
+
+export default function BottomNav({
+    lang = 'es',
+    labels = FALLBACK_LABELS,
+    ariaLabel = 'Navegación principal móvil',
+}: BottomNavProps) {
     const [activeItem, setActiveItem] = useState<string>('destinos'); // default
+
+    const navItems = NAV.map((item) => ({
+        ...item,
+        label: labels[item.key],
+        href: `${localizePathSafe(item.key, lang)}${item.hash ?? ''}`,
+    }));
 
     useEffect(() => {
         const hash = window.location.hash;
@@ -91,7 +120,7 @@ export default function BottomNav() {
                 id="bottom-nav"
                 className="bottom-nav"
                 role="navigation"
-                aria-label="Navegación principal móvil"
+                aria-label={ariaLabel}
             >
                 {navItems.map((item) => {
                     const isActive = activeItem === item.id;

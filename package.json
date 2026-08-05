@@ -6,7 +6,8 @@
     "node": ">=22.12.0"
   },
   "scripts": {
-    "extract": "node scripts/extract-wp-data.cjs",
+    "extract": "node scripts/extract-wp-data.cjs && node scripts/normalize-booleans.cjs",
+    "normalize-data": "node scripts/normalize-booleans.cjs",
     "convert-images": "node scripts/convert-to-webp.js",
     "dev": "astro dev",
     "build": "astro build && node scripts/purge-css.cjs",

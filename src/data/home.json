@@ -1,0 +1,237 @@
+{
+  "imperdibles": [
+    {
+      "id": "cerro-zapotecas",
+      "img": "/home/imperdibles/Cerro zapotecas Anabeli Arredondo.webp",
+      "mapUrl": "https://maps.app.goo.gl/8Q1bA5KYb3WZyMi26",
+      "categoryEmoji": "🌲",
+      "nombre": "Cerro Zapotecas",
+      "categoria": "Naturaleza",
+      "descripcion": "¿Sabías que Cholula tiene su propio bosque? El Cerro Zapotecas es el único, y es el escondite favorito de ciclistas y corredores para perderse entre pinos con vistas que nadie espera encontrar a minutos del centro.",
+      "highlights": [
+        "bosque",
+        "ciclistas y corredores",
+        "vistas que nadie espera"
+      ]
+    },
+    {
+      "id": "convento-de-san-gabriel-y-capilla-real",
+      "img": "/home/imperdibles/convento de san gabriel y capilla real Anabeli arredondo.webp",
+      "mapUrl": "https://maps.app.goo.gl/8vPuJBFNiYY7BFQZ7",
+      "categoryEmoji": "⛪",
+      "nombre": "Convento de San Gabriel y Capilla Real",
+      "categoria": "Templo",
+      "descripcion": "Estás pisando el mismo lugar donde alguna vez se rindió culto a Quetzalcóatl. Hoy, sobre esas ruinas, se alza una capilla con 9 naves y 48 cúpulas inspiradas en una mezquita — la que más cúpulas tiene en TODO México.",
+      "highlights": [
+        "Quetzalcóatl",
+        "9 naves y 48 cúpulas",
+        "más cúpulas tiene en TODO México"
+      ]
+    },
+    {
+      "id": "mercado-municipal-cosme-del-razo",
+      "img": "/home/imperdibles/COSME-DEL-RAZO.webp",
+      "mapUrl": "https://maps.app.goo.gl/qbM2UjBPHYMt9cEm8",
+      "categoryEmoji": "🛒",
+      "nombre": "Mercado Municipal Cosme del Razo",
+      "categoria": "Mercado",
+      "descripcion": "El centro de abasto más grande de la región — orejas de elefante, cacao tradicional y sabores de temporada. Es el lugar donde los cholultecas de verdad hacen su compra diaria, lejos del circuito más turístico.",
+      "highlights": [
+        "orejas de elefante",
+        "cacao tradicional",
+        "cholultecas de verdad"
+      ]
+    },
+    {
+      "id": "iglesia-de-santa-maria-xixitla",
+      "img": "/home/imperdibles/Santa María xixitla Mike Santana.webp",
+      "mapUrl": "https://maps.app.goo.gl/dZqVtAx69sH8Xzn27",
+      "categoryEmoji": "⛪",
+      "nombre": "Iglesia de Santa María Xixitla",
+      "categoria": "Templo",
+      "descripcion": "A un lado del circuito turístico, este templo del siglo XVI esconde altares completamente bañados en oro. La mayoría de los turistas nunca lo pisa — tú sí puedes.",
+      "highlights": [
+        "siglo XVI",
+        "altares completamente bañados en oro",
+        "mayoría de los turistas nunca lo pisa"
+      ]
+    },
+    {
+      "id": "zona-arqueologica",
+      "img": "/home/imperdibles/Zona arqueológica Mike Santana_.webp",
+      "mapUrl": "https://maps.app.goo.gl/JxNqVGLRnmivHBUf7",
+      "categoryEmoji": "🏛️",
+      "nombre": "Zona Arqueológica",
+      "categoria": "Arqueología",
+      "descripcion": "Bajo tus pies hay una pirámide más grande que la de Giza — no en altura, sino en volumen: la más grande jamás construida en el mundo. Recorre sus túneles excavados y sube 149 escalones hasta la iglesia que corona la cima.",
+      "highlights": [
+        "más grande que la de Giza",
+        "más grande jamás construida en el mundo",
+        "túneles excavados"
+      ]
+    },
+    {
+      "id": "santuario-de-la-virgen-de-los-remedios",
+      "img": "/home/imperdibles/Santuario de la virgen de los remedios - Mike Santana_.webp",
+      "mapUrl": "https://maps.app.goo.gl/8vPuJBFNiYY7BFQZ7",
+      "categoryEmoji": "⛪",
+      "nombre": "Santuario de la Virgen de los Remedios",
+      "categoria": "Templo",
+      "descripcion": "149 escalones te separan de la mejor vista de Cholula. Arriba te espera un templo construido literalmente encima de una pirámide, con el Popocatépetl humeando de fondo — la postal más icónica de la ciudad.",
+      "highlights": [
+        "149 escalones",
+        "encima de una pirámide",
+        "Popocatépetl humeando",
+        "postal más icónica"
+      ]
+    },
+    {
+      "id": "parroquia-de-san-pedro",
+      "img": "/home/imperdibles/parroquia de san pedro - Mike santana.webp",
+      "mapUrl": "https://maps.app.goo.gl/oBXvUGmDDLBXJCuV9",
+      "categoryEmoji": "⛪",
+      "nombre": "Parroquia de San Pedro",
+      "categoria": "Templo",
+      "descripcion": "Búscala en el horizonte: su torre es la más alta de todos los templos de Cholula, e ilumina las noches como el verdadero corazón religioso del centro.",
+      "highlights": [
+        "la más alta de todos los templos",
+        "corazón religioso del centro"
+      ]
+    },
+    {
+      "id": "portal-guerrero",
+      "img": "/home/imperdibles/Portal Guerrero - Mike Santana.webp",
+      "mapUrl": "https://maps.app.goo.gl/BLV4mVK37xfFuHkQ9",
+      "categoryEmoji": "🏛️",
+      "nombre": "Portal Guerrero",
+      "categoria": "Arquitectura",
+      "descripcion": "46 arcos, 170 metros, el portal más largo de toda Latinoamérica — y debajo de cada arco, un restaurante o cafetería distinta esperando que te sientes.",
+      "highlights": [
+        "46 arcos",
+        "170 metros",
+        "más largo de toda Latinoamérica"
+      ]
+    },
+    {
+      "id": "iglesia-de-santiago-mixquitla",
+      "img": "/home/imperdibles/iglesia De Santiago mixquitla - Mike Santana.webp",
+      "mapUrl": "https://maps.app.goo.gl/XkGXhA74DJe7nJ3U8",
+      "categoryEmoji": "⛪",
+      "nombre": "Iglesia de Santiago Mixquitla",
+      "categoria": "Templo",
+      "descripcion": "Más de 400 años de historia gótica escondidos en un barrio que casi nadie visita. Su fachada esconde en piedra la figura de Santiago Peregrino y Guerrero — búscala tú mismo.",
+      "highlights": [
+        "400 años",
+        "historia gótica",
+        "casi nadie visita"
+      ]
+    },
+    {
+      "id": "museo-casa-del-caballero-aguila",
+      "img": "/home/imperdibles/MUSEO CASA CABALLERO AGUILA - MIKE SANTANA.webp",
+      "mapUrl": "https://maps.app.goo.gl/YNPpDpHxEfWDBZuQ8",
+      "categoryEmoji": "🦅",
+      "nombre": "Museo Casa del Caballero Águila",
+      "categoria": "Museo",
+      "descripcion": "Toma la misma foto que María Félix en el balcón donde se filmó \"Enamorada\" — y descubre por qué esta casa de 400 años lleva el nombre de un guerrero azteca.",
+      "highlights": [
+        "María Félix",
+        "\"Enamorada\"",
+        "400 años",
+        "guerrero azteca"
+      ]
+    },
+    {
+      "id": "parque-soria",
+      "img": "/home/imperdibles/PARQUE-SORIA.webp",
+      "mapUrl": "https://maps.app.goo.gl/2Vn7eR4YKTmJPiWs5",
+      "categoryEmoji": "🎪",
+      "nombre": "Parque Soria",
+      "categoria": "Parque",
+      "descripcion": "Voladores lanzándose desde lo alto, artesanías por todos lados, y la foto obligada en las letras de \"San Pedro Cholula\" — con la pirámide y su iglesia como telón de fondo.",
+      "highlights": [
+        "Voladores",
+        "artesanías",
+        "pirámide y su iglesia"
+      ]
+    }
+  ],
+  "eventos": [
+    "/eventos/payasos-1024x1024-1.webp"
+  ],
+  "visitanos": [
+    {
+      "id": "lodging",
+      "route": "lodging",
+      "img": "/home/visitanos/Hoteles - Foto_ Hotel Tila.webp",
+      "icons": [
+        "🐾",
+        "🏊"
+      ],
+      "title": "Hoteles"
+    },
+    {
+      "id": "food",
+      "route": "food",
+      "img": "/home/visitanos/Restaurantes opción 1 Foto_ Ciudad Sagrada.webp",
+      "icons": [
+        "🐾",
+        "🎵"
+      ],
+      "title": "Restaurantes · Bares"
+    },
+    {
+      "id": "things",
+      "route": "things",
+      "img": "/home/visitanos/Experiencias Foto_ Mike Santana.webp",
+      "icons": [
+        "🚲",
+        "🏛️"
+      ],
+      "title": "Experiencias"
+    },
+    {
+      "id": "guides",
+      "route": "guides",
+      "img": "/home/visitanos/Guías turísticos Foto_ Mike Santana.webp",
+      "icons": [
+        "🪪",
+        "🗣️"
+      ],
+      "title": "Guías certificados"
+    }
+  ],
+  "artesanias": [
+    {
+      "id": "parque-soria",
+      "href": "https://www.google.com/maps/place/Parque+Soria",
+      "mapsUrl": "https://www.google.com/maps/place/Parque+Soria",
+      "images": [
+        "/home/artesanias/artesania-01.webp",
+        "/home/artesanias/artesania-02.webp",
+        "/home/artesanias/artesania-03.webp",
+        "/home/artesanias/artesania-04.webp",
+        "/home/artesanias/artesania-05.webp",
+        "/home/artesanias/artesania-06.webp"
+      ],
+      "label": "Parque Soria",
+      "address": "Parque Soria, San Pedro Cholula",
+      "descripcion": "El corazón artesanal de Cholula: barro negro, talavera, textiles en telar y piezas únicas hechas por manos cholultecas. Cada pieza cuenta una historia."
+    },
+    {
+      "id": "zona-centro",
+      "href": "https://www.google.com/maps/place/Centro+San+Pedro+Cholula",
+      "mapsUrl": "https://www.google.com/maps/place/Centro+San+Pedro+Cholula",
+      "images": [
+        "/home/artesanias/artesania-07.webp",
+        "/home/artesanias/artesania-08.webp",
+        "/home/artesanias/artesania-09.webp",
+        "/home/artesanias/artesania-10.webp",
+        "/home/artesanias/artesania-11.webp"
+      ],
+      "label": "Zona Centro",
+      "address": "Centro, San Pedro Cholula",
+      "descripcion": "A lo largo del Portal Guerrero y las calles del centro histórico encontrarás artesanos locales con sus talleres abiertos — papel amate, joyería de barro y bordados a mano."
+    }
+  ]
+}

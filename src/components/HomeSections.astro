@@ -1,0 +1,258 @@
+---
+/**
+ * Cuerpo del home. Vive aquí, y no en la página, para que `/` y `/en/` compartan
+ * el mismo markup: las páginas solo aportan el `<Layout>` y el JSON-LD.
+ *
+ * Todo el texto viene de `src/i18n/pages.ts` (copy de la página) y el contenido
+ * editorial de `src/data/home.json` + su overlay por idioma.
+ */
+import SearchBar from "./SearchBar";
+import SwiperGallery from "./SwiperGallery.astro";
+import ImperdiblesCarousel from "./ImperdiblesCarousel.astro";
+import VisitanosCard from "./VisitanosCard.astro";
+import ItinerarioTabs from "./ItinerarioTabs.astro";
+import BusinessCard from "./BusinessCard.astro";
+import type { Locale } from "../i18n/config";
+import { localizePathSafe } from "../i18n/routes";
+import { getPageCopy } from "../i18n/pages";
+import { getStrings } from "../i18n/ui";
+import { getHomeContent } from "../lib/home";
+import { getItinerarios } from "../lib/itinerario";
+import { buildSearchItems } from "../lib/search-items";
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+
+const s = getStrings(lang);
+const copy = getPageCopy(lang).home;
+const { imperdibles, eventos, visitanos, artesanias } = getHomeContent(lang);
+const itinerarios = getItinerarios(lang);
+const searchItems = buildSearchItems(lang);
+---
+
+<!-- ══════════════════════════════
+     HERO — Video cover full screen
+     ══════════════════════════════ -->
+<section class="hero" id="hero">
+  <video
+    class="hero-video"
+    poster="/hero-poster.webp"
+    muted
+    loop
+    playsinline
+    preload="none"
+    aria-hidden="true"
+  >
+    <source data-src="/video.mp4" type="video/mp4" />
+  </video>
+  <div class="hero-overlay" aria-hidden="true"></div>
+
+  <div class="hero-content">
+    <!-- El contenido del hero original si hubiera título, si no, se queda vacío o se puede omitir -->
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     SEARCH SECTION (Nueva)
+     ══════════════════════════════ -->
+<section class="section-search">
+  <div class="container search-section-container">
+    <h2 class="search-title">{copy.search.title}</h2>
+    <p class="search-subtitle">{copy.search.subtitle}</p>
+
+    <div class="search-wrapper">
+      <SearchBar client:idle items={searchItems} labels={s.search} lang={lang} />
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     BIENVENIDO A CHOLULA
+     ══════════════════════════════ -->
+<section class="section-bienvenido" id="bienvenido">
+  <!-- Pirámide Mamona -->
+  <div class="piramide-wrapper container">
+    <section
+      class="section-piramide"
+      style="background-image: url('/home/piramide_mamona.webp');"
+    >
+      <div class="piramide-overlay"></div>
+      <div class="piramide-content">
+        <h2 class="piramide-title">
+          {copy.piramide.titleBefore}<span class="piramide-title-highlight"
+            >{copy.piramide.titleHighlight}</span
+          >
+        </h2>
+        <p class="piramide-subtitle">{copy.piramide.subtitle}</p>
+        <div class="piramide-actions">
+          <a href="#itinerarios" class="piramide-btn-primary"
+            >{copy.piramide.ctaPrimary}</a
+          >
+          <a href="#imperdibles" class="piramide-btn-secondary"
+            >{copy.piramide.ctaSecondary}</a
+          >
+        </div>
+      </div>
+      <div class="piramide-photo-credit">
+        {copy.piramide.photoBy}{" "}<a
+          href="https://www.instagram.com/mickysantana_art_photography"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="piramide-credit-link"
+        >
+          Mike Santana
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <div class="container bienvenido-stats-container">
+    <div class="bienvenido-stats">
+      {
+        copy.stats.map((stat) => (
+          <div class="bienvenido-stat">
+            <div class="bienvenido-stat-icon">{stat.icon}</div>
+            <div class="bienvenido-stat-num">{stat.num}</div>
+            <div class="bienvenido-stat-unit">{stat.unit}</div>
+            <div class="bienvenido-stat-desc">
+              {stat.desc}
+              {stat.note && (
+                <>
+                  <br />
+                  {stat.note}
+                </>
+              )}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     VISÍTANOS — Categorías
+     ══════════════════════════════ -->
+<section class="section-visitanos" id="visitanos">
+  <div class="container section-header">
+    <div class="section-kicker">{copy.visitanos.kicker}</div>
+    <h2 class="section-title-serif">{copy.visitanos.title}</h2>
+  </div>
+  <div class="visitanos-grid">
+    {
+      visitanos.map((v) => (
+        <VisitanosCard
+          href={localizePathSafe(v.route, lang)}
+          title={v.title}
+          img={v.img}
+          icons={v.icons}
+        />
+      ))
+    }
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     LOS IMPERDIBLES — Carrusel editorial
+     ══════════════════════════════ -->
+<ImperdiblesCarousel items={imperdibles} />
+
+<!-- ══════════════════════════════
+     ITINERARIOS
+     ══════════════════════════════ -->
+<section
+  class="section-itinerarios"
+  id="itinerarios"
+  style="padding: 4.5rem 0; background-color: #f7f7f7;"
+>
+  <div class="container section-header">
+    <div class="section-kicker">{copy.itinerarios.kicker}</div>
+    <h2 class="section-title-serif">{copy.itinerarios.title}</h2>
+  </div>
+
+  <div style="margin-top: 3rem;">
+    <ItinerarioTabs itinerarios={itinerarios} />
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     MAPA + CROQUIS
+     ══════════════════════════════ -->
+<section class="section-mapa" id="mapa">
+  <div class="container mapa-grid">
+    <div class="mapa-embed">
+      <iframe
+        src="https://www.google.com/maps/d/embed?mid=1y8P9LnOP4uYJdVrJxk3YZyxxSxrpdcM&ehbc=2E312F"
+        width="100%"
+        height="100%"
+        loading="lazy"
+        title={copy.mapa.iframeTitle}></iframe>
+    </div>
+    <div class="mapa-croquis">
+      <img
+        src="/home/CROQUIS_MOVIL.webp"
+        alt={copy.mapa.croquisAlt}
+        loading="lazy"
+      />
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     EVENTOS — Carrusel 2 columnas
+     ══════════════════════════════ -->
+<section class="section-eventos" id="eventos">
+  <div class="container section-header">
+    <div class="section-kicker">{copy.eventos.kicker}</div>
+    <h2 class="section-title-serif">{copy.eventos.title}</h2>
+  </div>
+  <SwiperGallery
+    id="eventos"
+    items={eventos.map((e) => ({ img: e }))}
+    isEvento={true}
+  />
+</section>
+
+<!-- ══════════════════════════════
+     ARTESANÍAS
+     ══════════════════════════════ -->
+<section class="section-artesanias" id="artesanias">
+  <div class="container section-header">
+    <div class="section-kicker">{copy.artesanias.kicker}</div>
+    <h2 class="section-title-serif">{copy.artesanias.title}</h2>
+    <p class="artesanias-subtitle">{copy.artesanias.subtitle}</p>
+  </div>
+  <div class="artesanias-cards-grid">
+    {
+      artesanias.map((a) => (
+        <BusinessCard
+          title={a.label}
+          images={a.images}
+          address={a.address}
+          description={a.descripcion}
+          mapsUrl={a.mapsUrl}
+          showLocationCta={true}
+          showCredits={true}
+        />
+      ))
+    }
+  </div>
+</section>
+
+<!-- ── GA4: tracking de clics en cards "Visítanos" ── -->
+<script is:inline>
+  (function () {
+    var navCards = document.querySelectorAll('[data-ga-nav]');
+    navCards.forEach(function (card) {
+      card.addEventListener('click', function () {
+        var destination = card.getAttribute('data-ga-nav') || '';
+        if (typeof gtag === 'function') {
+          gtag('event', 'navigation_click', { destination: destination });
+        }
+      });
+    });
+  })();
+</script>

@@ -1,9 +1,12 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { getPageCopy } from "../i18n/pages";
 import "../styles/aviso-de-privacidad.css";
+
+const copy = getPageCopy("es");
 ---
 
-<Layout title="Aviso de Privacidad">
+<Layout title={copy.privacy.seoTitle}>
   <section class="hero" aria-hidden="true">
     <video
       class="hero-video"
