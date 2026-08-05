@@ -625,4 +625,19 @@ const organizationSchema = {
       }
     </div>
   </section>
+
+  <!-- ── GA4: tracking de clics en cards "Visítanos" ── -->
+  <script is:inline>
+    (function () {
+      var navCards = document.querySelectorAll('[data-ga-nav]');
+      navCards.forEach(function (card) {
+        card.addEventListener('click', function () {
+          var destination = card.getAttribute('data-ga-nav') || '';
+          if (typeof gtag === 'function') {
+            gtag('event', 'navigation_click', { destination: destination });
+          }
+        });
+      });
+    })();
+  </script>
 </Layout>

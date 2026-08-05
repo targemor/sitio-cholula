@@ -11,7 +11,7 @@ export interface Props {
 const { href, title, img, icons } = Astro.props;
 ---
 
-<a href={href} class="visitanos-card">
+<a href={href} class="visitanos-card" data-ga-nav={title}>
   <!-- Background Image -->
   <img src={img} alt={title} class="visitanos-card-bg" loading="lazy" />
   

@@ -152,6 +152,17 @@ const { itinerarios } = Astro.props;
             targetContent.classList.add('active');
           }
         }
+
+        // Tracking GA4: cambio de tab de itinerario
+        const tabLabel = btn.querySelector('.tab-label-desktop')?.textContent
+          || btn.textContent
+          || targetId
+          || '';
+        if (typeof (window as any).gtag === 'function') {
+          (window as any).gtag('event', 'itinerary_tab_click', {
+            tab_label: tabLabel.trim(),
+          });
+        }
       });
     });
   }

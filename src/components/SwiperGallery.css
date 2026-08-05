@@ -135,13 +135,173 @@
   z-index: 0;
 }
 
+/* ── Skeleton Shimmer Loader & Fallback UI ── */
+/* ── Skeleton Shimmer Loader & Fallback UI ── */
+.swiper-slide {
+  position: relative;
+  overflow: hidden;
+}
+
+.swiper-slide:not(.swiper-slide--evento):not(.swiper-slide--card) {
+  background-color: #f1f5f9;
+}
+
+.swiper-slide-placeholder {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #f8fafc;
+  overflow: hidden;
+}
+
+.swiper-slide--evento .swiper-slide-placeholder {
+  background: transparent;
+}
+
+.swiper-skeleton-shimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    #f1f5f9 0%,
+    #e2e8f0 50%,
+    #f1f5f9 100%
+  );
+  background-size: 200% 100%;
+  animation: swiperShimmer 1.6s infinite ease-in-out;
+}
+
+.swiper-slide--evento .swiper-skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+}
+
+@keyframes swiperShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.swiper-fallback-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  text-align: center;
+  gap: 0.4rem;
+  color: #64748b;
+  transition: opacity 0.3s ease;
+}
+
+.swiper-slide--evento .swiper-fallback-content {
+  color: #e2e8f0;
+}
+
+.swiper-fallback-icon {
+  width: 44px;
+  height: 44px;
+  stroke: #94a3b8;
+  opacity: 0.85;
+  animation: swiperPulse 2s infinite ease-in-out;
+}
+
+.swiper-slide--evento .swiper-fallback-icon {
+  stroke: #cbd5e1;
+}
+
+@keyframes swiperPulse {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.08); opacity: 0.95; }
+}
+
+.swiper-fallback-title {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #334155;
+  max-width: 85%;
+  line-height: 1.3;
+}
+
+.swiper-slide--evento .swiper-fallback-title {
+  color: #f8fafc;
+}
+
+.swiper-fallback-sub {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.swiper-slide--evento .swiper-fallback-sub {
+  color: #94a3b8;
+}
+
 .swiper-slide-img {
   width: 100%;
   height: 520px;
   object-fit: cover;
   display: block;
   border-radius: 0;
-  background-color: #fff;
+  position: relative;
+  z-index: 1;
+  background-color: transparent !important;
+  /* CRITICAL: Hides raw unstyled browser alt text while loading */
+  color: transparent !important;
+  font-size: 0 !important;
+  text-indent: -9999px;
+  opacity: 0;
+  transition: opacity 0.35s ease-in-out;
+}
+
+/* Loaded state */
+.swiper-slide-img.is-loaded {
+  opacity: 1;
+  color: inherit !important;
+  font-size: inherit !important;
+  text-indent: 0;
+}
+
+/* Slide loaded state - hide skeleton shimmer and placeholder container completely */
+.swiper-slide.slide-loaded .swiper-slide-placeholder {
+  display: none !important;
+}
+
+/* Error state - hide broken img element and present fallback clean UI */
+.swiper-slide-img.has-error {
+  opacity: 0 !important;
+  display: none !important;
+}
+
+.swiper-slide.slide-error .swiper-skeleton-shimmer {
+  display: none;
+}
+
+.swiper-slide.slide-error .swiper-fallback-content {
+  opacity: 1;
+}
+
+.swiper-slide.slide-error .swiper-fallback-icon {
+  animation: none;
+  stroke: #cbd5e1;
 }
 
 /* Crédito fotográfico en Swiper */

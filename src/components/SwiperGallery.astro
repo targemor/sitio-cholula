@@ -28,47 +28,66 @@ const { id, items, isEvento = false, isImperdible = false, showCredits = false, 
     ></div>
   )}
   <div class="swiper-wrapper">
-    {items.map((item, i) => (
-      <div class={`swiper-slide ${isImperdible ? 'swiper-slide--card' : ''} ${isEvento ? 'swiper-slide--evento' : ''}`} data-img={item.img}>
-        {isEvento && (
-          <div
-            class="swiper-slide-blur-bg"
-            style={`background-image: url('${item.img}')`}
-          ></div>
-        )}
-        <img
-          src={item.img}
-          alt={
-            item.label
-              ? item.label
-              : altPrefix
-                ? `${altPrefix} — foto ${i + 1}, San Pedro Cholula, Puebla`
-                : `Foto ${i + 1} — San Pedro Cholula, Puebla`
-          }
-          class={`swiper-slide-img ${isEvento ? 'swiper-slide-img--evento' : ''} ${isImperdible ? 'swiper-slide-img--imperdible' : ''}`}
-          loading={i === 0 ? "eager" : "lazy"}
-        />
-        {item.label && !isImperdible && <p class="swiper-slide-label">{item.label}</p>}
-        {showCredits && (
-          <div class="swiper-photo-credit">
-            Foto: {
-              item.img.toLowerCase().includes("anabeli") ? (
-                <span>Anabeli Arredondo</span>
-              ) : (
-                <a
-                  href="https://www.instagram.com/mickysantana_art_photography"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="swiper-credit-link"
-                >
-                  Mike Santana
-                </a>
-              )
-            }
+    {items.map((item, i) => {
+      const altText = item.label
+        ? item.label
+        : altPrefix
+          ? `${altPrefix} — foto ${i + 1}, San Pedro Cholula, Puebla`
+          : `Foto ${i + 1} — San Pedro Cholula, Puebla`;
+      const fallbackTitle = altPrefix || item.label || 'San Pedro Cholula';
+
+      return (
+        <div class={`swiper-slide ${isImperdible ? 'swiper-slide--card' : ''} ${isEvento ? 'swiper-slide--evento' : ''}`} data-img={item.img}>
+          {isEvento && (
+            <div
+              class="swiper-slide-blur-bg"
+              style={`background-image: url('${item.img}')`}
+            ></div>
+          )}
+          <!-- Skeleton Shimmer Loader & Fallback -->
+          <div class="swiper-slide-placeholder">
+            <div class="swiper-skeleton-shimmer"></div>
+            <div class="swiper-fallback-content">
+              <svg class="swiper-fallback-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="3" y="3" width="18" height="18" rx="3" ry="3"></rect>
+                <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                <path d="M21 15l-5-5L5 21"></path>
+              </svg>
+              <span class="swiper-fallback-title">{fallbackTitle}</span>
+              <span class="swiper-fallback-sub">San Pedro Cholula, Puebla</span>
+            </div>
           </div>
-        )}
-      </div>
-    ))}
+
+          <img
+            src={item.img}
+            alt={altText}
+            class={`swiper-slide-img ${isEvento ? 'swiper-slide-img--evento' : ''} ${isImperdible ? 'swiper-slide-img--imperdible' : ''}`}
+            loading={i === 0 ? "eager" : "lazy"}
+            onload="this.classList.add('is-loaded'); this.closest('.swiper-slide')?.classList.add('slide-loaded');"
+            onerror="this.classList.add('has-error'); this.closest('.swiper-slide')?.classList.add('slide-error');"
+          />
+          {item.label && !isImperdible && <p class="swiper-slide-label">{item.label}</p>}
+          {showCredits && (
+            <div class="swiper-photo-credit">
+              Foto: {
+                item.img.toLowerCase().includes("anabeli") ? (
+                  <span>Anabeli Arredondo</span>
+                ) : (
+                  <a
+                    href="https://www.instagram.com/mickysantana_art_photography"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="swiper-credit-link"
+                  >
+                    Mike Santana
+                  </a>
+                )
+              }
+            </div>
+          )}
+        </div>
+      );
+    })}
   </div>
   <!-- Pagination -->
   <div class="swiper-pagination"></div>
@@ -83,6 +102,37 @@ const { id, items, isEvento = false, isImperdible = false, showCredits = false, 
   import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
   document.addEventListener('DOMContentLoaded', () => {
+    // Inicializar estado de las imágenes (skeleton loader & cached check)
+    const initImageStates = () => {
+      const allSlideImgs = document.querySelectorAll('.swiper-slide-img');
+      allSlideImgs.forEach((imgEl) => {
+        const img = imgEl as HTMLImageElement;
+        const parent = img.closest('.swiper-slide');
+
+        function markLoaded() {
+          img.classList.add('is-loaded');
+          if (parent) parent.classList.add('slide-loaded');
+        }
+
+        function markError() {
+          img.classList.add('has-error');
+          if (parent) parent.classList.add('slide-error');
+        }
+
+        if (img.complete) {
+          if (img.naturalWidth !== 0) {
+            markLoaded();
+          } else {
+            markError();
+          }
+        } else {
+          img.addEventListener('load', markLoaded, { once: true });
+          img.addEventListener('error', markError, { once: true });
+        }
+      });
+    };
+
+    initImageStates();
     // Focus carousel para imperdibles
     const focusSwipers = document.querySelectorAll('.swiper--focus-carousel');
     focusSwipers.forEach((el) => {

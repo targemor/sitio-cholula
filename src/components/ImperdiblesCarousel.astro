@@ -38,7 +38,11 @@ function resaltarTexto(texto: string, highlights: string[]): string {
     </div>
 
     <!-- Carrusel -->
-    <div class="imp-carousel-wrap" id="imp-carousel">
+    <div
+      class="imp-carousel-wrap"
+      id="imp-carousel"
+      data-items={JSON.stringify(items.map(it => ({ nombre: it.nombre, categoria: it.categoria })))}
+    >
       {items.map((item, i) => (
         <article
           class={`imp-card ${i === 0 ? 'imp-card--active' : ''}`}
@@ -47,11 +51,16 @@ function resaltarTexto(texto: string, highlights: string[]): string {
         >
           <!-- Panel izquierdo: imagen -->
           <div class="imp-card-img-wrap">
+            <div class="imp-img-placeholder">
+              <div class="imp-skeleton-shimmer"></div>
+            </div>
             <img
               src={item.img}
               alt={`${item.nombre} — San Pedro Cholula, Puebla`}
               class="imp-card-img"
               loading={i === 0 ? 'eager' : 'lazy'}
+              onload="this.classList.add('is-loaded'); this.closest('.imp-card-img-wrap')?.classList.add('img-loaded');"
+              onerror="this.classList.add('has-error'); this.closest('.imp-card-img-wrap')?.classList.add('img-error');"
             />
             <!-- Badge de categoría -->
             <span class="imp-badge">
@@ -157,6 +166,23 @@ function resaltarTexto(texto: string, highlights: string[]): string {
     let current = 0;
     let autoTimer: ReturnType<typeof setInterval> | null = null;
 
+    // Metadatos de imperdibles para el tracking
+    let imperdiblesData: { nombre: string; categoria: string }[] = [];
+    try {
+      imperdiblesData = JSON.parse(carousel.dataset.items || '[]');
+    } catch { /* ignorar */ }
+
+    function trackImperdible(index: number) {
+      const data = imperdiblesData[index];
+      if (!data) return;
+      if (typeof (window as any).gtag === 'function') {
+        (window as any).gtag('event', 'view_item', {
+          item_name: data.nombre,
+          item_category: data.categoria,
+        });
+      }
+    }
+
     function goTo(index: number) {
       const prev = current;
       current = (index + cards.length) % cards.length;
@@ -166,6 +192,9 @@ function resaltarTexto(texto: string, highlights: string[]): string {
 
       cards[current].classList.add('imp-card--active');
       cards[current].setAttribute('aria-hidden', 'false');
+
+      // Tracking GA4
+      trackImperdible(current);
 
       // Actualizar todos los conjuntos de dots
       allDotSets.forEach(dotsEl => {

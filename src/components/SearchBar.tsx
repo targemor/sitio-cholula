@@ -1,5 +1,11 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import "./SearchBar.css";
+import {
+    trackSearch,
+    trackResultClick,
+    trackShortcutClick,
+    trackFilterToggle,
+} from "../lib/analytics";
 
 /* ─── Tipos de ítem buscable ─────────────────────────────── */
 interface HorarioData {
@@ -294,6 +300,9 @@ export default function SearchBar({
                 setResults(found);
                 setIsOpen(true);
 
+                // Tracking GA4: registrar la búsqueda con el conteo de resultados
+                trackSearch(q.trim(), found.length);
+
                 // Emitir evento global para que las secciones filtren sus cards
                 document.dispatchEvent(
                     new CustomEvent("portal:search", { detail: { query: norm, results: found } })
@@ -336,6 +345,9 @@ export default function SearchBar({
     const goTo = (item: SearchableItem) => {
         setQuery(item.label);
         setIsOpen(false);
+
+        // Tracking GA4: registrar el clic en el resultado
+        trackResultClick(item.label, item.category);
 
         if (item.category === "Imperdible") {
             // Los imperdibles están en la home → scroll suave
@@ -386,6 +398,7 @@ export default function SearchBar({
                     setQuery("restaurantes");
                     setIsOpen(true);
                     inputRef.current?.focus();
+                    trackShortcutClick("Comer");
                 }}
             >
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" width="18" height="18">
@@ -406,6 +419,7 @@ export default function SearchBar({
                     setQuery("hoteles");
                     setIsOpen(true);
                     inputRef.current?.focus();
+                    trackShortcutClick("Dormir");
                 }}
             >
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" width="18" height="18">
@@ -427,6 +441,7 @@ export default function SearchBar({
                     setQuery("experiencias");
                     setIsOpen(true);
                     inputRef.current?.focus();
+                    trackShortcutClick("Experiencias");
                 }}
             >
                 <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" width="18" height="18">
@@ -444,6 +459,7 @@ export default function SearchBar({
                     setQuery("guias");
                     setIsOpen(true);
                     inputRef.current?.focus();
+                    trackShortcutClick("Guías Certificados");
                 }}
             >
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" width="18" height="18">
@@ -560,7 +576,12 @@ export default function SearchBar({
                     <div className="search-filter-row">
                         <button
                             className={`search-filter-chip ${openNow ? "search-filter-chip--active" : ""}`}
-                            onMouseDown={(e) => { e.preventDefault(); setOpenNow(v => !v); }}
+                            onMouseDown={(e) => {
+                                e.preventDefault();
+                                const next = !openNow;
+                                setOpenNow(next);
+                                trackFilterToggle(next);
+                            }}
                         >
                             <span className={`search-filter-dot ${openNow ? "search-filter-dot--on" : ""}`} />
                             Abiertos ahora

@@ -82,6 +82,20 @@ const fullTitle = `${title} | Visit Cholula`;
 			fetchpriority="high"
 		/>
 
+		<!-- ── Google Analytics 4 (carga diferida, no bloquea LCP) ────── -->
+		<!-- ⚠️ Reemplaza G-XXXXXXXXXX con tu Measurement ID real de GA4  -->
+		<link rel="preconnect" href="https://www.googletagmanager.com" />
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX" is:inline></script>
+		<script is:inline>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() { dataLayer.push(arguments); }
+			gtag('js', new Date());
+			gtag('config', 'G-XXXXXXXXXX', {
+				anonymize_ip: true,
+				send_page_view: true
+			});
+		</script>
+
 		<!-- ── Google Fonts: Roboto (carga no bloqueante) ───────────────── -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -128,6 +142,7 @@ const fullTitle = `${title} | Visit Cholula`;
 			target="_blank"
 			rel="noopener noreferrer"
 			aria-label="Contactar por WhatsApp"
+			data-ga-whatsapp="true"
 		>
 			<svg viewBox="0 0 448 512" width="32" height="32" aria-hidden="true">
 				<path
@@ -167,6 +182,72 @@ const fullTitle = `${title} | Visit Cholula`;
 						setTimeout(loadHeroVideo, 200);
 					});
 				}
+			})();
+		</script>
+
+		<!-- ── Google Analytics: Scroll Depth + WhatsApp + Links externos ── -->
+		<script is:inline>
+			(function () {
+				// ── Scroll Depth ──────────────────────────────────────────────────
+				var scrollMilestones = [25, 50, 75, 100];
+				var scrollFired = {};
+
+				function onScroll() {
+					var scrollTop = window.scrollY || document.documentElement.scrollTop;
+					var docHeight = Math.max(
+						document.body.scrollHeight,
+						document.documentElement.scrollHeight
+					) - window.innerHeight;
+					if (docHeight <= 0) return;
+					var pct = Math.round((scrollTop / docHeight) * 100);
+					scrollMilestones.forEach(function (milestone) {
+						if (pct >= milestone && !scrollFired[milestone]) {
+							scrollFired[milestone] = true;
+							if (typeof gtag === 'function') {
+								gtag('event', 'scroll', { percent_scrolled: milestone });
+							}
+						}
+					});
+				}
+
+				window.addEventListener('scroll', onScroll, { passive: true });
+
+				// ── WhatsApp FAB ──────────────────────────────────────────────────
+				var waBtn = document.getElementById('whatsapp-fab');
+				if (waBtn) {
+					waBtn.addEventListener('click', function () {
+						if (typeof gtag === 'function') {
+							gtag('event', 'whatsapp_click', {
+								event_category: 'contact',
+								event_label: 'fab'
+							});
+						}
+					});
+				}
+
+				// ── Enlaces externos ──────────────────────────────────────────────
+				document.addEventListener('click', function (e) {
+					var anchor = e.target.closest('a[href]');
+					if (!anchor) return;
+					var href = anchor.getAttribute('href') || '';
+					if (
+						href.startsWith('http') &&
+						!href.includes('visitcholula.mx') &&
+						!anchor.dataset.gaWhatsapp // ya rastreado arriba
+					) {
+						try {
+							var domain = new URL(href).hostname;
+							if (typeof gtag === 'function') {
+								gtag('event', 'click', {
+									event_category: 'outbound',
+									event_label: href,
+									link_domain: domain,
+									link_url: href
+								});
+							}
+						} catch (err) { /* URL inválida */ }
+					}
+				});
 			})();
 		</script>
 	</body>
