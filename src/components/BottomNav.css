@@ -41,12 +41,12 @@
   text-transform: uppercase;
 }
 
-/* Hide Bottom Nav on Desktop */
-@media (min-width: 768px) {
+/* Hide Bottom Nav on Large Desktop (> 1250px) */
+@media (min-width: 1251px) {
   .bottom-nav {
-    display: none;
+    display: none !important;
   }
-  
+
   .fab-btn {
     bottom: 2.5rem;
     right: 2.5rem;

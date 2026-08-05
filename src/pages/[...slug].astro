@@ -21,6 +21,7 @@ import "../styles/slug.css";
  */
 
 interface Copy {
+  kicker?: string;
   title: string;
   seoTitle: string;
   seoDesc: string;
@@ -28,31 +29,34 @@ interface Copy {
 }
 
 /**
- * Textos por idioma. El inglés se llena en la Fase 5; hasta entonces cae al
- * español, que es visible pero inofensivo porque `/en/` se sirve con `noindex`.
+ * Textos por idioma para páginas de directorio.
  */
 const COPY: Record<Locale, Partial<Record<DirectoryKey, Copy>>> = {
   es: {
     lodging: {
-      title: "DÓNDE HOSPEDARSE",
+      kicker: "TU ESTANCIA",
+      title: "¿Dónde hospedarte?",
       seoTitle: "Hoteles en Cholula, Puebla — Dónde Hospedarse",
       seoDesc:
         "Los mejores hoteles en San Pedro Cholula, Puebla. Encuentra alojamiento cerca de la Gran Pirámide, el centro histórico y la zona universitaria. Hoteles boutique, económicos y con todas las comodidades.",
     },
     food: {
-      title: "DÓNDE COMER",
+      kicker: "SABORES DE CHOLULA",
+      title: "¿Dónde comer?",
       seoTitle: "Restaurantes en Cholula, Puebla — Dónde Comer",
       seoDesc:
         "Descubre los mejores restaurantes, bares y cafés en San Pedro Cholula, Puebla. Gastronomía mexicana, cocina internacional, opciones vegetarianas y experiencias culinarias únicas en el corazón del Pueblo Mágico.",
     },
     things: {
-      title: "QUÉ HACER",
+      kicker: "EXPERIENCIAS Y ACTIVIDADES",
+      title: "¿Qué hacer en Cholula?",
       seoTitle: "Qué Hacer en Cholula, Puebla — Actividades y Atracciones",
       seoDesc:
         "Descubre qué hacer en San Pedro Cholula: visita la Gran Pirámide, el Santuario de la Virgen de los Remedios, el Convento de San Gabriel y mucho más. Actividades culturales, turísticas y de aventura en Cholula, Puebla.",
     },
     guides: {
-      title: "GUÍAS TURÍSTICOS",
+      kicker: "VIVE CHOLULA CON UN EXPERTO",
+      title: "Guías turísticos",
       seoTitle: "Guías Turísticos Certificados en Cholula, Puebla",
       seoDesc:
         "Guías turísticos certificados por SECTUR en San Pedro Cholula. Tours personalizados por la Gran Pirámide, iglesias coloniales, mercados y el centro histórico. Conoce Cholula con expertos locales.",
@@ -60,7 +64,38 @@ const COPY: Record<Locale, Partial<Record<DirectoryKey, Copy>>> = {
         "GUÍAS CERTIFICADOS POR SECTUR — Descubre Cholula de una manera más personalizada junto a guías certificados que adaptan la experiencia a tus intereses y te ayudan a comprender la historia, tradiciones y patrimonio de la ciudad más allá de una visita convencional.",
     },
   },
-  en: {},
+  en: {
+    lodging: {
+      kicker: "YOUR STAY",
+      title: "Where to stay?",
+      seoTitle: "Hotels in Cholula, Puebla — Where to Stay",
+      seoDesc:
+        "The best hotels in San Pedro Cholula, Puebla. Find accommodation near the Great Pyramid, downtown, and the university district. Boutique, budget, and luxury hotels.",
+    },
+    food: {
+      kicker: "FLAVORS OF CHOLULA",
+      title: "Where to eat?",
+      seoTitle: "Restaurants in Cholula, Puebla — Where to Eat",
+      seoDesc:
+        "Discover the best restaurants, bars, and cafes in San Pedro Cholula, Puebla. Mexican gastronomy, international cuisine, vegetarian options, and unique dining experiences.",
+    },
+    things: {
+      kicker: "EXPERIENCES & ACTIVITIES",
+      title: "What to do in Cholula?",
+      seoTitle: "Things to Do in Cholula, Puebla — Activities & Attractions",
+      seoDesc:
+        "Discover what to do in San Pedro Cholula: visit the Great Pyramid, the Sanctuary of Remedies, San Gabriel Convent, and more. Cultural, tourist, and adventure activities.",
+    },
+    guides: {
+      kicker: "EXPERIENCE CHOLULA WITH AN EXPERT",
+      title: "Tour guides",
+      seoTitle: "Certified Tour Guides in Cholula, Puebla",
+      seoDesc:
+        "SECTUR-certified tour guides in San Pedro Cholula. Personalized tours of the Great Pyramid, colonial churches, traditional markets, and historic downtown.",
+      description:
+        "SECTUR CERTIFIED GUIDES — Discover Cholula in a more personalized way with certified guides who tailor the experience to your interests.",
+    },
+  },
 };
 
 /** "Inicio" del breadcrumb. Se mueve a src/i18n/ui.ts en la Fase 2. */
@@ -172,6 +207,11 @@ const breadcrumbSchema = {
     <div class="section-inner">
       <!-- Header fijo: título + divider + filtro -->
       <div class="section-header">
+        {copy.kicker && (
+          <span class="section-kicker">
+            {copy.kicker}
+          </span>
+        )}
         <h2 class="section-label" style={`--section-color: ${color};`}>
           {title}
         </h2>

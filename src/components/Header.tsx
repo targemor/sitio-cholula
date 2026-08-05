@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
 import "./Header.css";
-import { LOCALE_NAMES, type Locale } from "../i18n/config";
+import { type Locale } from "../i18n/config";
 import { localizePathSafe, type RouteKey } from "../i18n/routes";
 
-type NavKey = Extract<RouteKey, "home" | "lodging" | "food" | "things" | "guides">;
+type NavKey = Extract<RouteKey, | "lodging" | "food" | "things" | "guides">;
 
 const NAV: { key: NavKey; id: string }[] = [
-  { key: "home", id: "nav-cholula" },
   { key: "lodging", id: "nav-hospedarse" },
   { key: "food", id: "nav-comer" },
   { key: "things", id: "nav-que-hacer" },
@@ -14,7 +13,6 @@ const NAV: { key: NavKey; id: string }[] = [
 ];
 
 const FALLBACK_LABELS: Record<NavKey, string> = {
-  home: "Cholula",
   lodging: "Dónde hospedarse",
   food: "Dónde comer",
   things: "Qué hacer",
@@ -67,27 +65,15 @@ export default function Header({
     <header className={`site-header ${isScrolled ? "scrolled" : ""}`}>
       <div className="header-inner">
 
-        {/* ── Left: Logos ── */}
-        <div className="header-logos">
+        {/* ── Left: Institutional Logos (Logo Cholula, Pueblo Mágico + Puebla on Desktop) ── */}
+        <div className="header-logos header-left">
           <a href="/" className="header-logo-link" aria-label="Logo Cholula">
             <img
               src="/home/logo_cholula.webp"
               alt="Logo Cholula"
               className="header-logo-img"
-              width={65}
-              height={56}
-              loading="eager"
-              decoding="async"
-            />
-          </a>
-          <div className="header-divider"></div>
-          <a href="/" className="header-logo-link" aria-label="Cholula lo tiene todo">
-            <img
-              src="/home/cholula%20lo%20tiene%20todo_logo.webp"
-              alt="Cholula lo tiene todo"
-              className="header-logo-img"
               width={56}
-              height={56}
+              height={48}
               loading="eager"
               decoding="async"
             />
@@ -98,19 +84,33 @@ export default function Header({
               src="/home/cholula_pueblo_magico.webp"
               alt="Cholula Pueblo Mágico"
               className="header-logo-img"
-              width={65}
-              height={56}
+              width={56}
+              height={48}
               loading="eager"
               decoding="async"
             />
           </a>
-          <div className="header-divider"></div>
-          <a href="/" className="header-logo-link" aria-label="Puebla">
+
+          {/* Puebla & México logos on the left side on Desktop */}
+          <div className="header-divider desktop-only-divider"></div>
+          <a href="/" className="header-logo-link logo-puebla-link desktop-only-puebla" aria-label="Puebla">
             <img
               src="/home/logo_puebla.webp"
               alt="Puebla"
               className="header-logo-img logo-puebla"
-              width={85}
+              width={75}
+              height={24}
+              loading="eager"
+              decoding="async"
+            />
+          </a>
+          <div className="header-divider desktop-only-divider"></div>
+          <a href="/" className="header-logo-link logo-mexico-link desktop-only-puebla" aria-label="México">
+            <img
+              src="/mexico.webp"
+              alt="México"
+              className="header-logo-img logo-mexico"
+              width={65}
               height={24}
               loading="eager"
               decoding="async"
@@ -118,7 +118,22 @@ export default function Header({
           </a>
         </div>
 
-        {/* ── Right: Desktop Navigation + selector de idioma ── */}
+        {/* ── Center: Main Hero Logo (Cholula lo tiene todo) — Centered on Desktop & Mobile ── */}
+        <div className="header-center">
+          <a href="/" className="header-logo-link header-logo-featured-link" aria-label="Cholula lo tiene todo">
+            <img
+              src="/home/cholula%20lo%20tiene%20todo_logo.webp"
+              alt="Cholula lo tiene todo"
+              className="header-logo-img header-logo-featured"
+              width={92}
+              height={92}
+              loading="eager"
+              decoding="async"
+            />
+          </a>
+        </div>
+
+        {/* ── Right: Desktop Navigation + Mobile Puebla & México Logos + selector de idioma ── */}
         <div className="header-right">
           <nav className="header-nav" aria-label={ariaLabel}>
             {navLinks.map((link) => (
@@ -134,6 +149,31 @@ export default function Header({
             ))}
           </nav>
 
+          {/* On Mobile only, Puebla and México logos shift to the right side next to language button */}
+          <a href="/" className="header-logo-link logo-puebla-link mobile-only-puebla" aria-label="Puebla">
+            <img
+              src="/home/logo_puebla.webp"
+              alt="Puebla"
+              className="header-logo-img logo-puebla"
+              width={75}
+              height={24}
+              loading="eager"
+              decoding="async"
+            />
+          </a>
+          <div className="header-divider mobile-only-puebla"></div>
+          <a href="/" className="header-logo-link logo-mexico-link mobile-only-puebla" aria-label="México">
+            <img
+              src="/mexico.webp"
+              alt="México"
+              className="header-logo-img logo-mexico"
+              width={65}
+              height={24}
+              loading="eager"
+              decoding="async"
+            />
+          </a>
+
           {/* Solo se muestra si la página existe en el otro idioma */}
           {otherLocale && (
             <a
@@ -142,7 +182,7 @@ export default function Header({
               hrefLang={otherLocale.locale}
               lang={otherLocale.locale}
             >
-              {LOCALE_NAMES[otherLocale.locale]}
+              {otherLocale.locale.toUpperCase()}
             </a>
           )}
         </div>

@@ -272,7 +272,7 @@ const igGradId = `ig-grad-card-${swiperId}`;
             <div class="icon">
               <span style="font-size: 14px; line-height: 1;">🗺️</span>
             </div>
-            <span><strong>Tours que ofrece:</strong> {toursQueOfrece}</span>
+            <span><strong>{s.card.toursOffered}</strong> {toursQueOfrece}</span>
           </li>
         )
       }
@@ -454,11 +454,11 @@ const igGradId = `ig-grad-card-${swiperId}`;
       {
         phone && (
           <a
-            href={`tel:${phone.replace(/\\D/g, "")}`}
+            href={`tel:${phone.replace(/\D/g, "")}`}
             class="whatsapp-cta"
             style="background-color: var(--color-primary); color: white;"
           >
-            <span>LLAMAR</span>
+            <span>{s.card.call}</span>
             <svg viewBox="0 0 512 512" width="16" height="16">
               <path
                 fill="currentColor"
@@ -474,13 +474,13 @@ const igGradId = `ig-grad-card-${swiperId}`;
             href={
               whatsapp.startsWith("http")
                 ? whatsapp
-                : `https://api.whatsapp.com/send?phone=52${whatsapp.replace(/\\D/g, "")}`
+                : `https://api.whatsapp.com/send?phone=52${whatsapp.replace(/\D/g, "")}`
             }
             target="_blank"
             rel="noopener noreferrer"
             class="whatsapp-cta"
           >
-            <span>RESERVAR</span>
+            <span>{s.card.reserve}</span>
             <svg viewBox="0 0 448 512" width="16" height="16">
               <path
                 fill="currentColor"
@@ -491,7 +491,7 @@ const igGradId = `ig-grad-card-${swiperId}`;
         )
       }
       <button class="share-cta" data-share-id={id} data-share-title={title}>
-        <span>COMPARTIR</span>
+        <span>{s.card.share}</span>
         <svg viewBox="0 0 512 512" width="16" height="16">
           <path
             fill="currentColor"

@@ -1,4 +1,6 @@
 ---
+import ModulosTuristicos from "./ModulosTuristicos.astro";
+
 export interface ItineraryElement {
   icono?: string;
   titulo?: string;
@@ -52,9 +54,10 @@ export interface ItineraryProps {
 
 interface Props {
   itinerario: ItineraryProps;
+  lang?: 'es' | 'en';
 }
 
-const { itinerario } = Astro.props;
+const { itinerario, lang = 'es' } = Astro.props;
 ---
 
 <div class="itinerario-container">
@@ -153,6 +156,9 @@ const { itinerario } = Astro.props;
         </>
       )
     }
+
+    {/* Módulos de información turística en cada pestaña */}
+    <ModulosTuristicos lang={lang} />
   </div>
 </div>
 

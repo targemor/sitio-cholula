@@ -207,10 +207,11 @@
 }
 
 .bienvenido-stat-desc {
-  font-size: 12.5px;
-  color: #8A8578;
-  line-height: 1.55;
+  font-size: 15px;
+  color: #55524a;
+  line-height: 1.5;
   text-align: center;
+  font-weight: 500;
 }
 
 /* Ícono decorativo sobre la cifra */
@@ -305,11 +306,12 @@
 
   .bienvenido-stat-desc {
     display: block !important;
-    font-size: clamp(0.65rem, 2.5vw, 0.75rem);
-    color: #64748b;
-    line-height: 1.35;
+    font-size: clamp(0.85rem, 2.8vw, 0.95rem);
+    color: #55524a;
+    line-height: 1.4;
     text-align: center;
     margin: 0;
+    font-weight: 500;
   }
 }
 

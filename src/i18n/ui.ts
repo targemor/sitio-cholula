@@ -42,9 +42,13 @@ export interface Strings {
 		accreditation: string;
 		specialization: string;
 		languages: string;
+		toursOffered: string;
 		seeMore: string;
 		seeLess: string;
 		viewLocation: string;
+		call: string;
+		reserve: string;
+		share: string;
 	};
 	search: {
 		placeholder: string;
@@ -130,9 +134,13 @@ const es: Strings = {
 		accreditation: "Acreditación:",
 		specialization: "Especialización:",
 		languages: "Idiomas:",
+		toursOffered: "Tours que ofrece:",
 		seeMore: "Ver más",
 		seeLess: "Ver menos",
 		viewLocation: "VER UBICACIÓN",
+		call: "LLAMAR",
+		reserve: "RESERVAR",
+		share: "COMPARTIR",
 	},
 	search: {
 		placeholder: "¿Qué te gustaría hacer hoy en San Pedro Cholula?",
@@ -241,9 +249,13 @@ const en: Strings = {
 		accreditation: "Accreditation:",
 		specialization: "Specialization:",
 		languages: "Languages:",
+		toursOffered: "Tours offered:",
 		seeMore: "See more",
 		seeLess: "See less",
 		viewLocation: "VIEW LOCATION",
+		call: "CALL",
+		reserve: "BOOK NOW",
+		share: "SHARE",
 	},
 	search: {
 		placeholder: "What would you like to do today in San Pedro Cholula?",

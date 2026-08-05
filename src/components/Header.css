@@ -6,48 +6,72 @@
 
 /* ── Base header ── */
 .site-header {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  /* Completely transparent by default */
-  background: transparent;
-  border: none;
-  box-shadow: none;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.3s ease;
 }
 
 /* ── Scrolled state ── */
 .site-header.scrolled {
   background-color: #ffffff;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .header-inner {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1500px;
+  max-width: 1650px;
   margin: 0 auto;
-  /* Padding-top increased for more breathing room */
-  padding: 26px 24px 26px;
-  gap: 2rem;
+  padding: 8px 24px;
+  min-height: 88px;
+}
+
+/* ── Desktop vs Mobile visibility toggles ── */
+.mobile-only-puebla {
+  display: none !important;
+}
+
+.desktop-only-puebla {
+  display: flex !important;
+}
+
+.desktop-only-divider {
+  display: block !important;
 }
 
 /* ============================================
-   LOGOS — left side
+   LOGOS — Left side & Center Featured
    ============================================ */
-.header-logos {
+.header-left {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
+  z-index: 3;
+}
+
+.header-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
 }
 
 .header-divider {
   width: 1px;
-  height: 40px;
-  background-color: rgba(255, 255, 255, 0.4);
+  height: 36px;
+  background-color: rgba(0, 0, 0, 0.18);
 }
 
 .site-header.scrolled .header-divider {
@@ -63,17 +87,29 @@
 }
 
 .header-logo-link:hover {
-  opacity: 0.85;
+  opacity: 0.88;
   transform: translateY(-1px);
 }
 
 .header-logo-img {
   display: block;
-  /* Keep logos at the height they appear in the screenshot (~56 px) */
   height: 56px;
   width: auto;
   object-fit: contain;
   border-radius: 6px;
+}
+
+/* Logo destacado central "Cholula lo tiene todo" (Aumentado 15%) */
+.header-logo-featured {
+  height: 85px;
+  width: auto;
+  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.12));
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.header-logo-featured-link:hover .header-logo-featured {
+  transform: scale(1.08);
+  filter: drop-shadow(0 5px 14px rgba(0, 0, 0, 0.2));
 }
 
 /* ============================================
@@ -86,6 +122,7 @@
   display: flex;
   align-items: center;
   gap: 16px;
+  z-index: 3;
 }
 
 /* ── Selector de idioma ── */
@@ -96,8 +133,8 @@
   letter-spacing: 0.04em;
   text-transform: uppercase;
   text-decoration: none;
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #1a1a1a;
+  border: 1px solid rgba(0, 0, 0, 0.25);
   border-radius: 999px;
   padding: 6px 14px;
   white-space: nowrap;
@@ -105,7 +142,7 @@
 }
 
 .header-lang:hover {
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(0, 0, 0, 0.06);
 }
 
 .site-header.scrolled .header-lang {
@@ -128,7 +165,7 @@
   font-family: 'Roboto', sans-serif;
   font-size: 0.9rem;
   font-weight: 500;
-  color: #fff;
+  color: #333333;
   text-decoration: none;
   padding: 6px 14px;
   position: relative;
@@ -153,7 +190,7 @@
 }
 
 .header-nav-link:hover {
-  color: #fff;
+  color: #000000;
 }
 
 .header-nav-link:hover::after {
@@ -162,27 +199,27 @@
 
 /* Active state — green underline, thicker */
 .header-nav-link--active {
-  color: #fff;
+  color: #000000;
 }
 
 .header-nav-link--active::after {
   transform: scaleX(1);
   height: 3px;
   background: #22c55e;
-  box-shadow: 0 0 8px rgba(34, 197, 94, 0.5);
+  box-shadow: none;
 }
 
 /* ── Scrolled state overrides for links ── */
 .site-header.scrolled .header-nav-link {
-  color: #333;
+  color: #333333;
 }
 
 .site-header.scrolled .header-nav-link:hover {
-  color: #000;
+  color: #000000;
 }
 
 .site-header.scrolled .header-nav-link--active {
-  color: #000;
+  color: #000000;
 }
 
 .site-header.scrolled .header-nav-link--active::after {
@@ -195,29 +232,102 @@
   width: auto;
 }
 
+.logo-mexico {
+  height: 24px;
+  width: auto;
+}
+
 /* ============================================
    RESPONSIVE BREAKPOINTS
    ============================================ */
-@media (max-width: 1100px) {
-  /* No ocultamos logos, dejamos que fluyan */
-}
+@media (max-width: 1250px) {
+  .desktop-only-puebla,
+  .desktop-only-divider {
+    display: none !important;
+  }
 
-@media (max-width: 820px) {
+  .mobile-only-puebla {
+    display: flex !important;
+  }
 
-  /* Hide desktop nav on mobile/tablet — relies on BottomNav instead */
+  /* Hide header nav links when screen <= 1250px — relies on BottomNav instead to prevent overlap */
   .header-nav {
-    display: none;
+    display: none !important;
+  }
+
+  .header-inner {
+    padding: 8px 16px;
+    min-height: 76px;
+  }
+
+  .header-left {
+    gap: 10px;
+  }
+
+  .header-right {
+    gap: 6px;
+  }
+
+  /* Keep left logos prominent */
+  .header-logo-img {
+    height: 48px;
+  }
+
+  .header-logo-featured {
+    height: 72px;
+  }
+
+  /* Keep right side state logos compact */
+  .logo-puebla {
+    height: 19px;
+    width: auto;
+  }
+
+  .logo-mexico {
+    height: 19px;
+    width: auto;
   }
 }
 
-@media (max-width: 520px) {
+/* En móviles y resoluciones < 480px / 360px: 2 filas para que NUNCA se solapen los logos */
+@media (max-width: 480px) {
   .header-inner {
-    padding: 10px 16px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "left right"
+      "center center";
+    padding: 8px 12px 6px;
+    gap: 6px;
+    min-height: auto;
+    width: 100%;
   }
 
-  .header-logos {
+  .header-left {
+    grid-area: left;
+    display: flex;
+    align-items: center;
     gap: 8px;
-    justify-content: flex-start;
+  }
+
+  .header-right {
+    grid-area: right;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 6px;
+  }
+
+  .header-center {
+    grid-area: center;
+    position: static;
+    transform: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 4px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
   }
 
   .header-divider {
@@ -225,11 +335,25 @@
   }
 
   .header-logo-img {
-    height: 32px;
+    height: 38px;
+  }
+
+  .header-logo-featured {
+    height: 64px;
   }
 
   .logo-puebla {
-    height: 18px;
+    height: 17px;
+    width: auto;
   }
 
+  .logo-mexico {
+    height: 17px;
+    width: auto;
+  }
+
+  .header-lang {
+    padding: 3px 8px;
+    font-size: 0.75rem;
+  }
 }

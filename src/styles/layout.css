@@ -29,9 +29,9 @@ main {
   box-shadow: 0 10px 28px rgba(37, 211, 102, 0.7);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1250px) {
   .whatsapp-fab {
-    bottom: calc(96px + env(safe-area-inset-bottom, 0px));
+    bottom: calc(76px + env(safe-area-inset-bottom, 0px));
     right: 16px;
   }
 }

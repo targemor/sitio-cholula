@@ -4,9 +4,10 @@ import type { ItineraryProps } from "./ItinerarioTimeline.astro";
 
 interface Props {
   itinerarios: ItineraryProps[];
+  lang?: 'es' | 'en';
 }
 
-const { itinerarios } = Astro.props;
+const { itinerarios, lang = 'es' } = Astro.props;
 ---
 
 <div class="itinerario-tabs-container">
@@ -28,7 +29,7 @@ const { itinerarios } = Astro.props;
         id={`tab-${itinerario.id}`} 
         class={`tab-content ${index === 0 ? 'active' : ''}`}
       >
-        <ItinerarioTimeline itinerario={itinerario} />
+        <ItinerarioTimeline itinerario={itinerario} lang={lang} />
       </div>
     ))}
   </div>
