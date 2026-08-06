@@ -89,11 +89,11 @@
         {
             "nombre": "Hotel Choloa",
             "galeria": [
-                "/images/hoteles/hotel-marmoy/hotel_cheloa_cholula_1-1-scaled-1024x1024-1.webp",
-                "/images/hoteles/hotel-marmoy/hotel_cheloa_cholula_2-1024x1024-1.webp",
-                "/images/hoteles/hotel-marmoy/hotel_cheloa_cholula_3-1024x1024-1.webp",
-                "/images/hoteles/hotel-marmoy/hotel_cheloa_cholula_4-1-scaled-1024x1024-1.webp",
-                "/images/hoteles/hotel-marmoy/hotel_cheloa_cholula-1024x1024-1.webp"
+                "/images/hoteles/choloa/1.webp",
+                "/images/hoteles/choloa/2.webp",
+                "/images/hoteles/choloa/3.webp",
+                "/images/hoteles/choloa/4.webp",
+                "/images/hoteles/choloa/5.webp"
             ],
             "estrellas": 3,
             "social": {
@@ -260,11 +260,10 @@
         {
             "nombre": "Hotel Marmoy",
             "galeria": [
-                "/images/hoteles/hotel-marmoy/hotel_cheloa_cholula_1-1-scaled-1024x1024-1.webp",
-                "/images/hoteles/hotel-marmoy/hotel_cheloa_cholula_2-1024x1024-1.webp",
-                "/images/hoteles/hotel-marmoy/hotel_cheloa_cholula_3-1024x1024-1.webp",
-                "/images/hoteles/hotel-marmoy/hotel_cheloa_cholula_4-1-scaled-1024x1024-1.webp",
-                "/images/hoteles/hotel-marmoy/hotel_cheloa_cholula-1024x1024-1.webp"
+                "/images/hoteles/hotel-marmoy/1.webp",
+                "/images/hoteles/hotel-marmoy/2.webp",
+                "/images/hoteles/hotel-marmoy/3.webp",
+                "/images/hoteles/hotel-marmoy/4.webp"
             ],
             "estrellas": 0,
             "social": {
