@@ -1,128 +1,431 @@
 ---
 import { getLocaleFromPath } from "../i18n/routes";
-import { getStrings } from "../i18n/ui";
 import "./CategoryFilter.css";
 
 export interface Props {
-  options: string[];
+  options?: string[];
+  data?: any[];
 }
 
-const { options } = Astro.props;
+const { data = [] } = Astro.props;
 
 const lang = getLocaleFromPath(Astro.url.pathname);
-const s = getStrings(lang);
+const isEn = lang === "en";
+
+// Textos por idioma
+const labels = {
+  zona: {
+    title: isEn ? "Area" : "Zona",
+    all: isEn ? "All areas" : "Todas las zonas",
+    options: [
+      { value: "Zona Centro", label: isEn ? "Downtown" : "Zona Centro" },
+      { value: "Los Portales", label: "Los Portales" },
+      {
+        value: "Zona Pirámide",
+        label: isEn ? "Pyramid Area" : "Zona Pirámide",
+      },
+      {
+        value: "A pocos minutos del Centro",
+        label: isEn ? "Near Downtown" : "A pocos min del Centro",
+      },
+      {
+        value: "Fuera del Centro",
+        label: isEn ? "Outside Downtown" : "Fuera del Centro",
+      },
+    ],
+  },
+  petFriendly: {
+    title: isEn ? "Pets" : "Pet friendly",
+    all: isEn ? "All" : "Todos",
+    yes: isEn ? "🐾 Pet Friendly" : "🐾 Pet Friendly",
+  },
+  tipoComida: {
+    title: isEn ? "Cuisine" : "Tipo de comida",
+    all: isEn ? "All cuisines" : "Todos los tipos",
+    options: [
+      {
+        value: "mexicana",
+        label: isEn ? "Mexican / Traditional" : "Mexicana / Poblana",
+      },
+      {
+        value: "italiana",
+        label: isEn ? "Italian / Pizza" : "Italiana / Pizzas",
+      },
+      { value: "mariscos", label: isEn ? "Seafood" : "Mariscos" },
+      {
+        value: "desayuno",
+        label: isEn ? "Breakfast & Brunch" : "Desayunos & Brunch",
+      },
+      { value: "tacos", label: "Tacos" },
+      {
+        value: "cerveza",
+        label: isEn ? "Craft Beer & Bar" : "Cerveza artesanal & Bar",
+      },
+      {
+        value: "helado",
+        label: isEn ? "Ice Cream & Desserts" : "Helados & Postres",
+      },
+      {
+        value: "autor",
+        label: isEn ? "Signature / Fine Dining" : "Cocina de autor / Gourmet",
+      },
+    ],
+  },
+  categoria: {
+    title: isEn ? "Category" : "Categoría",
+    all: isEn ? "All categories" : "Todas las categorías",
+    options: [
+      { value: "restaurante", label: isEn ? "Restaurants" : "Restaurantes" },
+      { value: "bar", label: isEn ? "Bars" : "Bares" },
+      { value: "heladeria", label: isEn ? "Ice Cream Shops" : "Heladerías" },
+      { value: "cafeteria", label: isEn ? "Cafes & Coffee" : "Cafeterías" },
+    ],
+  },
+  michelin: {
+    title: isEn ? "Michelin Star" : "Estrella Michelin",
+    all: isEn ? "All" : "Todos",
+    yes: isEn ? "⭐ Michelin Guide" : "⭐ Guía Michelin",
+  },
+  reset: isEn ? "Clear filters" : "Limpiar filtros",
+  noResults: {
+    title: isEn ? "No restaurants found" : "No se encontraron restaurantes",
+    text: isEn
+      ? "No places match the selected filter combination. Try selecting different filters or clear search to view all options."
+      : "No hay establecimientos que coincidan con la combinación de filtros seleccionada. Prueba cambiando los filtros o límpialos para ver todas las opciones.",
+  },
+};
 ---
 
-<div class="category-filter-wrapper">
-  <div class="custom-dropdown" id="category-dropdown">
-    <div class="dropdown-header" id="dropdown-header">
-      <!-- data-all-label: el <script> se empaqueta aparte y no ve el frontmatter -->
-      <span
-        class="dropdown-title"
-        id="dropdown-title"
-        data-all-label={s.filter.all}>{s.filter.all}</span
+<div class="restaurant-filters-container">
+  <div class="filter-dropdowns-row">
+    <!-- 1. ZONA -->
+    <div class="filter-dropdown-group" id="group-zona">
+      <label class="filter-label" for="filter-zona"
+        >📍 {labels.zona.title}</label
       >
-      <svg
-        class="dropdown-arrow"
-        viewBox="0 0 24 24"
-        width="20"
-        height="20"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-        <polyline points="6 9 12 15 18 9"></polyline>
-      </svg>
+      <div class="custom-select-wrapper">
+        <select id="filter-zona" class="custom-select">
+          <option value="">{labels.zona.all}</option>
+          {
+            labels.zona.options.map((opt) => (
+              <option value={opt.value}>{opt.label}</option>
+            ))
+          }
+        </select>
+        <span class="select-arrow" aria-hidden="true">▼</span>
+      </div>
     </div>
 
-    <div class="dropdown-content" id="dropdown-content">
-      {
-        options.map((opt) => (
-          <label class="dropdown-item">
-            <input type="checkbox" value={opt} class="category-checkbox" />
-            <div class="checkbox-custom">
-              <svg
-                viewBox="0 0 24 24"
-                class="check-icon"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="3"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-            </div>
-            <span class="dropdown-label">{opt}</span>
-          </label>
-        ))
-      }
+    <!-- 2. PET FRIENDLY -->
+    <div class="filter-dropdown-group" id="group-petfriendly">
+      <label class="filter-label" for="filter-petfriendly"
+        >🐾 {labels.petFriendly.title}</label
+      >
+      <div class="custom-select-wrapper">
+        <select id="filter-petfriendly" class="custom-select">
+          <option value="">{labels.petFriendly.all}</option>
+          <option value="true">{labels.petFriendly.yes}</option>
+        </select>
+        <span class="select-arrow" aria-hidden="true">▼</span>
+      </div>
+    </div>
+
+    <!-- 3. TIPO DE COMIDA -->
+    <div class="filter-dropdown-group" id="group-tipocomida">
+      <label class="filter-label" for="filter-tipocomida"
+        >🍽️ {labels.tipoComida.title}</label
+      >
+      <div class="custom-select-wrapper">
+        <select id="filter-tipocomida" class="custom-select">
+          <option value="">{labels.tipoComida.all}</option>
+          {
+            labels.tipoComida.options.map((opt) => (
+              <option value={opt.value}>{opt.label}</option>
+            ))
+          }
+        </select>
+        <span class="select-arrow" aria-hidden="true">▼</span>
+      </div>
+    </div>
+
+    <!-- 4. CATEGORÍA -->
+    <div class="filter-dropdown-group" id="group-categoria">
+      <label class="filter-label" for="filter-categoria"
+        >🏷️ {labels.categoria.title}</label
+      >
+      <div class="custom-select-wrapper">
+        <select id="filter-categoria" class="custom-select">
+          <option value="">{labels.categoria.all}</option>
+          {
+            labels.categoria.options.map((opt) => (
+              <option value={opt.value}>{opt.label}</option>
+            ))
+          }
+        </select>
+        <span class="select-arrow" aria-hidden="true">▼</span>
+      </div>
+    </div>
+
+    <!-- 5. ESTRELLA MICHELIN -->
+    <div class="filter-dropdown-group" id="group-michelin">
+      <label class="filter-label" for="filter-michelin"
+        >⭐ {labels.michelin.title}</label
+      >
+      <div class="custom-select-wrapper">
+        <select id="filter-michelin" class="custom-select">
+          <option value="">{labels.michelin.all}</option>
+          <option value="true">{labels.michelin.yes}</option>
+        </select>
+        <span class="select-arrow" aria-hidden="true">▼</span>
+      </div>
+    </div>
+
+    <!-- RESET BUTTON -->
+    <div
+      class="filter-reset-wrapper"
+      id="filter-reset-wrapper"
+      style="display: none;"
+    >
+      <button type="button" id="btn-reset-filters" class="reset-filters-btn">
+        ✕ {labels.reset}
+      </button>
     </div>
   </div>
 </div>
 
+<!-- COMPONENTE NO RESULTADOS -->
+<div
+  class="restaurant-no-results"
+  id="restaurant-no-results"
+  style="display: none;"
+>
+  <div class="no-results-card">
+    <div class="no-results-icon" aria-hidden="true">🔍</div>
+    <h3 class="no-results-title">{labels.noResults.title}</h3>
+    <p class="no-results-text">{labels.noResults.text}</p>
+    <button
+      type="button"
+      id="btn-no-results-reset"
+      class="no-results-reset-btn"
+    >
+      🔄 {labels.reset}
+    </button>
+  </div>
+</div>
+
 <script>
-  function setupDropdown() {
-    const dropdown = document.getElementById("category-dropdown");
-    const header = document.getElementById("dropdown-header");
-    const title = document.getElementById("dropdown-title");
-    const checkboxes = document.querySelectorAll(".category-checkbox");
+  function setupRestaurantFilters() {
+    const selectZona = document.getElementById(
+      "filter-zona",
+    ) as HTMLSelectElement | null;
+    const selectPet = document.getElementById(
+      "filter-petfriendly",
+    ) as HTMLSelectElement | null;
+    const selectTipo = document.getElementById(
+      "filter-tipocomida",
+    ) as HTMLSelectElement | null;
+    const selectCat = document.getElementById(
+      "filter-categoria",
+    ) as HTMLSelectElement | null;
+    const selectMichelin = document.getElementById(
+      "filter-michelin",
+    ) as HTMLSelectElement | null;
+    const btnReset = document.getElementById("btn-reset-filters");
+    const btnNoResultsReset = document.getElementById("btn-no-results-reset");
+    const resetWrapper = document.getElementById("filter-reset-wrapper");
+    const noResultsEl = document.getElementById("restaurant-no-results");
+
+    if (
+      !selectZona ||
+      !selectPet ||
+      !selectTipo ||
+      !selectCat ||
+      !selectMichelin
+    )
+      return;
+
     const cards = document.querySelectorAll(".business-card");
 
-    if (!dropdown || !header || !title) return;
+    function applyFilters() {
+      const valZona = selectZona!.value.toLowerCase().trim();
+      const valPet = selectPet!.value;
+      const valTipo = selectTipo!.value.toLowerCase().trim();
+      const valCat = selectCat!.value.toLowerCase().trim();
+      const valMichelin = selectMichelin!.value;
 
-    // Toggle dropdown
-    header.addEventListener("click", (e) => {
-      e.stopPropagation();
-      dropdown.classList.toggle("open");
-    });
+      const isAnyActive =
+        valZona !== "" ||
+        valPet !== "" ||
+        valTipo !== "" ||
+        valCat !== "" ||
+        valMichelin !== "";
 
-    // Close when clicking outside
-    document.addEventListener("click", (e) => {
-      if (!dropdown.contains(e.target)) {
-        dropdown.classList.remove("open");
+      if (resetWrapper) {
+        resetWrapper.style.display = isAnyActive ? "flex" : "none";
       }
-    });
 
-    // Handle checkbox change
-    checkboxes.forEach((checkbox) => {
-      checkbox.addEventListener("change", () => {
-        // Obtenemos todos los seleccionados
-        const checkedValues = Array.from(
-          document.querySelectorAll(".category-checkbox:checked"),
-        ).map((cb) => cb.value);
+      let visibleCount = 0;
 
-        // Actualizar texto del header
-        if (checkedValues.length === 0) {
-          title.textContent = (title as HTMLElement).dataset.allLabel ?? "";
-        } else if (checkedValues.length === 1) {
-          title.textContent = checkedValues[0];
-        } else {
-          title.textContent = `${checkedValues.length} categorías seleccionadas`;
+      cards.forEach((card) => {
+        const cardEl = card as HTMLElement;
+        const cZona = (cardEl.dataset.zona || "").toLowerCase();
+        const cPet = cardEl.dataset.petfriendly || "false";
+        const cTipo = (cardEl.dataset.tipocomida || "").toLowerCase();
+        const cCat = (
+          cardEl.dataset.categoria ||
+          cardEl.dataset.clasificacion ||
+          ""
+        ).toLowerCase();
+        const cMichelin = cardEl.dataset.estrellamichelin || "false";
+
+        // Check Zona
+        let matchZona = true;
+        if (valZona) {
+          matchZona = cZona.includes(valZona);
         }
 
-        // Mostrar/ocultar tarjetas
-        cards.forEach((card) => {
-          const cardEl = card;
-          const cardClasificacion = cardEl.dataset.clasificacion;
+        // Check Pet Friendly
+        let matchPet = true;
+        if (valPet === "true") {
+          matchPet = cPet === "true";
+        }
 
-          if (checkedValues.length === 0) {
-            // Mostrar todas si no hay filtros
-            cardEl.style.display = "";
+        // Check Tipo de Comida
+        let matchTipo = true;
+        if (valTipo) {
+          if (valTipo === "mexicana") {
+            matchTipo =
+              cTipo.includes("mexican") ||
+              cTipo.includes("poblan") ||
+              cTipo.includes("casera") ||
+              cTipo.includes("yucateca") ||
+              cTipo.includes("pibil");
+          } else if (valTipo === "italiana") {
+            matchTipo =
+              cTipo.includes("italian") ||
+              cTipo.includes("pizza") ||
+              cTipo.includes("pasta");
+          } else if (valTipo === "mariscos") {
+            matchTipo = cTipo.includes("marisco");
+          } else if (valTipo === "desayuno") {
+            matchTipo =
+              cTipo.includes("desayuno") ||
+              cTipo.includes("brunch") ||
+              cTipo.includes("café") ||
+              cTipo.includes("cafe") ||
+              cTipo.includes("panadería");
+          } else if (valTipo === "tacos") {
+            matchTipo =
+              cTipo.includes("taco") ||
+              cTipo.includes("birria") ||
+              cTipo.includes("longaniza") ||
+              cTipo.includes("suadero");
+          } else if (valTipo === "cerveza") {
+            matchTipo =
+              cTipo.includes("cerveza") ||
+              cTipo.includes("bar") ||
+              cTipo.includes("destilado") ||
+              cTipo.includes("mixolog") ||
+              cTipo.includes("sangría") ||
+              cTipo.includes("sangria") ||
+              cTipo.includes("botana");
+          } else if (valTipo === "helado") {
+            matchTipo =
+              cTipo.includes("helad") ||
+              cTipo.includes("postre") ||
+              cTipo.includes("chocolat") ||
+              cTipo.includes("churro") ||
+              cTipo.includes("waffle") ||
+              cTipo.includes("cacao");
+          } else if (valTipo === "autor") {
+            matchTipo =
+              cTipo.includes("autor") ||
+              cTipo.includes("gourmet") ||
+              cTipo.includes("francesa") ||
+              cTipo.includes("alta cocina") ||
+              cTipo.includes("michelin");
           } else {
-            // Mostrar solo si su clasificación está en los filtros
-            cardEl.style.display =
-              cardClasificacion && checkedValues.includes(cardClasificacion)
-                ? ""
-                : "none";
+            matchTipo = cTipo.includes(valTipo);
           }
-        });
+        }
+
+        // Check Categoría (bar / restaurante / heladería / cafetería)
+        let matchCat = true;
+        if (valCat) {
+          if (valCat === "restaurante") {
+            matchCat =
+              cCat.includes("restaurante") ||
+              cCat.includes("comida") ||
+              cCat.includes("taquería") ||
+              cCat.includes("mercado") ||
+              cCat.includes("churrería");
+          } else if (valCat === "bar") {
+            matchCat =
+              cCat.includes("bar") ||
+              cCat.includes("cantina") ||
+              cCat.includes("licorería") ||
+              cCat.includes("pub");
+          } else if (valCat === "heladeria") {
+            matchCat =
+              cCat.includes("helad") ||
+              cCat.includes("heladería") ||
+              cCat.includes("gelateria") ||
+              cCat.includes("gelato");
+          } else if (valCat === "cafeteria") {
+            matchCat =
+              cCat.includes("café") ||
+              cCat.includes("cafe") ||
+              cCat.includes("cafetería") ||
+              cCat.includes("cafeteria") ||
+              cCat.includes("chocolat") ||
+              cCat.includes("churrería");
+          } else {
+            matchCat = cCat.includes(valCat);
+          }
+        }
+
+        // Check Estrella Michelin
+        let matchMichelin = true;
+        if (valMichelin === "true") {
+          matchMichelin = cMichelin === "true";
+        }
+
+        if (matchZona && matchPet && matchTipo && matchCat && matchMichelin) {
+          cardEl.style.display = "";
+          visibleCount++;
+        } else {
+          cardEl.style.display = "none";
+        }
       });
-    });
+
+      if (noResultsEl) {
+        noResultsEl.style.display = visibleCount === 0 ? "block" : "none";
+      }
+    }
+
+    function resetAll() {
+      selectZona!.value = "";
+      selectPet!.value = "";
+      selectTipo!.value = "";
+      selectCat!.value = "";
+      selectMichelin!.value = "";
+      applyFilters();
+    }
+
+    selectZona.addEventListener("change", applyFilters);
+    selectPet.addEventListener("change", applyFilters);
+    selectTipo.addEventListener("change", applyFilters);
+    selectCat.addEventListener("change", applyFilters);
+    selectMichelin.addEventListener("change", applyFilters);
+
+    if (btnReset) {
+      btnReset.addEventListener("click", resetAll);
+    }
+    if (btnNoResultsReset) {
+      btnNoResultsReset.addEventListener("click", resetAll);
+    }
   }
 
-  setupDropdown();
-  document.addEventListener("astro:page-load", setupDropdown);
+  setupRestaurantFilters();
+  document.addEventListener("astro:page-load", setupRestaurantFilters);
 </script>

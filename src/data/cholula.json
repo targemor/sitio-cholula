@@ -514,7 +514,6 @@
                 "/images/hoteles/mansin-azul-cholula/hotel_manmsion_azul_cholula_2-1024x1024-1.webp",
                 "/images/hoteles/mansin-azul-cholula/mansion-azul-1024x1024-1.webp",
                 "/images/hoteles/mansin-azul-cholula/hotel_mansion_azul_cholula-1024x1024-1.webp",
-                "/images/hoteles/mansin-azul-cholula/hotel_manmsion_azul_cholula_1-1024x1024-1.webp",
                 "/images/hoteles/mansin-azul-cholula/hotel_manmsion_azul_cholula_3-1024x1024-1.webp",
                 "/images/hoteles/mansin-azul-cholula/hotel_manmsion_azul_cholula_4-1024x1024-1.webp"
             ],
@@ -643,6 +642,49 @@
     ],
     "restaurantes": [
         {
+            "nombre": "La Lunita Restaurante",
+            "galeria": [
+                "/images/restaurantes/la-lunita-restaurante/la_lunita_restaurante-1024x1024-1.webp",
+                "/images/restaurantes/la-lunita-restaurante/La-Lunita_cholula_1-1024x1024-1.webp",
+                "/images/restaurantes/la-lunita-restaurante/La-Lunita_cholula_2-1024x1024-1.webp",
+                "/images/restaurantes/la-lunita-restaurante/La-Lunita_cholula_3-1024x1024-1.webp",
+                "/images/restaurantes/la-lunita-restaurante/La-Lunita_cholula_4-1024x1024-1.webp",
+                "/images/restaurantes/la-lunita-restaurante/La-Lunita_cholula_5-1024x1024-1.webp"
+            ],
+            "categoria": "restaurante",
+            "tipoComida": "Comida tradicional poblana",
+            "ambiente": "Familiar · Informal",
+            "dondeEsta": "Zona Centro",
+            "idealPara": "Restaurante tradicional, típicas sangrías",
+            "caracteristicasEspeciales": "Restaurante tradicional, típicas sangrías",
+            "social": {
+                "facebook": "https://www.facebook.com/LaLunitaCholula",
+                "instagram": "https://www.instagram.com/restaurantlalunita"
+            },
+            "horario": {
+                "lunes": "09:00-21:00",
+                "martes": "09:00-21:00",
+                "miercoles": "09:00-21:00",
+                "jueves": "09:00-21:00",
+                "viernes": "09:00-21:00",
+                "sabado": "09:00-21:00",
+                "domingo": "09:00-18:00",
+                "resumen": "Lun-Sáb 09:00-21:00 · Dom 09:00-18:00",
+                "detalle": "Lunes: 09:00-21:00 • Martes: 09:00-21:00 • Miércoles: 09:00-21:00 • Jueves: 09:00-21:00 • Viernes: 09:00-21:00 • Sábado: 09:00-21:00 • Domingo: 09:00-18:00"
+            },
+            "direccion": "Av. Morelos 419, San Miguel, Barrio de San Miguel Tianguisnahuitl",
+            "whatsapp": "2222470011",
+            "googleMaps": "https://maps.app.goo.gl/7uqCpmUyesPYio299",
+            "categoriaPrecio": "Económico",
+            "petFriendly": false,
+            "musicaEnVivo": false,
+            "precioPpMxn": "$120–280",
+            "ocasionIdeal": "Comida tradicional poblana, sangrías tradicionales, experiencia local",
+            "perfilIdeal": "Familiar y tradicional · Ideal para familias, turistas y locales que buscan sabor auténtico",
+            "espacioFisico": "Local en Zona Centro",
+            "telefono": "2222470011"
+        },
+        {
             "nombre": "Allora",
             "galeria": [
                 "/images/restaurantes/allora/image5.webp",
@@ -681,7 +723,6 @@
             "precioPpMxn": "$350–700",
             "ocasionIdeal": "Cena romántica italiana, comida especial, jardín tranquilo con vista a la pirámide",
             "perfilIdeal": "Romántico y elegante · Ideal para parejas y grupos pequeños que quieren cocina italiana especial",
-            "etiquetasChatbot": "romántico, elegante, jardín, vista-pirámide, italiana, íntimo, cena-especial",
             "espacioFisico": "Jardín con vistas a la pirámide en Zona Centro",
             "telefono": "2221782682"
         },
@@ -725,7 +766,6 @@
             "precioPpMxn": "$200–400",
             "ocasionIdeal": "Comida familiar al aire libre, tarde con mascotas, mariscos en jardín",
             "perfilIdeal": "Familiar y campestre · Ideal para familias con niños y dueños de mascotas",
-            "etiquetasChatbot": "pet-friendly, jardín, área-infantil, familias-con-niños, mariscos, al-aire-libre",
             "espacioFisico": "Jardín amplio al aire libre · Área infantil",
             "telefono": "2212036934"
         },
@@ -768,7 +808,6 @@
             "precioPpMxn": "$200–400",
             "ocasionIdeal": "Comida familiar al aire libre, tarde con mascotas, mariscos en jardín",
             "perfilIdeal": "Familiar y campestre · Ideal para familias con niños y dueños de mascotas",
-            "etiquetasChatbot": "pet-friendly, jardín, área-infantil, familias-con-niños, mariscos, al-aire-libre",
             "espacioFisico": "Jardín amplio al aire libre · Área infantil",
             "telefono": "2212036934"
         },
@@ -809,7 +848,6 @@
             "precioPpMxn": "$100–250",
             "ocasionIdeal": "Desayuno, brunch, café de tarde-noche, reunión casual en los portales",
             "perfilIdeal": "Casual y relajado · Ideal para amigos, parejas, trabajo y estudiantes · Abre casi hasta medianoche",
-            "etiquetasChatbot": "pet-friendly, portales, desayuno, brunch, café, open-late, casual, familiar",
             "espacioFisico": "Los Portales históricos de Cholula",
             "telefono": "2224049947"
         },
@@ -851,7 +889,6 @@
             "precioPpMxn": "$80–150",
             "ocasionIdeal": "Experiencia local auténtica, tacos tradicionales, abierto de jueves a domingo",
             "perfilIdeal": "Local y auténtico · Ideal para foodies y aventureros gastronómicos que buscan experiencia real",
-            "etiquetasChatbot": "experiencia-local, tacos, birria, auténtico, económico, jueves-a-domingo",
             "espacioFisico": "Local en Zona Centro"
         },
         {
@@ -889,7 +926,6 @@
             "precioPpMxn": "$150–350",
             "ocasionIdeal": "Noche de copas, after work, salida nocturna animada",
             "perfilIdeal": "Nocturno y social · Ideal para grupos de amigos adultos y noctámbulos",
-            "etiquetasChatbot": "nocturno, DJ, destilados, cerveza-artesanal, after, adultos, noche, bar",
             "espacioFisico": "Espacio nocturno fuera del Centro",
             "telefono": "2224613812"
         },
@@ -933,7 +969,6 @@
             "precioPpMxn": "$100–250",
             "ocasionIdeal": "Tarde-noche de cervezas artesanales, reunión informal entre amigos",
             "perfilIdeal": "Social e informal · Ideal para amigos adultos y amantes de la cerveza artesanal",
-            "etiquetasChatbot": "cerveza-artesanal, craft-beer, brewpub-propio, social, informal, zona-centro",
             "espacioFisico": "Brewpub propio en Zona Centro",
             "telefono": "2222619290"
         },
@@ -973,7 +1008,6 @@
             "precioPpMxn": "$80–200",
             "ocasionIdeal": "Postre instagrameable, helados en rollo, merienda moderna",
             "perfilIdeal": "Moderno y casual · Ideal para jóvenes, parejas y todos que quieren un postre instagrameable",
-            "etiquetasChatbot": "helado-en-rollo, instagrameable, waffles, café, jóvenes, moderno, casual",
             "espacioFisico": "Local moderno en Zona Centro",
             "telefono": "2201918614"
         },
@@ -1017,7 +1051,6 @@
             "precioPpMxn": "$50–120",
             "ocasionIdeal": "Postre, merienda, paseo casual con niños",
             "perfilIdeal": "Casual y alegre · Ideal para familias con niños, parejas y cualquier visitante",
-            "etiquetasChatbot": "helados-artesanales, familias, niños, postre, casual, económico, tradicional-cholula",
             "espacioFisico": "Local a pocos minutos del Centro",
             "telefono": "2225640635"
         },
@@ -1061,7 +1094,6 @@
             "precioPpMxn": "$50–120",
             "ocasionIdeal": "Postre, merienda, paseo casual con niños",
             "perfilIdeal": "Casual y alegre · Ideal para familias con niños, parejas y cualquier visitante",
-            "etiquetasChatbot": "helados-artesanales, familias, niños, postre, casual, económico, tradicional-cholula",
             "espacioFisico": "Local a pocos minutos del Centro",
             "telefono": "2225640635"
         },
@@ -1106,7 +1138,6 @@
             "precioPpMxn": "$80–200",
             "ocasionIdeal": "Churros con chocolate, desayuno clásico, merienda, tarde en los portales",
             "perfilIdeal": "Tradicional y familiar · Ideal para familias, turistas y todos los visitantes de los portales",
-            "etiquetasChatbot": "churros, chocolate-caliente, portales, tradicional, familiar, pet-friendly-exterior, turístico, open-late",
             "espacioFisico": "Los Portales históricos de Cholula · Interior amplio y exterior",
             "telefono": "2222471689"
         },
@@ -1150,7 +1181,6 @@
             "precioPpMxn": "$400–800",
             "ocasionIdeal": "Cena romántica, aniversario, cumpleaños, evento especial, ver la pirámide al atardecer",
             "perfilIdeal": "Elegante y romántico con toque prehispánico · Ideal para parejas, familias y grupos en celebraciones especiales",
-            "etiquetasChatbot": "vista-pirámide, terraza-jardín, romántico, celebraciones, alta-cocina-mexicana, instagrameable, música-en-vivo, show-prehispánico, pet-friendly, aniversario, atardecer",
             "espacioFisico": "Terraza-jardín con vista directa a la Pirámide de Cholula e Iglesia de los Remedios",
             "telefono": "2222479425"
         },
@@ -1193,7 +1223,6 @@
             "precioPpMxn": "$350–700",
             "ocasionIdeal": "Cena romántica, cumpleaños especial, celebración íntima, cita de pareja",
             "perfilIdeal": "Muy romántico e íntimo · Ideal para parejas, cumpleaños especiales y grupos de amigas",
-            "etiquetasChatbot": "romántico, jardín, saxofón-en-vivo, celebraciones, cumpleaños, cocina-francesa, íntimo, cita-de-pareja, casona",
             "espacioFisico": "Jardín de casona cholulteca transformada · Iluminación cálida · Vegetación mediterránea",
             "telefono": "2215259952"
         },
@@ -1237,7 +1266,6 @@
             "precioPpMxn": "$200–450",
             "ocasionIdeal": "Comida familiar campestre, tarde con niños, experiencia de granja",
             "perfilIdeal": "Campestre y familiar · Ideal para familias con niños y grupos grandes",
-            "etiquetasChatbot": "familias-con-niños, granja, jardín, área-infantil, campestre, pizzas-italianas, amplio, al-aire-libre",
             "espacioFisico": "Área campestre con granja · Jardín amplio · Área infantil",
             "telefono": "2217020522"
         },
@@ -1281,7 +1309,6 @@
             "precioPpMxn": "$250–500",
             "ocasionIdeal": "Comida o cena con vista panorámica, pizzas italianas especiales",
             "perfilIdeal": "Casual-elegante · Ideal para parejas, amigos y grupos que quieren vista y buena pizza",
-            "etiquetasChatbot": "vista-panorámica, terraza, pizzas-italianas, romántico, instagrameable, casual-elegante",
             "espacioFisico": "Terraza con vista panorámica en Zona Centro",
             "telefono": "2229606603"
         },
@@ -1325,7 +1352,6 @@
             "precioPpMxn": "$100–250",
             "ocasionIdeal": "Desayuno abundante, brunch con mucha comida",
             "perfilIdeal": "Casual y familiar · Ideal para hambrientos y quienes buscan desayuno abundante",
-            "etiquetasChatbot": "pet-friendly, desayuno, brunch, porciones-abundantes, casual, familiar, solo-mañanas",
             "espacioFisico": "Local en Zona Centro",
             "telefono": "2216555666"
         },
@@ -1370,7 +1396,6 @@
             "precioPpMxn": "$200–400",
             "ocasionIdeal": "Tarde de cervezas artesanales, reunión casual al aire libre, ver la pirámide tranquilo",
             "perfilIdeal": "Relajado y al aire libre · Ideal para amigos, parejas, familias con niños y dueños de mascotas",
-            "etiquetasChatbot": "beer-garden, pet-friendly, kids-zone, vista-pirámide, jardín, al-aire-libre, cerveza-artesanal, música-en-vivo, deportes-en-vivo",
             "espacioFisico": "Beer garden al aire libre · Jardín con vista a la Pirámide · Kids Zone",
             "telefono": "2229719298"
         },
@@ -1414,7 +1439,6 @@
             "precioPpMxn": "$200–400",
             "ocasionIdeal": "Comida tradicional poblana, turismo gastronómico, temporada de chile en nogada",
             "perfilIdeal": "Tradicional y familiar · Ideal para familias y turistas que quieren cocina poblana auténtica",
-            "etiquetasChatbot": "cocina-poblana, tradicional, turístico, portales, chile-en-nogada-temporada, familiar",
             "espacioFisico": "Los Portales históricos de Cholula",
             "telefono": "2222476966"
         },
@@ -1458,7 +1482,6 @@
             "precioPpMxn": "$200–450",
             "ocasionIdeal": "Noche cultural con jazz en vivo, cita especial única, experiencia bohemia",
             "perfilIdeal": "Bohemio y cultural · Ideal para parejas, amigos adultos y amantes de la música en vivo",
-            "etiquetasChatbot": "jazz-en-vivo, música-en-vivo, bohemio, cultural, pet-friendly, cerveza-artesanal, cita-especial, nocturno, instagrameable, parejas",
             "espacioFisico": "Club con terraza · Diseño moderno y cálido · Cervecería propia",
             "telefono": "2228387569"
         },
@@ -1501,7 +1524,6 @@
             "precioPpMxn": "$150–350",
             "ocasionIdeal": "Comida con música en vivo, reunión animada, parrilladas entre amigos",
             "perfilIdeal": "Informal y animado · Ideal para grupos de amigos",
-            "etiquetasChatbot": "música-en-vivo, parrilladas, mexicana, informal, animado, grupos",
             "espacioFisico": "Local en Zona Centro"
         },
         {
@@ -1544,53 +1566,8 @@
             "precioPpMxn": "$150–350",
             "ocasionIdeal": "Tarde-noche de cantina, experiencia local auténtica, trasnoche en los portales",
             "perfilIdeal": "Social y animado · Ideal para grupos de amigos, adultos y locales · Trasnoche en los portales",
-            "etiquetasChatbot": "cantina-tradicional, experiencia-local, música-en-vivo, portales, noche, social, animado, trasnoche",
             "espacioFisico": "Los Portales históricos · Cantina tradicional",
             "telefono": "2221887131"
-        },
-        {
-            "nombre": "La Lunita Restaurante",
-            "galeria": [
-                "/images/restaurantes/la-lunita-restaurante/la_lunita_restaurante-1024x1024-1.webp",
-                "/images/restaurantes/la-lunita-restaurante/La-Lunita_cholula_1-1024x1024-1.webp",
-                "/images/restaurantes/la-lunita-restaurante/La-Lunita_cholula_2-1024x1024-1.webp",
-                "/images/restaurantes/la-lunita-restaurante/La-Lunita_cholula_3-1024x1024-1.webp",
-                "/images/restaurantes/la-lunita-restaurante/La-Lunita_cholula_4-1024x1024-1.webp",
-                "/images/restaurantes/la-lunita-restaurante/La-Lunita_cholula_5-1024x1024-1.webp"
-            ],
-            "categoria": "restaurante",
-            "tipoComida": "Comida tradicional poblana",
-            "ambiente": "Familiar · Informal",
-            "dondeEsta": "Zona Centro",
-            "idealPara": "Restaurante tradicional, típicas sangrías",
-            "caracteristicasEspeciales": "Restaurante tradicional, típicas sangrías",
-            "social": {
-                "facebook": "https://www.facebook.com/LaLunitaCholula",
-                "instagram": "https://www.instagram.com/restaurantlalunita"
-            },
-            "horario": {
-                "lunes": "09:00-21:00",
-                "martes": "09:00-21:00",
-                "miercoles": "09:00-21:00",
-                "jueves": "09:00-21:00",
-                "viernes": "09:00-21:00",
-                "sabado": "09:00-21:00",
-                "domingo": "09:00-18:00",
-                "resumen": "Lun-Sáb 09:00-21:00 · Dom 09:00-18:00",
-                "detalle": "Lunes: 09:00-21:00 • Martes: 09:00-21:00 • Miércoles: 09:00-21:00 • Jueves: 09:00-21:00 • Viernes: 09:00-21:00 • Sábado: 09:00-21:00 • Domingo: 09:00-18:00"
-            },
-            "direccion": "Av. Morelos 419, San Miguel, Barrio de San Miguel Tianguisnahuitl",
-            "whatsapp": "2222470011",
-            "googleMaps": "https://maps.app.goo.gl/7uqCpmUyesPYio299",
-            "categoriaPrecio": "Económico",
-            "petFriendly": false,
-            "musicaEnVivo": false,
-            "precioPpMxn": "$120–280",
-            "ocasionIdeal": "Comida tradicional poblana, sangrías tradicionales, experiencia local",
-            "perfilIdeal": "Familiar y tradicional · Ideal para familias, turistas y locales que buscan sabor auténtico",
-            "etiquetasChatbot": "experiencia-local, sangrías-tradicionales, cocina-poblana, familiar, tradicional",
-            "espacioFisico": "Local en Zona Centro",
-            "telefono": "2222470011"
         },
         {
             "nombre": "La Pirámide",
@@ -1663,7 +1640,6 @@
             "precioPpMxn": "$150–400",
             "ocasionIdeal": "Cócteles con vista panorámica, noche animada con DJ, after work",
             "perfilIdeal": "Social y nocturno · Ideal para amigos adultos, parejas y grupos que quieren vista y cócteles",
-            "etiquetasChatbot": "terraza, vista-panorámica, DJ, mixología, coctelería, nocturno, instagrameable, social",
             "espacioFisico": "Terraza con vista panorámica en Zona Centro",
             "telefono": "2211943795"
         },
@@ -1704,7 +1680,6 @@
             "precioPpMxn": "$150–350",
             "ocasionIdeal": "Comida tradicional en Los Portales, buffet dominical",
             "perfilIdeal": "Familiar y casual · Ideal para familias, grupos y turistas en los portales",
-            "etiquetasChatbot": "portales, familiar, buffet-domingos, mexicana, casual, turístico",
             "espacioFisico": "Los Portales históricos de Cholula",
             "telefono": "2222471098"
         },
@@ -1741,7 +1716,6 @@
             "precioPpMxn": "$50–150",
             "ocasionIdeal": "Experiencia de mercado local auténtica, desayuno económico tradicional",
             "perfilIdeal": "Auténtico y local · Ideal para turistas y locales que quieren experiencia de mercado real",
-            "etiquetasChatbot": "experiencia-local, auténtico, mercado-tradicional, económico, cultural",
             "espacioFisico": "Mercado tradicional en Zona Centro"
         },
         {
@@ -1782,7 +1756,6 @@
             "precioPpMxn": "$100–250",
             "ocasionIdeal": "Merienda, tarde de chocolate artesanal, postre, experiencia local única",
             "perfilIdeal": "Informal y acogedor · Ideal para familias, parejas y amigos que buscan algo dulce y diferente",
-            "etiquetasChatbot": "chocolate-artesanal, pet-friendly, postres, café, experiencia-local, merienda, familiar",
             "espacioFisico": "Local acogedor en Zona Centro",
             "telefono": "5573227983"
         },
@@ -1825,7 +1798,6 @@
             "precioPpMxn": "$100–250",
             "ocasionIdeal": "Desayuno tranquilo, brunch relajado, mañana especial",
             "perfilIdeal": "Tranquilo y familiar · Ideal para parejas, amigos, trabajo y quienes prefieren mañanas sin prisa",
-            "etiquetasChatbot": "pet-friendly, desayuno, brunch, tranquilo, familiar, mañana, solo-mañanas",
             "espacioFisico": "Local acogedor en Zona Centro",
             "telefono": "2215711404"
         },
@@ -1871,7 +1843,6 @@
             "precioPpMxn": "$150–350",
             "ocasionIdeal": "Desayuno, comida casual, reunión de trabajo, variado para todos",
             "perfilIdeal": "Informal y familiar · Ideal para familias, amigos y reuniones de trabajo",
-            "etiquetasChatbot": "variado, casual, desayuno, pizzas, mexicana, café, tradicional, familiar",
             "espacioFisico": "Casa tradicional en Zona Centro",
             "telefono": "2221060452"
         },
@@ -1914,7 +1885,6 @@
             "precioPpMxn": "$150–280",
             "ocasionIdeal": "Desayuno o comida casera, buffet de fin de semana",
             "perfilIdeal": "Familiar y tradicional · Ideal para familias y grupos que buscan comida casera abundante",
-            "etiquetasChatbot": "mexicana-casera, buffet-fines-de-semana, familiar, tradicional, económico",
             "espacioFisico": "Local en Zona Centro",
             "telefono": "2205548513"
         },
@@ -1952,7 +1922,6 @@
             "precioPpMxn": "$150–350",
             "ocasionIdeal": "Desayuno con terraza, brunch, pan tradicional cholulteca",
             "perfilIdeal": "Casual y familiar · Ideal para familias, amigos y turistas que quieren terraza y pan tradicional",
-            "etiquetasChatbot": "terraza, pan-tradicional-cholulteca, brunch, desayuno, familiar, casual, mexicana",
             "espacioFisico": "Terraza propia en Zona Centro",
             "telefono": "2212008179"
         },
@@ -1996,7 +1965,6 @@
             "precioPpMxn": "$150–300",
             "ocasionIdeal": "Desayuno o comida casual en los portales, salida con mascotas",
             "perfilIdeal": "Casual y familiar · Ideal para familias, amigos y turistas en los portales",
-            "etiquetasChatbot": "portales, pet-friendly, cocina-poblana, casual, tradicional, familiar, desayuno, comida",
             "espacioFisico": "Los Portales históricos de Cholula",
             "telefono": "2215844514"
         },
@@ -2040,7 +2008,6 @@
             "precioPpMxn": "$150–300",
             "ocasionIdeal": "Comida o cena con vista a la pirámide, parrilla norteña, noche los viernes y sábados",
             "perfilIdeal": "Casual y familiar · Ideal para turistas, foodies y parejas que quieren vista a la pirámide",
-            "etiquetasChatbot": "al-pie-de-la-pirámide, vista-panorámica, parrilla-norteña, mexicana, turístico, nocturno-fines-de-semana",
             "espacioFisico": "Al pie de la pirámide · Vista panorámica",
             "telefono": "2227597842"
         },
@@ -2084,7 +2051,6 @@
             "precioPpMxn": "$500–1,000+",
             "ocasionIdeal": "Cena romántica, propuesta de matrimonio, cumpleaños especial, celebraciones, brunch especial",
             "perfilIdeal": "Romántico e íntimo · Ideal para parejas, celebraciones y grupos pequeños · Muy instagrameable",
-            "etiquetasChatbot": "romántico, cita-de-pareja, instagrameable, celebraciones, casona-histórica, propuesta-matrimonio, brunch, jardín, pet-friendly",
             "espacioFisico": "Casona del siglo XVIII · Patio colonial con arcos de piedra · Jardín con vegetación · Iluminación cálida",
             "telefono": "2213711813"
         },
@@ -2128,7 +2094,6 @@
             "precioPpMxn": "$80–150",
             "ocasionIdeal": "Tacos árabes típicos de Cholula, snack rápido en los portales, antojo",
             "perfilIdeal": "Casual e informal · Ideal para todos — turistas y locales que quieren probar los tacos árabes",
-            "etiquetasChatbot": "tacos-árabes, portales, económico, casual, experiencia-local, turístico, especialidad-cholula",
             "espacioFisico": "Los Portales históricos (Portal Guerrero 11-B)",
             "telefono": "2213545423"
         },
@@ -2172,7 +2137,6 @@
             "precioPpMxn": "$80–200",
             "ocasionIdeal": "Postre, merienda, paseo por los portales",
             "perfilIdeal": "Casual y familiar · Ideal para todos los visitantes que pasean por los portales",
-            "etiquetasChatbot": "helados, café, postres, portales, familiar, casual, abierto-todos-los-días",
             "espacioFisico": "Los Portales históricos de Cholula",
             "telefono": "2211795726"
         },
@@ -2215,7 +2179,6 @@
             "precioPpMxn": "$150–300",
             "ocasionIdeal": "Comida yucateca diferente, experiencia gastronómica auténtica",
             "perfilIdeal": "Informal y auténtico · Ideal para familias, amigos y foodies que quieren algo diferente",
-            "etiquetasChatbot": "pet-friendly, cochinita-pibil, cocina-yucateca, auténtico, diferente, familiar, foodies",
             "espacioFisico": "Local en Zona Centro",
             "telefono": "2214384720"
         },
@@ -2252,17 +2215,157 @@
             "categoriaPrecio": "Premium",
             "petFriendly": false,
             "musicaEnVivo": false,
+            "estrellaMichelin": true,
             "precioPpMxn": "$800–1,500+",
             "ocasionIdeal": "Experiencia gastronómica única, aniversario, ocasión muy especial, fine dining",
             "perfilIdeal": "Exclusivo y sofisticado · Ideal para parejas y foodies en ocasiones muy especiales",
-            "etiquetasChatbot": "guía-michelin, fine-dining, cocina-de-autor, chef-reconocido, aniversario, ocasión-muy-especial, mixología, speakeasy, íntimo, exclusivo, maridaje",
             "espacioFisico": "Almacén elegante con techo de metal y vidrio · Jardín interior · Terraza · Speakeasy bar",
             "telefono": "2224651420"
+        },
+        {
+            "nombre": "Bar Reforma",
+            "galeria": [],
+            "categoria": "bar",
+            "tipoComida": "Sangrías y botanas",
+            "ambiente": "Social · Tradicional · pet friendly",
+            "dondeEsta": "Zona Centro",
+            "idealPara": "Tarde-noche de cantina, sangrías tradicionales, experiencia local auténtica",
+            "caracteristicasEspeciales": "Sangrías tradicionales · Cantina auténtica",
+            "social": [],
+            "horario": {
+                "lunes": "17:00-23:00",
+                "martes": "17:00-23:00",
+                "miercoles": "17:00-23:00",
+                "jueves": "17:00-23:00",
+                "viernes": "17:00-23:00",
+                "sabado": "15:00-23:00",
+                "domingo": "13:00-16:30",
+                "resumen": "Lun-Vie 17:00-23:00 · Sáb 15:00-23:00 · Dom 13:00-16:30",
+                "detalle": "Lunes: 17:00-23:00 • Martes: 17:00-23:00 • Miércoles: 17:00-23:00 • Jueves: 17:00-23:00 • Viernes: 17:00-23:00 • Sábado: 15:00-23:00 • Domingo: 13:00-16:30"
+            },
+            "whatsapp": "2222056023",
+            "googleMaps": "https://maps.app.goo.gl/mUjGZKyjwtJT7kWC6",
+            "categoriaPrecio": "Económico",
+            "petFriendly": true,
+            "musicaEnVivo": false,
+            "precioPpMxn": "$100–250",
+            "ocasionIdeal": "Tarde-noche de cantina, sangrías tradicionales, experiencia local auténtica",
+            "perfilIdeal": "Social y tradicional · Ideal para locales, amigos adultos que buscan cantina auténtica",
+            "espacioFisico": "Local en Zona Centro",
+            "telefono": "2222056023"
+        },
+        {
+            "nombre": "Terriel, tierra y miel",
+            "galeria": [
+                "/images/restaurantes/terriel/terriel1.webp",
+                "/images/restaurantes/terriel/terriel2.webp",
+                "/images/restaurantes/terriel/terriel3.webp",
+                "/images/restaurantes/terriel/terriel4.webp"
+            ],
+            "categoria": "restaurante",
+            "tipoComida": "Mexicana, internacional, saludable, brunch, repostería",
+            "ambiente": "Íntimo · Natural · pet friendly",
+            "dondeEsta": "Zona Pirámide",
+            "idealPara": "Desayunos con ingredientes orgánicos, café de especialidad, brunch, reuniones de trabajo",
+            "caracteristicasEspeciales": "Café de especialidad · Ingredientes orgánicos · Jardín · Terraza · Pet friendly · Música en vivo",
+            "social": {
+                "instagram": "https://www.instagram.com/terrielmx"
+            },
+            "horario": {
+                "lunes": "09:00-14:30",
+                "martes": "09:00-14:30",
+                "miercoles": "09:00-14:30",
+                "jueves": "09:00-14:30",
+                "viernes": "09:00-14:30",
+                "sabado": "09:00-18:00",
+                "domingo": "09:00-18:00",
+                "resumen": "Lun-Vie 09:00-14:30 · Sáb-Dom 09:00-18:00",
+                "detalle": "Lunes: 09:00-14:30 • Martes: 09:00-14:30 • Miércoles: 09:00-14:30 • Jueves: 09:00-14:30 • Viernes: 09:00-14:30 • Sábado: 09:00-18:00 • Domingo: 09:00-18:00"
+            },
+            "whatsapp": "2221844034",
+            "googleMaps": "https://maps.app.goo.gl/7fcHu2ftUHAnZfVB6",
+            "categoriaPrecio": "Precio moderado",
+            "petFriendly": true,
+            "musicaEnVivo": true,
+            "precioPpMxn": "",
+            "ocasionIdeal": "Desayunos y café de especialidad todos los días; entre semana hasta las 2:30 pm, fines de semana con horario extendido hasta las 6:00 pm; brunch, reuniones de trabajo, ocasiones especiales",
+            "perfilIdeal": "Íntimo y natural · Ideal para parejas, amigos, reuniones de trabajo y ocasiones especiales · Cerca de Parque Soria, ingredientes orgánicos y café de especialidad",
+            "espacioFisico": "jardín · Terraza",
+            "telefono": "2221844034"
+        },
+        {
+            "nombre": "Las Macetitas",
+            "galeria": [],
+            "categoria": "restaurante",
+            "tipoComida": "Comida mexicana, desayunos abundantes",
+            "ambiente": "Familiar · Tradicional · pet friendly",
+            "dondeEsta": "Zona Centro",
+            "idealPara": "Porciones abundantes, vivir experiencia local, desayunos típicos mexicanos",
+            "caracteristicasEspeciales": "Porciones abundantes · Casa tradicional cholulteca · Café de especialidad",
+            "social": {
+                "instagram": "https://www.instagram.com/meson_las_macetitas/?hl=es-la"
+            },
+            "horario": {
+                "lunes": "08:00-14:00",
+                "martes": "08:00-14:00",
+                "miercoles": "08:00-14:00",
+                "jueves": "08:00-14:00",
+                "viernes": "08:00-14:00",
+                "sabado": "08:30-17:00",
+                "domingo": "08:30-17:00",
+                "resumen": "Lun-Vie 08:00-14:00 · Sáb-Dom 08:30-17:00",
+                "detalle": "Lunes: 08:00-14:00 • Martes: 08:00-14:00 • Miércoles: 08:00-14:00 • Jueves: 08:00-14:00 • Viernes: 08:00-14:00 • Sábado: 08:30-17:00 • Domingo: 08:30-17:00"
+            },
+            "whatsapp": "2227065921",
+            "googleMaps": "https://maps.app.goo.gl/z7kHiQKXrHLsopUU9",
+            "categoriaPrecio": "Económico",
+            "petFriendly": true,
+            "musicaEnVivo": false,
+            "precioPpMxn": "$100–250",
+            "ocasionIdeal": "Foodies, vivir experiencia local, lugar tradicional, desayunos típicos mexicanos",
+            "perfilIdeal": "Quieren porciones abundantes, buscan experiencia local, buen sazón mexicano",
+            "espacioFisico": "Casa tradicional cholulteca",
+            "telefono": "2227065921"
+        },
+        {
+            "nombre": "Casa Mostaza",
+            "galeria": [],
+            "categoria": "restaurante",
+            "tipoComida": "Comida mexicana",
+            "ambiente": "Familiar · Casual · pet friendly",
+            "dondeEsta": "Los Portales",
+            "idealPara": "Desayunar en los Portales, comer comida mexicana en espacio amplio",
+            "caracteristicasEspeciales": "Restaurante amplio en los portales · Abierto todos los días",
+            "social": {
+                "instagram": "https://www.instagram.com/mostazacholula/"
+            },
+            "horario": {
+                "lunes": "07:00-20:00",
+                "martes": "07:00-20:00",
+                "miercoles": "07:00-20:00",
+                "jueves": "07:00-20:00",
+                "viernes": "07:00-20:00",
+                "sabado": "07:00-20:00",
+                "domingo": "07:00-20:00",
+                "resumen": "Lun-Dom 07:00-20:00",
+                "detalle": "Lunes: 07:00-20:00 • Martes: 07:00-20:00 • Miércoles: 07:00-20:00 • Jueves: 07:00-20:00 • Viernes: 07:00-20:00 • Sábado: 07:00-20:00 • Domingo: 07:00-20:00"
+            },
+            "whatsapp": "7202308796",
+            "googleMaps": "https://maps.app.goo.gl/QV4RhRGwmHDAhNgE9",
+            "categoriaPrecio": "Económico",
+            "petFriendly": true,
+            "musicaEnVivo": false,
+            "precioPpMxn": "$200–300",
+            "ocasionIdeal": "Desayunar en los Portales",
+            "perfilIdeal": "Quieren comer comida mexicana en los Portales, buscan un lugar amplio",
+            "espacioFisico": "Restaurante amplio en los portales",
+            "telefono": "7202308796"
         }
     ],
     "queHacer": [
         {
             "nombre": "2RB (2 Ruedas Bueno)",
+            "categoriaGrupo": "aventura",
             "galeria": [
                 "/images/que-hacer/2rb-2-ruedas-bueno/4.webp",
                 "/images/que-hacer/2rb-2-ruedas-bueno/2.webp",
@@ -2294,6 +2397,7 @@
         },
         {
             "nombre": "Experiencias ConSentido",
+            "categoriaGrupo": "historia",
             "galeria": [
                 "/images/que-hacer/experiencias-consentido/1.webp",
                 "/images/que-hacer/experiencias-consentido/2.webp"
@@ -2313,6 +2417,7 @@
         },
         {
             "nombre": "TIP TOURS",
+            "categoriaGrupo": "historia,otras-partes",
             "galeria": [
                 "/images/que-hacer/tip-tours/487972716.webp",
                 "/images/que-hacer/tip-tours/foto-enamorada-grace.webp"
@@ -2332,6 +2437,7 @@
         },
         {
             "nombre": "Turibike Cholula",
+            "categoriaGrupo": "diversion",
             "galeria": [
                 "/images/que-hacer/turibike-cholula/Turibike_cholula_2-1024x1024-1.webp",
                 "/images/que-hacer/turibike-cholula/Turibike_cholula_1-1024x1024-1.webp",
@@ -2366,6 +2472,7 @@
         },
         {
             "nombre": "Turiwheel",
+            "categoriaGrupo": "historia",
             "galeria": [
                 "/images/que-hacer/turiwheel/Turiwheel_cholula_2-1024x1024-1.webp",
                 "/images/que-hacer/turiwheel/Turiwheel_cholula_3-1024x1024-1.webp",
@@ -2401,6 +2508,7 @@
         },
         {
             "nombre": "Terra Equus",
+            "categoriaGrupo": "aventura",
             "galeria": [
                 "/images/que-hacer/terra-equus/CABALGATAS 1 - Terra Equus.webp",
                 "/images/que-hacer/terra-equus/CABALGATAS 2 - Terra Equus.webp"
@@ -2464,8 +2572,8 @@
         {
             "nombre": "Alejandra Toxqui",
             "galeria": [
-                "/images/guias-turisticos/alejandra-toxqui/af66894d-4a42-41a9-91f3-554ff9b3a930.webp",
-                "/images/guias-turisticos/alejandra-toxqui/Guias_turisticos_Alejandra-Toxqui-1024x1024-1.webp"
+                "/images/guias-turisticos/alejandra-toxqui/f69be56e-4503-4851-9db9-078a049ac061.webp",
+                "/images/guias-turisticos/alejandra-toxqui/af66894d-4a42-41a9-91f3-554ff9b3a930.webp"
             ],
             "certificacionSectur": true,
             "social": {

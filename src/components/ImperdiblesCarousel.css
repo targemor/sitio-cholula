@@ -532,8 +532,8 @@
   }
 
   .imp-card-img-wrap {
-    /* Formato vertical 3:4 en móvil */
-    aspect-ratio: 3 / 4;
+    /* Formato apaisado 4:3 en móvil para mostrar imágenes completas como cover */
+    aspect-ratio: 4 / 3;
     min-height: unset;
     height: auto;
     position: relative;
@@ -562,10 +562,16 @@
   }
 
   .imp-arrow {
-    width: 30px;
-    height: 30px;
-    min-width: 30px;
-    min-height: 30px;
+    top: 30%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    min-height: 32px;
+  }
+
+  .imp-arrow:hover {
+    transform: translateY(-50%) scale(1.08);
   }
 
   .imp-arrow svg {
@@ -579,8 +585,8 @@
 
 @media (max-width: 480px) {
   .imp-card-img-wrap {
-    /* Mantiene 3:4 vertical en pantallas muy pequeñas */
-    aspect-ratio: 3 / 4;
+    /* Formato 4:3 en pantallas muy pequeñas */
+    aspect-ratio: 4 / 3;
     min-height: unset;
     height: auto;
   }

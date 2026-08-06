@@ -44,6 +44,8 @@ export interface Props {
   musicaEnVivo?: boolean;
   precioPpMxn?: string;
   espacioFisico?: string;
+  categoriaGrupo?: string;
+  estrellaMichelin?: boolean;
   showLocationCta?: boolean;
   showCredits?: boolean;
 }
@@ -80,6 +82,8 @@ const {
   petFriendly = false,
   musicaEnVivo = false,
   espacioFisico,
+  categoriaGrupo,
+  estrellaMichelin = false,
   showLocationCta = false,
   showCredits = false,
 } = Astro.props;
@@ -101,10 +105,12 @@ function formatUrl(url?: string) {
 
 const lang = getLocaleFromPath(Astro.url.pathname);
 const s = getStrings(lang);
+const isEn = lang === "en";
 
 // `zona` y `tipoComida` salen del catálogo: se traducen con los datos (Fase 4),
 // no aquí. El resto son etiquetas de interfaz.
-const chips: { label: string; active: boolean; icon: string }[] = [
+const chips: { label: string; active: boolean; icon: string; isMichelin?: boolean }[] = [
+  ...(estrellaMichelin ? [{ label: isEn ? "Guía Michelin" : "Guía Michelin", active: true, icon: "⭐", isMichelin: true }] : []),
   ...(zona ? [{ label: zona, active: true, icon: "📍" }] : []),
   ...(tipoComida ? [{ label: tipoComida, active: true, icon: "🍽️" }] : []),
   { label: s.card.chips.petFriendly, active: aceptaMascotas || petFriendly, icon: "🐾" },
@@ -123,8 +129,22 @@ const igGradId = `ig-grad-card-${swiperId}`;
   class="business-card"
   id={id}
   data-clasificacion={clasificacion || undefined}
+  data-categoria={clasificacion || undefined}
+  data-categoria-grupo={categoriaGrupo || undefined}
+  data-zona={zona || undefined}
+  data-petfriendly={petFriendly || aceptaMascotas ? "true" : "false"}
+  data-tipocomida={tipoComida || undefined}
+  data-estrellamichelin={estrellaMichelin ? "true" : "false"}
 >
   <div class="business-card-slider">
+    {
+      estrellaMichelin && (
+        <div class="michelin-badge-overlay">
+          <span class="michelin-star-icon">⭐</span>
+          <span class="michelin-badge-text">{isEn ? "Michelin Guide" : "Guía Michelin"}</span>
+        </div>
+      )
+    }
     <SwiperGallery
       id={swiperId}
       items={images.map((img) => ({ img }))}
@@ -401,7 +421,7 @@ const igGradId = `ig-grad-card-${swiperId}`;
       <div class="bc-chips">
         {
           chips.map((c) => (
-            <span class="bc-chip">
+            <span class={`bc-chip ${c.isMichelin ? "bc-chip-michelin" : ""}`}>
               {c.icon} {c.label}
             </span>
           ))

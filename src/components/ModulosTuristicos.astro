@@ -1,60 +1,85 @@
 ---
 interface Props {
-  lang?: 'es' | 'en';
+  lang?: "es" | "en";
 }
 
 const { lang: propLang } = Astro.props;
 
 // Auto-detect language via prop, Astro.currentLocale or URL pathname
 const currentPath = Astro.url.pathname;
-const isEnPath = currentPath === '/en' || currentPath.startsWith('/en/');
-const isEnLocale = Astro.currentLocale === 'en';
-const lang = propLang || (isEnPath || isEnLocale ? 'en' : 'es');
+const isEnPath = currentPath === "/en" || currentPath.startsWith("/en/");
+const isEnLocale = Astro.currentLocale === "en";
+const lang = propLang || (isEnPath || isEnLocale ? "en" : "es");
 
-const isEn = lang === 'en';
+const isEn = lang === "en";
 
-const title = isEn ? "Tourist Information Points" : "Puntos de información turística";
+const title = isEn
+  ? "Tourist Information Points"
+  : "Puntos de información turística";
 
 const modules = [
   {
     icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M3 7h18"/><path d="M5 7v14"/><path d="M19 7v14"/><path d="M9 7v14"/><path d="M15 7v14"/><path d="M12 3L3 7h18L12 3z"/></svg>`,
-    nombre: isEn ? "Kiosk Module, Zócalo (Plaza de la Concordia)" : "Modulo kiosco, zocalo (Plaza de la Concordia)",
-    descripcion: isEn ? "Tourist staff assists you with maps and recommendations." : "Personal turistico te orienta con mapas y recomendaciones.",
-    horario: isEn ? "Every day, 9:00–17:00 h" : "Todos los dias, 9:00-17:00 h",
+    nombre: isEn
+      ? "Kiosk Module, Zócalo (Plaza de la Concordia)"
+      : "Módulo kiosco, zocalo (Plaza de la Concordia)",
+    descripcion: isEn
+      ? "Tourist staff assists you with maps and recommendations."
+      : "Personal turistico te orienta con mapas y recomendaciones.",
+    horario: isEn ? "Every day, 9:00–16:30 h" : "Todos los dias, 9:00-16:30 h",
     comoLlegarText: isEn ? "Get directions" : "Como llegar",
-    mapUrl: "https://maps.google.com/?q=Plaza+de+la+Concordia+San+Pedro+Cholula"
+    mapUrl:
+      "https://maps.google.com/?q=Plaza+de+la+Concordia+San+Pedro+Cholula",
   },
   {
     icon: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 10a6 6 0 0 0-6-6H3v2a6 6 0 0 1 6-6h3zm0 0a6 6 0 0 1 6-6h3v2a6 6 0 0 1-6 6h-3z"/><path d="M12 10v11"/><path d="M9 21h6"/></svg>`,
-    nombre: isEn ? "Parque Soria Module" : "Modulo Parque Soria",
-    descripcion: isEn ? "On-site information about nearby attractions and activities." : "Informacion en sitio sobre atractivos y actividades cercanas.",
-    horario: isEn ? "Every day, 9:00–17:00 h" : "Todos los dias, 9:00-17:00 h",
+    nombre: isEn ? "Parque Soria Module" : "Módulo Parque Soria",
+    descripcion: isEn
+      ? "On-site information about nearby attractions and activities."
+      : "Informacion en sitio sobre atractivos y actividades cercanas.",
+    horario: isEn ? "Every day, 9:00–16:30 h" : "Todos los dias, 9:00-16:30 h",
     comoLlegarText: isEn ? "Get directions" : "Como llegar",
-    mapUrl: "https://maps.google.com/?q=Parque+Soria+San+Pedro+Cholula"
-  }
+    mapUrl: "https://maps.google.com/?q=Parque+Soria+San+Pedro+Cholula",
+  },
 ];
 ---
 
 <div class="modulos-turisticos-box">
   <div class="modulos-title">{title}</div>
   <div class="modulos-list">
-    {modules.map((mod) => (
-      <div class="modulo-item">
-        <div class="modulo-icon" set:html={mod.icon} />
-        <div class="modulo-content">
-          <div class="modulo-nombre">{mod.nombre}</div>
-          <div class="modulo-desc">{mod.descripcion}</div>
-          <div class="modulo-horario">{mod.horario}</div>
-          <a href={mod.mapUrl} target="_blank" rel="noopener noreferrer" class="modulo-map-link">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z"/>
-              <circle cx="12" cy="10" r="3"/>
-            </svg>
-            <span>{mod.comoLlegarText}</span>
-          </a>
+    {
+      modules.map((mod) => (
+        <div class="modulo-item">
+          <div class="modulo-icon" set:html={mod.icon} />
+          <div class="modulo-content">
+            <div class="modulo-nombre">{mod.nombre}</div>
+            <div class="modulo-desc">{mod.descripcion}</div>
+            <div class="modulo-horario">{mod.horario}</div>
+            <a
+              href={mod.mapUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="modulo-map-link"
+            >
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M12 2a8 8 0 0 0-8 8c0 5.25 8 12 8 12s8-6.75 8-12a8 8 0 0 0-8-8z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              <span>{mod.comoLlegarText}</span>
+            </a>
+          </div>
         </div>
-      </div>
-    ))}
+      ))
+    }
   </div>
 </div>
 
@@ -134,7 +159,9 @@ const modules = [
     text-decoration: none;
     font-size: 13px;
     font-weight: 600;
-    transition: color 0.2s ease, transform 0.2s ease;
+    transition:
+      color 0.2s ease,
+      transform 0.2s ease;
   }
 
   .modulo-map-link:hover {

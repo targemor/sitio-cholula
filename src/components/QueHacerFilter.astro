@@ -1,0 +1,132 @@
+---
+import { getLocaleFromPath } from "../i18n/routes";
+import "./QueHacerFilter.css";
+
+interface Props {
+  data: any[];
+}
+
+const { data } = Astro.props;
+const lang = getLocaleFromPath(Astro.url.pathname);
+const isEn = lang === "en";
+
+// Contar elementos por categoría
+const counts = {
+  all: data.length,
+  historia: data.filter((item) => item.categoriaGrupo?.includes("historia")).length,
+  aventura: data.filter((item) => item.categoriaGrupo?.includes("aventura")).length,
+  diversion: data.filter((item) => item.categoriaGrupo?.includes("diversion")).length,
+  otrasPartes: data.filter((item) => item.categoriaGrupo?.includes("otras-partes")).length,
+};
+
+const labels = {
+  all: isEn ? "All" : "Todos",
+  historia: isEn ? "History" : "Historia",
+  aventura: isEn ? "Adventure" : "Aventura",
+  diversion: isEn ? "Fun" : "Diversión",
+  otrasPartes: isEn ? "Visit other parts of Puebla" : "Quiero visitar otras partes de Puebla",
+  noResultsTitle: isEn ? "No activities found" : "No se encontraron actividades",
+  noResultsSub: isEn ? "Try selecting another category or view all activities." : "Prueba seleccionando otra categoría o muestra todas las actividades.",
+  clearFilters: isEn ? "Show all activities" : "Mostrar todas las actividades",
+};
+---
+
+<div class="qh-filter-bar" id="qh-filter-bar">
+  <div class="qh-pills-scroll">
+    <button type="button" class="qh-pill qh-pill--active" data-qh-cat="all">
+      <span class="qh-pill-icon">✨</span>
+      <span class="qh-pill-text">{labels.all}</span>
+      <span class="qh-pill-count">{counts.all}</span>
+    </button>
+    <button type="button" class="qh-pill" data-qh-cat="historia">
+      <span class="qh-pill-icon">📜</span>
+      <span class="qh-pill-text">{labels.historia}</span>
+      <span class="qh-pill-count">{counts.historia}</span>
+    </button>
+    <button type="button" class="qh-pill" data-qh-cat="aventura">
+      <span class="qh-pill-icon">🚵</span>
+      <span class="qh-pill-text">{labels.aventura}</span>
+      <span class="qh-pill-count">{counts.aventura}</span>
+    </button>
+    <button type="button" class="qh-pill" data-qh-cat="diversion">
+      <span class="qh-pill-icon">🚴</span>
+      <span class="qh-pill-text">{labels.diversion}</span>
+      <span class="qh-pill-count">{counts.diversion}</span>
+    </button>
+    <button type="button" class="qh-pill" data-qh-cat="otras-partes">
+      <span class="qh-pill-icon">🚌</span>
+      <span class="qh-pill-text">{labels.otrasPartes}</span>
+      <span class="qh-pill-count">{counts.otrasPartes}</span>
+    </button>
+  </div>
+</div>
+
+<!-- Componente No Resultados -->
+<div id="qh-no-results" class="qh-no-results" style="display: none;">
+  <div class="qh-no-results-card">
+    <div class="qh-no-results-icon">🔍</div>
+    <h3 class="qh-no-results-title">{labels.noResultsTitle}</h3>
+    <p class="qh-no-results-sub">{labels.noResultsSub}</p>
+    <button type="button" id="qh-reset-btn" class="qh-reset-btn">
+      🔄 {labels.clearFilters}
+    </button>
+  </div>
+</div>
+
+<script>
+  function initQueHacerFilter() {
+    const filterBar = document.getElementById("qh-filter-bar");
+    if (!filterBar) return;
+
+    const pills = filterBar.querySelectorAll<HTMLButtonElement>(".qh-pill");
+    const cards = document.querySelectorAll<HTMLElement>(".business-card");
+    const noResults = document.getElementById("qh-no-results");
+    const resetBtn = document.getElementById("qh-reset-btn");
+
+    function applyFilter(cat: string) {
+      let visibleCount = 0;
+
+      pills.forEach((p) => {
+        const isActive = p.dataset.qhCat === cat;
+        p.classList.toggle("qh-pill--active", isActive);
+        p.setAttribute("aria-selected", isActive ? "true" : "false");
+      });
+
+      cards.forEach((card) => {
+        const cardCat = card.dataset.categoriaGrupo || "";
+        const matches = cat === "all" || cardCat.split(",").includes(cat);
+
+        if (matches) {
+          card.style.display = "";
+          card.style.animation = "qhFadeIn 0.3s ease forwards";
+          visibleCount++;
+        } else {
+          card.style.display = "none";
+        }
+      });
+
+      if (noResults) {
+        noResults.style.display = visibleCount === 0 ? "block" : "none";
+      }
+    }
+
+    pills.forEach((pill) => {
+      pill.addEventListener("click", () => {
+        const cat = pill.dataset.qhCat || "all";
+        applyFilter(cat);
+      });
+    });
+
+    if (resetBtn) {
+      resetBtn.addEventListener("click", () => {
+        applyFilter("all");
+      });
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initQueHacerFilter);
+  } else {
+    initQueHacerFilter();
+  }
+</script>

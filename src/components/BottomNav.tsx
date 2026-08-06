@@ -48,6 +48,14 @@ const MapIcon = ({ className }: { className?: string }) => (
     </svg>
 );
 
+const GlobeIcon = ({ className }: { className?: string }) => (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="2" y1="12" x2="22" y2="12"></line>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+    </svg>
+);
+
 type NavKey = Extract<RouteKey, 'home' | 'lodging' | 'food' | 'things' | 'guides'>;
 
 const NAV: { id: string; key: NavKey; hash?: string; icon: any }[] = [
@@ -68,6 +76,7 @@ const FALLBACK_LABELS: Record<NavKey, string> = {
 
 interface BottomNavProps {
     lang?: Locale;
+    alternates?: { locale: Locale; path: string }[];
     /** Etiquetas ya resueltas para `lang`: la isla no carga el diccionario completo. */
     labels?: Record<NavKey, string>;
     ariaLabel?: string;
@@ -75,6 +84,7 @@ interface BottomNavProps {
 
 export default function BottomNav({
     lang = 'es',
+    alternates = [],
     labels = FALLBACK_LABELS,
     ariaLabel = 'Navegación principal móvil',
 }: BottomNavProps) {
@@ -85,6 +95,8 @@ export default function BottomNav({
         label: labels[item.key],
         href: `${localizePathSafe(item.key, lang)}${item.hash ?? ''}`,
     }));
+
+    const otherLocale = alternates.find((alt) => alt.locale !== lang);
 
     useEffect(() => {
         const hash = window.location.hash;
@@ -139,6 +151,19 @@ export default function BottomNav({
                         </a>
                     );
                 })}
+
+                {otherLocale && (
+                    <a
+                        href={otherLocale.path}
+                        hrefLang={otherLocale.locale}
+                        lang={otherLocale.locale}
+                        className="bottom-nav-link bottom-nav-lang"
+                        aria-label={`Cambiar idioma a ${otherLocale.locale.toUpperCase()}`}
+                    >
+                        <GlobeIcon className="bottom-nav-icon" />
+                        <span className="bottom-nav-label">{otherLocale.locale.toUpperCase()}</span>
+                    </a>
+                )}
             </div>
         </>
     );

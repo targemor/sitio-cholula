@@ -1,0 +1,147 @@
+/* ── Filtros Qué Hacer ── */
+.qh-filter-bar {
+  width: 100%;
+  margin: 0.5rem 0 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.qh-pills-scroll {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding: 0.4rem 0.2rem 0.8rem;
+  scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch;
+}
+
+.qh-pills-scroll::-webkit-scrollbar {
+  height: 4px;
+}
+
+.qh-pills-scroll::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.qh-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.55rem 1.1rem;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 9999px;
+  color: #334155;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.qh-pill:hover {
+  border-color: #cbd5e1;
+  background: #f8fafc;
+  transform: translateY(-1px);
+}
+
+.qh-pill--active {
+  background: linear-gradient(135deg, #d96a56 0%, #b84c44 100%);
+  border-color: transparent;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(184, 76, 68, 0.35);
+}
+
+.qh-pill--active .qh-pill-count {
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+.qh-pill-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.qh-pill-count {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  background: #f1f5f9;
+  color: #64748b;
+  border-radius: 999px;
+  transition: all 0.2s ease;
+}
+
+/* ── No resultados ── */
+.qh-no-results {
+  width: 100%;
+  margin: 2rem 0;
+}
+
+.qh-no-results-card {
+  background: #ffffff;
+  border: 1px dashed #cbd5e1;
+  border-radius: 16px;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.qh-no-results-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.qh-no-results-title {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 0.4rem;
+}
+
+.qh-no-results-sub {
+  font-size: 0.88rem;
+  color: #64748b;
+  margin: 0 0 1.25rem;
+  line-height: 1.5;
+}
+
+.qh-reset-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.25rem;
+  background: #b84c44;
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 9999px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.qh-reset-btn:hover {
+  background: #a03d36;
+  transform: translateY(-1px);
+}
+
+@keyframes qhFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

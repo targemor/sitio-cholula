@@ -235,12 +235,14 @@
 .logo-mexico {
   height: 24px;
   width: auto;
+  margin-bottom: 5px;
 }
 
 /* ============================================
    RESPONSIVE BREAKPOINTS
    ============================================ */
 @media (max-width: 1250px) {
+
   .desktop-only-puebla,
   .desktop-only-divider {
     display: none !important;
@@ -250,14 +252,24 @@
     display: flex !important;
   }
 
+  /* Ocultar selector de idioma en header en móvil (se mueve a BottomNav) */
+  .header-lang {
+    display: none !important;
+  }
+
   /* Hide header nav links when screen <= 1250px — relies on BottomNav instead to prevent overlap */
   .header-nav {
     display: none !important;
   }
 
   .header-inner {
-    padding: 8px 16px;
-    min-height: 76px;
+    padding: 10px 16px;
+    min-height: 82px;
+  }
+
+  .header-center {
+    position: static;
+    transform: none;
   }
 
   .header-left {
@@ -265,7 +277,7 @@
   }
 
   .header-right {
-    gap: 6px;
+    gap: 8px;
   }
 
   /* Keep left logos prominent */
@@ -279,63 +291,37 @@
 
   /* Keep right side state logos compact */
   .logo-puebla {
-    height: 19px;
+    height: 22px;
     width: auto;
   }
 
   .logo-mexico {
-    height: 19px;
+    height: 22px;
     width: auto;
+    margin-top: 2px;
   }
 }
 
-/* En móviles y resoluciones < 480px / 360px: 2 filas para que NUNCA se solapen los logos */
 @media (max-width: 480px) {
   .header-inner {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    grid-template-rows: auto auto;
-    grid-template-areas:
-      "left right"
-      "center center";
-    padding: 8px 12px 6px;
-    gap: 6px;
-    min-height: auto;
-    width: 100%;
+    padding: 8px 12px;
+    min-height: 76px;
   }
 
   .header-left {
-    grid-area: left;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-
-  .header-right {
-    grid-area: right;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
     gap: 6px;
   }
 
-  .header-center {
-    grid-area: center;
-    position: static;
-    transform: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 4px;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
+  .header-right {
+    gap: 5px;
   }
 
   .header-divider {
-    height: 24px;
+    height: 28px;
   }
 
   .header-logo-img {
-    height: 38px;
+    height: 42px;
   }
 
   .header-logo-featured {
@@ -343,17 +329,49 @@
   }
 
   .logo-puebla {
-    height: 17px;
+    height: 19px;
     width: auto;
   }
 
   .logo-mexico {
-    height: 17px;
+    height: 19px;
     width: auto;
+    margin-top: 2px;
+  }
+}
+
+@media (max-width: 360px) {
+  .header-inner {
+    padding: 6px 8px;
+    min-height: 68px;
   }
 
-  .header-lang {
-    padding: 3px 8px;
-    font-size: 0.75rem;
+  .header-left {
+    gap: 4px;
+  }
+
+  .header-right {
+    gap: 4px;
+  }
+
+  .header-divider {
+    height: 24px;
+  }
+
+  .header-logo-img {
+    height: 36px;
+  }
+
+  .header-logo-featured {
+    height: 54px;
+  }
+
+  .logo-puebla {
+    height: 16px;
+  }
+
+  .logo-mexico {
+    height: 16px;
+    margin-top: 1.5px;
   }
 }

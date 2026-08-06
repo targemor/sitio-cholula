@@ -135,6 +135,10 @@
     letter-spacing: 0.01em;
 }
 
+.search-submit-icon {
+    display: none;
+}
+
 .search-submit-btn:hover {
     background: linear-gradient(135deg, #b84c44 0%, #a03d36 100%);
     transform: translateY(-1px);
@@ -623,28 +627,44 @@
     }
 }
 
-/* ── Responsive: colapsar en móvil ── */
+/* ── Responsive: colapsar en móvil (mostrar solo iconos) ── */
 @media (max-width: 680px) {
     .search-input-wrapper {
-        padding: 0.45rem 0.45rem 0.45rem 1rem;
-        gap: 0.4rem;
-        border-radius: 14px;
+        gap: 0.75rem;
+    }
+
+    .search-input-row {
+        padding: 0.4rem 0.4rem 0.4rem 0.85rem;
+    }
+
+    .search-submit-text {
+        display: none;
+    }
+
+    .search-submit-icon {
+        display: inline-block;
     }
 
     .search-submit-btn {
-        padding: 0.65rem 1.2rem;
-        font-size: 0.92rem;
+        padding: 0.55rem 0.85rem;
+        min-width: 2.5rem;
+        border-radius: 9px;
     }
 
-    .search-category-shortcuts {
-        padding-left: 0.4rem;
-        margin-left: 0.1rem;
-        gap: 0.2rem;
+    .search-shortcuts-row {
+        gap: 0.45rem;
+        flex-wrap: nowrap;
+        justify-content: center;
     }
 
-    .search-shortcut-icon {
-        width: 2rem;
-        height: 2rem;
+    .search-pill-label {
+        display: none;
+    }
+
+    .search-pill-btn {
+        padding: 0.5rem 0.8rem;
+        border-radius: 9px;
+        min-width: 2.5rem;
     }
 
     .search-input {

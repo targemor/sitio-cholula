@@ -9,9 +9,9 @@
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-top: 1px solid #e2e8f0;
-  padding: 0.75rem 2rem calc(0.75rem + env(safe-area-inset-bottom, 0px)) 2rem;
+  padding: 0.5rem 0.5rem calc(0.5rem + env(safe-area-inset-bottom, 0px)) 0.5rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1);
 }
@@ -39,6 +39,21 @@
   font-size: 9px;
   font-weight: 900;
   text-transform: uppercase;
+}
+
+/* Selector de idioma en BottomNav */
+.bottom-nav-lang {
+  color: #94a3b8;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.bottom-nav-lang:hover {
+  color: #ea580c;
+  background: transparent;
 }
 
 /* Hide Bottom Nav on Large Desktop (> 1250px) */

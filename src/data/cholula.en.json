@@ -1,6 +1,5 @@
 {
   "_comment": "Traducciones del catálogo de negocios, indexadas por CAMPO y luego por VALOR en español. No es un overlay por registro: 552 instancias se reducen a 366 valores únicos (34% de repetición), y un valor nuevo que ya exista en el diccionario se traduce solo. El campo acota el contexto, así que un mismo texto no puede traducirse de dos formas distintas. Lo que no aparezca aquí cae al español.",
-
   "categoriaPrecio": {
     "Estándar": "Standard",
     "Superior": "Superior",
@@ -9,14 +8,12 @@
     "Precio moderado": "Moderate price",
     "Premium": "Premium"
   },
-
   "categoria": {
     "restaurante": "restaurant",
     "bar": "bar",
     "cafeteria": "cafe",
     "mercado": "market"
   },
-
   "dondeEsta": {
     "Zona Centro": "Downtown",
     "A pocos minutos del Centro": "A few minutes from downtown",
@@ -26,7 +23,6 @@
     "Zona Pirámide": "Pyramid area",
     "Los portales": "Los Portales"
   },
-
   "zona": {
     "A pocos minutos del Centro": "A few minutes from downtown",
     "Centro": "Downtown",
@@ -35,14 +31,12 @@
     "Zona Pirámide": "Pyramid area",
     "Los Portales (Centro)": "Los Portales (downtown)"
   },
-
   "tamanioCategoria": {
     "Íntimo": "Intimate",
     "Mediano": "Medium",
     "Grande": "Large",
     "Pequeño": "Small"
   },
-
   "clasificacion": {
     "Experiencias en bicicleta y outdoor": "Cycling and outdoor experiences",
     "Operadora turística": "Tour operator",
@@ -52,14 +46,12 @@
     "Recorrido a pie": "Walking tour",
     "Guía de Turistas General Acreditado NOM-08": "Accredited General Tourist Guide (NOM-08)"
   },
-
   "idiomas": {
     "Español, Inglés": "Spanish, English",
     "Español": "Spanish",
     "Español (inglés/alemán con 24h de aviso)": "Spanish (English/German with 24h notice)",
     "Inglés y español": "English and Spanish"
   },
-
   "aceptaMascotasNota": {
     "con previo aviso": "with advance notice",
     "Gratis": "Free",
@@ -70,14 +62,12 @@
     "pueden aplicar cargos adicionales": "additional charges may apply",
     "Con cargo: $250 MXN/noche hasta 5kg, $350 MXN/noche hasta 12kg": "Charge: $250 MXN/night up to 5kg, $350 MXN/night up to 12kg"
   },
-
   "terrazaNota": {
     "sin vista especial": "no special view",
     "vista a zona arqueológica/pirámide": "view of the archaeological site/pyramid",
     "vista a volcanes y pirámide": "view of the volcanoes and pyramid",
     "vista a centro histórico": "view of the historic center"
   },
-
   "tipo": {
     "renta de bicicletas y tours": "bike rental and tours",
     "experiencias culturales y gastronómicas": "cultural and food experiences",
@@ -87,11 +77,9 @@
     "Centro Equino Integral": "Equestrian center",
     "tour a pie": "walking tour"
   },
-
   "especializacion": {
     "Turismo religioso, gastronómico y cultural": "Religious, food and cultural tourism"
   },
-
   "distanciaGranPiramide": {
     "9 min a pie de la Gran Pirámide": "9 min walk from the Great Pyramid",
     "8 min a pie (0.5 km) de la Gran Pirámide": "8 min walk (0.5 km) from the Great Pyramid",
@@ -109,7 +97,6 @@
     "8 min a pie de la Gran Pirámide, 5 min del centro": "8 min walk from the Great Pyramid, 5 min from downtown",
     "12 min a pie de la Gran Pirámide, 3 calles del zócalo": "12 min walk from the Great Pyramid, 3 blocks from the main square"
   },
-
   "amenidades": {
     "Restaurante, Jardín, Terraza, Recepción 24 horas": "Restaurant, Garden, Terrace, 24-hour reception",
     "Restaurante, Bar, Servicio de masajes, Elevador, Alberca, Spa, Terraza con vista a zona arqueológica/pirámide, Salón de eventos, Recepción 24 horas": "Restaurant, Bar, Massage service, Elevator, Pool, Spa, Terrace with view of the archaeological site/pyramid, Event hall, 24-hour reception",
@@ -127,7 +114,6 @@
     "Restaurante, Bar, Servicio de masajes, Spa, Terraza con vista a volcanes y pirámide, Salón de eventos": "Restaurant, Bar, Massage service, Spa, Terrace with view of the volcanoes and pyramid, Event hall",
     "Spa, Recepción 24 horas": "Spa, 24-hour reception"
   },
-
   "tipoComida": {
     "Italiana": "Italian",
     "Mariscos": "Seafood",
@@ -159,9 +145,12 @@
     "Italiana, Mexicana, internacional": "Italian, Mexican, international",
     "Gelatos, café y postres": "Gelato, coffee and desserts",
     "Cochinita pibil y achiote": "Cochinita pibil and achiote",
-    "Cocina de autor": "Signature cuisine"
+    "Cocina de autor": "Signature cuisine",
+    "Sangrías y botanas": "Sangrías and snacks",
+    "Mexicana, internacional, saludable, brunch, repostería": "Mexican, international, healthy, brunch, pastries",
+    "Comida mexicana, desayunos abundantes": "Mexican food, hearty breakfasts",
+    "Comida mexicana": "Mexican food"
   },
-
   "ambiente": {
     "Romántico · Elegante": "Romantic · Elegant",
     "Familiar, casual, pet friendly": "Family-friendly, casual, pet friendly",
@@ -188,9 +177,12 @@
     "Familiar · Pareja · Amigos · Informal": "Family-friendly · Couples · Friends · Informal",
     "Familiar , casual": "Family-friendly, casual",
     "Familiar · Romántico · Casual ·pet friendly": "Family-friendly · Romantic · Casual · pet friendly",
-    "Familiar · Informal · pet friendly": "Family-friendly · Informal · pet friendly"
+    "Familiar · Informal · pet friendly": "Family-friendly · Informal · pet friendly",
+    "Familiar · Tradicional": "Family-friendly · Traditional",
+    "Social · Tradicional · pet friendly": "Social · Traditional · pet friendly",
+    "Íntimo · Natural · pet friendly": "Intimate · Natural · pet friendly",
+    "Familiar · Casual · pet friendly": "Family-friendly · Casual · pet friendly"
   },
-
   "caracteristicasEspeciales": {
     "Vistas espectaculares": "Spectacular views",
     "· Pet friendly": "· Pet friendly",
@@ -220,9 +212,13 @@
     "Cocina tradicional": "Traditional cuisine",
     "Italiana, Mexicana, Bar, Internacional  Pet friendly": "Italian, Mexican, Bar, International · Pet friendly",
     "Pet friendly": "Pet friendly",
-    "Menú de degustación, maridaje, cocina de autor": "Tasting menu, pairing, signature cuisine"
+    "Menú de degustación, maridaje, cocina de autor": "Tasting menu, pairing, signature cuisine",
+    "Sangrías tradicionales": "Traditional sangrías",
+    "Sangrías tradicionales · Cantina auténtica": "Traditional sangrías · Authentic cantina",
+    "Café de especialidad · Ingredientes orgánicos · Jardín · Terraza · Pet friendly · Música en vivo": "Specialty coffee · Organic ingredients · Garden · Terrace · Pet friendly · Live music",
+    "Porciones abundantes · Casa tradicional cholulteca · Café de especialidad": "Generous portions · Traditional Cholula house · Specialty coffee",
+    "Restaurante amplio en los portales · Abierto todos los días": "Large restaurant at the Portales · Open every day"
   },
-
   "espacioFisico": {
     "Jardín con vistas a la pirámide en Zona Centro": "Garden with pyramid views, downtown",
     "Jardín amplio al aire libre · Área infantil": "Large outdoor garden · Kids area",
@@ -247,9 +243,11 @@
     "Al pie de la pirámide · Vista panorámica": "At the foot of the pyramid · Panoramic view",
     "Casona del siglo XVIII · Patio colonial con arcos de piedra · Jardín con vegetación · Iluminación cálida": "18th-century mansion · Colonial patio with stone arches · Planted garden · Warm lighting",
     "Los Portales históricos (Portal Guerrero 11-B)": "The historic Portales (Portal Guerrero 11-B)",
-    "Almacén elegante con techo de metal y vidrio · Jardín interior · Terraza · Speakeasy bar": "Elegant warehouse with a metal and glass roof · Indoor garden · Terrace · Speakeasy bar"
+    "Almacén elegante con techo de metal y vidrio · Jardín interior · Terraza · Speakeasy bar": "Elegant warehouse with a metal and glass roof · Indoor garden · Terrace · Speakeasy bar",
+    "jardín · Terraza": "Garden · Terrace",
+    "Casa tradicional cholulteca": "Traditional Cholula house",
+    "Restaurante amplio en los portales": "Large restaurant at the Portales"
   },
-
   "descripcion": {
     "🚵 Explora Cholula y sus alrededores mediante rutas ciclistas diseñadas para quienes disfrutan la aventura y el contacto con la naturaleza.": "🚵 Explore Cholula and its surroundings on cycling routes designed for those who enjoy adventure and time in nature.",
     "🌮🏛️ Descubre Cholula desde una perspectiva auténtica mediante experiencias culturales, gastronómicas y de turismo comunitario que te conectan con su historia, sus sabores y su gente.": "🌮🏛️ Discover Cholula from an authentic angle through cultural, food and community tourism experiences that connect you with its history, its flavors and its people.",
@@ -259,14 +257,12 @@
     "🐴 Experiencias de naturaleza y bienestar para conectar con los caballos y el entorno.": "🐴 Nature and wellness experiences to connect with the horses and the surroundings.",
     "🚶 Conoce la historia, leyendas y secretos de Cholula mediante recorridos guiados a pie por sus calles, templos y espacios históricos.": "🚶 Get to know Cholula's history, legends and secrets on guided walking tours through its streets, churches and historic spaces."
   },
-
   "toursQueOfrece": {
     "Chipilo Véneto (cada domingo) · Cholula Milenaria (cada sábado) · Pedal y Café (cada jueves). También ofrecen expediciones de temporada a los volcanes (Izta-Popo, Malinche) — fechas variables, consultar directamente.": "Chipilo Véneto (every Sunday) · Cholula Milenaria (every Saturday) · Pedal y Café (every Thursday). They also run seasonal expeditions to the volcanoes (Izta-Popo, Malinche) — dates vary, ask them directly.",
     "Cholula Arqueológica · Cholula Mágico · Cena Inmersiva · Antojos de Cholula · Avistamiento de Luciérnagas (solo julio)": "Cholula Arqueológica · Cholula Mágico · Immersive Dinner · Antojos de Cholula · Firefly Watching (July only)",
     "Tour Cervecero en Cholula · Tranvía Cholula Mágica · Callejoneadas Cholultecas": "Cholula Brewery Tour · Cholula Mágica Tram · Cholulteca Callejoneadas",
     "Cabalgatas guiadas · Clases de manejo equino · Desayuno en el rancho": "Guided horseback rides · Horsemanship lessons · Breakfast at the ranch"
   },
-
   "idealPara": {
     "Pizza napolitana, Vistas espectaculares": "Neapolitan pizza, spectacular views",
     "Ir con mascotas": "Bringing your pet",
@@ -304,9 +300,13 @@
     "probar tacos árabes tradicionales, experiencia local": "trying traditional tacos árabes, a local experience",
     "una tarde calurosa, tomar un helado para pasear": "a hot afternoon, ice cream to walk around with",
     "Probar la cochinita pibil, conocer un lugar diferente, ir con mascotas": "Trying the cochinita pibil, discovering somewhere different, bringing your pet",
-    "menú de degustación, maridaje, cocina de autor": "tasting menu, pairing, signature cuisine"
+    "menú de degustación, maridaje, cocina de autor": "tasting menu, pairing, signature cuisine",
+    "Comida tradicional poblana, sangrías tradicionales, experiencia local": "Traditional Poblano food, classic sangrías, a local experience",
+    "Tarde-noche de cantina, sangrías tradicionales, experiencia local auténtica": "An evening at the cantina, traditional sangrías, an authentic local experience",
+    "Desayunos con ingredientes orgánicos, café de especialidad, brunch, reuniones de trabajo": "Breakfast with organic ingredients, specialty coffee, brunch, work meetings",
+    "Porciones abundantes, vivir experiencia local, desayunos típicos mexicanos": "Generous portions, having a local experience, typical Mexican breakfasts",
+    "Desayunar en los Portales, comer comida mexicana en espacio amplio": "Breakfast at the Portales, Mexican food in a spacious setting"
   },
-
   "ocasionIdeal": {
     "Cena romántica italiana, comida especial, jardín tranquilo con vista a la pirámide": "Romantic Italian dinner, a special meal, quiet garden with a pyramid view",
     "Comida familiar al aire libre, tarde con mascotas, mariscos en jardín": "Outdoor family lunch, an afternoon with pets, seafood in the garden",
@@ -342,9 +342,11 @@
     "Tacos árabes típicos de Cholula, snack rápido en los portales, antojo": "Tacos árabes typical of Cholula, a quick snack at the Portales, a craving",
     "Postre, merienda, paseo por los portales": "Dessert, afternoon snack, a stroll through the Portales",
     "Comida yucateca diferente, experiencia gastronómica auténtica": "Something different from Yucatán, an authentic food experience",
-    "Experiencia gastronómica única, aniversario, ocasión muy especial, fine dining": "A unique food experience, anniversary, a very special occasion, fine dining"
+    "Experiencia gastronómica única, aniversario, ocasión muy especial, fine dining": "A unique food experience, anniversary, a very special occasion, fine dining",
+    "Desayunos y café de especialidad todos los días; entre semana hasta las 2:30 pm, fines de semana con horario extendido hasta las 6:00 pm; brunch, reuniones de trabajo, ocasiones especiales": "Breakfast and specialty coffee every day; weekdays until 2:30 pm, weekends with extended hours until 6:00 pm; brunch, work meetings, special occasions",
+    "Foodies, vivir experiencia local, lugar tradicional, desayunos típicos mexicanos": "Foodies, having a local experience, a traditional spot, typical Mexican breakfasts",
+    "Desayunar en los Portales": "Breakfast at the Portales"
   },
-
   "perfilIdeal": {
     "Tranquilo y familiar; ideal para quienes buscan un ambiente relajado con jardín": "Quiet and family-friendly; ideal for anyone after a relaxed setting with a garden",
     "Exclusivo y romántico; ideal para parejas en ocasiones muy especiales. No acepta niños menores de 5 años. Check-out más tardío que el estándar (confirmar hora exacta con el hotel).": "Exclusive and romantic; ideal for couples on very special occasions. Children under 5 are not admitted. Later check-out than standard (confirm the exact time with the hotel).",
@@ -395,44 +397,10 @@
     "Casual e informal · Ideal para todos — turistas y locales que quieren probar los tacos árabes": "Casual and informal · Ideal for everyone — tourists and locals who want to try the tacos árabes",
     "Casual y familiar · Ideal para todos los visitantes que pasean por los portales": "Casual and family-friendly · Ideal for anyone strolling through the Portales",
     "Informal y auténtico · Ideal para familias, amigos y foodies que quieren algo diferente": "Informal and authentic · Ideal for families, friends and foodies wanting something different",
-    "Exclusivo y sofisticado · Ideal para parejas y foodies en ocasiones muy especiales": "Exclusive and sophisticated · Ideal for couples and foodies on very special occasions"
-  },
-
-  "etiquetasChatbot": {
-    "romántico, elegante, jardín, vista-pirámide, italiana, íntimo, cena-especial": "romantic, elegant, garden, pyramid-view, italian, intimate, special-dinner",
-    "pet-friendly, jardín, área-infantil, familias-con-niños, mariscos, al-aire-libre": "pet-friendly, garden, kids-area, families-with-kids, seafood, outdoor",
-    "pet-friendly, portales, desayuno, brunch, café, open-late, casual, familiar": "pet-friendly, portales, breakfast, brunch, coffee, open-late, casual, family-friendly",
-    "experiencia-local, tacos, birria, auténtico, económico, jueves-a-domingo": "local-experience, tacos, birria, authentic, budget, thursday-to-sunday",
-    "nocturno, DJ, destilados, cerveza-artesanal, after, adultos, noche, bar": "nightlife, DJ, spirits, craft-beer, after-work, adults, night, bar",
-    "cerveza-artesanal, craft-beer, brewpub-propio, social, informal, zona-centro": "craft-beer, craft-beer, own-brewpub, social, informal, downtown",
-    "helado-en-rollo, instagrameable, waffles, café, jóvenes, moderno, casual": "rolled-ice-cream, instagrammable, waffles, coffee, young-crowd, modern, casual",
-    "helados-artesanales, familias, niños, postre, casual, económico, tradicional-cholula": "artisanal-ice-cream, families, kids, dessert, casual, budget, traditional-cholula",
-    "churros, chocolate-caliente, portales, tradicional, familiar, pet-friendly-exterior, turístico, open-late": "churros, hot-chocolate, portales, traditional, family-friendly, pet-friendly-outdoor, touristy, open-late",
-    "vista-pirámide, terraza-jardín, romántico, celebraciones, alta-cocina-mexicana, instagrameable, música-en-vivo, show-prehispánico, pet-friendly, aniversario, atardecer": "pyramid-view, garden-terrace, romantic, celebrations, fine-mexican-cuisine, instagrammable, live-music, pre-hispanic-show, pet-friendly, anniversary, sunset",
-    "romántico, jardín, saxofón-en-vivo, celebraciones, cumpleaños, cocina-francesa, íntimo, cita-de-pareja, casona": "romantic, garden, live-saxophone, celebrations, birthday, french-cuisine, intimate, date-night, historic-house",
-    "familias-con-niños, granja, jardín, área-infantil, campestre, pizzas-italianas, amplio, al-aire-libre": "families-with-kids, farm, garden, kids-area, countryside, italian-pizzas, spacious, outdoor",
-    "vista-panorámica, terraza, pizzas-italianas, romántico, instagrameable, casual-elegante": "panoramic-view, terrace, italian-pizzas, romantic, instagrammable, smart-casual",
-    "pet-friendly, desayuno, brunch, porciones-abundantes, casual, familiar, solo-mañanas": "pet-friendly, breakfast, brunch, large-portions, casual, family-friendly, mornings-only",
-    "beer-garden, pet-friendly, kids-zone, vista-pirámide, jardín, al-aire-libre, cerveza-artesanal, música-en-vivo, deportes-en-vivo": "beer-garden, pet-friendly, kids-zone, pyramid-view, garden, outdoor, craft-beer, live-music, live-sports",
-    "cocina-poblana, tradicional, turístico, portales, chile-en-nogada-temporada, familiar": "poblano-cuisine, traditional, touristy, portales, chile-en-nogada-season, family-friendly",
-    "jazz-en-vivo, música-en-vivo, bohemio, cultural, pet-friendly, cerveza-artesanal, cita-especial, nocturno, instagrameable, parejas": "live-jazz, live-music, bohemian, cultural, pet-friendly, craft-beer, special-date, nightlife, instagrammable, couples",
-    "música-en-vivo, parrilladas, mexicana, informal, animado, grupos": "live-music, grill, mexican, informal, lively, groups",
-    "cantina-tradicional, experiencia-local, música-en-vivo, portales, noche, social, animado, trasnoche": "traditional-cantina, local-experience, live-music, portales, night, social, lively, late-night",
-    "experiencia-local, sangrías-tradicionales, cocina-poblana, familiar, tradicional": "local-experience, traditional-sangrias, poblano-cuisine, family-friendly, traditional",
-    "terraza, vista-panorámica, DJ, mixología, coctelería, nocturno, instagrameable, social": "terrace, panoramic-view, DJ, mixology, cocktails, nightlife, instagrammable, social",
-    "portales, familiar, buffet-domingos, mexicana, casual, turístico": "portales, family-friendly, sunday-buffet, mexican, casual, touristy",
-    "experiencia-local, auténtico, mercado-tradicional, económico, cultural": "local-experience, authentic, traditional-market, budget, cultural",
-    "chocolate-artesanal, pet-friendly, postres, café, experiencia-local, merienda, familiar": "artisanal-chocolate, pet-friendly, desserts, coffee, local-experience, afternoon-snack, family-friendly",
-    "pet-friendly, desayuno, brunch, tranquilo, familiar, mañana, solo-mañanas": "pet-friendly, breakfast, brunch, quiet, family-friendly, morning, mornings-only",
-    "variado, casual, desayuno, pizzas, mexicana, café, tradicional, familiar": "varied, casual, breakfast, pizzas, mexican, coffee, traditional, family-friendly",
-    "mexicana-casera, buffet-fines-de-semana, familiar, tradicional, económico": "home-style-mexican, weekend-buffet, family-friendly, traditional, budget",
-    "terraza, pan-tradicional-cholulteca, brunch, desayuno, familiar, casual, mexicana": "terrace, traditional-cholulteca-bread, brunch, breakfast, family-friendly, casual, mexican",
-    "portales, pet-friendly, cocina-poblana, casual, tradicional, familiar, desayuno, comida": "portales, pet-friendly, poblano-cuisine, casual, traditional, family-friendly, breakfast, lunch",
-    "al-pie-de-la-pirámide, vista-panorámica, parrilla-norteña, mexicana, turístico, nocturno-fines-de-semana": "at-the-pyramid-foot, panoramic-view, northern-grill, mexican, touristy, weekend-nightlife",
-    "romántico, cita-de-pareja, instagrameable, celebraciones, casona-histórica, propuesta-matrimonio, brunch, jardín, pet-friendly": "romantic, date-night, instagrammable, celebrations, historic-mansion, marriage-proposal, brunch, garden, pet-friendly",
-    "tacos-árabes, portales, económico, casual, experiencia-local, turístico, especialidad-cholula": "arabic-tacos, portales, budget, casual, local-experience, touristy, cholula-specialty",
-    "helados, café, postres, portales, familiar, casual, abierto-todos-los-días": "ice-cream, coffee, desserts, portales, family-friendly, casual, open-daily",
-    "pet-friendly, cochinita-pibil, cocina-yucateca, auténtico, diferente, familiar, foodies": "pet-friendly, cochinita-pibil, yucatecan-cuisine, authentic, different, family-friendly, foodies",
-    "guía-michelin, fine-dining, cocina-de-autor, chef-reconocido, aniversario, ocasión-muy-especial, mixología, speakeasy, íntimo, exclusivo, maridaje": "michelin-guide, fine-dining, signature-cuisine, renowned-chef, anniversary, very-special-occasion, mixology, speakeasy, intimate, exclusive, pairing"
+    "Exclusivo y sofisticado · Ideal para parejas y foodies en ocasiones muy especiales": "Exclusive and sophisticated · Ideal for couples and foodies on very special occasions",
+    "Social y tradicional · Ideal para locales, amigos adultos que buscan cantina auténtica": "Social and traditional · Ideal for locals and adult friends after an authentic cantina",
+    "Íntimo y natural · Ideal para parejas, amigos, reuniones de trabajo y ocasiones especiales · Cerca de Parque Soria, ingredientes orgánicos y café de especialidad": "Intimate and natural · Ideal for couples, friends, work meetings and special occasions · Near Parque Soria, organic ingredients and specialty coffee",
+    "Quieren porciones abundantes, buscan experiencia local, buen sazón mexicano": "Looking for generous portions, a local experience and good Mexican flavors",
+    "Quieren comer comida mexicana en los Portales, buscan un lugar amplio": "Want to eat Mexican food at the Portales and are looking for a spacious spot"
   }
 }

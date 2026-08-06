@@ -58,8 +58,11 @@
 
 .footer-logo-center {
     flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 0.75rem;
 }
 
 .footer-logo-img {
@@ -71,6 +74,19 @@
 }
 
 .footer-logo-img:hover {
+    opacity: 1;
+    transform: scale(1.04);
+}
+
+.footer-logo-mexico {
+    height: 32px;
+    width: auto;
+    object-fit: contain;
+    opacity: 0.95;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.footer-logo-mexico:hover {
     opacity: 1;
     transform: scale(1.04);
 }

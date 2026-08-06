@@ -45,7 +45,6 @@ const TRANSLATABLE = [
 	"idealPara",
 	"ocasionIdeal",
 	"perfilIdeal",
-	"etiquetasChatbot",
 	"aceptaMascotasNota",
 	"terrazaNota",
 ] as const;

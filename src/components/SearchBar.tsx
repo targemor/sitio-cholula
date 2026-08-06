@@ -410,6 +410,8 @@ export default function SearchBar({ placeholder, items = [], labels, lang = "es"
                     key={sc.key}
                     type="button"
                     className={`search-pill-btn search-pill-btn--${sc.className}`}
+                    title={t.shortcuts[sc.key].label}
+                    aria-label={t.shortcuts[sc.key].label}
                     onMouseDown={(e) => {
                         e.preventDefault();
                         setQuery(t.shortcuts[sc.key].query);
@@ -419,7 +421,7 @@ export default function SearchBar({ placeholder, items = [], labels, lang = "es"
                     }}
                 >
                     {sc.icon}
-                    <span>{t.shortcuts[sc.key].label}</span>
+                    <span className="search-pill-label">{t.shortcuts[sc.key].label}</span>
                 </button>
             ))}
         </div>
@@ -494,6 +496,7 @@ export default function SearchBar({ placeholder, items = [], labels, lang = "es"
                     <button
                         type="button"
                         className="search-submit-btn"
+                        aria-label={t.ariaSearch}
                         onMouseDown={(e) => {
                             e.preventDefault();
                             if (query.trim()) {
@@ -505,7 +508,11 @@ export default function SearchBar({ placeholder, items = [], labels, lang = "es"
                             }
                         }}
                     >
-                        {t.submit}
+                        <span className="search-submit-text">{t.submit}</span>
+                        <svg className="search-submit-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} width="18" height="18" aria-hidden="true">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="M21 21l-4.35-4.35" />
+                        </svg>
                     </button>
                 </div>
 

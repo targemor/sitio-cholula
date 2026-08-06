@@ -81,7 +81,6 @@ export function buildSearchItems(locale: Locale) {
 				item.precioPpMxn,
 				item.ocasionIdeal,
 				item.perfilIdeal,
-				item.etiquetasChatbot,
 				item.espacioFisico,
 			]
 				.filter(Boolean)
@@ -97,7 +96,6 @@ export function buildSearchItems(locale: Locale) {
 			searchKeywords: [
 				item.tipo,
 				item.descripcion,
-				item.etiquetasChatbot,
 				// Mismos alias que reconoce el buscador al escribirlos.
 				...t.aliases.things,
 			]

@@ -18,6 +18,7 @@ type NavKey = "home" | "lodging" | "food" | "things" | "guides";
 export interface Strings {
 	site: { description: string };
 	a11y: { whatsapp: string; mainNav: string; mobileNav: string };
+	aiAssistant: string;
 	/** Navegación de escritorio (header). */
 	nav: Record<NavKey, string>;
 	/** Navegación inferior de móvil: etiquetas más cortas. */
@@ -100,6 +101,7 @@ const es: Strings = {
 		mainNav: "Navegación principal",
 		mobileNav: "Navegación principal móvil",
 	},
+	aiAssistant: "Guía local",
 	nav: {
 		home: "Cholula",
 		lodging: "Dónde hospedarse",
@@ -169,14 +171,13 @@ const es: Strings = {
 		openNow: "Abiertos ahora",
 		suggestionsTitle: "Sugerencias de búsqueda",
 		suggestions: [
-			"quiero lugares con pizza",
-			"dónde comer comida mexicana",
+			"lugares con pizza",
+			"comida mexicana",
 			"hoteles cerca del centro",
 			"cafeterías con terraza",
-			"dónde comer comida italiana",
+			"comida italiana",
 			"hoteles con jardín",
-			"dónde comer comida poblana",
-			"sitios históricos cholula",
+			"comida poblana",
 			"bares y vida nocturna",
 		],
 		emptyClosed: "Ningún establecimiento abierto en este momento",
@@ -215,6 +216,7 @@ const en: Strings = {
 		mainNav: "Main navigation",
 		mobileNav: "Mobile main navigation",
 	},
+	aiAssistant: "Local guide",
 	nav: {
 		home: "Cholula",
 		lodging: "Where to stay",
