@@ -145,3 +145,39 @@
     transform: translateY(0);
   }
 }
+
+/* ── MÓVIL: FILAS COMPACTAS (VISIBLES SIN OCULTAR NADA) ── */
+@media (max-width: 768px) {
+  .qh-filter-bar {
+    width: 100%;
+    margin: 0.25rem 0;
+    justify-content: center;
+  }
+
+  .qh-pills-scroll {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    padding: 0.25rem 0.5rem;
+    overflow: visible;
+  }
+
+  .qh-pill {
+    flex: 0 1 auto;
+    padding: 0.35rem 0.65rem;
+    font-size: 0.76rem;
+    gap: 0.3rem;
+    border-radius: 9999px;
+  }
+
+  .qh-pill-icon {
+    font-size: 0.85rem;
+  }
+
+  .qh-pill-count {
+    font-size: 0.65rem;
+    padding: 0.1rem 0.35rem;
+  }
+}
