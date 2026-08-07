@@ -1,8 +1,8 @@
 .restaurant-filters-container {
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0.5rem 0;
+  max-width: 1100px;
+  margin: 0 auto 0.75rem;
+  padding: 0 0.5rem;
 }
 
 .filter-dropdowns-row {
@@ -10,28 +10,38 @@
   flex-wrap: wrap;
   align-items: flex-end;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.4rem 0.6rem;
 }
 
 .filter-dropdown-group {
   display: flex;
   flex-direction: column;
-  flex: 1 1 200px;
-  min-width: 170px;
-  max-width: 260px;
+  flex: 1 1 140px;
+  min-width: 125px;
+  max-width: 220px;
 }
 
 .filter-label {
   font-family: "Roboto", sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.68rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
-  color: #475569;
-  margin-bottom: 0.4rem;
+  letter-spacing: 0.04em;
+  color: #64748b;
+  margin-bottom: 0.2rem;
   display: flex;
   align-items: center;
-  gap: 0.35rem;
+  gap: 0.25rem;
+  white-space: nowrap;
+}
+
+.filter-label-icon {
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+.filter-label-text {
+  display: inline;
 }
 
 .custom-select-wrapper {
@@ -45,35 +55,38 @@
   -moz-appearance: none;
   width: 100%;
   background-color: #ffffff;
-  border: 1.5px solid #cbd5e1;
-  border-radius: 12px;
-  padding: 0.7rem 2.2rem 0.7rem 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 0.4rem 1.6rem 0.4rem 0.65rem;
   font-family: inherit;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: #1e293b;
   cursor: pointer;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-  transition: all 0.25s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  transition: all 0.2s ease;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .custom-select:hover {
   border-color: var(--section-color, #ff4e50);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
 .custom-select:focus {
   outline: none;
   border-color: var(--section-color, #ff4e50);
-  box-shadow: 0 0 0 3px rgba(255, 78, 80, 0.15);
+  box-shadow: 0 0 0 2px rgba(255, 78, 80, 0.15);
 }
 
 .select-arrow {
   position: absolute;
-  right: 1rem;
+  right: 0.6rem;
   top: 50%;
   transform: translateY(-50%);
-  font-size: 0.65rem;
+  font-size: 0.55rem;
   color: #64748b;
   pointer-events: none;
   transition: transform 0.2s ease;
@@ -88,22 +101,26 @@
   display: flex;
   align-items: flex-end;
   height: 100%;
-  padding-bottom: 2px;
 }
 
 .reset-filters-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background-color: #fef2f2;
   color: #dc2626;
-  border: 1.5px solid #fecaca;
-  border-radius: 12px;
-  padding: 0.68rem 1.1rem;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  min-width: 32px;
+  height: 32px;
+  padding: 0 0.5rem;
   font-family: inherit;
   font-size: 0.85rem;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.2s ease;
   white-space: nowrap;
-  box-shadow: 0 2px 4px rgba(220, 38, 38, 0.06);
+  box-shadow: 0 1px 3px rgba(220, 38, 38, 0.06);
 }
 
 .reset-filters-btn:hover {
@@ -111,34 +128,63 @@
   border-color: #fca5a5;
   color: #991b1b;
   transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(220, 38, 38, 0.12);
+  box-shadow: 0 3px 6px rgba(220, 38, 38, 0.1);
 }
 
-@media (max-width: 768px) {
+/* ── MÓVIL: 1 SOLA LÍNEA ── */
+@media (max-width: 640px) {
+  .restaurant-filters-container {
+    padding: 0 0.25rem;
+  }
+
   .filter-dropdowns-row {
-    gap: 0.75rem;
+    flex-wrap: nowrap;
+    gap: 0.2rem;
+    width: 100%;
   }
 
   .filter-dropdown-group {
-    flex: 1 1 45%;
-    min-width: 140px;
-    max-width: 100%;
+    flex: 1 1 0px;
+    min-width: 0;
+    max-width: none;
+  }
+
+  .filter-label {
+    justify-content: center;
+    margin-bottom: 0.1rem;
+  }
+
+  .filter-label-icon {
+    font-size: 0.9rem;
+  }
+
+  .filter-label-text {
+    display: none;
   }
 
   .custom-select {
-    font-size: 0.82rem;
-    padding: 0.6rem 1.8rem 0.6rem 0.8rem;
+    font-size: 0.68rem;
+    font-weight: 600;
+    padding: 0.35rem 1.1rem 0.35rem 0.35rem;
+    border-radius: 6px;
+  }
+
+  .select-arrow {
+    right: 0.2rem;
+    font-size: 0.45rem;
   }
 
   .filter-reset-wrapper {
-    width: 100%;
-    justify-content: center;
-    margin-top: 0.25rem;
+    width: auto;
+    margin-top: 0;
   }
 
   .reset-filters-btn {
-    width: 100%;
-    text-align: center;
+    min-width: 26px;
+    height: 26px;
+    padding: 0;
+    font-size: 0.75rem;
+    border-radius: 6px;
   }
 }
 

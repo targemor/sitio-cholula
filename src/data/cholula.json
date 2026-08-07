@@ -637,6 +637,109 @@
             "telefono": "2221681192",
             "email": "ventas@hotelsantajosefita.com",
             "sitioWeb": "www.hotelsantajosefita.com"
+        },
+        {
+            "nombre": "Casa Eva Hotel Boutique",
+            "galeria": [
+                "/images/hoteles/casa-eva/1.webp",
+                "/images/hoteles/casa-eva/2.webp",
+                "/images/hoteles/casa-eva/3.webp",
+                "/images/hoteles/casa-eva/4.webp",
+                "/images/hoteles/casa-eva/5.webp"
+            ],
+            "estrellas": 5,
+            "social": {},
+            "horario": {
+                "lunes": "08:00-22:00",
+                "martes": "08:00-22:00",
+                "miercoles": "08:00-22:00",
+                "jueves": "08:00-22:00",
+                "viernes": "08:00-22:00",
+                "sabado": "08:00-22:00",
+                "domingo": "08:00-22:00",
+                "resumen": "Lun-Dom 08:00-22:00",
+                "detalle": "Lunes: 08:00-22:00 • Martes: 08:00-22:00 • Miércoles: 08:00-22:00 • Jueves: 08:00-22:00 • Viernes: 08:00-22:00 • Sábado: 08:00-22:00 • Domingo: 08:00-22:00"
+            },
+            "direccion": "Col. Centro, Cholula, Pue.",
+            "zona": "Centro",
+            "distanciaGranPiramide": "7 min a pie de la Gran Pirámide",
+            "categoriaPrecio": "Superior",
+            "aceptaMascotas": true,
+            "tieneAlberca": true,
+            "tieneSpa": true,
+            "terraza": false,
+            "recepcion24h": true,
+            "amenidades": "Restaurante, Alberca, Spa, Estacionamiento propio sin costo, Recepción 24 horas",
+            "tamanioCategoria": "Pequeño",
+            "perfilIdeal": "Exclusivo y sofisticado; ideal para turistas de presupuesto alto que buscan máximo confort y servicio 5 estrellas en el centro"
+        },
+        {
+            "nombre": "Casa Calli",
+            "galeria": [
+                "/images/hoteles/casa-calli/1.webp",
+                "/images/hoteles/casa-calli/2.webp",
+                "/images/hoteles/casa-calli/3.webp",
+                "/images/hoteles/casa-calli/4.webp"
+            ],
+            "estrellas": 3,
+            "social": {},
+            "horario": {
+                "lunes": "08:00-22:00",
+                "martes": "08:00-22:00",
+                "miercoles": "08:00-22:00",
+                "jueves": "08:00-22:00",
+                "viernes": "08:00-22:00",
+                "sabado": "08:00-22:00",
+                "domingo": "08:00-22:00",
+                "resumen": "Lun-Dom 08:00-22:00",
+                "detalle": "Lunes: 08:00-22:00 • Martes: 08:00-22:00 • Miércoles: 08:00-22:00 • Jueves: 08:00-22:00 • Viernes: 08:00-22:00 • Sábado: 08:00-22:00 • Domingo: 08:00-22:00"
+            },
+            "direccion": "Portal Guerrero, Col. Centro",
+            "zona": "Los Portales (Centro)",
+            "distanciaGranPiramide": "6 min a pie de la Gran Pirámide",
+            "categoriaPrecio": "Estándar",
+            "aceptaMascotas": false,
+            "tieneAlberca": true,
+            "tieneSpa": true,
+            "terraza": false,
+            "recepcion24h": true,
+            "amenidades": "Restaurante, Alberca, Spa, Salón de eventos, Estacionamiento propio, Recepción 24 horas",
+            "tamanioCategoria": "Pequeño",
+            "perfilIdeal": "Tradicional y céntrico; ideal para quienes buscan un hotel cómodo directo en Los Portales"
+        },
+        {
+            "nombre": "Fiesta Inn Express",
+            "galeria": [
+                "/images/hoteles/fiesta-inn-explanada/1.webp",
+                "/images/hoteles/fiesta-inn-explanada/2.webp",
+                "/images/hoteles/fiesta-inn-explanada/3.webp",
+                "/images/hoteles/fiesta-inn-explanada/4.webp"
+            ],
+            "estrellas": 4,
+            "social": {},
+            "horario": {
+                "lunes": "08:00-22:00",
+                "martes": "08:00-22:00",
+                "miercoles": "08:00-22:00",
+                "jueves": "08:00-22:00",
+                "viernes": "08:00-22:00",
+                "sabado": "08:00-22:00",
+                "domingo": "08:00-22:00",
+                "resumen": "Lun-Dom 08:00-22:00",
+                "detalle": "Lunes: 08:00-22:00 • Martes: 08:00-22:00 • Miércoles: 08:00-22:00 • Jueves: 08:00-22:00 • Viernes: 08:00-22:00 • Sábado: 08:00-22:00 • Domingo: 08:00-22:00"
+            },
+            "direccion": "Cholula, Pue. (Fuera del centro)",
+            "zona": "Fuera del centro",
+            "distanciaGranPiramide": "10 min en coche de la Gran Pirámide",
+            "categoriaPrecio": "Superior",
+            "aceptaMascotas": false,
+            "tieneAlberca": true,
+            "tieneSpa": false,
+            "terraza": false,
+            "recepcion24h": true,
+            "amenidades": "Desayuno buffet incluido, Alberca, Gimnasio, Estacionamiento propio, Recepción 24 horas",
+            "tamanioCategoria": "Grande",
+            "perfilIdeal": "Moderno y funcional; ideal para grupos grandes y viajeros corporativos o familias que buscan gimnasio y buffet incluido"
         }
     ],
     "restaurantes": [
@@ -2184,7 +2287,6 @@
         {
             "nombre": "Valiente Kitchen Bar",
             "galeria": [
-                "/images/que-hacer/2rb-2-ruedas-bueno/1.webp",
                 "/images/restaurantes/valiente-kitchen-bar/2.webp",
                 "/images/restaurantes/valiente-kitchen-bar/3.webp"
             ],
@@ -2223,7 +2325,11 @@
         },
         {
             "nombre": "Bar Reforma",
-            "galeria": [],
+            "galeria": [
+                "/images/restaurantes/bar-reforma/2.webp",
+                "/images/restaurantes/bar-reforma/1.webp",
+                "/images/restaurantes/bar-reforma/3.webp"
+            ],
             "categoria": "bar",
             "tipoComida": "Sangrías y botanas",
             "ambiente": "Social · Tradicional · pet friendly",
@@ -2294,7 +2400,11 @@
         },
         {
             "nombre": "Las Macetitas",
-            "galeria": [],
+            "galeria": [
+                "/images/restaurantes/las-macetitas/1.webp",
+                "/images/restaurantes/las-macetitas/2.webp",
+                "/images/restaurantes/las-macetitas/3.webp"
+            ],
             "categoria": "restaurante",
             "tipoComida": "Comida mexicana, desayunos abundantes",
             "ambiente": "Familiar · Tradicional · pet friendly",
@@ -2328,7 +2438,10 @@
         },
         {
             "nombre": "Casa Mostaza",
-            "galeria": [],
+            "galeria": [
+                "/images/restaurantes/casa-mostaza/1.webp",
+                "/images/restaurantes/casa-mostaza/2.webp"
+            ],
             "categoria": "restaurante",
             "tipoComida": "Comida mexicana",
             "ambiente": "Familiar · Casual · pet friendly",
@@ -2359,6 +2472,168 @@
             "perfilIdeal": "Quieren comer comida mexicana en los Portales, buscan un lugar amplio",
             "espacioFisico": "Restaurante amplio en los portales",
             "telefono": "7202308796"
+        },
+        {
+            "nombre": "Restaurante Hotel MS",
+            "galeria": [
+                "/images/hoteles/hotel-ms-portales/WhatsApp-Image-2025-06-27-at-3.15.45-PM-1024x1024-1.webp",
+                "/images/hoteles/hotel-ms-portales/83d9b18f_z-1024x1024-1.webp",
+                "/images/hoteles/hotel-ms-portales/73321131-1-1024x1024-1.webp",
+                "/images/hoteles/hotel-ms-portales/habitaciones-1024x1024-1.webp",
+                "/images/hoteles/hotel-ms-portales/hotel-1024x1024-1.webp",
+                "/images/hoteles/hotel-ms-portales/WhatsApp-Image-2025-06-27-at-3.15.45-PM-1-1024x1024-1.webp"
+            ],
+            "categoria": "restaurante",
+            "tipoComida": "Comida mexicana",
+            "ambiente": "Familiar · Casual",
+            "dondeEsta": "Los Portales",
+            "idealPara": "Desayunar en los Portales, buffet los fines de semana",
+            "caracteristicasEspeciales": "Restaurante en los portales · Buffet los fines de semana",
+            "social": {
+                "instagram": "https://www.instagram.com/hotelmscholula/"
+            },
+            "horario": {
+                "lunes": "08:30-17:00",
+                "martes": "08:30-17:00",
+                "miercoles": "08:30-17:00",
+                "jueves": "08:30-17:00",
+                "viernes": "08:30-17:00",
+                "sabado": "08:00-20:00",
+                "domingo": "08:00-20:00",
+                "resumen": "Lun-Vie 08:30-17:00 · Sáb-Dom 08:00-20:00",
+                "detalle": "Lunes: 08:30-17:00 • Martes: 08:30-17:00 • Miércoles: 08:30-17:00 • Jueves: 08:30-17:00 • Viernes: 08:30-17:00 • Sábado: 08:00-20:00 • Domingo: 08:00-20:00"
+            },
+            "direccion": "Portal Guerrero 17, Col. Centro",
+            "whatsapp": "2224084028",
+            "googleMaps": "https://maps.app.goo.gl/yTxrkHmw4gQNdezL7",
+            "categoriaPrecio": "Económico",
+            "petFriendly": false,
+            "musicaEnVivo": false,
+            "precioPpMxn": "$200–300",
+            "ocasionIdeal": "Desayunar en los Portales",
+            "perfilIdeal": "Familiar y casual · Ideal para quienes buscan comida mexicana en los portales",
+            "espacioFisico": "Restaurante amplio en los portales",
+            "telefono": "2224084028"
+        },
+        {
+            "nombre": "Hotel Restaurante Mansión Azul",
+            "galeria": [
+                "/images/hoteles/mansin-azul-cholula/hotel_manmsion_azul_cholula_2-1024x1024-1.webp",
+                "/images/hoteles/mansin-azul-cholula/mansion-azul-1024x1024-1.webp",
+                "/images/hoteles/mansin-azul-cholula/hotel_mansion_azul_cholula-1024x1024-1.webp",
+                "/images/hoteles/mansin-azul-cholula/hotel_manmsion_azul_cholula_3-1024x1024-1.webp",
+                "/images/hoteles/mansin-azul-cholula/hotel_manmsion_azul_cholula_4-1024x1024-1.webp"
+            ],
+            "categoria": "restaurante",
+            "tipoComida": "Comida mexicana",
+            "ambiente": "Familiar · Romántico",
+            "dondeEsta": "Zona Centro",
+            "idealPara": "Desayunos, bodas y eventos",
+            "caracteristicasEspeciales": "Salón de fiestas con terraza · Casona histórica",
+            "social": {
+                "instagram": "https://www.instagram.com/mansionazulchoula/"
+            },
+            "horario": {
+                "lunes": "08:00-18:30",
+                "martes": "08:00-18:30",
+                "miercoles": "08:00-18:30",
+                "jueves": "08:00-18:30",
+                "viernes": "08:00-18:30",
+                "sabado": "08:00-18:30",
+                "domingo": "08:00-18:30",
+                "resumen": "Lun-Dom 08:00-18:30",
+                "detalle": "Lunes: 08:00-18:30 • Martes: 08:00-18:30 • Miércoles: 08:00-18:30 • Jueves: 08:00-18:30 • Viernes: 08:00-18:30 • Sábado: 08:00-18:30 • Domingo: 08:00-18:30"
+            },
+            "direccion": "Av. 5 de Mayo 407, Col. Centro",
+            "whatsapp": "2222610561",
+            "googleMaps": "https://maps.app.goo.gl/yKhiudzjenLF7FLK6",
+            "categoriaPrecio": "Económico",
+            "petFriendly": true,
+            "musicaEnVivo": false,
+            "precioPpMxn": "$200–300",
+            "ocasionIdeal": "Desayunos, bodas, eventos",
+            "perfilIdeal": "Familiar y romántico · Ideal para familias y parejas en una casona histórica con terraza",
+            "espacioFisico": "Terraza, primer hotel de Cholula en casona tradicional",
+            "telefono": "2222610561"
+        },
+        {
+            "nombre": "Comedor El Portón Cholula",
+            "galeria": [
+                "/images/restaurantes/el-porton/1.webp",
+                "/images/restaurantes/el-porton/2.webp",
+                "/images/restaurantes/el-porton/3.webp"
+            ],
+            "categoria": "restaurante",
+            "tipoComida": "Comida casera, comida mexicana",
+            "ambiente": "Familiar · Informal",
+            "dondeEsta": "Zona Centro",
+            "idealPara": "Desayuno y comida, chile en nogada",
+            "caracteristicasEspeciales": "Comida casera y tradicional mexicana",
+            "social": {
+                "instagram": "https://www.instagram.com/comedorelportoncholula/"
+            },
+            "horario": {
+                "lunes": "09:00-18:00",
+                "martes": "09:00-18:00",
+                "miercoles": "09:00-18:00",
+                "jueves": "09:00-18:00",
+                "viernes": "09:00-18:00",
+                "sabado": "09:00-18:00",
+                "domingo": "09:00-18:00",
+                "resumen": "Lun-Dom 09:00-18:00",
+                "detalle": "Lunes: 09:00-18:00 • Martes: 09:00-18:00 • Miércoles: 09:00-18:00 • Jueves: 09:00-18:00 • Viernes: 09:00-18:00 • Sábado: 09:00-18:00 • Domingo: 09:00-18:00"
+            },
+            "direccion": "Av. Miguel Hidalgo 302, Col. Centro",
+            "whatsapp": "2213455726",
+            "googleMaps": "https://maps.app.goo.gl/VQ1nBoxB4ZoXfBSE9",
+            "categoriaPrecio": "Económico",
+            "petFriendly": false,
+            "musicaEnVivo": false,
+            "precioPpMxn": "$100–200",
+            "ocasionIdeal": "Desayuno y comida casera",
+            "perfilIdeal": "Informal y familiar · Ideal para familias y amigos que buscan comida mexicana casera",
+            "espacioFisico": "Local en Zona Centro",
+            "telefono": "2213455726"
+        },
+        {
+            "nombre": "Villanova",
+            "galeria": [
+                "/images/restaurantes/villanova/1.webp",
+                "/images/restaurantes/villanova/2.webp",
+                "/images/restaurantes/villanova/3.webp",
+                "/images/restaurantes/villanova/4.webp"
+            ],
+            "categoria": "heladeria",
+            "tipoComida": "Helados artesanales gourmet",
+            "ambiente": "Casual · Pet friendly",
+            "dondeEsta": "Zona Centro",
+            "idealPara": "Tarde calurosa, helado con fruta natural o sin azúcar",
+            "caracteristicasEspeciales": "Helados artesanales con fruta natural y opciones sin azúcar · Pet friendly",
+            "social": {
+                "instagram": "https://www.instagram.com/villanovamx/"
+            },
+            "horario": {
+                "lunes": "09:00-21:30",
+                "martes": "09:00-21:30",
+                "miercoles": "09:00-21:30",
+                "jueves": "09:00-21:30",
+                "viernes": "09:00-21:30",
+                "sabado": "09:00-21:30",
+                "domingo": "09:00-21:30",
+                "resumen": "Lun-Dom 09:00-21:30",
+                "detalle": "Lunes: 09:00-21:30 • Martes: 09:00-21:30 • Miércoles: 09:00-21:30 • Jueves: 09:00-21:30 • Viernes: 09:00-21:30 • Sábado: 09:00-21:30 • Domingo: 09:00-21:30"
+            },
+            "direccion": "Zócalo de Cholula, Col. Centro",
+            "whatsapp": "7712029970",
+            "googleMaps": "https://g.co/kgs/2GkNLvc",
+            "categoriaPrecio": "Precio moderado",
+            "petFriendly": true,
+            "musicaEnVivo": false,
+            "precioPpMxn": "$100–200",
+            "ocasionIdeal": "Tarde calurosa, helado sin azúcar o fruta natural",
+            "perfilIdeal": "Casual y accesible · Ideal para parejas, amigos y personas fitness que buscan helado sin azúcar",
+            "espacioFisico": "Heladería en el zócalo",
+            "telefono": "7712029970"
         }
     ],
     "queHacer": [
@@ -2569,7 +2844,7 @@
     ],
     "guiasTuristicos": [
         {
-            "nombre": "Alejandra Toxqui",
+            "nombre": "Alejandra Toxqui Hernandez",
             "galeria": [
                 "/images/guias-turisticos/alejandra-toxqui/f69be56e-4503-4851-9db9-078a049ac061.webp",
                 "/images/guias-turisticos/alejandra-toxqui/af66894d-4a42-41a9-91f3-554ff9b3a930.webp"
@@ -2639,6 +2914,127 @@
             },
             "whatsapp": "2212327987",
             "clasificacionSectur": true
+        },
+        {
+            "nombre": "Guadalupe García Tochihuitl",
+            "galeria": [
+                "/images/guias-turisticos/guadalupe-garcia/1.webp"
+            ],
+            "certificacionSectur": true,
+            "clasificacionSectur": true,
+            "clasificacion": "Guía de Turistas General Acreditado NOM-08",
+            "especializacion": "Turismo religioso, gastronómico y cultural",
+            "idiomas": "Español e inglés",
+            "social": {},
+            "horario": {
+                "lunes": "08:00-22:00",
+                "martes": "08:00-22:00",
+                "miercoles": "08:00-22:00",
+                "jueves": "08:00-22:00",
+                "viernes": "08:00-22:00",
+                "sabado": "08:00-22:00",
+                "domingo": "08:00-22:00",
+                "resumen": "Lun-Dom 08:00-22:00",
+                "detalle": "Lunes: 08:00-22:00 • Martes: 08:00-22:00 • Miércoles: 08:00-22:00 • Jueves: 08:00-22:00 • Viernes: 08:00-22:00 • Sábado: 08:00-22:00 • Domingo: 08:00-22:00"
+            },
+            "whatsapp": "2221649430"
+        },
+        {
+            "nombre": "Alberto Cuanal Cano",
+            "galeria": [
+                "/images/guias-turisticos/alberto-cuanal/1.webp"
+            ],
+            "certificacionSectur": true,
+            "clasificacionSectur": true,
+            "clasificacion": "Guía de Turistas General Acreditado NOM-08",
+            "especializacion": "Turismo histórico",
+            "idiomas": "Español e inglés",
+            "social": {},
+            "horario": {
+                "lunes": "08:00-22:00",
+                "martes": "08:00-22:00",
+                "miercoles": "08:00-22:00",
+                "jueves": "08:00-22:00",
+                "viernes": "08:00-22:00",
+                "sabado": "08:00-22:00",
+                "domingo": "08:00-22:00",
+                "resumen": "Lun-Dom 08:00-22:00",
+                "detalle": "Lunes: 08:00-22:00 • Martes: 08:00-22:00 • Miércoles: 08:00-22:00 • Jueves: 08:00-22:00 • Viernes: 08:00-22:00 • Sábado: 08:00-22:00 • Domingo: 08:00-22:00"
+            },
+            "whatsapp": "2221212536"
+        },
+        {
+            "nombre": "Francisco Quitl Papaqui",
+            "galeria": [
+                "/images/guias-turisticos/francisco-quitl/1.webp",
+                "/images/guias-turisticos/francisco-quitl/2.webp"
+            ],
+            "certificacionSectur": true,
+            "clasificacionSectur": true,
+            "clasificacion": "Guía de Turistas General Acreditado NOM-08",
+            "especializacion": "Turismo histórico y religioso",
+            "idiomas": "Español",
+            "social": {},
+            "horario": {
+                "lunes": "08:00-22:00",
+                "martes": "08:00-22:00",
+                "miercoles": "08:00-22:00",
+                "jueves": "08:00-22:00",
+                "viernes": "08:00-22:00",
+                "sabado": "08:00-22:00",
+                "domingo": "08:00-22:00",
+                "resumen": "Lun-Dom 08:00-22:00",
+                "detalle": "Lunes: 08:00-22:00 • Martes: 08:00-22:00 • Miércoles: 08:00-22:00 • Jueves: 08:00-22:00 • Viernes: 08:00-22:00 • Sábado: 08:00-22:00 • Domingo: 08:00-22:00"
+            },
+            "whatsapp": "2223423035"
+        },
+        {
+            "nombre": "Esbeidi Quitl Murillo",
+            "galeria": [
+                "/images/guias-turisticos/esbeidi-quitl/1.webp"
+            ],
+            "certificacionSectur": true,
+            "clasificacionSectur": true,
+            "clasificacion": "Guía de Turistas General Acreditado NOM-08",
+            "especializacion": "Turismo religioso, gastronómico y cultural",
+            "idiomas": "Español",
+            "social": {},
+            "horario": {
+                "lunes": "08:00-22:00",
+                "martes": "08:00-22:00",
+                "miercoles": "08:00-22:00",
+                "jueves": "08:00-22:00",
+                "viernes": "08:00-22:00",
+                "sabado": "08:00-22:00",
+                "domingo": "08:00-22:00",
+                "resumen": "Lun-Dom 08:00-22:00",
+                "detalle": "Lunes: 08:00-22:00 • Martes: 08:00-22:00 • Miércoles: 08:00-22:00 • Jueves: 08:00-22:00 • Viernes: 08:00-22:00 • Sábado: 08:00-22:00 • Domingo: 08:00-22:00"
+            },
+            "whatsapp": "2224693651"
+        },
+        {
+            "nombre": "Alejandro Toxqui Tollan",
+            "galeria": [
+                "/images/guias-turisticos/alejandro-toxqui/1.webp"
+            ],
+            "certificacionSectur": true,
+            "clasificacionSectur": true,
+            "clasificacion": "Guía de Turistas General Acreditado NOM-08",
+            "especializacion": "Turismo histórico y religioso",
+            "idiomas": "Español",
+            "social": {},
+            "horario": {
+                "lunes": "08:00-22:00",
+                "martes": "08:00-22:00",
+                "miercoles": "08:00-22:00",
+                "jueves": "08:00-22:00",
+                "viernes": "08:00-22:00",
+                "sabado": "08:00-22:00",
+                "domingo": "08:00-22:00",
+                "resumen": "Lun-Dom 08:00-22:00",
+                "detalle": "Lunes: 08:00-22:00 • Martes: 08:00-22:00 • Miércoles: 08:00-22:00 • Jueves: 08:00-22:00 • Viernes: 08:00-22:00 • Sábado: 08:00-22:00 • Domingo: 08:00-22:00"
+            },
+            "whatsapp": "2224247043"
         }
     ],
     "eventos": []

@@ -16,7 +16,7 @@ const isEn = lang === "en";
 const labels = {
   zona: {
     title: isEn ? "Area" : "Zona",
-    all: isEn ? "All areas" : "Todas las zonas",
+    all: isEn ? "All" : "Todas",
     options: [
       { value: "Zona Centro", label: isEn ? "Downtown" : "Zona Centro" },
       { value: "Los Portales", label: "Los Portales" },
@@ -41,7 +41,7 @@ const labels = {
   },
   tipoComida: {
     title: isEn ? "Cuisine" : "Tipo de comida",
-    all: isEn ? "All cuisines" : "Todos los tipos",
+    all: isEn ? "All" : "Todos",
     options: [
       {
         value: "mexicana",
@@ -73,7 +73,7 @@ const labels = {
   },
   categoria: {
     title: isEn ? "Category" : "Categoría",
-    all: isEn ? "All categories" : "Todas las categorías",
+    all: isEn ? "All" : "Todas",
     options: [
       { value: "restaurante", label: isEn ? "Restaurants" : "Restaurantes" },
       { value: "bar", label: isEn ? "Bars" : "Bares" },
@@ -100,9 +100,10 @@ const labels = {
   <div class="filter-dropdowns-row">
     <!-- 1. ZONA -->
     <div class="filter-dropdown-group" id="group-zona">
-      <label class="filter-label" for="filter-zona"
-        >📍 {labels.zona.title}</label
-      >
+      <label class="filter-label" for="filter-zona">
+        <span class="filter-label-icon">📍</span>
+        <span class="filter-label-text">{labels.zona.title}</span>
+      </label>
       <div class="custom-select-wrapper">
         <select id="filter-zona" class="custom-select">
           <option value="">{labels.zona.all}</option>
@@ -118,9 +119,10 @@ const labels = {
 
     <!-- 2. PET FRIENDLY -->
     <div class="filter-dropdown-group" id="group-petfriendly">
-      <label class="filter-label" for="filter-petfriendly"
-        >🐾 {labels.petFriendly.title}</label
-      >
+      <label class="filter-label" for="filter-petfriendly">
+        <span class="filter-label-icon">🐾</span>
+        <span class="filter-label-text">{labels.petFriendly.title}</span>
+      </label>
       <div class="custom-select-wrapper">
         <select id="filter-petfriendly" class="custom-select">
           <option value="">{labels.petFriendly.all}</option>
@@ -132,9 +134,10 @@ const labels = {
 
     <!-- 3. TIPO DE COMIDA -->
     <div class="filter-dropdown-group" id="group-tipocomida">
-      <label class="filter-label" for="filter-tipocomida"
-        >🍽️ {labels.tipoComida.title}</label
-      >
+      <label class="filter-label" for="filter-tipocomida">
+        <span class="filter-label-icon">🍽️</span>
+        <span class="filter-label-text">{labels.tipoComida.title}</span>
+      </label>
       <div class="custom-select-wrapper">
         <select id="filter-tipocomida" class="custom-select">
           <option value="">{labels.tipoComida.all}</option>
@@ -150,9 +153,10 @@ const labels = {
 
     <!-- 4. CATEGORÍA -->
     <div class="filter-dropdown-group" id="group-categoria">
-      <label class="filter-label" for="filter-categoria"
-        >🏷️ {labels.categoria.title}</label
-      >
+      <label class="filter-label" for="filter-categoria">
+        <span class="filter-label-icon">🏷️</span>
+        <span class="filter-label-text">{labels.categoria.title}</span>
+      </label>
       <div class="custom-select-wrapper">
         <select id="filter-categoria" class="custom-select">
           <option value="">{labels.categoria.all}</option>
@@ -165,29 +169,20 @@ const labels = {
         <span class="select-arrow" aria-hidden="true">▼</span>
       </div>
     </div>
-
-    <!-- 5. ESTRELLA MICHELIN -->
-    <div class="filter-dropdown-group" id="group-michelin">
-      <label class="filter-label" for="filter-michelin"
-        >⭐ {labels.michelin.title}</label
-      >
-      <div class="custom-select-wrapper">
-        <select id="filter-michelin" class="custom-select">
-          <option value="">{labels.michelin.all}</option>
-          <option value="true">{labels.michelin.yes}</option>
-        </select>
-        <span class="select-arrow" aria-hidden="true">▼</span>
-      </div>
-    </div>
-
     <!-- RESET BUTTON -->
     <div
       class="filter-reset-wrapper"
       id="filter-reset-wrapper"
       style="display: none;"
     >
-      <button type="button" id="btn-reset-filters" class="reset-filters-btn">
-        ✕ {labels.reset}
+      <button
+        type="button"
+        id="btn-reset-filters"
+        class="reset-filters-btn"
+        title={labels.reset}
+        aria-label={labels.reset}
+      >
+        ✕
       </button>
     </div>
   </div>
@@ -239,8 +234,7 @@ const labels = {
       !selectZona ||
       !selectPet ||
       !selectTipo ||
-      !selectCat ||
-      !selectMichelin
+      !selectCat
     )
       return;
 
@@ -251,7 +245,7 @@ const labels = {
       const valPet = selectPet!.value;
       const valTipo = selectTipo!.value.toLowerCase().trim();
       const valCat = selectCat!.value.toLowerCase().trim();
-      const valMichelin = selectMichelin!.value;
+      const valMichelin = selectMichelin ? selectMichelin.value : "";
 
       const isAnyActive =
         valZona !== "" ||
