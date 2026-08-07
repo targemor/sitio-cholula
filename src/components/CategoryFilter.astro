@@ -343,38 +343,15 @@ const labels = {
           }
         }
 
-        // Check Categoría (bar / restaurante / heladería / cafetería)
+        // Check Categoría — comparación exacta con los valores en data-categoria
         let matchCat = true;
         if (valCat) {
           if (valCat === "restaurante") {
-            matchCat =
-              cCat.includes("restaurante") ||
-              cCat.includes("comida") ||
-              cCat.includes("taquería") ||
-              cCat.includes("mercado") ||
-              cCat.includes("churrería");
-          } else if (valCat === "bar") {
-            matchCat =
-              cCat.includes("bar") ||
-              cCat.includes("cantina") ||
-              cCat.includes("licorería") ||
-              cCat.includes("pub");
-          } else if (valCat === "heladeria") {
-            matchCat =
-              cCat.includes("helad") ||
-              cCat.includes("heladería") ||
-              cCat.includes("gelateria") ||
-              cCat.includes("gelato");
-          } else if (valCat === "cafeteria") {
-            matchCat =
-              cCat.includes("café") ||
-              cCat.includes("cafe") ||
-              cCat.includes("cafetería") ||
-              cCat.includes("cafeteria") ||
-              cCat.includes("chocolat") ||
-              cCat.includes("churrería");
+            // Restaurante y mercado (Mercado Cosme del Razo es un espacio de comida)
+            matchCat = cCat === "restaurante" || cCat === "mercado";
           } else {
-            matchCat = cCat.includes(valCat);
+            // bar, heladeria, cafeteria: coincidencia exacta
+            matchCat = cCat === valCat;
           }
         }
 
