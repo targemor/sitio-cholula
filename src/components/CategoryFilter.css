@@ -54,10 +54,12 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   width: 100%;
+  height: 36px;
+  box-sizing: border-box;
   background-color: #ffffff;
   border: 1px solid #cbd5e1;
   border-radius: 8px;
-  padding: 0.4rem 1.6rem 0.4rem 0.65rem;
+  padding: 0 1.6rem 0 0.65rem;
   font-family: inherit;
   font-size: 0.8rem;
   font-weight: 600;
@@ -111,11 +113,13 @@
   color: #dc2626;
   border: 1px solid #fecaca;
   border-radius: 8px;
-  min-width: 32px;
-  height: 32px;
-  padding: 0 0.5rem;
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  box-sizing: border-box;
+  padding: 0;
   font-family: inherit;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -163,9 +167,10 @@
   }
 
   .custom-select {
+    height: 28px;
     font-size: 0.68rem;
     font-weight: 600;
-    padding: 0.35rem 1.1rem 0.35rem 0.35rem;
+    padding: 0 1.1rem 0 0.35rem;
     border-radius: 6px;
   }
 
@@ -180,8 +185,9 @@
   }
 
   .reset-filters-btn {
-    min-width: 26px;
-    height: 26px;
+    width: 28px;
+    height: 28px;
+    min-width: 28px;
     padding: 0;
     font-size: 0.75rem;
     border-radius: 6px;

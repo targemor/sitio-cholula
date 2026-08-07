@@ -402,7 +402,7 @@ const labels = {
       selectPet!.value = "";
       selectTipo!.value = "";
       selectCat!.value = "";
-      selectMichelin!.value = "";
+      if (selectMichelin) selectMichelin.value = "";
       applyFilters();
     }
 
@@ -410,7 +410,9 @@ const labels = {
     selectPet.addEventListener("change", applyFilters);
     selectTipo.addEventListener("change", applyFilters);
     selectCat.addEventListener("change", applyFilters);
-    selectMichelin.addEventListener("change", applyFilters);
+    if (selectMichelin) {
+      selectMichelin.addEventListener("change", applyFilters);
+    }
 
     if (btnReset) {
       btnReset.addEventListener("click", resetAll);
