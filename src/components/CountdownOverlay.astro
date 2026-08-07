@@ -2,35 +2,23 @@
 // CountdownOverlay.astro
 ---
 
-<div id="launch-countdown-overlay" class="countdown-overlay">
+<div
+  id="launch-countdown-overlay"
+  class="countdown-overlay"
+  title="Doble clic para cerrar"
+>
+  <canvas id="confetti-canvas" class="confetti-canvas"></canvas>
   <div class="countdown-card">
     <img
       src="/home/cholula lo tiene todo_logo.webp"
       alt="San Pedro Cholula Lo Tiene Todo"
       class="countdown-logo"
     />
-    
-    <h2 class="countdown-kicker">GRAN LANZAMIENTO EN ...</h2>
 
-    <div class="countdown-timer">
-      <div class="timer-unit">
-        <span id="cd-hours" class="timer-number">48</span>
-        <span class="timer-label">HORAS</span>
-      </div>
-
-      <span class="timer-colon">:</span>
-
-      <div class="timer-unit">
-        <span id="cd-minutes" class="timer-number">00</span>
-        <span class="timer-label">MIN</span>
-      </div>
-
-      <span class="timer-colon">:</span>
-
-      <div class="timer-unit">
-        <span id="cd-seconds" class="timer-number">00</span>
-        <span class="timer-label">SEG</span>
-      </div>
+    <p class="launch-eyebrow">Gran Lanzamiento</p>
+    <h2 class="launch-date-text">7 de Agosto</h2>
+    <div id="cd-auto-number" class="cd-auto-number" style="display:none;">
+      10
     </div>
   </div>
 </div>
@@ -46,163 +34,259 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(245, 245, 242, 0.55);
-    backdrop-filter: blur(16px) brightness(0.96);
-    -webkit-backdrop-filter: blur(16px) brightness(0.96);
+    background: rgba(248, 246, 243, 0.65);
+    backdrop-filter: blur(20px) brightness(0.97);
+    -webkit-backdrop-filter: blur(20px) brightness(0.97);
     padding: 1.5rem;
     box-sizing: border-box;
     overflow: hidden;
+    cursor: pointer;
+    transition:
+      opacity 0.55s ease,
+      transform 0.55s ease;
+  }
+
+  .countdown-overlay.hiding {
+    opacity: 0;
+    transform: scale(1.02);
+    pointer-events: none;
+  }
+
+  .confetti-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
   }
 
   .countdown-card {
-    background: transparent;
+    position: relative;
+    z-index: 2;
     width: 100%;
-    max-width: 620px;
+    max-width: 500px;
     padding: 1rem;
     text-align: center;
+    animation: cardIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  @keyframes cardIn {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 
   .countdown-logo {
-    max-width: 260px;
-    width: 80%;
+    max-width: 240px;
+    width: 75%;
     height: auto;
-    margin: 0 auto 2.2rem auto;
+    margin: 0 auto 2.5rem auto;
     display: block;
     object-fit: contain;
+    opacity: 0.92;
   }
 
-  .countdown-kicker {
-    color: #9e2a2b;
-    font-size: 0.95rem;
-    font-weight: 800;
-    letter-spacing: 0.22em;
+  .launch-eyebrow {
+    font-family: "Roboto", sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.28em;
     text-transform: uppercase;
-    margin: 0 0 2rem 0;
-    font-family: 'Roboto', sans-serif;
+    color: #9e2a2b;
+    margin: 0 0 0.6rem 0;
+    opacity: 0.85;
   }
 
-  .countdown-timer {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 0.8rem;
-  }
-
-  .timer-unit {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-width: 95px;
-  }
-
-  .timer-number {
-    font-size: 4.8rem;
-    font-weight: 900;
-    color: #222222;
-    line-height: 1;
-    font-family: 'Roboto', sans-serif;
-    font-variant-numeric: tabular-nums;
-  }
-
-  .timer-colon {
+  .launch-date-text {
+    font-family: "Roboto", sans-serif;
     font-size: 4.2rem;
     font-weight: 900;
-    color: #d49e22;
+    color: #9e2a2b;
+    letter-spacing: -0.01em;
     line-height: 1;
-    margin-top: -0.1rem;
-    user-select: none;
+    margin: 0 0 1.4rem 0;
   }
 
-  .timer-label {
+  .cd-auto-number {
+    font-family: "Roboto", sans-serif;
+    font-size: 5.5rem;
+    font-weight: 900;
+    color: #9e2a2b;
+    line-height: 1;
+    margin: 0.6rem 0 0 0;
+    animation: cdPop 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  }
+
+  @keyframes cdPop {
+    from {
+      transform: scale(1.6);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  .launch-hint {
+    font-family: "Roboto", sans-serif;
     font-size: 0.72rem;
-    font-weight: 700;
-    color: #666666;
-    letter-spacing: 0.18em;
-    margin-top: 0.8rem;
-    text-transform: uppercase;
-    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color: #aaaaaa;
+    letter-spacing: 0.05em;
+    margin: 0;
   }
 
   @media (max-width: 600px) {
-    .countdown-card {
-      padding: 1rem 0.5rem;
-    }
-
     .countdown-logo {
-      max-width: 200px;
-      margin-bottom: 1.8rem;
+      max-width: 190px;
+      margin-bottom: 2rem;
     }
-
-    .countdown-kicker {
-      font-size: 0.82rem;
-      letter-spacing: 0.18em;
-      margin-bottom: 1.5rem;
-    }
-
-    .timer-unit {
-      min-width: 65px;
-    }
-
-    .timer-number {
-      font-size: 3.2rem;
-    }
-
-    .timer-colon {
-      font-size: 2.8rem;
-    }
-
-    .timer-label {
-      font-size: 0.65rem;
-      letter-spacing: 0.12em;
-      margin-top: 0.5rem;
+    .launch-date-text {
+      font-size: 3rem;
     }
   }
 </style>
 
 <script>
-  function initCountdown() {
-    const hoursEl = document.getElementById('cd-hours');
-    const minutesEl = document.getElementById('cd-minutes');
-    const secondsEl = document.getElementById('cd-seconds');
+  function initLaunchOverlay() {
+    const overlay = document.getElementById("launch-countdown-overlay");
+    const canvas = document.getElementById(
+      "confetti-canvas",
+    ) as HTMLCanvasElement | null;
+    if (!overlay) return;
 
-    if (!hoursEl || !minutesEl || !secondsEl) return;
+    // --- Check URL params ---
+    const params = new URLSearchParams(window.location.search);
+    const isCountdownMode = params.get("countdown") === "true";
 
-    const DURATION_MS = 48 * 60 * 60 * 1000; // 48 hours
-    const STORAGE_KEY = 'cholula_launch_target_v1';
-
-    let targetTime = parseInt(localStorage.getItem(STORAGE_KEY) || '0', 10);
-    const now = Date.now();
-
-    // If target not set or expired in the past, initialize 48 hours from now
-    if (!targetTime || targetTime <= now) {
-      targetTime = now + DURATION_MS;
-      localStorage.setItem(STORAGE_KEY, targetTime.toString());
+    // --- Check dismissed state ---
+    const DISMISSED_KEY = "cholula_launch_dismissed_v2";
+    if (!isCountdownMode && localStorage.getItem(DISMISSED_KEY) === "1") {
+      overlay.style.display = "none";
+      return;
     }
 
-    function update() {
-      const current = Date.now();
-      const diff = Math.max(0, targetTime - current);
+    // --- Confetti engine ---
+    function launchConfetti() {
+      if (!canvas) return;
+      const ctx = canvas.getContext("2d");
+      if (!ctx) return;
 
-      const hours = Math.floor(diff / (1000 * 60 * 60));
-      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
 
-      hoursEl.textContent = hours.toString().padStart(2, '0');
-      minutesEl.textContent = minutes.toString().padStart(2, '0');
-      secondsEl.textContent = seconds.toString().padStart(2, '0');
+      const COLORS = [
+        "#9e2a2b",
+        "#c84b2f",
+        "#d49e22",
+        "#ffffff",
+        "#f0c040",
+        "#e06030",
+        "#3a8c5c",
+        "#2060c0",
+      ];
+      const COUNT = 180;
+      const pieces: {
+        x: number;
+        y: number;
+        r: number;
+        color: string;
+        rot: number;
+        vx: number;
+        vy: number;
+        vrot: number;
+        opacity: number;
+      }[] = [];
+
+      for (let i = 0; i < COUNT; i++) {
+        pieces.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height * 0.4 - canvas.height * 0.2,
+          r: Math.random() * 7 + 4,
+          color: COLORS[Math.floor(Math.random() * COLORS.length)],
+          rot: Math.random() * Math.PI * 2,
+          vx: (Math.random() - 0.5) * 4,
+          vy: Math.random() * 3 + 2,
+          vrot: (Math.random() - 0.5) * 0.15,
+          opacity: 1,
+        });
+      }
+
+      let frame = 0;
+      function draw() {
+        if (!ctx || !canvas) return;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (const p of pieces) {
+          ctx.save();
+          ctx.globalAlpha = p.opacity;
+          ctx.translate(p.x, p.y);
+          ctx.rotate(p.rot);
+          ctx.fillStyle = p.color;
+          ctx.fillRect(-p.r / 2, -p.r / 2, p.r, p.r * 0.5);
+          ctx.restore();
+          p.x += p.vx;
+          p.y += p.vy;
+          p.rot += p.vrot;
+          p.vy += 0.07; // gravity
+          if (frame > 80) p.opacity -= 0.012;
+        }
+        frame++;
+        if (frame < 200) requestAnimationFrame(draw);
+        else ctx.clearRect(0, 0, canvas.width, canvas.height);
+      }
+      draw();
     }
 
-    update();
-    const interval = setInterval(update, 1000);
+    // --- Close logic ---
+    function closeOverlay() {
+      launchConfetti();
+      overlay.classList.add("hiding");
+      setTimeout(() => {
+        overlay.style.display = "none";
+        if (!isCountdownMode) {
+          localStorage.setItem(DISMISSED_KEY, "1");
+        }
+      }, 700);
+    }
 
-    // Cleanup on view transitions if any
-    document.addEventListener('astro:before-swap', () => clearInterval(interval), { once: true });
+    overlay.addEventListener("dblclick", closeOverlay);
+
+    // --- Auto-countdown (query param ?countdown=true) ---
+    if (isCountdownMode) {
+      const numEl = document.getElementById("cd-auto-number");
+      if (numEl) {
+        numEl.style.display = "block";
+        let count = 10;
+        numEl.textContent = String(count);
+
+        const tick = setInterval(() => {
+          count--;
+          if (count <= 0) {
+            clearInterval(tick);
+            closeOverlay();
+          } else {
+            // Re-trigger pop animation by cloning
+            numEl.style.animation = "none";
+            void numEl.offsetWidth; // reflow
+            numEl.style.animation = "";
+            numEl.textContent = String(count);
+          }
+        }, 1000);
+      }
+    }
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initCountdown);
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initLaunchOverlay);
   } else {
-    initCountdown();
+    initLaunchOverlay();
   }
-  document.addEventListener('astro:page-load', initCountdown);
+  document.addEventListener("astro:page-load", initLaunchOverlay);
 </script>
