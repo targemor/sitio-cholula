@@ -175,11 +175,10 @@
     {
       "nombre": "Hotel los Remedios",
       "galeria": [
-        "/images/hoteles/hotel-los-remedios/santa_josefita_cholula_1-1024x1024-1-1.webp",
-        "/images/hoteles/hotel-los-remedios/santa_josefita_cholula_2-1024x1024-1-1.webp",
-        "/images/hoteles/hotel-los-remedios/santa_josefita_cholula_3-1024x1024-1-1.webp",
-        "/images/hoteles/hotel-los-remedios/santa_josefita_cholula_4-1024x1024-1-1.webp",
-        "/images/hoteles/hotel-los-remedios/santa_josefita_cholula-1024x1024-1-1.webp"
+        "/images/hoteles/hotel-los-remedios/1.webp",
+        "/images/hoteles/hotel-los-remedios/2.webp",
+        "/images/hoteles/hotel-los-remedios/3.webp",
+        "/images/hoteles/hotel-los-remedios/4.webp"
       ],
       "estrellas": 4,
       "social": {
@@ -536,7 +535,7 @@
       "googleMaps": "https://goo.gl/maps/MB8F7cE8NKstF5Zx7",
       "zona": "Centro",
       "distanciaGranPiramide": "15 min a pie de la Gran Pirámide",
-      "categoriaPrecio": "Estándar",
+      "categoriaPrecio": "Superior",
       "aceptaMascotas": false,
       "tieneAlberca": false,
       "tieneSpa": false,
@@ -712,8 +711,7 @@
       "galeria": [
         "/images/hoteles/fiesta-inn-explanada/1.webp",
         "/images/hoteles/fiesta-inn-explanada/2.webp",
-        "/images/hoteles/fiesta-inn-explanada/3.webp",
-        "/images/hoteles/fiesta-inn-explanada/4.webp"
+        "/images/hoteles/fiesta-inn-explanada/3.webp"
       ],
       "estrellas": 4,
       "social": {},
@@ -775,7 +773,6 @@
         "detalle": "Lunes: 09:00-21:00 • Martes: 09:00-21:00 • Miércoles: 09:00-21:00 • Jueves: 09:00-21:00 • Viernes: 09:00-21:00 • Sábado: 09:00-21:00 • Domingo: 09:00-18:00"
       },
       "direccion": "Av. Morelos 419, San Miguel, Barrio de San Miguel Tianguisnahuitl",
-      "whatsapp": "2222470011",
       "googleMaps": "https://maps.app.goo.gl/7uqCpmUyesPYio299",
       "categoriaPrecio": "Económico",
       "petFriendly": false,
@@ -784,7 +781,44 @@
       "ocasionIdeal": "Comida tradicional poblana, sangrías tradicionales, experiencia local",
       "perfilIdeal": "Familiar y tradicional · Ideal para familias, turistas y locales que buscan sabor auténtico",
       "espacioFisico": "Local en Zona Centro",
-      "telefono": "2222470011"
+      "telefono": "2224138285",
+      "whatsapp": "2224138285"
+    },
+    {
+      "nombre": "Bar Reforma",
+      "galeria": [
+        "/images/restaurantes/bar-reforma/2.webp",
+        "/images/restaurantes/bar-reforma/1.webp",
+        "/images/restaurantes/bar-reforma/3.webp"
+      ],
+      "categoria": "bar",
+      "tipoComida": "Sangrías y botanas",
+      "ambiente": "Social · Tradicional · pet friendly",
+      "dondeEsta": "Zona Centro",
+      "idealPara": "Tarde-noche de cantina, sangrías tradicionales, experiencia local auténtica",
+      "caracteristicasEspeciales": "Sangrías tradicionales · Cantina auténtica",
+      "social": [],
+      "horario": {
+        "lunes": "17:00-23:00",
+        "martes": "17:00-23:00",
+        "miercoles": "17:00-23:00",
+        "jueves": "17:00-23:00",
+        "viernes": "17:00-23:00",
+        "sabado": "15:00-23:00",
+        "domingo": "13:00-16:30",
+        "resumen": "Lun-Vie 17:00-23:00 · Sáb 15:00-23:00 · Dom 13:00-16:30",
+        "detalle": "Lunes: 17:00-23:00 • Martes: 17:00-23:00 • Miércoles: 17:00-23:00 • Jueves: 17:00-23:00 • Viernes: 17:00-23:00 • Sábado: 15:00-23:00 • Domingo: 13:00-16:30"
+      },
+      "whatsapp": "2222056023",
+      "googleMaps": "https://maps.app.goo.gl/mUjGZKyjwtJT7kWC6",
+      "categoriaPrecio": "Económico",
+      "petFriendly": true,
+      "musicaEnVivo": false,
+      "precioPpMxn": "$100–250",
+      "ocasionIdeal": "Tarde-noche de cantina, sangrías tradicionales, experiencia local auténtica",
+      "perfilIdeal": "Social y tradicional · Ideal para locales, amigos adultos que buscan cantina auténtica",
+      "espacioFisico": "Local en Zona Centro",
+      "telefono": "2222056023"
     },
     {
       "nombre": "Allora",
@@ -2322,42 +2356,6 @@
       "perfilIdeal": "Exclusivo y sofisticado · Ideal para parejas y foodies en ocasiones muy especiales",
       "espacioFisico": "Almacén elegante con techo de metal y vidrio · Jardín interior · Terraza · Speakeasy bar",
       "telefono": "2224651420"
-    },
-    {
-      "nombre": "Bar Reforma",
-      "galeria": [
-        "/images/restaurantes/bar-reforma/2.webp",
-        "/images/restaurantes/bar-reforma/1.webp",
-        "/images/restaurantes/bar-reforma/3.webp"
-      ],
-      "categoria": "bar",
-      "tipoComida": "Sangrías y botanas",
-      "ambiente": "Social · Tradicional · pet friendly",
-      "dondeEsta": "Zona Centro",
-      "idealPara": "Tarde-noche de cantina, sangrías tradicionales, experiencia local auténtica",
-      "caracteristicasEspeciales": "Sangrías tradicionales · Cantina auténtica",
-      "social": [],
-      "horario": {
-        "lunes": "17:00-23:00",
-        "martes": "17:00-23:00",
-        "miercoles": "17:00-23:00",
-        "jueves": "17:00-23:00",
-        "viernes": "17:00-23:00",
-        "sabado": "15:00-23:00",
-        "domingo": "13:00-16:30",
-        "resumen": "Lun-Vie 17:00-23:00 · Sáb 15:00-23:00 · Dom 13:00-16:30",
-        "detalle": "Lunes: 17:00-23:00 • Martes: 17:00-23:00 • Miércoles: 17:00-23:00 • Jueves: 17:00-23:00 • Viernes: 17:00-23:00 • Sábado: 15:00-23:00 • Domingo: 13:00-16:30"
-      },
-      "whatsapp": "2222056023",
-      "googleMaps": "https://maps.app.goo.gl/mUjGZKyjwtJT7kWC6",
-      "categoriaPrecio": "Económico",
-      "petFriendly": true,
-      "musicaEnVivo": false,
-      "precioPpMxn": "$100–250",
-      "ocasionIdeal": "Tarde-noche de cantina, sangrías tradicionales, experiencia local auténtica",
-      "perfilIdeal": "Social y tradicional · Ideal para locales, amigos adultos que buscan cantina auténtica",
-      "espacioFisico": "Local en Zona Centro",
-      "telefono": "2222056023"
     },
     {
       "nombre": "Terriel, tierra y miel",

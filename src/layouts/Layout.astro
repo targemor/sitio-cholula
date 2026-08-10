@@ -35,7 +35,9 @@ const SITE_URL = "https://visitcholula.mx";
 const canonicalUrl = canonical
 	? `${SITE_URL}${canonical}`
 	: `${SITE_URL}${Astro.url.pathname}`;
-const ogImageUrl = ogImage.startsWith("http") ? ogImage : `${SITE_URL}${ogImage}`;
+const ogImageUrl = ogImage.startsWith("http")
+	? ogImage
+	: `${SITE_URL}${ogImage}`;
 const fullTitle = `${title} | Visit Cholula`;
 
 // Solo se anuncian los idiomas en los que la página existe de verdad.
@@ -76,7 +78,11 @@ const defaultAlternate = alternates.find((a) => a.locale === "es");
 		}
 
 		<!-- Traducción en curso: no se indexa hasta que el contenido esté en su idioma -->
-		{isDraftLocale(lang) && <meta name="robots" content="noindex, follow" />}
+		{
+			isDraftLocale(lang) && (
+				<meta name="robots" content="noindex, follow" />
+			)
+		}
 
 		<!-- ── Open Graph ───────────────────────────────────────────────── -->
 		<meta property="og:type" content={ogType} />
@@ -99,13 +105,21 @@ const defaultAlternate = alternates.find((a) => a.locale === "es");
 
 		<!-- ── Geo Tags ─────────────────────────────────────────────────── -->
 		<meta name="geo.region" content="MX-PUE" />
-		<meta name="geo.placename" content="San Pedro Cholula, Puebla, México" />
+		<meta
+			name="geo.placename"
+			content="San Pedro Cholula, Puebla, México"
+		/>
 		<meta name="geo.position" content="19.0547;-98.3018" />
 		<meta name="ICBM" content="19.0547, -98.3018" />
 
 		<!-- ── Favicon ──────────────────────────────────────────────────── -->
 		<link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
-		<link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="48x48"
+			href="/favicon-48.png"
+		/>
 
 		<!-- ── Preloads críticos ─────────────────────────────────────────── -->
 		<link
@@ -117,14 +131,19 @@ const defaultAlternate = alternates.find((a) => a.locale === "es");
 
 		<!-- ── Google Analytics 4 ────────────────────────────────────────── -->
 		<link rel="preconnect" href="https://www.googletagmanager.com" />
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-N626HFQBS6" is:inline></script>
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-N626HFQBS6"
+			is:inline></script>
 		<script is:inline>
 			window.dataLayer = window.dataLayer || [];
-			function gtag() { dataLayer.push(arguments); }
-			gtag('js', new Date());
-			gtag('config', 'G-N626HFQBS6', {
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
+			gtag("config", "G-N626HFQBS6", {
 				anonymize_ip: true,
-				send_page_view: true
+				send_page_view: true,
 			});
 		</script>
 
@@ -157,7 +176,6 @@ const defaultAlternate = alternates.find((a) => a.locale === "es");
 		}
 	</head>
 	<body>
-		<CountdownOverlay />
 		<Header
 			client:load
 			lang={lang}
@@ -187,7 +205,12 @@ const defaultAlternate = alternates.find((a) => a.locale === "es");
 				<span class="ai-text">{s.aiAssistant}</span>
 			</span>
 			<div class="whatsapp-icon-wrapper">
-				<svg viewBox="0 0 448 512" width="24" height="24" aria-hidden="true">
+				<svg
+					viewBox="0 0 448 512"
+					width="24"
+					height="24"
+					aria-hidden="true"
+				>
 					<path
 						fill="white"
 						d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-23.1-115-65-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-2.1-3.6 .1-5.5 1.8-7.3 1.6-1.6 3.7-4.2 5.5-6.3 1.8-2.1 2.4-3.7 3.6-6.2 1.2-2.5 .6-4.7-.3-6.2-1.9-3.4-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"
@@ -243,59 +266,65 @@ const defaultAlternate = alternates.find((a) => a.locale === "es");
 				var scrollFired = {};
 
 				function onScroll() {
-					var scrollTop = window.scrollY || document.documentElement.scrollTop;
-					var docHeight = Math.max(
-						document.body.scrollHeight,
-						document.documentElement.scrollHeight
-					) - window.innerHeight;
+					var scrollTop =
+						window.scrollY || document.documentElement.scrollTop;
+					var docHeight =
+						Math.max(
+							document.body.scrollHeight,
+							document.documentElement.scrollHeight,
+						) - window.innerHeight;
 					if (docHeight <= 0) return;
 					var pct = Math.round((scrollTop / docHeight) * 100);
 					scrollMilestones.forEach(function (milestone) {
 						if (pct >= milestone && !scrollFired[milestone]) {
 							scrollFired[milestone] = true;
-							if (typeof gtag === 'function') {
-								gtag('event', 'scroll', { percent_scrolled: milestone });
+							if (typeof gtag === "function") {
+								gtag("event", "scroll", {
+									percent_scrolled: milestone,
+								});
 							}
 						}
 					});
 				}
 
-				window.addEventListener('scroll', onScroll, { passive: true });
+				window.addEventListener("scroll", onScroll, { passive: true });
 
 				// ── WhatsApp FAB ──────────────────────────────────────────────────
-				var waBtn = document.getElementById('whatsapp-fab');
+				var waBtn = document.getElementById("whatsapp-fab");
 				if (waBtn) {
-					waBtn.addEventListener('click', function () {
-						if (typeof gtag === 'function') {
-							gtag('event', 'whatsapp_click', {
-								event_category: 'contact',
-								event_label: 'fab'
+					waBtn.addEventListener("click", function () {
+						if (typeof gtag === "function") {
+							gtag("event", "whatsapp_click", {
+								event_category: "contact",
+								event_label: "fab",
 							});
 						}
 					});
 				}
 
 				// ── Enlaces externos ──────────────────────────────────────────────
-				document.addEventListener('click', function (e) {
-					var anchor = e.target.closest('a[href]');
+				document.addEventListener("click", function (e) {
+					var anchor = e.target.closest("a[href]");
 					if (!anchor) return;
-					var href = anchor.getAttribute('href') || '';
+					var href = anchor.getAttribute("href") || "";
 					if (
-						href.startsWith('http') &&
-						!href.includes('visitcholula.mx') &&
+						href.startsWith("http") &&
+						!href.includes("visitcholula.mx") &&
 						!anchor.dataset.gaWhatsapp // ya rastreado arriba
 					) {
 						try {
 							var domain = new URL(href).hostname;
-							if (typeof gtag === 'function') {
-								gtag('event', 'click', {
-									event_category: 'outbound',
+							if (typeof gtag === "function") {
+								gtag("event", "click", {
+									event_category: "outbound",
 									event_label: href,
 									link_domain: domain,
-									link_url: href
+									link_url: href,
 								});
 							}
-						} catch (err) { /* URL inválida */ }
+						} catch (err) {
+							/* URL inválida */
+						}
 					}
 				});
 			})();
