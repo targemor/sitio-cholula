@@ -9,29 +9,59 @@ on:
 
 jobs:
   extract:
-    name: Extract WP Data
+    name: Extract WP Data + Imagenes + WebP
     runs-on: ubuntu-latest
 
     steps:
+      # ── 1. Codigo ──────────────────────────────────────────────────────────
       - name: Checkout repositorio
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      # ── 2. Node + dependencias ─────────────────────────────────────────────
+      - name: Setup Node.js 22
         uses: actions/setup-node@v4
         with:
           node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
 
-      - name: Ejecutar extract de WordPress (prueba -> /tmp/prueba.json)
+      - name: Instalar dependencias (sharp y demas)
+        run: npm ci
+
+      # ── 3. Extraer datos de WordPress + descargar imagenes ─────────────────
+      #
+      #   El script extract-wp-data.cjs hace dos cosas en un solo paso:
+      #     a) Llama al endpoint /wp-json/cholula/v1/export y guarda el JSON.
+      #     b) Descarga todas las imagenes referenciadas y las guarda en
+      #        public/images/ y public/eventos/ (relativo al --out).
+      #
+      - name: "1/3  Extraer datos WP + descargar imagenes"
         env:
           CHOLULA_EXPORT_SECRET: ${{ secrets.CHOLULA_EXPORT_SECRET }}
         run: |
           node scripts/extract-wp-data.cjs \
             --url https://app.visitcholula.mx \
-            --out /tmp/prueba.json
+            --out src/data/cholula.json
 
-      - name: Verificar salida
+      # ── 4. Convertir imagenes no-WebP a WebP ───────────────────────────────
+      #
+      #   convert-to-webp.js busca .png / .jpg / .jpeg / .avif en public/
+      #   y genera su equivalente .webp (omite los que ya existen y estan al dia).
+      #
+      - name: "2/3  Convertir imagenes a WebP"
+        run: node scripts/convert-to-webp.js
+
+      # ── 5. Verificacion ────────────────────────────────────────────────────
+      - name: "3/3  Verificar resultados"
         run: |
-          echo "Tamano del archivo generado:"
-          wc -c /tmp/prueba.json
-          echo "Primeros 500 caracteres:"
-          head -c 500 /tmp/prueba.json
+          echo "=== JSON generado ==="
+          wc -c src/data/cholula.json
+          echo ""
+          echo "=== Primeros 500 chars ==="
+          head -c 500 src/data/cholula.json
+          echo ""
+          echo "=== Imagenes descargadas ==="
+          find public/images public/eventos -type f 2>/dev/null | wc -l || echo "Sin imagenes (carpetas vacias)"
+          echo ""
+          echo "=== Archivos WebP generados ==="
+          find public/images public/eventos -name "*.webp" 2>/dev/null | wc -l || echo "0 webp"
