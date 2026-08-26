@@ -1,0 +1,37 @@
+﻿name: WordPress Data Extract
+
+on:
+  # Ejecutar manualmente desde la pestana "Actions" en GitHub
+  workflow_dispatch:
+  # Tambien se puede programar (descomenta para activar):
+  # schedule:
+  #   - cron: '0 6 * * *'   # cada dia a las 06:00 UTC
+
+jobs:
+  extract:
+    name: Extract WP Data
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repositorio
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Ejecutar extract de WordPress (prueba -> /tmp/prueba.json)
+        env:
+          CHOLULA_EXPORT_SECRET: ${{ secrets.CHOLULA_EXPORT_SECRET }}
+        run: |
+          node scripts/extract-wp-data.cjs \
+            --url https://app.visitcholula.mx \
+            --out /tmp/prueba.json
+
+      - name: Verificar salida
+        run: |
+          echo "Tamano del archivo generado:"
+          wc -c /tmp/prueba.json
+          echo "Primeros 500 caracteres:"
+          head -c 500 /tmp/prueba.json
