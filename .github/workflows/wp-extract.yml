@@ -1,4 +1,4 @@
-﻿name: WordPress Data Extract
+name: WordPress Data Extract
 
 on:
   # Ejecutar manualmente desde la pestana "Actions" en GitHub
@@ -51,8 +51,17 @@ jobs:
       - name: "2/3  Convertir imagenes a WebP"
         run: node scripts/convert-to-webp.js
 
-      # ── 5. Verificacion ────────────────────────────────────────────────────
-      - name: "3/3  Verificar resultados"
+      # ── 5. Limpiar originales no-WebP ──────────────────────────────────────
+      #
+      #   Elimina .jpg / .jpeg / .png / .gif / .bmp / .tiff / .avif en public/
+      #   una vez que ya existen sus equivalentes .webp.
+      #   Conserva favicon.png, favicon-48.png y favicon.ico.
+      #
+      - name: "3/3  Limpiar imagenes no-WebP"
+        run: node scripts/cleanup-non-webp.cjs
+
+      # ── 6. Verificacion ────────────────────────────────────────────────────
+      - name: "4/4  Verificar resultados"
         run: |
           echo "=== JSON generado ==="
           wc -c src/data/cholula.json
