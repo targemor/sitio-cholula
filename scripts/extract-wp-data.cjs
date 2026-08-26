@@ -5,6 +5,14 @@
  *   node extract-wp-data.js
  *   node extract-wp-data.js --url http://localhost:8000   (override WP base URL)
  *   node extract-wp-data.js --out ./mi-salida.json
+ *   node extract-wp-data.js --token <secreto>             (token del endpoint)
+ *
+ * El endpoint exige autenticación. El token sale de --token o de la variable de
+ * entorno CHOLULA_EXPORT_SECRET, y viaja en el header Authorization: Bearer.
+ * NO se guarda en el repo: este archivo está versionado.
+ *
+ *   PowerShell:  $env:CHOLULA_EXPORT_SECRET = "..."; node scripts/extract-wp-data.cjs
+ *   bash:        CHOLULA_EXPORT_SECRET=... node scripts/extract-wp-data.cjs
  */
 
 const fs   = require('fs');
@@ -17,17 +25,22 @@ const https= require('https');
 const args    = process.argv.slice(2);
 const getArg  = (flag) => { const i = args.indexOf(flag); return i !== -1 ? args[i + 1] : null; };
 
-const WP_BASE = getArg('--url') || 'http://localhost:8000';
-const OUT_FILE = getArg('--out') || path.join(__dirname, '..', 'src', 'data', 'cholula.json');
+const WP_BASE   = getArg('--url') || 'http://localhost:8000';
+const OUT_FILE  = getArg('--out') || path.join(__dirname, '..', 'src', 'data', 'cholula.json');
+const AUTH_TOKEN = getArg('--token') || process.env.CHOLULA_EXPORT_SECRET || process.env.EXPORT_TOKEN || null;
 
-const ENDPOINT = `${WP_BASE}/wp-json/cholula/v1/export`;
+const ENDPOINT  = `${WP_BASE}/wp-json/cholula/v1/export`;
 
 // ── HTTP helper ───────────────────────────────────────────────────────────────
 
-function fetchJSON(url) {
+function fetchJSON(url, token) {
   return new Promise((resolve, reject) => {
     const client = url.startsWith('https') ? https : http;
-    const req = client.get(url, { headers: { 'Accept': 'application/json' } }, (res) => {
+    const headers = { 'Accept': 'application/json' };
+    if (token) {
+      headers['Authorization'] = `Bearer ${token}`;
+    }
+    const req = client.get(url, { headers }, (res) => {
       if (res.statusCode !== 200) {
         reject(new Error(`HTTP ${res.statusCode} en ${url}`));
         res.resume();
@@ -140,13 +153,21 @@ async function main() {
 
   let data;
   try {
-    data = await fetchJSON(ENDPOINT);
+    data = await fetchJSON(ENDPOINT, AUTH_TOKEN);
   } catch (err) {
     console.error('❌ Error al conectar con WordPress:', err.message);
-    console.error('\nVerifica que:');
-    console.error('  • El contenedor Docker está corriendo (docker ps)');
-    console.error(`  • WordPress responde en ${WP_BASE}`);
-    console.error('  • El plugin cholula-headless está activo');
+    if (/HTTP 40[13]/.test(err.message)) {
+      console.error('\nEl endpoint rechazó las credenciales.');
+      console.error(AUTH_TOKEN
+        ? '  • Se envió un token, pero no coincide con CHOLULA_EXPORT_SECRET del servidor.'
+        : '  • No se envió ningún token. Usa --token <secreto> o exporta CHOLULA_EXPORT_SECRET.');
+      console.error('  • El servidor debe tener definida la constante CHOLULA_EXPORT_SECRET en wp-config.php.');
+    } else {
+      console.error('\nVerifica que:');
+      console.error('  • El contenedor Docker está corriendo (docker ps)');
+      console.error(`  • WordPress responde en ${WP_BASE}`);
+      console.error('  • El plugin cholula-headless está activo');
+    }
     process.exit(1);
   }
 
