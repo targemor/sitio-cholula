@@ -20,7 +20,7 @@
     en cada objeto. Usar en el primer deploy o para reparar metadatos. Mas lento.
 
 .PARAMETER SkipBuild
-    Omite 'npm run build' y despliega el ./dist existente.
+    Omite 'pnpm run build' y despliega el ./dist existente.
 
 .PARAMETER SkipInvalidation
     No crea la invalidacion de CloudFront.
@@ -46,6 +46,8 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
+# Evita error 'stream is not seekable' en AWS CLI (botocore) al subir sitemaps/archivos estaticos
+$env:AWS_REQUEST_CHECKSUM_CALCULATION = "WHEN_REQUIRED"
 $immutable = "public, max-age=31536000, immutable"
 $revalidate = "public, max-age=0, must-revalidate"
 
@@ -58,28 +60,31 @@ function Write-Step($msg) { Write-Host "`n==> $msg" -ForegroundColor Cyan }
 function Write-Ok($msg)   { Write-Host "    $msg" -ForegroundColor Green }
 function Write-Warn2($msg){ Write-Host "    $msg" -ForegroundColor Yellow }
 
-# Ejecuta un comando nativo (aws/npm/curl) y aborta si el exit code != 0.
+# Ejecuta un comando nativo (aws/pnpm/curl) y aborta si el exit code != 0.
 # No usamos 2>&1: en PS 5.1 eso convierte stderr en errores y rompe el exit code.
 function Invoke-Native {
-    param([Parameter(Mandatory)][string]$Exe, [Parameter(ValueFromRemainingArguments)]$Args)
-    & $Exe @Args
+    param(
+        [Parameter(Mandatory, Position=0)][string]$Exe,
+        [Parameter(ValueFromRemainingArguments)][string[]]$CommandArgs
+    )
+    & $Exe @CommandArgs
     if ($LASTEXITCODE -ne 0) {
-        throw "'$Exe $($Args -join ' ')' fallo con exit code $LASTEXITCODE"
+        throw "'$Exe $($CommandArgs -join ' ')' fallo con exit code $LASTEXITCODE"
     }
 }
 
 # --- Verificaciones previas ---
 Write-Step "Verificando herramientas"
 if (-not (Get-Command aws -ErrorAction SilentlyContinue)) { throw "AWS CLI no encontrado en PATH." }
-if (-not $SkipBuild -and -not (Get-Command npm -ErrorAction SilentlyContinue)) { throw "npm no encontrado en PATH." }
+if (-not $SkipBuild -and -not (Get-Command pnpm -ErrorAction SilentlyContinue)) { throw "pnpm no encontrado en PATH." }
 Write-Ok "aws: $((Get-Command aws).Source)"
 
 # --- Build ---
 if ($SkipBuild) {
     Write-Step "Build omitido (-SkipBuild)"
 } else {
-    Write-Step "Build (npm run build)"
-    Invoke-Native npm run build
+    Write-Step "Build (pnpm run build)"
+    Invoke-Native pnpm run build
     Write-Ok "Build completado"
 }
 

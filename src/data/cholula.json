@@ -2632,6 +2632,48 @@
       "perfilIdeal": "Casual y accesible · Ideal para parejas, amigos y personas fitness que buscan helado sin azúcar",
       "espacioFisico": "Heladería en el zócalo",
       "telefono": "7712029970"
+    },
+    {
+      "nombre": "Bungalow Punta Cholula",
+      "galeria": [
+        "/images/restaurantes/bungalow-punta-cholula/1.webp",
+        "/images/restaurantes/bungalow-punta-cholula/2.webp",
+        "/images/restaurantes/bungalow-punta-cholula/3.webp",
+        "/images/restaurantes/bungalow-punta-cholula/4.webp",
+        "/images/restaurantes/bungalow-punta-cholula/5.webp"
+      ],
+      "categoria": "bar",
+      "tipoComida": "Pulque, mezcal y bebidas",
+      "ambiente": "Social · Informal · pet friendly",
+      "dondeEsta": "A pocos minutos del Centro",
+      "idealPara": "Excelente música y bebidas, pulque y mezcal",
+      "caracteristicasEspeciales": "Jardín · Pet friendly",
+      "social": {
+        "facebook": "https://www.facebook.com/share/19SQhfnff5/?mibextid=wwXIfr",
+        "instagram": "https://www.instagram.com/bungalow_punta_cholula?igsh=Zm1yanhpbGQ3b24y&utm_source=qr"
+      },
+      "horario": {
+        "lunes": "cerrado",
+        "martes": "cerrado",
+        "miercoles": "cerrado",
+        "jueves": "16:00-22:00",
+        "viernes": "16:00-02:00",
+        "sabado": "16:00-02:00",
+        "domingo": "13:00-20:00",
+        "resumen": "Lun-Mié cerrado · Jue 16:00-22:00 · Vie-Sáb 16:00-02:00 · Dom 13:00-20:00",
+        "detalle": "Lunes: cerrado • Martes: cerrado • Miércoles: cerrado • Jueves: 16:00-22:00 • Viernes: 16:00-02:00 • Sábado: 16:00-02:00 • Domingo: 13:00-20:00"
+      },
+      "direccion": "Calle 6 Nte. 608, Barrio de San Miguel Tianguisnahuitl, 72760 Heroica Puebla de Zaragoza, Pue.",
+      "whatsapp": "2223153328",
+      "googleMaps": "https://maps.app.goo.gl/U6iCAUv3PEfJzrCw5",
+      "categoriaPrecio": "Económico",
+      "petFriendly": true,
+      "musicaEnVivo": false,
+      "precioPpMxn": "$100–250",
+      "ocasionIdeal": "Excelente música y bebidas, pulque y mezcal, jardín al aire libre",
+      "perfilIdeal": "Social e informal · Ideal para familias, parejas y amigos que buscan buen ambiente, jardín y bebidas",
+      "espacioFisico": "Jardín al aire libre a pocos minutos del Centro",
+      "telefono": "2223153328"
     }
   ],
   "queHacer": [
@@ -2838,6 +2880,47 @@
       "whatsapp": "7823628714",
       "clasificacion": "Recorrido a pie",
       "idiomas": "Español"
+    },
+    {
+      "nombre": "Que Loco Tours",
+      "categoriaGrupo": "aventura,otras-partes",
+      "galeria": [
+        "/images/que-hacer/que-loco-tours/1.webp",
+        "/images/que-hacer/que-loco-tours/2.webp",
+        "/images/que-hacer/que-loco-tours/3.webp",
+        "/images/que-hacer/que-loco-tours/4.webp",
+        "/images/que-hacer/que-loco-tours/5.webp",
+        "/images/que-hacer/que-loco-tours/6.webp",
+        "/images/que-hacer/que-loco-tours/7.webp",
+        "/images/que-hacer/que-loco-tours/8.webp"
+      ],
+      "tipo": "senderismo de alta montaña y aventura",
+      "descripcion": "⛰️ Los especialistas en senderismo del Iztaccíhuatl — con un sistema de 4 niveles diseñado para cada tipo de caminante, de principiante a cumbre. 🌎 Amplia experiencia con turistas internacionales.",
+      "certificacionSectur": true,
+      "clasificacionSectur": true,
+      "clasificacion": "Guía certificado SECTUR (NOM-09-TUR)",
+      "especializacion": "Senderismo de alta montaña y aventura (Iztaccíhuatl)",
+      "toursQueOfrece": "Iztaccíhuatl Hiking Tour (4 niveles: Mirador Xipe / Manantiales y Cascada / Portillos / Cumbre)",
+      "idiomas": "Inglés, Español",
+      "direccion": "Privada 9 \"A\" Sur 5131, Prados Agua Azul, 72430 Heroica Puebla de Zaragoza, Pue.",
+      "googleMaps": "https://maps.app.goo.gl/LBxNTxdBAkArWbyz9?g_st=ac",
+      "sitioWeb": "https://quelocotours.com/",
+      "whatsapp": "2228601743",
+      "social": {
+        "facebook": "https://facebook.com/quelocotours",
+        "instagram": "https://instagram.com/quelocotours"
+      },
+      "horario": {
+        "lunes": "08:00-22:00",
+        "martes": "08:00-22:00",
+        "miercoles": "08:00-22:00",
+        "jueves": "08:00-22:00",
+        "viernes": "08:00-22:00",
+        "sabado": "08:00-22:00",
+        "domingo": "08:00-22:00",
+        "resumen": "Lun-Dom 08:00-22:00",
+        "detalle": "Lunes: 08:00-22:00 • Martes: 08:00-22:00 • Miércoles: 08:00-22:00 • Jueves: 08:00-22:00 • Viernes: 08:00-22:00 • Sábado: 08:00-22:00 • Domingo: 08:00-22:00"
+      }
     }
   ],
   "guiasTuristicos": [

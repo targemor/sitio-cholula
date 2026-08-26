@@ -226,7 +226,8 @@ function mergeTourOperadores(data) {
         (normNombre.includes('2rb') && n.includes('2rb')) ||
         (normNombre.includes('2ruedas') && n.includes('2ruedas')) ||
         (normNombre.includes('consentido') && n.includes('consentido')) ||
-        (normNombre.includes('terraequus') && n.includes('terraequus'));
+        (normNombre.includes('terraequus') && n.includes('terraequus')) ||
+        (normNombre.includes('queloco') && n.includes('queloco'));
     });
 
     // Look for images in Nuevos PST pendientes (by directory name match)
