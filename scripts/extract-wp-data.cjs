@@ -103,6 +103,36 @@ function enrichHorario(item) {
   };
 }
 
+// ── Imágenes ──────────────────────────────────────────────────────────────────
+
+/** Buckets cuyos items son objetos con galería. `eventos` NO va aquí: es plano. */
+const PST_BUCKETS = ['hoteles', 'restaurantes', 'queHacer', 'guiasTuristicos'];
+
+/** URL de WP -> ruta relativa dentro de uploads. Fuera de uploads, solo el nombre. */
+function rutaRelativa(url) {
+  const p = decodeURIComponent(new URL(url).pathname);
+  return p.includes('/wp-content/uploads/')
+    ? p.split('/wp-content/uploads/')[1]
+    : path.basename(p);
+}
+
+function descargar(url, filepath) {
+  return new Promise((resolve, reject) => {
+    const client = url.startsWith('https') ? https : http;
+    client.get(url, (res) => {
+      if (res.statusCode !== 200) {
+        reject(new Error(`HTTP ${res.statusCode}`));
+        res.resume();
+        return;
+      }
+      const file = fs.createWriteStream(filepath);
+      res.pipe(file);
+      file.on('finish', () => { file.close(); resolve(); });
+      file.on('error', (err) => fs.unlink(filepath, () => reject(err)));
+    }).on('error', reject);
+  });
+}
+
 // ── Main ──────────────────────────────────────────────────────────────────────
 
 async function main() {
@@ -126,6 +156,7 @@ async function main() {
     restaurantes:     (data.restaurantes     || []).length,
     queHacer:         (data.queHacer         || []).length,
     guiasTuristicos:  (data.guiasTuristicos  || []).length,
+    eventos:          (data.eventos          || []).length,
   };
 
   console.log('Registros recibidos:');
@@ -133,81 +164,99 @@ async function main() {
   console.log(`  TOTAL: ${Object.values(counts).reduce((a, b) => a + b, 0)}\n`);
 
   // Enriquecer horarios con resumen y detalle
-  for (const bucket of ['hoteles', 'restaurantes', 'queHacer', 'guiasTuristicos']) {
+  for (const bucket of PST_BUCKETS) {
     if (data[bucket]) data[bucket] = data[bucket].map(enrichHorario);
   }
 
-  // Resumen de imágenes
-  const totalImgs = [...(data.hoteles||[]), ...(data.restaurantes||[]),
-                     ...(data.queHacer||[]), ...(data.guiasTuristicos||[])]
-    .reduce((n, item) => n + ((item.imagenes || item.galeria)?.length || 0), 0);
-  console.log(`   (${totalImgs} URLs de imágenes en total)`);
+  // ── Descarga de imágenes ────────────────────────────────────────────────────
+  //
+  // Dos destinos distintos, a proposito:
+  //   PST     -> public/images/<ruta en uploads>   ->  /images/...
+  //   eventos -> public/eventos/<nombre de archivo> ->  /eventos/...
+  //
+  // Los eventos van aparte porque el sitio los sirve desde /eventos (asi estan
+  // en home.json, que es lo que pinta el carrusel del home) y porque el bucket
+  // es un arreglo plano de URLs, no de objetos con galeria.
 
-  // Descargar imágenes y reemplazar URLs
-  const PUBLIC_DIR = path.join(__dirname, '..', 'public');
-  const IMAGES_DIR = path.join(PUBLIC_DIR, 'images');
+  const PUBLIC_DIR  = path.join(__dirname, '..', 'public');
+  const IMAGES_DIR  = path.join(PUBLIC_DIR, 'images');
+  const EVENTOS_DIR = path.join(PUBLIC_DIR, 'eventos');
+
+  const nPst = PST_BUCKETS
+    .flatMap(b => data[b] || [])
+    .reduce((n, item) => n + ((item.imagenes || item.galeria)?.length || 0), 0);
+  const nEventos  = (data.eventos || []).length;
+  const totalImgs = nPst + nEventos;
+
+  console.log(`   (${totalImgs} URLs de imágenes: ${nPst} de PST, ${nEventos} de eventos)`);
+
+  let count  = 0;
+  let errors = 0;
+
+  /**
+   * Baja `url` si no esta ya en disco y devuelve la ruta publica con la que se
+   * sustituye en el JSON. Con `aplanar`, ignora la jerarquia de uploads y deja
+   * el archivo suelto en `destDir`.
+   */
+  async function bajar(url, destDir, prefijo, aplanar) {
+    const rel      = aplanar ? path.basename(rutaRelativa(url)) : rutaRelativa(url);
+    const filepath = path.join(destDir, ...rel.split('/'));
+
+    fs.mkdirSync(path.dirname(filepath), { recursive: true });
+    if (!fs.existsSync(filepath)) await descargar(url, filepath);
+
+    count++;
+    process.stdout.write(`\rProcesada ${count}/${totalImgs}`);
+    return `${prefijo}/${rel}`;
+  }
 
   if (totalImgs > 0) {
-    if (!fs.existsSync(IMAGES_DIR)) fs.mkdirSync(IMAGES_DIR, { recursive: true });
-    console.log('\nDescargando imágenes a la carpeta public/images...');
-    let count = 0;
-    let errors = 0;
+    console.log('\nDescargando imágenes...');
 
-    for (const bucket of ['hoteles', 'restaurantes', 'queHacer', 'guiasTuristicos']) {
-      if (!data[bucket]) continue;
-      for (const item of data[bucket]) {
+    for (const bucket of PST_BUCKETS) {
+      for (const item of data[bucket] || []) {
         const arrKey = item.imagenes ? 'imagenes' : (item.galeria ? 'galeria' : null);
         if (!arrKey || !item[arrKey].length) continue;
-        const newImages = [];
+
+        const nuevas = [];
         for (const url of item[arrKey]) {
           try {
-            const urlObj = new URL(url);
-            let relativePath = decodeURIComponent(urlObj.pathname);
-            if (relativePath.includes('/wp-content/uploads/')) {
-              relativePath = relativePath.split('/wp-content/uploads/')[1];
-            } else {
-              relativePath = path.basename(relativePath);
-            }
-            const filepath = path.join(IMAGES_DIR, ...relativePath.split('/'));
-            const fileDir = path.dirname(filepath);
-            
-            if (!fs.existsSync(fileDir)) {
-              fs.mkdirSync(fileDir, { recursive: true });
-            }
-            
-            if (!fs.existsSync(filepath)) {
-              await new Promise((resolve, reject) => {
-                const client = url.startsWith('https') ? https : http;
-                client.get(url, (res) => {
-                  if (res.statusCode !== 200) {
-                    reject(new Error(`HTTP ${res.statusCode}`));
-                    res.resume();
-                    return;
-                  }
-                  const file = fs.createWriteStream(filepath);
-                  res.pipe(file);
-                  file.on('finish', () => {
-                    file.close();
-                    resolve();
-                  });
-                  file.on('error', (err) => {
-                    fs.unlink(filepath, () => reject(err));
-                  });
-                }).on('error', reject);
-              });
-            }
-            newImages.push(`/images/${relativePath}`);
-            count++;
-            process.stdout.write(`\rProcesada ${count}/${totalImgs}`);
+            nuevas.push(await bajar(url, IMAGES_DIR, '/images', false));
           } catch (e) {
             errors++;
-            console.error(`\n❌ Error al descargar imagen ${url}:`, e.message);
-            newImages.push(url); // Mantiene URL original en caso de error
+            console.error(`\n❌ Error al descargar ${url}: ${e.message}`);
+            nuevas.push(url); // Mantiene la URL original en caso de error
           }
         }
-        item[arrKey] = newImages;
+        item[arrKey] = nuevas;
       }
     }
+
+    if (nEventos) {
+      // Al aplanar se pierde la carpeta de uploads, asi que dos archivos con el
+      // mismo nombre en carpetas distintas se pisarian. Se avisa en vez de
+      // sobrescribir en silencio.
+      const vistos = new Map();
+      const nuevas = [];
+
+      for (const url of data.eventos) {
+        try {
+          const nombre = path.basename(rutaRelativa(url));
+          if (vistos.has(nombre) && vistos.get(nombre) !== url) {
+            console.warn(`\n⚠  "${nombre}" viene de dos URLs distintas; se conserva la primera:\n     ${vistos.get(nombre)}\n     ${url}`);
+          } else {
+            vistos.set(nombre, url);
+          }
+          nuevas.push(await bajar(url, EVENTOS_DIR, '/eventos', true));
+        } catch (e) {
+          errors++;
+          console.error(`\n❌ Error al descargar ${url}: ${e.message}`);
+          nuevas.push(url);
+        }
+      }
+      data.eventos = nuevas;
+    }
+
     console.log(`\n✅ ${count} imágenes procesadas (${errors} errores).`);
   }
 
