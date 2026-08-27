@@ -50,8 +50,9 @@ function fetchJSON(url, token) {
       res.setEncoding('utf8');
       res.on('data', chunk => raw += chunk);
       res.on('end', () => {
-        try { resolve(JSON.parse(raw)); }
-        catch (e) { reject(new Error(`JSON inválido: ${e.message}\n${raw.slice(0, 200)}`)); }
+        const clean = raw.trim().replace(/^\uFEFF/, '');
+        try { resolve(JSON.parse(clean)); }
+        catch (e) { reject(new Error(`JSON inválido: ${e.message}\n${clean.slice(0, 200)}`)); }
       });
     });
     req.on('error', reject);
