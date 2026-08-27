@@ -30,13 +30,15 @@ function removeNonWebp(dir) {
   return deletedCount;
 }
 
-// Update cholula.json reference if it still references .avif
+// Update cholula.json references to .webp
 const jsonPath = path.resolve(__dirname, '../src/data/cholula.json');
-let jsonStr = fs.readFileSync(jsonPath, 'utf-8');
-if (jsonStr.includes('foto-enamorada-grace.avif')) {
-  jsonStr = jsonStr.replace('foto-enamorada-grace.avif', 'foto-enamorada-grace.webp');
-  fs.writeFileSync(jsonPath, jsonStr, 'utf-8');
-  console.log('Updated cholula.json reference from .avif to .webp');
+if (fs.existsSync(jsonPath)) {
+  let jsonStr = fs.readFileSync(jsonPath, 'utf-8');
+  const updatedJson = jsonStr.replace(/\.(png|jpg|jpeg|avif|bmp|tiff)(?=")/gi, '.webp');
+  if (updatedJson !== jsonStr) {
+    fs.writeFileSync(jsonPath, updatedJson, 'utf-8');
+    console.log('Updated cholula.json image references to .webp');
+  }
 }
 
 const count = removeNonWebp(publicDir);

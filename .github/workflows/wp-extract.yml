@@ -9,7 +9,7 @@ on:
 
 jobs:
   extract:
-    name: Extract WP Data + Imagenes + WebP
+    name: Extract WP Data + Imagenes + WebP + Deploy
     runs-on: ubuntu-latest
 
     steps:
@@ -57,11 +57,31 @@ jobs:
       #   una vez que ya existen sus equivalentes .webp.
       #   Conserva favicon.png, favicon-48.png y favicon.ico.
       #
-      - name: "3/3  Limpiar imagenes no-WebP"
+      - name: "3/4  Limpiar imagenes no-WebP"
         run: node scripts/cleanup-non-webp.cjs
 
-      # ── 6. Verificacion ────────────────────────────────────────────────────
-      - name: "4/4  Verificar resultados"
+      # ── 6. Credenciales AWS ────────────────────────────────────────────────
+      - name: Configurar credenciales AWS
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id:     ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region:            us-east-1
+
+      # ── 7. Deploy a S3 + invalidar CloudFront ─────────────────────────────
+      #
+      #   Usa --skip-build porque el build de Astro no forma parte de este
+      #   pipeline (los archivos de dist deben venir del checkout o de un
+      #   paso previo). Quita --skip-build si agregas 'pnpm run build' antes.
+      #
+      - name: "4/4  Deploy a S3 + CloudFront"
+        run: |
+          chmod +x scripts/deploy.sh
+          ./scripts/deploy.sh --skip-build
+
+      # ── 8. Verificacion ────────────────────────────────────────────────────
+      - name: "Verificar resultados"
+        if: always()
         run: |
           echo "=== JSON generado ==="
           wc -c src/data/cholula.json

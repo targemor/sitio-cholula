@@ -14,6 +14,7 @@ import { DEFAULT_LOCALE, type Locale } from "../i18n/config";
 import type { RouteKey } from "../i18n/routes";
 import base from "../data/home.json";
 import en from "../data/home.en.json";
+import cholulaData from "../data/cholula.json";
 
 export interface Imperdible {
 	id: string;
@@ -60,13 +61,30 @@ function merge<T extends { id: string }>(items: T[], overlay: any): T[] {
 	return items.map((item) => ({ ...item, ...(overlay[item.id] ?? {}) }));
 }
 
+/**
+ * Resuelve la lista de eventos: usa el array de `cholula.json` (extraído de
+ * WordPress) cuando tiene contenido; de lo contrario, cae al listado estático
+ * de `home.json` como fallback para desarrollo local sin extract.
+ *
+ * Las rutas en `cholula.json.eventos` ya son locales (e.g. `/eventos/feria.webp`)
+ * porque `extract-wp-data.cjs` las descarga y reescribe antes de guardar el JSON.
+ */
+function resolveEventos(): string[] {
+	const wpEventos = (cholulaData as any).eventos;
+	if (Array.isArray(wpEventos) && wpEventos.length > 0) {
+		return wpEventos;
+	}
+	return base.eventos;
+}
+
 export function getHomeContent(locale: Locale): HomeContent {
 	const overlay = locale === DEFAULT_LOCALE ? null : OVERLAYS[locale];
 
 	return {
 		imperdibles: merge(base.imperdibles as Imperdible[], overlay?.imperdibles),
-		eventos: base.eventos,
+		eventos: resolveEventos(),
 		visitanos: merge(base.visitanos as VisitanosItem[], overlay?.visitanos),
 		artesanias: merge(base.artesanias as Artesania[], overlay?.artesanias),
 	};
 }
+
