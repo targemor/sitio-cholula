@@ -42,8 +42,12 @@ function fetchJSON(url, token) {
     }
     const req = client.get(url, { headers }, (res) => {
       if (res.statusCode !== 200) {
-        reject(new Error(`HTTP ${res.statusCode} en ${url}`));
-        res.resume();
+        let errBody = '';
+        res.setEncoding('utf8');
+        res.on('data', chunk => errBody += chunk);
+        res.on('end', () => {
+          reject(new Error(`HTTP ${res.statusCode} (${res.statusMessage || 'Error'}) en ${url}\nRespuesta de WP:\n${errBody.slice(0, 500)}`));
+        });
         return;
       }
       let raw = '';
