@@ -43,9 +43,21 @@ jobs:
         env:
           CHOLULA_EXPORT_SECRET: ${{ secrets.CHOLULA_EXPORT_SECRET }}
         run: |
-          node scripts/extract-wp-data.cjs \
-            --url https://app.visitcholula.mx \
-            --out src/data/cholula.json
+          # Reintentar hasta 3 veces con 15s de espera entre intentos
+          # (los runners de GitHub Actions a veces tienen latencia de red transitoria)
+          for i in 1 2 3; do
+            echo "Intento $i/3..."
+            node scripts/extract-wp-data.cjs \
+              --url https://app.visitcholula.mx \
+              --out src/data/cholula.json && break
+            if [ $i -lt 3 ]; then
+              echo "Fallo en intento $i, reintentando en 15s..."
+              sleep 15
+            else
+              echo "Todos los intentos fallaron."
+              exit 1
+            fi
+          done
 
       # ── 4. Convertir imagenes no-WebP a WebP ───────────────────────────────
       #
