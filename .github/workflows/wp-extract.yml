@@ -3,6 +3,9 @@ name: WordPress Data Extract
 on:
   # Ejecutar manualmente desde la pestana "Actions" en GitHub
   workflow_dispatch:
+  # Disparador remoto mediante Webhook (Repository Dispatch)
+  repository_dispatch:
+    types: [wordpress_update]
   # Tambien se puede programar (descomenta para activar):
   # schedule:
   #   - cron: '0 6 * * *'   # cada dia a las 06:00 UTC
