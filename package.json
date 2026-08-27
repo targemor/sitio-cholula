@@ -27,6 +27,6 @@
   },
   "devDependencies": {
     "purgecss": "^8.0.0",
-    "shap": "^1.1.3"
+    "sharp": "^0.33.5"
   }
 }
