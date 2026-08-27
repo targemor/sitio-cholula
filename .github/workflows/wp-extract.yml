@@ -60,7 +60,15 @@ jobs:
       - name: "3/4  Limpiar imagenes no-WebP"
         run: node scripts/cleanup-non-webp.cjs
 
-      # ── 6. Credenciales AWS ────────────────────────────────────────────────
+      # ── 6. Build de Astro ───────────────────────────────────────────────────
+      #
+      #   dist/ esta en .gitignore, por lo que el runner arranca sin esa carpeta.
+      #   El build consume el cholula.json ya actualizado y las imagenes descargadas.
+      #
+      - name: "4/4  Build Astro"
+        run: npm run build
+
+      # ── 7. Credenciales AWS ────────────────────────────────────────────────
       - name: Configurar credenciales AWS
         uses: aws-actions/configure-aws-credentials@v4
         with:
@@ -68,13 +76,8 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region:            us-east-1
 
-      # ── 7. Deploy a S3 + invalidar CloudFront ─────────────────────────────
-      #
-      #   Usa --skip-build porque el build de Astro no forma parte de este
-      #   pipeline (los archivos de dist deben venir del checkout o de un
-      #   paso previo). Quita --skip-build si agregas 'pnpm run build' antes.
-      #
-      - name: "4/4  Deploy a S3 + CloudFront"
+      # ── 8. Deploy a S3 + invalidar CloudFront ─────────────────────────────
+      - name: "5/5  Deploy a S3 + CloudFront"
         run: |
           chmod +x scripts/deploy.sh
           ./scripts/deploy.sh --skip-build
