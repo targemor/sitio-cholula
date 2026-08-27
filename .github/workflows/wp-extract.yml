@@ -15,7 +15,7 @@ jobs:
     steps:
       # ── 1. Codigo ──────────────────────────────────────────────────────────
       - name: Checkout repositorio
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       # ── 2. pnpm + Node + dependencias ──────────────────────────────────────
       - name: Setup pnpm
@@ -23,10 +23,10 @@ jobs:
         with:
           version: 10
 
-      - name: Setup Node.js 22
-        uses: actions/setup-node@v4
+      - name: Setup Node.js 24
+        uses: actions/setup-node@v7
         with:
-          node-version: '22'
+          node-version: '24.x'
           cache: 'pnpm'
 
       - name: Instalar dependencias (sharp y demas)
