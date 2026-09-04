@@ -1,0 +1,376 @@
+---
+import { getLocaleFromPath } from "../i18n/routes";
+import "./CategoryFilter.css";
+import "./HotelFilter.css";
+
+export interface Props {
+  data?: any[];
+}
+
+const { data = [] } = Astro.props;
+
+const lang = getLocaleFromPath(Astro.url.pathname);
+const isEn = lang === "en";
+
+const labels = {
+  zona: {
+    title: isEn ? "Area" : "Zona",
+    all: isEn ? "All" : "Todas",
+    options: [
+      { value: "Centro",                      label: isEn ? "Downtown"         : "Centro" },
+      { value: "Los Portales",                label: "Los Portales" },
+      { value: "Zona Pirámide",               label: isEn ? "Pyramid Area"     : "Zona Pirámide" },
+      { value: "A pocos minutos del Centro",  label: isEn ? "Near Downtown"    : "A pocos min del Centro" },
+      { value: "Fuera del centro",            label: isEn ? "Outside Downtown" : "Fuera del centro" },
+    ],
+  },
+  precio: {
+    title: isEn ? "Price" : "Precio",
+    all: isEn ? "All" : "Todos",
+    options: [
+      { value: "Económico", label: isEn ? "💰 Budget"   : "💰 Económico" },
+      { value: "Estándar",  label: isEn ? "🏨 Standard" : "🏨 Estándar" },
+      { value: "Superior",  label: isEn ? "✨ Superior"  : "✨ Superior" },
+    ],
+  },
+  amenidades: {
+    title: isEn ? "Amenities" : "Amenidades",
+    placeholder: isEn ? "All" : "Todas",
+    options: [
+      { value: "alberca",      label: isEn ? "Pool"           : "Alberca",         icon: "🏊" },
+      { value: "spa",          label: "Spa",                                         icon: "💆" },
+      { value: "terraza",      label: isEn ? "Terrace"        : "Terraza",          icon: "🌿" },
+      { value: "recepcion24h", label: isEn ? "24h Reception"  : "Recepción 24h",    icon: "🕐" },
+    ],
+  },
+  mascotas: {
+    title: isEn ? "Pets" : "Mascotas",
+    all: isEn ? "All" : "Todos",
+    yes: "🐾 Pet Friendly",
+  },
+  selected: isEn ? "selected" : "seleccionadas",
+  reset: isEn ? "Clear filters" : "Limpiar filtros",
+  noResults: {
+    title: isEn ? "No hotels found" : "No se encontraron hoteles",
+    text: isEn
+      ? "No hotels match the selected filters. Try a different combination or clear them to see all options."
+      : "Ningún hotel coincide con los filtros aplicados. Prueba otra combinación o límpialos para ver todas las opciones.",
+    cta: isEn ? "Clear filters" : "Limpiar filtros",
+  },
+};
+---
+
+<div class="restaurant-filters-container hotel-filters-container">
+  <div class="filter-dropdowns-row">
+
+    <!-- 1. ZONA -->
+    <div class="filter-dropdown-group" id="hotel-group-zona">
+      <label class="filter-label" for="hotel-filter-zona">
+        <span class="filter-label-icon">📍</span>
+        <span class="filter-label-text">{labels.zona.title}</span>
+      </label>
+      <div class="custom-select-wrapper">
+        <select id="hotel-filter-zona" class="custom-select">
+          <option value="">{labels.zona.all}</option>
+          {labels.zona.options.map((opt) => (
+            <option value={opt.value}>{opt.label}</option>
+          ))}
+        </select>
+        <span class="select-arrow" aria-hidden="true">▼</span>
+      </div>
+    </div>
+
+    <!-- 2. PRECIO -->
+    <div class="filter-dropdown-group" id="hotel-group-precio">
+      <label class="filter-label" for="hotel-filter-precio">
+        <span class="filter-label-icon">💰</span>
+        <span class="filter-label-text">{labels.precio.title}</span>
+      </label>
+      <div class="custom-select-wrapper">
+        <select id="hotel-filter-precio" class="custom-select">
+          <option value="">{labels.precio.all}</option>
+          {labels.precio.options.map((opt) => (
+            <option value={opt.value}>{opt.label}</option>
+          ))}
+        </select>
+        <span class="select-arrow" aria-hidden="true">▼</span>
+      </div>
+    </div>
+
+    <!-- 3. AMENIDADES — custom multi-select dropdown -->
+    <div class="filter-dropdown-group filter-amenidades-group" id="hotel-group-amenidades">
+      <span class="filter-label">
+        <span class="filter-label-icon">🏨</span>
+        <span class="filter-label-text">{labels.amenidades.title}</span>
+      </span>
+      <div class="custom-multiselect-wrapper" id="hotel-amenidades-wrapper">
+        <!-- Trigger button -->
+        <button
+          type="button"
+          id="hotel-amenidades-trigger"
+          class="custom-multiselect-trigger"
+          aria-haspopup="listbox"
+          aria-expanded="false"
+          data-placeholder={labels.amenidades.placeholder}
+          data-selected-label={labels.selected}
+        >
+          <span id="hotel-amenidades-label" class="multiselect-label-text">
+            {labels.amenidades.placeholder}
+          </span>
+          <span class="multiselect-arrow" aria-hidden="true">▼</span>
+        </button>
+
+        <!-- Dropdown panel -->
+        <div
+          id="hotel-amenidades-panel"
+          class="multiselect-panel"
+          role="listbox"
+          aria-multiselectable="true"
+          aria-label={labels.amenidades.title}
+        >
+          {labels.amenidades.options.map((opt) => (
+            <label class="multiselect-option" data-value={opt.value}>
+              <input
+                type="checkbox"
+                class="multiselect-checkbox"
+                value={opt.value}
+                name="hotel-amenidad"
+                aria-label={opt.label}
+              />
+              <span class="multiselect-option-icon">{opt.icon}</span>
+              <span class="multiselect-option-label">{opt.label}</span>
+              <span class="multiselect-checkmark" aria-hidden="true">✓</span>
+            </label>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. MASCOTAS -->
+    <div class="filter-dropdown-group" id="hotel-group-mascotas">
+      <label class="filter-label" for="hotel-filter-mascotas">
+        <span class="filter-label-icon">🐾</span>
+        <span class="filter-label-text">{labels.mascotas.title}</span>
+      </label>
+      <div class="custom-select-wrapper">
+        <select id="hotel-filter-mascotas" class="custom-select">
+          <option value="">{labels.mascotas.all}</option>
+          <option value="true">{labels.mascotas.yes}</option>
+        </select>
+        <span class="select-arrow" aria-hidden="true">▼</span>
+      </div>
+    </div>
+
+    <!-- RESET BUTTON -->
+    <div class="filter-reset-wrapper" id="hotel-filter-reset-wrapper" style="display: none;">
+      <button
+        type="button"
+        id="hotel-btn-reset-filters"
+        class="reset-filters-btn"
+        title={labels.reset}
+        aria-label={labels.reset}
+      >
+        ✕
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<!-- NO RESULTADOS: se mueve al área del grid via JS -->
+<div class="hotel-no-results-teleport" id="hotel-no-results" style="display: none;">
+  <div class="hotel-no-results-inner">
+    <div class="hotel-no-results-illustration" aria-hidden="true">
+      <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="36" cy="36" r="36" fill="#f1f5f9"/>
+        <circle cx="34" cy="32" r="14" stroke="#94a3b8" stroke-width="2.5" fill="none"/>
+        <line x1="44" y1="43" x2="55" y2="54" stroke="#94a3b8" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="29" y1="27" x2="39" y2="37" stroke="#cbd5e1" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+      </svg>
+    </div>
+    <h3 class="hotel-no-results-title">{labels.noResults.title}</h3>
+    <p class="hotel-no-results-text">{labels.noResults.text}</p>
+    <button type="button" id="hotel-btn-no-results-reset" class="hotel-no-results-btn">
+      🔄 {labels.noResults.cta}
+    </button>
+  </div>
+</div>
+
+<script>
+  function setupHotelFilters() {
+    // ── Selectores principales ──────────────────────────────────────────
+    const selectZona     = document.getElementById("hotel-filter-zona")     as HTMLSelectElement | null;
+    const selectPrecio   = document.getElementById("hotel-filter-precio")   as HTMLSelectElement | null;
+    const selectMascotas = document.getElementById("hotel-filter-mascotas") as HTMLSelectElement | null;
+
+    // Multiselect amenidades
+    const amenWrapper  = document.getElementById("hotel-amenidades-wrapper");
+    const amenTrigger  = document.getElementById("hotel-amenidades-trigger") as HTMLButtonElement | null;
+    const amenPanel    = document.getElementById("hotel-amenidades-panel");
+    const amenLabelEl  = document.getElementById("hotel-amenidades-label");
+    const checkboxes   = amenPanel
+      ? Array.from(amenPanel.querySelectorAll<HTMLInputElement>('input[type="checkbox"]'))
+      : [];
+
+    // Leer textos localizados desde data attributes
+    const placeholder     = amenTrigger?.dataset.placeholder     ?? "Todas";
+    const selectedLabel   = amenTrigger?.dataset.selectedLabel   ?? "seleccionadas";
+
+    const btnReset         = document.getElementById("hotel-btn-reset-filters");
+    const btnNoResultsReset= document.getElementById("hotel-btn-no-results-reset");
+    const resetWrapper     = document.getElementById("hotel-filter-reset-wrapper");
+    const noResultsEl      = document.getElementById("hotel-no-results");
+
+    if (!selectZona || !selectPrecio || !selectMascotas) return;
+
+    // ── Mover el bloque no-resultados al área del grid ──────────────────
+    if (noResultsEl) {
+      const gridArea = document.querySelector(".grid-scroll-area");
+      if (gridArea) gridArea.appendChild(noResultsEl);
+    }
+
+    const cards = document.querySelectorAll(".business-card");
+
+    // ── Lógica del dropdown multiselect ────────────────────────────────
+    function getSelectedAmenidades(): Set<string> {
+      const active = new Set<string>();
+      checkboxes.forEach((cb) => { if (cb.checked) active.add(cb.value); });
+      return active;
+    }
+
+    function updateAmenLabel() {
+      const active = getSelectedAmenidades();
+      if (!amenLabelEl) return;
+      if (active.size === 0) {
+        amenLabelEl.textContent = placeholder;
+        amenLabelEl.removeAttribute("data-active");
+      } else {
+        amenLabelEl.textContent = `${active.size} ${selectedLabel}`;
+        amenLabelEl.setAttribute("data-active", "true");
+      }
+    }
+
+    // Abrir/cerrar panel
+    if (amenTrigger && amenPanel) {
+      amenTrigger.addEventListener("click", (e) => {
+        e.stopPropagation();
+        const open = amenPanel.classList.toggle("multiselect-panel--open");
+        amenTrigger.setAttribute("aria-expanded", open ? "true" : "false");
+        amenTrigger.classList.toggle("multiselect-trigger--open", open);
+      });
+
+      // Cerrar al hacer click fuera
+      document.addEventListener("click", (e) => {
+        if (amenWrapper && !amenWrapper.contains(e.target as Node)) {
+          amenPanel.classList.remove("multiselect-panel--open");
+          amenTrigger.setAttribute("aria-expanded", "false");
+          amenTrigger.classList.remove("multiselect-trigger--open");
+        }
+      });
+
+      // Cerrar con Escape
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          amenPanel.classList.remove("multiselect-panel--open");
+          amenTrigger.setAttribute("aria-expanded", "false");
+          amenTrigger.classList.remove("multiselect-trigger--open");
+          amenTrigger.focus();
+        }
+      });
+    }
+
+    // Cambio en checkboxes
+    checkboxes.forEach((cb) => {
+      cb.addEventListener("change", () => {
+        updateAmenLabel();
+        applyFilters();
+      });
+    });
+
+    // Mapa amenidad → dataset key
+    const amenidadAttr: Record<string, string> = {
+      alberca:      "tienealberca",
+      spa:          "tienespa",
+      terraza:      "terraza",
+      recepcion24h: "recepcion24h",
+    };
+
+    // ── Aplicar filtros ─────────────────────────────────────────────────
+    function applyFilters() {
+      const valZona     = selectZona!.value.toLowerCase().trim();
+      const valPrecio   = selectPrecio!.value.toLowerCase().trim();
+      const valMascotas = selectMascotas!.value;
+      const activeAmen  = getSelectedAmenidades();
+
+      const isAnyActive =
+        valZona !== "" ||
+        valPrecio !== "" ||
+        activeAmen.size > 0 ||
+        valMascotas !== "";
+
+      if (resetWrapper) {
+        resetWrapper.style.display = isAnyActive ? "flex" : "none";
+      }
+
+      let visibleCount = 0;
+
+      cards.forEach((card) => {
+        const el = card as HTMLElement;
+
+        const cZona     = (el.dataset.zona || "").toLowerCase();
+        const cPrecio   = (el.dataset.categoriaprecio || "").toLowerCase();
+        const cMascotas = el.dataset.aceptamascotas || "false";
+
+        const matchZona     = !valZona   || cZona.includes(valZona);
+        const matchPrecio   = !valPrecio || cPrecio === valPrecio;
+        const matchMascotas = valMascotas !== "true" || cMascotas === "true";
+
+        // AND: el hotel debe tener TODAS las amenidades seleccionadas
+        let matchAmen = true;
+        for (const k of activeAmen) {
+          const attr = amenidadAttr[k];
+          if (attr && el.dataset[attr] !== "true") { matchAmen = false; break; }
+        }
+
+        if (matchZona && matchPrecio && matchAmen && matchMascotas) {
+          el.style.display = "";
+          visibleCount++;
+        } else {
+          el.style.display = "none";
+        }
+      });
+
+      if (noResultsEl) {
+        noResultsEl.style.display = visibleCount === 0 ? "flex" : "none";
+      }
+    }
+
+    // ── Reset completo ──────────────────────────────────────────────────
+    function resetAll() {
+      selectZona!.value     = "";
+      selectPrecio!.value   = "";
+      selectMascotas!.value = "";
+      checkboxes.forEach((cb) => { cb.checked = false; });
+      updateAmenLabel();
+      // Cerrar panel si estaba abierto
+      if (amenPanel) {
+        amenPanel.classList.remove("multiselect-panel--open");
+        if (amenTrigger) {
+          amenTrigger.setAttribute("aria-expanded", "false");
+          amenTrigger.classList.remove("multiselect-trigger--open");
+        }
+      }
+      applyFilters();
+    }
+
+    selectZona.addEventListener("change", applyFilters);
+    selectPrecio.addEventListener("change", applyFilters);
+    selectMascotas.addEventListener("change", applyFilters);
+
+    if (btnReset)          btnReset.addEventListener("click", resetAll);
+    if (btnNoResultsReset) btnNoResultsReset.addEventListener("click", resetAll);
+  }
+
+  setupHotelFilters();
+  document.addEventListener("astro:page-load", setupHotelFilters);
+</script>

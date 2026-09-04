@@ -1,0 +1,263 @@
+/* HotelFilter.css — estilos del filtro de hoteles */
+
+/* ── Overrides de color (verde hospedaje) ─────────────────────────────── */
+.hotel-filters-container .custom-select:hover {
+  border-color: var(--section-color, #10b981);
+}
+.hotel-filters-container .custom-select:focus {
+  border-color: var(--section-color, #10b981);
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.18);
+}
+.hotel-filters-container .custom-select:focus + .select-arrow {
+  color: var(--section-color, #10b981);
+}
+
+/* ── Custom multiselect wrapper ───────────────────────────────────────── */
+.custom-multiselect-wrapper {
+  position: relative;
+  width: 100%;
+  z-index: 200;
+}
+
+/* ── Trigger button (aspecto idéntico al <select>) ────────────────────── */
+.custom-multiselect-trigger {
+  appearance: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem;
+  width: 100%;
+  height: 36px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 0 0.65rem;
+  font-family: inherit;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #1e293b;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+  transition: all 0.2s ease;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.custom-multiselect-trigger:hover,
+.custom-multiselect-trigger.multiselect-trigger--open {
+  border-color: var(--section-color, #10b981);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.multiselect-label-text {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Texto cuando hay seleccionados */
+.multiselect-label-text[data-active] {
+  color: var(--section-color, #10b981);
+  font-weight: 700;
+}
+
+.multiselect-arrow {
+  font-size: 0.55rem;
+  color: #64748b;
+  flex-shrink: 0;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.custom-multiselect-trigger.multiselect-trigger--open .multiselect-arrow {
+  transform: rotate(180deg);
+  color: var(--section-color, #10b981);
+}
+
+/* ── Panel desplegable ────────────────────────────────────────────────── */
+.multiselect-panel {
+  display: none;
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  z-index: 300;
+  min-width: 100%;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.1), 0 2px 8px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  animation: dropdownFadeIn 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.multiselect-panel--open {
+  display: block;
+}
+
+@keyframes dropdownFadeIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Opciones con checkbox ────────────────────────────────────────────── */
+.multiselect-option {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 0.9rem;
+  cursor: pointer;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #334155;
+  transition: background 0.15s ease;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.multiselect-option:hover {
+  background-color: #f8fafc;
+}
+
+.multiselect-option:not(:last-child) {
+  border-bottom: 1px solid #f1f5f9;
+}
+
+/* Ocultar el checkbox nativo */
+.multiselect-checkbox {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  width: 0;
+  height: 0;
+}
+
+/* Checkmark visual personalizado */
+.multiselect-checkmark {
+  margin-left: auto;
+  font-size: 0.8rem;
+  color: var(--section-color, #10b981);
+  font-weight: 800;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.multiselect-checkbox:checked ~ .multiselect-checkmark {
+  opacity: 1;
+}
+
+/* Resaltar opción cuando está checked */
+.multiselect-option:has(.multiselect-checkbox:checked) {
+  background-color: #f0fdf4;
+  color: #065f46;
+}
+
+.multiselect-option-icon {
+  font-size: 1rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.multiselect-option-label {
+  flex: 1;
+}
+
+/* ── NO RESULTADOS (mejorado) ─────────────────────────────────────────── */
+.hotel-no-results-teleport {
+  display: none; /* JS lo cambia a flex */
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1.5rem 5rem;
+}
+
+.hotel-no-results-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 480px;
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 24px;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 12px 40px -8px rgba(0, 0, 0, 0.07);
+  animation: noResultsFadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes noResultsFadeIn {
+  from { opacity: 0; transform: translateY(16px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.hotel-no-results-illustration {
+  margin-bottom: 1.4rem;
+  opacity: 0.85;
+}
+
+.hotel-no-results-title {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin: 0 0 0.6rem;
+}
+
+.hotel-no-results-text {
+  font-size: 0.92rem;
+  color: #64748b;
+  line-height: 1.65;
+  margin: 0 0 2rem;
+}
+
+.hotel-no-results-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--section-color, #10b981);
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  padding: 0.75rem 1.8rem;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(16, 185, 129, 0.3);
+  transition: all 0.22s ease;
+}
+
+.hotel-no-results-btn:hover {
+  filter: brightness(1.08);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 22px rgba(16, 185, 129, 0.4);
+}
+
+/* ── MÓVIL ────────────────────────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .custom-multiselect-trigger {
+    height: 28px;
+    font-size: 0.68rem;
+    padding: 0 0.35rem;
+    border-radius: 6px;
+  }
+
+  .multiselect-arrow {
+    font-size: 0.45rem;
+  }
+
+  /* El panel se abre hacia arriba en móvil si no hay espacio */
+  .multiselect-panel {
+    min-width: 180px;
+  }
+
+  .hotel-no-results-inner {
+    padding: 2.5rem 1.5rem;
+    border-radius: 18px;
+  }
+
+  .hotel-no-results-title {
+    font-size: 1.15rem;
+  }
+}

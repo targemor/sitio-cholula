@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import BusinessCard from "../components/BusinessCard.astro";
 import CategoryFilter from "../components/CategoryFilter.astro";
 import QueHacerFilter from "../components/QueHacerFilter.astro";
+import HotelFilter from "../components/HotelFilter.astro";
 import { DEFAULT_LOCALE, LOCALES, type Locale } from "../i18n/config";
 import { isImplemented, localizePath, localizePathSafe } from "../i18n/routes";
 import {
@@ -125,6 +126,7 @@ const path = localizePath(key, locale);
 // Por clave de ruta, no por título: el título es texto visible y se traduce.
 const isRestaurantes = key === "food";
 const isQueHacer = key === "things";
+const isHospedaje = key === "lodging";
 const clasificaciones = isRestaurantes
   ? (Array.from(
       new Set(data.map((item: any) => item.clasificacion).filter(Boolean)),
@@ -229,6 +231,13 @@ const breadcrumbSchema = {
           isQueHacer && (
             <div class="filter-container">
               <QueHacerFilter data={data} />
+            </div>
+          )
+        }
+        {
+          isHospedaje && (
+            <div class="filter-container">
+              <HotelFilter data={data} />
             </div>
           )
         }
