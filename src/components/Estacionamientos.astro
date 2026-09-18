@@ -1,0 +1,263 @@
+---
+import type { Locale } from "../i18n/config";
+
+interface Props {
+  lang?: Locale;
+}
+
+const { lang: propLang } = Astro.props;
+
+const currentPath = Astro.url.pathname;
+const isEnPath = currentPath === "/en" || currentPath.startsWith("/en/");
+const isEnLocale = Astro.currentLocale === "en";
+const lang = propLang || (isEnPath || isEnLocale ? "en" : "es");
+
+const isEn = lang === "en";
+
+const title = isEn ? "Parking Lots" : "Estacionamientos";
+
+const estacionamientos = [
+  {
+    nombre: isEn
+      ? "Estacionamiento Las Pirámides"
+      : "Estacionamiento Las Pirámides",
+    badge: isEn ? "With Security Guard" : "Con vigilancia",
+    descripcion: isEn
+      ? "Diagonal del Ferrocarril 707 · Open-air"
+      : "Diagonal del Ferrocarril 707 · Al aire libre",
+    horario: isEn
+      ? "Mon–Wed 9:00 am–10:00 pm · Thu–Sun 9:00 am–2:00 am"
+      : "Lun–miér 9:00 am–10:00 pm · Jue–dom 9:00 am–2:00 am",
+    telefono: "222 239 6678",
+    whatsappUrl: "https://wa.me/522222396678",
+    comoLlegarText: isEn ? "Get directions" : "Cómo llegar",
+    mapUrl:
+      "https://maps.google.com/?q=Diagonal+del+Ferrocarril+707+San+Pedro+Cholula",
+  },
+];
+---
+
+<div class="estacionamientos-card">
+  <h2 class="estacionamientos-title">{title}</h2>
+
+  <div class="estacionamientos-list">
+    {
+      estacionamientos.map((item) => (
+        <div class="estacionamiento-item">
+          <div class="estacionamiento-icon" aria-hidden="true">
+            🅿️
+          </div>
+          <div class="estacionamiento-content">
+            <div class="estacionamiento-header">
+              <span class="estacionamiento-nombre">{item.nombre}</span>
+              {item.badge && (
+                <span class="estacionamiento-badge">{item.badge}</span>
+              )}
+            </div>
+            <div class="estacionamiento-desc">{item.descripcion}</div>
+
+            <div class="estacionamiento-meta">
+              <span class="meta-item">
+                <svg
+                  width="19"
+                  height="19"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#e8c468"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 6v6l4 2" />
+                </svg>
+                {item.horario}
+              </span>
+              {item.telefono && (
+                <a
+                  href={
+                    item.whatsappUrl ||
+                    `tel:${item.telefono.replace(/\D/g, "")}`
+                  }
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="meta-item meta-whatsapp"
+                >
+                  <svg
+                    width="19"
+                    height="19"
+                    viewBox="0 0 32 32"
+                    fill="#25D366"
+                  >
+                    <path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.386.7 4.607 1.902 6.47L4 29l7.72-1.87A11.94 11.94 0 0 0 16 27c6.627 0 12-5.373 12-12S22.628 3 16.001 3zm0 21.8a9.76 9.76 0 0 1-4.98-1.36l-.357-.212-4.583 1.11 1.127-4.47-.233-.366A9.75 9.75 0 1 1 25.75 15 9.76 9.76 0 0 1 16 24.8zm5.34-7.29c-.29-.145-1.717-.848-1.983-.945-.266-.097-.46-.145-.654.145-.194.29-.75.944-.92 1.138-.17.194-.34.218-.63.073-.29-.146-1.226-.452-2.336-1.44-.863-.77-1.446-1.72-1.616-2.01-.17-.29-.018-.446.128-.59.13-.13.29-.34.436-.51.145-.17.194-.29.29-.484.097-.194.048-.363-.024-.508-.073-.145-.654-1.576-.897-2.16-.236-.567-.477-.49-.654-.5-.17-.008-.363-.01-.557-.01-.194 0-.508.073-.775.363-.266.29-1.017.994-1.017 2.424s1.04 2.812 1.186 3.006c.145.194 2.05 3.13 4.966 4.39.694.3 1.235.48 1.657.614.696.222 1.33.19 1.83.116.558-.083 1.717-.702 1.96-1.38.242-.677.242-1.258.17-1.38-.073-.122-.267-.194-.557-.34z" />
+                  </svg>
+                  <span>{item.telefono}</span>
+                </a>
+              )}
+            </div>
+
+            <a
+              class="estacionamiento-link"
+              href={item.mapUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              📍 {item.comoLlegarText}
+            </a>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  .estacionamientos-card {
+    background: #16302a;
+    border-radius: 20px;
+    padding: 28px 32px;
+    color: #ffffff;
+    box-shadow: 0 6px 20px rgba(22, 48, 42, 0.3);
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .estacionamientos-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #e8c468;
+    margin: 0 0 20px 0;
+  }
+
+  .estacionamientos-list {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+
+  .estacionamiento-item {
+    display: flex;
+    gap: 16px;
+  }
+
+  .estacionamiento-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    background: #234a3f;
+    color: #e8c468;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 22px;
+  }
+
+  .estacionamiento-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .estacionamiento-header {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+
+  .estacionamiento-nombre {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 16px;
+  }
+
+  .estacionamiento-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 20px;
+    background: rgba(232, 196, 104, 0.15);
+    color: #e8c468;
+  }
+
+  .estacionamiento-desc {
+    color: #b8c2cc;
+    font-size: 14px;
+    margin-bottom: 8px;
+    line-height: 1.4;
+  }
+
+  .estacionamiento-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 18px;
+    margin-bottom: 10px;
+  }
+
+  .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: #8b96a3;
+  }
+
+  .meta-item svg {
+    flex-shrink: 0;
+    opacity: 0.85;
+  }
+
+  .meta-whatsapp {
+    text-decoration: none;
+    color: #8b96a3;
+    transition: color 0.2s ease;
+  }
+
+  .meta-whatsapp:hover {
+    color: #25d366;
+  }
+
+  .estacionamiento-link {
+    font-size: 14px;
+    font-weight: 600;
+    color: #e8c468;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition:
+      color 0.2s ease,
+      transform 0.2s ease;
+  }
+
+  .estacionamiento-link:hover {
+    color: #f3d88b;
+    text-decoration: underline;
+    transform: translateX(2px);
+  }
+
+  @media (max-width: 640px) {
+    .estacionamientos-card {
+      padding: 20px 20px;
+      border-radius: 16px;
+    }
+    .estacionamiento-item {
+      gap: 12px;
+    }
+    .estacionamiento-icon {
+      width: 40px;
+      height: 40px;
+      font-size: 18px;
+    }
+    .estacionamiento-nombre {
+      font-size: 15px;
+    }
+    .estacionamiento-desc {
+      font-size: 13px;
+    }
+  }
+</style>

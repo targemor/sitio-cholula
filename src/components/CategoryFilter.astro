@@ -343,15 +343,50 @@ const labels = {
           }
         }
 
-        // Check Categoría — comparación exacta con los valores en data-categoria
+        // Check Categoría — normalización de acentos y coincidencia flexible
         let matchCat = true;
         if (valCat) {
+          const normCat = (
+            cardEl.dataset.categoria ||
+            cardEl.dataset.clasificacion ||
+            ""
+          )
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .trim();
+
+          const normTipo = (cardEl.dataset.tipocomida || "")
+            .toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .trim();
+
           if (valCat === "restaurante") {
-            // Restaurante y mercado (Mercado Cosme del Razo es un espacio de comida)
-            matchCat = cCat === "restaurante" || cCat === "mercado";
+            // Restaurante y mercado
+            matchCat =
+              normCat.includes("restauran") ||
+              normCat === "mercado" ||
+              (!normCat.includes("helad") &&
+                !normCat.includes("cafet") &&
+                !normCat.includes("cafe") &&
+                !normCat.includes("bar"));
+          } else if (valCat === "heladeria") {
+            matchCat = normCat.includes("helad") || normTipo.includes("helad");
+          } else if (valCat === "cafeteria") {
+            matchCat =
+              normCat.includes("cafet") ||
+              normCat.includes("cafe") ||
+              normTipo.includes("cafet") ||
+              normTipo.includes("cafe");
+          } else if (valCat === "bar") {
+            matchCat =
+              normCat.includes("bar") ||
+              normCat.includes("cantina") ||
+              normCat.includes("pub") ||
+              normTipo.includes("bar");
           } else {
-            // bar, heladeria, cafeteria: coincidencia exacta
-            matchCat = cCat === valCat;
+            matchCat = normCat.includes(valCat);
           }
         }
 

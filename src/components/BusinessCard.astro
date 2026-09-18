@@ -103,6 +103,49 @@ function formatUrl(url?: string) {
   }
 }
 
+function getLanguageFlags(idiomasStr?: string | null): string {
+  if (!idiomasStr) return "";
+  const lower = idiomasStr.toLowerCase();
+  const flags: string[] = [];
+
+  if (lower.includes("español") || lower.includes("spanish")) {
+    flags.push("🇲🇽");
+  }
+  if (
+    lower.includes("inglés") ||
+    lower.includes("ingles") ||
+    lower.includes("english")
+  ) {
+    flags.push("🇺🇸");
+  }
+  if (
+    lower.includes("alemán") ||
+    lower.includes("aleman") ||
+    lower.includes("german")
+  ) {
+    flags.push("🇩🇪");
+  }
+  if (
+    lower.includes("francés") ||
+    lower.includes("frances") ||
+    lower.includes("french")
+  ) {
+    flags.push("🇫🇷");
+  }
+  if (lower.includes("italiano") || lower.includes("italian")) {
+    flags.push("🇮🇹");
+  }
+  if (
+    lower.includes("portugués") ||
+    lower.includes("portugues") ||
+    lower.includes("portuguese")
+  ) {
+    flags.push("🇵🇹");
+  }
+
+  return flags.join(" ");
+}
+
 const lang = getLocaleFromPath(Astro.url.pathname);
 const s = getStrings(lang);
 const isEn = lang === "en";
@@ -288,7 +331,15 @@ const igGradId = `ig-grad-card-${swiperId}`;
             <div class="icon">
               <span style="font-size: 14px; line-height: 1;">🗣️</span>
             </div>
-            <span><strong>{s.card.languages}</strong> {idiomas}</span>
+            <span>
+              <strong>{s.card.languages}</strong>{" "}
+              {getLanguageFlags(idiomas) && (
+                <span class="language-flags" style="font-size: 15px; margin-right: 4px; vertical-align: middle;">
+                  {getLanguageFlags(idiomas)}
+                </span>
+              )}
+              {idiomas}
+            </span>
           </li>
         )
       }

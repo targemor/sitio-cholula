@@ -12,6 +12,7 @@ import ImperdiblesCarousel from "./ImperdiblesCarousel.astro";
 import VisitanosCard from "./VisitanosCard.astro";
 import ItinerarioTabs from "./ItinerarioTabs.astro";
 import BusinessCard from "./BusinessCard.astro";
+import Estacionamientos from "./Estacionamientos.astro";
 import type { Locale } from "../i18n/config";
 import { localizePathSafe } from "../i18n/routes";
 import { getPageCopy } from "../i18n/pages";
@@ -218,6 +219,15 @@ const searchItems = buildSearchItems(lang);
     items={eventos.map((e) => ({ img: e }))}
     isEvento={true}
   />
+</section>
+
+<!-- ══════════════════════════════
+     ESTACIONAMIENTOS
+     ══════════════════════════════ -->
+<section class="section-estacionamientos" id="estacionamientos" style="padding: 3rem 0;">
+  <div class="container">
+    <Estacionamientos lang={lang} />
+  </div>
 </section>
 
 <!-- ══════════════════════════════

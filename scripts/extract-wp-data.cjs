@@ -189,9 +189,33 @@ async function main() {
   Object.entries(counts).forEach(([k, v]) => console.log(`  ${k}: ${v}`));
   console.log(`  TOTAL: ${Object.values(counts).reduce((a, b) => a + b, 0)}\n`);
 
-  // Enriquecer horarios con resumen y detalle
+function normalizeCategoria(item) {
+  if (!item.categoria || typeof item.categoria !== 'string') return item;
+  const raw = item.categoria.trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  let cat = item.categoria;
+  if (raw.includes('helad')) {
+    cat = 'heladeria';
+  } else if (raw.includes('cafet') || raw === 'cafe') {
+    cat = 'cafeteria';
+  } else if (raw.includes('bar') || raw.includes('cantina')) {
+    cat = 'bar';
+  } else if (raw.includes('restauran')) {
+    cat = 'restaurante';
+  }
+  return { ...item, categoria: cat };
+}
+
+  // Enriquecer horarios con resumen y detalle, y normalizar categoría
   for (const bucket of PST_BUCKETS) {
-    if (data[bucket]) data[bucket] = data[bucket].map(enrichHorario);
+    if (data[bucket]) {
+      data[bucket] = data[bucket].map(item => {
+        let enriched = enrichHorario(item);
+        if (bucket === 'restaurantes') {
+          enriched = normalizeCategoria(enriched);
+        }
+        return enriched;
+      });
+    }
   }
 
   // ── Descarga de imágenes ────────────────────────────────────────────────────
