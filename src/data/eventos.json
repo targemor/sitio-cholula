@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "titulo": "Cartelera Oficial de la Feria de Cholula",
+    "descripcion": "Gran cartelera de la Feria de Cholula con conciertos, palenque, eventos culturales, obras de teatro y exposiciones artesanales.",
+    "dia": 1,
+    "mes": "Septiembre",
+    "mes_corto": "SEP",
+    "dia_semana": "Jueves",
+    "ubicacion": "Plaza de la Concordia y Foro Principal, Cholula",
+    "horario": "10:00 AM - 11:00 PM",
+    "imagen": "/eventos/cartelera_feria.webp",
+    "url_info": null,
+    "categoria": "Feria"
+  },
+  {
+    "id": 2,
+    "titulo": "Festival y Temporada del Chile en Nogada",
+    "descripcion": "Muestra gastronómica del icónico platillo barroco poblano en los portales y restaurantes participantes de San Pedro Cholula.",
+    "dia": 15,
+    "mes": "Agosto",
+    "mes_corto": "AGO",
+    "dia_semana": "Viernes",
+    "ubicacion": "Portal Guerrero y Restaurantes de Cholula",
+    "horario": "1:00 PM - 8:00 PM",
+    "imagen": "/eventos/chile_en_nogada.webp",
+    "url_info": null,
+    "categoria": "Gastronomía"
+  },
+  {
+    "id": 3,
+    "titulo": "Feria Patronal de la Virgen de los Remedios",
+    "descripcion": "Tradicional quema de panzones, mañanitas, danzas de concheros, alfombras de flores y peregrinaciones en la pirámide.",
+    "dia": 8,
+    "mes": "Septiembre",
+    "mes_corto": "SEP",
+    "dia_semana": "Lunes",
+    "ubicacion": "Santuario de los Remedios y Parque Soria",
+    "horario": "6:00 AM - 11:30 PM",
+    "imagen": "/eventos/feria.webp",
+    "url_info": null,
+    "categoria": "Cultura"
+  },
+  {
+    "id": 4,
+    "titulo": "Festival Familiar de Arte y Espectáculos",
+    "descripcion": "Jornada de arte urbano, talleres para niños, espectáculos cómicos y presentaciones teatrales al aire libre.",
+    "dia": 20,
+    "mes": "Octubre",
+    "mes_corto": "OCT",
+    "dia_semana": "Sábado",
+    "ubicacion": "Parque Soria y Zócalo de Cholula",
+    "horario": "4:00 PM - 9:00 PM",
+    "imagen": "/eventos/payasos-1024x1024-1.webp",
+    "url_info": null,
+    "categoria": "Música"
+  }
+]
