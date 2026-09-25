@@ -7,7 +7,8 @@ export interface Evento {
   id: number;
   titulo: string;
   descripcion: string;
-  dia: number;
+  /** `null` cuando el evento aún no tiene día capturado en WordPress. */
+  dia: number | null;
   mes: string;
   mes_corto: string;
   dia_semana: string;

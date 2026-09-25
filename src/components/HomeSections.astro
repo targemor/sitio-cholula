@@ -19,6 +19,7 @@ import { localizePathSafe } from "../i18n/routes";
 import { getPageCopy } from "../i18n/pages";
 import { getStrings } from "../i18n/ui";
 import { getHomeContent } from "../lib/home";
+import { getEventos } from "../lib/eventos";
 import { getItinerarios } from "../lib/itinerario";
 import { buildSearchItems } from "../lib/search-items";
 
@@ -66,7 +67,12 @@ const searchItems = buildSearchItems(lang);
     <p class="search-subtitle">{copy.search.subtitle}</p>
 
     <div class="search-wrapper">
-      <SearchBar client:idle items={searchItems} labels={s.search} lang={lang} />
+      <SearchBar
+        client:idle
+        items={searchItems}
+        labels={s.search}
+        lang={lang}
+      />
     </div>
   </div>
 </section>
@@ -99,8 +105,21 @@ const searchItems = buildSearchItems(lang);
         </div>
       </div>
       <div class="piramide-photo-credit">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:inline-block; vertical-align:-1px; margin-right:3px;">
-          <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+        <svg
+          width="13"
+          height="13"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+          style="display:inline-block; vertical-align:-1px; margin-right:3px;"
+        >
+          <path
+            d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"
+          ></path>
           <circle cx="12" cy="13" r="4"></circle>
         </svg>
         <a
@@ -185,6 +204,19 @@ const searchItems = buildSearchItems(lang);
 </section>
 
 <!-- ══════════════════════════════
+     ESTACIONAMIENTOS
+     ══════════════════════════════ -->
+<section
+  class="section-estacionamientos"
+  id="estacionamientos"
+  style="padding: 3rem 0;"
+>
+  <div class="container">
+    <Estacionamientos lang={lang} />
+  </div>
+</section>
+
+<!-- ══════════════════════════════
      MAPA + CROQUIS
      ══════════════════════════════ -->
 <section class="section-mapa" id="mapa">
@@ -210,16 +242,7 @@ const searchItems = buildSearchItems(lang);
 <!-- ══════════════════════════════
      EVENTOS — Cartelera
      ══════════════════════════════ -->
-<EventosSection client:idle lang={lang} />
-
-<!-- ══════════════════════════════
-     ESTACIONAMIENTOS
-     ══════════════════════════════ -->
-<section class="section-estacionamientos" id="estacionamientos" style="padding: 3rem 0;">
-  <div class="container">
-    <Estacionamientos lang={lang} />
-  </div>
-</section>
+<EventosSection client:idle lang={lang} eventos={getEventos()} />
 
 <!-- ══════════════════════════════
      ARTESANÍAS
@@ -250,12 +273,12 @@ const searchItems = buildSearchItems(lang);
 <!-- ── GA4: tracking de clics en cards "Visítanos" ── -->
 <script is:inline>
   (function () {
-    var navCards = document.querySelectorAll('[data-ga-nav]');
+    var navCards = document.querySelectorAll("[data-ga-nav]");
     navCards.forEach(function (card) {
-      card.addEventListener('click', function () {
-        var destination = card.getAttribute('data-ga-nav') || '';
-        if (typeof gtag === 'function') {
-          gtag('event', 'navigation_click', { destination: destination });
+      card.addEventListener("click", function () {
+        var destination = card.getAttribute("data-ga-nav") || "";
+        if (typeof gtag === "function") {
+          gtag("event", "navigation_click", { destination: destination });
         }
       });
     });

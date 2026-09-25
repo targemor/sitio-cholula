@@ -1,19 +1,5 @@
 [
   {
-    "id": 1,
-    "titulo": "Cartelera Oficial de la Feria de Cholula",
-    "descripcion": "Gran cartelera de la Feria de Cholula con conciertos, palenque, eventos culturales, obras de teatro y exposiciones artesanales.",
-    "dia": 1,
-    "mes": "Septiembre",
-    "mes_corto": "SEP",
-    "dia_semana": "Jueves",
-    "ubicacion": "Plaza de la Concordia y Foro Principal, Cholula",
-    "horario": "10:00 AM - 11:00 PM",
-    "imagen": "/eventos/cartelera_feria.webp",
-    "url_info": null,
-    "categoria": "Feria"
-  },
-  {
     "id": 2,
     "titulo": "Festival y Temporada del Chile en Nogada",
     "descripcion": "Muestra gastronómica del icónico platillo barroco poblano en los portales y restaurantes participantes de San Pedro Cholula.",
@@ -26,6 +12,20 @@
     "imagen": "/eventos/chile_en_nogada.webp",
     "url_info": null,
     "categoria": "Gastronomía"
+  },
+  {
+    "id": 1,
+    "titulo": "Cartelera Oficial de la Feria de Cholula",
+    "descripcion": "Gran cartelera de la Feria de Cholula con conciertos, palenque, eventos culturales, obras de teatro y exposiciones artesanales.",
+    "dia": 1,
+    "mes": "Septiembre",
+    "mes_corto": "SEP",
+    "dia_semana": "Jueves",
+    "ubicacion": "Plaza de la Concordia y Foro Principal, Cholula",
+    "horario": "10:00 AM - 11:00 PM",
+    "imagen": "/eventos/cartelera_feria.webp",
+    "url_info": null,
+    "categoria": "Feria"
   },
   {
     "id": 3,

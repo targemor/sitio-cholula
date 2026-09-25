@@ -48,6 +48,7 @@ export interface Props {
   estrellaMichelin?: boolean;
   showLocationCta?: boolean;
   showCredits?: boolean;
+  descripcionDestacada?: string;
 }
 
 const {
@@ -86,6 +87,7 @@ const {
   estrellaMichelin = false,
   showLocationCta = false,
   showCredits = false,
+  descripcionDestacada,
 } = Astro.props;
 
 // Funciones seguras para URLs para evitar 'Invalid URL' crashes
@@ -474,35 +476,24 @@ const igGradId = `ig-grad-card-${swiperId}`;
     </ul>
 
     <div class="bc-verde-section">
-      {/* Chips de atributos */}
-      <div class="bc-chips">
-        {
-          chips.map((c) => (
-            <span class={`bc-chip ${c.isMichelin ? "bc-chip-michelin" : ""}`}>
-              {c.icon} {c.label}
-            </span>
-          ))
-        }
-        {
-          (amenidades || espacioFisico) && (
-            <button
-              type="button"
-              class="bc-chip bc-chip-more js-toggle-more"
-              data-target={`more-${id}`}
-              data-more={s.card.seeMore}
-              data-less={s.card.seeLess}
-            >
-              {s.card.seeMore}
-            </button>
-          )
-        }
-      </div>
-
-      {/* Contenido extra colapsable */}
+      {/* Chips de atributos siempre visibles */}
+      {chips.length > 0 && (
+        <div class="bc-chips">
+          {
+            chips.map((c) => (
+              <span class={`bc-chip ${c.isMichelin ? "bc-chip-michelin" : ""}`}>
+                {c.icon} {c.label}
+              </span>
+            ))
+          }
+        </div>
+      )}
+      {/* Descripción destacada — callout amarillo */}
       {
-        (amenidades || espacioFisico) && (
-          <div class="bc-more-content" id={`more-${id}`} style="display: none;">
-            <p class="bc-amenidades">{amenidades || espacioFisico}</p>
+        descripcionDestacada && (
+          <div class="bc-destacada">
+            <span class="bc-destacada-icon">⭐</span>
+            <p class="bc-destacada-text">{descripcionDestacada}</p>
           </div>
         )
       }
@@ -626,26 +617,6 @@ const igGradId = `ig-grad-card-${swiperId}`;
             showToast("Enlace copiado al portapapeles");
           } catch (err) {
             console.error("Error al copiar al portapapeles:", err);
-          }
-        }
-      });
-    });
-
-    // Lógica para togglear 'Ver más' en las tarjetas
-    const toggleBtns = document.querySelectorAll(".js-toggle-more");
-    toggleBtns.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const el = btn as HTMLElement;
-        const targetId = btn.getAttribute("data-target");
-        if (!targetId) return;
-        const targetEl = document.getElementById(targetId);
-        if (targetEl) {
-          if (targetEl.style.display === "none") {
-            targetEl.style.display = "block";
-            btn.textContent = el.dataset.less ?? "";
-          } else {
-            targetEl.style.display = "none";
-            btn.textContent = el.dataset.more ?? "";
           }
         }
       });

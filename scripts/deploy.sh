@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env bash
+#!/usr/bin/env bash
 # =============================================================================
 # deploy.sh — Build + deploy de visitcholula.mx a S3 + CloudFront
 # =============================================================================
@@ -7,6 +7,9 @@
 #   Build + deploy de visitcholula.mx a S3 + CloudFront con headers de cache correctos.
 #
 # DESCRIPTION
+#   Pensado para correr UNICAMENTE dentro de GitHub Actions
+#   (.github/workflows/wp-extract.yml). Fuera del runner aborta: ver --allow-local.
+#
 #   Sube el sitio estatico de Astro a S3 aplicando Cache-Control por tipo de archivo:
 #     - Assets con hash (_astro/*) e imagenes/video  -> public, max-age=31536000, immutable
 #     - HTML (nombres estables)                       -> public, max-age=0, must-revalidate
@@ -27,13 +30,12 @@
 #   --force           Resube TODOS los archivos para garantizar Cache-Control
 #   --skip-build      Omite 'pnpm run build'
 #   --skip-invalidation No crea la invalidacion de CloudFront
+#   --allow-local     Salvavidas para correrlo fuera de GitHub Actions (emergencias)
 #
-# EJEMPLOS
-#   # Primer deploy / reparar headers de cache:
-#   ./scripts/deploy.sh --force
-#
-#   # Deploy normal (rapido):
-#   ./scripts/deploy.sh
+# COMO SE LANZA
+#   Desde GitHub: pestana Actions -> "WordPress Data Extract" -> Run workflow,
+#   o via repository_dispatch (evento 'wordpress_update') desde WordPress.
+#   El workflow ya lo invoca como: ./scripts/deploy.sh --skip-build
 #
 # =============================================================================
 
@@ -47,6 +49,7 @@ SITE_URL="https://visitcholula.mx"
 FORCE=false
 SKIP_BUILD=false
 SKIP_INVALIDATION=false
+ALLOW_LOCAL=false
 
 IMMUTABLE="public, max-age=31536000, immutable"
 REVALIDATE="public, max-age=0, must-revalidate"
@@ -76,6 +79,7 @@ while [[ $# -gt 0 ]]; do
     --force)            FORCE=true;           shift   ;;
     --skip-build)       SKIP_BUILD=true;      shift   ;;
     --skip-invalidation) SKIP_INVALIDATION=true; shift ;;
+    --allow-local)      ALLOW_LOCAL=true;     shift   ;;
     -h|--help)
       sed -n '/^# SYNOPSIS/,/^# ====/p' "$0" | grep -v '^# ====' | sed 's/^# \?//'
       exit 0
@@ -83,6 +87,18 @@ while [[ $# -gt 0 ]]; do
     *) die "Argumento desconocido: $1" ;;
   esac
 done
+
+# ── Solo CI: el deploy se publica desde GitHub Actions ──────────────────
+# Correrlo desde una maquina local sube un build hecho con datos e imagenes que
+# pueden no coincidir con los del runner, y el sync usa --delete sobre el bucket.
+if [[ "${GITHUB_ACTIONS:-}" != "true" && "$ALLOW_LOCAL" == false ]]; then
+  echo -e "${RED}Deploy local desactivado.${RESET}" >&2
+  echo "  visitcholula.mx se publica solo desde GitHub Actions." >&2
+  echo "  Lanzalo en: Actions -> 'WordPress Data Extract' -> Run workflow" >&2
+  echo "  (o con el repository_dispatch 'wordpress_update' desde WordPress)." >&2
+  echo "  Emergencia: ./scripts/deploy.sh --allow-local" >&2
+  exit 1
+fi
 
 # ── Rutas: ejecutar siempre desde la raiz del proyecto (padre de /scripts) ────
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"

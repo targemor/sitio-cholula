@@ -189,21 +189,21 @@ async function main() {
   Object.entries(counts).forEach(([k, v]) => console.log(`  ${k}: ${v}`));
   console.log(`  TOTAL: ${Object.values(counts).reduce((a, b) => a + b, 0)}\n`);
 
-function normalizeCategoria(item) {
-  if (!item.categoria || typeof item.categoria !== 'string') return item;
-  const raw = item.categoria.trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-  let cat = item.categoria;
-  if (raw.includes('helad')) {
-    cat = 'heladeria';
-  } else if (raw.includes('cafet') || raw === 'cafe') {
-    cat = 'cafeteria';
-  } else if (raw.includes('bar') || raw.includes('cantina')) {
-    cat = 'bar';
-  } else if (raw.includes('restauran')) {
-    cat = 'restaurante';
+  function normalizeCategoria(item) {
+    if (!item.categoria || typeof item.categoria !== 'string') return item;
+    const raw = item.categoria.trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    let cat = item.categoria;
+    if (raw.includes('helad')) {
+      cat = 'heladeria';
+    } else if (raw.includes('cafet') || raw === 'cafe') {
+      cat = 'cafeteria';
+    } else if (raw.includes('bar') || raw.includes('cantina')) {
+      cat = 'bar';
+    } else if (raw.includes('restauran')) {
+      cat = 'restaurante';
+    }
+    return { ...item, categoria: cat };
   }
-  return { ...item, categoria: cat };
-}
 
   // Enriquecer horarios con resumen y detalle, y normalizar categoría
   for (const bucket of PST_BUCKETS) {
@@ -216,6 +216,47 @@ function normalizeCategoria(item) {
         return enriched;
       });
     }
+  }
+
+  // Ordenar eventos por fecha (mes y día)
+  const MESES_ORDER = {
+    enero: 1, ene: 1, jan: 1,
+    febrero: 2, feb: 2, feb: 2,
+    marzo: 3, mar: 3,
+    abril: 4, abr: 4, apr: 4,
+    mayo: 5, may: 5,
+    junio: 6, jun: 6,
+    julio: 7, jul: 7,
+    agosto: 8, ago: 8, aug: 8,
+    septiembre: 9, setiembre: 9, sep: 9,
+    octubre: 10, oct: 10,
+    noviembre: 11, nov: 11,
+    diciembre: 12, dic: 12, dec: 12,
+  };
+
+  function getMonthNumber(mes, mesCorto) {
+    if (mesCorto) {
+      const k = String(mesCorto).trim().toLowerCase();
+      if (MESES_ORDER[k]) return MESES_ORDER[k];
+    }
+    if (mes) {
+      const k = String(mes).trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+      if (MESES_ORDER[k]) return MESES_ORDER[k];
+    }
+    return 99;
+  }
+
+  if (Array.isArray(data.eventos)) {
+    data.eventos.sort((a, b) => {
+      if (!a || typeof a !== 'object') return 0;
+      if (!b || typeof b !== 'object') return 0;
+      const mA = getMonthNumber(a.mes, a.mes_corto);
+      const mB = getMonthNumber(b.mes, b.mes_corto);
+      if (mA !== mB) return mA - mB;
+      const dA = typeof a.dia === 'number' ? a.dia : 99;
+      const dB = typeof b.dia === 'number' ? b.dia : 99;
+      return dA - dB;
+    });
   }
 
   // ── Descarga de imágenes ────────────────────────────────────────────────────
@@ -235,7 +276,8 @@ function normalizeCategoria(item) {
   const nPst = PST_BUCKETS
     .flatMap(b => data[b] || [])
     .reduce((n, item) => n + ((item.imagenes || item.galeria)?.length || 0), 0);
-  const nEventos  = (data.eventos || []).length;
+  // eventos es un array de objetos; cada uno puede tener una imagen
+  const nEventos  = (data.eventos || []).filter(e => e && e.imagen).length;
   const totalImgs = nPst + nEventos;
 
   console.log(`   (${totalImgs} URLs de imágenes: ${nPst} de PST, ${nEventos} de eventos)`);
@@ -283,28 +325,21 @@ function normalizeCategoria(item) {
     }
 
     if (nEventos) {
-      // Al aplanar se pierde la carpeta de uploads, asi que dos archivos con el
-      // mismo nombre en carpetas distintas se pisarian. Se avisa en vez de
-      // sobrescribir en silencio.
-      const vistos = new Map();
-      const nuevas = [];
-
-      for (const url of data.eventos) {
+      for (const evento of data.eventos) {
+        if (!evento || !evento.imagen) continue;
         try {
-          const nombre = path.basename(rutaRelativa(url));
-          if (vistos.has(nombre) && vistos.get(nombre) !== url) {
-            console.warn(`\n⚠  "${nombre}" viene de dos URLs distintas; se conserva la primera:\n     ${vistos.get(nombre)}\n     ${url}`);
-          } else {
-            vistos.set(nombre, url);
-          }
-          nuevas.push(await bajar(url, EVENTOS_DIR, '/eventos', true));
+          const nombre = path.basename(rutaRelativa(evento.imagen));
+          const filepath = path.join(EVENTOS_DIR, nombre);
+          fs.mkdirSync(EVENTOS_DIR, { recursive: true });
+          if (!fs.existsSync(filepath)) await descargar(evento.imagen, filepath);
+          count++;
+          process.stdout.write(`\rProcesada ${count}/${totalImgs}`);
+          evento.imagen = `/eventos/${nombre}`;
         } catch (e) {
           errors++;
-          console.error(`\n❌ Error al descargar ${url}: ${e.message}`);
-          nuevas.push(url);
+          console.error(`\n❌ Error al descargar imagen de evento: ${e.message}`);
         }
       }
-      data.eventos = nuevas;
     }
 
     console.log(`\n✅ ${count} imágenes procesadas (${errors} errores).`);

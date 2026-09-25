@@ -14,7 +14,7 @@ import { DEFAULT_LOCALE, type Locale } from "../i18n/config";
 import type { RouteKey } from "../i18n/routes";
 import base from "../data/home.json";
 import en from "../data/home.en.json";
-import cholulaData from "../data/cholula.json";
+import { getEventosImagenes } from "./eventos";
 
 export interface Imperdible {
 	id: string;
@@ -62,19 +62,23 @@ function merge<T extends { id: string }>(items: T[], overlay: any): T[] {
 }
 
 /**
- * Resuelve la lista de eventos: usa el array de `cholula.json` (extraído de
- * WordPress) cuando tiene contenido; de lo contrario, cae al listado estático
- * de `home.json` como fallback para desarrollo local sin extract.
+ * Carteles de eventos para carruseles de imágenes: usa los de `cholula.json`
+ * (extraído de WordPress) cuando hay, y si no cae al listado estático de
+ * `home.json`, el fallback para desarrollo local sin extract.
  *
- * Las rutas en `cholula.json.eventos` ya son locales (e.g. `/eventos/feria.webp`)
- * porque `extract-wp-data.cjs` las descarga y reescribe antes de guardar el JSON.
+ * `getEventosImagenes()` resuelve las dos formas que puede traer el JSON
+ * (array de URLs o colección completa), así que aquí siempre llegan strings.
+ *
+ * Las rutas en `cholula.json` ya son locales (e.g. `/eventos/feria.webp`)
+ * porque `extract-wp-data.cjs` las descarga y reescribe antes de guardarlo.
+ *
+ * Hoy la home pinta la cartelera con `EventosSection`, no con un carrusel, así
+ * que `HomeContent.eventos` no se renderiza en ningún lado; se mantiene por si
+ * vuelve el carrusel y para que nadie herede el array crudo de WordPress.
  */
 function resolveEventos(): string[] {
-	const wpEventos = (cholulaData as any).eventos;
-	if (Array.isArray(wpEventos) && wpEventos.length > 0) {
-		return wpEventos;
-	}
-	return base.eventos;
+	const imagenes = getEventosImagenes();
+	return imagenes.length > 0 ? imagenes : base.eventos;
 }
 
 export function getHomeContent(locale: Locale): HomeContent {
