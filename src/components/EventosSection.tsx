@@ -89,74 +89,100 @@ export default function EventosSection({
           {eventos.map((evento) => {
             const color = getCatColor(evento.categoria);
 
+            const hasDia = evento.dia !== null && evento.dia !== undefined;
+            const hasMes = Boolean(evento.mes_corto && evento.mes_corto.trim());
+            const hasDateMain = hasDia || hasMes;
+            const hasDiaSemana = Boolean(evento.dia_semana && evento.dia_semana.trim());
+            const hasDateBlock = hasDateMain || hasDiaSemana;
+
+            const hasCategoria = Boolean(evento.categoria && evento.categoria.trim());
+            const hasUbicacion = Boolean(evento.ubicacion && evento.ubicacion.trim());
+            const hasHorario = Boolean(evento.horario && evento.horario.trim());
+            const hasMeta = hasUbicacion || hasHorario;
+            const hasDescripcion = Boolean(evento.descripcion && evento.descripcion.trim());
+
             return (
               <article key={evento.id} className="evento-article">
                 {/* ── LADO IZQUIERDO: Fecha, Nombre, Ubicación y Horario ── */}
                 <div className="evento-left">
-                  {/* Bloque de fecha */}
-                  <div
-                    className="evento-date-block"
-                    style={{ backgroundColor: color }}
-                  >
-                    <div className="evento-date-main">
-                      <span className="evento-dia">{evento.dia}</span>
-                      <span className="evento-mes">{evento.mes_corto}</span>
+                  {/* Bloque de fecha: Solo si al menos un dato de fecha existe */}
+                  {hasDateBlock && (
+                    <div
+                      className={`evento-date-block ${!hasDateMain ? "evento-date-block-only-semana" : ""}`}
+                      style={{ backgroundColor: color }}
+                    >
+                      {hasDateMain && (
+                        <div className="evento-date-main">
+                          {hasDia && <span className="evento-dia">{evento.dia}</span>}
+                          {hasMes && <span className="evento-mes">{evento.mes_corto}</span>}
+                        </div>
+                      )}
+                      {hasDiaSemana && (
+                        <div className="evento-dia-semana">{evento.dia_semana}</div>
+                      )}
                     </div>
-                    <div className="evento-dia-semana">{evento.dia_semana}</div>
-                  </div>
+                  )}
 
                   {/* Nombre, categoría, ubicación y horario */}
                   <div className="evento-info">
-                    <span
-                      className="evento-cat-badge"
-                      style={{ backgroundColor: color }}
-                    >
-                      {evento.categoria}
-                    </span>
+                    {hasCategoria && (
+                      <span
+                        className="evento-cat-badge"
+                        style={{ backgroundColor: color }}
+                      >
+                        {evento.categoria}
+                      </span>
+                    )}
 
                     <h3 className="evento-titulo">{evento.titulo}</h3>
 
                     {/* Metadatos: Ubicación y Horario */}
-                    <div className="evento-meta">
-                      <div className="evento-meta-item">
-                        <svg
-                          className="evento-meta-icon"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          strokeWidth={2}
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                          />
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                          />
-                        </svg>
-                        <span>{evento.ubicacion}</span>
-                      </div>
+                    {hasMeta && (
+                      <div className="evento-meta">
+                        {hasUbicacion && (
+                          <div className="evento-meta-item">
+                            <svg
+                              className="evento-meta-icon"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                              strokeWidth={2}
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                              />
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                              />
+                            </svg>
+                            <span>{evento.ubicacion}</span>
+                          </div>
+                        )}
 
-                      <div className="evento-meta-item">
-                        <svg
-                          className="evento-meta-icon"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          strokeWidth={2}
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                          />
-                        </svg>
-                        <span>{evento.horario}</span>
+                        {hasHorario && (
+                          <div className="evento-meta-item">
+                            <svg
+                              className="evento-meta-icon"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                              strokeWidth={2}
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                              />
+                            </svg>
+                            <span>{evento.horario}</span>
+                          </div>
+                        )}
                       </div>
-                    </div>
+                    )}
                   </div>
                 </div>
 
@@ -210,10 +236,12 @@ export default function EventosSection({
                     {/* Gradient Overlay */}
                     <div className="evento-gradient" />
 
-                    {/* Footer de la imagen: descripción */}
-                    <div className="evento-desc-overlay">
-                      <p className="evento-desc-text">{evento.descripcion}</p>
-                    </div>
+                    {/* Footer de la imagen: descripción solo si existe */}
+                    {hasDescripcion && (
+                      <div className="evento-desc-overlay">
+                        <p className="evento-desc-text">{evento.descripcion}</p>
+                      </div>
+                    )}
                   </div>
                 </div>
               </article>
