@@ -49,15 +49,15 @@ export default function EventosSection({
   eventos = eventosDefault as Evento[],
   lang = "es",
 }: Props) {
-  const [selectedImage, setSelectedImage] = useState<ModalImage | null>(null);
+  const [selectedEvento, setSelectedEvento] = useState<Evento | null>(null);
   const isEn = lang === "en";
 
   // Cerrar modal con tecla Escape
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setSelectedImage(null);
+      if (e.key === "Escape") setSelectedEvento(null);
     };
-    if (selectedImage) {
+    if (selectedEvento) {
       window.addEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "hidden";
     } else {
@@ -67,7 +67,7 @@ export default function EventosSection({
       window.removeEventListener("keydown", handleKeyDown);
       document.body.style.overflow = "";
     };
-  }, [selectedImage]);
+  }, [selectedEvento]);
 
   return (
     <section id="eventos" className="eventos-section">
@@ -186,22 +186,15 @@ export default function EventosSection({
                   </div>
                 </div>
 
-                {/* ── LADO DERECHO: Imagen grande con click para abrir modal + Descripción ── */}
+                {/* ── LADO DERECHO: Imagen grande con click para abrir modal + Descripción recortada ── */}
                 <div className="evento-right">
                   <div
-                    onClick={() =>
-                      setSelectedImage({
-                        url: evento.imagen,
-                        title: evento.titulo,
-                        categoria: evento.categoria,
-                        color,
-                      })
-                    }
+                    onClick={() => setSelectedEvento(evento)}
                     className="evento-img-card"
                     title={
                       isEn
-                        ? "Click to view full image"
-                        : "Click para ver imagen en tamaño completo"
+                        ? "Click to view full image and details"
+                        : "Click para ver imagen y detalles completos"
                     }
                   >
                     {/* Imagen grande */}
@@ -213,7 +206,7 @@ export default function EventosSection({
                       decoding="async"
                     />
 
-                    {/* Botón flotante para ver en tamaño completo al hover */}
+                    {/* Botón flotante para ver en tamaño completo */}
                     <div className="evento-zoom-badge">
                       <svg
                         style={{ width: "14px", height: "14px" }}
@@ -236,10 +229,16 @@ export default function EventosSection({
                     {/* Gradient Overlay */}
                     <div className="evento-gradient" />
 
-                    {/* Footer de la imagen: descripción solo si existe */}
+                    {/* Footer de la imagen: descripción recortada a 2 líneas + Ver más */}
                     {hasDescripcion && (
                       <div className="evento-desc-overlay">
                         <p className="evento-desc-text">{evento.descripcion}</p>
+                        <span className="evento-ver-mas">
+                          {isEn ? "See more" : "Ver más"}
+                          <svg className="evento-ver-mas-icon" viewBox="0 0 20 20" fill="currentColor">
+                            <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+                          </svg>
+                        </span>
                       </div>
                     )}
                   </div>
@@ -251,52 +250,146 @@ export default function EventosSection({
       </div>
 
       {/* ── Modal Lightbox a Pantalla Completa ── */}
-      {selectedImage &&
+      {selectedEvento &&
         typeof document !== "undefined" &&
         createPortal(
           <div
             className="evento-modal-backdrop"
-            onClick={() => setSelectedImage(null)}
+            onClick={() => setSelectedEvento(null)}
           >
-            {/* Botón Cerrar */}
-            <button
-              onClick={() => setSelectedImage(null)}
-              className="evento-modal-close"
-              aria-label={isEn ? "Close modal" : "Cerrar modal"}
-            >
-              <svg
-                style={{ width: "24px", height: "24px" }}
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            </button>
-
-            {/* Contenedor de la imagen */}
+            {/* Contenedor de la imagen y los detalles */}
             <div
               className="evento-modal-content"
               onClick={(e) => e.stopPropagation()}
             >
-              <img
-                src={selectedImage.url}
-                alt={selectedImage.title}
-                className="evento-modal-img"
-              />
-              <div className="evento-modal-footer">
-                <span
-                  className="evento-cat-badge"
-                  style={{ backgroundColor: selectedImage.color, margin: 0 }}
+              {/* Botón Cerrar (X) */}
+              <button
+                type="button"
+                onClick={() => setSelectedEvento(null)}
+                className="evento-modal-close"
+                aria-label={isEn ? "Close modal" : "Cerrar modal"}
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#ffffff"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 >
-                  {selectedImage.categoria}
-                </span>
-                <h4 className="evento-modal-title">{selectedImage.title}</h4>
+                  <line x1="18" y1="6" x2="6" y2="18" />
+                  <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+              </button>
+
+              <div className="evento-modal-img-container">
+                <img
+                  src={selectedEvento.imagen}
+                  alt={selectedEvento.titulo}
+                  className="evento-modal-img"
+                />
+              </div>
+
+              <div className="evento-modal-info">
+                <div className="evento-modal-header">
+                  {selectedEvento.categoria && (
+                    <span
+                      className="evento-cat-badge"
+                      style={{
+                        backgroundColor: getCatColor(selectedEvento.categoria),
+                        margin: 0,
+                      }}
+                    >
+                      {selectedEvento.categoria}
+                    </span>
+                  )}
+                  <h3 className="evento-modal-title">{selectedEvento.titulo}</h3>
+                </div>
+
+                {/* Metadata en el modal */}
+                {(selectedEvento.ubicacion ||
+                  selectedEvento.horario ||
+                  selectedEvento.dia !== null ||
+                  selectedEvento.mes_corto) && (
+                  <div className="evento-modal-meta">
+                    {(selectedEvento.dia !== null || selectedEvento.mes_corto) && (
+                      <div className="evento-modal-meta-item">
+                        <svg
+                          className="evento-meta-icon"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          strokeWidth={2}
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                          />
+                        </svg>
+                        <span>
+                          {[
+                            selectedEvento.dia_semana,
+                            selectedEvento.dia,
+                            selectedEvento.mes_corto,
+                          ]
+                            .filter(Boolean)
+                            .join(" ")}
+                        </span>
+                      </div>
+                    )}
+
+                    {selectedEvento.ubicacion && (
+                      <div className="evento-modal-meta-item">
+                        <svg
+                          className="evento-meta-icon"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          strokeWidth={2}
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                          />
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                          />
+                        </svg>
+                        <span>{selectedEvento.ubicacion}</span>
+                      </div>
+                    )}
+
+                    {selectedEvento.horario && (
+                      <div className="evento-modal-meta-item">
+                        <svg
+                          className="evento-meta-icon"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          strokeWidth={2}
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                          />
+                        </svg>
+                        <span>{selectedEvento.horario}</span>
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                {/* Descripción completa */}
+                {selectedEvento.descripcion && (
+                  <p className="evento-modal-desc">{selectedEvento.descripcion}</p>
+                )}
               </div>
             </div>
           </div>,
