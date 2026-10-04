@@ -19,6 +19,7 @@ const { id, items, isEvento = false, isImperdible = false, showCredits = false, 
 <div 
   class={`swiper ${isImperdible ? 'swiper--imperdible swiper--focus-carousel' : ''} ${isEvento ? 'swiper--evento' : ''} ${className}`} 
   id={`swiper-${id}`}
+  data-gallery-title={altPrefix}
 >
   {(isImperdible || isEvento) && (
     <div 
@@ -104,6 +105,7 @@ const { id, items, isEvento = false, isImperdible = false, showCredits = false, 
 <script>
   import Swiper from 'swiper';
   import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+  import { trackViewGallery } from '../lib/analytics';
 
   document.addEventListener('DOMContentLoaded', () => {
     // Inicializar estado de las imágenes (skeleton loader & cached check)
@@ -176,6 +178,12 @@ const { id, items, isEvento = false, isImperdible = false, showCredits = false, 
         const images = origSlides.map(s => s.getAttribute('data-img') || '').filter(Boolean);
         const img = images[swiper.realIndex] || images[0] || '';
         setBlur(img);
+
+        if (!htmlEl.dataset.galleryTracked) {
+          htmlEl.dataset.galleryTracked = "true";
+          const title = htmlEl.getAttribute("data-gallery-title");
+          if (title) trackViewGallery(title);
+        }
       });
     });
 
@@ -216,6 +224,12 @@ const { id, items, isEvento = false, isImperdible = false, showCredits = false, 
         const images = origSlides.map(s => s.getAttribute('data-img') || '').filter(Boolean);
         const img = images[swiper.realIndex] || images[0] || '';
         setBlur(img);
+
+        if (!htmlEl.dataset.galleryTracked) {
+          htmlEl.dataset.galleryTracked = "true";
+          const title = htmlEl.getAttribute("data-gallery-title");
+          if (title) trackViewGallery(title);
+        }
       });
     });
   });

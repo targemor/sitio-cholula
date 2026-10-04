@@ -219,6 +219,8 @@ const igGradId = `ig-grad-card-${swiperId}`;
                 target="_blank"
                 rel="noopener noreferrer"
                 class="social-link"
+                data-ga-social="instagram"
+                data-business={title}
               >
                 <div class="icon">
                   <svg
@@ -259,6 +261,8 @@ const igGradId = `ig-grad-card-${swiperId}`;
                 target="_blank"
                 rel="noopener noreferrer"
                 class="social-link"
+                data-ga-social="facebook"
+                data-business={title}
               >
                 <div class="icon">
                   <svg
@@ -285,6 +289,8 @@ const igGradId = `ig-grad-card-${swiperId}`;
                 target="_blank"
                 rel="noopener noreferrer"
                 class="social-link"
+                data-ga-social="tiktok"
+                data-business={title}
               >
                 <div class="icon">
                   <svg
@@ -374,6 +380,7 @@ const igGradId = `ig-grad-card-${swiperId}`;
                 target="_blank"
                 rel="noopener noreferrer"
                 class="address-link"
+                data-ga-directions={title}
               >
                 {address}
               </a>
@@ -507,6 +514,7 @@ const igGradId = `ig-grad-card-${swiperId}`;
             target="_blank"
             rel="noopener noreferrer"
             class="whatsapp-cta maps-cta"
+            data-ga-directions={title}
             style="background-color: #4285F4; color: white;"
           >
             <span>{s.card.viewLocation}</span>
@@ -572,7 +580,26 @@ const igGradId = `ig-grad-card-${swiperId}`;
 </div>
 
 <script>
+  import { trackDirectionsClick, trackSocialClick, trackShare } from "../lib/analytics";
+
   document.addEventListener("DOMContentLoaded", () => {
+    // 1. Eventos GA4 de Redes Sociales
+    document.querySelectorAll("[data-ga-social]").forEach((el) => {
+      el.addEventListener("click", () => {
+        trackSocialClick(
+          el.getAttribute("data-business"),
+          el.getAttribute("data-ga-social")
+        );
+      });
+    });
+
+    // 2. Eventos GA4 de Maps / Cómo llegar
+    document.querySelectorAll("[data-ga-directions]").forEach((el) => {
+      el.addEventListener("click", () => {
+        trackDirectionsClick(el.getAttribute("data-ga-directions"));
+      });
+    });
+
     function showToast(message) {
       let toast = document.getElementById("clipboard-toast");
       if (!toast) {
@@ -595,7 +622,6 @@ const igGradId = `ig-grad-card-${swiperId}`;
       btn.addEventListener("click", async () => {
         const id = btn.getAttribute("data-share-id");
         const title = btn.getAttribute("data-share-title");
-        // Construimos el link que apunte directamente a la tarjeta (si tiene id)
         const url =
           window.location.origin +
           window.location.pathname +
@@ -607,14 +633,15 @@ const igGradId = `ig-grad-card-${swiperId}`;
               title: title || "Cholula Pueblo Mágico",
               url: url,
             });
+            if (title) trackShare(title, "native_share");
           } catch (err) {
             console.error("Error al compartir:", err);
           }
         } else {
-          // Fallback a portapapeles
           try {
             await navigator.clipboard.writeText(url);
             showToast("Enlace copiado al portapapeles");
+            if (title) trackShare(title, "clipboard");
           } catch (err) {
             console.error("Error al copiar al portapapeles:", err);
           }

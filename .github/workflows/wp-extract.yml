@@ -1,6 +1,12 @@
 name: WordPress Data Extract
 
 on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
   # Ejecutar manualmente desde la pestana "Actions" en GitHub
   workflow_dispatch:
   # Disparador remoto mediante Webhook (Repository Dispatch)

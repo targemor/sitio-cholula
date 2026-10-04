@@ -137,3 +137,50 @@ export function trackScrollDepth(depthPercent: number): void {
     percent_scrolled: depthPercent,
   });
 }
+
+/**
+ * Clic en el botón de cómo llegar (Google Maps/Waze).
+ */
+export function trackDirectionsClick(businessName: string): void {
+  gtag("event", "click_directions", {
+    item_name: businessName,
+  });
+}
+
+/**
+ * Clic en redes sociales (Facebook, Instagram, etc).
+ */
+export function trackSocialClick(businessName: string, socialNetwork: string): void {
+  gtag("event", "click_social", {
+    item_name: businessName,
+    social_network: socialNetwork,
+  });
+}
+
+/**
+ * Clic en compartir ficha del negocio.
+ */
+export function trackShare(businessName: string, method: string): void {
+  gtag("event", "share", {
+    item_name: businessName,
+    method: method,
+  });
+}
+
+/**
+ * Ver la galería de fotos del negocio.
+ */
+export function trackViewGallery(businessName: string): void {
+  gtag("event", "view_gallery", {
+    item_name: businessName,
+  });
+}
+
+/**
+ * Ver el menú del restaurante.
+ */
+export function trackViewMenu(businessName: string): void {
+  gtag("event", "view_menu", {
+    item_name: businessName,
+  });
+}
