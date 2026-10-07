@@ -73,7 +73,7 @@ export default function EventosSection({
   const categorias = Array.from(
     new Set(
       eventos
-        .flatMap((e) => (e.categoria || "").split(",").map((c) => c.trim()))
+        .flatMap((e) => (e.categoria || "").split(",").map((c) => c.trim().toUpperCase()))
         .filter((c) => Boolean(c))
     )
   );
@@ -83,7 +83,7 @@ export default function EventosSection({
     ? eventos.filter((e) =>
         (e.categoria || "")
           .split(",")
-          .map((c) => c.trim())
+          .map((c) => c.trim().toUpperCase())
           .includes(selectedCategoria)
       )
     : eventos;
@@ -162,7 +162,7 @@ export default function EventosSection({
         {/* ── Lista de eventos ── */}
         <div className="eventos-list">
           {eventosFiltrados.map((evento) => {
-            const eventCats = (evento.categoria || "").split(",").map((c) => c.trim()).filter(Boolean);
+            const eventCats = (evento.categoria || "").split(",").map((c) => c.trim().toUpperCase()).filter(Boolean);
             const firstCat = eventCats[0] || "";
             const color = getCatColor(firstCat);
 
@@ -378,7 +378,7 @@ export default function EventosSection({
                 <div className="evento-modal-header">
                   {selectedEvento.categoria && (
                     <div className="evento-cat-badges" style={{ margin: 0 }}>
-                      {selectedEvento.categoria.split(",").map((c) => c.trim()).filter(Boolean).map((cat, idx) => (
+                      {selectedEvento.categoria.split(",").map((c) => c.trim().toUpperCase()).filter(Boolean).map((cat, idx) => (
                         <span
                           key={idx}
                           className="evento-cat-badge"
