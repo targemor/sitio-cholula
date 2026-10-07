@@ -199,6 +199,13 @@
   padding-top: 0.25rem;
 }
 
+.evento-cat-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
 .evento-cat-badge {
   display: inline-flex;
   width: fit-content;
@@ -209,7 +216,6 @@
   color: #ffffff;
   padding: 0.25rem 0.75rem;
   border-radius: 9999px;
-  margin-bottom: 0.6rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 

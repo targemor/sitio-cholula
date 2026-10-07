@@ -39,10 +39,26 @@ const CAT_COLOR: Record<string, string> = {
   Naturaleza: "#82BC00",
   Música: "#1D3A6B",
   Deporte: "#EF4444",
+  Negocios: "#3B82F6",
+  Familiar: "#10B981",
 };
 
+const EXTRA_COLORS = [
+  "#F59E0B", "#10B981", "#3B82F6", "#8B5CF6", "#EC4899", 
+  "#14B8A6", "#F43F5E", "#6366F1", "#D946EF", "#06B6D4"
+];
+
 function getCatColor(cat: string) {
-  return CAT_COLOR[cat] ?? "#C8860A";
+  const foundKey = Object.keys(CAT_COLOR).find(
+    (k) => k.toLowerCase() === cat.toLowerCase()
+  );
+  if (foundKey) return CAT_COLOR[foundKey];
+
+  let hash = 0;
+  for (let i = 0; i < cat.length; i++) {
+    hash = cat.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  return EXTRA_COLORS[Math.abs(hash) % EXTRA_COLORS.length];
 }
 
 export default function EventosSection({
@@ -55,12 +71,21 @@ export default function EventosSection({
 
   // Categorías únicas de los eventos
   const categorias = Array.from(
-    new Set(eventos.map((e) => e.categoria).filter((c) => Boolean(c && c.trim())))
+    new Set(
+      eventos
+        .flatMap((e) => (e.categoria || "").split(",").map((c) => c.trim()))
+        .filter((c) => Boolean(c))
+    )
   );
 
   // Filtrar eventos por categoría
   const eventosFiltrados = selectedCategoria
-    ? eventos.filter((e) => e.categoria === selectedCategoria)
+    ? eventos.filter((e) =>
+        (e.categoria || "")
+          .split(",")
+          .map((c) => c.trim())
+          .includes(selectedCategoria)
+      )
     : eventos;
 
   // Cerrar modal con tecla Escape
@@ -137,7 +162,9 @@ export default function EventosSection({
         {/* ── Lista de eventos ── */}
         <div className="eventos-list">
           {eventosFiltrados.map((evento) => {
-            const color = getCatColor(evento.categoria);
+            const eventCats = (evento.categoria || "").split(",").map((c) => c.trim()).filter(Boolean);
+            const firstCat = eventCats[0] || "";
+            const color = getCatColor(firstCat);
 
             const hasDia = evento.dia !== null && evento.dia !== undefined;
             const hasMes = Boolean(evento.mes_corto && evento.mes_corto.trim());
@@ -176,12 +203,17 @@ export default function EventosSection({
                   {/* Nombre, categoría, ubicación y horario */}
                   <div className="evento-info">
                     {hasCategoria && (
-                      <span
-                        className="evento-cat-badge"
-                        style={{ backgroundColor: color }}
-                      >
-                        {evento.categoria}
-                      </span>
+                      <div className="evento-cat-badges">
+                        {eventCats.map((cat, idx) => (
+                          <span
+                            key={idx}
+                            className="evento-cat-badge"
+                            style={{ backgroundColor: getCatColor(cat) }}
+                          >
+                            {cat}
+                          </span>
+                        ))}
+                      </div>
                     )}
 
                     <h3 className="evento-titulo">{evento.titulo}</h3>
@@ -345,15 +377,17 @@ export default function EventosSection({
               <div className="evento-modal-info">
                 <div className="evento-modal-header">
                   {selectedEvento.categoria && (
-                    <span
-                      className="evento-cat-badge"
-                      style={{
-                        backgroundColor: getCatColor(selectedEvento.categoria),
-                        margin: 0,
-                      }}
-                    >
-                      {selectedEvento.categoria}
-                    </span>
+                    <div className="evento-cat-badges" style={{ margin: 0 }}>
+                      {selectedEvento.categoria.split(",").map((c) => c.trim()).filter(Boolean).map((cat, idx) => (
+                        <span
+                          key={idx}
+                          className="evento-cat-badge"
+                          style={{ backgroundColor: getCatColor(cat) }}
+                        >
+                          {cat}
+                        </span>
+                      ))}
+                    </div>
                   )}
                   <h3 className="evento-modal-title">{selectedEvento.titulo}</h3>
                 </div>
