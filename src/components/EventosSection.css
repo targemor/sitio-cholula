@@ -22,12 +22,14 @@
 }
 
 .eventos-kicker {
-  color: var(--color-mex-rosa, #e10098);
+  display: block;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
   font-weight: 700;
-  font-size: 0.8rem;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  letter-spacing: 0.25em;
-  margin-bottom: 0.5rem;
+  color: #C45543;
+  margin-bottom: 0.35rem;
 }
 
 .eventos-title-wrapper {
@@ -52,6 +54,47 @@
   color: #0f172a;
   text-transform: uppercase;
   margin: 0;
+}
+
+/* Filtros de Categoría */
+.eventos-filtros {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 3rem;
+}
+
+.evento-filtro-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.25rem;
+  border-radius: 9999px;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  font-weight: 800;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.evento-filtro-btn:hover {
+  background-color: #ffffff; /* Prevents global blue hover */
+  transform: scale(1.04);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.evento-filtro-btn.active:hover {
+  filter: brightness(1.1);
+}
+
+.evento-filtro-btn.active {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
 }
 
 .eventos-list {
@@ -486,6 +529,12 @@
 }
 
 @media (max-width: 768px) {
+  .eventos-kicker {
+    font-size: 13px;
+    letter-spacing: 1.8px;
+    margin-bottom: 0.3rem;
+  }
+
   .evento-zoom-badge {
     opacity: 1;
     transform: translateY(0);

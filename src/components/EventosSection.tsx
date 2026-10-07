@@ -31,7 +31,7 @@ interface ModalImage {
   color: string;
 }
 
-/* ── Colores por categoría ─────────────────────── */
+/* ── Colores por categoría ── */
 const CAT_COLOR: Record<string, string> = {
   Feria: "#C8860A",
   Gastronomía: "#9B2335",
@@ -50,7 +50,18 @@ export default function EventosSection({
   lang = "es",
 }: Props) {
   const [selectedEvento, setSelectedEvento] = useState<Evento | null>(null);
+  const [selectedCategoria, setSelectedCategoria] = useState<string | null>(null);
   const isEn = lang === "en";
+
+  // Categorías únicas de los eventos
+  const categorias = Array.from(
+    new Set(eventos.map((e) => e.categoria).filter((c) => Boolean(c && c.trim())))
+  );
+
+  // Filtrar eventos por categoría
+  const eventosFiltrados = selectedCategoria
+    ? eventos.filter((e) => e.categoria === selectedCategoria)
+    : eventos;
 
   // Cerrar modal con tecla Escape
   useEffect(() => {
@@ -84,9 +95,48 @@ export default function EventosSection({
           </div>
         </div>
 
+        {/* ── Filtros por categoría ── */}
+        {categorias.length > 0 && (
+          <div className="eventos-filtros">
+            {/* Botón TODOS */}
+            <button
+              className={`evento-filtro-btn ${!selectedCategoria ? "active" : ""}`}
+              style={
+                !selectedCategoria
+                  ? { backgroundColor: "#C45543", color: "#ffffff", borderColor: "#C45543" }
+                  : { color: "#C45543", borderColor: "#C45543" }
+              }
+              onClick={() => setSelectedCategoria(null)}
+              aria-pressed={!selectedCategoria}
+            >
+              {isEn ? "ALL" : "TODOS"}
+            </button>
+
+            {categorias.map((cat) => {
+              const isSelected = selectedCategoria === cat;
+              const color = getCatColor(cat);
+              return (
+                <button
+                  key={cat}
+                  className={`evento-filtro-btn ${isSelected ? "active" : ""}`}
+                  style={
+                    isSelected
+                      ? { backgroundColor: color, color: "#ffffff", borderColor: color }
+                      : { color: color, borderColor: color }
+                  }
+                  onClick={() => setSelectedCategoria(isSelected ? null : cat)}
+                  aria-pressed={isSelected}
+                >
+                  {cat.toUpperCase()}
+                </button>
+              );
+            })}
+          </div>
+        )}
+
         {/* ── Lista de eventos ── */}
         <div className="eventos-list">
-          {eventos.map((evento) => {
+          {eventosFiltrados.map((evento) => {
             const color = getCatColor(evento.categoria);
 
             const hasDia = evento.dia !== null && evento.dia !== undefined;
