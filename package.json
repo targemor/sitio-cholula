@@ -13,7 +13,9 @@
     "build": "astro build && node scripts/purge-css.cjs",
     "build:nopurge": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "lighthouse": "npx lighthouse https://visit-cholula.vercel.app/ --view --output html --output-path ./lighthouse-report.html",
+    "lighthouse:parse": "node ./scripts/extract-lh-feedback.js"
   },
   "dependencies": {
     "@astrojs/react": "^5.0.7",

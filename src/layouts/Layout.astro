@@ -228,11 +228,19 @@ const defaultAlternate = alternates.find((a) => a.locale === "es");
 		/>
 
 		<!-- Carga diferida del video del hero: el poster es el LCP y el
-		     video se descarga tras el render inicial para no competir con
-		     los recursos críticos. -->
+		     video se descarga tras el render inicial solo en desktop para no competir con
+		     los recursos críticos ni agotar batería/datos móviles. -->
 		<script is:inline>
 			(function () {
 				function loadHeroVideo() {
+					// En dispositivos móviles (<=768px) o con ahorro de datos activado,
+					// mantener el poster /hero-poster.webp (15KB) que ya es el LCP óptimo.
+					if (window.innerWidth <= 768 || (window.matchMedia && window.matchMedia("(max-width: 768px)").matches)) {
+						return;
+					}
+					if (navigator.connection && (navigator.connection.saveData || navigator.connection.effectiveType === "2g")) {
+						return;
+					}
 					document
 						.querySelectorAll("video.hero-video")
 						.forEach(function (v) {
@@ -249,10 +257,10 @@ const defaultAlternate = alternates.find((a) => a.locale === "es");
 						});
 				}
 				if ("requestIdleCallback" in window) {
-					requestIdleCallback(loadHeroVideo, { timeout: 2500 });
+					requestIdleCallback(loadHeroVideo, { timeout: 3500 });
 				} else {
 					window.addEventListener("load", function () {
-						setTimeout(loadHeroVideo, 200);
+						setTimeout(loadHeroVideo, 1000);
 					});
 				}
 			})();

@@ -34,67 +34,81 @@ const COMPONENT_RULES = [
   {
     name: 'Logo México (Header/Footer: 65x24px)',
     match: (rel) => /mexico\.webp$/i.test(rel),
-    maxWidth: 320,
-    maxHeight: 120,
-    quality: 85,
+    maxWidth: 160,
+    maxHeight: 60,
+    quality: 80,
   },
   {
-    name: 'Logos generales / Badges',
-    match: (rel) => /logo_cholula|cholula.*logo|logo_puebla/i.test(rel),
-    maxWidth: 400,
-    maxHeight: 400,
-    quality: 85,
+    name: 'Logo Puebla (Header: 75x24px)',
+    match: (rel) => /logo_puebla/i.test(rel),
+    maxWidth: 160,
+    maxHeight: 60,
+    quality: 80,
+  },
+  {
+    name: 'Logo Cholula & Pueblo Mágico (Header: 56x48px)',
+    match: (rel) => /logo_cholula|cholula_pueblo_magico/i.test(rel),
+    maxWidth: 130,
+    maxHeight: 110,
+    quality: 80,
+  },
+  {
+    name: 'Logo Cholula lo tiene todo (Header: 92x92px)',
+    match: (rel) => /cholula.*logo/i.test(rel),
+    maxWidth: 180,
+    maxHeight: 180,
+    quality: 80,
   },
   {
     name: 'Logo Guía Cholula',
     match: (rel) => /logo_guia/i.test(rel),
-    maxWidth: 800,
-    maxHeight: 250,
-    quality: 85,
+    maxWidth: 600,
+    maxHeight: 200,
+    quality: 82,
   },
   {
     name: 'Croquis móvil (Home)',
     match: (rel) => /CROQUIS_MOVIL/i.test(rel),
     maxWidth: 640,
     maxHeight: 1140,
-    quality: 82,
+    quality: 80,
   },
   {
     name: 'Hero / Fondo Bienvenido',
     match: (rel) => /hero-poster|piramide_mamona/i.test(rel),
-    maxWidth: 1600,
-    maxHeight: 900,
-    quality: 80,
+    maxWidth: 1440,
+    maxHeight: 810,
+    quality: 78,
   },
   {
     name: 'Visítanos Cards (Home: ~680x230px)',
     match: (rel) => /home[\\/]visitanos/i.test(rel),
-    maxWidth: 900,
-    maxHeight: 600,
-    quality: 80,
+    maxWidth: 720,
+    maxHeight: 440,
+    quality: 78,
   },
   {
     name: 'Imperdibles Carousel & Modal',
     match: (rel) =>
       /home[\\/]imperdibles|IMPERDIBLES/i.test(rel) ||
       /home[\\/](CERRO-ZAPOTECAS|CONVENTO-DE-SAN-GABRIEL|COSME-DEL-RAZO|IGLESIA-|PARQUE-SORIA|PARROQUIA-|PORTAL-GUERRERO|SANTUARIO-|ZONA-ARQUE)/i.test(rel),
-    maxWidth: 1440,
-    maxHeight: 1080,
-    quality: 80,
+    maxWidth: 1080,
+    maxHeight: 810,
+    quality: 78,
   },
   {
     name: 'Itinerarios Hero Banner (1280x240px)',
     match: (rel) => /itinerarios/i.test(rel) && !/Nuevos PST/i.test(rel),
-    maxWidth: 1440,
-    maxHeight: 720,
-    quality: 80,
+    maxWidth: 1280,
+    maxHeight: 640,
+    quality: 78,
   },
   {
     name: 'Eventos (Cards & Modal)',
     match: (rel) => /eventos/i.test(rel),
-    maxWidth: 1200,
-    maxHeight: 900,
-    quality: 80,
+    maxWidth: 1080,
+    maxHeight: 750,
+    quality: 78,
   },
   {
     name: 'Business Cards (Directorio 470x560px)',
@@ -102,16 +116,16 @@ const COMPONENT_RULES = [
       /images[\\/](hoteles|restaurantes|que-hacer|guias-turisticos|2025|2026)/i.test(rel) ||
       /home[\\/]artesanias/i.test(rel) ||
       /Nuevos PST pendientes/i.test(rel),
-    maxWidth: 1080,
-    maxHeight: 1080,
-    quality: 80,
+    maxWidth: 1024,
+    maxHeight: 1024,
+    quality: 78,
   },
   {
     name: 'General / Fallback',
     match: () => true,
-    maxWidth: 1440,
-    maxHeight: 1080,
-    quality: 80,
+    maxWidth: 1280,
+    maxHeight: 960,
+    quality: 78,
   },
 ];
 
@@ -134,7 +148,7 @@ async function processImage(fullPath, relPath) {
   const ext = path.extname(fullPath).toLowerCase();
   const filename = path.basename(fullPath);
 
-  if (PRESERVED_FILES.has(filename)) {
+  if (PRESERVED_FILES.has(filename) || filename.includes('.tmp.')) {
     stats.skipped++;
     return;
   }

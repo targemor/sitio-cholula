@@ -24,3 +24,7 @@ pnpm-debug.log*
 .idea/
 # /public/images
 
+lighthouse-*.{html,json}
+lighthouse-report.html
+lighthouse-mobile.json
+lighthouse-feedback.json

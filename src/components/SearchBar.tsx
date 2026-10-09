@@ -468,6 +468,7 @@ export default function SearchBar({ placeholder, items = [], labels, lang = "es"
                         }}
                         placeholder={typedPlaceholder || placeholder || t.placeholder}
                         className="search-input"
+                        role="combobox"
                         aria-label={t.ariaSearch}
                         aria-autocomplete="list"
                         aria-expanded={showDropdown}

@@ -431,6 +431,17 @@
   padding: 0;
   transition: background-color 0.25s ease, transform 0.25s ease;
   outline: none;
+  position: relative;
+}
+
+.imp-dot::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 36px;
+  min-height: 36px;
 }
 
 .imp-dot:focus-visible {

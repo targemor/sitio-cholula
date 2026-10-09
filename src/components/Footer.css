@@ -99,10 +99,10 @@
 .footer-privacy-link {
     margin-top: 1rem;
     font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.7);
+    color: #ffffff;
     text-decoration: underline;
     text-underline-offset: 3px;
-    transition: color 0.2s ease;
+    transition: opacity 0.2s ease;
     text-align: center;
     display: block;
 }
