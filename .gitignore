@@ -22,7 +22,7 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
-# /public/images
+/public/images
 
 lighthouse-*.{html,json}
 lighthouse-report.html
