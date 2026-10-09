@@ -417,7 +417,7 @@
 .imp-dots {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 10px;
   margin-top: 0.5rem;
 }
 
@@ -431,6 +431,17 @@
   padding: 0;
   transition: background-color 0.25s ease, transform 0.25s ease;
   outline: none;
+  position: relative;
+}
+
+.imp-dot::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 44px;
+  min-height: 44px;
 }
 
 .imp-dot:focus-visible {

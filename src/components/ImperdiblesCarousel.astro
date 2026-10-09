@@ -63,6 +63,9 @@ function resaltarTexto(texto: string, highlights: string[]): string {
               src={item.img}
               alt={`${item.nombre} — San Pedro Cholula, Puebla`}
               class="imp-card-img"
+              width="1080"
+              height="810"
+              decoding="async"
               loading={i === 0 ? 'eager' : 'lazy'}
               onload="this.classList.add('is-loaded'); this.closest('.imp-card-img-wrap')?.classList.add('img-loaded');"
               onerror="this.classList.add('has-error'); this.closest('.imp-card-img-wrap')?.classList.add('img-error');"
@@ -98,7 +101,7 @@ function resaltarTexto(texto: string, highlights: string[]): string {
             <!-- Contador X/N -->
             <span class="imp-counter">{i + 1}/{total}</span>
             <!-- Botón expandir foto completa -->
-            <button class="imp-zoom-btn" data-zoom-img={item.img} data-zoom-title={item.nombre} aria-label={s.carousel.ariaViewFull}>
+            <button class="imp-zoom-btn" data-zoom-img={item.img} data-zoom-title={item.nombre} aria-label={`${s.carousel.viewFull} — ${item.nombre}`}>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="15 3 21 3 21 9"></polyline>
                 <polyline points="9 21 3 21 3 15"></polyline>

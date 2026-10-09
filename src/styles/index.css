@@ -74,7 +74,7 @@
 
 .search-subtitle {
   font-size: clamp(1rem, 2.5vw, 1.15rem);
-  color: #64748b;
+  color: #475569;
   margin: 0 0 2.5rem 0;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
@@ -193,7 +193,7 @@
 .bienvenido-stat-unit {
   display: block;
   font-size: 18px;
-  color: #C9A227;
+  color: #6e4400;
   font-weight: 700;
   margin-bottom: 6px;
 }
@@ -289,7 +289,7 @@
   .bienvenido-stat-unit {
     display: block;
     font-size: 0.72rem;
-    color: #C9A227;
+    color: #6e4400;
     font-weight: 700;
     margin-bottom: 6px;
     letter-spacing: 0.02em;
@@ -523,16 +523,16 @@
 }
 
 .piramide-btn-primary {
-  background-color: #e07b1a;
+  background-color: #b45309;
   color: #ffffff;
-  border: 2px solid #e07b1a;
+  border: 2px solid #b45309;
 }
 
 .piramide-btn-primary:hover {
-  background-color: #c96a0e;
-  border-color: #c96a0e;
+  background-color: #92400e;
+  border-color: #92400e;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(224, 123, 26, 0.45);
+  box-shadow: 0 6px 20px rgba(180, 83, 9, 0.45);
 }
 
 .piramide-btn-secondary {
@@ -798,4 +798,14 @@
   .artesanias-grid {
     grid-template-columns: 1fr;
   }
+}
+
+/* Rendimiento: las secciones muy abajo del fold no se estilizan/layoutean/pintan
+   hasta acercarse al viewport (reduce Style & Layout inicial). `auto` en
+   contain-intrinsic-size recuerda el tamaño real tras el primer render. */
+.section-estacionamientos,
+.section-mapa,
+.section-artesanias {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px;
 }

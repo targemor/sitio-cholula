@@ -3,6 +3,21 @@ import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 
+import { spawnSync } from 'child_process';
+
+function purgeCssPlugin() {
+  return {
+    name: 'purge-css-plugin',
+    hooks: {
+      'astro:build:done': async () => {
+        console.log('[astro:build:done] Running purge-css...');
+        const res = spawnSync('node', ['scripts/purge-css.cjs'], { stdio: 'inherit', shell: true });
+        if (res.error) console.error('[purge-css error]', res.error);
+      },
+    },
+  };
+}
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://visitcholula.mx',
@@ -39,5 +54,6 @@ export default defineConfig({
         locales: { es: 'es-MX', en: 'en-US' },
       },
     }),
+    purgeCssPlugin(),
   ],
 });
