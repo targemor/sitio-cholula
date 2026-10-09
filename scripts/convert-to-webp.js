@@ -34,98 +34,98 @@ const COMPONENT_RULES = [
   {
     name: 'Logo México (Header/Footer: 65x24px)',
     match: (rel) => /mexico\.webp$/i.test(rel),
-    maxWidth: 160,
-    maxHeight: 60,
-    quality: 80,
+    maxWidth: 130,
+    maxHeight: 48,
+    quality: 75,
   },
   {
     name: 'Logo Puebla (Header: 75x24px)',
     match: (rel) => /logo_puebla/i.test(rel),
-    maxWidth: 160,
-    maxHeight: 60,
-    quality: 80,
+    maxWidth: 150,
+    maxHeight: 48,
+    quality: 75,
   },
   {
     name: 'Logo Cholula & Pueblo Mágico (Header: 56x48px)',
     match: (rel) => /logo_cholula|cholula_pueblo_magico/i.test(rel),
-    maxWidth: 130,
-    maxHeight: 110,
-    quality: 80,
+    maxWidth: 96,
+    maxHeight: 84,
+    quality: 75,
   },
   {
     name: 'Logo Cholula lo tiene todo (Header: 92x92px)',
     match: (rel) => /cholula.*logo/i.test(rel),
-    maxWidth: 180,
-    maxHeight: 180,
-    quality: 80,
+    maxWidth: 128,
+    maxHeight: 128,
+    quality: 75,
   },
   {
     name: 'Logo Guía Cholula',
     match: (rel) => /logo_guia/i.test(rel),
-    maxWidth: 600,
-    maxHeight: 200,
-    quality: 82,
+    maxWidth: 480,
+    maxHeight: 160,
+    quality: 78,
   },
   {
     name: 'Croquis móvil (Home)',
     match: (rel) => /CROQUIS_MOVIL/i.test(rel),
     maxWidth: 640,
     maxHeight: 1140,
-    quality: 80,
+    quality: 76,
   },
   {
     name: 'Hero / Fondo Bienvenido',
     match: (rel) => /hero-poster|piramide_mamona/i.test(rel),
-    maxWidth: 1440,
-    maxHeight: 810,
-    quality: 78,
+    maxWidth: 1280,
+    maxHeight: 720,
+    quality: 74,
   },
   {
     name: 'Visítanos Cards (Home: ~680x230px)',
     match: (rel) => /home[\\/]visitanos/i.test(rel),
-    maxWidth: 720,
-    maxHeight: 440,
-    quality: 78,
+    maxWidth: 640,
+    maxHeight: 380,
+    quality: 70,
   },
   {
     name: 'Imperdibles Carousel & Modal',
     match: (rel) =>
       /home[\\/]imperdibles|IMPERDIBLES/i.test(rel) ||
       /home[\\/](CERRO-ZAPOTECAS|CONVENTO-DE-SAN-GABRIEL|COSME-DEL-RAZO|IGLESIA-|PARQUE-SORIA|PARROQUIA-|PORTAL-GUERRERO|SANTUARIO-|ZONA-ARQUE)/i.test(rel),
-    maxWidth: 1080,
-    maxHeight: 810,
-    quality: 78,
+    maxWidth: 960,
+    maxHeight: 720,
+    quality: 74,
   },
   {
     name: 'Itinerarios Hero Banner (1280x240px)',
     match: (rel) => /itinerarios/i.test(rel) && !/Nuevos PST/i.test(rel),
-    maxWidth: 1280,
-    maxHeight: 640,
-    quality: 78,
+    maxWidth: 1080,
+    maxHeight: 540,
+    quality: 74,
   },
   {
     name: 'Eventos (Cards & Modal)',
     match: (rel) => /eventos/i.test(rel),
-    maxWidth: 1080,
-    maxHeight: 750,
-    quality: 78,
+    maxWidth: 960,
+    maxHeight: 680,
+    quality: 74,
   },
   {
-    name: 'Business Cards (Directorio 470x560px)',
+    name: 'Business Cards (Directorio 470x560px & Artesanías)',
     match: (rel) =>
       /images[\\/](hoteles|restaurantes|que-hacer|guias-turisticos|2025|2026)/i.test(rel) ||
       /home[\\/]artesanias/i.test(rel) ||
       /Nuevos PST pendientes/i.test(rel),
-    maxWidth: 1024,
-    maxHeight: 1024,
-    quality: 78,
+    maxWidth: 800,
+    maxHeight: 800,
+    quality: 72,
   },
   {
     name: 'General / Fallback',
     match: () => true,
-    maxWidth: 1280,
-    maxHeight: 960,
-    quality: 78,
+    maxWidth: 1080,
+    maxHeight: 810,
+    quality: 74,
   },
 ];
 
@@ -200,12 +200,21 @@ async function processImage(fullPath, relPath) {
       })
       .webp({
         quality: rule.quality,
-        effort: 5,
+        effort: 6,
       });
 
     const outputBuffer = await transformer.toBuffer();
-    const newMeta = await sharp(outputBuffer).metadata();
     const newSize = outputBuffer.length;
+
+    // Si ya era webp y la nueva versión no ahorra tamaño ni requería reducción de dimensiones, mantener el original
+    if (isWebp && newSize >= origSize && !exceedsDimensions) {
+      stats.skipped++;
+      stats.originalBytes += origSize;
+      stats.finalBytes += origSize;
+      return;
+    }
+
+    const newMeta = await sharp(outputBuffer).metadata();
     const newW = newMeta.width || 0;
     const newH = newMeta.height || 0;
 
