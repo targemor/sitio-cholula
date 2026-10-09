@@ -1,4 +1,5 @@
 ---
+import "../styles/fonts.css";
 import "../styles/global-opt.css";
 import "../styles/site-global.css";
 import "../styles/layout.css";
@@ -127,9 +128,16 @@ const defaultAlternate = alternates.find((a) => a.locale === "es");
 			href="/hero-poster.webp"
 			fetchpriority="high"
 		/>
+		<!-- Roboto self-hosted (variable, subset latin): mismo origen, sin cadena CSS→woff2 -->
+		<link
+			rel="preload"
+			as="font"
+			type="font/woff2"
+			href="/fonts/roboto-latin.woff2"
+			crossorigin
+		/>
 
-		<!-- ── Google Analytics 4 (queue en head, script al final del body) ── -->
-		<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+		<!-- ── Google Analytics 4 (queue en head, script diferido al final del body) ── -->
 		<script is:inline>
 			window.dataLayer = window.dataLayer || [];
 			function gtag() {
@@ -141,22 +149,6 @@ const defaultAlternate = alternates.find((a) => a.locale === "es");
 				send_page_view: true,
 			});
 		</script>
-
-		<!-- ── Google Fonts: Roboto (carga no bloqueante) ───────────────── -->
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			rel="preload"
-			as="style"
-			href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
-			onload="this.onload=null;this.rel='stylesheet'"
-		/>
-		<noscript>
-			<link
-				href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
-				rel="stylesheet"
-			/>
-		</noscript>
 
 		<!-- ── JSON-LD Schema.org ────────────────────────────────────────── -->
 		{
@@ -333,10 +325,32 @@ const defaultAlternate = alternates.find((a) => a.locale === "es");
 			})();
 		</script>
 
-		<!-- Carga no bloqueante del script externo de GA4 -->
-		<script
-			async
-			src="https://www.googletagmanager.com/gtag/js?id=G-N626HFQBS6"
-			is:inline></script>
+		<!-- Carga diferida de GA4: gtag.js (~175 KB, ~100 ms de main thread) se
+		     descarga en la primera interacción o, a más tardar, 4 s tras `load`.
+		     Los eventos ya encolados en window.dataLayer se envían al cargar. -->
+		<script is:inline>
+			(function () {
+				var loaded = false;
+				var events = ["scroll", "pointerdown", "keydown", "touchstart"];
+				function loadGA() {
+					if (loaded) return;
+					loaded = true;
+					events.forEach(function (e) {
+						window.removeEventListener(e, loadGA);
+					});
+					var s = document.createElement("script");
+					s.async = true;
+					s.src =
+						"https://www.googletagmanager.com/gtag/js?id=G-N626HFQBS6";
+					document.head.appendChild(s);
+				}
+				events.forEach(function (e) {
+					window.addEventListener(e, loadGA, { once: true, passive: true });
+				});
+				window.addEventListener("load", function () {
+					setTimeout(loadGA, 4000);
+				});
+			})();
+		</script>
 	</body>
 </html>

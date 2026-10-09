@@ -139,9 +139,26 @@ const { id, items, isEvento = false, isImperdible = false, showCredits = false, 
     };
 
     initImageStates();
+
+    // Inicializa cada carrusel solo cuando está cerca del viewport: evita
+    // crear todas las instancias (y sus clones de loop) en el arranque.
+    const whenVisible = (el: Element, init: () => void) => {
+      if (!('IntersectionObserver' in window)) {
+        init();
+        return;
+      }
+      const io = new IntersectionObserver((entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          io.disconnect();
+          init();
+        }
+      }, { rootMargin: '400px 0px' });
+      io.observe(el);
+    };
+
     // Focus carousel para imperdibles
     const focusSwipers = document.querySelectorAll('.swiper--focus-carousel');
-    focusSwipers.forEach((el) => {
+    focusSwipers.forEach((el) => whenVisible(el, () => {
       const htmlEl = el as HTMLElement;
       const blurEl = htmlEl.querySelector('.swiper-bg-blur') as HTMLElement | null;
 
@@ -185,11 +202,11 @@ const { id, items, isEvento = false, isImperdible = false, showCredits = false, 
           if (title) trackViewGallery(title);
         }
       });
-    });
+    }));
 
     // Carruseles normales (eventos, etc.)
     const regularSwipers = document.querySelectorAll('.swiper:not(.swiper--focus-carousel)');
-    regularSwipers.forEach((el) => {
+    regularSwipers.forEach((el) => whenVisible(el, () => {
       const htmlEl = el as HTMLElement;
       const blurEl = htmlEl.querySelector('.swiper-bg-blur') as HTMLElement | null;
 
@@ -231,6 +248,6 @@ const { id, items, isEvento = false, isImperdible = false, showCredits = false, 
           if (title) trackViewGallery(title);
         }
       });
-    });
+    }));
   });
 </script>

@@ -799,3 +799,13 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Rendimiento: las secciones muy abajo del fold no se estilizan/layoutean/pintan
+   hasta acercarse al viewport (reduce Style & Layout inicial). `auto` en
+   contain-intrinsic-size recuerda el tamaño real tras el primer render. */
+.section-estacionamientos,
+.section-mapa,
+.section-artesanias {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px;
+}
