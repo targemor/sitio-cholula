@@ -5,10 +5,14 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const jsonPath = path.resolve(__dirname, '../lighthouse-mobile.json');
-const fallbackPath = path.resolve(__dirname, '../lighthouse-report.json');
+const candidatePaths = [
+  path.resolve(__dirname, '../lighthouse-mobile.json'),
+  path.resolve(__dirname, '../lighthouse-mobile.report.json'),
+  path.resolve(__dirname, '../lighthouse-report.json'),
+  path.resolve(__dirname, '../lighthouse-report.report.json'),
+];
 
-const target = fs.existsSync(jsonPath) ? jsonPath : fs.existsSync(fallbackPath) ? fallbackPath : null;
+const target = candidatePaths.find((p) => fs.existsSync(p));
 
 if (!target) {
   console.log('No se encontró archivo de reporte lighthouse JSON (lighthouse-mobile.json).');

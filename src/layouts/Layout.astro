@@ -5,7 +5,6 @@ import "../styles/layout.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer.astro";
 import BottomNav from "../components/BottomNav";
-import CountdownOverlay from "../components/CountdownOverlay.astro";
 import { isDraftLocale, LOCALE_TAGS, OG_LOCALES } from "../i18n/config";
 import { getAlternates, getLocaleFromPath } from "../i18n/routes";
 import { getStrings } from "../i18n/ui";
@@ -129,12 +128,8 @@ const defaultAlternate = alternates.find((a) => a.locale === "es");
 			fetchpriority="high"
 		/>
 
-		<!-- ── Google Analytics 4 ────────────────────────────────────────── -->
-		<link rel="preconnect" href="https://www.googletagmanager.com" />
-		<script
-			async
-			src="https://www.googletagmanager.com/gtag/js?id=G-N626HFQBS6"
-			is:inline></script>
+		<!-- ── Google Analytics 4 (queue en head, script al final del body) ── -->
+		<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
 		<script is:inline>
 			window.dataLayer = window.dataLayer || [];
 			function gtag() {
@@ -337,5 +332,11 @@ const defaultAlternate = alternates.find((a) => a.locale === "es");
 				});
 			})();
 		</script>
+
+		<!-- Carga no bloqueante del script externo de GA4 -->
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-N626HFQBS6"
+			is:inline></script>
 	</body>
 </html>
