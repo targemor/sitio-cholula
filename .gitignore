@@ -25,9 +25,9 @@ pnpm-debug.log*
 /public/images
 
 lighthouse-*.{html,json}
-lighthouse-report.html
-lighthouse-mobile.json
-lighthouse-feedback.json
+#lighthouse-report.html
+#lighthouse-mobile.json
+#lighthouse-feedback.json
 
 # Responsive WebP generated variants
 *-400w.webp

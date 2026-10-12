@@ -702,6 +702,10 @@
   min-height: 500px;
 }
 
+.mapa-croquis picture {
+  display: contents;
+}
+
 .mapa-croquis img {
   width: 100%;
   height: 100%;

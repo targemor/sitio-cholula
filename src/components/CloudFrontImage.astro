@@ -33,9 +33,17 @@ const cleanBaseName = baseName
 // de lo contrario se sirve localmente desde la raíz "/" para desarrollo
 const prefix = baseUrl ? `${baseUrl}/` : '/';
 
-const src400 = `${prefix}${cleanBaseName}-400w.webp`;
-const src800 = `${prefix}${cleanBaseName}-800w.webp`;
-const src1200 = `${prefix}${cleanBaseName}-1200w.webp`;
+const safeEncode = (u: string) => {
+  try {
+    return encodeURI(decodeURI(u));
+  } catch {
+    return encodeURI(u);
+  }
+};
+
+const src400 = safeEncode(`${prefix}${cleanBaseName}-400w.webp`);
+const src800 = safeEncode(`${prefix}${cleanBaseName}-800w.webp`);
+const src1200 = safeEncode(`${prefix}${cleanBaseName}-1200w.webp`);
 ---
 
 <picture class={pictureClass}>

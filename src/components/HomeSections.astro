@@ -10,6 +10,7 @@ import SearchBar from "./SearchBar";
 import SwiperGallery from "./SwiperGallery.astro";
 import ImperdiblesCarousel from "./ImperdiblesCarousel.astro";
 import VisitanosCard from "./VisitanosCard.astro";
+import CloudFrontImage from "./CloudFrontImage.astro";
 import ItinerarioTabs from "./ItinerarioTabs.astro";
 import BusinessCard from "./BusinessCard.astro";
 import Estacionamientos from "./Estacionamientos.astro";
@@ -230,10 +231,13 @@ const searchItems = buildSearchItems(lang);
         title={copy.mapa.iframeTitle}></iframe>
     </div>
     <div class="mapa-croquis">
-      <img
-        src="/home/CROQUIS_MOVIL.webp"
+      <CloudFrontImage
+        baseName="home/CROQUIS_MOVIL"
         alt={copy.mapa.croquisAlt}
         loading="lazy"
+        width="600"
+        height="750"
+        sizes="(max-width: 768px) 0px, (max-width: 1200px) 400px, 600px"
       />
     </div>
   </div>
