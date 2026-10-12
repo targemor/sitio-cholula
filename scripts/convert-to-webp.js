@@ -38,30 +38,30 @@ const COMPONENT_RULES = [
   {
     name: 'Logo México (Header/Footer: 65x24px)',
     match: (rel) => /mexico\.webp$/i.test(rel),
-    maxWidth: 160,
-    maxHeight: 60,
-    quality: 86,
+    maxWidth: 110,
+    maxHeight: 40,
+    quality: 80,
   },
   {
     name: 'Logo Puebla (Header: 75x24px)',
     match: (rel) => /logo_puebla/i.test(rel),
-    maxWidth: 180,
-    maxHeight: 60,
-    quality: 86,
+    maxWidth: 110,
+    maxHeight: 36,
+    quality: 80,
   },
   {
     name: 'Logo Cholula & Pueblo Mágico (Header: 56x48px)',
     match: (rel) => /logo_cholula|cholula_pueblo_magico/i.test(rel),
-    maxWidth: 140,
-    maxHeight: 120,
-    quality: 86,
+    maxWidth: 84,
+    maxHeight: 72,
+    quality: 80,
   },
   {
     name: 'Logo Cholula lo tiene todo (Header: 92x92px)',
     match: (rel) => /cholula.*logo/i.test(rel),
-    maxWidth: 160,
-    maxHeight: 160,
-    quality: 86,
+    maxWidth: 112,
+    maxHeight: 112,
+    quality: 80,
   },
   {
     name: 'Logo Guía Cholula',
@@ -230,6 +230,16 @@ async function processImage(fullPath, relPath) {
         continue;
       }
 
+      // Calidad adaptativa por resolución para optimizar carga en móvil sin artefactos perceptibles:
+      let variantQuality = rule.quality;
+      if (w <= 400) {
+        variantQuality = Math.min(rule.quality, 76);
+      } else if (w <= 800) {
+        variantQuality = Math.min(rule.quality, 78);
+      } else {
+        variantQuality = Math.min(rule.quality, 82);
+      }
+
       const variantBuffer = await sharp(inputBuffer)
         .rotate()
         .resize({
@@ -238,8 +248,8 @@ async function processImage(fullPath, relPath) {
           withoutEnlargement: true,
         })
         .webp({
-          quality: rule.quality,
-          effort: 4,
+          quality: variantQuality,
+          effort: 5,
           smartSubsample: true,
         })
         .toBuffer();
