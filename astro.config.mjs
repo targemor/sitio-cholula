@@ -37,6 +37,11 @@ export default defineConfig({
   image: {
     domains: ["visitcholula.mx"]
   },
+  vite: {
+    build: {
+      cssCodeSplit: false,
+    },
+  },
   integrations: [
     react(),
     sitemap({

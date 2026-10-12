@@ -10,7 +10,7 @@
     "normalize-data": "node scripts/normalize-booleans.cjs",
     "convert-images": "node scripts/convert-to-webp.js",
     "dev": "astro dev",
-    "build": "astro build && node scripts/purge-css.cjs",
+    "build": "astro build",
     "build:nopurge": "astro build",
     "preview": "astro preview",
     "astro": "astro",

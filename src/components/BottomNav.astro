@@ -1,0 +1,131 @@
+---
+import "./BottomNav.css";
+import type { Locale } from "../i18n/config";
+import { localizePathSafe, type RouteKey } from "../i18n/routes";
+
+type NavKey = Extract<RouteKey, "home" | "lodging" | "food" | "things" | "guides">;
+
+const NAV: { id: string; key: NavKey; hash?: string }[] = [
+  { id: "destinos", key: "home", hash: "#hero" },
+  { id: "hoteles", key: "lodging" },
+  { id: "restaurantes", key: "food" },
+  { id: "quehacer", key: "things" },
+  { id: "guias", key: "guides" },
+];
+
+const FALLBACK_LABELS: Record<NavKey, string> = {
+  home: "Explora",
+  lodging: "Hoteles",
+  food: "Cocina",
+  things: "Qué Hacer",
+  guides: "Guías",
+};
+
+interface Props {
+  lang?: Locale;
+  alternates?: { locale: Locale; path: string }[];
+  labels?: Record<NavKey, string>;
+  ariaLabel?: string;
+}
+
+const {
+  lang = "es",
+  alternates = [],
+  labels = FALLBACK_LABELS,
+  ariaLabel = "Navegación principal móvil",
+} = Astro.props;
+
+const currentPath = Astro.url.pathname;
+const navItems = NAV.map((item) => ({
+  ...item,
+  label: labels[item.key] || FALLBACK_LABELS[item.key],
+  href: `${localizePathSafe(item.key, lang)}${item.hash ?? ""}`,
+}));
+const otherLocale = alternates.find((alt) => alt.locale !== lang);
+---
+
+<div
+  id="bottom-nav"
+  class="bottom-nav"
+  role="navigation"
+  aria-label={ariaLabel}
+>
+  {navItems.map((item) => {
+    const isActive = item.key === "home" ? currentPath === "/" || currentPath === "/en" || currentPath === "/en/" : currentPath.startsWith(localizePathSafe(item.key, lang));
+    return (
+      <a
+        href={item.href}
+        id={`bn-${item.id}`}
+        class={`bottom-nav-link ${isActive ? "active" : ""}`}
+        data-id={item.id}
+      >
+        {item.key === "home" && (
+          <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <polygon points="3 11 22 2 13 21 11 13 3 11" fill="currentColor" fill-opacity="0.1" />
+          </svg>
+        )}
+        {item.key === "lodging" && (
+          <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+            <polyline points="9 22 9 12 15 12 15 22" />
+          </svg>
+        )}
+        {item.key === "food" && (
+          <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <path d="M18 8h1a4 4 0 010 8h-1" />
+            <path d="M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z" />
+            <line x1="6" y1="1" x2="6" y2="4" />
+            <line x1="10" y1="1" x2="10" y2="4" />
+            <line x1="14" y1="1" x2="14" y2="4" />
+          </svg>
+        )}
+        {item.key === "things" && (
+          <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21" />
+            <line x1="9" y1="3" x2="9" y2="18" />
+            <line x1="15" y1="6" x2="15" y2="21" />
+          </svg>
+        )}
+        {item.key === "guides" && (
+          <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+        )}
+        <span class="bottom-nav-label">{item.label}</span>
+      </a>
+    );
+  })}
+
+  {otherLocale && (
+    <a
+      href={otherLocale.path}
+      hreflang={otherLocale.locale}
+      lang={otherLocale.locale}
+      class="bottom-nav-link bottom-nav-lang"
+      aria-label={`Cambiar idioma a ${otherLocale.locale.toUpperCase()}`}
+    >
+      <svg class="bottom-nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="10" />
+        <line x1="2" y1="12" x2="22" y2="12" />
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+      </svg>
+      <span class="bottom-nav-label">{otherLocale.locale.toUpperCase()}</span>
+    </a>
+  )}
+</div>
+
+<script>
+  // Actualización de estado al cambiar hash o navegar
+  const nav = document.getElementById("bottom-nav");
+  if (nav) {
+    const updateActive = () => {
+      const hash = window.location.hash;
+      const links = nav.querySelectorAll<HTMLAnchorElement>(".bottom-nav-link[data-id]");
+      if (hash === "#hero" || (window.location.pathname === "/" && !hash)) {
+        links.forEach((l) => l.classList.toggle("active", l.dataset.id === "destinos"));
+      }
+    };
+    window.addEventListener("hashchange", updateActive);
+  }
+</script>

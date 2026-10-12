@@ -78,7 +78,7 @@ const searchItems = buildSearchItems(lang);
 
     <div class="search-wrapper">
       <SearchBar
-        client:idle
+        client:visible={{ rootMargin: "-200px" }}
         items={searchItems}
         labels={s.search}
         lang={lang}
@@ -255,7 +255,7 @@ const searchItems = buildSearchItems(lang);
 <!-- ══════════════════════════════
      EVENTOS — Cartelera
      ══════════════════════════════ -->
-<EventosSection client:idle lang={lang} eventos={getEventos()} />
+<EventosSection client:visible lang={lang} eventos={getEventos()} />
 
 <!-- ══════════════════════════════
      ARTESANÍAS
