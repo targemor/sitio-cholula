@@ -5,6 +5,7 @@ export interface Props extends HTMLAttributes<'img'> {
   baseName: string;
   alt: string;
   class?: string;
+  pictureClass?: string;
   sizes?: string;
 }
 
@@ -12,6 +13,7 @@ const {
   baseName,
   alt,
   class: className,
+  pictureClass,
   sizes = '(max-width: 400px) 400px, (max-width: 800px) 800px, 1200px',
   loading = 'lazy',
   decoding = 'async',
@@ -36,7 +38,7 @@ const src800 = `${prefix}${cleanBaseName}-800w.webp`;
 const src1200 = `${prefix}${cleanBaseName}-1200w.webp`;
 ---
 
-<picture>
+<picture class={pictureClass}>
   <source
     type="image/webp"
     srcset={`

@@ -25,6 +25,11 @@
 }
 
 /* Background Photo */
+.visitanos-card picture,
+.visitanos-card-picture {
+  display: contents;
+}
+
 .visitanos-card-bg {
   position: absolute;
   inset: 0;
