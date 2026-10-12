@@ -103,8 +103,6 @@ const { id, items, isEvento = false, isImperdible = false, showCredits = false, 
 
 
 <script>
-  import Swiper from 'swiper';
-  import { Navigation, Pagination, Autoplay } from 'swiper/modules';
   import { trackViewGallery } from '../lib/analytics';
 
   document.addEventListener('DOMContentLoaded', () => {
@@ -140,8 +138,31 @@ const { id, items, isEvento = false, isImperdible = false, showCredits = false, 
 
     initImageStates();
 
+    // Cache para cargar Swiper una sola vez cuando sea necesario
+    let swiperPromise: Promise<{
+      Swiper: typeof import('swiper').default;
+      Navigation: typeof import('swiper/modules').Navigation;
+      Pagination: typeof import('swiper/modules').Pagination;
+      Autoplay: typeof import('swiper/modules').Autoplay;
+    }> | null = null;
+
+    const loadSwiper = () => {
+      if (!swiperPromise) {
+        swiperPromise = Promise.all([
+          import('swiper'),
+          import('swiper/modules'),
+        ]).then(([{ default: Swiper }, { Navigation, Pagination, Autoplay }]) => ({
+          Swiper,
+          Navigation,
+          Pagination,
+          Autoplay,
+        }));
+      }
+      return swiperPromise;
+    };
+
     // Inicializa cada carrusel solo cuando está cerca del viewport: evita
-    // crear todas las instancias (y sus clones de loop) en el arranque.
+    // descargar Swiper ni crear instancias en el arranque inicial.
     const whenVisible = (el: Element, init: () => void) => {
       if (!('IntersectionObserver' in window)) {
         init();
@@ -158,7 +179,7 @@ const { id, items, isEvento = false, isImperdible = false, showCredits = false, 
 
     // Focus carousel para imperdibles
     const focusSwipers = document.querySelectorAll('.swiper--focus-carousel');
-    focusSwipers.forEach((el) => whenVisible(el, () => {
+    focusSwipers.forEach((el) => whenVisible(el, async () => {
       const htmlEl = el as HTMLElement;
       const blurEl = htmlEl.querySelector('.swiper-bg-blur') as HTMLElement | null;
 
@@ -166,6 +187,8 @@ const { id, items, isEvento = false, isImperdible = false, showCredits = false, 
         if (!blurEl || !img) return;
         blurEl.style.backgroundImage = `url('${img}')`;
       }
+
+      const { Swiper, Pagination, Autoplay } = await loadSwiper();
 
       const swiper = new Swiper(htmlEl, {
         modules: [Pagination, Autoplay],
@@ -206,7 +229,7 @@ const { id, items, isEvento = false, isImperdible = false, showCredits = false, 
 
     // Carruseles normales (eventos, etc.)
     const regularSwipers = document.querySelectorAll('.swiper:not(.swiper--focus-carousel)');
-    regularSwipers.forEach((el) => whenVisible(el, () => {
+    regularSwipers.forEach((el) => whenVisible(el, async () => {
       const htmlEl = el as HTMLElement;
       const blurEl = htmlEl.querySelector('.swiper-bg-blur') as HTMLElement | null;
 
@@ -214,6 +237,8 @@ const { id, items, isEvento = false, isImperdible = false, showCredits = false, 
         if (!blurEl || !img) return;
         blurEl.style.backgroundImage = `url('${img}')`;
       }
+
+      const { Swiper, Navigation, Pagination, Autoplay } = await loadSwiper();
 
       const swiper = new Swiper(htmlEl, {
         modules: [Navigation, Pagination, Autoplay],

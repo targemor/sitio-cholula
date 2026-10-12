@@ -111,6 +111,11 @@
   display: none;
 }
 
+.imp-card-picture,
+.imp-card-img-wrap picture {
+  display: contents;
+}
+
 .imp-card-img {
   position: absolute;
   inset: 0;

@@ -1,0 +1,67 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+
+export interface Props extends HTMLAttributes<'img'> {
+  baseName: string;
+  alt: string;
+  class?: string;
+  pictureClass?: string;
+  sizes?: string;
+}
+
+const {
+  baseName,
+  alt,
+  class: className,
+  pictureClass,
+  sizes = '(max-width: 400px) 400px, (max-width: 800px) 800px, 1200px',
+  loading = 'lazy',
+  decoding = 'async',
+  ...rest
+} = Astro.props;
+
+// Leer la URL base de CloudFront desde las variables de entorno públicas
+const rawBaseUrl = import.meta.env.PUBLIC_CLOUDFRONT_URL;
+const baseUrl = rawBaseUrl ? rawBaseUrl.replace(/\/+$/, '') : '';
+
+// Normalizar baseName: remover slashes iniciales y extensión si viene incluida
+const cleanBaseName = baseName
+  .replace(/^\/+/, '')
+  .replace(/\.(webp|png|jpe?g|avif)$/i, '');
+
+// Prefijo: si PUBLIC_CLOUDFRONT_URL está definida se usa como base remota,
+// de lo contrario se sirve localmente desde la raíz "/" para desarrollo
+const prefix = baseUrl ? `${baseUrl}/` : '/';
+
+const safeEncode = (u: string) => {
+  try {
+    return encodeURI(decodeURI(u));
+  } catch {
+    return encodeURI(u);
+  }
+};
+
+const src400 = safeEncode(`${prefix}${cleanBaseName}-400w.webp`);
+const src800 = safeEncode(`${prefix}${cleanBaseName}-800w.webp`);
+const src1200 = safeEncode(`${prefix}${cleanBaseName}-1200w.webp`);
+---
+
+<picture class={pictureClass}>
+  <source
+    type="image/webp"
+    srcset={`
+      ${src400} 400w,
+      ${src800} 800w,
+      ${src1200} 1200w
+    `}
+    sizes={sizes}
+  />
+  <img
+    src={src800}
+    alt={alt}
+    class={className}
+    loading={loading}
+    decoding={decoding}
+    {...rest}
+  />
+</picture>

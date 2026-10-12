@@ -1,0 +1,178 @@
+---
+import "./Header.css";
+import { type Locale } from "../i18n/config";
+import { localizePathSafe, type RouteKey } from "../i18n/routes";
+
+type NavKey = Extract<RouteKey, "lodging" | "food" | "things" | "guides">;
+
+const NAV: { key: NavKey; id: string }[] = [
+  { key: "lodging", id: "nav-hospedarse" },
+  { key: "food", id: "nav-comer" },
+  { key: "things", id: "nav-que-hacer" },
+  { key: "guides", id: "nav-guias" },
+];
+
+const FALLBACK_LABELS: Record<NavKey, string> = {
+  lodging: "Dónde hospedarse",
+  food: "Dónde comer",
+  things: "Qué hacer",
+  guides: "Guías Turísticos",
+};
+
+interface Props {
+  lang?: Locale;
+  alternates?: { locale: Locale; path: string }[];
+  labels?: Record<NavKey, string>;
+  ariaLabel?: string;
+}
+
+const {
+  lang = "es",
+  alternates = [],
+  labels = FALLBACK_LABELS,
+  ariaLabel = "Navegación principal",
+} = Astro.props;
+
+const currentPath = Astro.url.pathname;
+const navLinks = NAV.map((link) => ({
+  ...link,
+  label: labels[link.key] || FALLBACK_LABELS[link.key],
+  href: localizePathSafe(link.key, lang),
+}));
+const otherLocale = alternates.find((alt) => alt.locale !== lang);
+---
+
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <!-- ── Left: Institutional Logos ── -->
+    <div class="header-logos header-left">
+      <a href="/" class="header-logo-link" aria-label="Logo Cholula">
+        <img
+          src="/home/logo_cholula.webp"
+          alt="Logo Cholula"
+          class="header-logo-img"
+          width="56"
+          height="48"
+          loading="eager"
+          decoding="async"
+        />
+      </a>
+      <div class="header-divider"></div>
+      <a href="/" class="header-logo-link" aria-label="Cholula Pueblo Mágico">
+        <img
+          src="/home/cholula_pueblo_magico.webp"
+          alt="Cholula Pueblo Mágico"
+          class="header-logo-img"
+          width="56"
+          height="48"
+          loading="eager"
+          decoding="async"
+        />
+      </a>
+
+      <!-- Puebla & México logos on the left side on Desktop -->
+      <div class="header-divider desktop-only-divider"></div>
+      <a href="/" class="header-logo-link logo-puebla-link desktop-only-puebla" aria-label="Puebla">
+        <img
+          src="/home/logo_puebla.webp"
+          alt="Puebla"
+          class="header-logo-img logo-puebla"
+          width="75"
+          height="24"
+          loading="eager"
+          decoding="async"
+        />
+      </a>
+      <div class="header-divider desktop-only-divider"></div>
+      <a href="/" class="header-logo-link logo-mexico-link desktop-only-puebla" aria-label="México">
+        <img
+          src="/mexico.webp"
+          alt="México"
+          class="header-logo-img logo-mexico"
+          width="65"
+          height="24"
+          loading="eager"
+          decoding="async"
+        />
+      </a>
+    </div>
+
+    <!-- ── Center: Main Hero Logo ── -->
+    <div class="header-center">
+      <a href="/" class="header-logo-link header-logo-featured-link" aria-label="Cholula lo tiene todo">
+        <img
+          src="/home/cholula%20lo%20tiene%20todo_logo.webp"
+          alt="Cholula lo tiene todo"
+          class="header-logo-img header-logo-featured"
+          width="92"
+          height="92"
+          loading="eager"
+          decoding="async"
+        />
+      </a>
+    </div>
+
+    <!-- ── Right: Desktop Navigation + Mobile Puebla & México Logos + selector de idioma ── -->
+    <div class="header-right">
+      <nav class="header-nav" aria-label={ariaLabel}>
+        {navLinks.map((link) => (
+          <a
+            id={link.id}
+            href={link.href}
+            class={`header-nav-link${currentPath === link.href ? " header-nav-link--active" : ""}`}
+          >
+            {link.label}
+          </a>
+        ))}
+      </nav>
+
+      <!-- On Mobile only, Puebla and México logos shift to the right side -->
+      <a href="/" class="header-logo-link logo-puebla-link mobile-only-puebla" aria-label="Puebla">
+        <img
+          src="/home/logo_puebla.webp"
+          alt="Puebla"
+          class="header-logo-img logo-puebla"
+          width="75"
+          height="24"
+          loading="eager"
+          decoding="async"
+        />
+      </a>
+      <div class="header-divider mobile-only-puebla"></div>
+      <a href="/" class="header-logo-link logo-mexico-link mobile-only-puebla" aria-label="México">
+        <img
+          src="/mexico.webp"
+          alt="México"
+          class="header-logo-img logo-mexico"
+          width="65"
+          height="24"
+          loading="eager"
+          decoding="async"
+        />
+      </a>
+
+      <!-- Selector de idioma -->
+      {otherLocale && (
+        <a
+          class="header-lang"
+          href={otherLocale.path}
+          hreflang={otherLocale.locale}
+          lang={otherLocale.locale}
+        >
+          {otherLocale.locale.toUpperCase()}
+        </a>
+      )}
+    </div>
+  </div>
+</header>
+
+<script>
+  const header = document.getElementById("site-header");
+  if (header) {
+    const handleScroll = () => {
+      header.classList.toggle("scrolled", window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+  }
+</script>

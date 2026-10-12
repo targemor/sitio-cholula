@@ -1,5 +1,6 @@
 ---
 import "./VisitanosCard.css";
+import CloudFrontImage from "./CloudFrontImage.astro";
 
 export interface Props {
   href: string;
@@ -13,7 +14,15 @@ const { href, title, img, icons } = Astro.props;
 
 <a href={href} class="visitanos-card" data-ga-nav={title}>
   <!-- Background Image -->
-  <img src={img} alt={title} class="visitanos-card-bg" width="720" height="440" decoding="async" loading="lazy" />
+  <CloudFrontImage
+    baseName={img}
+    alt={title}
+    class="visitanos-card-bg"
+    pictureClass="visitanos-card-picture"
+    width="720"
+    height="440"
+    sizes="(max-width: 640px) 400px, (max-width: 1024px) 800px, 1200px"
+  />
   
   <!-- Overlay Gradient -->
   <div class="visitanos-card-overlay"></div>

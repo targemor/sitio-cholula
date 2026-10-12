@@ -7,9 +7,9 @@
  * editorial de `src/data/home.json` + su overlay por idioma.
  */
 import SearchBar from "./SearchBar";
-import SwiperGallery from "./SwiperGallery.astro";
 import ImperdiblesCarousel from "./ImperdiblesCarousel.astro";
 import VisitanosCard from "./VisitanosCard.astro";
+import CloudFrontImage from "./CloudFrontImage.astro";
 import ItinerarioTabs from "./ItinerarioTabs.astro";
 import BusinessCard from "./BusinessCard.astro";
 import Estacionamientos from "./Estacionamientos.astro";
@@ -31,7 +31,7 @@ const { lang } = Astro.props;
 
 const s = getStrings(lang);
 const copy = getPageCopy(lang).home;
-const { imperdibles, eventos, visitanos, artesanias } = getHomeContent(lang);
+const { imperdibles, visitanos, artesanias } = getHomeContent(lang);
 const itinerarios = getItinerarios(lang);
 const searchItems = buildSearchItems(lang);
 ---
@@ -40,6 +40,15 @@ const searchItems = buildSearchItems(lang);
      HERO — Video cover full screen
      ══════════════════════════════ -->
 <section class="hero" id="hero">
+  <img
+    class="hero-poster"
+    src="/hero-poster.webp"
+    alt="San Pedro Cholula, Puebla"
+    width="768"
+    height="432"
+    fetchpriority="high"
+    decoding="async"
+  />
   <video
     class="hero-video"
     poster="/hero-poster.webp"
@@ -68,7 +77,7 @@ const searchItems = buildSearchItems(lang);
 
     <div class="search-wrapper">
       <SearchBar
-        client:idle
+        client:visible={{ rootMargin: "-200px" }}
         items={searchItems}
         labels={s.search}
         lang={lang}
@@ -230,10 +239,13 @@ const searchItems = buildSearchItems(lang);
         title={copy.mapa.iframeTitle}></iframe>
     </div>
     <div class="mapa-croquis">
-      <img
-        src="/home/CROQUIS_MOVIL.webp"
+      <CloudFrontImage
+        baseName="home/CROQUIS_MOVIL"
         alt={copy.mapa.croquisAlt}
         loading="lazy"
+        width="600"
+        height="750"
+        sizes="(max-width: 768px) 0px, (max-width: 1200px) 400px, 600px"
       />
     </div>
   </div>
@@ -242,7 +254,7 @@ const searchItems = buildSearchItems(lang);
 <!-- ══════════════════════════════
      EVENTOS — Cartelera
      ══════════════════════════════ -->
-<EventosSection client:idle lang={lang} eventos={getEventos()} />
+<EventosSection client:visible lang={lang} eventos={getEventos()} />
 
 <!-- ══════════════════════════════
      ARTESANÍAS

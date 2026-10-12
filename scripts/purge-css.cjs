@@ -85,10 +85,38 @@ function walk(dir, exts, out = []) {
     after += Buffer.byteLength(res.css);
   }
 
+  // ── Inlining: reemplazar <link rel="stylesheet"> por <style> para eliminar ──
+  // ── solicitudes que bloquean el renderizado (Render-blocking requests) ─────
+  const htmlFiles = walk(DIST, [".html"]);
+  let inlinedCount = 0;
+  for (const htmlPath of htmlFiles) {
+    let html = fs.readFileSync(htmlPath, "utf8");
+    let modified = false;
+
+    for (const res of results) {
+      if (!res.file) continue;
+      const relUrl = "/" + path.relative(DIST, res.file).split(path.sep).join("/");
+      const escapedUrl = relUrl.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+      const pattern1 = new RegExp(`<link[^>]+rel=["']stylesheet["'][^>]+href=["']${escapedUrl}["'][^>]*>`, "gi");
+      const pattern2 = new RegExp(`<link[^>]+href=["']${escapedUrl}["'][^>]+rel=["']stylesheet["'][^>]*>`, "gi");
+
+      if (pattern1.test(html) || pattern2.test(html)) {
+        html = html.replace(pattern1, `<style>${res.css}</style>`);
+        html = html.replace(pattern2, `<style>${res.css}</style>`);
+        modified = true;
+        inlinedCount++;
+      }
+    }
+
+    if (modified) {
+      fs.writeFileSync(htmlPath, html, "utf8");
+    }
+  }
+
   const kb = (n) => (n / 1024).toFixed(1);
   console.log(
     `[purge-css] ${cssFiles.length} archivo(s) CSS: ${kb(before)} KB -> ${kb(after)} KB ` +
-      `(ahorro ${kb(before - after)} KB)`,
+      `(ahorro ${kb(before - after)} KB). Enlazados/Inlined en ${inlinedCount} etiquetas HTML.`,
   );
 })().catch((err) => {
   console.error("[purge-css] error:", err);

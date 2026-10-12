@@ -1,4 +1,14 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "framework": "astro"
+  "framework": "astro",
+  "rewrites": [
+    {
+      "source": "/images/:path*",
+      "destination": "https://visitcholula.mx/images/:path*"
+    },
+    {
+      "source": "/eventos/:path*",
+      "destination": "https://visitcholula.mx/eventos/:path*"
+    }
+  ]
 }
