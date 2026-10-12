@@ -17,6 +17,10 @@ const isForce = args.includes('--force');
 const RASTER_EXTS = ['.png', '.jpg', '.jpeg', '.avif', '.webp'];
 const PRESERVED_FILES = new Set(['favicon.png', 'favicon-48.png', 'favicon.ico', 'favicon.webp', 'favicon-48.webp']);
 
+// Variantes responsivas solicitadas para CloudFront / <picture>
+const RESPONSIVE_WIDTHS = [400, 800, 1200];
+const RESPONSIVE_VARIANT_REGEX = /-(400|800|1200)w\.webp$/i;
+
 /**
  * REGLAS DE DIMENSIONES POR COMPONENTE:
  * Cada regla define las dimensiones máximas (maxWidth, maxHeight) y calidad WebP
@@ -137,23 +141,58 @@ const stats = {
   scanned: 0,
   converted: 0,
   resized: 0,
+  variantsGenerated: 0,
   skipped: 0,
   errors: 0,
   originalBytes: 0,
   finalBytes: 0,
 };
 
+async function safeWriteFile(filePath, buffer) {
+  const tempPath = `${filePath}.${Date.now()}.${Math.random().toString(36).slice(2, 7)}.tmp.webp`;
+  await fs.writeFile(tempPath, buffer);
+  try {
+    await fs.rename(tempPath, filePath);
+  } catch (err) {
+    if (err.code === 'EEXIST' || err.code === 'EPERM' || err.code === 'EBUSY') {
+      try {
+        await fs.unlink(filePath);
+      } catch {}
+      await fs.rename(tempPath, filePath);
+    } else {
+      throw err;
+    }
+  }
+}
+
+async function checkVariantsExist(dir, baseName) {
+  for (const w of RESPONSIVE_WIDTHS) {
+    const variantPath = path.join(dir, `${baseName}-${w}w.webp`);
+    try {
+      await fs.access(variantPath);
+    } catch {
+      return false;
+    }
+  }
+  return true;
+}
+
 async function processImage(fullPath, relPath) {
-  stats.scanned++;
   const ext = path.extname(fullPath).toLowerCase();
   const filename = path.basename(fullPath);
 
-  if (PRESERVED_FILES.has(filename) || filename.includes('.tmp.')) {
-    stats.skipped++;
+  // Omitir archivos preservados, temporales o variantes ya generadas
+  if (PRESERVED_FILES.has(filename) || filename.includes('.tmp.') || RESPONSIVE_VARIANT_REGEX.test(filename)) {
     return;
   }
 
+  stats.scanned++;
   const rule = getRuleForPath(relPath);
+  const isWebp = ext === '.webp';
+  const baseName = path.basename(fullPath, ext);
+  const dir = path.dirname(fullPath);
+
+  const allVariantsExist = await checkVariantsExist(dir, baseName);
 
   let inputBuffer;
   let meta;
@@ -169,84 +208,110 @@ async function processImage(fullPath, relPath) {
   const origSize = inputBuffer.length;
   const origW = meta.width || 0;
   const origH = meta.height || 0;
-  const isWebp = ext === '.webp';
-
   const exceedsDimensions = origW > rule.maxWidth || origH > rule.maxHeight;
-  const needsConversion = !isWebp;
 
-  // Si ya es webp, está dentro de las dimensiones del componente y no se fuerza, omitir
-  if (isWebp && !exceedsDimensions && !isForce) {
+  // Si ya es WebP, todas las 3 variantes existen, no excede dimensiones y no es force, omitir
+  if (isWebp && allVariantsExist && !exceedsDimensions && !isForce) {
     stats.skipped++;
     stats.originalBytes += origSize;
     stats.finalBytes += origSize;
     return;
   }
 
-  // Determinar ruta de salida WebP
-  let outputPath = fullPath;
-  if (!isWebp) {
-    const outputFilename = filename.replace(new RegExp(`\\${ext}$`, 'i'), '.webp');
-    outputPath = path.join(path.dirname(fullPath), outputFilename);
-  }
+  stats.originalBytes += origSize;
 
   try {
-    const transformer = sharp(inputBuffer)
-      .rotate() // auto-orientación según EXIF antes de procesar
-      .resize({
-        width: rule.maxWidth,
-        height: rule.maxHeight,
-        fit: 'inside',
-        withoutEnlargement: true,
-      })
-      .webp({
-        quality: rule.quality,
-        effort: 4,
-        smartSubsample: true,
-      });
+    // 1. Generar variantes responsivas: [nombre]-400w.webp, [nombre]-800w.webp, [nombre]-1200w.webp
+    for (const w of RESPONSIVE_WIDTHS) {
+      const variantPath = path.join(dir, `${baseName}-${w}w.webp`);
 
-    const outputBuffer = await transformer.toBuffer();
-    const newSize = outputBuffer.length;
+      // Si no es force y la variante individual ya existe, omitir re-cálculo de esa variante
+      if (!isForce && allVariantsExist) {
+        continue;
+      }
 
-    // Si ya era webp y la nueva versión no ahorra tamaño ni requería reducción de dimensiones, mantener el original
-    if (isWebp && newSize >= origSize && !exceedsDimensions) {
-      stats.skipped++;
-      stats.originalBytes += origSize;
-      stats.finalBytes += origSize;
-      return;
+      const variantBuffer = await sharp(inputBuffer)
+        .rotate()
+        .resize({
+          width: w,
+          fit: 'inside',
+          withoutEnlargement: true,
+        })
+        .webp({
+          quality: rule.quality,
+          effort: 4,
+          smartSubsample: true,
+        })
+        .toBuffer();
+
+      if (!isDryRun) {
+        await safeWriteFile(variantPath, variantBuffer);
+      }
+      stats.variantsGenerated++;
     }
 
-    const newMeta = await sharp(outputBuffer).metadata();
-    const newW = newMeta.width || 0;
-    const newH = newMeta.height || 0;
+    // 2. Gestionar la versión base [nombre].webp para compatibilidad retroactiva
+    const baseWebpPath = path.join(dir, `${baseName}.webp`);
+    let finalBaseSize = origSize;
 
-    stats.originalBytes += origSize;
-    stats.finalBytes += newSize;
+    if (!isWebp) {
+      const baseBuffer = await sharp(inputBuffer)
+        .rotate()
+        .resize({
+          width: rule.maxWidth,
+          height: rule.maxHeight,
+          fit: 'inside',
+          withoutEnlargement: true,
+        })
+        .webp({
+          quality: rule.quality,
+          effort: 4,
+          smartSubsample: true,
+        })
+        .toBuffer();
 
-    const diffKB = ((origSize - newSize) / 1024).toFixed(1);
-    const pct = (((origSize - newSize) / origSize) * 100).toFixed(1);
-    const action = !isWebp ? 'CONVERTIDO' : 'REDIMENSIONADO';
+      finalBaseSize = baseBuffer.length;
+      if (!isDryRun) {
+        await safeWriteFile(baseWebpPath, baseBuffer);
+        if (fullPath !== baseWebpPath) {
+          try {
+            await fs.unlink(fullPath);
+          } catch {}
+        }
+      }
+      stats.converted++;
+    } else if (exceedsDimensions || isForce) {
+      const baseBuffer = await sharp(inputBuffer)
+        .rotate()
+        .resize({
+          width: rule.maxWidth,
+          height: rule.maxHeight,
+          fit: 'inside',
+          withoutEnlargement: true,
+        })
+        .webp({
+          quality: rule.quality,
+          effort: 4,
+          smartSubsample: true,
+        })
+        .toBuffer();
 
-    if (!isDryRun) {
-      // Escribir de forma segura usando archivo temporal para evitar locks en Windows
-      const tempPath = `${outputPath}.tmp.webp`;
-      await fs.writeFile(tempPath, outputBuffer);
-      await fs.rename(tempPath, outputPath);
-
-      // Si convertimos un png/jpg y el archivo original no es el mismo, eliminar el original
-      if (!isWebp && fullPath !== outputPath) {
-        try {
-          await fs.unlink(fullPath);
-        } catch {}
+      if (baseBuffer.length < origSize || exceedsDimensions) {
+        finalBaseSize = baseBuffer.length;
+        if (!isDryRun) {
+          await safeWriteFile(baseWebpPath, baseBuffer);
+        }
+        stats.resized++;
       }
     }
 
-    if (!isWebp) stats.converted++;
-    else stats.resized++;
+    stats.finalBytes += finalBaseSize;
 
+    const actionTag = !isWebp ? 'CONVERTIDO' : (exceedsDimensions ? 'REDIMENSIONADO' : 'RESPONSIVE');
     console.log(
-      `✓ [${action}] ${relPath} [${rule.name}]\n` +
+      `✓ [${actionTag}] ${relPath} [${rule.name}]\n` +
       `   ${origW}x${origH} (${(origSize / 1024).toFixed(1)} KB) -> ` +
-      `${newW}x${newH} (${(newSize / 1024).toFixed(1)} KB) [${diffKB} KB ahorrados / -${pct}%]`
+      `Variantes generadas: 400w, 800w, 1200w WebP`
     );
   } catch (err) {
     console.error(`  [ERROR] Falló optimización de ${relPath}: ${err.message}`);
@@ -255,27 +320,44 @@ async function processImage(fullPath, relPath) {
 }
 
 async function walkDirectory(dir) {
-  let entries;
-  try {
-    entries = await fs.readdir(dir, { withFileTypes: true });
-  } catch (error) {
-    console.error(`Error leyendo directorio ${dir}:`, error);
-    return;
-  }
+  async function collectFiles(currentDir) {
+    let entries;
+    try {
+      entries = await fs.readdir(currentDir, { withFileTypes: true });
+    } catch (error) {
+      console.error(`Error leyendo directorio ${currentDir}:`, error);
+      return [];
+    }
 
-  for (const entry of entries) {
-    const fullPath = path.join(dir, entry.name);
-    const relPath = path.relative(publicDir, fullPath).replace(/\\/g, '/');
-
-    if (entry.isDirectory()) {
-      await walkDirectory(fullPath);
-    } else {
-      const ext = path.extname(entry.name).toLowerCase();
-      if (RASTER_EXTS.includes(ext)) {
-        await processImage(fullPath, relPath);
+    const files = [];
+    for (const entry of entries) {
+      const fullPath = path.join(currentDir, entry.name);
+      if (entry.isDirectory()) {
+        files.push(...(await collectFiles(fullPath)));
+      } else {
+        const ext = path.extname(entry.name).toLowerCase();
+        if (RASTER_EXTS.includes(ext) && !RESPONSIVE_VARIANT_REGEX.test(entry.name)) {
+          files.push(fullPath);
+        }
       }
     }
+    return files;
   }
+
+  const allFiles = await collectFiles(dir);
+
+  // Procesamiento concurrente controlado (6 en paralelo para aprovechar CPU)
+  const CONCURRENCY = 6;
+  let idx = 0;
+  const workers = Array.from({ length: Math.min(CONCURRENCY, allFiles.length) }, async () => {
+    while (idx < allFiles.length) {
+      const fullPath = allFiles[idx++];
+      const relPath = path.relative(publicDir, fullPath).replace(/\\/g, '/');
+      await processImage(fullPath, relPath);
+    }
+  });
+
+  await Promise.all(workers);
 }
 
 // Sincronizar imágenes actualizadas desde "Fotos itinerarios cholula"
@@ -306,8 +388,10 @@ async function syncUpdatedImages() {
       if (!isDryRun) {
         await fs.mkdir(path.dirname(destPath), { recursive: true });
         await fs.copyFile(srcPath, destPath);
+        console.log(`  ✓ Sincronizado: ${src} -> ${dest}`);
+      } else {
+        console.log(`  [DRY-RUN] Sincronizaría: ${src} -> ${dest}`);
       }
-      console.log(`  ✓ Sincronizado: ${src} -> ${dest}`);
     } catch {
       // Si la fuente no existe, se omite silenciosamente
     }
@@ -332,14 +416,14 @@ async function updateJsonReferences() {
 async function run() {
   const startTime = Date.now();
   console.log('='.repeat(70));
-  console.log(`  OPTIMIZADOR DE ASSETS Y CONVERSIÓN A WEBP PARA PRODUCCIÓN`);
+  console.log(`  OPTIMIZADOR DE ASSETS Y GENERACIÓN DE WEBP RESPONSIVO (400w, 800w, 1200w)`);
   if (isDryRun) console.log('  [MODO DRY-RUN ACTIVADO - No se modificarán archivos]');
   if (isForce) console.log('  [MODO FORCE ACTIVADO - Se re-procesarán todas las imágenes]');
   console.log(`  Directorio base: ${publicDir}`);
   console.log('='.repeat(70) + '\n');
 
-  await walkDirectory(publicDir);
   await syncUpdatedImages();
+  await walkDirectory(publicDir);
   await updateJsonReferences();
 
   const totalSaved = stats.originalBytes - stats.finalBytes;
@@ -352,15 +436,16 @@ async function run() {
   console.log('\n' + '='.repeat(70));
   console.log('  RESUMEN DE OPTIMIZACIÓN');
   console.log('='.repeat(70));
-  console.log(`  Total imágenes analizadas: ${stats.scanned}`);
-  console.log(`  Convertidas a WebP:        ${stats.converted}`);
-  console.log(`  Redimensionadas (ajuste):  ${stats.resized}`);
-  console.log(`  Omitidas (ya optimizadas): ${stats.skipped}`);
-  console.log(`  Errores:                   ${stats.errors}`);
-  console.log(`  Peso original:             ${totalOrigMB} MB`);
-  console.log(`  Peso optimizado:           ${totalFinalMB} MB`);
-  console.log(`  Ahorro total:              ${savedMB} MB (-${overallPct}%)`);
-  console.log(`  Tiempo de ejecución:       ${duration}s`);
+  console.log(`  Total imágenes base analizadas:    ${stats.scanned}`);
+  console.log(`  Variantes responsivas generadas:   ${stats.variantsGenerated}`);
+  console.log(`  Convertidas a WebP:                ${stats.converted}`);
+  console.log(`  Redimensionadas (ajuste tamaño):   ${stats.resized}`);
+  console.log(`  Omitidas (ya optimizadas):         ${stats.skipped}`);
+  console.log(`  Errores:                           ${stats.errors}`);
+  console.log(`  Peso base original:                ${totalOrigMB} MB`);
+  console.log(`  Peso base optimizado:              ${totalFinalMB} MB`);
+  console.log(`  Ahorro peso base:                  ${savedMB} MB (-${overallPct}%)`);
+  console.log(`  Tiempo de ejecución:               ${duration}s`);
   console.log('='.repeat(70) + '\n');
 }
 
