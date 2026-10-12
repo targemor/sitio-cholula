@@ -191,7 +191,7 @@ const breadcrumbSchema = {
   jsonLd={[itemListSchema, breadcrumbSchema]}
 >
   <!-- Hero -->
-  <section class="hero" id="hero">
+  <section class="hero hero-slug" id="hero">
     <video
       class="hero-video"
       poster="/hero-poster.webp"
@@ -210,33 +210,33 @@ const breadcrumbSchema = {
   <section class="section-categoria">
     <div class="section-inner">
       <!-- Header fijo: título + divider + filtro -->
-      <div class="section-header">
+      <div class="categoria-header">
         {copy.kicker && (
-          <span class="section-kicker">
+          <span class="categoria-kicker">
             {copy.kicker}
           </span>
         )}
-        <h2 class="section-label" style={`--section-color: ${color};`}>
+        <h2 class="categoria-label" style={`--section-color: ${color};`}>
           {title}
         </h2>
-        {description && <p class="section-description">{description}</p>}
+        {description && <p class="categoria-description">{description}</p>}
         {
           isRestaurantes && (
-            <div class="filter-container">
+            <div class="categoria-filter-container">
               <CategoryFilter data={data} />
             </div>
           )
         }
         {
           isQueHacer && (
-            <div class="filter-container">
+            <div class="categoria-filter-container">
               <QueHacerFilter data={data} />
             </div>
           )
         }
         {
           isHospedaje && (
-            <div class="filter-container">
+            <div class="categoria-filter-container">
               <HotelFilter data={data} />
             </div>
           )
@@ -244,8 +244,8 @@ const breadcrumbSchema = {
       </div>
 
       <!-- Área scrolleable con las tarjetas -->
-      <div class="grid-scroll-area">
-        <div class="business-grid">
+      <div class="categoria-scroll-area">
+        <div class="categoria-business-grid">
           {
             data.map((item: any, index: number) => (
               <BusinessCard
@@ -315,9 +315,9 @@ const breadcrumbSchema = {
     if (targetCard) {
       // Esperamos a que el Swiper/imágenes terminen de renderizar
       setTimeout(() => {
-        // .grid-scroll-area NO es un contenedor scrolleable (sin overflow).
+        // .categoria-scroll-area NO es un contenedor scrolleable (sin overflow).
         // El scroll real ocurre en el window.
-        const stickyHeader = document.querySelector(".section-header");
+        const stickyHeader = document.querySelector(".categoria-header");
         const stickyTop = 120; // valor CSS: top: 120px en desktop
         const headerHeight = stickyHeader
           ? stickyHeader.getBoundingClientRect().height

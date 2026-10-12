@@ -357,6 +357,10 @@
 
 /* ── Section Header (Kicker + Bold Sans-Serif Title) ── */
 .section-header {
+  position: static;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
   text-align: center;
   margin-bottom: 2rem;
   width: 95%;
