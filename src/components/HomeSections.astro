@@ -7,7 +7,6 @@
  * editorial de `src/data/home.json` + su overlay por idioma.
  */
 import SearchBar from "./SearchBar";
-import SwiperGallery from "./SwiperGallery.astro";
 import ImperdiblesCarousel from "./ImperdiblesCarousel.astro";
 import VisitanosCard from "./VisitanosCard.astro";
 import CloudFrontImage from "./CloudFrontImage.astro";
@@ -32,7 +31,7 @@ const { lang } = Astro.props;
 
 const s = getStrings(lang);
 const copy = getPageCopy(lang).home;
-const { imperdibles, eventos, visitanos, artesanias } = getHomeContent(lang);
+const { imperdibles, visitanos, artesanias } = getHomeContent(lang);
 const itinerarios = getItinerarios(lang);
 const searchItems = buildSearchItems(lang);
 ---

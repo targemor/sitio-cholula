@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./BottomNav.css";
 import type { Locale } from "../i18n/config";
 import { localizePathSafe, type RouteKey } from "../i18n/routes";
