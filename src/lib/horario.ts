@@ -81,33 +81,79 @@ export function parseSlot(slot?: string): [number, number] | null {
 	return [start, end];
 }
 
-function isSlotOpenAt(slot: string, now: Date): boolean {
-	const range = parseSlot(slot);
-	if (!range) return false;
+/** Los horarios están en hora de Cholula, no en la del navegador del visitante. */
+const TIME_ZONE = "America/Mexico_City";
 
-	const [start, end] = range;
-	const minutes = now.getHours() * 60 + now.getMinutes();
-	// Si el rango cruza medianoche, la madrugada cuenta como parte del día anterior.
-	const current = end > 24 * 60 && minutes < start ? minutes + 24 * 60 : minutes;
+const WEEKDAY_INDEX: Record<string, number> = {
+	Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6,
+};
 
-	return current >= start && current <= end;
+/** Día de la semana (0 = domingo) y minuto del día en hora de Cholula. */
+function cholulaClock(now: Date): { day: number; minutes: number } {
+	const parts = new Intl.DateTimeFormat("en-US", {
+		timeZone: TIME_ZONE,
+		weekday: "short",
+		hour: "2-digit",
+		minute: "2-digit",
+		hourCycle: "h23",
+	}).formatToParts(now);
+	const get = (type: string) => parts.find((p) => p.type === type)?.value ?? "";
+	return {
+		day: WEEKDAY_INDEX[get("weekday")] ?? now.getDay(),
+		minutes: (Number(get("hour")) % 24) * 60 + Number(get("minute")),
+	};
+}
+
+const DAY = 24 * 60;
+
+export interface OpenStatus {
+	open: boolean;
+	/** "HH:MM" de la próxima apertura si abre hoy más tarde (solo cuando está cerrado). */
+	opensAt?: string;
 }
 
 /**
- * `true` abierto, `false` cerrado, `null` si no hay horario que evaluar.
+ * Estado en este momento, o `null` si no hay horario que evaluar.
  * Solo consulta los campos por día, nunca `resumen`/`detalle`.
+ *
+ * - El cierre es exclusivo: con "11:30-18:30", a las 18:30 ya está cerrado.
+ * - La madrugada de un rango que cruza medianoche ("16:00-02:00") se evalúa con
+ *   el horario del día ANTERIOR: el sábado 01:00 depende del slot del viernes.
  */
+export function getOpenStatus(
+	horario?: Horario | string,
+	now: Date = new Date(),
+): OpenStatus | null {
+	if (!horario) return null;
+
+	const { day, minutes } = cholulaClock(now);
+	const slotFor = (d: number) =>
+		typeof horario === "string" ? horario : horario[WEEKDAYS[(d + 7) % 7]];
+
+	const today = slotFor(day);
+	if (typeof horario !== "string" && today === undefined) return null;
+
+	// 1) Madrugada: ¿sigue abierto el turno de ayer?
+	const yesterday = parseSlot(slotFor(day - 1));
+	if (yesterday && yesterday[1] > DAY && minutes < yesterday[1] - DAY) {
+		return { open: true };
+	}
+
+	// 2) Turno de hoy.
+	const range = parseSlot(today);
+	if (!range) return { open: false };
+	const [start, end] = range;
+	if (minutes >= start && minutes < end) return { open: true };
+
+	return minutes < start ? { open: false, opensAt: today!.trim().split("-")[0].trim() } : { open: false };
+}
+
+/** `true` abierto, `false` cerrado, `null` si no hay horario que evaluar. */
 export function isCurrentlyOpen(
 	horario?: Horario | string,
 	now: Date = new Date(),
 ): boolean | null {
-	if (!horario) return null;
-	if (typeof horario === "string") return isSlotOpenAt(horario, now);
-
-	const slot = horario[WEEKDAYS[now.getDay()]];
-	if (slot === undefined) return null;
-
-	return isSlotOpenAt(slot, now);
+	return getOpenStatus(horario, now)?.open ?? null;
 }
 
 /**

@@ -8,6 +8,7 @@ import {
 } from "../lib/analytics";
 import {
     formatHorarioDetalle,
+    getOpenStatus,
     isCurrentlyOpen,
     type Horario,
 } from "../lib/horario";
@@ -596,7 +597,7 @@ export default function SearchBar({ placeholder, items = [], labels, lang = "es"
                                             : null;
 
                                         const horarioDetalle = formatHorarioDetalle(item.horario, lang);
-                                        const abierto = isCurrentlyOpen(item.horario);
+                                        const estado = getOpenStatus(item.horario);
 
                                         return (
                                             <button
@@ -610,9 +611,13 @@ export default function SearchBar({ placeholder, items = [], labels, lang = "es"
                                                         <p className="search-item-title">
                                                             {labelNode}
                                                         </p>
-                                                        {abierto !== null && (
-                                                            <span className={`search-badge ${abierto ? "search-badge-open" : "search-badge-closed"}`}>
-                                                                {abierto ? t.open : t.closed}
+                                                        {estado !== null && (
+                                                            <span className={`search-badge ${estado.open ? "search-badge-open" : "search-badge-closed"}`}>
+                                                                {estado.open
+                                                                    ? t.open
+                                                                    : estado.opensAt
+                                                                        ? t.opensAt.replace("{time}", estado.opensAt)
+                                                                        : t.closed}
                                                             </span>
                                                         )}
                                                     </div>

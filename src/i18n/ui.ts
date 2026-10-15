@@ -74,6 +74,8 @@ export interface Strings {
 		emptyHint: string;
 		open: string;
 		closed: string;
+		/** Badge cuando cierra ahora pero abre más tarde hoy. `{time}` = "HH:MM". */
+		opensAt: string;
 		/** Título de cada grupo de resultados, por categoría interna. */
 		groups: Record<string, string>;
 		/** Palabra que acompaña a la calificación en el índice ("4 estrellas"). */
@@ -186,6 +188,7 @@ const es: Strings = {
 		emptyHint: "Intenta con otro término",
 		open: "Abierto",
 		closed: "Cerrado",
+		opensAt: "Abre a las {time}",
 		groups: {
 			Hotel: "Hoteles",
 			Restaurante: "Restaurantes",
@@ -302,6 +305,7 @@ const en: Strings = {
 		emptyHint: "Try another term",
 		open: "Open",
 		closed: "Closed",
+		opensAt: "Opens at {time}",
 		groups: {
 			Hotel: "Hotels",
 			Restaurante: "Restaurants",
