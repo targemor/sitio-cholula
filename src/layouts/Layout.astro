@@ -26,7 +26,7 @@ const {
 	title,
 	description = s.site.description,
 	canonical,
-	ogImage = "/hero-poster.webp",
+	ogImage = "/cover-octubre.webp",
 	ogType = "website",
 	jsonLd,
 } = Astro.props;
@@ -125,7 +125,7 @@ const defaultAlternate = alternates.find((a) => a.locale === "es");
 		<link
 			rel="preload"
 			as="image"
-			href="/hero-poster.webp"
+			href="/cover-octubre.webp"
 			fetchpriority="high"
 		/>
 		<!-- Roboto self-hosted (variable, subset latin): mismo origen, sin cadena CSS→woff2 -->
@@ -213,16 +213,11 @@ const defaultAlternate = alternates.find((a) => a.locale === "es");
 		/>
 
 		<!-- Carga diferida del video del hero: el poster es el LCP y el
-		     video se descarga tras el render inicial solo en desktop para no competir con
-		     los recursos críticos ni agotar batería/datos móviles. -->
+		     video se descarga tras el render inicial para no competir con
+		     los recursos críticos de primer render. -->
 		<script is:inline>
 			(function () {
 				function loadHeroVideo() {
-					// En dispositivos móviles (<=768px) o con ahorro de datos activado,
-					// mantener el poster /hero-poster.webp (15KB) que ya es el LCP óptimo.
-					if (window.innerWidth <= 768 || (window.matchMedia && window.matchMedia("(max-width: 768px)").matches)) {
-						return;
-					}
 					if (navigator.connection && (navigator.connection.saveData || navigator.connection.effectiveType === "2g")) {
 						return;
 					}
@@ -231,6 +226,10 @@ const defaultAlternate = alternates.find((a) => a.locale === "es");
 						.forEach(function (v) {
 							if (v.dataset.loaded) return;
 							v.dataset.loaded = "1";
+							v.muted = true;
+							v.defaultMuted = true;
+							v.setAttribute("playsinline", "");
+							v.setAttribute("webkit-playsinline", "");
 							v.querySelectorAll("source[data-src]").forEach(
 								function (s) {
 									s.src = s.getAttribute("data-src");
@@ -238,14 +237,26 @@ const defaultAlternate = alternates.find((a) => a.locale === "es");
 							);
 							v.load();
 							var p = v.play();
-							if (p && p.catch) p.catch(function () {});
+							if (p && p.catch) {
+								p.catch(function () {
+									var startPlayback = function () {
+										v.play().catch(function () {});
+										window.removeEventListener("touchstart", startPlayback);
+										window.removeEventListener("scroll", startPlayback);
+									};
+									window.addEventListener("touchstart", startPlayback, { once: true, passive: true });
+									window.addEventListener("scroll", startPlayback, { once: true, passive: true });
+								});
+							}
 						});
 				}
 				if ("requestIdleCallback" in window) {
-					requestIdleCallback(loadHeroVideo, { timeout: 3500 });
+					requestIdleCallback(loadHeroVideo, { timeout: 2000 });
+				} else if (document.readyState === "complete") {
+					setTimeout(loadHeroVideo, 200);
 				} else {
 					window.addEventListener("load", function () {
-						setTimeout(loadHeroVideo, 1000);
+						setTimeout(loadHeroVideo, 200);
 					});
 				}
 			})();
