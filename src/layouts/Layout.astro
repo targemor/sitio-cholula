@@ -126,6 +126,7 @@ const defaultAlternate = alternates.find((a) => a.locale === "es");
 			rel="preload"
 			as="image"
 			href="/cover-octubre.webp"
+			media="(max-width: 768px)"
 			fetchpriority="high"
 		/>
 		<!-- Roboto self-hosted (variable, subset latin): mismo origen, sin cadena CSS→woff2 -->
@@ -212,12 +213,15 @@ const defaultAlternate = alternates.find((a) => a.locale === "es");
 			ariaLabel={s.a11y.mobileNav}
 		/>
 
-		<!-- Carga diferida del video del hero: el poster es el LCP y el
-		     video se descarga tras el render inicial para no competir con
-		     los recursos críticos de primer render. -->
+		<!-- Carga del video del hero exclusivamente en desktop (>768px):
+		     En mobile se mantiene la imagen fija de cover sin descargar video. -->
 		<script is:inline>
 			(function () {
 				function loadHeroVideo() {
+					// En dispositivos móviles (<=768px): mantener la imagen cover fija, no descargar ni reproducir video
+					if (window.innerWidth <= 768 || (window.matchMedia && window.matchMedia("(max-width: 768px)").matches)) {
+						return;
+					}
 					if (navigator.connection && (navigator.connection.saveData || navigator.connection.effectiveType === "2g")) {
 						return;
 					}
@@ -250,14 +254,18 @@ const defaultAlternate = alternates.find((a) => a.locale === "es");
 							}
 						});
 				}
-				if ("requestIdleCallback" in window) {
-					requestIdleCallback(loadHeroVideo, { timeout: 2000 });
-				} else if (document.readyState === "complete") {
-					setTimeout(loadHeroVideo, 200);
+				if (document.readyState === "complete" || document.readyState === "interactive") {
+					loadHeroVideo();
 				} else {
-					window.addEventListener("load", function () {
-						setTimeout(loadHeroVideo, 200);
-					});
+					document.addEventListener("DOMContentLoaded", loadHeroVideo);
+				}
+				if (window.matchMedia) {
+					var mql = window.matchMedia("(min-width: 769px)");
+					if (mql.addEventListener) {
+						mql.addEventListener("change", function (e) {
+							if (e.matches) loadHeroVideo();
+						});
+					}
 				}
 			})();
 		</script>

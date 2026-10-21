@@ -20,6 +20,70 @@
   pointer-events: none;
 }
 
+/* Crédito fotográfico Hero Mobile */
+.hero-photo-credit {
+  position: absolute;
+  bottom: 1.25rem;
+  right: 1.5rem;
+  z-index: 5;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(18, 18, 18, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: rgba(255, 255, 255, 0.9);
+  font-family: "Roboto", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  pointer-events: auto;
+}
+
+.hero-credit-link {
+  color: #ffffff !important;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.6);
+  transition: all 0.2s ease;
+}
+
+.hero-credit-link:hover {
+  color: #F2C230 !important;
+  text-decoration-color: #F2C230;
+}
+
+/* En desktop (> 768px): mostrar video sin la foto de cover */
+@media (min-width: 769px) {
+  .hero-home .hero-poster,
+  .hero-home .hero-photo-credit {
+    display: none !important;
+  }
+  .hero-home .hero-video {
+    display: block !important;
+  }
+}
+
+/* En mobile (<= 768px): la imagen de cover se queda fija, no video */
+@media (max-width: 768px) {
+  .hero-home .hero-poster {
+    display: block !important;
+  }
+  .hero-home .hero-video {
+    display: none !important;
+  }
+  .hero-home .hero-photo-credit {
+    display: inline-flex !important;
+    bottom: 0.85rem;
+    right: 0.85rem;
+    font-size: 0.7rem;
+    padding: 0.3rem 0.65rem;
+  }
+}
+
 .hero-overlay {
   position: absolute;
   inset: 0;

@@ -39,7 +39,7 @@ const searchItems = buildSearchItems(lang);
 <!-- ══════════════════════════════
      HERO — Video cover full screen
      ══════════════════════════════ -->
-<section class="hero" id="hero">
+<section class="hero hero-home" id="hero">
   <img
     class="hero-poster"
     src="/cover-octubre.webp"
@@ -51,7 +51,6 @@ const searchItems = buildSearchItems(lang);
   />
   <video
     class="hero-video"
-    poster="/cover-octubre.webp"
     muted
     loop
     playsinline
@@ -61,6 +60,35 @@ const searchItems = buildSearchItems(lang);
     <source data-src="/video.mp4" type="video/mp4" />
   </video>
   <div class="hero-overlay" aria-hidden="true"></div>
+
+  <!-- Chip de créditos para la foto de cover (mobile) -->
+  <div class="hero-photo-credit">
+    <svg
+      width="13"
+      height="13"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2.2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+      style="display:inline-block; vertical-align:-1px; margin-right:3px;"
+    >
+      <path
+        d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"
+      ></path>
+      <circle cx="12" cy="13" r="4"></circle>
+    </svg>
+    <a
+      href="https://www.instagram.com/mickysantana_art_photography"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="hero-credit-link"
+    >
+      Mike Santana
+    </a>
+  </div>
 
   <div class="hero-content">
     <!-- El contenido del hero original si hubiera título, si no, se queda vacío o se puede omitir -->
